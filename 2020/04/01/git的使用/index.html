@@ -5,33 +5,31 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>git的使用 | Hexo</title>
+  <link rel="dns-prefetch" href="https://futuwxq.github.io">
+  <title>git的使用 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="git是一款版本控制工具，所谓版本控制，也即是任何允许系统性地保存内容版本的系统。  第一部分 使用Git基础操作1.1  查看基础命令和版本 ：git -v 和 git –version 1.2  用户配置 ：git config  配置 用户名 git config --global user.name &quot;Wxx&quot;  配置 邮箱 git config --global us">
+  <meta name="description" content="git是一款版本控制工具，所谓版本控制，也即是任何允许系统性地保存内容版本的系统。  第一部分 使用Git基础操作1.1  查看基础命令和版本">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git的使用">
-<meta property="og:url" content="http://yoursite.com/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="git是一款版本控制工具，所谓版本控制，也即是任何允许系统性地保存内容版本的系统。  第一部分 使用Git基础操作1.1  查看基础命令和版本 ：git -v 和 git –version 1.2  用户配置 ：git config  配置 用户名 git config --global user.name &quot;Wxx&quot;  配置 邮箱 git config --global us">
+<meta property="og:url" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
+<meta property="og:site_name" content="晓秋的博客">
+<meta property="og:description" content="git是一款版本控制工具，所谓版本控制，也即是任何允许系统性地保存内容版本的系统。  第一部分 使用Git基础操作1.1  查看基础命令和版本">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/%E9%85%8D%E7%BD%AE%E7%BC%96%E8%BE%91%E5%99%A8.png">
-<meta property="og:image" content="http://yoursite.com/commit.png">
-<meta property="og:image" content="http://yoursite.com/git-diff.png">
-<meta property="og:image" content="http://yoursite.com/%E6%A6%82%E5%BF%B5%E5%9B%BE01.png">
-<meta property="og:image" content="http://yoursite.com/commit.png">
-<meta property="og:image" content="http://yoursite.com/%E6%8D%95%E8%8E%B7.PNG">
-<meta property="og:image" content="http://yoursite.com/merge01.png">
-<meta property="og:image" content="http://yoursite.com/fork.png">
-<meta property="og:image" content="http://yoursite.com/%E6%80%BB%E7%BB%93.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/example1.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/commit.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/dig.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/git-diff.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/fork.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/summory.png">
 <meta property="article:published_time" content="2020-04-01T06:57:31.000Z">
-<meta property="article:modified_time" content="2020-04-01T13:01:25.969Z">
+<meta property="article:modified_time" content="2020-04-02T02:22:22.755Z">
 <meta property="article:author" content="不知火舞">
-<meta property="article:tag" content="-git">
+<meta property="article:tag" content="git">
+<meta property="article:tag" content="工具类">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/%E9%85%8D%E7%BD%AE%E7%BC%96%E8%BE%91%E5%99%A8.png">
+<meta name="twitter:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/example1.png">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -186,34 +184,38 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>git是一款版本控制工具，所谓版本控制，也即是任何允许系统性地保存内容版本的系统。 </p>
-<h2 id="第一部分-使用Git基础操作"><a href="#第一部分-使用Git基础操作" class="headerlink" title="第一部分 使用Git基础操作"></a>第一部分 使用Git基础操作</h2><p>1.1  查看基础命令和版本 ：git -v 和 git –version</p>
-<p>1.2  用户配置 ：git config </p>
+<h2 id="第一部分-使用Git基础操作"><a href="#第一部分-使用Git基础操作" class="headerlink" title="第一部分 使用Git基础操作"></a>第一部分 使用Git基础操作</h2><p>1.1  查看基础命令和版本 </p>
+<a id="more"></a>
+
+<p>   git -v 和 git –version</p>
+<p>1.2  用户配置 </p>
+<p>   git config </p>
 <pre><code>配置 用户名 git config --global user.name &quot;Wxx&quot;
 
-配置 邮箱 git config --global user.email &quot;xxxxxxx@163.com&quot;</code></pre><p>1.3 查看配置(也就是查看配置了些什么) <code>git config -l</code> 或者 <code>git config --list</code></p>
+配置 邮箱 git config --global user.email &quot;xxxxxxx@163.com&quot;</code></pre><p>1.3 查看配置(也就是查看配置了些什么)</p>
+<p> <code>git config -l</code> 或者 <code>git config --list</code></p>
 <p>1.4 配置工作空间</p>
 <p>下图是将vscode配置为工作空间</p>
-<p><img src="/%E9%85%8D%E7%BD%AE%E7%BC%96%E8%BE%91%E5%99%A8.png" alt="2"> </p>
+<!-- 以后要设置大小就用img标签就行了，src也直接写图片名字 不设置就用上面的md语法 -->
+<img src="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/example1.png" width="50%" height="50%" style="display:block;margin:5px auto">
+
+
 <p>1.5 git Bush上的快捷操作</p>
+<p>以下是我初次使用git Bush 记录的一些命令操作。</p>
 <blockquote>
- Ctrl+ins  复制
+复制  Ctrl+ins
 
-<p> Shift+ins 粘贴</p>
-<p>当git界面不出现文字时   reset + enter</p>
-</blockquote>
-
-<p>1.6 文件路径操作</p>
-<blockquote>
-cd ~  ------------- 进入全局   
-
-<p>cd 目录名/   —— 进入该目录</p>
-<p>cd e:/code/TEST/lsd——-精确定位目录</p>
-<p>cd .. ———-回退到上一个目录</p>
-<p>cd e:\fff  ———–切换 E 盘下面的fff 目录</p>
-<p>pwd : ———-显示当前目录路径</p>
-<p>Ctrl +l ——– 清屏</p>
-<p>touch  文件名—— 新建一个文件</p>
-<p>subl 文件名 —– 打开文件</p>
+<p>粘贴 Shift+ins </p>
+<p>当git界面不出现文字时 ：  reset + enter</p>
+<p>进入全局 ：cd ~   </p>
+<p>进入某一目录 ；cd 目录名/</p>
+<p>进入某一目录（精确定位）：cd e:/code/TEST/lsd</p>
+<p>回退到上一个目录 ：cd .. </p>
+<p>切换目录（切换 E 盘下面的fff 目录）：cd e:\fff</p>
+<p>显示当前目录路径 ：pwd</p>
+<p>清屏 ；Ctrl +l</p>
+<p>新建一个文件 ：touch 文件名</p>
+<p>打开文件 subl 文件名</p>
 </blockquote>
 
 <h2 id="第二部分-使用git上传本地文件"><a href="#第二部分-使用git上传本地文件" class="headerlink" title="第二部分 使用git上传本地文件"></a>第二部分 使用git上传本地文件</h2><p><em>文件上传github发为两种，一种是把本地的的代码push到github的已经存在的仓库。另一种是先在github上新建新仓库，把新仓库clone到本地，在本地编辑完成后上传。后者比较常见。</em></p>
@@ -232,17 +234,15 @@ cd ~  ------------- 进入全局
 <li><p>重命名这个仓库 ：git clone 地址 名字 </p>
 </li>
 </ul>
-<p>Git bash控制工具：</p>
 <p><strong>可以通过以下命令查看从仓库内的文件，确认是否创建成功</strong></p>
 <p> ls -a 查看所有文件  包括隐藏  . git隐藏文件。而ls 只能查看正常文件 </p>
-<h3 id="2-2-上传本地文件"><a href="#2-2-上传本地文件" class="headerlink" title="2.2 上传本地文件"></a>2.2 上传本地文件</h3><p>commit 提交  （HEAD 当前检出版本  detached 分开的 annotated 有注释的）</p>
-<p><strong>1）查看状态</strong></p>
+<h3 id="2-2-上传本地文件"><a href="#2-2-上传本地文件" class="headerlink" title="2.2 上传本地文件"></a>2.2 上传本地文件</h3><p><strong>1）查看状态</strong></p>
 <p>初始化存储库时，Git不会为您创建任何提交。你必须自己创建第一个提交。<strong>git status</strong> 可以看到最后提交后更改的文件。git diff查看具体哪里修改了。</p>
 <p>untracked files   未跟踪的文件</p>
 <p>modified files   已修改的文件</p>
 <p><strong>2）文件存入暂存区</strong> </p>
 <blockquote>
-git add . （**注意中间空格**）将所有修改添加至暂存区
+git add . （**注意中间空格**）将所有修改添加至暂存区。
 
 <p>git add 文件名 ：单次添加一份文件。</p>
 <p>git reset 文件名  ：此命令会从暂存区中删除该文件，但它仍在你的工作目录中。</p>
@@ -251,12 +251,13 @@ git add . （**注意中间空格**）将所有修改添加至暂存区
 git add之后文件呈现为staged状态。
 
 <p><strong>3）将本地修改的文件提交到本地仓库</strong></p>
-<p>一次性提交版本 ： git commit -m “描述” （commit语法是祈使句）</p>
-<p>单次提交一个文件：git commit 文件名</p>
-<p>git commit之后文件呈现committe状态</p>
+<p>一次性提交版本 ： git commit -m “描述” （commit语法是祈使句）。</p>
+<p>单次提交一个文件：git commit 文件名。</p>
+<p>git commit之后文件呈现committe状态。</p>
 <p><strong>将所有文件添加到暂存区并且提交：</strong> git add . &amp;&amp; git commit -m””;</p>
-<p>在上传过程中文件表现为3种阶段  modified staged  committed，详细见下图。 </p>
-<p><img src="/commit.png" alt="2"></p>
+<p>在上传过程中文件表现为3种阶段  modified staged  committed，这三个阶段对应的状态分别为本地仓库、暂存区和远程仓库。详细见下图。 </p>
+<img src="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/commit.png" width="50%" height="50%" alt="3种状态" style="display:block; margin:5px auto">
+
 <p>以下是一段操作例子</p>
 <pre><code>future (master) reflections $ git add today.txt
 
@@ -282,25 +283,28 @@ create mode 100644 today.txt</code></pre><p><strong>4）将本地仓库文件发
 <p><strong>1）查看版本记录</strong></p>
 <p>git log -p ： 查看记录同时还可以查看相邻两个版本的增删情况。 </p>
 <p>git log –oneline ：  每个版本只显示一行 仅仅包括版本号和commit信息。</p>
-<p>git log –graph –oneline ： 图像化显示版本记录。</p>
+<p>git log –graph –oneline ： 图像化显示版本记录,如下图所示</p>
+<img src="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/dig.png" width="50%" height="110%" style="display:block; margin:10px auto">
+
 <p><strong>2）回到历史版本</strong></p>
-<p>git checkout 版本号 ：查看历史节点 此时编辑器也会回到当时那个版本</p>
-<pre><code>You are in &apos;detached HEAD&apos; state. 若出现如下提示，则表示脱离当前提交版本</code></pre><p>git checkout - ： 回到上一个节点</p>
-<p>git checout 标签名： 回溯到标签所在的提交</p>
+<p>git checkout 版本号 ：查看历史节点 此时编辑器也会回到当时那个版本；</p>
+<pre><code>You are in &apos;detached HEAD&apos; state. 若出现如下提示，则表示脱离当前提交版本</code></pre><p>git checkout - ： 回到上一个节点；</p>
+<p>git checout 标签名： 回溯到标签所在的提交。</p>
 <p><strong>3）使用标签</strong> </p>
 <p>重要节点需要加上标签</p>
 <p>git tag -a 版本名 -m ‘描述’ ：添加一个标签；</p>
-<p>git tag ： 查看标签</p>
-<p>git tag -a ‘版本名’ -m ‘描述’ 版本号  ： 给历史版本添加标签</p>
-<p>git show ： 标签名 ：查看某个标签得详细信息</p>
+<p>git tag ： 查看所有标签；</p>
+<p>git tag -a ‘版本名’ -m ‘描述’ 版本号  ： 给历史版本添加标签；</p>
+<p>git show 标签名 ：查看某个标签得详细信息。</p>
 <p><strong>4）git diff的使用</strong></p>
+<img src="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/git-diff.png" width="50%" height="110%" style="display:block; margin:10px auto">
+
+<p>diff的使用，如图所示。</p>
 <p>git diff 时间迟一点版本 / 早一点版本：  查看xx版本和前xx版本的不同</p>
 <p>git diff： 对比工作目录和暂存区的不同  git diff 不加参数就可查看</p>
 <p>git reset –hard  ：放弃工作目录和暂存区的所有修改 不可撤回。</p>
-<p>git diff –staged ： 查看已暂存未提交 和 仓库之间的不同</p>
-<p><img src="/git-diff.png" alt="1"></p>
-<p><img src="/%E6%A6%82%E5%BF%B5%E5%9B%BE01.png" alt="1"></p>
-<p>当文件修改了没有暂存会出现如下提示</p>
+<p>git diff –staged ： 查看已暂存未提交 和 仓库之间的不同.</p>
+<p>当文件修改了却忘记暂存会出现如下提示</p>
 <pre><code>Changes not staged for commit:
 (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)
 (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)
@@ -312,19 +316,19 @@ modified:   lesson_2_reflections.txt</code></pre><p> 通过 git diff，当我们
 <p>git checkout easy-mode ： 修改当前检出的分支，当前检出指向另一个分支，可通过 git branch再次检查是否修改成功。</p>
 <p>git checkout ：是自动检出当前分支 当你仅仅只是新建了一个分支 当前检出分支仍是master。</p>
 <p><strong>git checkout -b 新分支名字</strong> ： 是git branch 分支名 和 git checkout 分支名 的合并</p>
-<p><img src="/commit.png" alt="2"></p>
 <p><strong>6） git merge的使用</strong></p>
 <p>自动合并: git merge</p>
 <p>合并的版本中包含当前检出的分支,因此，如果检出了 branch1，并且运行 git merge branch2 branch3，则合并的版本会将 branch1 以及 branch2 和 branch3 组合起来。</p>
 <p>如果想将 branch2 合并到 branch1 中，只需键入 git checkout branch1，然后键入 git merge branch2 即可</p>
 <p>git merge 始终将所有指定的分支合并到当前检出的分支中，并为该分支新建一个提交 </p>
-<p><img src="/%E6%8D%95%E8%8E%B7.PNG" alt="2"></p>
-<p><img src="/merge01.png" alt="2"></p>
-<p><strong>7) 合并冲突</strong><br>  当提交的文件按发生冲突时（<em>例如当要合并的的两部分在同一地方有不同修改。</em>），一般采用手动合并。</p>
+<p><strong>7) 合并冲突</strong></p>
+<p>  A和B吧 把同一份文件拷贝到自己的本地仓库，A对文件做了修改，B也对文件做了修改。当他们同时提交时，就会出现合并冲突。此时开可通过检查两份文件的不同之处，进行手动合并，具体方式再次不展开。</p>
 <p><strong>8）fork</strong> </p>
-<p>fork他人的库到自己的仓库里，再此之上修改</p>
-<p><img src="/fork.png" alt="2"></p>
-<p> git clone地址后，会将之前fork的地址当做remote的默认地址</p>
+<p>fork他人的库到自己的仓库里，再此之上修改。git clone某一地址后，会将之前fork的地址当做remote的默认地址。</p>
+<p>下图介绍了Branch、clone 、fork之间的区别。</p>
+<img src="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/fork.png" width="50%" height="50%" style="display:block; margin:5px auto">
+
+
 <p><strong>9） Git 错误和警告解决方案</strong></p>
 <ul>
 <li>Should not be doing an octopus（不应执行 octopus）</li>
@@ -338,8 +342,9 @@ modified:   lesson_2_reflections.txt</code></pre><p> 通过 git diff，当我们
 <li>Panic! (the ‘impossible’ happened)（（天哪！“不可能的事”发生了））</li>
 </ul>
 <p>这是真正的错误消息，但它不是由 Git 输出的，而是由 GHC（编程语言 Haskell 的编译器）输出的。它仅在发生特别让人惊讶的错误时才会出现</p>
-<p><strong>总结</strong><br><img src="/%E6%80%BB%E7%BB%93.png" alt="1"></p>
-<p>整篇文章，源于对此<a href="https://classroom.udacity.com/courses/ud775/lessons/2980038599/concepts/29607789480923" target="_blank" rel="noopener">学习网站</a>的一些理解和记录，详情可参考该网站。</p>
+<p><strong>总结</strong></p>
+<p>下图详细描述了在使用git将本地文件上传到github仓库之间，文件的状态转换 ，以及一些基本的操作命令。<br><img src="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/summory.png" width="50%" height="50%" style="display:block; margin:5px auto"></p>
+<p>这篇文章是我在学习git上传本地文件到github仓库的一些总结，具体细节可参考<a href="https://classroom.udacity.com/courses/ud775/lessons/2980038599/concepts/29607789480923" target="_blank" rel="noopener">学习网站</a>。</p>
 
       
 
@@ -374,7 +379,11 @@ modified:   lesson_2_reflections.txt</code></pre><p> 通过 git diff，当我们
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">-git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">工具类</a>
         		</li>
       		
 		</ul>
@@ -430,7 +439,7 @@ modified:   lesson_2_reflections.txt</code></pre><p> 通过 git diff，当我们
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -572,7 +581,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">-git</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
             
             <div class="clearfix"></div>

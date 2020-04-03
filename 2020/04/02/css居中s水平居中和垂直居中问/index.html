@@ -6,14 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
-  <title>Archives | 晓秋的博客</title>
+  <title>css水平居中和垂直居中问 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="晓秋的博客">
-<meta property="og:url" content="https://futuwxq.github.io/archives/index.html">
+  <meta name="description" content="第一部分 水平居中1.1 内联元素的水平居中 何为内联元素，内联元素又名行内元素(inline element),通常会涉及到的属性是display:inline;内联元素的显示,都在同一行按从左至右的顺序显示，不单独占一行。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css水平居中和垂直居中问">
+<meta property="og:url" content="https://futuwxq.github.io/2020/04/02/css%E5%B1%85%E4%B8%ADs%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E5%92%8C%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E9%97%AE/index.html">
 <meta property="og:site_name" content="晓秋的博客">
+<meta property="og:description" content="第一部分 水平居中1.1 内联元素的水平居中 何为内联元素，内联元素又名行内元素(inline element),通常会涉及到的属性是display:inline;内联元素的显示,都在同一行按从左至右的顺序显示，不单独占一行。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-04-02T02:44:31.000Z">
+<meta property="article:modified_time" content="2020-04-03T03:25:54.645Z">
 <meta property="article:author" content="不知火舞">
+<meta property="article:tag" content="css">
+<meta property="article:tag" content="水平垂直居中">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
@@ -150,36 +156,204 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-css居中s水平居中和垂直居中问" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/02/css%E5%B1%85%E4%B8%ADs%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E5%92%8C%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E9%97%AE/" class="archive-article-date">
-  	<time datetime="2020-04-02T02:44:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-02</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/02/css%E5%B1%85%E4%B8%ADs%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E5%92%8C%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E9%97%AE/">css水平居中和垂直居中问</a>
+    <h1 class="article-title" itemprop="name">
+      css水平居中和垂直居中问
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/04/02/css%E5%B1%85%E4%B8%ADs%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E5%92%8C%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E9%97%AE/" class="archive-article-date">
+  	<time datetime="2020-04-02T02:44:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第一部分-水平居中"><a href="#第一部分-水平居中" class="headerlink" title="第一部分 水平居中"></a>第一部分 水平居中</h2><h3 id="1-1-内联元素的水平居中"><a href="#1-1-内联元素的水平居中" class="headerlink" title="1.1 内联元素的水平居中"></a>1.1 内联元素的水平居中</h3><blockquote>
+<p>何为内联元素，内联元素又名行内元素(inline element),通常会涉及到的属性是display:inline;内联元素的显示,都在同一行按从左至右的顺序显示，不单独占一行。</p>
+</blockquote>
+<a id="more"></a>
+<p>内联元素的水平居中有以下两种方法，一般方法一比较通用，方法二结合flex布局使用</p>
+<p><strong>WAY ONE</strong> ： 给行内元素(图片也可以)的父元素设置 text-align:center;</p>
+<p><strong>WAY ONE</strong>：使用flex布局, 设置display:flex;  justify-content:center;</p>
+<h3 id="1-2-块状元素水平居中"><a href="#1-2-块状元素水平居中" class="headerlink" title="1.2 块状元素水平居中"></a>1.2 块状元素水平居中</h3><p><strong>1)定宽块状元素</strong></p>
+<p>通过设置margin来实现，如下</p>
+<pre><code>.DIV{
+    width: 200px;
+    margin: 0 auto;
+}</code></pre><p><strong>2)不定宽块状元素</strong></p>
+<p>例如要将下面的.child元素水平居中</p>
+<pre><code>&lt;div class=&quot;parent&quot;&gt;
+    &lt;div class=&quot;child&quot; &gt;水平居中&lt;/div&gt;
+&lt;/div&gt;</code></pre><p><strong>WAY ONE</strong>:把块状子元素设置为内联元素，用text-align:center;来实现居中效果</p>
+<pre><code>.parent{
+    text-align:center;
+    width:200px ;
+    height: 300px;
+    border: 2px solid #ccc;
+}
+.child {
+    display: inline;
+}</code></pre><p><strong>WAY TWO</strong>:利用table，注意table标签内的子标签也要带上。</p>
+<pre><code>&lt;table&gt;&lt;tbody&gt;
+    &lt;tr&gt;&lt;td&gt;
+        &lt;div class=&quot;child&quot;&gt;水平居中&lt;/div&gt;
+    &lt;/td&gt;&lt;/tr&gt;
+  &lt;/tbody&gt;&lt;/table&gt;
+
+table{
+    margin:0 auto;
+}</code></pre><p><strong>WAY THREE</strong>:通过浮动和相对定位</p>
+<p>如下，希望child元素内的3个p元素水平居中，若想3个p元素在一行内，可以给p添加float:left属性或者设置为inline-block元素。</p>
+<pre><code>&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;child&quot;&gt;
+        &lt;p&gt;水平居中&lt;/p&gt;
+        &lt;p&gt;水平居中&lt;/p&gt;
+        &lt;p&gt;水平居中&lt;/p&gt;
+    &lt;div&gt;
+&lt;/div&gt;
+-------- style -----
+.container{
+    float:left;
+    position:relative;
+    left:50%
+}   
+.child { 
+    position:relative;
+    left:-50%;
+}</code></pre><p>— PART 2 —</p>
+<h2 id="第二部分-垂直居中"><a href="#第二部分-垂直居中" class="headerlink" title="第二部分 垂直居中"></a>第二部分 垂直居中</h2><h3 id="2-1-内联元素的垂直居中"><a href="#2-1-内联元素的垂直居中" class="headerlink" title="2.1 内联元素的垂直居中"></a>2.1 内联元素的垂直居中</h3><p>内联元素自身属性，无法设置高度和宽度。例如下面的span元素垂直居中 </p>
+<pre><code>&lt;div class=&quot;wrap&quot;&gt;
+    &lt;span&gt;&lt;/span&gt;
+&lt;/div&gt;</code></pre><p><strong>POAITON ONE</strong> ：父元素高度确定,span内含单行文本</p>
+<p>line-height（内联元素） = height（父元素）；</p>
+<p><strong>POSITION ONE</strong> ：span内含多行文本或者图片</p>
+<pre><code>span {
+    width:200px ;
+    height: 300px;//宽和高也是必须要设置的
+    border: 2px solid #ccc;
+    display: table-cell;
+    vertical-align: middle;
+}</code></pre><h3 id="2-2-块状元素垂直居中"><a href="#2-2-块状元素垂直居中" class="headerlink" title="2.2 块状元素垂直居中"></a>2.2 块状元素垂直居中</h3><p>例如要将下面的.child元素垂直居中</p>
+<pre><code>&lt;div class=&quot;parent&quot;&gt;
+    &lt;div class=&quot;child&quot; &gt;&lt;/div&gt;
+&lt;/div&gt;</code></pre><p><strong>1)定高块状元素 父元素给定高度</strong> </p>
+<p>计算子元素的margin-top或margin-bottom，计算方法为父(元素高度-子元素高度)/2。</p>
+<pre><code>.parent{
+    width:200px ;
+    height: 300px;
+    border: 2px solid #ccc;
+}
+.child{
+    width:100px ;
+    height: 100px;
+    margin-top: 100px;
+    background: darkblue;
+    }</code></pre><p><strong>2)子元素高度未定</strong></p>
+<p>此时.child元素内需要内容撑开，因为高度未定，其hight显示为0，无法设置背景颜色。</p>
+<pre><code>.parent{
+    display:table-cell ;  
+    vertical-align:middle;
+    width:200px ;
+    height: 300px;
+    border: 2px solid #ccc;
+}</code></pre><p>— PART 3 —</p>
+<h2 id="第三部分-水平垂直居中"><a href="#第三部分-水平垂直居中" class="headerlink" title="第三部分 水平垂直居中"></a>第三部分 水平垂直居中</h2><h3 id="3-1-单行文本的水平垂直居中"><a href="#3-1-单行文本的水平垂直居中" class="headerlink" title="3.1 单行文本的水平垂直居中"></a>3.1 单行文本的水平垂直居中</h3><p>text-align + line-height实现单行文本水平垂直居中。</p>
+<pre><code>&lt;p&gt;垂直居中&lt;/p&gt;
+p {
+    text-align:center;
+    width:100px;
+    height: 100px;
+    border: 2px solid #ccc;
+    line-height: 100px;
+}</code></pre><h3 id="3-2-块状元素的水平垂直居中"><a href="#3-2-块状元素的水平垂直居中" class="headerlink" title="3.2 块状元素的水平垂直居中"></a>3.2 块状元素的水平垂直居中</h3><p>如下，p元素水平垂直居中</p>
+<pre><code>&lt;div class=&quot;wrap&quot;&gt;
+    &lt;div class=&quot;child&quot;&gt;水平垂直居中&lt;/div&gt;
+&lt;/div&gt;</code></pre><p><strong>1）利用 table-cell</strong></p>
+<pre><code>.wrap {
+    display: table-cell;
+     width:200px ;
+    height: 300px;
+    border: 2px solid #ccc; 
+    text-align: center;
+    vertical-align:middle;
+}
+.child {
+    display:inline-block;
+}</code></pre><p><strong>2）相对+绝对定位</strong></p>
+<pre><code>.parent{
+    position: relative;
+    }
+ .child{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50px;
+    width: 80px;
+    margin: auto;
+    }</code></pre><h3 id="3-3-图片的水平垂直居中"><a href="#3-3-图片的水平垂直居中" class="headerlink" title="3.3 图片的水平垂直居中"></a>3.3 图片的水平垂直居中</h3><pre><code>&lt;div class=&quot;wrap&quot;&gt;
+    &lt;img&gt;
+&lt;/div&gt;</code></pre><p><strong>1)利用table-cell</strong></p>
+<pre><code>.wrap {
+    display:table-cell;
+    border: 1px solid  #666;
+    vertical-align:middle;
+    text-align:center;
+    height:500px;
+    width:500px;  
+}
+img {
+    vertical-align:middle;
+    display:inline-block  
+}</code></pre><p><strong>2)利用flex布局</strong></p>
+<p>利用flex布局的justify-content和text-align，flex的布局详情见另一篇文章<a href="/flex布局.md">flex布局</a></p>
+<pre><code>.wrap {
+    height: 500px;
+    width: 500px;
+    border: 1px solid #666;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    }</code></pre><p><strong>TIPs</strong> ： 涉及单行文本的居中，尽量使用line-height。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -195,88 +369,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/04/02/css%E5%B1%85%E4%B8%ADs%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E5%92%8C%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E9%97%AE/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-04-01T06:57:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-01</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git的使用</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/">git的使用</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">工具类</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/31/hello-world/" class="archive-article-date">
-  	<time datetime="2020-03-31T02:58:36.916Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/31/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -299,8 +491,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

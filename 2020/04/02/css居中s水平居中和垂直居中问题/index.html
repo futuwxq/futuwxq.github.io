@@ -16,7 +16,7 @@
 <meta property="og:description" content="第一部分 水平居中1.1 内联元素的水平居中 何为内联元素，内联元素又名行内元素(inline element),通常会涉及到的属性是display:inline;内联元素的显示,都在同一行按从左至右的顺序显示，不单独占一行。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-02T02:44:31.000Z">
-<meta property="article:modified_time" content="2020-04-03T08:43:30.328Z">
+<meta property="article:modified_time" content="2020-04-03T14:35:38.738Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="css">
 <meta property="article:tag" content="水平垂直居中">
@@ -181,8 +181,8 @@
 </blockquote>
 <a id="more"></a>
 <p>内联元素的水平居中有以下两种方法，一般方法一比较通用，方法二结合flex布局使用</p>
-<p><strong>WAY ONE</strong> ： 给行内元素(图片也可以)的父元素设置 text-align:center;</p>
-<p><strong>WAY ONE</strong>：使用flex布局, 设置display:flex;  justify-content:center;</p>
+<p><strong>1.</strong> 给行内元素(图片也可以)的父元素设置 text-align:center;</p>
+<p><strong>2.</strong> 使用flex布局, 设置display:flex;  justify-content:center;</p>
 <h3 id="1-2-块状元素水平居中"><a href="#1-2-块状元素水平居中" class="headerlink" title="1.2 块状元素水平居中"></a>1.2 块状元素水平居中</h3><p><strong>1)定宽块状元素</strong></p>
 <p>通过设置margin来实现，如下</p>
 <pre><code>.DIV{
@@ -192,7 +192,7 @@
 <p>例如要将下面的.child元素水平居中</p>
 <pre><code>&lt;div class=&quot;parent&quot;&gt;
     &lt;div class=&quot;child&quot; &gt;水平居中&lt;/div&gt;
-&lt;/div&gt;</code></pre><p><strong>WAY ONE</strong>:把块状子元素设置为内联元素，用text-align:center;来实现居中效果</p>
+&lt;/div&gt;</code></pre><p><strong>1.</strong> :把块状子元素设置为内联元素，用text-align:center;来实现居中效果</p>
 <pre><code>.parent{
     text-align:center;
     width:200px ;
@@ -201,7 +201,7 @@
 }
 .child {
     display: inline;
-}</code></pre><p><strong>WAY TWO</strong>:利用table，注意table标签内的子标签也要带上。</p>
+}</code></pre><p><strong>2.</strong> :利用table，注意table标签内的子标签也要带上。</p>
 <pre><code>&lt;table&gt;&lt;tbody&gt;
     &lt;tr&gt;&lt;td&gt;
         &lt;div class=&quot;child&quot;&gt;水平居中&lt;/div&gt;
@@ -210,7 +210,7 @@
 
 table{
     margin:0 auto;
-}</code></pre><p><strong>WAY THREE</strong>:通过浮动和相对定位</p>
+}</code></pre><p><strong>3.</strong> :通过浮动和相对定位</p>
 <p>如下，希望child元素内的3个p元素水平居中，若想3个p元素在一行内，可以给p添加float:left属性或者设置为inline-block元素。</p>
 <pre><code>&lt;div class=&quot;container&quot;&gt;
     &lt;div class=&quot;child&quot;&gt;

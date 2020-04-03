@@ -15,19 +15,19 @@
 <meta property="og:site_name" content="晓秋的博客">
 <meta property="og:description" content="git是一款版本控制工具，所谓版本控制，也即是任何允许系统性地保存内容版本的系统。  第一部分 使用Git基础操作1.1  查看基础命令和版本">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/example1.jpg">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/example1.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/commit.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/dig.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/git-diff.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/fork.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/summory.png">
 <meta property="article:published_time" content="2020-04-01T06:57:31.000Z">
-<meta property="article:modified_time" content="2020-04-03T06:01:58.781Z">
+<meta property="article:modified_time" content="2020-04-03T14:33:10.374Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="git">
 <meta property="article:tag" content="工具类">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/example1.jpg">
+<meta name="twitter:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/example1.png">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
   
@@ -197,14 +197,12 @@
 <p>1.4 配置工作空间</p>
 <p>下图是将vscode配置为工作空间</p>
 <!-- 以后要设置大小就用img标签就行了，src也直接写图片名字 不设置就用上面的md语法 -->
-<img src="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/example1.jpg" width="50%" height="50%" style="display:block;margin:5px auto">
+<img src="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/example1.png" width="50%" height="50%" style="display:block;margin:5px auto">
 
 
 <p>1.5 git Bush上的快捷操作</p>
 <p>以下是我初次使用git Bush 记录的一些命令操作。</p>
-<blockquote>
-复制  Ctrl+ins
-
+<p>复制  Ctrl+ins</p>
 <p>粘贴 Shift+ins </p>
 <p>当git界面不出现文字时 ：  reset + enter</p>
 <p>进入全局 ：cd ~   </p>
@@ -216,41 +214,39 @@
 <p>清屏 ；Ctrl +l</p>
 <p>新建一个文件 ：touch 文件名</p>
 <p>打开文件 subl 文件名</p>
-</blockquote>
-
-<h2 id="第二部分-使用git上传本地文件"><a href="#第二部分-使用git上传本地文件" class="headerlink" title="第二部分 使用git上传本地文件"></a>第二部分 使用git上传本地文件</h2><p><em>文件上传github发为两种，一种是把本地的的代码push到github的已经存在的仓库。另一种是先在github上新建新仓库，把新仓库clone到本地，在本地编辑完成后上传。后者比较常见。</em></p>
-<h3 id="2-1-创建仓库"><a href="#2-1-创建仓库" class="headerlink" title="2.1 创建仓库"></a>2.1 创建仓库</h3><p><strong>方法一：本地创建</strong></p>
-<p> 以创建一个test1目录为例</p>
+<h2 id="第二部分-使用git上传本地文件"><a href="#第二部分-使用git上传本地文件" class="headerlink" title="第二部分 使用git上传本地文件"></a>第二部分 使用git上传本地文件</h2><h3 id="2-1-创建远程仓库"><a href="#2-1-创建远程仓库" class="headerlink" title="2.1 创建远程仓库"></a>2.1 创建远程仓库</h3><p>进入Github 创建一个新的仓库，创建仓库时记得选择为这个仓库初始化一个README,用来介绍你的仓库。</p>
+<h3 id="2-2-创建本地仓库"><a href="#2-2-创建本地仓库" class="headerlink" title="2.2 创建本地仓库"></a>2.2 创建本地仓库</h3><p>以下步骤需要在git Bash上操作，需提前下载。</p>
+<p>如果你本地项目已经存在，但是未和git关联，可以为该项目建一个本地仓库名，直接进入本地仓库 git init 初始化一个与git关联的仓库，如该仓库下出现.git的文件，则说明仓库与git关联成功。</p>
+<p>如果本地没有项目，是从0开始写项目，以下有两种方法新建一个本地仓库 </p>
+<p><strong>方法一 ：本地创建仓库</strong><br>以创建一个test1目录为例</p>
 <ul>
 <li><p>git init ： 建立一个新目录test1，在目录下使用命令初始化一个仓库</p>
 </li>
 <li><p>git init test1 ：在tset1下面创建一个仓库</p>
 </li>
 </ul>
-<p><strong>方法二 ：克隆仓库</strong><br>首先我们要在github先创建一个仓库。</p>
-<ul>
-<li><p>克隆仓库 ： git clone 地址（GitHub上）</p>
-</li>
-<li><p>重命名这个仓库 ：git clone 地址 名字 </p>
-</li>
-</ul>
+<p><strong>方法二 ：克隆远程仓库</strong></p>
+<p>   克隆仓库 ： git clone 地址（GitHub的地址）</p>
+<p>   这一操作默认会在本地创建一个和你远程同名的仓库，也可以通过 ：git clone 地址 名字;重命名这个仓库</p>
+<p>  然后通过 cd 仓库名/ 进入该仓库进行后续操作（记得要切换文件夹）</p>
 <p><strong>可以通过以下命令查看从仓库内的文件，确认是否创建成功</strong></p>
-<p> ls -a 查看所有文件  包括隐藏  . git隐藏文件。而ls 只能查看正常文件 </p>
-<h3 id="2-2-上传本地文件"><a href="#2-2-上传本地文件" class="headerlink" title="2.2 上传本地文件"></a>2.2 上传本地文件</h3><p><strong>1）查看状态</strong></p>
-<p>初始化存储库时，Git不会为您创建任何提交。你必须自己创建第一个提交。<strong>git status</strong> 可以看到最后提交后更改的文件。git diff查看具体哪里修改了。</p>
-<p>untracked files   未跟踪的文件</p>
-<p>modified files   已修改的文件</p>
-<p><strong>2）文件存入暂存区</strong> </p>
-<blockquote>
-git add . （**注意中间空格**）将所有修改添加至暂存区。
-
+<p>ls -a 查看所有文件  包括隐藏  . git隐藏文件。而ls 只能查看正常文件 </p>
+<h3 id="2-3-为项目添加项目源地址"><a href="#2-3-为项目添加项目源地址" class="headerlink" title="2.3 为项目添加项目源地址"></a>2.3 为项目添加项目源地址</h3><pre><code>git remote add origin giturl（你仓库的地址）</code></pre><p>通过git remote 查看远程名，如上设置的是origin。<br>通过git remote -v 查看远程性详细地址，一个是fetch地址（从远程到本地的下载地址），一个是push地址（从本地上传到远程的地址）</p>
+<h3 id="2-4-git-pull-README-md文件"><a href="#2-4-git-pull-README-md文件" class="headerlink" title="2.4 git pull README.md文件"></a>2.4 git pull README.md文件</h3><p>如果是从远程直接clone过来的仓库不需要考虑这一步。</p>
+<p>由于本地仓库缺少README.md，可能会导致本地提交时出现，文件合并错误，在此需要把README.md先下载到本地。</p>
+<p>通过 git pull ，如果报错 就使用 git pull –rebase origin master</p>
+<p>查看本地仓库是否存在README.md文件。</p>
+<h3 id="2-5-提交和更新代码"><a href="#2-5-提交和更新代码" class="headerlink" title="2.5 提交和更新代码"></a>2.5 提交和更新代码</h3><p><strong>1）文件存入暂存区</strong> </p>
+<p>git add . （<strong>注意中间空格</strong>）将所有修改添加至暂存区。</p>
 <p>git add 文件名 ：单次添加一份文件。</p>
 <p>git reset 文件名  ：此命令会从暂存区中删除该文件，但它仍在你的工作目录中。</p>
 <p>git diff –stadge :查看暂存区文件修改情况。</p>
-</blockquote>
-git add之后文件呈现为staged状态。
-
-<p><strong>3）将本地修改的文件提交到本地仓库</strong></p>
+<p>git add之后文件呈现为staged状态。</p>
+<p><strong>2）查看状态</strong></p>
+<p><strong>git status</strong> 可以看到最后提交后更改的文件。git diff查看具体哪里修改了。</p>
+<p>untracked files   未跟踪的文件</p>
+<p>modified files   已修改的文件</p>
+<p><strong>3）提交</strong></p>
 <p>一次性提交版本 ： git commit -m “描述” （commit语法是祈使句）。</p>
 <p>单次提交一个文件：git commit 文件名。</p>
 <p>git commit之后文件呈现committe状态。</p>
@@ -273,13 +269,9 @@ future (master +) reflections $ git commit
 hint: Waiting for your editor to close the file...
 [master e3978a9] Add today
 1 file changed, 0 insertions(+), 0 deletions(-)
-create mode 100644 today.txt</code></pre><p><strong>4）将本地仓库文件发送到远程仓库</strong></p>
+create mode 100644 today.txt</code></pre><p><strong>4）上传代码</strong></p>
 <p>git push -u 远程名 分支名  ： 上传代码  <em>记得查看远程名称 在GitHub上clone的代码默认远程名是origin</em></p>
-<p><strong>如何查看远程名称以及添加远程名</strong></p>
-<p>git remote add 远程名称 远程地址 ：</p>
-<p>git remote ： 查看远程名</p>
-<p>git remote -v  ：查看远程名详细信息</p>
-<h3 id="2-3-文件处理命令"><a href="#2-3-文件处理命令" class="headerlink" title="2.3 文件处理命令"></a>2.3 文件处理命令</h3><p>除上边必要的添加和提价文件，还有许多命令辅助我们解决问题。</p>
+<h3 id="2-3-其他命令"><a href="#2-3-其他命令" class="headerlink" title="2.3 其他命令"></a>2.3 其他命令</h3><p>git还提供许多命令辅助我们解决问题。</p>
 <p><strong>1）查看版本记录</strong></p>
 <p>git log -p ： 查看记录同时还可以查看相邻两个版本的增删情况。 </p>
 <p>git log –oneline ：  每个版本只显示一行 仅仅包括版本号和commit信息。</p>

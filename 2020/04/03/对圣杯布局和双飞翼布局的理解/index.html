@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
-  <title>Archives: 2020 | 晓秋的博客</title>
+  <title>对圣杯布局和双飞翼布局的理解 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="晓秋的博客">
-<meta property="og:url" content="https://futuwxq.github.io/archives/2020/index.html">
+  <meta name="description" content="圣杯布局和双飞翼布局都是为了实现一个两侧宽度固定，中间宽度自适应的三栏布局。  圣杯布局来源于文章In Search of the Holy Grail，而双飞翼布局来源于淘宝UED。虽然两者的实现方法略有差异，不过都遵循了以下要点：  两侧宽度固定，中间宽度自适应 中间部分在DOM结构上优先，以便先行渲染 允许三列中的任意一列成为最高列">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对圣杯布局和双飞翼布局的理解">
+<meta property="og:url" content="https://futuwxq.github.io/2020/04/03/%E5%AF%B9%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%E7%9A%84%E7%90%86%E8%A7%A3/index.html">
 <meta property="og:site_name" content="晓秋的博客">
+<meta property="og:description" content="圣杯布局和双飞翼布局都是为了实现一个两侧宽度固定，中间宽度自适应的三栏布局。  圣杯布局来源于文章In Search of the Holy Grail，而双飞翼布局来源于淘宝UED。虽然两者的实现方法略有差异，不过都遵循了以下要点：  两侧宽度固定，中间宽度自适应 中间部分在DOM结构上优先，以便先行渲染 允许三列中的任意一列成为最高列">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/03/%E5%AF%B9%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%E7%9A%84%E7%90%86%E8%A7%A3/shengbei.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/03/%E5%AF%B9%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%E7%9A%84%E7%90%86%E8%A7%A3/dfeiyi.png">
+<meta property="article:published_time" content="2020-04-03T07:16:51.000Z">
+<meta property="article:modified_time" content="2020-04-03T08:54:00.066Z">
 <meta property="article:author" content="不知火舞">
+<meta property="article:tag" content="圣杯布局">
+<meta property="article:tag" content="双飞翼布局">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://futuwxq.github.io/2020/04/03/%E5%AF%B9%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%E7%9A%84%E7%90%86%E8%A7%A3/shengbei.png">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
   
@@ -150,36 +159,183 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-对圣杯布局和双飞翼布局的理解" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/03/%E5%AF%B9%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%E7%9A%84%E7%90%86%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2020-04-03T07:16:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/03/%E5%AF%B9%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%E7%9A%84%E7%90%86%E8%A7%A3/">对圣杯布局和双飞翼布局的理解</a>
+    <h1 class="article-title" itemprop="name">
+      对圣杯布局和双飞翼布局的理解
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/04/03/%E5%AF%B9%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%E7%9A%84%E7%90%86%E8%A7%A3/" class="archive-article-date">
+  	<time datetime="2020-04-03T07:16:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>圣杯布局和双飞翼布局都是为了实现一个两侧宽度固定，中间宽度自适应的三栏布局。</p>
+<blockquote>
+<p>圣杯布局来源于文章In Search of the Holy Grail，而双飞翼布局来源于淘宝UED。虽然两者的实现方法略有差异，不过都遵循了以下要点：</p>
+<ul>
+<li>两侧宽度固定，中间宽度自适应</li>
+<li>中间部分在DOM结构上优先，以便先行渲染</li>
+<li>允许三列中的任意一列成为最高列</li>
+</ul>
+</blockquote>
+<a id="more"></a>
+<p>接下来了解一下这两种经典的布局</p>
+<h2 id="PART-ONE-圣杯布局"><a href="#PART-ONE-圣杯布局" class="headerlink" title="PART ONE 圣杯布局"></a>PART ONE 圣杯布局</h2><p>下图是圣杯布局的简单模型，左width（200px）右width（200px），中间自适应，三部分保持高度一致。</p>
+<img src="/2020/04/03/%E5%AF%B9%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%E7%9A%84%E7%90%86%E8%A7%A3/shengbei.png" width="60%" height="50%" style="display:block;margin:5px auto" alt="圣杯布局">
+
+<p><strong>DOM结构部分</strong> </p>
+<p>圣杯布局对3个盒子的顺序有一定要求。<br><br>middle部分首先要放在container的最前部分，最先渲染，然后是 left 和 right。</p>
+<pre><code>&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;middle&quot;&gt;
+            &lt;h4&gt;middle&lt;/h4&gt;
+            &lt;p&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;left&quot;&gt;
+            &lt;h4&gt;left&lt;/h4&gt;
+            &lt;p&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;right&quot;&gt;
+            &lt;h4&gt;right&lt;/h4&gt;
+            &lt;p&gt;&lt;/p&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre><p> 左中右三部分都float布局，中间部分宽度设置为100%，然后利用负边距布局。</p>
+<p><strong>负边距布局</strong>   </p>
+<ul>
+<li><p>让左边的盒子回到最左边：<br><br>  设置左盒子左边距为<font color="red" size="3">-(middle的width)</font>，也就是{margin-left:-100%;}。左侧盒子浮动到container内容的最左侧，<br>  但是由于container具有paddding的200px未能浮动到整个container的最左边，再通过绝对定位，使得左侧盒子归位啦。</p>
+</li>
+<li><p>让右边的盒子回到最右边 ：<br><br>  设置右盒子左边距为<font color="red" size="3">-(自己的width)</font>，也就是{margin-left：-200px;}。这样右盒子将会浮到container内容的最右侧，因为padding依然不是最右边，和上面的左盒子解决方法相似，我们让右侧盒子也归位。</p>
+</li>
+</ul>
+<p>利用父元素的内边距，将三个元素往中间挤。</p>
+<p>利用相对定位是的左右部分占据内边距，不会把中间部分的文字覆盖。</p>
+<p>三部分分别都加上min-height，使得高度保持一致。</p>
+<pre><code>body{
+    min-width:700px ;//页面缩小造成结构坍塌
+}
+
+.container {
+    overflow: hidden;//清除浮动，让父元素可以抱着子元素
+    padding: 0 200px;//数值等于左右盒子的width
+}
+
+.middle,.left,
+.right {
+    min-height: 200px;//三部分等高度分布
+    float :left; 
+    position: relative;
+}
+
+.middle {
+    width: 100%;
+    background: deeppink;
+}
+
+.left {
+    width: 200px;
+    &lt;!-- 这个元素被挤到中间元素的下面，通过这一属性紧挨container的content部分的最左边，此时与中间部分重合 --&gt;
+    margin-left: -100%;
+    background: blue;
+    &lt;!-- 通过相对定位，使left布局到整个页面的最左侧  --&gt;
+    left: -200px;
+}
+
+.right {
+    width: 200px ;
+    &lt;!-- left走了之后，right紧贴着container的content部分的最右边 此时与中间部分重合--&gt;
+    margin-left: -200px;
+    background: rgb(204, 255, 20);
+    &lt;!-- 通过相对定位，使right布局到整个页面的最右侧  --&gt;
+    right: -200px;
+}</code></pre><h2 id="PART-TWO-双飞翼布局"><a href="#PART-TWO-双飞翼布局" class="headerlink" title="PART TWO 双飞翼布局"></a>PART TWO 双飞翼布局</h2><p>下面是双飞翼布局的简单模型，三部分main为主要部分，sub和extra相当于鸟的翅膀。三部分都被容器所包裹，main下面还有一个mian-inner容器。</p>
+<img src="/2020/04/03/%E5%AF%B9%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%E7%9A%84%E7%90%86%E8%A7%A3/dfeiyi.png" width="70%" style="display:block;margin:5px auto" alt="双飞翼布局">
+
+<p><strong>DOM结构部分</strong></p>
+<p>3部分的顺序依次是main 、sub 、 extra，详情见下：</p>
+<pre><code>&lt;header&gt;&lt;h4&gt;内容区&lt;/h4&gt;&lt;/header&gt;
+&lt;div class=&quot;main&quot;&gt;
+        &lt;div class=&quot;main-inner&quot;&gt;
+           &lt;h4&gt;main&lt;/h4&gt;
+        Lorem ipsum dolor sit amet 
+        &lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;sub&quot;&gt;
+        &lt;h4&gt;sub&lt;/h4&gt;
+        Lorem ipsum, dolor sit amet 
+&lt;/div&gt;
+&lt;div class=&quot;extra&quot;&gt;
+        &lt;h4&gt;extra &lt;/h4&gt;
+        Lorem ipsum, dolor sit 
+&lt;/div&gt;
+&lt;footer&gt;&lt;h4&gt;内容区&lt;/h4&gt;&lt;/footer&gt;</code></pre><p>大致思想和圣杯布局一样，main盒子占据100%的宽度，但是主要内容写在main-inner中，通过设置main-inner的margin将左右两侧空出 sub 和 extra 的宽度。<br>sub 和 extra通过设置负边距，就自动浮动到最左边和最右边。</p>
+<pre><code>.main,.sub,
+.extra {
+    float :left; 
+    min-height: 200px;
+}
+
+.main  {
+    width: 100%;
+    background: deeppink;
+}
+
+.sub {
+    width: 200px;
+    margin-left: -100%;//左边
+    background: blue;
+}
+
+.extra {
+    width: 200px ;
+    margin-left: -200px;//右边
+    background: rgb(204, 255, 20);
+}
+
+.main .main-inner {
+    margin:0 200px;//只是这里的和圣杯布局一开始整个container的padding异曲同工。
+    min-height: 200px;
+    background: darkgoldenrod;
+    word-break: break-all;
+}</code></pre><p><strong>个人的心得</strong> </p>
+<p>从以上两种布局中发现，利用负边距可以把挤到下面的盒子在重新布局到主要容器中，布局的位置主要看负边距的宽度，当然前提这些盒子已经脱离文档流。这两种布局的想法就是希望在网页中最重要的部分被最先渲染，这让我对网页设计有了新的认识。</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -195,168 +351,106 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/04/03/%E5%AF%B9%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%E7%9A%84%E7%90%86%E8%A7%A3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/03/%E5%AE%9E%E7%8E%B0%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%8F%B3%E4%BE%A7%E8%87%AA%E9%80%82%E5%BA%94%E4%B8%A4%E6%A0%8F%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-04-03T03:31:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/04/03/%E5%AE%9E%E7%8E%B0%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%8F%B3%E4%BE%A7%E8%87%AA%E9%80%82%E5%BA%94%E4%B8%A4%E6%A0%8F%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">实现左侧固定，右侧自适应两栏布局的方法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/03/%E5%AE%9E%E7%8E%B0%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%8F%B3%E4%BE%A7%E8%87%AA%E9%80%82%E5%BA%94%E4%B8%A4%E6%A0%8F%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E6%B3%95/">实现左侧固定，右侧自适应两栏布局的方法</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">css两栏布局</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/02/css%E5%B1%85%E4%B8%ADs%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E5%92%8C%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-04-02T02:44:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-02</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/02/css%E5%B1%85%E4%B8%ADs%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E5%92%8C%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E9%97%AE%E9%A2%98/">css水平居中和垂直居中问</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">水平垂直居中</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-04-01T06:57:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-01</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/">git的使用</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">工具类</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/31/hello-world/" class="archive-article-date">
-  	<time datetime="2020-03-31T02:58:36.916Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/31/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -379,8 +473,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

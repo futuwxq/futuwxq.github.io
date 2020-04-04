@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
-  <title>css水平居中和垂直居中问 | 晓秋的博客</title>
+  <title>相对路径和绝对路径总结 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第一部分 水平居中1.1 内联元素的水平居中 何为内联元素，内联元素又名行内元素(inline element),通常会涉及到的属性是display:inline;内联元素的显示,都在同一行按从左至右的顺序显示，不单独占一行。">
+  <meta name="description" content="文件路径就是文件在电脑中的位置，表示文件路径的方式有两种，相对路径和绝对路径。在网页设计中通过路径可以表示链接，插入图像、Flash、CSS文件的位置。这里总结一下相对路径和绝对路径的问题。 首先先介绍先介绍一下.&#x2F; 和 ..&#x2F; .&#x2F; 就是当前目录所在的目录下，.&#x2F; 可以省略 ..&#x2F; 是上一级目录的意思，如果是两层上级目录，就是 “..&#x2F;..&#x2F;” ，因此 ..&#x2F; 表示当前文件的父目录所在的目录下，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css水平居中和垂直居中问">
-<meta property="og:url" content="https://futuwxq.github.io/2020/04/02/css%E5%B1%85%E4%B8%ADs%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E5%92%8C%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="相对路径和绝对路径总结">
+<meta property="og:url" content="https://futuwxq.github.io/2020/04/04/%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="第一部分 水平居中1.1 内联元素的水平居中 何为内联元素，内联元素又名行内元素(inline element),通常会涉及到的属性是display:inline;内联元素的显示,都在同一行按从左至右的顺序显示，不单独占一行。">
+<meta property="og:description" content="文件路径就是文件在电脑中的位置，表示文件路径的方式有两种，相对路径和绝对路径。在网页设计中通过路径可以表示链接，插入图像、Flash、CSS文件的位置。这里总结一下相对路径和绝对路径的问题。 首先先介绍先介绍一下.&#x2F; 和 ..&#x2F; .&#x2F; 就是当前目录所在的目录下，.&#x2F; 可以省略 ..&#x2F; 是上一级目录的意思，如果是两层上级目录，就是 “..&#x2F;..&#x2F;” ，因此 ..&#x2F; 表示当前文件的父目录所在的目录下，">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-02T02:44:31.000Z">
-<meta property="article:modified_time" content="2020-04-03T14:35:38.738Z">
+<meta property="article:published_time" content="2020-04-04T00:09:32.000Z">
+<meta property="article:modified_time" content="2020-04-04T02:31:01.073Z">
 <meta property="article:author" content="不知火舞">
-<meta property="article:tag" content="css">
-<meta property="article:tag" content="水平垂直居中">
+<meta property="article:tag" content="相对路径">
+<meta property="article:tag" content="绝对路径">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
@@ -156,176 +156,67 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-css居中s水平居中和垂直居中问题" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-相对路径和绝对路径总结" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      css水平居中和垂直居中问
+      相对路径和绝对路径总结
     </h1>
   
 
         
-        <a href="/2020/04/02/css%E5%B1%85%E4%B8%ADs%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E5%92%8C%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-04-02T02:44:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-02</time>
+        <a href="/2020/04/04/%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2020-04-04T00:09:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第一部分-水平居中"><a href="#第一部分-水平居中" class="headerlink" title="第一部分 水平居中"></a>第一部分 水平居中</h2><h3 id="1-1-内联元素的水平居中"><a href="#1-1-内联元素的水平居中" class="headerlink" title="1.1 内联元素的水平居中"></a>1.1 内联元素的水平居中</h3><blockquote>
-<p>何为内联元素，内联元素又名行内元素(inline element),通常会涉及到的属性是display:inline;内联元素的显示,都在同一行按从左至右的顺序显示，不单独占一行。</p>
+        <p>文件路径就是文件在电脑中的位置，表示文件路径的方式有两种，相对路径和绝对路径。在网页设计中通过路径可以表示链接，插入图像、Flash、CSS文件的位置。这里总结一下相对路径和绝对路径的问题。</p>
+<p><strong>首先先介绍先介绍一下./ 和 ../</strong></p>
+<p>./ 就是当前目录所在的目录下，./ 可以省略</p>
+<p>../ 是上一级目录的意思，如果是两层上级目录，就是 “../../” ，因此 ../ 表示当前文件的父目录所在的目录下，感觉很绕口，可以看一下1.3的内容。</p>
+<h2 id="一-、-相对路径-Relative-Path"><a href="#一-、-相对路径-Relative-Path" class="headerlink" title="一 、 相对路径(Relative Path)"></a>一 、 相对路径(Relative Path)</h2><p>相对路劲简而言之就是相对于当前文件的路径，表现在网页设计中就是，被引用文件B相对于当前文件A的路径。</p>
+<p>下面以当前文件为A，被引用图片为B 来介绍相对路径的几种情况。</p>
+<h3 id="1-1-A-和-B-是同级目录"><a href="#1-1-A-和-B-是同级目录" class="headerlink" title="1.1 A 和 B 是同级目录"></a>1.1 A 和 B 是同级目录</h3><p>A 和 B 拥有一个相同的父目录，目录结构如下：</p>
+<pre><code>|--文件夹
+    |--css.css
+    |--pic.png</code></pre><p>同一目录下的文件引用有两种方法，以css.css中引用图片pic.png为例。</p>
+<pre><code>background-image:url(pic.png);
+background-image:url(./pic.png);  // ./表示的就是当前目录下的意思。</code></pre><h3 id="1-2-B-的父目录或祖先目录-和-A-是同级目录"><a href="#1-2-B-的父目录或祖先目录-和-A-是同级目录" class="headerlink" title="1.2 B 的父目录或祖先目录 和 A 是同级目录"></a>1.2 B 的父目录或祖先目录 和 A 是同级目录</h3><pre><code>|--images     
+  |--xxx.gif 
+  |picture
+    |--xx.png
+|--css   
+  |--xx.css   
+|--index.html </code></pre><p>如上图，index.html想要引用图片和css样式</p>
+<p>index.html 和 xxx.gif 的父亲images就是同级目录 ，引用方式如下  </p>
+<pre><code>src=&quot;./images/xxx.gif&quot; (./可以省略不写，下同)</code></pre><p>xx.css 和 index.htm 也是这种关系，引用方式如下 </p>
+<pre><code>href=&quot;css/xx.css&quot;(此处省略了./)</code></pre><p>xx.png 的 祖父目录images 和 index.html是同级目录，引用方式相同，</p>
+<pre><code>src=&quot;images/picture/xx.png&quot;</code></pre><h3 id="1-3-A-的父目录-和-B-的父目录或祖父目录是同级"><a href="#1-3-A-的父目录-和-B-的父目录或祖父目录是同级" class="headerlink" title="1.3 A 的父目录 和 B 的父目录或祖父目录是同级"></a>1.3 A 的父目录 和 B 的父目录或祖父目录是同级</h3><p>依然以1.2的目录结构为例，</p>
+<p>xx.css的父目录css 和 xxx.gif的父目录 images 是同级目录，引用方式如下：</p>
+<pre><code>src=&quot;../images/xxx.gif&quot;</code></pre><p>xx.css的父目录css 和 xx.png 的祖父目录 images 是同级目录，引用方式如下：</p>
+<pre><code>src=&quot;../images/picture/xx.png&quot;</code></pre><h3 id="1-4-不同目录"><a href="#1-4-不同目录" class="headerlink" title="1.4  不同目录"></a>1.4  不同目录</h3><p>如下：</p>
+<p>css文件位置：Pro/test/css/style.css  </p>
+<p>图片文件位置：Pro/platform/images/xxx.jpg </p>
+<p>style.css回退两级目录到 Pro文件下下的text目录和xxx.jpg的祖先目录 platform 是同级目录，引用路径如下。</p>
+<pre><code>background:url(../../platform/images/xxx.jpg ) </code></pre><h2 id="二-、-绝对路径-Absolute-Path"><a href="#二-、-绝对路径-Absolute-Path" class="headerlink" title="二 、 绝对路径(Absolute Path)"></a>二 、 绝对路径(Absolute Path)</h2><p>　绝对路径又分为本地绝对路径和网络绝对路径。本地路径是指文件在硬盘上真正存在的路径。网络路径就是带有网址的路径</p>
+<p>本地路径如下</p>
+<pre><code>background: url(D:\dev\uploadfile\测试图1.png)</code></pre><p>网络路径如下</p>
+<pre><code>&lt;a href=&quot;https://futuwxq.github.io/&quot;&gt;链接到本站的首页&lt;/a&gt;</code></pre><h2 id="三-、根目录"><a href="#三-、根目录" class="headerlink" title="三 、根目录"></a>三 、根目录</h2><blockquote>
+<p>根目录指逻辑驱动器的最上一级目录，它是相对子目录来说的。打开“我的电脑”，双击C盘就进入C盘的根目录，双击D盘就进入D盘的根目录。<br>根目录在文件系统建立时即已被创建，其目的就是存储子目录（也称为文件夹）或文件的目录项。一“棵“目录树，树的最根本就是它的根（根目录）。</p>
 </blockquote>
-<a id="more"></a>
-<p>内联元素的水平居中有以下两种方法，一般方法一比较通用，方法二结合flex布局使用</p>
-<p><strong>1.</strong> 给行内元素(图片也可以)的父元素设置 text-align:center;</p>
-<p><strong>2.</strong> 使用flex布局, 设置display:flex;  justify-content:center;</p>
-<h3 id="1-2-块状元素水平居中"><a href="#1-2-块状元素水平居中" class="headerlink" title="1.2 块状元素水平居中"></a>1.2 块状元素水平居中</h3><p><strong>1)定宽块状元素</strong></p>
-<p>通过设置margin来实现，如下</p>
-<pre><code>.DIV{
-    width: 200px;
-    margin: 0 auto;
-}</code></pre><p><strong>2)不定宽块状元素</strong></p>
-<p>例如要将下面的.child元素水平居中</p>
-<pre><code>&lt;div class=&quot;parent&quot;&gt;
-    &lt;div class=&quot;child&quot; &gt;水平居中&lt;/div&gt;
-&lt;/div&gt;</code></pre><p><strong>1.</strong> :把块状子元素设置为内联元素，用text-align:center;来实现居中效果</p>
-<pre><code>.parent{
-    text-align:center;
-    width:200px ;
-    height: 300px;
-    border: 2px solid #ccc;
-}
-.child {
-    display: inline;
-}</code></pre><p><strong>2.</strong> :利用table，注意table标签内的子标签也要带上。</p>
-<pre><code>&lt;table&gt;&lt;tbody&gt;
-    &lt;tr&gt;&lt;td&gt;
-        &lt;div class=&quot;child&quot;&gt;水平居中&lt;/div&gt;
-    &lt;/td&gt;&lt;/tr&gt;
-  &lt;/tbody&gt;&lt;/table&gt;
-
-table{
-    margin:0 auto;
-}</code></pre><p><strong>3.</strong> :通过浮动和相对定位</p>
-<p>如下，希望child元素内的3个p元素水平居中，若想3个p元素在一行内，可以给p添加float:left属性或者设置为inline-block元素。</p>
-<pre><code>&lt;div class=&quot;container&quot;&gt;
-    &lt;div class=&quot;child&quot;&gt;
-        &lt;p&gt;水平居中&lt;/p&gt;
-        &lt;p&gt;水平居中&lt;/p&gt;
-        &lt;p&gt;水平居中&lt;/p&gt;
-    &lt;div&gt;
-&lt;/div&gt;
--------- style -----
-.container{
-    float:left;
-    position:relative;
-    left:50%
-}   
-.child { 
-    position:relative;
-    left:-50%;
-}</code></pre><p>— PART 2 —</p>
-<h2 id="第二部分-垂直居中"><a href="#第二部分-垂直居中" class="headerlink" title="第二部分 垂直居中"></a>第二部分 垂直居中</h2><h3 id="2-1-内联元素的垂直居中"><a href="#2-1-内联元素的垂直居中" class="headerlink" title="2.1 内联元素的垂直居中"></a>2.1 内联元素的垂直居中</h3><p>内联元素自身属性，无法设置高度和宽度。例如下面的span元素垂直居中 </p>
-<pre><code>&lt;div class=&quot;wrap&quot;&gt;
-    &lt;span&gt;&lt;/span&gt;
-&lt;/div&gt;</code></pre><p><strong>POAITON ONE</strong> ：父元素高度确定,span内含单行文本</p>
-<p>line-height（内联元素） = height（父元素）；</p>
-<p><strong>POSITION ONE</strong> ：span内含多行文本或者图片</p>
-<pre><code>span {
-    width:200px ;
-    height: 300px;//宽和高也是必须要设置的
-    border: 2px solid #ccc;
-    display: table-cell;
-    vertical-align: middle;
-}</code></pre><h3 id="2-2-块状元素垂直居中"><a href="#2-2-块状元素垂直居中" class="headerlink" title="2.2 块状元素垂直居中"></a>2.2 块状元素垂直居中</h3><p>例如要将下面的.child元素垂直居中</p>
-<pre><code>&lt;div class=&quot;parent&quot;&gt;
-    &lt;div class=&quot;child&quot; &gt;&lt;/div&gt;
-&lt;/div&gt;</code></pre><p><strong>1)定高块状元素 父元素给定高度</strong> </p>
-<p>计算子元素的margin-top或margin-bottom，计算方法为父(元素高度-子元素高度)/2。</p>
-<pre><code>.parent{
-    width:200px ;
-    height: 300px;
-    border: 2px solid #ccc;
-}
-.child{
-    width:100px ;
-    height: 100px;
-    margin-top: 100px;
-    background: darkblue;
-    }</code></pre><p><strong>2)子元素高度未定</strong></p>
-<p>此时.child元素内需要内容撑开，因为高度未定，其hight显示为0，无法设置背景颜色。</p>
-<pre><code>.parent{
-    display:table-cell ;  
-    vertical-align:middle;
-    width:200px ;
-    height: 300px;
-    border: 2px solid #ccc;
-}</code></pre><p>— PART 3 —</p>
-<h2 id="第三部分-水平垂直居中"><a href="#第三部分-水平垂直居中" class="headerlink" title="第三部分 水平垂直居中"></a>第三部分 水平垂直居中</h2><h3 id="3-1-单行文本的水平垂直居中"><a href="#3-1-单行文本的水平垂直居中" class="headerlink" title="3.1 单行文本的水平垂直居中"></a>3.1 单行文本的水平垂直居中</h3><p>text-align + line-height实现单行文本水平垂直居中。</p>
-<pre><code>&lt;p&gt;垂直居中&lt;/p&gt;
-p {
-    text-align:center;
-    width:100px;
-    height: 100px;
-    border: 2px solid #ccc;
-    line-height: 100px;
-}</code></pre><h3 id="3-2-块状元素的水平垂直居中"><a href="#3-2-块状元素的水平垂直居中" class="headerlink" title="3.2 块状元素的水平垂直居中"></a>3.2 块状元素的水平垂直居中</h3><p>如下，p元素水平垂直居中</p>
-<pre><code>&lt;div class=&quot;wrap&quot;&gt;
-    &lt;div class=&quot;child&quot;&gt;水平垂直居中&lt;/div&gt;
-&lt;/div&gt;</code></pre><p><strong>1）利用 table-cell</strong></p>
-<pre><code>.wrap {
-    display: table-cell;
-     width:200px ;
-    height: 300px;
-    border: 2px solid #ccc; 
-    text-align: center;
-    vertical-align:middle;
-}
-.child {
-    display:inline-block;
-}</code></pre><p><strong>2）相对+绝对定位</strong></p>
-<pre><code>.parent{
-    position: relative;
-    }
- .child{
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 50px;
-    width: 80px;
-    margin: auto;
-    }</code></pre><h3 id="3-3-图片的水平垂直居中"><a href="#3-3-图片的水平垂直居中" class="headerlink" title="3.3 图片的水平垂直居中"></a>3.3 图片的水平垂直居中</h3><pre><code>&lt;div class=&quot;wrap&quot;&gt;
-    &lt;img&gt;
-&lt;/div&gt;</code></pre><p><strong>1)利用table-cell</strong></p>
-<pre><code>.wrap {
-    display:table-cell;
-    border: 1px solid  #666;
-    vertical-align:middle;
-    text-align:center;
-    height:500px;
-    width:500px;  
-}
-img {
-    vertical-align:middle;
-    display:inline-block  
-}</code></pre><p><strong>2)利用flex布局</strong></p>
-<p>利用flex布局的justify-content和text-align，flex的布局详情见另一篇文章<a href="/flex布局.md">flex布局</a></p>
-<pre><code>.wrap {
-    height: 500px;
-    width: 500px;
-    border: 1px solid #666;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    }</code></pre><p><strong>个人心得</strong><br>垂直居中方法有很多种，需要按照不同的情况选择不同的方案，在某些布局中，可能会出现盒子高度不一致、盒子之间存在空隙等达不到逾期效果的问题，我们通过Chrome调试去发现问题，解决问题。</p>
-<p>涉及单行文本的居中，尽量使用line-height。</p>
+<p>例如我们平时写一个项目myApp，myApp就是根目录，当这个项目在服务器中跑出来的时候网址类似这样，<code>https://www.example.com/myApp/...</code>。</p>
+<p>假设项目里面有一个servlet，容器为他分配的路径是 <code>https://www.example.com/myApp/cool/servlet1.do</code>，当我们在这个servlet里需要定向转发时候，</p>
+<pre><code>sendRedirect(&quot;foo/stuff.html&quot;)，</code></pre><p>容器会转向 <code>https://www.example.com/myApp/cool/foo/stuff.html</code> ，容器找到根目录myApp，发现是相对URL，就保存根目录，然后利用上面讲的相对路径的同级目录那套去找html页面。</p>
+<pre><code>sendRedirect(&quot;foo/stuff.html&quot;)</code></pre><p>容器会转向 <code>https://www.example.com/foo/stuff.html</code>，容器找到根目myApp，发现是绝对URL，去掉根目录以及之后部分，将绝对URL拼接在域名后面形成新的地址。</p>
+<p><strong>总结</strong></p>
+<p>在做项目的时候要注意路径的使用，路径错误将会导致无法加载相应的文件而报错等问题。</p>
+<p>尽量使用相对路径去简化路径。</p>
 
       
 
@@ -360,11 +251,11 @@ img {
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">相对路径</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">水平垂直居中</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">绝对路径</a>
         		</li>
       		
 		</ul>
@@ -420,7 +311,7 @@ img {
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/04/02/css%E5%B1%85%E4%B8%ADs%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E5%92%8C%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/04/04/%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E6%80%BB%E7%BB%93/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -434,18 +325,9 @@ img {
   
 <nav id="article-nav">
   
-    <a href="/2020/04/03/%E5%AE%9E%E7%8E%B0%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%8F%B3%E4%BE%A7%E8%87%AA%E9%80%82%E5%BA%94%E4%B8%A4%E6%A0%8F%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          实现左侧固定，右侧自适应两栏布局的方法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">git的使用</div>
+    <a href="/2020/04/03/%E5%AF%B9%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%E7%9A%84%E7%90%86%E8%A7%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">对圣杯布局和双飞翼布局的理解</div>
       <i class="icon-circle-right"></i>
     </a>
   

@@ -152,19 +152,215 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-常见正则表达式式总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-HTML基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%BC%8F%E6%80%BB%E7%BB%93/">常见正则表达式式总结</a>
+      <a class="article-title" href="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/">HTML基础</a>
     </h1>
   
 
         
-        <a href="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%BC%8F%E6%80%BB%E7%BB%93/" class="archive-article-date">
+        <a href="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/" class="archive-article-date">
+  	<time datetime="2020-04-07T06:51:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一-、了解HTML"><a href="#一-、了解HTML" class="headerlink" title="一 、了解HTML"></a>一 、了解HTML</h2><h3 id="1-1-什么是网页"><a href="#1-1-什么是网页" class="headerlink" title="1.1 什么是网页"></a>1.1 什么是网页</h3><p> 网站是指在因特网上根据一定的规则，使用HTML等制作的用于展示特定内容相关的网页集合。</p>
+<p> 网页是指网站中的一页，通常是HTML格式的文件，以.html或.HTML后缀结尾的文件展现出来的都是网页。</p>
+<p> 网页是构成网站的基本元素，它通常由图片、文字、链接、声音、视频等标签元素组成，通过浏览器解析来显示给用户。</p>
+<h3 id="1-2-HTML"><a href="#1-2-HTML" class="headerlink" title="1.2 HTML"></a>1.2 HTML</h3><p> 超文本标记语言（HyperText Markup Language）是一种用于创建网页的标准标记语言。</p>
+<p> HTML不是编程语言，是一种标记语言。</p>
+<p><strong>标记语言、编程语言、脚本语言的区别</strong></p>
+<ul>
+<li><p>标记语言：</p>
+<ul>
+<li>需要被读取的，本身没有行为能力（被动）；例如：Html 、XML等</li>
+</ul>
+</li>
+<li><p>编程语言：</p>
+<ul>
+<li>需要编译执行；</li>
+<li>本身具有逻辑性和行为能力；例如：C、Java等</li>
+</ul>
+</li>
+<li><p>脚本语言：</p>
+<ul>
+<li>需要解释执行；</li>
+<li>本身具有逻辑性和行为能力；例如：javascript等</li>
+</ul>
+</li>
+</ul>
+<h3 id="1-3-Web-标准"><a href="#1-3-Web-标准" class="headerlink" title="1.3 Web 标准"></a>1.3 Web 标准</h3><p>Web 标准是由 W3C 组织和其他标准化组织定制的一系列标准的集合。</p>
+<p>因为浏览器不同，浏览器显示页面或者排版就存在差异，因此需要一个标准来统一。</p>
+<p><strong>Web标准的组成</strong></p>
+<p>主要包括结构（Structure）、表现（Persentation）和 行为（Behavior）三方面</p>
+<table>
+<thead>
+<tr>
+<th align="left">标准</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">结构</td>
+<td align="left">结构用于对网页元素进行整理和分类。只要指的是HTML</td>
+</tr>
+<tr>
+<td align="left">表现</td>
+<td align="left">表现用于设置网页元素的版本、颜色、大小等外观样式，只要指的是css</td>
+</tr>
+<tr>
+<td align="left">行为</td>
+<td align="left">行为是指网页模型的定义以及交互的编写，现阶段主要是JavaScript</td>
+</tr>
+</tbody></table>
+<p>web标准 提出的最佳体验方案：结构、样式、行为相分离。</p>
+<p>也就是结构要写到HTML文件里， 表现要写道CSS文件中，行为写到JavaScript文件中。</p>
+<h2 id="二-、HTML标签"><a href="#二-、HTML标签" class="headerlink" title="二 、HTML标签"></a>二 、HTML标签</h2><p>HTML标签是由尖括号包围的关键字，例如<code>&lt;html&gt;</code></p>
+<h3 id="2-1-HTML基本结构标签"><a href="#2-1-HTML基本结构标签" class="headerlink" title="2.1 HTML基本结构标签"></a>2.1 HTML基本结构标签</h3><p>每个网页都会有一个基本的结构标签（也称骨架标签），页面内容也是在这些基本标签上书写。</p>
+<table>
+<thead>
+<tr>
+<th align="left">标签名</th>
+<th align="left">定义</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>&lt;html&gt;&lt;html&gt;</code></td>
+<td align="left">HTML标签</td>
+<td align="left">页面中最大的标签，根标签</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;head&gt;&lt;/head&gt;</code></td>
+<td align="left">文档的头部</td>
+<td align="left">HTML文件的头部标记，主要用来旋转HTML文件的说明信息，搜索当前文件的关键字等信息，也可以在该标记之间放置如JavaScript，VBScript和CSS等类型的脚本。</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;title&gt;&lt;/title&gt;</code></td>
+<td align="left">文档的标题</td>
+<td align="left">HTML文件的标题信息，即当前文件在浏览器中浏览时有浏览器窗口的标题栏上显示的文字，该标记几乎所有的HTML文件中均须具务。</td>
+</tr>
+<tr>
+<td align="left"><code>&lt;body&gt;&lt;/body&gt;</code></td>
+<td align="left">文档的主体</td>
+<td align="left">HTML文件的主体标记，即只有在<body></body>标记中编辑的网页对象才可以在浏览器窗口中显示</td>
+</tr>
+</tbody></table>
+<h3 id="2-2-其他html标签"><a href="#2-2-其他html标签" class="headerlink" title="2.2 其他html标签"></a>2.2 其他html标签</h3><p><strong><code>&lt;a&gt;</code></strong></p>
+<p>锚标签,href属性是指链接的地址，target=”_blank”是在新窗口打开链接</p>
+<pre><code>&lt;a href=&quot;index.html&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;</code></pre><p>锚标签除了可以链接到文件网址，还可以链接到同一网页的标签上，通过id来实现</p>
+<pre><code>&lt;a href=&quot;#header&quot; &gt;&lt;/a&gt;  //链接到id是header的元素上</code></pre><p><strong><code>&lt;img&gt;</code></strong><br>这是一个单标签，src里图片地址，通常使用相对路径，alt是指图片因为某些情况未能加载，用文字来介绍这个照片的内容。</p>
+<pre><code>&lt;img src=&quot;example.jpg&quot; alt=&quot;证件照 &quot; width=&quot;80&quot; height=&quot;100&quot;&gt;</code></pre><p><strong><code>&lt;input&gt;</code></strong><br>input是一个单标签，根据不同的 type 属性值，输入字段可以是文本字段、复选框、掩码后的文本控件（password）、单选按钮、按钮等等，根据type属性来确定。<br><strong>1.</strong> 文本和提交类型</p>
+<p>   placeholder属性： 灰色提示字 输入时 自动消失。</p>
+<pre><code>First name:&lt;br&gt;
+&lt;input type=&quot;text&quot; name=&quot;firstname&quot; value=&quot;Mickey&quot;    placeholder=&quot;你的名字&quot;&gt;  //type是文本类型，value是框内数值。
+
+&lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;    //submit是提交的意思</code></pre><p><strong>2.</strong> radio是单选框，通过name属性来绑定一组单选框。</p>
+<pre><code>&lt;input type=&quot;radio&quot; name=&quot;sex&quot;&gt; 男
+&lt;input type=&quot;radio&quot; name=&quot;sex&quot;&gt; 女 </code></pre><p><strong>3.</strong> checkbox是多选框，通过name属性来绑定一组多选框，当多选框设置checked = “checked”时，表示选中状态。</p>
+<pre><code>&lt;input type=&quot;checkbox&quot; name=&quot;fruits&quot;&gt; 苹果
+&lt;input type=&quot;checkbox&quot; name=&quot;fruits&quot;&gt; 梨</code></pre><p><strong>4.</strong> inupt + label </p>
+<p>   为了更好地用户体验，通常label和input便签结合使用。如下，通过设置label，只要点击label内的部分，就可以选上单选框。</p>
+<p>   通过label的for属性绑定input的id值</p>
+<pre><code>&lt;input type=&quot;radio&quot; name=&quot;sex&quot; id=&quot;man&quot;&gt; &lt;label for=&quot;nan&quot;&gt;&lt;img&gt;男&lt;/label&gt;</code></pre><p><strong>5.下拉选择按钮</strong></p>
+<pre><code>通过&lt;select&gt; 和 &lt;option&gt; 实现 ，与input无关</code></pre><p><strong><code>&lt;table&gt;</code></strong></p>
+<p>表格通常结合input标签使用，table便签内每个子标签都有一定的含义，例如head是表头部分，th是表头部分的单元格</p>
+<pre><code>&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th colspan=&quot;2&quot;&gt;The table header&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;The table body&lt;/td&gt;
+            &lt;td&gt;with two columns&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+&lt;/table&gt;</code></pre><p>table的每列td都是自动对齐的</p>
+<p>colspan用来指定单元格横向跨越的列数：colspan就是合并列的，colspan=2的话就是合并两列。</p>
+<p>rowspan用来指定单元格纵向跨越的行数:rowspan就是用来合并行的，比如rowspan=2就是合并两行，</p>
+<p><strong><code>&lt;aside&gt;</code></strong> </p>
+<p> 元素表示一个和其余页面内容几乎无关的部分，被认为是独立于该内容的一部分并且可以被单独的拆分出来而不会使整体受影响。其通常表现为侧边栏或者标注框（call-out boxes）。<br><strong><code>&lt;section&gt;</code></strong>   </p>
+<p>表示一个包含在HTML文档中的独立部分，它没有更具体的语义元素来表示，一般来说会有包含一个标题。 </p>
+<p>例如，导航菜单应该包含在<code>&lt;nav&gt;</code>元素中，但搜索结果列表和地图显示及其控件没有特定元素，可以放在<code>&lt;section&gt;</code>里  </p>
+<p><strong><code>&lt;article&gt;</code></strong></p>
+<p>如果元素的内容作为一个独立的有意义的集合，<code>&lt;article&gt;</code>元素可能是更好的选择。    </p>
+<p>如果元素内容可以分为几个部分的话，应该使用 <code>&lt;article&gt;</code>而不是 <code>&lt;section&gt;</code>。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-常见正则表达式总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/">常见正则表达式式总结</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/" class="archive-article-date">
   	<time datetime="2020-04-06T12:42:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-06</time>
 </a>
         
@@ -176,7 +372,7 @@
 <p>正则表达式经常用于用户注册时，检查用户注册数据是否符合要求。</p>
 <p>这篇文章就来介绍正则表达式的基础知识，对于正则表达式的匹配，可以用<a href="https://regexr.com" target="_blank" rel="noopener">regexr</a>这个网站进行练习和检验</p>
         
-          <a class="article-more-a" href="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%BC%8F%E6%80%BB%E7%BB%93/#more">more >></a>
+          <a class="article-more-a" href="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/#more">more >></a>
         
       
 
@@ -200,7 +396,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%BC%8F%E6%80%BB%E7%BB%93/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/">展开全文 >></a>
         </p>
       
 
@@ -964,6 +1160,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">uml</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">类图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
@@ -972,7 +1176,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">eclipse导入web项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">mysql数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">css两栏布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -992,11 +1208,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">eclipse导入web项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mysql数据库</a>
+                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1005,18 +1217,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">uml</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">类图</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
               </li>
             
             <div class="clearfix"></div>

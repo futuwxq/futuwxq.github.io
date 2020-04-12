@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/match01.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/match02.png">
 <meta property="article:published_time" content="2020-04-06T12:42:00.000Z">
-<meta property="article:modified_time" content="2020-04-07T06:19:24.850Z">
+<meta property="article:modified_time" content="2020-04-12T06:56:42.110Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="正则表达式">
 <meta name="twitter:card" content="summary">
@@ -182,7 +182,7 @@
 <p>正则表达式经常用于用户注册时，检查用户注册数据是否符合要求。</p>
 <p>这篇文章就来介绍正则表达式的基础知识，对于正则表达式的匹配，可以用<a href="https://regexr.com" target="_blank" rel="noopener">regexr</a>这个网站进行练习和检验</p>
 <a id="more"></a>
-<p><strong>正则表达式最基础的语法是 / /g，表示这一个正则表达式</strong></p>
+<p><strong>常见正则表达式形式是 / /g，g是指全局的意思，通常可以省略</strong></p>
 <h2 id="匹配不同数据类型"><a href="#匹配不同数据类型" class="headerlink" title="匹配不同数据类型"></a>匹配不同数据类型</h2><h3 id="1-匹配字符串-String"><a href="#1-匹配字符串-String" class="headerlink" title="1 匹配字符串 String"></a>1 匹配字符串 String</h3><p><strong>1）精准匹配字符串</strong></p>
 <pre><code>/王画画/g  //只要是内容中有王画画这个字符串类型的数据都会被选中</code></pre><p><strong>2）模糊匹配 . 点代表匹配任意字符</strong></p>
 <pre><code>/王../g  //只要是以‘王’开头，余下2个字符任意 组成的字符串类型都会被匹配
@@ -240,7 +240,13 @@
 <pre><code>/(?&lt;=a)\d+/g   //匹配紧挨着a的234  也就是匹配紧挨着a后面的所有数字</code></pre><p><strong>2）反向不匹配 (?&lt;!模式)</strong></p>
 <pre><code>/(?&lt;!a)\d+/g  //匹配34 789   也是匹配除了紧挨着a的数字之外的数字 ，与/(?&lt;!a)\d/g 结果相同</code></pre><p><strong>总结</strong></p>
 <p> 在正则表达式中 [] 给定字符值的范围，{} 给定字符出现次数的范围 ，\d 匹配数字，+ 表示 出现1…n次，* 表示出现0…n次，? 表示出现1…0次，出现 () 代表捕获组</p>
-
+<h2 id="正则表达式中的test方法"><a href="#正则表达式中的test方法" class="headerlink" title="正则表达式中的test方法"></a>正则表达式中的test方法</h2><p>RegExp：是正则表达式（regular expression0</p>
+<p> 该方法的返回值是布尔值，通过该值可以匹配字符串中是否存在于正则表达式相匹配的结果，如果有匹配内容，返回ture，如果没有匹配内容返回false，该方法常用于判断用户输入数据的合法性，比如检验用户名的合法性。</p>
+<h3 id="2-1-test方法基本语法"><a href="#2-1-test方法基本语法" class="headerlink" title="2.1  test方法基本语法"></a>2.1  test方法基本语法</h3><p>objReg.test(objStr)<br>  objReg 必选项 RegExp对象名称<br>  objStr 要进行匹配检测的字符串</p>
+<p>实例如下</p>
+<pre><code>var isName = /^[a-zA-Z0-9\u4e00-\u9fa5 ]/;
+&lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;newName&quot; value=&quot;${ReaderEntity.name }&quot;&gt;&lt;/td&gt;
+isName.test(form.name.value) //值为true</code></pre>
       
 
       
@@ -562,6 +568,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">css布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
               </li>
             
             <div class="clearfix"></div>

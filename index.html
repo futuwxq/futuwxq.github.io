@@ -152,6 +152,264 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-盒子模型学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/12/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0/">盒子模型学习</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/12/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+  	<time datetime="2020-04-12T11:10:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/12/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="p-css编写" class="article article-type-p  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/12/css%E7%BC%96%E5%86%99/">css编写</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/12/css%E7%BC%96%E5%86%99/" class="archive-article-date">
+  	<time datetime="2020-04-12T11:07:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一、分层组织css"><a href="#一、分层组织css" class="headerlink" title="一、分层组织css"></a>一、分层组织css</h3><p>一个项目可能有多个css文件，如何合理组织呢？</p>
+<p>常用的一种组织CSS的方法：</p>
+<p><code>base.css + common.css + page.css</code></p>
+<ul>
+<li><p>base层：css reset功能+通用类</p>
+<p>css reset就是对html标签的默认样式进行修改，</p>
+<p>例如 </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span> &#123;<span class="attribute">color</span>:<span class="number">#000</span>;<span class="attribute">background</span>:<span class="number">#fff</span>;&#125;</span><br><span class="line"><span class="selector-tag">body</span> &#123;<span class="attribute">margin</span>:<span class="number">0</span>;<span class="attribute">padding</span>:<span class="number">0</span>;&#125;</span><br><span class="line"><span class="selector-tag">table</span> &#123;<span class="attribute">border-collapse</span>:collapse;<span class="attribute">border-spacing</span>:<span class="number">0</span>;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>common层：组件级别的CSS类，提高代码的重用性</p>
+<p>我们将页面内的元素拆分成样式和功能相对独立的模块，将大量重复的模块视为一个组件。可以按功能划分为common_form.css，common_menu.css的多个文件。不同的网站有不同的common层，同一个网站只有一个common层。</p>
+</li>
+<li><p>page层：</p>
+<p>页面级别CSS样式，也就是非高度重用的，建议网站内所有的page层统一放在一个page.css文件中，通过页面注释，分块书写，便于维护，如下所示：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/*首页*/</span><br><span class="line">.test&#123;&#125;</span><br><span class="line">.test1&#123;&#125;</span><br><span class="line"></span><br><span class="line">/*登录页*/</span><br><span class="line">.test2&#123;&#125;</span><br><span class="line">.test3&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="二-、-css命名"><a href="#二-、-css命名" class="headerlink" title="二 、 css命名"></a>二 、 css命名</h3><p>这里推荐一种在class前加入前缀的方式构建类似于命名空间的概念. 举个例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box-hd"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box-bd"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box-ft"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="1）多用组合，少用继承"><a href="#1）多用组合，少用继承" class="headerlink" title="1）多用组合，少用继承"></a>1）多用组合，少用继承</h4><p>也就是一个class里面尽量包含多个选择器而不是，建立多个子class选择器</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"number-list1 f14 red"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>1111<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">2222</span>/<span class="attr">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>3333<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2）css权重"><a href="#2）css权重" class="headerlink" title="2）css权重"></a>2）css权重</h4><p>CSS的选择符是有权重的：id选择器的权重是100、class选择器的权重是10、标签选择器的权重是1</p>
+<ul>
+<li>当不同选择符的样式设置有冲突时，会采用权重高的选择符设置的样式。</li>
+<li>如果CSS选择符权重相同，那么样式会遵循就近原则，哪个选择符最后定义，就采用哪个。（就近原则指的是定义样式的先后，不是挂class名的先后）</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/12/css%E7%BC%96%E5%86%99/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-js的alert-confirm-prompt用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/12/js%E7%9A%84alert-confirm-prompt%E7%94%A8%E6%B3%95/">js的alert,confirm,prompt用法</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/12/js%E7%9A%84alert-confirm-prompt%E7%94%A8%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-04-12T08:09:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>html页面简单的三种对话框如下：</p>
+<ol>
+<li><p>alert()，最简单的提示框：</p>
+<p> alert(“你好！”); </p>
+</li>
+<li><p>()，有确认和取消两个按钮：</p>
+<p> if(confirm(“还有继续吗？”)){  </p>
+<pre><code>alert(&quot;继续&quot;);  </code></pre><p> }else{  </p>
+<pre><code>alert(&quot;再见&quot;);  </code></pre><p> } </p>
+</li>
+<li><p>prompt()，可以输入信息：</p>
+<p> var name = prompt(“你的名字是：”);<br> alert(“你好，” + name); </p>
+</li>
+</ol>
+<h4 id="confirm实例"><a href="#confirm实例" class="headerlink" title="confirm实例"></a>confirm实例</h4><p>这是一个退出方法，可以通过button的onclick方法实现</p>
+<pre><code>function logout() {        
+    if (confirm(&quot;Please make sure to logout!&quot;)) {
+        window.location.href = &quot;DestorySession&quot;;
+    } else {
+    }
+}</code></pre><h3 id="base-css、common-css、page-css"><a href="#base-css、common-css、page-css" class="headerlink" title="base.css、common.css、page.css"></a>base.css、common.css、page.css</h3><p>一。base.css被所有页面引用，包括base reset和通用原子类</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">js对话框</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/12/js%E7%9A%84alert-confirm-prompt%E7%94%A8%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-头部固定，左侧固定导航，右侧可切换页面 布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -542,68 +800,6 @@
 
 
   
-    <article id="post-基于mvc的后端项目编写“" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/07/%E5%9F%BA%E4%BA%8Emvc%E7%9A%84%E5%90%8E%E7%AB%AF%E9%A1%B9%E7%9B%AE%E7%BC%96%E5%86%99%E2%80%9C/">eclipse实验环境配置</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/07/%E5%9F%BA%E4%BA%8Emvc%E7%9A%84%E5%90%8E%E7%AB%AF%E9%A1%B9%E7%9B%AE%E7%BC%96%E5%86%99%E2%80%9C/" class="archive-article-date">
-  	<time datetime="2020-04-07T09:47:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/07/%E5%9F%BA%E4%BA%8Emvc%E7%9A%84%E5%90%8E%E7%AB%AF%E9%A1%B9%E7%9B%AE%E7%BC%96%E5%86%99%E2%80%9C/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-HTML基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -878,169 +1074,6 @@
 
 
   
-    <article id="post-UML程序设计方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/05/UML%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95/">UML程序设计方法</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/05/UML%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-04-05T13:25:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Rational rose 工具</p>
-<h2 id="使用-Rational-rose-进行uml设计"><a href="#使用-Rational-rose-进行uml设计" class="headerlink" title="使用 Rational rose 进行uml设计"></a>使用 Rational rose 进行uml设计</h2><h3 id="1-用例图的绘制"><a href="#1-用例图的绘制" class="headerlink" title="1 用例图的绘制"></a>1 用例图的绘制</h3><h3 id="2-如何绘制类图"><a href="#2-如何绘制类图" class="headerlink" title="2 如何绘制类图"></a>2 如何绘制类图</h3>
-        
-          <a class="article-more-a" href="/2020/04/05/UML%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">uml</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">类图</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/05/UML%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-如何让项目在tomacat运行起来" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/04/%E5%A6%82%E4%BD%95%E8%AE%A9%E9%A1%B9%E7%9B%AE%E5%9C%A8tomacat%E8%BF%90%E8%A1%8C%E8%B5%B7%E6%9D%A5/">如何让项目在tomacat运行起来</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/04/%E5%A6%82%E4%BD%95%E8%AE%A9%E9%A1%B9%E7%9B%AE%E5%9C%A8tomacat%E8%BF%90%E8%A1%8C%E8%B5%B7%E6%9D%A5/" class="archive-article-date">
-  	<time datetime="2020-04-04T05:45:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="如何让项目在tomacat运行起来"><a href="#如何让项目在tomacat运行起来" class="headerlink" title="如何让项目在tomacat运行起来"></a>如何让项目在tomacat运行起来</h2><p>首先要把项目下载下来。</p>
-<p><strong>1. 打开Eclipse，选择“Files”下的“Import”</strong></p>
-<p>根据情况选择，想把项目布置在eclipse的工件空间下，就选择 —Existing Projects into WorkSpace</p>
-        
-          <a class="article-more-a" href="/2020/04/04/%E5%A6%82%E4%BD%95%E8%AE%A9%E9%A1%B9%E7%9B%AE%E5%9C%A8tomacat%E8%BF%90%E8%A1%8C%E8%B5%B7%E6%9D%A5/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">eclipse导入web项目</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">mysql数据库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/04/%E5%A6%82%E4%BD%95%E8%AE%A9%E9%A1%B9%E7%9B%AE%E5%9C%A8tomacat%E8%BF%90%E8%A1%8C%E8%B5%B7%E6%9D%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1219,6 +1252,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">css布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
               </li>
             
             <div class="clearfix"></div>

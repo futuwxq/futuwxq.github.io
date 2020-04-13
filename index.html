@@ -152,6 +152,382 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="p-sql语句学习" class="article article-type-p  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/13/sql%E8%AF%AD%E5%8F%A5%E5%AD%A6%E4%B9%A0/">sql语句学学习</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/13/sql%E8%AF%AD%E5%8F%A5%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+  	<time datetime="2020-04-13T11:57:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="sql语句"><a href="#sql语句" class="headerlink" title="sql语句"></a>sql语句</h2><h3 id="1-查询数据"><a href="#1-查询数据" class="headerlink" title="1 查询数据"></a>1 查询数据</h3><p> 查询所有数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> hero</span><br></pre></td></tr></table></figure>
+
+<p> 统计表中有多少条数据</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> hero</span><br></pre></td></tr></table></figure>
+
+<p><strong>分页查询</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> hero <span class="keyword">limit</span> <span class="number">0</span>,<span class="number">5</span>  //显示 hero表中前<span class="number">5</span>条数据</span><br></pre></td></tr></table></figure>
+
+<p>排序分页查询</p>
+<p>下面这条语句的意思是：对 reader 表中每条记录按照 id 降序排列，选择前两条数据的name值</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> reader <span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">id</span> <span class="keyword">desc</span> <span class="keyword">limit</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<p>order by xx ：就是对结果集按照 xx 的升（或者降）序进行排序。</p>
+<p>desc ：就是说明从大到小小排序，就是降序，大的在前面，小的在后面。</p>
+<p>asc ：与desc相反，是升序排列</p>
+<p>limit  xx ：就是取排序后的最开始的那xx条排序。</p>
+<p><strong>精确查询</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from reader where reader_id&#x3D;&quot; + id + &quot; and reader_name&#x3D;&#39;&quot; + name + &quot;&#39;</span><br></pre></td></tr></table></figure>
+
+<p>sql查询语句分为顺序查询和模糊查询，上面的sql语句就是顺序查询。like操作符用于模糊查询，可使用 “%” 来代替0个或多个字符，使用下划线 “_” 来代替一个字符。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from stu where name like &#39;张%&#39; &#x2F;&#x2F;只要姓是张的用户都会被查询</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="2-插入数据"><a href="#2-插入数据" class="headerlink" title="2 插入数据"></a>2 插入数据</h3><p><strong>向表中插入一条数据</strong></p>
+<p>insert into reader (column1, column2,…) values    (value1, value2,…);</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">insert into reader(reader_name,reader_password) values (&#39;&quot; + name + &quot;&#39;,&#39;&quot; +password + &quot;&#39;);</span><br><span class="line">insert into reader(reader_name,reader_password) values (&#39;李四&#39;,&#39;123456&#39;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-更新数据"><a href="#3-更新数据" class="headerlink" title="3 更新数据"></a>3 更新数据</h3><p>更新数据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update reader set Address &#x3D; &#39;Zhongshan 23&#39;, City &#x3D; &#39;Nanjing&#39; where LastName &#x3D; &#39;Wilson&#39;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sql = <span class="string">"update reader set reader_name= \'"</span> + name + <span class="string">"\' ,reader_password=\'"</span> + password + <span class="string">"\', reader_email=\'"</span> + email + <span class="string">"\' where reader_id="</span> + String.valueOf(id);</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">sql语句</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/13/sql%E8%AF%AD%E5%8F%A5%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="p-java数字与字符串学习" class="article article-type-p  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/13/java%E6%95%B0%E5%AD%97%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%A6%E4%B9%A0/">java数字与字符串学习习</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/13/java%E6%95%B0%E5%AD%97%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+  	<time datetime="2020-04-13T08:19:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/13/java%E6%95%B0%E5%AD%97%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="p-servlet中doGet-和doPost-方法" class="article article-type-p  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/13/servlet%E4%B8%ADdoGet-%E5%92%8CdoPost-%E6%96%B9%E6%B3%95/">servlet中doGet()和doPost()方法</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/13/servlet%E4%B8%ADdoGet-%E5%92%8CdoPost-%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-04-13T07:49:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>可以把方法写在doGet()方法中,在doPost()方法中调用执行,这样,无论你提交的是post还是get方法都可以执行</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">servlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request,HttpServletResponse response)</span> </span></span><br><span class="line"><span class="function">          <span class="keyword">throws</span> IOException,ServletException </span>&#123;</span><br><span class="line">      		<span class="keyword">this</span>.doGet(request,response);<span class="comment">//调用doGet()方法</span></span><br><span class="line">               &#125;</span><br><span class="line">    </span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request,HttpServletResponse response)</span> </span></span><br><span class="line"><span class="function">          <span class="keyword">throws</span> IOException,ServletException </span>&#123;</span><br><span class="line">     	 	request.setCaracterEncoding(“gb2312”);<span class="comment">//汉字转码</span></span><br><span class="line">      		PrintWriter out = response.getWriter();</span><br><span class="line">      		out.println(<span class="string">"The Parameter are ："</span>+request.getParameter(<span class="string">"name1"</span>));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>servlet中doGet()和doPost()的区别</strong></p>
+<ol>
+<li>生成方式</li>
+</ol>
+<p>get方式有四种：1）直接在URL地址栏中输入URL。2）网页中的超链接。3）form中method为get。4）form中method为空时，默认是get提交。</p>
+<p>post只知道有一种：form中method属性为post。</p>
+<ol start="2">
+<li>数据传送方式</li>
+</ol>
+<p>get方式：表单数据存放在URL地址后面。所有get方式提交时HTTP中没有消息体。</p>
+<p>post方式：表单数据存放在HTTP协议的消息体中以实体的方式传送到服务器。</p>
+<ol start="3">
+<li>服务器获取数据方式</li>
+</ol>
+<p>GET方式：服务器采用request.QueryString来获取变量的值。</p>
+<p>POST方式：服务器采用request.Form来获取数据。</p>
+<ol start="4">
+<li>传送的数据量</li>
+</ol>
+<p>GET方式：数据量长度有限制，一般不超过2kb。因为是参数传递，且在地址栏中，故数据量有限制。</p>
+<p>POST方式：适合大规模的数据传送。因为是以实体的方式传送的。</p>
+<ol start="5">
+<li>安全性</li>
+</ol>
+<p>GET方式：安全性差。因为是直接将数据显示在地址栏中，浏览器有缓冲，可记录用户信息。所以安全性低。</p>
+<p>POST方式：安全性高。因为post方式提交数据时是采用的HTTP post机制，是将表单中的字段与值放置在HTTP HEADER内一起传送到ACTION所指的URL中，用户是看不见的。</p>
+<ol start="6">
+<li>在用户刷新时</li>
+</ol>
+<p>GET方式：不会有任何提示、</p>
+<p>POST方式：会弹出提示框，问用户是否重新提交</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">servlet</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/13/servlet%E4%B8%ADdoGet-%E5%92%8CdoPost-%E6%96%B9%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="p-session-和-cookie学习" class="article article-type-p  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/13/session-%E5%92%8C-cookie%E5%AD%A6%E4%B9%A0/">session 和 cookie学习</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/13/session-%E5%92%8C-cookie%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+  	<time datetime="2020-04-13T00:48:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="第二部分-cookie"><a href="#第二部分-cookie" class="headerlink" title="第二部分 cookie"></a>第二部分 cookie</h2><p><strong>Cookie是什么？</strong></p>
+<p> Cookie 是一小段文本信息，伴随着用户请求和页面在 Web 服务器和浏览器之间传递。Cookie 包含每次用户访问站点时 Web 应用程序都可以读取的信息。</p>
+<p><strong>为什么需要Cookie？</strong></p>
+<p> 因为HTTP协议是无状态的，对于一个浏览器发出的多次请求，WEB服务器无法区分 是不是来源于同一个浏览器。所以，需要额外的数据用于维护session。 Cookie随HTTP请求有一个sessionID来记录用户的某一session。</p>
+<p><strong>Cookie能做什么？</strong></p>
+<p> Cookie只是一段文本，所以它只能保存字符串。而且浏览器对它有大小限制以及 它会随着每次请求被发送到服务器，所以应该保证它不要太大。 Cookie的内容也是明文保存的，有些浏览器提供界面修改，所以， 不适合保存重要的或者涉及隐私的内容。</p>
+<h3 id="2-1-Cookie的读写"><a href="#2-1-Cookie的读写" class="headerlink" title="2.1  Cookie的读写"></a>2.1  Cookie的读写</h3><p><strong>1）初始化cookie</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"account"</span>, userId + <span class="string">"="</span> + password + <span class="string">"="</span> + authority);</span><br></pre></td></tr></table></figure>
+<p>cookie的有效时间是指某一用户的上次请求和本次请求的时间差。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;设置cookie的有效时间</span><br><span class="line">cookie.setMaxAge(60 * 60 * 24);</span><br><span class="line">response.addCookie(cookie);</span><br></pre></td></tr></table></figure>
+
+<p><strong>2）读取cookie</strong></p>
+<p>读写Cookie是通过使用HttpCookie类来完成的。</p>
+<p>如果cookies不为空（一定不为空，有系统自带的cookie）</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取cookie</span></span><br><span class="line">Cookie[] cookies = request.getCookies();</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (cookies != <span class="keyword">null</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (Cookie cookie : cookies) &#123;</span><br><span class="line">        <span class="comment">// 遍历cookies，找到名称为account的cookie</span></span><br><span class="line">        <span class="keyword">if</span> (cookie.getName().equals(<span class="string">"account"</span>)) &#123;</span><br><span class="line">            accountCookie = cookie;<span class="comment">// 初始化</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//这是一个输出cookie的例子</span></span><br><span class="line"><span class="keyword">if</span> (accountCookie != <span class="keyword">null</span>) &#123;</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; cookies.length; i++) &#123;</span><br><span class="line">          <span class="keyword">if</span> (accountCookie[i].getName().equals(<span class="string">"userId"</span>)) &#123;</span><br><span class="line">                out.print(accountCookie[i].getValue());</span><br><span class="line">           &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>3）添加cookie</strong></p>
+<p>如果 hasStore 为假，那么添加当前账户到 accountCookie里面</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cookieValue += <span class="string">"&amp;"</span> + userId + <span class="string">"="</span> + password + <span class="string">"="</span> + authority;</span><br><span class="line">Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"account"</span>, cookieValue);<span class="comment">// 更新cookie的值</span></span><br><span class="line">cookie.setMaxAge(<span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span>);</span><br><span class="line">response.addCookie(cookie);</span><br></pre></td></tr></table></figure>
+<p><strong>4）删除cookie</strong></p>
+<p>下面的代码实现了把用户的信息存储到cookie中。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//从浏览器获取参数</span></span><br><span class="line">String authority = (String) request.getParameter(<span class="string">"authority"</span>);</span><br><span class="line">String userId = request.getParameter(<span class="string">"userID"</span>);</span><br><span class="line"><span class="keyword">int</span> id = Integer.parseInt(userId);</span><br><span class="line">String password = request.getParameter(<span class="string">"password"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//从请求获取cookie</span></span><br><span class="line">Cookie[] cookies = request.getCookies();</span><br><span class="line"></span><br><span class="line"><span class="comment">//开始设置accountCookie还没有存贮账号信息</span></span><br><span class="line"><span class="keyword">boolean</span> hasAccountCookie = <span class="keyword">false</span>;<span class="comment">//这是为了区分首次存储账户信息和再次存储</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//创建accountCookie</span></span><br><span class="line">Cookie accountCookie = <span class="keyword">null</span>; </span><br><span class="line"></span><br><span class="line"><span class="comment">// 把cookie中名为account的数据复制到 accountCookie中</span></span><br><span class="line"><span class="keyword">if</span> (cookies != <span class="keyword">null</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (Cookie cookie : cookies) &#123;</span><br><span class="line">        <span class="comment">// 遍历cookies，找到名称为account的cookie</span></span><br><span class="line">        <span class="keyword">if</span> (cookie.getName().equals(<span class="string">"account"</span>)) &#123;</span><br><span class="line">            accountCookie = cookie;<span class="comment">// 初始化</span></span><br><span class="line">            hasAccountCookie = <span class="keyword">true</span>;<span class="comment">//accountCookie已经存过账户</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="comment">/*如果 hasAccountCookie 是 true，说明AccountCookie内已经存贮用户信息，然后需要检查当前用户的信息是否在 accountCookie */</span>   </span><br><span class="line">    <span class="keyword">if</span> (hasAccountCookie == <span class="keyword">true</span>) &#123;</span><br><span class="line">        String cookieValue = accountCookie.getValue();</span><br><span class="line">        <span class="keyword">boolean</span> hasStore = <span class="keyword">false</span>; <span class="comment">// 开始设置没有保存账号</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 查找是否保存过账号</span></span><br><span class="line">        <span class="comment">//accountCookie内存有多个账号</span></span><br><span class="line">        <span class="keyword">if</span> (cookieValue.contains(<span class="string">"&amp;"</span>)) &#123;</span><br><span class="line">              String[] accounts = cookieValue.split(<span class="string">"&amp;"</span>);</span><br><span class="line">              <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; accounts.length; i++) &#123;</span><br><span class="line">              <span class="keyword">if</span> (accounts[i].split(<span class="string">"="</span>)[<span class="number">0</span>].equals(userId)) &#123;</span><br><span class="line">                  hasStore = <span class="keyword">true</span>;<span class="comment">//证明accountCookie保存了当前用户的信息</span></span><br><span class="line">                     <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;<span class="comment">//只有一个账户</span></span><br><span class="line">             <span class="keyword">if</span> (cookieValue.split(<span class="string">"="</span>)[<span class="number">0</span>].equals(userId)) &#123;</span><br><span class="line">                 hasStore = <span class="keyword">true</span>;<span class="comment">//证明accountCookie保存了当前用户的信息</span></span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        </span><br><span class="line">          <span class="comment">// 如果没有保存当前账号，则把账户保存到cookies里面</span></span><br><span class="line">          <span class="keyword">if</span> (hasStore == <span class="keyword">false</span>) &#123; </span><br><span class="line">                cookieValue += <span class="string">"&amp;"</span> + userId + <span class="string">"="</span> + password + <span class="string">"="</span> + authority;</span><br><span class="line">                Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"account"</span>, cookieValue);<span class="comment">// 更新cookie的值</span></span><br><span class="line">                cookie.setMaxAge(<span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span>);</span><br><span class="line">                response.addCookie(cookie);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">"该账户已被保存"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">     &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 首次保存密码，直接初始化一个cookie</span></span><br><span class="line">           Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"account"</span>, userId + <span class="string">"="</span> + password + <span class="string">"="</span> + authority);</span><br><span class="line">            cookie.setMaxAge(<span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span>);</span><br><span class="line">            response.addCookie(cookie);</span><br><span class="line">        &#125;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;<span class="comment">//cookies为空</span></span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">session</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">cookie</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/13/session-%E5%92%8C-cookie%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-盒子模型学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -639,444 +1015,9 @@
 
 
   
-    <article id="post-数据库编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BC%96%E7%A8%8B/">数据库编程</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BC%96%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2020-04-09T03:12:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>说到java的数据库编程，就要先要了解一下何为JDBC</p>
-<blockquote>
-<p>JDBC(Java Data Base Connectivity)，是用于在Java语言编程中与数据库连接的API。<br>JDBC是一个规范，它提供了一整套接口，允许以一种可移植的访问底层数据库API。使用JDBC驱动程序来访问数据库，并用于存储数据到数据库中.</p>
-</blockquote>
-<p>下图表现了应用程序，JDBC API，数据库驱动及数据库之间的关系。</p>
-        
-          <a class="article-more-a" href="/2020/04/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BC%96%E7%A8%8B/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BC%96%E7%A8%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-web项目编程步骤" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/07/web%E9%A1%B9%E7%9B%AE%E7%BC%96%E7%A8%8B%E6%AD%A5%E9%AA%A4/">web项目编程步骤</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/07/web%E9%A1%B9%E7%9B%AE%E7%BC%96%E7%A8%8B%E6%AD%A5%E9%AA%A4/" class="archive-article-date">
-  	<time datetime="2020-04-07T09:47:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一-、-建立开发环境"><a href="#一-、-建立开发环境" class="headerlink" title="一 、 建立开发环境"></a>一 、 建立开发环境</h2><h3 id="1-1-安装jdk"><a href="#1-1-安装jdk" class="headerlink" title="1.1 安装jdk"></a>1.1 安装jdk</h3><p>找到jdk安装包，依次安装JDK 和 JRE,注意区分自己的是32位还是64位；</p>
-<p>配置环境变量</p>
-        
-          <a class="article-more-a" href="/2020/04/07/web%E9%A1%B9%E7%9B%AE%E7%BC%96%E7%A8%8B%E6%AD%A5%E9%AA%A4/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">web项目</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">编程</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/07/web%E9%A1%B9%E7%9B%AE%E7%BC%96%E7%A8%8B%E6%AD%A5%E9%AA%A4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HTML基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/">HTML基础</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-  	<time datetime="2020-04-07T06:51:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一-、了解HTML"><a href="#一-、了解HTML" class="headerlink" title="一 、了解HTML"></a>一 、了解HTML</h2><h3 id="1-1-什么是网页"><a href="#1-1-什么是网页" class="headerlink" title="1.1 什么是网页"></a>1.1 什么是网页</h3><p> 网站是指在因特网上根据一定的规则，使用HTML等制作的用于展示特定内容相关的网页集合。</p>
-<p> 网页是指网站中的一页，通常是HTML格式的文件，以.html或.HTML后缀结尾的文件展现出来的都是网页。</p>
-<p> 网页是构成网站的基本元素，它通常由图片、文字、链接、声音、视频等标签元素组成，通过浏览器解析来显示给用户。</p>
-<h3 id="1-2-HTML"><a href="#1-2-HTML" class="headerlink" title="1.2 HTML"></a>1.2 HTML</h3><p> 超文本标记语言（HyperText Markup Language）是一种用于创建网页的标准标记语言。</p>
-<p> HTML不是编程语言，是一种标记语言。</p>
-<p><strong>标记语言、编程语言、脚本语言的区别</strong></p>
-<ul>
-<li><p>标记语言：</p>
-<ul>
-<li>需要被读取的，本身没有行为能力（被动）；例如：Html 、XML等</li>
-</ul>
-</li>
-<li><p>编程语言：</p>
-<ul>
-<li>需要编译执行；</li>
-<li>本身具有逻辑性和行为能力；例如：C、Java等</li>
-</ul>
-</li>
-<li><p>脚本语言：</p>
-<ul>
-<li>需要解释执行；</li>
-<li>本身具有逻辑性和行为能力；例如：javascript等</li>
-</ul>
-</li>
-</ul>
-<h3 id="1-3-Web-标准"><a href="#1-3-Web-标准" class="headerlink" title="1.3 Web 标准"></a>1.3 Web 标准</h3><p>Web 标准是由 W3C 组织和其他标准化组织定制的一系列标准的集合。</p>
-<p>因为浏览器不同，浏览器显示页面或者排版就存在差异，因此需要一个标准来统一。</p>
-<p><strong>Web标准的组成</strong></p>
-<p>主要包括结构（Structure）、表现（Persentation）和 行为（Behavior）三方面</p>
-<table>
-<thead>
-<tr>
-<th align="left">标准</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">结构</td>
-<td align="left">结构用于对网页元素进行整理和分类。只要指的是HTML</td>
-</tr>
-<tr>
-<td align="left">表现</td>
-<td align="left">表现用于设置网页元素的版本、颜色、大小等外观样式，只要指的是css</td>
-</tr>
-<tr>
-<td align="left">行为</td>
-<td align="left">行为是指网页模型的定义以及交互的编写，现阶段主要是JavaScript</td>
-</tr>
-</tbody></table>
-<p>web标准 提出的最佳体验方案：结构、样式、行为相分离。</p>
-<p>也就是结构要写到HTML文件里， 表现要写道CSS文件中，行为写到JavaScript文件中。</p>
-<h2 id="二-、HTML标签"><a href="#二-、HTML标签" class="headerlink" title="二 、HTML标签"></a>二 、HTML标签</h2><p>HTML标签是由尖括号包围的关键字，例如<code>&lt;html&gt;</code></p>
-<h3 id="2-1-HTML基本结构标签"><a href="#2-1-HTML基本结构标签" class="headerlink" title="2.1 HTML基本结构标签"></a>2.1 HTML基本结构标签</h3><p>每个网页都会有一个基本的结构标签（也称骨架标签），页面内容也是在这些基本标签上书写。</p>
-<table>
-<thead>
-<tr>
-<th align="left">标签名</th>
-<th align="left">定义</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left"><code>&lt;html&gt;&lt;html&gt;</code></td>
-<td align="left">HTML标签</td>
-<td align="left">页面中最大的标签，根标签</td>
-</tr>
-<tr>
-<td align="left"><code>&lt;head&gt;&lt;/head&gt;</code></td>
-<td align="left">文档的头部</td>
-<td align="left">HTML文件的头部标记，主要用来旋转HTML文件的说明信息，搜索当前文件的关键字等信息，也可以在该标记之间放置如JavaScript，VBScript和CSS等类型的脚本。</td>
-</tr>
-<tr>
-<td align="left"><code>&lt;title&gt;&lt;/title&gt;</code></td>
-<td align="left">文档的标题</td>
-<td align="left">HTML文件的标题信息，即当前文件在浏览器中浏览时有浏览器窗口的标题栏上显示的文字，该标记几乎所有的HTML文件中均须具务。</td>
-</tr>
-<tr>
-<td align="left"><code>&lt;body&gt;&lt;/body&gt;</code></td>
-<td align="left">文档的主体</td>
-<td align="left">HTML文件的主体标记，即只有在<body></body>标记中编辑的网页对象才可以在浏览器窗口中显示</td>
-</tr>
-</tbody></table>
-<h3 id="2-2-其他html标签"><a href="#2-2-其他html标签" class="headerlink" title="2.2 其他html标签"></a>2.2 其他html标签</h3><p><strong><code>&lt;a&gt;</code></strong></p>
-<p>锚标签,href属性是指链接的地址，target=”_blank”是在新窗口打开链接</p>
-<pre><code>&lt;a href=&quot;index.html&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;</code></pre><p>锚标签除了可以链接到文件网址，还可以链接到同一网页的标签上，通过id来实现</p>
-<pre><code>&lt;a href=&quot;#header&quot; &gt;&lt;/a&gt;  //链接到id是header的元素上</code></pre><p><strong><code>&lt;img&gt;</code></strong><br>这是一个单标签，src里图片地址，通常使用相对路径，alt是指图片因为某些情况未能加载，用文字来介绍这个照片的内容。</p>
-<pre><code>&lt;img src=&quot;example.jpg&quot; alt=&quot;证件照 &quot; width=&quot;80&quot; height=&quot;100&quot;&gt;</code></pre><p><strong><code>&lt;input&gt;</code></strong><br>input是一个单标签，根据不同的 type 属性值，输入字段可以是文本字段、复选框、掩码后的文本控件（password）、单选按钮、按钮等等，根据type属性来确定。<br><strong>1.</strong> 文本和提交类型</p>
-<p>   placeholder属性： 灰色提示字 输入时 自动消失。</p>
-<pre><code>First name:&lt;br&gt;
-&lt;input type=&quot;text&quot; name=&quot;firstname&quot; value=&quot;Mickey&quot;    placeholder=&quot;你的名字&quot;&gt;  //type是文本类型，value是框内数值。
-
-&lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;    //submit是提交的意思</code></pre><p><strong>2.</strong> radio是单选框，通过name属性来绑定一组单选框。</p>
-<pre><code>&lt;input type=&quot;radio&quot; name=&quot;sex&quot;&gt; 男
-&lt;input type=&quot;radio&quot; name=&quot;sex&quot;&gt; 女 </code></pre><p><strong>3.</strong> checkbox是多选框，通过name属性来绑定一组多选框，当多选框设置checked = “checked”时，表示选中状态。</p>
-<pre><code>&lt;input type=&quot;checkbox&quot; name=&quot;fruits&quot;&gt; 苹果
-&lt;input type=&quot;checkbox&quot; name=&quot;fruits&quot;&gt; 梨</code></pre><p><strong>4.</strong> inupt + label </p>
-<p>   为了更好地用户体验，通常label和input便签结合使用。如下，通过设置label，只要点击label内的部分，就可以选上单选框。</p>
-<p>   通过label的for属性绑定input的id值</p>
-<pre><code>&lt;input type=&quot;radio&quot; name=&quot;sex&quot; id=&quot;man&quot;&gt; &lt;label for=&quot;nan&quot;&gt;&lt;img&gt;男&lt;/label&gt;</code></pre><p><strong>5.下拉选择按钮</strong></p>
-<pre><code>通过&lt;select&gt; 和 &lt;option&gt; 实现 ，与input无关</code></pre><p><strong><code>&lt;table&gt;</code></strong></p>
-<p>表格通常结合input标签使用，table便签内每个子标签都有一定的含义，例如head是表头部分，th是表头部分的单元格</p>
-<pre><code>&lt;table&gt;
-    &lt;thead&gt;
-        &lt;tr&gt;
-            &lt;th colspan=&quot;2&quot;&gt;The table header&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;td&gt;The table body&lt;/td&gt;
-            &lt;td&gt;with two columns&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/tbody&gt;
-&lt;/table&gt;</code></pre><p>table的每列td都是自动对齐的</p>
-<p>colspan用来指定单元格横向跨越的列数：colspan就是合并列的，colspan=2的话就是合并两列。</p>
-<p>rowspan用来指定单元格纵向跨越的行数:rowspan就是用来合并行的，比如rowspan=2就是合并两行，</p>
-<p><strong><code>&lt;aside&gt;</code></strong> </p>
-<p> 元素表示一个和其余页面内容几乎无关的部分，被认为是独立于该内容的一部分并且可以被单独的拆分出来而不会使整体受影响。其通常表现为侧边栏或者标注框（call-out boxes）。<br><strong><code>&lt;section&gt;</code></strong>   </p>
-<p>表示一个包含在HTML文档中的独立部分，它没有更具体的语义元素来表示，一般来说会有包含一个标题。 </p>
-<p>例如，导航菜单应该包含在<code>&lt;nav&gt;</code>元素中，但搜索结果列表和地图显示及其控件没有特定元素，可以放在<code>&lt;section&gt;</code>里  </p>
-<p><strong><code>&lt;article&gt;</code></strong></p>
-<p>如果元素的内容作为一个独立的有意义的集合，<code>&lt;article&gt;</code>元素可能是更好的选择。    </p>
-<p>如果元素内容可以分为几个部分的话，应该使用 <code>&lt;article&gt;</code>而不是 <code>&lt;section&gt;</code>。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-常见正则表达式总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/">常见正则表达式式总结</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2020-04-06T12:42:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>正则表达式(regular expression)描述了一种字符串匹配的模式（pattern），可以用来检查一个串是否含有某种子串、将匹配的子串替换或者从某个串中取出符合某个条件的子串等。</p>
-<p>正则表达式经常用于用户注册时，检查用户注册数据是否符合要求。</p>
-<p>这篇文章就来介绍正则表达式的基础知识，对于正则表达式的匹配，可以用<a href="https://regexr.com" target="_blank" rel="noopener">regexr</a>这个网站进行练习和检验</p>
-        
-          <a class="article-more-a" href="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">正则表达式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1256,6 +1197,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">servlet</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">session</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
               </li>
             
             <div class="clearfix"></div>

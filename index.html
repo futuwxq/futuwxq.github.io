@@ -174,39 +174,9 @@
       
         <h2 id="sql语句"><a href="#sql语句" class="headerlink" title="sql语句"></a>sql语句</h2><h3 id="1-查询数据"><a href="#1-查询数据" class="headerlink" title="1 查询数据"></a>1 查询数据</h3><p> 查询所有数据</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> hero</span><br></pre></td></tr></table></figure>
-
-<p> 统计表中有多少条数据</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> hero</span><br></pre></td></tr></table></figure>
-
-<p><strong>分页查询</strong></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> hero <span class="keyword">limit</span> <span class="number">0</span>,<span class="number">5</span>  //显示 hero表中前<span class="number">5</span>条数据</span><br></pre></td></tr></table></figure>
-
-<p>排序分页查询</p>
-<p>下面这条语句的意思是：对 reader 表中每条记录按照 id 降序排列，选择前两条数据的name值</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> reader <span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">id</span> <span class="keyword">desc</span> <span class="keyword">limit</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
-
-<p>order by xx ：就是对结果集按照 xx 的升（或者降）序进行排序。</p>
-<p>desc ：就是说明从大到小小排序，就是降序，大的在前面，小的在后面。</p>
-<p>asc ：与desc相反，是升序排列</p>
-<p>limit  xx ：就是取排序后的最开始的那xx条排序。</p>
-<p><strong>精确查询</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from reader where reader_id&#x3D;&quot; + id + &quot; and reader_name&#x3D;&#39;&quot; + name + &quot;&#39;</span><br></pre></td></tr></table></figure>
-
-<p>sql查询语句分为顺序查询和模糊查询，上面的sql语句就是顺序查询。like操作符用于模糊查询，可使用 “%” 来代替0个或多个字符，使用下划线 “_” 来代替一个字符。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from stu where name like &#39;张%&#39; &#x2F;&#x2F;只要姓是张的用户都会被查询</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="2-插入数据"><a href="#2-插入数据" class="headerlink" title="2 插入数据"></a>2 插入数据</h3><p><strong>向表中插入一条数据</strong></p>
-<p>insert into reader (column1, column2,…) values    (value1, value2,…);</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">insert into reader(reader_name,reader_password) values (&#39;&quot; + name + &quot;&#39;,&#39;&quot; +password + &quot;&#39;);</span><br><span class="line">insert into reader(reader_name,reader_password) values (&#39;李四&#39;,&#39;123456&#39;);</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-更新数据"><a href="#3-更新数据" class="headerlink" title="3 更新数据"></a>3 更新数据</h3><p>更新数据</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update reader set Address &#x3D; &#39;Zhongshan 23&#39;, City &#x3D; &#39;Nanjing&#39; where LastName &#x3D; &#39;Wilson&#39;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sql = <span class="string">"update reader set reader_name= \'"</span> + name + <span class="string">"\' ,reader_password=\'"</span> + password + <span class="string">"\', reader_email=\'"</span> + email + <span class="string">"\' where reader_id="</span> + String.valueOf(id);</span><br></pre></td></tr></table></figure>
-
-
+        
+          <a class="article-more-a" href="/2020/04/13/sql%E8%AF%AD%E5%8F%A5%E5%AD%A6%E4%B9%A0/#more">more >></a>
+        
       
 
       
@@ -279,7 +249,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <a id="more"></a>
       
 
       
@@ -342,40 +312,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>可以把方法写在doGet()方法中,在doPost()方法中调用执行,这样,无论你提交的是post还是get方法都可以执行</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">servlet</span> <span class="keyword">extends</span> <span class="title">HttpServlet</span> </span>&#123;</span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doPost</span><span class="params">(HttpServletRequest request,HttpServletResponse response)</span> </span></span><br><span class="line"><span class="function">          <span class="keyword">throws</span> IOException,ServletException </span>&#123;</span><br><span class="line">      		<span class="keyword">this</span>.doGet(request,response);<span class="comment">//调用doGet()方法</span></span><br><span class="line">               &#125;</span><br><span class="line">    </span><br><span class="line">      <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request,HttpServletResponse response)</span> </span></span><br><span class="line"><span class="function">          <span class="keyword">throws</span> IOException,ServletException </span>&#123;</span><br><span class="line">     	 	request.setCaracterEncoding(“gb2312”);<span class="comment">//汉字转码</span></span><br><span class="line">      		PrintWriter out = response.getWriter();</span><br><span class="line">      		out.println(<span class="string">"The Parameter are ："</span>+request.getParameter(<span class="string">"name1"</span>));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>servlet中doGet()和doPost()的区别</strong></p>
-<ol>
-<li>生成方式</li>
-</ol>
-<p>get方式有四种：1）直接在URL地址栏中输入URL。2）网页中的超链接。3）form中method为get。4）form中method为空时，默认是get提交。</p>
-<p>post只知道有一种：form中method属性为post。</p>
-<ol start="2">
-<li>数据传送方式</li>
-</ol>
-<p>get方式：表单数据存放在URL地址后面。所有get方式提交时HTTP中没有消息体。</p>
-<p>post方式：表单数据存放在HTTP协议的消息体中以实体的方式传送到服务器。</p>
-<ol start="3">
-<li>服务器获取数据方式</li>
-</ol>
-<p>GET方式：服务器采用request.QueryString来获取变量的值。</p>
-<p>POST方式：服务器采用request.Form来获取数据。</p>
-<ol start="4">
-<li>传送的数据量</li>
-</ol>
-<p>GET方式：数据量长度有限制，一般不超过2kb。因为是参数传递，且在地址栏中，故数据量有限制。</p>
-<p>POST方式：适合大规模的数据传送。因为是以实体的方式传送的。</p>
-<ol start="5">
-<li>安全性</li>
-</ol>
-<p>GET方式：安全性差。因为是直接将数据显示在地址栏中，浏览器有缓冲，可记录用户信息。所以安全性低。</p>
-<p>POST方式：安全性高。因为post方式提交数据时是采用的HTTP post机制，是将表单中的字段与值放置在HTTP HEADER内一起传送到ACTION所指的URL中，用户是看不见的。</p>
-<ol start="6">
-<li>在用户刷新时</li>
-</ol>
-<p>GET方式：不会有任何提示、</p>
-<p>POST方式：会弹出提示框，问用户是否重新提交</p>
-
+        
+          <a class="article-more-a" href="/2020/04/13/servlet%E4%B8%ADdoGet-%E5%92%8CdoPost-%E6%96%B9%E6%B3%95/#more">more >></a>
+        
       
 
       
@@ -451,27 +390,9 @@
         <h2 id="第二部分-cookie"><a href="#第二部分-cookie" class="headerlink" title="第二部分 cookie"></a>第二部分 cookie</h2><p><strong>Cookie是什么？</strong></p>
 <p> Cookie 是一小段文本信息，伴随着用户请求和页面在 Web 服务器和浏览器之间传递。Cookie 包含每次用户访问站点时 Web 应用程序都可以读取的信息。</p>
 <p><strong>为什么需要Cookie？</strong></p>
-<p> 因为HTTP协议是无状态的，对于一个浏览器发出的多次请求，WEB服务器无法区分 是不是来源于同一个浏览器。所以，需要额外的数据用于维护session。 Cookie随HTTP请求有一个sessionID来记录用户的某一session。</p>
-<p><strong>Cookie能做什么？</strong></p>
-<p> Cookie只是一段文本，所以它只能保存字符串。而且浏览器对它有大小限制以及 它会随着每次请求被发送到服务器，所以应该保证它不要太大。 Cookie的内容也是明文保存的，有些浏览器提供界面修改，所以， 不适合保存重要的或者涉及隐私的内容。</p>
-<h3 id="2-1-Cookie的读写"><a href="#2-1-Cookie的读写" class="headerlink" title="2.1  Cookie的读写"></a>2.1  Cookie的读写</h3><p><strong>1）初始化cookie</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"account"</span>, userId + <span class="string">"="</span> + password + <span class="string">"="</span> + authority);</span><br></pre></td></tr></table></figure>
-<p>cookie的有效时间是指某一用户的上次请求和本次请求的时间差。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;设置cookie的有效时间</span><br><span class="line">cookie.setMaxAge(60 * 60 * 24);</span><br><span class="line">response.addCookie(cookie);</span><br></pre></td></tr></table></figure>
-
-<p><strong>2）读取cookie</strong></p>
-<p>读写Cookie是通过使用HttpCookie类来完成的。</p>
-<p>如果cookies不为空（一定不为空，有系统自带的cookie）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取cookie</span></span><br><span class="line">Cookie[] cookies = request.getCookies();</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (cookies != <span class="keyword">null</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (Cookie cookie : cookies) &#123;</span><br><span class="line">        <span class="comment">// 遍历cookies，找到名称为account的cookie</span></span><br><span class="line">        <span class="keyword">if</span> (cookie.getName().equals(<span class="string">"account"</span>)) &#123;</span><br><span class="line">            accountCookie = cookie;<span class="comment">// 初始化</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//这是一个输出cookie的例子</span></span><br><span class="line"><span class="keyword">if</span> (accountCookie != <span class="keyword">null</span>) &#123;</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; cookies.length; i++) &#123;</span><br><span class="line">          <span class="keyword">if</span> (accountCookie[i].getName().equals(<span class="string">"userId"</span>)) &#123;</span><br><span class="line">                out.print(accountCookie[i].getValue());</span><br><span class="line">           &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>3）添加cookie</strong></p>
-<p>如果 hasStore 为假，那么添加当前账户到 accountCookie里面</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cookieValue += <span class="string">"&amp;"</span> + userId + <span class="string">"="</span> + password + <span class="string">"="</span> + authority;</span><br><span class="line">Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"account"</span>, cookieValue);<span class="comment">// 更新cookie的值</span></span><br><span class="line">cookie.setMaxAge(<span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span>);</span><br><span class="line">response.addCookie(cookie);</span><br></pre></td></tr></table></figure>
-<p><strong>4）删除cookie</strong></p>
-<p>下面的代码实现了把用户的信息存储到cookie中。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//从浏览器获取参数</span></span><br><span class="line">String authority = (String) request.getParameter(<span class="string">"authority"</span>);</span><br><span class="line">String userId = request.getParameter(<span class="string">"userID"</span>);</span><br><span class="line"><span class="keyword">int</span> id = Integer.parseInt(userId);</span><br><span class="line">String password = request.getParameter(<span class="string">"password"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//从请求获取cookie</span></span><br><span class="line">Cookie[] cookies = request.getCookies();</span><br><span class="line"></span><br><span class="line"><span class="comment">//开始设置accountCookie还没有存贮账号信息</span></span><br><span class="line"><span class="keyword">boolean</span> hasAccountCookie = <span class="keyword">false</span>;<span class="comment">//这是为了区分首次存储账户信息和再次存储</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//创建accountCookie</span></span><br><span class="line">Cookie accountCookie = <span class="keyword">null</span>; </span><br><span class="line"></span><br><span class="line"><span class="comment">// 把cookie中名为account的数据复制到 accountCookie中</span></span><br><span class="line"><span class="keyword">if</span> (cookies != <span class="keyword">null</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (Cookie cookie : cookies) &#123;</span><br><span class="line">        <span class="comment">// 遍历cookies，找到名称为account的cookie</span></span><br><span class="line">        <span class="keyword">if</span> (cookie.getName().equals(<span class="string">"account"</span>)) &#123;</span><br><span class="line">            accountCookie = cookie;<span class="comment">// 初始化</span></span><br><span class="line">            hasAccountCookie = <span class="keyword">true</span>;<span class="comment">//accountCookie已经存过账户</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="comment">/*如果 hasAccountCookie 是 true，说明AccountCookie内已经存贮用户信息，然后需要检查当前用户的信息是否在 accountCookie */</span>   </span><br><span class="line">    <span class="keyword">if</span> (hasAccountCookie == <span class="keyword">true</span>) &#123;</span><br><span class="line">        String cookieValue = accountCookie.getValue();</span><br><span class="line">        <span class="keyword">boolean</span> hasStore = <span class="keyword">false</span>; <span class="comment">// 开始设置没有保存账号</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 查找是否保存过账号</span></span><br><span class="line">        <span class="comment">//accountCookie内存有多个账号</span></span><br><span class="line">        <span class="keyword">if</span> (cookieValue.contains(<span class="string">"&amp;"</span>)) &#123;</span><br><span class="line">              String[] accounts = cookieValue.split(<span class="string">"&amp;"</span>);</span><br><span class="line">              <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; accounts.length; i++) &#123;</span><br><span class="line">              <span class="keyword">if</span> (accounts[i].split(<span class="string">"="</span>)[<span class="number">0</span>].equals(userId)) &#123;</span><br><span class="line">                  hasStore = <span class="keyword">true</span>;<span class="comment">//证明accountCookie保存了当前用户的信息</span></span><br><span class="line">                     <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;<span class="comment">//只有一个账户</span></span><br><span class="line">             <span class="keyword">if</span> (cookieValue.split(<span class="string">"="</span>)[<span class="number">0</span>].equals(userId)) &#123;</span><br><span class="line">                 hasStore = <span class="keyword">true</span>;<span class="comment">//证明accountCookie保存了当前用户的信息</span></span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        </span><br><span class="line">          <span class="comment">// 如果没有保存当前账号，则把账户保存到cookies里面</span></span><br><span class="line">          <span class="keyword">if</span> (hasStore == <span class="keyword">false</span>) &#123; </span><br><span class="line">                cookieValue += <span class="string">"&amp;"</span> + userId + <span class="string">"="</span> + password + <span class="string">"="</span> + authority;</span><br><span class="line">                Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"account"</span>, cookieValue);<span class="comment">// 更新cookie的值</span></span><br><span class="line">                cookie.setMaxAge(<span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span>);</span><br><span class="line">                response.addCookie(cookie);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">"该账户已被保存"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">     &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 首次保存密码，直接初始化一个cookie</span></span><br><span class="line">           Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"account"</span>, userId + <span class="string">"="</span> + password + <span class="string">"="</span> + authority);</span><br><span class="line">            cookie.setMaxAge(<span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span>);</span><br><span class="line">            response.addCookie(cookie);</span><br><span class="line">        &#125;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;<span class="comment">//cookies为空</span></span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+        
+          <a class="article-more-a" href="/2020/04/13/session-%E5%92%8C-cookie%E5%AD%A6%E4%B9%A0/#more">more >></a>
+        
       
 
       
@@ -548,7 +469,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <a id="more"></a>
       
 
       
@@ -613,33 +534,9 @@
         <h3 id="一、分层组织css"><a href="#一、分层组织css" class="headerlink" title="一、分层组织css"></a>一、分层组织css</h3><p>一个项目可能有多个css文件，如何合理组织呢？</p>
 <p>常用的一种组织CSS的方法：</p>
 <p><code>base.css + common.css + page.css</code></p>
-<ul>
-<li><p>base层：css reset功能+通用类</p>
-<p>css reset就是对html标签的默认样式进行修改，</p>
-<p>例如 </p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span> &#123;<span class="attribute">color</span>:<span class="number">#000</span>;<span class="attribute">background</span>:<span class="number">#fff</span>;&#125;</span><br><span class="line"><span class="selector-tag">body</span> &#123;<span class="attribute">margin</span>:<span class="number">0</span>;<span class="attribute">padding</span>:<span class="number">0</span>;&#125;</span><br><span class="line"><span class="selector-tag">table</span> &#123;<span class="attribute">border-collapse</span>:collapse;<span class="attribute">border-spacing</span>:<span class="number">0</span>;&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>common层：组件级别的CSS类，提高代码的重用性</p>
-<p>我们将页面内的元素拆分成样式和功能相对独立的模块，将大量重复的模块视为一个组件。可以按功能划分为common_form.css，common_menu.css的多个文件。不同的网站有不同的common层，同一个网站只有一个common层。</p>
-</li>
-<li><p>page层：</p>
-<p>页面级别CSS样式，也就是非高度重用的，建议网站内所有的page层统一放在一个page.css文件中，通过页面注释，分块书写，便于维护，如下所示：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/*首页*/</span><br><span class="line">.test&#123;&#125;</span><br><span class="line">.test1&#123;&#125;</span><br><span class="line"></span><br><span class="line">/*登录页*/</span><br><span class="line">.test2&#123;&#125;</span><br><span class="line">.test3&#123;&#125;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="二-、-css命名"><a href="#二-、-css命名" class="headerlink" title="二 、 css命名"></a>二 、 css命名</h3><p>这里推荐一种在class前加入前缀的方式构建类似于命名空间的概念. 举个例子：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box-hd"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box-bd"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box-ft"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="1）多用组合，少用继承"><a href="#1）多用组合，少用继承" class="headerlink" title="1）多用组合，少用继承"></a>1）多用组合，少用继承</h4><p>也就是一个class里面尽量包含多个选择器而不是，建立多个子class选择器</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"number-list1 f14 red"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>1111<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">2222</span>/<span class="attr">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>3333<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="2）css权重"><a href="#2）css权重" class="headerlink" title="2）css权重"></a>2）css权重</h4><p>CSS的选择符是有权重的：id选择器的权重是100、class选择器的权重是10、标签选择器的权重是1</p>
-<ul>
-<li>当不同选择符的样式设置有冲突时，会采用权重高的选择符设置的样式。</li>
-<li>如果CSS选择符权重相同，那么样式会遵循就近原则，哪个选择符最后定义，就采用哪个。（就近原则指的是定义样式的先后，不是挂class名的先后）</li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2020/04/12/css%E7%BC%96%E5%86%99/#more">more >></a>
+        
       
 
       
@@ -715,25 +612,10 @@
         <p>html页面简单的三种对话框如下：</p>
 <ol>
 <li><p>alert()，最简单的提示框：</p>
-<p> alert(“你好！”); </p>
-</li>
-<li><p>()，有确认和取消两个按钮：</p>
-<p> if(confirm(“还有继续吗？”)){  </p>
-<pre><code>alert(&quot;继续&quot;);  </code></pre><p> }else{  </p>
-<pre><code>alert(&quot;再见&quot;);  </code></pre><p> } </p>
-</li>
-<li><p>prompt()，可以输入信息：</p>
-<p> var name = prompt(“你的名字是：”);<br> alert(“你好，” + name); </p>
-</li>
-</ol>
-<h4 id="confirm实例"><a href="#confirm实例" class="headerlink" title="confirm实例"></a>confirm实例</h4><p>这是一个退出方法，可以通过button的onclick方法实现</p>
-<pre><code>function logout() {        
-    if (confirm(&quot;Please make sure to logout!&quot;)) {
-        window.location.href = &quot;DestorySession&quot;;
-    } else {
-    }
-}</code></pre><h3 id="base-css、common-css、page-css"><a href="#base-css、common-css、page-css" class="headerlink" title="base.css、common.css、page.css"></a>base.css、common.css、page.css</h3><p>一。base.css被所有页面引用，包括base reset和通用原子类</p>
-
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="string">"你好！"</span>);</span><br></pre></td></tr></table></figure></li></ol>
+        
+          <a class="article-more-a" href="/2020/04/12/js%E7%9A%84alert-confirm-prompt%E7%94%A8%E6%B3%95/#more">more >></a>
+        
       
 
       

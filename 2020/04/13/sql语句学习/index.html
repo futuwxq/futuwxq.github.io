@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
-  <title>sql语句学学习 | 晓秋的博客</title>
+  <title>sql语句学习 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="sql语句1 查询数据 查询所有数据 1select * from hero">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sql语句学学习">
+<meta property="og:title" content="sql语句学习">
 <meta property="og:url" content="https://futuwxq.github.io/2020/04/13/sql%E8%AF%AD%E5%8F%A5%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="晓秋的博客">
 <meta property="og:description" content="sql语句1 查询数据 查询所有数据 1select * from hero">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-13T11:57:41.000Z">
-<meta property="article:modified_time" content="2020-04-14T01:20:20.274Z">
+<meta property="article:modified_time" content="2020-04-21T08:08:43.232Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="sql语句">
 <meta name="twitter:card" content="summary">
@@ -162,7 +162,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      sql语句学学习
+      sql语句学习
     </h1>
   
 
@@ -183,25 +183,98 @@
 <p> 统计表中有多少条数据</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">from</span> hero</span><br></pre></td></tr></table></figure>
 
-<p><strong>分页查询</strong></p>
+<p>统计表中的数据，并将数据付给自定义的变量NumberOfOrders</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT count(*)  as NumberOfheros from hero</span><br></pre></td></tr></table></figure>
+
+<h5 id="分页查询"><a href="#分页查询" class="headerlink" title="分页查询"></a>分页查询</h5><p>利用limit限制查询的条数。</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> hero <span class="keyword">limit</span> <span class="number">0</span>,<span class="number">5</span>  //显示 hero表中前<span class="number">5</span>条数据</span><br></pre></td></tr></table></figure>
 
-<p>排序分页查询</p>
-<p>下面这条语句的意思是：对 reader 表中每条记录按照 id 降序排列，选择前两条数据的name值</p>
+<ul>
+<li>limit  x ：就是取排序后的最开始的那x条排序。</li>
+</ul>
+<h5 id="查询结果排序"><a href="#查询结果排序" class="headerlink" title="查询结果排序"></a>查询结果排序</h5><p>利用order by进行对结果集排序。</p>
+<p>下面这条语句的意思是：对 reader 表中每条记录按照 id 降序排列，查询前两条数据的name值</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">name</span> <span class="keyword">from</span> reader <span class="keyword">order</span> <span class="keyword">by</span> <span class="keyword">id</span> <span class="keyword">desc</span> <span class="keyword">limit</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
 
-<p>order by xx ：就是对结果集按照 xx 的升（或者降）序进行排序。</p>
-<p>desc ：就是说明从大到小小排序，就是降序，大的在前面，小的在后面。</p>
-<p>asc ：与desc相反，是升序排列</p>
-<p>limit  xx ：就是取排序后的最开始的那xx条排序。</p>
+<ul>
+<li><p>order by xx ：就是对结果集按照 xx 的升序进行排序。</p>
+</li>
+<li><p>desc ：就是说明从大到小小排序，就是降序，大的在前面，小的在后面。</p>
+</li>
+<li><p>asc ：与desc相反，是升序排列，sql语句默认是升序。</p>
+</li>
+</ul>
 <p><strong>精确查询</strong></p>
+<p>通过where来定位查询数据的位置。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from reader where reader_id&#x3D;&quot; + id + &quot; and reader_name&#x3D;&#39;&quot; + name + &quot;&#39;</span><br></pre></td></tr></table></figure>
 
-<p>sql查询语句分为顺序查询和模糊查询，上面的sql语句就是顺序查询。like操作符用于模糊查询，可使用 “%” 来代替0个或多个字符，使用下划线 “_” 来代替一个字符。</p>
+<h5 id="模糊查询"><a href="#模糊查询" class="headerlink" title="模糊查询"></a>模糊查询</h5><p>sql查询语句分为顺序查询和模糊查询，上面的sql语句就是顺序查询。<strong>like操作符用于模糊查询，可使用 “%” 来代替0个或多个字符，使用下划线 “_” 来代替一个字符</strong>。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select * from stu where name like &#39;张%&#39; &#x2F;&#x2F;只要姓是张的用户都会被查询</span><br></pre></td></tr></table></figure>
 
+<h5 id="合并SQL"><a href="#合并SQL" class="headerlink" title="合并SQL"></a>合并SQL</h5><p>通过Group_concat合并多个sql语句。比如对于多行的数据在一行显示。</p>
+<p>Group_concat完整语法如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">group_concat([DISTINCT] 要连接的字段 [Order BY ASC&#x2F;DESC 排序字段] [Separator &#39;分隔符&#39;])</span><br></pre></td></tr></table></figure>
 
+<ul>
+<li><p>DISTINCT删去重复值。</p>
+</li>
+<li><p>多结果值进行排序，则应该使用  ORDER BY子句。 DESC 递减排序 ，默认顺序为升序（asc）。</p>
+</li>
+<li><p>SEPARATOR 后面跟随应该被插入结果的值中间的字符串值。默认为逗号 (‘,’)。通过指定SEPARATOR ‘’ ，你可以删除所有分隔符。</p>
+</li>
+<li><p>使用group_concat_max_len系统变量，你可以设置允许的最大长度。  程序中进行这项操作的语法如下，其中 val 是一个无符号整数：    </p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SET [SESSION | GLOBAL] group_concat_max_len &#x3D; val;</span><br></pre></td></tr></table></figure>
 
+<p>​        若已经设置了最大长度， 则结果被截至这个最大长度。</p>
+<p>举个例子</p>
+<p>数据库表中的数据是这样的</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>age</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>16</td>
+</tr>
+<tr>
+<td>1</td>
+<td>15</td>
+</tr>
+<tr>
+<td>1</td>
+<td>15</td>
+</tr>
+<tr>
+<td>2</td>
+<td>18</td>
+</tr>
+</tbody></table>
+<p>通过group_concat可以把相同id的age值合并在一起，并且去除重复值，用；进行分割age值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SELECT id,GROUP_CONCAT(DISTINCT age SEPARATOR &#39;;&#39;) FROM form GROUP BY id</span><br></pre></td></tr></table></figure>
+
+<p>结果集处理后变成这样了</p>
+<table>
+<thead>
+<tr>
+<th>id</th>
+<th>DISTINCT age SEPARATOR ‘;’</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>15；16</td>
+</tr>
+<tr>
+<td>2</td>
+<td>18</td>
+</tr>
+</tbody></table>
+<p>应用场景：一本书对应多个作者时候，作者表中的多个作者可以合并到一起。</p>
 <h3 id="2-插入数据"><a href="#2-插入数据" class="headerlink" title="2 插入数据"></a>2 插入数据</h3><p><strong>向表中插入一条数据</strong></p>
 <p>insert into reader (column1, column2,…) values    (value1, value2,…);</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">insert into reader(reader_name,reader_password) values (&#39;&quot; + name + &quot;&#39;,&#39;&quot; +password + &quot;&#39;);</span><br><span class="line">insert into reader(reader_name,reader_password) values (&#39;李四&#39;,&#39;123456&#39;);</span><br></pre></td></tr></table></figure>
@@ -209,8 +282,14 @@
 <h3 id="3-更新数据"><a href="#3-更新数据" class="headerlink" title="3 更新数据"></a>3 更新数据</h3><p>更新数据</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update reader set Address &#x3D; &#39;Zhongshan 23&#39;, City &#x3D; &#39;Nanjing&#39; where LastName &#x3D; &#39;Wilson&#39;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sql = <span class="string">"update reader set reader_name= \'"</span> + name + <span class="string">"\' ,reader_password=\'"</span> + password + <span class="string">"\', reader_email=\'"</span> + email + <span class="string">"\' where reader_id="</span> + String.valueOf(id);</span><br></pre></td></tr></table></figure>
+<p>下面的\转义了 ‘ ,使其不被当做字符串的一部分</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sql = <span class="string">"update reader set reader_name= \'"</span> + name + <span class="string">"\' ,reader_password=\'"</span> + password + <span class="string">"\' where reader_id="</span> + String.valueOf(id);</span><br><span class="line"></span><br><span class="line">sql = <span class="string">"update reader set reader_name= '"</span> + name + <span class="string">"' ,reader_password='"</span> + password + <span class="string">"' where reader_id="</span> + String.valueOf(id);</span><br></pre></td></tr></table></figure>
 
+<h3 id="4-结合数据库表"><a href="#4-结合数据库表" class="headerlink" title="4 结合数据库表"></a>4 结合数据库表</h3><p>SQL JOIN 子句用于把来自两个或多个表的行结合起来，基于这些表之间的共同字段。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">book join book_in_library on book.isbn&#x3D;book_in_library.isbn</span><br></pre></td></tr></table></figure>
+
+<p>上面sql语句的意思是把book表中 isbn 列 指向 book_in_library 中 book_in_library.isbn列。通过isbn将两个表的数据项对应起来</p>
+<p>LEFT JOIN 关键字会从左表 (Persons) 那里返回所有的行，即使在右表 (Orders) 中没有匹配的行。</p>
 
       
 
@@ -314,6 +393,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/04/18/java%E9%9B%86%E5%90%88%E7%B1%BB%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          java集合学习
+        
+      </div>
+    </a>
   
   
     <a href="/2020/04/13/java%E6%95%B0%E5%AD%97%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%A6%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
@@ -463,23 +551,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">eclipse导入web项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mysql数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">css两栏布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">圣杯布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">双飞翼布局</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -504,10 +576,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">web项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -544,6 +612,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">java集合</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">javaee</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
               </li>
             
             <div class="clearfix"></div>

@@ -6,15 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
-  <title>Tag: eclipse导入web项目 | 晓秋的博客</title>
+  <title>javaEE组件和容器 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="晓秋的博客">
-<meta property="og:url" content="https://futuwxq.github.io/tags/eclipse%E5%AF%BC%E5%85%A5web%E9%A1%B9%E7%9B%AE/index.html">
+  <meta name="description" content="什么是javaEE？ Java Platform, Enterprise Edition(Java EE) 为设 计、开发、装配和部署企业应用程序提供了一个 基于组件的方法。 通过Java EE平台，可以   更快地构建创新的商业解决方案  基于Java EE组件的平台独立性，使开发的应用不依赖于 特定厂商的产品和API  软件厂商和客户都能自由地选择符合其需求的产品和组件  1 javaEE组件">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javaEE组件和容器">
+<meta property="og:url" content="https://futuwxq.github.io/2020/04/21/java%E5%AE%B9%E5%99%A8/index.html">
 <meta property="og:site_name" content="晓秋的博客">
+<meta property="og:description" content="什么是javaEE？ Java Platform, Enterprise Edition(Java EE) 为设 计、开发、装配和部署企业应用程序提供了一个 基于组件的方法。 通过Java EE平台，可以   更快地构建创新的商业解决方案  基于Java EE组件的平台独立性，使开发的应用不依赖于 特定厂商的产品和API  软件厂商和客户都能自由地选择符合其需求的产品和组件  1 javaEE组件">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/java%E5%AE%B9%E5%99%A8/F:%5Cstudy%5Cprogram%5Cblog%5Csource_posts%5Cjava%E5%AE%B9%E5%99%A8%5Cimage-20200421102918169.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/java%E5%AE%B9%E5%99%A8/study/program/blog/source/_posts/java%E5%AE%B9%E5%99%A8/image-20200421103759135.png">
+<meta property="article:published_time" content="2020-04-21T01:24:51.000Z">
+<meta property="article:modified_time" content="2020-04-21T02:41:12.757Z">
 <meta property="article:author" content="不知火舞">
+<meta property="article:tag" content="javaEE">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://futuwxq.github.io/2020/04/21/java%E5%AE%B9%E5%99%A8/F:%5Cstudy%5Cprogram%5Cblog%5Csource_posts%5Cjava%E5%AE%B9%E5%99%A8%5Cimage-20200421102918169.png">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
   
@@ -150,64 +158,242 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="p-java容器" class="article article-type-p " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/04/%E5%A6%82%E4%BD%95%E8%AE%A9%E9%A1%B9%E7%9B%AE%E5%9C%A8tomacat%E8%BF%90%E8%A1%8C%E8%B5%B7%E6%9D%A5/" class="archive-article-date">
-  	<time datetime="2020-04-04T05:45:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/04/%E5%A6%82%E4%BD%95%E8%AE%A9%E9%A1%B9%E7%9B%AE%E5%9C%A8tomacat%E8%BF%90%E8%A1%8C%E8%B5%B7%E6%9D%A5/">如何让项目在tomacat运行起来</a>
+    <h1 class="article-title" itemprop="name">
+      javaEE组件和容器
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/04/21/java%E5%AE%B9%E5%99%A8/" class="archive-article-date">
+  	<time datetime="2020-04-21T01:24:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>什么是javaEE？</p>
+<p><strong>Java Platform, Enterprise Edition(Java EE)</strong> 为设 计、开发、装配和部署企业应用程序提供了一个 基于组件的方法。</p>
+<p>通过Java EE平台，可以 </p>
+<ul>
+<li>更快地构建创新的商业解决方案 </li>
+<li>基于Java EE组件的平台独立性，使开发的应用不依赖于 特定厂商的产品和API </li>
+<li>软件厂商和客户都能自由地选择符合其需求的产品和组件</li>
+</ul>
+<h3 id="1-javaEE组件"><a href="#1-javaEE组件" class="headerlink" title="1 javaEE组件"></a>1 javaEE组件</h3><h4 id="1-1-什么是组件"><a href="#1-1-什么是组件" class="headerlink" title="1.1 什么是组件"></a>1.1 什么是组件</h4><blockquote>
+<p>A Java EE component is a self-contained functional software unit that is assembled into a Java EE application with its related classes and files and that communicates with other components.</p>
+</blockquote>
+<p>从上面这句话可以看出，javaEE组件:</p>
+<ul>
+<li>具有独立功能的单元</li>
+<li>通过相关的类和文件组装成JavaEE应用程序</li>
+<li>与其它组件相交互。</li>
+</ul>
+<h4 id="1-2-组件类型："><a href="#1-2-组件类型：" class="headerlink" title="1.2 组件类型："></a>1.2 组件类型：</h4><p><strong>1.</strong>客户端组件：即javaBean类，基于SE运行在客户端容器内，有自己独立的JVM空间。</p>
+<p><strong>2.</strong>web组件：能接收HTTP请求并进行处理产生web响应，并规定了两种Web组件</p>
+<ul>
+<li><p>Servlet：使用标准java类编写模式的Web组件，但是难以开发复杂的Web应用</p>
+</li>
+<li><p>JSP：使用编写HTML网页的方式编写Web组件，嵌入java语言代码。</p>
+</li>
+</ul>
+<p><strong>3.</strong>EJB组件：引入Spring框架和注释编程技术，推出了3.0组件规范实现了轻量化目标，结构简单部署方便调用容易。</p>
+<h5 id="企业bean"><a href="#企业bean" class="headerlink" title="企业bean"></a>企业bean</h5><p>Enterprise JavaBeans ，即企业bean，执行业务逻辑，三种企业bean是：</p>
+<ul>
+<li><p>Session beans 会话beans，管理会话机制。</p>
+</li>
+<li><p>Entity beans ( 在Java EE 5中被Java persistence API entities取代) </p>
+</li>
+<li><p>Message-driven beans</p>
+</li>
+</ul>
+<h4 id="1-3-JavaEE架构各层组件间的交互"><a href="#1-3-JavaEE架构各层组件间的交互" class="headerlink" title="1.3 JavaEE架构各层组件间的交互"></a>1.3 JavaEE架构各层组件间的交互</h4><p>如下图是一个3层架构，第一层是用户层用来展示用户界面，第二层是服务层，细分为web层和业务层，第三层是数据服务层，管理数据库和数据的持久化服务。</p>
+<p><img src="/2020/04/21/java%E5%AE%B9%E5%99%A8/F:%5Cstudy%5Cprogram%5Cblog%5Csource_posts%5Cjava%E5%AE%B9%E5%99%A8%5Cimage-20200421102918169.png" alt="image-20200421102918169"></p>
+<h3 id="2-容器"><a href="#2-容器" class="headerlink" title="2 容器"></a>2 容器</h3><h4 id="2-1-为什么需要容器？"><a href="#2-1-为什么需要容器？" class="headerlink" title="2.1 为什么需要容器？"></a>2.1 为什么需要容器？</h4><p><strong>1.</strong> 瘦客户端多层应用程序开发面临的难题：</p>
+<ul>
+<li><p>事务管理</p>
+</li>
+<li><p>状态管理</p>
+</li>
+<li><p>多线程</p>
+</li>
+<li><p>资源池</p>
+</li>
+<li><p>其它复杂的底层细节</p>
+<p><strong>2.</strong>  Java EE服务器对所有类型的组件，以容器的形式提供了一组底层服务。开发者不需重复开发，而只需关注业务问题。</p>
+</li>
+</ul>
+<h4 id="2-2-什么是容器？"><a href="#2-2-什么是容器？" class="headerlink" title="2.2 什么是容器？"></a>2.2 什么是容器？</h4><p>容器是一个组件和支持组件的底层平台特定功能之间的界面。</p>
+<p>Web组件、企业Bean、应用客户端组件必须组 装成Java EE模块并部署于容器中才能执行。</p>
+<p>也就是说容器提供底层环境，把组件部署到容器中就可以运行。</p>
+<p>下图是java EE 服务器和容器之间的交互过程。</p>
+<img src="/2020/04/21/java%E5%AE%B9%E5%99%A8/study\program\blog\source\_posts\java容器\image-20200421103759135.png" alt="image-20200421103759135" style="zoom: 67%;">
+
+<h4 id="2-3-容器技术的优点："><a href="#2-3-容器技术的优点：" class="headerlink" title="2.3 容器技术的优点："></a>2.3 容器技术的优点：</h4><ul>
+<li><p>极其轻量：只打包了必要的Bin/Lib；</p>
+</li>
+<li><p>秒级部署：根据镜像的不同，容器的部署大概在毫秒与秒之间（比虚拟机强很多）；</p>
+</li>
+<li><p>易于移植：一次构建，随处部署；</p>
+</li>
+<li><p>弹性伸缩：Kubernetes、Swam、Mesos这类开源、方便、好使的容器管理平台有着非常强大的弹性管理能力</p>
+</li>
+</ul>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">eclipse导入web项目</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">mysql数据库</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javaEE</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/04/21/java%E5%AE%B9%E5%99%A8/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/04/21/web%E5%AE%B9%E5%99%A8%E6%A8%A1%E5%9E%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          如何初始化Web容器上下文参数
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2020/04/18/java%E9%9B%86%E5%90%88%E7%B1%BB%E5%AD%A6%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java集合学习</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -230,9 +416,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
@@ -320,23 +506,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">eclipse导入web项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mysql数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">css两栏布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">圣杯布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">双飞翼布局</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -361,10 +531,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">web项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -401,6 +567,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">java集合</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">javaee</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
               </li>
             
             <div class="clearfix"></div>

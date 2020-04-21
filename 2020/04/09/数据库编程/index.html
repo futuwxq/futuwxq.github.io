@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BC%96%E7%A8%8B/jdbc.png">
 <meta property="article:published_time" content="2020-04-09T03:12:19.000Z">
-<meta property="article:modified_time" content="2020-04-13T13:41:31.065Z">
+<meta property="article:modified_time" content="2020-04-21T14:05:37.500Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary">
@@ -187,7 +187,7 @@
 <img src="/2020/04/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BC%96%E7%A8%8B/jdbc.png" width="50%" height="50%" style="display:block;margin:5px auto" alt="jdbc">
 JDBC屏蔽了底层不同数据库的类型，使得应用程序通过JDBC接口访问不同数据库。
 
-<p><strong>通常连接数据库的步骤如下</strong></p>
+<p><strong>连接数据库的步骤如下</strong></p>
 <ol>
 <li>获取驱动程序Jar文件，并放置到项目的类路径中；</li>
 <li>注册驱动（一次即可）</li>
@@ -293,13 +293,16 @@ JDBC屏蔽了底层不同数据库的类型，使得应用程序通过JDBC接口
 <p>1）executeQuery </p>
 <p>用于产生单个结果集（ResultSet）的语句，例如 SELECT 语句，执行后返回代表查询结果的ResultSet对象。</p>
 <p>2）executeUpdate</p>
-<p>用于执行 INSERT、UPDATE 或 DELETE 语句以及 SQL DDL（数据定义语言）语句</p>
-<p>如果是更新数据库，通过execute方法，executeUpdate 的返回值是一个整数（int）。executeUpdate(sql)的返回值是更新的条数。比如删除某一用户的数据，贼返回值是1。</p>
+<p>用于执行 INSERT、UPDATE 或 DELETE 语句以及 SQL DDL（数据定义语言）语句。</p>
+<ul>
+<li><p>当executeUpdate(sql)是INSERT、UPDATE 或 DELETE 语句时，返回的是受影响的行数（即更新的行数）。比如删除用户表中的一行数据据，返回值是1。</p>
+</li>
+<li><p>当executeUpdate(sql)是CREATE TABLE 或 DROP TABLE 等不操作行的语句，executeUpdate 的返回值是零。</p>
+</li>
+</ul>
 <p>3）execute</p>
 <p>可用于执行任何SQL语句，返回一个boolean值，表明执行该SQL语句是否返回了ResultSet。如果执行后第一个结果是ResultSet，则返回true，否则返回false。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">boolean</span> rs = st.execute(sql);</span><br></pre></td></tr></table></figure>
-
-
 
 <h4 id="4-2-conn-setAutoCommit开启事物"><a href="#4-2-conn-setAutoCommit开启事物" class="headerlink" title="4.2 conn.setAutoCommit开启事物"></a>4.2 conn.setAutoCommit开启事物</h4><p>setAutoCommit(boolean autoCommit) 默认autoCommit是true，即自动提交。当每执行一个update ,delete或者insert的时候都会自动提交到数据库，无法回滚事务。</p>
 <p>autoCommit的取值</p>
@@ -310,10 +313,11 @@ JDBC屏蔽了底层不同数据库的类型，使得应用程序通过JDBC接口
 </li>
 </ul>
 <p><strong>那什么时候需要设置setAutoCommit（false）</strong></p>
-<p>当多个sql语句被视为一个整体，要么都执行，要不一个也不执行，例如下面的第一条sql语句是插入用户的id 和 密码，第二条语句是获取刚刚插入数据的id，这两条语句需要同时运行才能保证数据不会出错。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">conn = DatabaseUtil.getInstance().getConnection();</span><br><span class="line"><span class="comment">// 开启事务</span></span><br><span class="line">conn.setAutoCommit(<span class="keyword">false</span>);</span><br><span class="line">st = conn.createStatement();</span><br><span class="line"><span class="comment">// 添加数据，email默认为"default"</span></span><br><span class="line">String sql = <span class="string">"insert into reader(reader_name,reader_password) values ('"</span> + name + <span class="string">"','"</span>+ password <span class="string">"')"</span>;</span><br><span class="line">st.executeUpdate(sql);</span><br><span class="line"><span class="comment">// 获取数据，由于reader_id为自增，因此获取最大整数值，即为刚刚添加的数据</span></span><br><span class="line">sql = <span class="string">"select reader_id from reader order by reader_id desc limit 1"</span>;</span><br><span class="line">rs = st.executeQuery(sql);</span><br><span class="line"><span class="keyword">if</span> (rs.next()) &#123;</span><br><span class="line">readerId = rs.getInt(<span class="string">"reader_id"</span>);<span class="comment">// 设置返回值，此时不会为-1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 提交事务，必须设置提交</span></span><br><span class="line">conn.commit();</span><br><span class="line"><span class="comment">// 关闭连接</span></span><br><span class="line">st.close();</span><br><span class="line">conn.close();</span><br></pre></td></tr></table></figure>
+<p>当多个sql语句被视为一个整体，要么都执行，要不一个也不执行，</p>
+<p>例如下面的第一条sql语句是根据用户的id 和 密码查找用户，第二条语句是删除刚刚查找的用户的信息，这两条语句在时间上具有顺序连接性。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">conn = DatabaseUtil.getInstance().getConnection();</span><br><span class="line"><span class="comment">//开启事物</span></span><br><span class="line">conn.setAutoCommit(<span class="keyword">false</span>);</span><br><span class="line">st = conn.createStatement();</span><br><span class="line"><span class="comment">//根据id和name查找某一用户</span></span><br><span class="line">String query = <span class="string">"select * from reader where reader_id="</span> + id + <span class="string">" and reader_name='"</span> + name + <span class="string">"'"</span>;</span><br><span class="line"><span class="comment">//执行查询</span></span><br><span class="line">rs = st.executeQuery(query);</span><br><span class="line"><span class="keyword">if</span> (rs.next()) &#123;</span><br><span class="line">    <span class="comment">//删除刚才查找的读者的信息</span></span><br><span class="line">    String sql = <span class="string">"delete from reader where reader_id="</span> + id;</span><br><span class="line">    <span class="keyword">int</span> row = st.executeUpdate(sql);</span><br><span class="line">    <span class="keyword">if</span> (row == <span class="number">1</span>) &#123;</span><br><span class="line">        tag = <span class="keyword">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    System.out.println(<span class="string">"--ReaderDAO--,--deleteReaderById()--,id和name不匹配"</span>);</span><br><span class="line">    tag = <span class="keyword">false</span>;</span><br><span class="line">&#125;</span><br><span class="line">conn.commit();<span class="comment">//提交书事物</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="4-2-resultSetType-和-resultSetConcuttency"><a href="#4-2-resultSetType-和-resultSetConcuttency" class="headerlink" title="4.2 resultSetType 和 resultSetConcuttency"></a>4.2 resultSetType 和 resultSetConcuttency</h3><p>Statement对象 不同 resultSetType 使得 ResultSet对象 中的光标移动方向不同，在从结果集中读取济洛路时，第一种对于访问过的记录就自动释放了内存，后两者访问过的所有记录都保留在内存中不能释放。</p>
+<h3 id="4-3-了解resultSetType-和-resultSetConcuttency"><a href="#4-3-了解resultSetType-和-resultSetConcuttency" class="headerlink" title="4.3  了解resultSetType 和 resultSetConcuttency"></a>4.3  了解resultSetType 和 resultSetConcuttency</h3><p>Statement对象 不同 resultSetType 使得 ResultSet对象 中的光标移动方向不同，在从结果集中读取济洛路时，第一种对于访问过的记录就自动释放了内存，后两者访问过的所有记录都保留在内存中不能释放。</p>
 <table>
 <thead>
 <tr>
@@ -482,7 +486,7 @@ JDBC屏蔽了底层不同数据库的类型，使得应用程序通过JDBC接口
   
   
     <a href="/2020/04/07/web%E9%A1%B9%E7%9B%AE%E7%BC%96%E7%A8%8B%E6%AD%A5%E9%AA%A4/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">web项目编程步骤</div>
+      <div class="article-nav-title">怎么编写一个web项目</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -628,23 +632,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">eclipse导入web项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">mysql数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">css两栏布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">圣杯布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">双飞翼布局</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -669,10 +657,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">web项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">编程</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -709,6 +693,26 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">java集合</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">javaee</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
               </li>
             
             <div class="clearfix"></div>

@@ -6,20 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
-  <title>如何初始化Web容器上下文参数 | 晓秋的博客</title>
+  <title>javaee学习 — Servlet | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一 、 通过Servlet初始化参数Servlet初始化参数只会被读取一次 ， 因为在容器初始化 servlet时，ServletConfig获得参数后，只能通过重新部署web应用再次读取初始化参数。 Servlet初始化参数需要在DD文件中配置，">
+  <meta name="description" content="1.Servlet 生命周期Servlet 生命周期：Servlet加载—&gt;实例化—&gt;服务—&gt;销毁。  init（）：在Servlet的生命周期中，仅执行一次init()方法。它是在服务器装入Servlet时执行的，负责初始化Servlet对象。 当容器初始化一个servlet时，为其创建唯一的ServletConfig对象， 容器从DD中读取servlet初始化参数，并传给Se">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何初始化Web容器上下文参数">
-<meta property="og:url" content="https://futuwxq.github.io/2020/04/21/web%E5%AE%B9%E5%99%A8%E6%A8%A1%E5%9E%8B/index.html">
+<meta property="og:title" content="javaee学习 — Servlet">
+<meta property="og:url" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="一 、 通过Servlet初始化参数Servlet初始化参数只会被读取一次 ， 因为在容器初始化 servlet时，ServletConfig获得参数后，只能通过重新部署web应用再次读取初始化参数。 Servlet初始化参数需要在DD文件中配置，">
+<meta property="og:description" content="1.Servlet 生命周期Servlet 生命周期：Servlet加载—&gt;实例化—&gt;服务—&gt;销毁。  init（）：在Servlet的生命周期中，仅执行一次init()方法。它是在服务器装入Servlet时执行的，负责初始化Servlet对象。 当容器初始化一个servlet时，为其创建唯一的ServletConfig对象， 容器从DD中读取servlet初始化参数，并传给Se">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-21T13:03:38.000Z">
-<meta property="article:modified_time" content="2020-04-21T14:03:04.848Z">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study/program/blog/source/_posts/Servlet-%E5%92%8C-JSP-%E5%AD%A6%E4%B9%A0/image-20200422105843034.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study/program/blog/source/_posts/Servlet-%E5%92%8C-JSP-%E5%AD%A6%E4%B9%A0/image-20200421204903719.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study/program/blog/source/_posts/Servlet-%E5%92%8C-JSP-%E5%AD%A6%E4%B9%A0/image-20200421163859582.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study/program/blog/source/_posts/Servlet-%E5%92%8C-JSP-%E5%AD%A6%E4%B9%A0/image-20200421164017290.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study/program/blog/source/_posts/Servlet-%E5%92%8C-JSP-%E5%AD%A6%E4%B9%A0/image-20200421171709678.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study/program/blog/source/_posts/Servlet-%E5%92%8C-JSP-%E5%AD%A6%E4%B9%A0/image-20200421174438838.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study/program/blog/source/_posts/Servlet-%E5%92%8C-JSP-%E5%AD%A6%E4%B9%A0/image-20200421174530118.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study/program/blog/source/_posts/Servlet-%E5%92%8C-JSP-%E5%AD%A6%E4%B9%A0/image-20200421174825210.png">
+<meta property="article:published_time" content="2020-04-21T08:23:15.000Z">
+<meta property="article:modified_time" content="2020-04-25T12:20:43.193Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="javaee">
+<meta property="article:tag" content="servlet">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study/program/blog/source/_posts/Servlet-%E5%92%8C-JSP-%E5%AD%A6%E4%B9%A0/image-20200422105843034.png">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
   
@@ -155,51 +165,159 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-web容器模型" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-javaee学习 — Servlet" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      如何初始化Web容器上下文参数
+      javaee学习 — Servlet
     </h1>
   
 
         
-        <a href="/2020/04/21/web%E5%AE%B9%E5%99%A8%E6%A8%A1%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2020-04-21T13:03:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-21</time>
+        <a href="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/" class="archive-article-date">
+  	<time datetime="2020-04-21T08:23:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-21</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一-、-通过Servlet初始化参数"><a href="#一-、-通过Servlet初始化参数" class="headerlink" title="一 、 通过Servlet初始化参数"></a>一 、 通过Servlet初始化参数</h3><p>Servlet初始化参数只会被读取一次 ， 因为在容器初始化 servlet时，ServletConfig获得参数后，只能通过重新部署web应用再次读取初始化参数。</p>
-<p>Servlet初始化参数需要在DD文件中配置，</p>
+        <h2 id="1-Servlet-生命周期"><a href="#1-Servlet-生命周期" class="headerlink" title="1.Servlet 生命周期"></a>1.Servlet 生命周期</h2><p>Servlet 生命周期：Servlet加载—&gt;实例化—&gt;服务—&gt;销毁。</p>
+<ol>
+<li><p>init（）：在Servlet的生命周期中，仅执行一次init()方法。它是在服务器装入Servlet时执行的，负责初始化Servlet对象。</p>
+<p>当容器初始化一个servlet时，为其创建唯一的ServletConfig对象， 容器从DD中读取servlet初始化参数，并传给ServletConfig，然后 再将ServletConfig传给servlet的init()方法。</p>
 <a id="more"></a>
+</li>
+<li><p>service（）：它是Servlet的核心，负责响应客户的请求。</p>
+<p>每当一个客户请求一个HttpServlet对象，该对象的Service()方法就要调用，而且传递给这个方法一个“请求”（ServletRequest）对象和一个“响应”（ServletResponse）对象作为参数。在HttpServlet中已存在Service()方法。默认的服务功能是调用与HTTP请求的方法相应的do功能。</p>
+</li>
+<li><p>destroy（）： 仅执行一次，在服务器端停止且卸载Servlet时执行该方法。当Servlet对象退出生命周期时，负责释放占用的资源。</p>
+<p>一个Servlet在运行service()方法时可能会产生其他的线程，因此需要确认在调用destroy()方法时，这些线程已经终止或完成。</p>
+<p>如下图是servlet生命周期的简图。</p>
+</li>
+</ol>
+<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study\program\blog\source\_posts\Servlet-和-JSP-学习\image-20200422105843034.png" alt="image-20200422105843034" style="zoom:80%;">
 
-<p>如下在Servlet4 内部中使用<code>&lt;init-param&gt;</code>去初始化管理员的邮箱</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line"> 	<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>Servlet4<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line"> 	<span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>lesson.ex1.TestInitParams<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line"> 		<span class="tag">&lt;<span class="name">init-param</span>&gt;</span></span><br><span class="line"> 			<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>adminEmail<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line"> 			<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>12345678963@163.com<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"> 		<span class="tag">&lt;/<span class="name">init-param</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"> 		<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>Servlet4<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line"> 		<span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/Servl4<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="2-Servlet线程和初始化"><a href="#2-Servlet线程和初始化" class="headerlink" title="2. Servlet线程和初始化"></a>2. Servlet线程和初始化</h2><p>当Servlet容器中接受到多个请求时，容器是否为每个请求都会创建一个Servlet？</p>
+<p>这样显然效率低，因此容器为单个servlet运行多个线程来处理多个请求。</p>
+<p>如下图，就是两个客户都访问了同一个Servlet，容器并不是为每个用户创建一个servlet，而是为每个用户分配一个线程，并把请求和响应对象传给这个线程。</p>
+<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study\program\blog\source\_posts\Servlet-和-JSP-学习\image-20200421204903719.png" alt="image-20200421204903719" style="zoom:80%;">
 
-<p>在Servlet class 文件中通过java.util.Enumeration获取参数集e，e.nextElement() 获取参数名，getServletConfig().getInitParameter(param)获取参数值。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> </span></span><br><span class="line"><span class="function">	<span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">            response.setContentType(<span class="string">"text/html"</span>);</span><br><span class="line">            PrintWriter out = response.getWriter();</span><br><span class="line">            java.util.Enumeration e = getServletConfig().getInitParameterNames();</span><br><span class="line">            <span class="keyword">while</span>(e.hasMoreElements()) &#123;</span><br><span class="line">            out.println(<span class="string">"&lt;br&gt;param name = "</span> + e.nextElement() + <span class="string">"&lt;br&gt;"</span>);</span><br><span class="line">				&#125;</span><br><span class="line">			out.println(<span class="string">"admin email is"</span> + getServletConfig().getInitParameter(<span class="string">"adminEmail"</span>));</span><br><span class="line">					&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>ServletConfig对象</strong></p>
+<ul>
+<li><p>每个servlet都有一个ServletConfig对象 </p>
+</li>
+<li><p>用于向servlet传递部署时的信息 </p>
+</li>
+<li><p>用于访问ServletContext </p>
+</li>
+<li><p>其参数在DD中配置</p>
+<p><strong>ServletContext</strong> </p>
+</li>
+<li><p>每个web应用都有一个ServletContext </p>
+</li>
+<li><p>用于访问web应用的参数（在DD中配置） </p>
+</li>
+<li><p>用于获取服务器信息 </p>
+</li>
+<li><p>存放其它公用信息</p>
+</li>
+</ul>
+<h2 id="3-Servlet工作原理"><a href="#3-Servlet工作原理" class="headerlink" title="3. Servlet工作原理"></a>3. Servlet工作原理</h2><p>servlet没有main()方法，被容器控制。</p>
+<p>容器将HTTP请求和响应传给servlet，并调用servlet上的方法，如 doPost()或doGet()</p>
+<p>servlet工作原理</p>
+<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study\program\blog\source\_posts\Servlet-和-JSP-学习\image-20200421163859582.png" alt="image-20200421163859582" style="zoom:80%;">
 
-<p>但是Servlet初始化参数只能在对应的Servlet里面获取，如何使得初始化参数在整个web应用都能获取？</p>
-<h3 id="二-、context初始化参数"><a href="#二-、context初始化参数" class="headerlink" title="二 、context初始化参数"></a>二 、context初始化参数</h3><p>context初始化参数时 ，Web应用中所有servlet和JSP都能自动访问到它。</p>
-<p>例如下面为整个web配置一个mainEmail，在<code>&lt;context-param&gt;</code>中设置初始化参数名和值。</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">context-param</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">param-name</span>&gt;</span>mainEmail<span class="tag">&lt;/<span class="name">param-name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">param-value</span>&gt;</span>zhangda@abcdfgh.com<span class="tag">&lt;/<span class="name">param-value</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">context-param</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study\program\blog\source\_posts\Servlet-和-JSP-学习\image-20200421164017290.png" alt="image-20200421164017290" style="zoom:80%;">
 
-<p>在servlet中获取ServletContext()的param名和param值</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> </span></span><br><span class="line"><span class="function">	<span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">		response.setContentType(<span class="string">"text/html"</span>);</span><br><span class="line">		PrintWriter out = response.getWriter();</span><br><span class="line">		java.util.Enumeration e1 = getServletContext().getInitParameterNames();</span><br><span class="line">		<span class="keyword">while</span>(e1.hasMoreElements()) &#123;</span><br><span class="line">			out.println(<span class="string">"&lt;br&gt;param name2 = "</span> + e1.nextElement() + <span class="string">"&lt;br&gt;"</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		out.println(<span class="string">"main email is"</span> + getServletContext().getInitParameter(<span class="string">"mainEmail"</span>));</span><br><span class="line">				&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>在第3步中，容器根据URL找到对应servlet，是怎么通过URL找到的呢？通过哪个URL呢？</p>
+<p>一般一个servlet会有3个名字。</p>
+<ul>
+<li><p>客户端名：URL  。类似 ……/register/registerMe部署名：</p>
+</li>
+<li><p>内部保密 。类似 EnrollServlet真实名：</p>
+</li>
+<li><p>文件 名。类似 SignUpServlet.class</p>
+<p>客户端名 和 部署名 需要在DD文件中配置，接下来了解一下web应用的DD文件</p>
+</li>
+</ul>
+<h3 id="3-1-web-xml配置文件"><a href="#3-1-web-xml配置文件" class="headerlink" title="3.1 web.xml配置文件"></a>3.1 web.xml配置文件</h3><p>编写部署描述符文件web.xml,是web应用程序的署描述符文件（DD）</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">web-app</span> <span class="attr">xmlns</span>=<span class="string">"http://java.sun.com/xml/ns/j2ee"</span></span></span><br><span class="line"><span class="tag"><span class="attr">xmlns:xsi</span>=<span class="string">"http://www.w3.org/2001/XMLSchema-instance"</span></span></span><br><span class="line"><span class="tag"><span class="attr">xsi:schemaLocation</span>=<span class="string">"http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"</span> <span class="attr">version</span>=<span class="string">"2.4"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>EnrollServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-class</span>&gt;</span>SignUpServlet<span class="tag">&lt;/<span class="name">servlet-class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>EnrollServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/registerMe<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">servlet-mapping</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">web-app</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>context初始化参数，Web应用中所有servlet和JSP都能自动访问到它。Servlet初始化参数只能被一个servlet访问。</p>
-<h3 id="Web容器监听器"><a href="#Web容器监听器" class="headerlink" title="Web容器监听器"></a>Web容器监听器</h3><p>首先要编写监听器类。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public class BookAddedListener implements HttpSessionAttributeListener &#123;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void attributeAdded(HttpSessionBindingEvent event) &#123;</span><br><span class="line">		String name &#x3D; event.getName();</span><br><span class="line">		Object value &#x3D; event.getValue();</span><br><span class="line">		System.out.println(&quot;添加属性：&quot; + name + &quot;:&quot; + value);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void attributeRemoved(HttpSessionBindingEvent event) &#123;</span><br><span class="line">		&#x2F;&#x2F; TODO Auto-generated method stub</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	@Override</span><br><span class="line">	public void attributeReplaced(HttpSessionBindingEvent event) &#123;</span><br><span class="line">		String name &#x3D; event.getName();</span><br><span class="line">		Object value &#x3D; event.getValue();</span><br><span class="line">		System.out.println(&quot;更新属性：&quot; + name + &quot;:&quot; + value);</span><br><span class="line"></span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p>如上图，是一个DD文件的例子，从上图可以看出：</p>
+<ul>
+<li>一个DD可以定义多个servlets</li>
+<li><code>&lt;servlet-name&gt;</code>将<code>&lt;servlet&gt;</code>元素绑定到<code>&lt;servlet-mapping&gt;</code>元素</li>
+<li><code>&lt;servlet-name&gt;</code>对应于servlet的部署名，他是内部保密的</li>
+<li><code>&lt;servlet-class&gt;</code>是Java类 ，对应于servlet的真实名。</li>
+<li><code>&lt;url-pattern&gt;</code>是客户端用于请求servlet的名字，对用于servlet的客户端名。</li>
+</ul>
+<h2 id="4-HttpServletRequest对象和HttpServletResponse对象"><a href="#4-HttpServletRequest对象和HttpServletResponse对象" class="headerlink" title="4.  HttpServletRequest对象和HttpServletResponse对象"></a>4.  HttpServletRequest对象和HttpServletResponse对象</h2><p>web服务器收到客户端的http请求，会针对每一次请求，分别创建一个用于代表请求的request对象和代表响应的response对象。通过request对象可以获取用户端提交的数据，通过response对象可以向客户端进行输出数据。</p>
+<p>现在来了解Servlet的这两个对象：HttpServletResponse对象和HttpServletRequest对象。</p>
+<h3 id="4-1-HttpServletRequest对象"><a href="#4-1-HttpServletRequest对象" class="headerlink" title="4.1 HttpServletRequest对象"></a>4.1 HttpServletRequest对象</h3><p>HttpServletRequest对象代表客户端的请求，当客户端通过HTTP协议访问服务器时，HTTP请求头中的所有信息都封装在这个对象中，开发人员通过这个对象中的方法，可以获得客户的这些信息。</p>
+<p><strong>获取客户机环境信息常用的方法如下</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">getRequestURL();   &#x2F;&#x2F;返回客户端发出请求时的完整URL  </span><br><span class="line">getRequestURI();   &#x2F;&#x2F;返回请求行中的资源名部分  </span><br><span class="line">getQueryString();  &#x2F;&#x2F;返回请求行中的参数部分  </span><br><span class="line">getRemoteAddr();   &#x2F;&#x2F;返回发出请求的客户机的IP地址  </span><br><span class="line">getRemoteHost();   &#x2F;&#x2F;返回发出请求的客户机完整主机名  </span><br><span class="line">getRemotePort();   &#x2F;&#x2F;返回客户机所使用的网络端口号  </span><br><span class="line">getLocalAddr();    &#x2F;&#x2F;返回WEB服务器的IP地址  </span><br><span class="line">getLocalName();    &#x2F;&#x2F;返回WEB服务器的主机名  </span><br><span class="line">getMethod();       &#x2F;&#x2F;得到客户机请求方式</span><br></pre></td></tr></table></figure>
 
-<p>在dd文件中配置监听器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;listener&gt;</span><br><span class="line">	&lt;listener-class&gt;ex2.BookAddedListener&lt;&#x2F;listener-class&gt;</span><br><span class="line">&lt;&#x2F;listener&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>获取请求信息常用的方法</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;获得客户机请求头  </span><br><span class="line">getHeader(String name);  </span><br><span class="line">getHeaders(String name);  &#x2F;&#x2F;获取指定名称的头的所有值  </span><br><span class="line">getHeaderNames(); &#x2F;&#x2F;获取所有头的名称  </span><br><span class="line">  </span><br><span class="line">&#x2F;&#x2F;获得客户机请求参数(客户端提交的数据)  </span><br><span class="line">getParameter(name);  </span><br><span class="line">getParameterValues(String name);  &#x2F;&#x2F;获取指定参数名的所有值  </span><br><span class="line">getParameterNames();  &#x2F;&#x2F;获取所有参数名</span><br></pre></td></tr></table></figure>
 
+<p><strong>Request对象还解决了一次请求内的不同Servlet的数据共享问题</strong></p>
+<p>可以通过<code>setAttribute()</code>，将值放入到request对象，然后在前端页面使用<code>getAttribute()</code>获取对应的值，这样就达到一次请求可以在多个页面共享一些对象信息</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">request.setAttribute(<span class="string">"name"</span>, <span class="string">"xxx"</span>);	<span class="comment">// 在servlet中添加request参数</span></span><br><span class="line">   request.getAttribute(Object obj)</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-HttpServletResponse对象"><a href="#4-2-HttpServletResponse对象" class="headerlink" title="4.2 HttpServletResponse对象"></a>4.2 HttpServletResponse对象</h3><p>HttpServletResponse对象是指服务器的响应，这个对象中封装了向客户端发送数据，发送响应头，发送响应状态码的方法。</p>
+<p>下面是HttpServletResponse 以及 ServletResponse的类图，通过类图可以看出HttpServletResponse所提供的的方法，红色方框部分是获取一个输出流的方法，通过这个方法可以完成向客户端输出数据。</p>
+<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study\program\blog\source\_posts\Servlet-和-JSP-学习\image-20200421171709678.png" alt="image-20200421171709678" style="zoom:80%;">
+
+<p>对于response对象的使用，首先需要setContentType()方法在响应的 HTTP头中设置MIME类型，告诉浏览器返回的是什么，浏览器就知道该怎么处理了。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.setContentType(<span class="string">"text/html"</span>);<span class="comment">//这里告诉浏览器返回的是text或者html</span></span><br></pre></td></tr></table></figure>
+
+<p>使用响应对象获取一个输出流，使用输出 流向客户端写HTML</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PrintWriter out = response.getWriter();</span><br><span class="line">out.println(<span class="string">"Text"</span>);</span><br></pre></td></tr></table></figure>
+
+<p>下面是 两个输出的例子。</p>
+<p><strong>1）向客户端输出中文数据</strong></p>
+<p>PrintWriter or ServletOutputStream</p>
+<ul>
+<li><p>PrintWriter向字符流打印文本数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">response.setContentType(<span class="string">"text/html"</span>);</span><br><span class="line">String data = <span class="string">"中国"</span>;   </span><br><span class="line">PrintWriter out = response.getWriter();</span><br><span class="line">out.write(data);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>ServletOutputStream可以打印任何数据，如字节</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String data = <span class="string">"中国"</span>;  </span><br><span class="line">ServletOutputStream out = response.getOutputStream();</span><br><span class="line">out.write(data.getBytes(<span class="string">"UTF-8"</span>));</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<p> <strong>2）文件下载</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public void doGet(HttpServletRequest request, HttpServletResponse response) </span><br><span class="line">	throws IOException, ServletException &#123;</span><br><span class="line">        &#x2F;&#x2F;让浏览器知道这是一个JAR文件</span><br><span class="line">		response.setContentType(&quot;application&#x2F;jar&quot;);</span><br><span class="line">		ServletContext ctx &#x3D; getServletContext();</span><br><span class="line">       &#x2F;&#x2F;为资源建立一个输入流</span><br><span class="line">		InputStream is &#x3D; ctx.getResourceAsStream(&quot;&#x2F;resources&#x2F;bookCode.jar&quot;);</span><br><span class="line">		int read &#x3D; -1;</span><br><span class="line">		byte[] bytes &#x3D; new byte[1024];</span><br><span class="line">		OutputStream os &#x3D; response.getOutputStream();</span><br><span class="line">		while ((read &#x3D; is.read(bytes))!&#x3D;-1) &#123;</span><br><span class="line">			os.write(bytes,0,read);</span><br><span class="line">		&#125;</span><br><span class="line">		os.flush();</span><br><span class="line">		os.close();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="5-Redirect-vs-Request-Dispatch"><a href="#5-Redirect-vs-Request-Dispatch" class="headerlink" title="5. Redirect vs. Request Dispatch"></a>5. Redirect vs. Request Dispatch</h2><p><strong>1）Redirect 原理</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.sendRedirect(<span class="string">"BrownBeer"</span>);	<span class="comment">//sendRedirect(aString)方法的参数是String类型，而不是URL类型</span></span><br></pre></td></tr></table></figure>
+
+<p>当使用Redirect跳转页面时，servlet调用sendRedirect(aString), HTTP响应的状态码为301，Location 的头属性值是跳转的URL。</p>
+<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study\program\blog\source\_posts\Servlet-和-JSP-学习\image-20200421174438838.png" alt="image-20200421174438838" style="zoom:80%;">
+
+<p>浏览器得到响应之后再次发起新的请求，之后按照正常的请求和响应方式显示页面。</p>
+<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study\program\blog\source\_posts\Servlet-和-JSP-学习\image-20200421174530118.png" alt="image-20200421174530118" style="zoom:80%;">
+
+
+
+<p><strong>2）Request Dispatch 原理</strong></p>
+<p>request对象提供了一个getRequestDispatcher方法，该方法返回一个RequestDispatcher对象，调用这个对象的forwoard方法可以实现请求转发。 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.getRequestDispatcher(<span class="string">"DarkBeer"</span>).forward(request, response);</span><br></pre></td></tr></table></figure>
+
+<p>当使用Request Dispatch跳转页面时，通过forward(request, response)让跳转的jsp接管响应，最后返回给浏览器。这样浏览器的地址栏没有发生变化。</p>
+<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study\program\blog\source\_posts\Servlet-和-JSP-学习\image-20200421174825210.png" alt="image-20200421174825210" style="zoom:80%;">
+
+<ol>
+<li>Redirect使客户端执行转发，这样会使网页跳转频繁，影响用户体验。</li>
+<li>Request dispatch使服务器上的应用执行转发，浏览器地址栏没有变化，用户体验感好。</li>
+</ol>
 
       
 
@@ -235,6 +353,10 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javaee</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">servlet</a>
         		</li>
       		
 		</ul>
@@ -290,7 +412,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/04/21/web%E5%AE%B9%E5%99%A8%E6%A8%A1%E5%9E%8B/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -304,9 +426,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20web%E5%AE%B9%E5%99%A8%E6%A8%A1%E5%9E%8B/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          如何初始化Web容器上下文参数
+        
+      </div>
+    </a>
   
-    <a href="/2020/04/21/java%E5%AE%B9%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">javaEE组件和容器</div>
+  
+    <a href="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">javaee学习 — Web应用开发方法</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -432,11 +563,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Bootstrap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">uml</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">类图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -448,7 +591,51 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">javaee</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">java集合</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">web项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">servlet</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">css布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -464,43 +651,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">web项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Bootstrap</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JQuery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">css布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">servlet</a>
+                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -512,27 +667,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
+                <a href="javascript:void(0)" class="js-tag color4">过滤器</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">java集合</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">javaee</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
             
             <div class="clearfix"></div>

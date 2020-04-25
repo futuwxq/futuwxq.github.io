@@ -6,21 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
-  <title>session 和 cookie | 晓秋的博客</title>
+  <title>晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第二部分 cookieCookie是什么？  Cookie 是一小段文本信息，伴随着用户请求和页面在 Web 服务器和浏览器之间传递。Cookie 包含每次用户访问站点时 Web 应用程序都可以读取的信息。 为什么需要Cookie？">
-<meta property="og:type" content="article">
-<meta property="og:title" content="session 和 cookie">
-<meta property="og:url" content="https://futuwxq.github.io/2020/04/13/session-%E5%92%8C-cookie%E5%AD%A6%E4%B9%A0/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="晓秋的博客">
+<meta property="og:url" content="https://futuwxq.github.io/page/4/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="第二部分 cookieCookie是什么？  Cookie 是一小段文本信息，伴随着用户请求和页面在 Web 服务器和浏览器之间传递。Cookie 包含每次用户访问站点时 Web 应用程序都可以读取的信息。 为什么需要Cookie？">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-13T00:48:19.000Z">
-<meta property="article:modified_time" content="2020-04-21T14:09:10.021Z">
 <meta property="article:author" content="不知火舞">
-<meta property="article:tag" content="session">
-<meta property="article:tag" content="cookie">
-<meta property="article:tag" content="javaee">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
@@ -157,75 +150,35 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="p-session-和-cookie学习" class="article article-type-p " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-git的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      session 和 cookie
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/">git的使用</a>
     </h1>
   
 
         
-        <a href="/2020/04/13/session-%E5%92%8C-cookie%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2020-04-13T00:48:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
+        <a href="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2020-04-01T06:57:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第二部分-cookie"><a href="#第二部分-cookie" class="headerlink" title="第二部分 cookie"></a>第二部分 cookie</h2><p><strong>Cookie是什么？</strong></p>
-<p> Cookie 是一小段文本信息，伴随着用户请求和页面在 Web 服务器和浏览器之间传递。Cookie 包含每次用户访问站点时 Web 应用程序都可以读取的信息。</p>
-<p><strong>为什么需要Cookie？</strong></p>
-<a id="more"></a>
-
-<p> 因为HTTP协议是无状态的，对于一个浏览器发出的多次请求，WEB服务器无法区分 是不是来源于同一个浏览器。所以，需要额外的数据用于维护session。 Cookie随HTTP请求有一个sessionID来记录用户的某一session。</p>
-<p><strong>Cookie能做什么？</strong></p>
-<p> Cookie只是一段文本，所以它只能保存字符串。而且浏览器对它有大小限制以及 它会随着每次请求被发送到服务器，所以应该保证它不要太大。 Cookie的内容也是明文保存的，有些浏览器提供界面修改，所以， 不适合保存重要的或者涉及隐私的内容。</p>
-<h3 id="2-1-Cookie的读写"><a href="#2-1-Cookie的读写" class="headerlink" title="2.1  Cookie的读写"></a>2.1  Cookie的读写</h3><p><strong>1）初始化cookie</strong></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"account"</span>, userId + <span class="string">"="</span> + password + <span class="string">"="</span> + authority);</span><br></pre></td></tr></table></figure>
-<p>cookie的有效时间是指某一用户的上次请求和本次请求的时间差。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;设置cookie的有效时间</span><br><span class="line">cookie.setMaxAge(60 * 60 * 24);</span><br><span class="line">response.addCookie(cookie);</span><br></pre></td></tr></table></figure>
-
-<p><strong>2）读取cookie</strong></p>
-<p>读写Cookie是通过使用HttpCookie类来完成的。</p>
-<p>如果cookies不为空（一定不为空，有系统自带的cookie）</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//获取cookie</span></span><br><span class="line">Cookie[] cookies = request.getCookies();</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (cookies != <span class="keyword">null</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (Cookie cookie : cookies) &#123;</span><br><span class="line">        <span class="comment">// 遍历cookies，找到名称为account的cookie</span></span><br><span class="line">        <span class="keyword">if</span> (cookie.getName().equals(<span class="string">"account"</span>)) &#123;</span><br><span class="line">            accountCookie = cookie;<span class="comment">// 初始化</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//这是一个输出cookie的例子</span></span><br><span class="line"><span class="keyword">if</span> (accountCookie != <span class="keyword">null</span>) &#123;</span><br><span class="line">     <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; cookies.length; i++) &#123;</span><br><span class="line">          <span class="keyword">if</span> (accountCookie[i].getName().equals(<span class="string">"userId"</span>)) &#123;</span><br><span class="line">                out.print(accountCookie[i].getValue());</span><br><span class="line">           &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>3）添加cookie</strong></p>
-<p>如果 hasStore 为假，那么添加当前账户到 accountCookie里面</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">cookieValue += <span class="string">"&amp;"</span> + userId + <span class="string">"="</span> + password + <span class="string">"="</span> + authority;</span><br><span class="line">Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"account"</span>, cookieValue);<span class="comment">// 更新cookie的值</span></span><br><span class="line">cookie.setMaxAge(<span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span>);</span><br><span class="line">response.addCookie(cookie);</span><br></pre></td></tr></table></figure>
-<p><strong>4）删除cookie</strong></p>
-<p>下面的代码实现了把用户的信息存储到cookie中。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//从浏览器获取参数</span></span><br><span class="line">String authority = (String) request.getParameter(<span class="string">"authority"</span>);</span><br><span class="line">String userId = request.getParameter(<span class="string">"userID"</span>);</span><br><span class="line"><span class="keyword">int</span> id = Integer.parseInt(userId);</span><br><span class="line">String password = request.getParameter(<span class="string">"password"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//从请求获取cookie</span></span><br><span class="line">Cookie[] cookies = request.getCookies();</span><br><span class="line"></span><br><span class="line"><span class="comment">//开始设置accountCookie还没有存贮账号信息</span></span><br><span class="line"><span class="keyword">boolean</span> hasAccountCookie = <span class="keyword">false</span>;<span class="comment">//这是为了区分首次存储账户信息和再次存储</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//创建accountCookie</span></span><br><span class="line">Cookie accountCookie = <span class="keyword">null</span>; </span><br><span class="line"></span><br><span class="line"><span class="comment">// 把cookie中名为account的数据复制到 accountCookie中</span></span><br><span class="line"><span class="keyword">if</span> (cookies != <span class="keyword">null</span>) &#123;</span><br><span class="line">    <span class="keyword">for</span> (Cookie cookie : cookies) &#123;</span><br><span class="line">        <span class="comment">// 遍历cookies，找到名称为account的cookie</span></span><br><span class="line">        <span class="keyword">if</span> (cookie.getName().equals(<span class="string">"account"</span>)) &#123;</span><br><span class="line">            accountCookie = cookie;<span class="comment">// 初始化</span></span><br><span class="line">            hasAccountCookie = <span class="keyword">true</span>;<span class="comment">//accountCookie已经存过账户</span></span><br><span class="line">            <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line"><span class="comment">/*如果 hasAccountCookie 是 true，说明AccountCookie内已经存贮用户信息，然后需要检查当前用户的信息是否在 accountCookie */</span>   </span><br><span class="line">    <span class="keyword">if</span> (hasAccountCookie == <span class="keyword">true</span>) &#123;</span><br><span class="line">        String cookieValue = accountCookie.getValue();</span><br><span class="line">        <span class="keyword">boolean</span> hasStore = <span class="keyword">false</span>; <span class="comment">// 开始设置没有保存账号</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment">// 查找是否保存过账号</span></span><br><span class="line">        <span class="comment">//accountCookie内存有多个账号</span></span><br><span class="line">        <span class="keyword">if</span> (cookieValue.contains(<span class="string">"&amp;"</span>)) &#123;</span><br><span class="line">              String[] accounts = cookieValue.split(<span class="string">"&amp;"</span>);</span><br><span class="line">              <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; accounts.length; i++) &#123;</span><br><span class="line">              <span class="keyword">if</span> (accounts[i].split(<span class="string">"="</span>)[<span class="number">0</span>].equals(userId)) &#123;</span><br><span class="line">                  hasStore = <span class="keyword">true</span>;<span class="comment">//证明accountCookie保存了当前用户的信息</span></span><br><span class="line">                     <span class="keyword">break</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;<span class="comment">//只有一个账户</span></span><br><span class="line">             <span class="keyword">if</span> (cookieValue.split(<span class="string">"="</span>)[<span class="number">0</span>].equals(userId)) &#123;</span><br><span class="line">                 hasStore = <span class="keyword">true</span>;<span class="comment">//证明accountCookie保存了当前用户的信息</span></span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        </span><br><span class="line">          <span class="comment">// 如果没有保存当前账号，则把账户保存到cookies里面</span></span><br><span class="line">          <span class="keyword">if</span> (hasStore == <span class="keyword">false</span>) &#123; </span><br><span class="line">                cookieValue += <span class="string">"&amp;"</span> + userId + <span class="string">"="</span> + password + <span class="string">"="</span> + authority;</span><br><span class="line">                Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"account"</span>, cookieValue);<span class="comment">// 更新cookie的值</span></span><br><span class="line">                cookie.setMaxAge(<span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span>);</span><br><span class="line">                response.addCookie(cookie);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                System.out.println(<span class="string">"该账户已被保存"</span>);</span><br><span class="line">            &#125;</span><br><span class="line">     &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="comment">// 首次保存密码，直接初始化一个cookie</span></span><br><span class="line">           Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"account"</span>, userId + <span class="string">"="</span> + password + <span class="string">"="</span> + authority);</span><br><span class="line">            cookie.setMaxAge(<span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span>);</span><br><span class="line">            response.addCookie(cookie);</span><br><span class="line">        &#125;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;<span class="comment">//cookies为空</span></span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-
+        <p>git是一款版本控制工具，所谓版本控制，也即是任何允许系统性地保存内容版本的系统。 </p>
+<h2 id="第一部分-使用Git基础操作"><a href="#第一部分-使用Git基础操作" class="headerlink" title="第一部分 使用Git基础操作"></a>第一部分 使用Git基础操作</h2><p>1.1  查看基础命令和版本 </p>
+        
+          <a class="article-more-a" href="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/#more">more >></a>
+        
       
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -236,15 +189,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">session</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">工具类</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">cookie</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javaee</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
         		</li>
       		
 		</ul>
@@ -253,84 +202,16 @@
       
 
       
-
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
+        </p>
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/04/13/session-%E5%92%8C-cookie%E5%AD%A6%E4%B9%A0/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/04/13/servlet%E4%B8%ADdoGet-%E5%92%8CdoPost-%E6%96%B9%E6%B3%95/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          servlet中doGet()和doPost()方法
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/04/12/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">盒子模型学习</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -350,14 +231,80 @@
 
 
 
-  
-  
-  
 
   
-
+    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/31/hello-world/">Hello World</a>
+    </h1>
   
 
+        
+        <a href="/2020/03/31/hello-world/" class="archive-article-date">
+  	<time datetime="2020-03-31T02:58:36.916Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+        
+          <a class="article-more-a" href="/2020/03/31/hello-world/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/31/hello-world/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    </nav>
   
 
 
@@ -380,8 +327,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
@@ -451,11 +398,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">Bootstrap</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">JQuery</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">uml</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">类图</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -467,7 +426,51 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">javaee</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">java</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">java集合</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">web项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">servlet</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">css布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -483,43 +486,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">web项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Bootstrap</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JQuery</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">css布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">servlet</a>
+                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -531,27 +502,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
+                <a href="javascript:void(0)" class="js-tag color4">过滤器</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">java</a>
+                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">java集合</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">javaee</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
+                <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
             
             <div class="clearfix"></div>

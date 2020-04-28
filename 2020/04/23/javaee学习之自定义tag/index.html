@@ -15,13 +15,13 @@
 <meta property="og:site_name" content="晓秋的博客">
 <meta property="og:description" content="什么是定制的标签(Custom Tag)? 自定义标签（tag）是一种用户自定义的JSP语言元素，当容器将JSP转化成servlet时，Tag被转化成对Tag处理器的操作，在项目运行时，容器调用这些tag处理器操作。 自定义标签的特点  可以通过调用它的页面传递来的属性进行定制化 可以向调用它的页面传回变量">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%87%AA%E5%AE%9A%E4%B9%89tag/study/program/blog/source/_posts/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%87%AA%E5%AE%9A%E4%B9%89tag/image-20200424161830895.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%87%AA%E5%AE%9A%E4%B9%89tag/image-20200424161830895.png">
 <meta property="article:published_time" content="2020-04-23T14:08:33.000Z">
-<meta property="article:modified_time" content="2020-04-25T12:24:50.359Z">
+<meta property="article:modified_time" content="2020-04-25T13:27:14.881Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="javaee">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%87%AA%E5%AE%9A%E4%B9%89tag/study/program/blog/source/_posts/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%87%AA%E5%AE%9A%E4%B9%89tag/image-20200424161830895.png">
+<meta name="twitter:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%87%AA%E5%AE%9A%E4%B9%89tag/image-20200424161830895.png">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
   
@@ -177,7 +177,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>什么是定制的标签(Custom Tag)?</p>
+        <p><strong>什么是定制的标签(Custom Tag)?</strong></p>
 <p>自定义标签（tag）是一种用户自定义的JSP语言元素，当容器将JSP转化成servlet时，Tag被转化成对Tag处理器的操作，在项目运行时，容器调用这些tag处理器操作。</p>
 <p><strong>自定义标签的特点</strong></p>
 <ul>
@@ -207,11 +207,11 @@
 <p>需求：将一个带有logo的头文件嵌入到jsp页面中。</p>
 <p><strong>1.</strong>将需嵌入的文件扩展名改为.tag。</p>
 <p>Header.tag</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;img&#x2F;ogo.png&quot;&gt; &lt;br&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=<span class="string">"img/ogo.png"</span>&gt; &lt;br&gt;</span><br></pre></td></tr></table></figure>
 
 <p><strong>2.</strong>将以上的tag文件放到一个目录下，如WEB-INF/tags</p>
 <p><strong>3.</strong>在jsp中使用taglib指令，首先需要先导入标签库，再使用标签。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib prefix&#x3D;&quot;myTag&quot; tagdir&#x3D;&quot;&#x2F;WEB-INF&#x2F;tags&quot; %&gt; &#x2F;&#x2F;导入标签库</span><br><span class="line">&lt;html&gt;&lt;body&gt;</span><br><span class="line">	&lt;myTags：Header&#x2F;&gt;</span><br><span class="line">	Welcom to our site.</span><br><span class="line">&lt;&#x2F;body&gt;&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib prefix=<span class="string">"myTag"</span> tagdir=<span class="string">"/WEB-INF/tags"</span> %&gt; <span class="comment">//导入标签库</span></span><br><span class="line">&lt;html&gt;&lt;body&gt;</span><br><span class="line">	&lt;myTags：Header/&gt;</span><br><span class="line">	Welcom to our site.</span><br><span class="line">&lt;/body&gt;&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li><p>prefix：指定使用时标签前缀。</p>
@@ -224,7 +224,7 @@
 <h5 id="1-给tag-flie传递数据"><a href="#1-给tag-flie传递数据" class="headerlink" title="1) 给tag flie传递数据"></a>1) 给tag flie传递数据</h5><p>使用tag的属性可以给tag flie传递数据。例如对上面的需求进行完善。</p>
 <p>需求：在jsp页面插入一个头部，这个头部包含一个logo和自定义标题，标题的内容可以在jsp页面指定。</p>
 <p><strong>1.</strong>  header.tag中使用属性指令。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ attribute name&#x3D;&quot;subTilte&quot; required&#x3D;&quot;true&quot; rtextprvalue&#x3D;&quot;true&quot; %&gt;</span><br><span class="line">&lt;img src&#x3D;&quot;img&#x2F;ogo.png&quot;&gt;</span><br><span class="line">&lt;strong&gt; $&#123;subTilte&#125; &lt;&#x2F;strong&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ attribute name=<span class="string">"subTilte"</span> required=<span class="string">"true"</span> rtextprvalue=<span class="string">"true"</span> %&gt;</span><br><span class="line">&lt;img src=<span class="string">"img/ogo.png"</span>&gt;</span><br><span class="line">&lt;strong&gt; $&#123;subTilte&#125; &lt;/strong&gt;</span><br></pre></td></tr></table></figure>
 
 <ul>
 <li>&lt;%@ attribute&gt;代表着一个tag的属性指令。</li>
@@ -233,7 +233,7 @@
 <li>rtextprvalue=”true”：属性可以是字符串文本或表达式</li>
 </ul>
 <p><strong>2.</strong>在JSP页面使用tag。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib prefix&#x3D;&quot;myTag&quot; tagdir&#x3D;&quot;&#x2F;WEB-INF&#x2F;tags&quot; %&gt;</span><br><span class="line">&lt;html&gt;&lt;body&gt;</span><br><span class="line">	&lt;myTags：Header subTitle&#x3D;&quot;we take the string out of SOAP&quot; &#x2F;&gt;&#x2F;&#x2F;自定义subTitle</span><br><span class="line">	Welcom to our site.</span><br><span class="line">&lt;&#x2F;body&gt;&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib prefix=<span class="string">"myTag"</span> tagdir=<span class="string">"/WEB-INF/tags"</span> %&gt;</span><br><span class="line">&lt;html&gt;&lt;body&gt;</span><br><span class="line">	&lt;myTags：Header subTitle=<span class="string">"we take the string out of SOAP"</span> /&gt;<span class="comment">//自定义subTitle</span></span><br><span class="line">	Welcom to our site.</span><br><span class="line">&lt;/body&gt;&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
 
 
@@ -241,17 +241,17 @@
 <p>Tag Library Descriptor (TLD)，描述了EL函数(EL functions) 和 自定义Tag ，他通过使用EL函数扩展EL的功能 ，并且可以描述了自定义Tag。</p>
 <h3 id="2-1-使用-EL函数扩展EL的功能"><a href="#2-1-使用-EL函数扩展EL的功能" class="headerlink" title="2.1  使用 EL函数扩展EL的功能"></a>2.1  使用 EL函数扩展EL的功能</h3><p>通过EL表达式调用一个POJO上的静态方法来实现拓展EL函数的功能。通过下面4个步骤完成。</p>
 <p><strong>1.</strong>写一个具有公共静态方法的Java 类 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">package foo;</span><br><span class="line">public class DiceRoller&#123;</span><br><span class="line">	Public static int rollDice()&#123;</span><br><span class="line">	return (int ) ((Math.random()*6)+1);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> foo;</span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">DiceRoller</span></span>&#123;</span><br><span class="line">	<span class="function">Public <span class="keyword">static</span> <span class="keyword">int</span> <span class="title">rollDice</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (<span class="keyword">int</span> ) ((Math.random()*<span class="number">6</span>)+<span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>2.</strong>写TLD文件，它实现了定义函数功能的Java类到调用函数 的JSP页面间的映射</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;”1.0” encoding&#x3D;”ISO-8859-1” ?&gt;</span><br><span class="line">&lt;taglib xmlns&#x3D;”http:&#x2F;&#x2F;java.sun.com&#x2F;xml&#x2F;ns&#x2F;j2ee”</span><br><span class="line">xmlns:xsi&#x3D;”http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance”</span><br><span class="line">xsi:schemaLocation&#x3D;”http:&#x2F;&#x2F;java.sun.com&#x2F;xml&#x2F;ns&#x2F;j2ee&#x2F;webjsptaglibrary_2_0.xsd” version&#x3D;”2.0”&gt;</span><br><span class="line">&lt;tlib-version&gt;1.2&lt;&#x2F;tlib-version&gt;</span><br><span class="line">&lt;uri&gt;DiceFunctions&lt;&#x2F;uri&gt;</span><br><span class="line">    &lt;function&gt;</span><br><span class="line">        &lt;name&gt;rollIt&lt;&#x2F;name&gt;</span><br><span class="line">        &lt;function-class&gt;foo.DiceRoller&lt;&#x2F;function-class&gt;  &#x2F;&#x2F;java类的位置</span><br><span class="line">        &lt;function-signature&gt;</span><br><span class="line">        	int rollDice() &#x2F;&#x2F;功能函数</span><br><span class="line">        &lt;&#x2F;function-signature&gt;</span><br><span class="line">    &lt;&#x2F;function&gt;</span><br><span class="line">&lt;&#x2F;taglib&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=”1.0” encoding=”ISO-8859-1” ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">taglib</span> <span class="attr">xmlns</span>=<span class="string">”http://java.sun.com/xml/ns/j2ee”</span></span></span><br><span class="line"><span class="tag"><span class="attr">xmlns:xsi</span>=<span class="string">”http://www.w3.org/2001/XMLSchema-instance”</span></span></span><br><span class="line"><span class="tag"><span class="attr">xsi:schemaLocation</span>=<span class="string">”http://java.sun.com/xml/ns/j2ee/webjsptaglibrary_2_0.xsd”</span> <span class="attr">version</span>=<span class="string">”2.0”</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">tlib-version</span>&gt;</span>1.2<span class="tag">&lt;/<span class="name">tlib-version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">uri</span>&gt;</span>DiceFunctions<span class="tag">&lt;/<span class="name">uri</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">function</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>rollIt<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">function-class</span>&gt;</span>foo.DiceRoller<span class="tag">&lt;/<span class="name">function-class</span>&gt;</span>  //java类的位置</span><br><span class="line">        <span class="tag">&lt;<span class="name">function-signature</span>&gt;</span></span><br><span class="line">        	int rollDice() //功能函数</span><br><span class="line">        <span class="tag">&lt;/<span class="name">function-signature</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">function</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">taglib</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p> <strong>3.</strong>在JSP中使用taglib指令,使用EL调用该函数.</p>
 <p>uri属性将TLD的名字告诉容器， 以便容器知道JSP调用EL函数 时应调用哪个Java方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> &lt;%@ taglib uri&#x3D;&quot;DiceFunctions&quot; prefix&#x3D;&quot;mine&quot;%&gt;  &#x2F;&#x2F;uri对应于TLD中的uri</span><br><span class="line">&lt;body&gt;</span><br><span class="line">	$&#123;mine:rollit()&#125;  &#x2F;&#x2F;函数名rollIt()来自于TLD中的name，而不是实际Java类中的方法名</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"> &lt;%@ taglib uri=<span class="string">"DiceFunctions"</span> prefix=<span class="string">"mine"</span>%&gt;  <span class="comment">//uri对应于TLD中的uri</span></span><br><span class="line">&lt;body&gt;</span><br><span class="line">	$&#123;mine:rollit()&#125;  <span class="comment">//函数名rollIt()来自于TLD中的name，而不是实际Java类中的方法名</span></span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
 
 <h3 id="2-2-用TLD描述自定义Tag"><a href="#2-2-用TLD描述自定义Tag" class="headerlink" title="2.2 用TLD描述自定义Tag"></a>2.2 用TLD描述自定义Tag</h3><p>这是一个TLD的例子。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;”1.0” encoding&#x3D;”ISO-8859-1” ?&gt;</span><br><span class="line">&lt;taglib xmlns&#x3D;”http:&#x2F;&#x2F;java.sun.com&#x2F;xml&#x2F;ns&#x2F;j2ee”</span><br><span class="line">xmlns:xsi&#x3D;”http:&#x2F;&#x2F;www.w3.org&#x2F;2001&#x2F;XMLSchema-instance”</span><br><span class="line">xsi:schemaLocation&#x3D;”http:&#x2F;&#x2F;java.sun.com&#x2F;xml&#x2F;ns&#x2F;j2ee&#x2F;web-jsptaglibrary_2_0.xsd”</span><br><span class="line">version&#x3D;”2.0”&gt;</span><br><span class="line"></span><br><span class="line">    &lt;tlib-version&gt;1.2&lt;&#x2F;tlib-version&gt; &#x2F;&#x2F;这个标签是强制性的，指明tag库的版本</span><br><span class="line">    &lt;short-name&gt;RandomTags&lt;&#x2F;short-name&gt;&#x2F;&#x2F;强制性的，主要为工具使用</span><br><span class="line">    </span><br><span class="line">    &lt;uri&gt;randomThings&lt;&#x2F;uri&gt;  &#x2F;&#x2F;在taglib指令中使用的唯一名字</span><br><span class="line">    &lt;tag&gt;</span><br><span class="line">        &lt;description&gt;random advice&lt;&#x2F;description&gt;</span><br><span class="line">        </span><br><span class="line">         &#x2F;&#x2F;必需的，在tag中使用，如&lt;my:advice&gt;</span><br><span class="line">        &lt;name&gt;advice&lt;&#x2F;name&gt; </span><br><span class="line">        </span><br><span class="line">		&#x2F;&#x2F;必需的，当JSP中使用tag时，容器调用该类</span><br><span class="line">        &lt;tag-class&gt;foo.AdvisorTagHandler&lt;&#x2F;tag-class&gt; </span><br><span class="line">        &lt;body-content&gt;empty&lt;&#x2F;body-content&gt;&#x2F;&#x2F;必需的，说明tag体为空</span><br><span class="line">        </span><br><span class="line">        &#x2F;&#x2F;如果tag有属性，则每个tag属性必须有一个&lt;attribute&gt;元素</span><br><span class="line">        &lt;attribute&gt;</span><br><span class="line">            &lt;name&gt;user&lt;&#x2F;name&gt;</span><br><span class="line">            &lt;required&gt;true&lt;&#x2F;required&gt;</span><br><span class="line">            &lt;rtexprvalue&gt;true&lt;&#x2F;rtexprvalue&gt;</span><br><span class="line">        &lt;&#x2F;attribute&gt;</span><br><span class="line">    &lt;&#x2F;tag&gt;</span><br><span class="line">&lt;&#x2F;taglib&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=”1.0” encoding=”ISO-8859-1” ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">taglib</span> <span class="attr">xmlns</span>=<span class="string">”http://java.sun.com/xml/ns/j2ee”</span></span></span><br><span class="line"><span class="tag"><span class="attr">xmlns:xsi</span>=<span class="string">”http://www.w3.org/2001/XMLSchema-instance”</span></span></span><br><span class="line"><span class="tag"><span class="attr">xsi:schemaLocation</span>=<span class="string">”http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd”</span></span></span><br><span class="line"><span class="tag"><span class="attr">version</span>=<span class="string">”2.0”</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">tlib-version</span>&gt;</span>1.2<span class="tag">&lt;/<span class="name">tlib-version</span>&gt;</span> //这个标签是强制性的，指明tag库的版本</span><br><span class="line">    <span class="tag">&lt;<span class="name">short-name</span>&gt;</span>RandomTags<span class="tag">&lt;/<span class="name">short-name</span>&gt;</span>//强制性的，主要为工具使用</span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">uri</span>&gt;</span>randomThings<span class="tag">&lt;/<span class="name">uri</span>&gt;</span>  //在taglib指令中使用的唯一名字</span><br><span class="line">    <span class="tag">&lt;<span class="name">tag</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">description</span>&gt;</span>random advice<span class="tag">&lt;/<span class="name">description</span>&gt;</span></span><br><span class="line">        </span><br><span class="line">         //必需的，在tag中使用，如<span class="tag">&lt;<span class="name">my:advice</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>advice<span class="tag">&lt;/<span class="name">name</span>&gt;</span> </span><br><span class="line">        </span><br><span class="line">		//必需的，当JSP中使用tag时，容器调用该类</span><br><span class="line">        <span class="tag">&lt;<span class="name">tag-class</span>&gt;</span>foo.AdvisorTagHandler<span class="tag">&lt;/<span class="name">tag-class</span>&gt;</span> </span><br><span class="line">        <span class="tag">&lt;<span class="name">body-content</span>&gt;</span>empty<span class="tag">&lt;/<span class="name">body-content</span>&gt;</span>//必需的，说明tag体为空</span><br><span class="line">        </span><br><span class="line">        //如果tag有属性，则每个tag属性必须有一个<span class="tag">&lt;<span class="name">attribute</span>&gt;</span>元素</span><br><span class="line">        <span class="tag">&lt;<span class="name">attribute</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">name</span>&gt;</span>user<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">required</span>&gt;</span>true<span class="tag">&lt;/<span class="name">required</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">rtexprvalue</span>&gt;</span>true<span class="tag">&lt;/<span class="name">rtexprvalue</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">attribute</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">tag</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">taglib</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <h5 id="1-Tag体中的内容"><a href="#1-Tag体中的内容" class="headerlink" title="1) Tag体中的内容"></a>1) Tag体中的内容</h5><p>TLD 中<code>&lt;body-content&gt;</code>元素的定义:</p>
 <ul>
@@ -275,25 +275,25 @@
 <p>自定义tag处理器分为Classic tag处理器 和  Simple tag处理器 。接下来主要介绍怎常见一个Simple tag处理器。</p>
 <h3 id="3-1-Simple-Tag处理器"><a href="#3-1-Simple-Tag处理器" class="headerlink" title="3.1  Simple Tag处理器"></a>3.1  Simple Tag处理器</h3><h5 id="1）创建一个Simple-Tag处理器"><a href="#1）创建一个Simple-Tag处理器" class="headerlink" title="1）创建一个Simple Tag处理器"></a>1）创建一个Simple Tag处理器</h5><p>需求通过Simple Tag处理器记录用户访问网站的次数，并输出。</p>
 <p><strong>1.</strong>写一个扩展SimpleTagSupport的类，重载doTag()方法。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public class CounterSimpleTag1 extends SimpleTagSupport &#123;</span><br><span class="line">	private static int counter &#x3D; 1;</span><br><span class="line">	public void doTag() throws JspException,IOException&#123;</span><br><span class="line">		getJspContext().getOut().print(counter);</span><br><span class="line">	&#125;</span><br><span class="line">	public int getCounter() &#123;</span><br><span class="line">		return counter;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	public void setCounter() &#123;</span><br><span class="line">		counter++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CounterSimpleTag1</span> <span class="keyword">extends</span> <span class="title">SimpleTagSupport</span> </span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> counter = <span class="number">1</span>;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doTag</span><span class="params">()</span> <span class="keyword">throws</span> JspException,IOException</span>&#123;</span><br><span class="line">		getJspContext().getOut().print(counter);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getCounter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> counter;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setCounter</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		counter++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>2.</strong>写TLD文件，为Tag创建TLD: simple.tld，并将TLD放到WEB-INF中。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;UTF-8&quot;?&gt;</span><br><span class="line">&lt;taglib&gt;</span><br><span class="line">	&lt;tlib-version&gt;1.0&lt;&#x2F;tlib-version&gt;</span><br><span class="line">	&lt;jsp-version&gt;1.2&lt;&#x2F;jsp-version&gt;</span><br><span class="line">	&lt;short-name&gt;MySimpleTag1&lt;&#x2F;short-name&gt;</span><br><span class="line">	&lt;uri&gt;SimpleTag&lt;&#x2F;uri&gt; </span><br><span class="line">	&lt;tag&gt;</span><br><span class="line">		&lt;name&gt;simple1&lt;&#x2F;name&gt;</span><br><span class="line">		&lt;tag-class&gt;lesson.j2ee.ex3.CounterSimpleTag1&lt;&#x2F;tag-class&gt;</span><br><span class="line">		&lt;body-content&gt; empty &lt;&#x2F;body-content&gt;</span><br><span class="line">	&lt;&#x2F;tag&gt;	</span><br><span class="line">&lt;&#x2F;taglib&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">taglib</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">tlib-version</span>&gt;</span>1.0<span class="tag">&lt;/<span class="name">tlib-version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">jsp-version</span>&gt;</span>1.2<span class="tag">&lt;/<span class="name">jsp-version</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">short-name</span>&gt;</span>MySimpleTag1<span class="tag">&lt;/<span class="name">short-name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">uri</span>&gt;</span>SimpleTag<span class="tag">&lt;/<span class="name">uri</span>&gt;</span> </span><br><span class="line">	<span class="tag">&lt;<span class="name">tag</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">name</span>&gt;</span>simple1<span class="tag">&lt;/<span class="name">name</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">tag-class</span>&gt;</span>lesson.j2ee.ex3.CounterSimpleTag1<span class="tag">&lt;/<span class="name">tag-class</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">body-content</span>&gt;</span> empty <span class="tag">&lt;/<span class="name">body-content</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">tag</span>&gt;</span>	</span><br><span class="line"><span class="tag">&lt;/<span class="name">taglib</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>3.</strong>在JSP中使用tag</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib uri&#x3D;&quot;SimpleTag&quot; prefix&#x3D;&quot;mytag&quot;%&gt;  &#x2F;&#x2F;uri对应于TLD中的uri</span><br><span class="line">&lt;body&gt;</span><br><span class="line">		This application has been visited</span><br><span class="line">		&lt;mytag:simple1&#x2F;&gt;  &#x2F;&#x2F;mytag对应于prefix，simple1对应于TLD中的tag的name值</span><br><span class="line">	&lt;&#x2F;form&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ taglib uri=<span class="string">"SimpleTag"</span> prefix=<span class="string">"mytag"</span>%&gt;  <span class="comment">//uri对应于TLD中的uri</span></span><br><span class="line">&lt;body&gt;</span><br><span class="line">		This application has been visited</span><br><span class="line">		&lt;mytag:simple1/&gt;  <span class="comment">//mytag对应于prefix，simple1对应于TLD中的tag的name值</span></span><br><span class="line">	&lt;/form&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
 
 <h5 id="2）Simple-tag的寿命周期"><a href="#2）Simple-tag的寿命周期" class="headerlink" title="2）Simple tag的寿命周期"></a>2）Simple tag的寿命周期</h5><p>Simple tag的寿命周期如下图所示：</p>
-<img src="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%87%AA%E5%AE%9A%E4%B9%89tag/study\program\blog\source\_posts\javaee学习—自定义tag\image-20200424161830895.png" alt="image-20200424161830895" style="zoom:80%;">
+<img src="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%87%AA%E5%AE%9A%E4%B9%89tag/image-20200424161830895.png" alt="javaee学习之自定义tag/image-20200424161830895" style="zoom:80%;">
 
 <h5 id="3）在tag体中使用EL"><a href="#3）在tag体中使用EL" class="headerlink" title="3）在tag体中使用EL"></a>3）在tag体中使用EL</h5><p>在调用tag的jsp页面</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;myTags:simple3&gt;</span><br><span class="line">Message is: $&#123;message&#125;</span><br><span class="line">&lt;&#x2F;myTags:simple3&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;myTags:simple3&gt;</span><br><span class="line">Message is: $&#123;message&#125;</span><br><span class="line">&lt;/myTags:simple3&gt;</span><br></pre></td></tr></table></figure>
 
 <p>其中message是simple处理器中的输出变量。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class SelectSimpleTag3 extends SimpleTagSupport &#123;</span><br><span class="line">		getJspContext().setAttribute(&quot;message&quot;, &quot;success&quot;);	</span><br><span class="line">		&#x2F;&#x2F;处理tag体，将它打印到响应。null参数意思是输出到response对象上，还可以传进其它writer对象</span><br><span class="line">		getJspBody().invoke(null);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SelectSimpleTag3</span> <span class="keyword">extends</span> <span class="title">SimpleTagSupport</span> </span>&#123;</span><br><span class="line">		getJspContext().setAttribute(<span class="string">"message"</span>, <span class="string">"success"</span>);	</span><br><span class="line">		<span class="comment">//处理tag体，将它打印到响应。null参数意思是输出到response对象上，还可以传进其它writer对象</span></span><br><span class="line">		getJspBody().invoke(<span class="keyword">null</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h5 id="4-处理有属性的tag"><a href="#4-处理有属性的tag" class="headerlink" title="4) 处理有属性的tag"></a>4) 处理有属性的tag</h5><p>处理有属性的tag , 需要在TLD中设置属性（2.2节的例子相似） , 在tag处理器中为每个属性提供一个Bean类型的 set方法.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class SimpleTagTest5 extends SimpleTagSupport &#123;</span><br><span class="line">    private List movieList;</span><br><span class="line">    &#x2F;&#x2F;set方法</span><br><span class="line">    public void setMovieList(List movieList) &#123;</span><br><span class="line">    	this.movieList&#x3D;movieList;</span><br><span class="line">    &#125;</span><br><span class="line">    public void doTag() throws JspException, IOException &#123;</span><br><span class="line">        Iterator i &#x3D; movieList.iterator();</span><br><span class="line">        while(i.hasNext()) &#123;</span><br><span class="line">            Movie movie &#x3D; (Movie) i.next();</span><br><span class="line">            getJspContext().setAttribute(“movie”, movie);</span><br><span class="line">            getJspBody().invoke(null);</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SimpleTagTest5</span> <span class="keyword">extends</span> <span class="title">SimpleTagSupport</span> </span>&#123;</span><br><span class="line">    <span class="keyword">private</span> List movieList;</span><br><span class="line">    <span class="comment">//set方法</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMovieList</span><span class="params">(List movieList)</span> </span>&#123;</span><br><span class="line">    	<span class="keyword">this</span>.movieList=movieList;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doTag</span><span class="params">()</span> <span class="keyword">throws</span> JspException, IOException </span>&#123;</span><br><span class="line">        Iterator i = movieList.iterator();</span><br><span class="line">        <span class="keyword">while</span>(i.hasNext()) &#123;</span><br><span class="line">            Movie movie = (Movie) i.next();</span><br><span class="line">            getJspContext().setAttribute(“movie”, movie);</span><br><span class="line">            getJspBody().invoke(<span class="keyword">null</span>);</span><br><span class="line">    	&#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
       
@@ -536,6 +536,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Bootstrap</a>
               </li>
              
@@ -552,19 +556,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -572,11 +564,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
+                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
+                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -588,15 +580,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">web项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -608,7 +596,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
+                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -624,11 +616,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -637,6 +629,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -649,6 +645,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
             
             <div class="clearfix"></div>

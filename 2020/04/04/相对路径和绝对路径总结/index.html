@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
   <title>相对路径和绝对路径总结 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="文件路径就是文件在电脑中的位置，表示文件路径的方式有两种，相对路径和绝对路径。在网页设计中通过路径可以表示链接，插入图像、Flash、CSS文件的位置。这里总结一下相对路径和绝对路径的问题。 首先先介绍先介绍一下.&#x2F; 和 ..&#x2F; .&#x2F; 就是当前目录所在的目录下，.&#x2F; 可以省略">
+  <meta name="description" content="文件路径就是文件在电脑中的位置，表示文件路径的方式有两种，相对路径和绝对路径。在网页设计中通过路径可以表示链接，插入图像、Flash、CSS文件的位置。这里总结一下相对路径和绝对路径的问题。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="相对路径和绝对路径总结">
 <meta property="og:url" content="https://futuwxq.github.io/2020/04/04/%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="文件路径就是文件在电脑中的位置，表示文件路径的方式有两种，相对路径和绝对路径。在网页设计中通过路径可以表示链接，插入图像、Flash、CSS文件的位置。这里总结一下相对路径和绝对路径的问题。 首先先介绍先介绍一下.&#x2F; 和 ..&#x2F; .&#x2F; 就是当前目录所在的目录下，.&#x2F; 可以省略">
+<meta property="og:description" content="文件路径就是文件在电脑中的位置，表示文件路径的方式有两种，相对路径和绝对路径。在网页设计中通过路径可以表示链接，插入图像、Flash、CSS文件的位置。这里总结一下相对路径和绝对路径的问题。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-04T00:09:32.000Z">
-<meta property="article:modified_time" content="2020-04-04T02:34:40.218Z">
+<meta property="article:modified_time" content="2020-04-27T03:13:56.163Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="相对路径">
 <meta property="article:tag" content="绝对路径">
@@ -177,31 +177,37 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>文件路径就是文件在电脑中的位置，表示文件路径的方式有两种，相对路径和绝对路径。在网页设计中通过路径可以表示链接，插入图像、Flash、CSS文件的位置。这里总结一下相对路径和绝对路径的问题。</p>
-<p><strong>首先先介绍先介绍一下./ 和 ../</strong></p>
-<p>./ 就是当前目录所在的目录下，./ 可以省略</p>
 <a id="more"></a>
-<p>../ 是上一级目录的意思，如果是两层上级目录，就是 “../../” ，因此 ../ 表示当前文件的父目录所在的目录下，感觉很绕口，可以看一下1.3的内容。</p>
-<h2 id="一-、-相对路径-Relative-Path"><a href="#一-、-相对路径-Relative-Path" class="headerlink" title="一 、 相对路径(Relative Path)"></a>一 、 相对路径(Relative Path)</h2><p>相对路劲简而言之就是相对于当前文件的路径，表现在网页设计中就是，被引用文件B相对于当前文件A的路径。</p>
-<p>下面以当前文件为A，被引用图片为B 来介绍相对路径的几种情况。</p>
-<h3 id="1-1-A-和-B-是同级目录"><a href="#1-1-A-和-B-是同级目录" class="headerlink" title="1.1 A 和 B 是同级目录"></a>1.1 A 和 B 是同级目录</h3><p>A 和 B 拥有一个相同的父目录，目录结构如下：</p>
+
+<p><strong>./</strong> 就是当前目录所在的目录下，./ 可以省略</p>
+<p><strong>../</strong> 是上一级目录的意思，如果是两层上级目录，就是 “../../” ，因此 ../ 表示当前文件的父目录所在的目录下，感觉很绕口，可以看一下1.3的内容。</p>
+<p><strong>/</strong> 表示下一级目录</p>
+<h2 id="一-、-相对路径-Relative-Path"><a href="#一-、-相对路径-Relative-Path" class="headerlink" title="一 、 相对路径(Relative Path)"></a>一 、 相对路径(Relative Path)</h2><p>相对路劲：以引用文件所在的位置为参考基础，而建立出的目录路径。</p>
+<p>表现在网页设计中就是，图片相对于HTML页面的位置。</p>
+<p>下面以需要引用的文件为（HTML），被引用图片(IMG) 来介绍相对路径的几种情况。</p>
+<h3 id="1-1-HTML-和-IMG-是同级目录"><a href="#1-1-HTML-和-IMG-是同级目录" class="headerlink" title="1.1 HTML 和 IMG 是同级目录"></a>1.1 HTML 和 IMG 是同级目录</h3><p>A 和 B 拥有一个相同的父目录，目录结构如下：</p>
 <pre><code>|--文件夹
-    |--css.css
+    |--index.html
     |--pic.png</code></pre><p>同一目录下的文件引用有两种方法，以css.css中引用图片pic.png为例。</p>
-<pre><code>background-image:url(pic.png);
-background-image:url(./pic.png);  // ./表示的就是当前目录下的意思。</code></pre><h3 id="1-2-B-的父目录或祖先目录-和-A-是同级目录"><a href="#1-2-B-的父目录或祖先目录-和-A-是同级目录" class="headerlink" title="1.2 B 的父目录或祖先目录 和 A 是同级目录"></a>1.2 B 的父目录或祖先目录 和 A 是同级目录</h3><pre><code>|--images     
-  |--xxx.gif 
+<pre><code>&lt;img src=&quot;pic.png&quot;&gt;
+&lt;img src=&quot;./pic.png&quot;&gt;  // ./表示的就是当前目录下的意思。</code></pre><h3 id="1-2-IMG-的父目录或祖先目录-和-HTML-是同级目录"><a href="#1-2-IMG-的父目录或祖先目录-和-HTML-是同级目录" class="headerlink" title="1.2 IMG 的父目录或祖先目录 和 HTML 是同级目录"></a>1.2 IMG 的父目录或祖先目录 和 HTML 是同级目录</h3><pre><code>|--images     
+  |--pic.png 
   |picture
-    |--xx.png
-|--css   
-  |--xx.css   
-|--index.html </code></pre><p>如上图，index.html想要引用图片和css样式</p>
-<p>index.html 和 xxx.gif 的父亲images就是同级目录 ，引用方式如下  </p>
-<pre><code>src=&quot;./images/xxx.gif&quot; (./可以省略不写，下同)</code></pre><p>xx.css 和 index.htm 也是这种关系，引用方式如下 </p>
-<pre><code>href=&quot;css/xx.css&quot;(此处省略了./)</code></pre><p>xx.png 的 祖父目录images 和 index.html是同级目录，引用方式相同，</p>
-<pre><code>src=&quot;images/picture/xx.png&quot;</code></pre><h3 id="1-3-A-的父目录-和-B-的父目录或祖父目录是同级"><a href="#1-3-A-的父目录-和-B-的父目录或祖父目录是同级" class="headerlink" title="1.3 A 的父目录 和 B 的父目录或祖父目录是同级"></a>1.3 A 的父目录 和 B 的父目录或祖父目录是同级</h3><p>依然以1.2的目录结构为例，</p>
-<p>xx.css的父目录css 和 xxx.gif的父目录 images 是同级目录，引用方式如下：</p>
-<pre><code>src=&quot;../images/xxx.gif&quot;</code></pre><p>xx.css的父目录css 和 xx.png 的祖父目录 images 是同级目录，引用方式如下：</p>
-<pre><code>src=&quot;../images/picture/xx.png&quot;</code></pre><h3 id="1-4-不同目录"><a href="#1-4-不同目录" class="headerlink" title="1.4  不同目录"></a>1.4  不同目录</h3><p>如下：</p>
+    |--pic1.png 
+|--index.html </code></pre><p>如上图，index.html想要引用图片pic.png。</p>
+<p>pic.png 的父目录images 和 index.html是同级目录</p>
+<pre><code>src=&quot;images/pic.png&quot;  </code></pre><p>这句话可以理解为index.html先找到他的同级目录images，进入images目录后，定位到images的下一级目录pic.png。</p>
+<p>pic1.png 的祖父目录images 和 index.html是同级目录，引用方式相同，</p>
+<pre><code>src=&quot;images/picture/pic1.png&quot;</code></pre><h3 id="1-3-IMG-在-HTML-的上级目录"><a href="#1-3-IMG-在-HTML-的上级目录" class="headerlink" title="1.3  IMG 在 HTML 的上级目录"></a>1.3  IMG 在 HTML 的上级目录</h3><p>目录结构如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">|--index   </span><br><span class="line">  |--index.html  </span><br><span class="line">|--pic.png</span><br></pre></td></tr></table></figure>
+
+<p>html文件要引用img的时候，需要用到 ../ ,下面这句话的意思也就是，index.html回溯到上一级目录index之后，定位到index的统计目录pic.png。</p>
+<pre><code>src=&quot;../pic.png&quot;</code></pre><p>如果目录结构复杂一些，如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">|--images     </span><br><span class="line">  |--pic.png </span><br><span class="line">  |picture</span><br><span class="line">    |--pic1.png</span><br><span class="line">|--css   </span><br><span class="line">  |--xx.css</span><br></pre></td></tr></table></figure>
+
+<p>css 文件想要引用 img图片：</p>
+<pre><code>src=&quot;../images/pic.png&quot;
+src=&quot;../images/picture/pic1.png&quot;</code></pre><h3 id="1-4-不同目录"><a href="#1-4-不同目录" class="headerlink" title="1.4  不同目录"></a>1.4  不同目录</h3><p>如下：</p>
 <p>css文件位置：Pro/test/css/style.css  </p>
 <p>图片文件位置：Pro/platform/images/xxx.jpg </p>
 <p>style.css回退两级目录到 Pro文件下下的text目录和xxx.jpg的祖先目录 platform 是同级目录，引用路径如下。</p>
@@ -211,10 +217,13 @@ background-image:url(./pic.png);  // ./表示的就是当前目录下的意思�
 <pre><code>&lt;a href=&quot;https://futuwxq.github.io/&quot;&gt;链接到本站的首页&lt;/a&gt;</code></pre><h2 id="三-、根目录"><a href="#三-、根目录" class="headerlink" title="三 、根目录"></a>三 、根目录</h2><blockquote>
 <p>根目录指逻辑驱动器的最上一级目录，它是相对子目录来说的。打开“我的电脑”，双击C盘就进入C盘的根目录，双击D盘就进入D盘的根目录。<br>根目录在文件系统建立时即已被创建，其目的就是存储子目录（也称为文件夹）或文件的目录项。一“棵“目录树，树的最根本就是它的根（根目录）。</p>
 </blockquote>
-<p>例如我们平时写一个项目myApp，myApp就是根目录，当这个项目在服务器中跑出来的时候网址类似这样，<code>https://www.example.com/myApp/...</code>。</p>
+<p><strong>目录文件夹</strong>:就是普通文件夹,里面只不过存放了我们做页而所需要的相关素材,比如html文件、图片等。</p>
+<p><strong>根目录</strong>:打开目录文件夹的第一层就是根目录</p>
+<p>例如我们平时写一个项目myApp，myApp就是目录文件夹，进入这个myApp，就是根目录。</p>
+<p>当这个项目在服务器中跑出来的时候网址类似这样，<code>https://www.example.com/myApp/...</code>。</p>
 <p>假设项目里面有一个servlet，容器为他分配的路径是 <code>https://www.example.com/myApp/cool/servlet1.do</code>，当我们在这个servlet里需要定向转发时候，</p>
-<pre><code>sendRedirect(&quot;foo/stuff.html&quot;)，</code></pre><p>容器会转向 <code>https://www.example.com/myApp/cool/foo/stuff.html</code> ，容器找到根目录myApp，发现是相对URL，就保存根目录，然后利用上面讲的相对路径的同级目录那套去找html页面。</p>
-<pre><code>sendRedirect(&quot;foo/stuff.html&quot;)</code></pre><p>容器会转向 <code>https://www.example.com/foo/stuff.html</code>，容器找到根目myApp，发现是绝对URL，去掉根目录以及之后部分，将绝对URL拼接在域名后面形成新的地址。</p>
+<pre><code>sendRedirect(&quot;foo/stuff.html&quot;)，</code></pre><p>容器会转向 <code>https://www.example.com/myApp/cool/foo/stuff.html</code> ，容器找到<strong>目录文件夹</strong>myApp，发现是相对URL，就保存<strong>目录文件夹</strong>，然后利用上面讲的相对路径的同级目录那套去定位html页面。</p>
+<pre><code>sendRedirect(&quot;/foo/stuff.html&quot;)</code></pre><p>容器会转向 <code>https://www.example.com/foo/stuff.html</code>，容器找到<strong>目录文件夹</strong>myApp，发现是绝对URL，去掉<strong>目录文件夹</strong>以及之后部分，将绝对URL拼接在域名后面形成新的地址。</p>
 <p><strong>总结</strong></p>
 <p>在做项目的时候要注意路径的使用，路径错误将会导致无法加载相应的文件而报错等问题。</p>
 <p>尽量使用相对路径去简化路径。</p>
@@ -463,6 +472,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Bootstrap</a>
               </li>
              
@@ -479,19 +492,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -499,11 +500,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
+                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
+                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -515,15 +516,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">web项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,7 +532,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
+                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -551,11 +552,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -564,6 +565,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -576,6 +581,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
             
             <div class="clearfix"></div>

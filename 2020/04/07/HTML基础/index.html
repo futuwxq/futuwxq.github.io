@@ -15,11 +15,20 @@
 <meta property="og:site_name" content="晓秋的博客">
 <meta property="og:description" content="一 、了解HTML1.1 什么是网页 网站是指在因特网上根据一定的规则，使用HTML等制作的用于展示特定内容相关的网页集合。  网页是指网站中的一页，通常是HTML格式的文件，以.html或.HTML后缀结尾的文件展现出来的都是网页。  网页是构成网站的基本元素，它通常由图片、文字、链接、声音、视频等标签元素组成，通过浏览器解析来显示给用户。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/07/HTML%E5%9F%BA%E7%A1%80/image-20200428094543835.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/07/HTML%E5%9F%BA%E7%A1%80/image-20200428095222121.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/07/HTML%E5%9F%BA%E7%A1%80/image-20200428100132539.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/07/HTML%E5%9F%BA%E7%A1%80/image-20200428112103793.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/07/HTML%E5%9F%BA%E7%A1%80/image-20200428144455278.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/07/HTML%E5%9F%BA%E7%A1%80/image-20200428152445023.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/07/HTML%E5%9F%BA%E7%A1%80/image-20200428151722701.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/07/HTML%E5%9F%BA%E7%A1%80/image-20200427164620373.png">
 <meta property="article:published_time" content="2020-04-07T06:51:05.000Z">
-<meta property="article:modified_time" content="2020-04-14T01:21:34.411Z">
+<meta property="article:modified_time" content="2020-04-28T14:35:58.581Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="HTML">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://futuwxq.github.io/2020/04/07/HTML%E5%9F%BA%E7%A1%80/image-20200428094543835.png">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
   
@@ -202,7 +211,43 @@
 </ul>
 </li>
 </ul>
-<h3 id="1-3-Web-标准"><a href="#1-3-Web-标准" class="headerlink" title="1.3 Web 标准"></a>1.3 Web 标准</h3><p>Web 标准是由 W3C 组织和其他标准化组织定制的一系列标准的集合。</p>
+<h3 id="1-3-浏览器"><a href="#1-3-浏览器" class="headerlink" title="1.3 浏览器"></a>1.3 浏览器</h3><p><strong>1）浏览器现状</strong></p>
+<p>PC端常见浏览器 ：谷歌浏览器、火狐浏览器、QQ浏览器、百度浏览器、搜狗浏览器、IE浏览器。</p>
+<p>移动端常见浏览器：UC浏览器,QQ浏览器,欧朋浏览器，百度手机浏览器,360安全浏览器,<br>谷歌浏览器,搜狗手机浏览器,猎豹浏览器,以及其他杂牌浏览器。</p>
+<p><strong>2）浏览器内核</strong></p>
+<p>浏览器内核（渲染引擎）：负责读取网页内容，整理讯息，计算网页的展示方式并显示页面。</p>
+<table>
+<thead>
+<tr>
+<th>浏览器</th>
+<th>内核</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>IE</td>
+<td>Trident</td>
+<td>IE、猎豹安全、360极速浏览器、百度浏览器</td>
+</tr>
+<tr>
+<td>firefox</td>
+<td>Gecko</td>
+<td>火狐浏览器内核</td>
+</tr>
+<tr>
+<td>Safari</td>
+<td>Webkit</td>
+<td>苹果浏览器内核</td>
+</tr>
+<tr>
+<td>chrome/Opera</td>
+<td>Blink</td>
+<td>chrome /opera浏览器内核。Blink 其实是WebKit的分支。</td>
+</tr>
+</tbody></table>
+<p>目前国内的浏览器都是根据 <strong>Webkit/Blink</strong>内核修改过来的内核,国内尚无自主研发的内核,就像国内的手机操作系统都是基于 Android修改开发的一样。</p>
+<p><strong>总结:兼容移动端主流浏览器,处理 Webkit内核浏览器即可。</strong></p>
+<h3 id="1-4Web-标准"><a href="#1-4Web-标准" class="headerlink" title="1.4Web 标准"></a>1.4Web 标准</h3><p>Web 标准是由 W3C 组织和其他标准化组织定制的一系列标准的集合。</p>
 <p>因为浏览器不同，浏览器显示页面或者排版就存在差异，因此需要一个标准来统一。</p>
 <p><strong>Web标准的组成</strong></p>
 <p>主要包括结构（Structure）、表现（Persentation）和 行为（Behavior）三方面</p>
@@ -259,47 +304,271 @@
 <td align="left">HTML文件的主体标记，即只有在<body></body>标记中编辑的网页对象才可以在浏览器窗口中显示</td>
 </tr>
 </tbody></table>
-<h3 id="2-2-其他html标签"><a href="#2-2-其他html标签" class="headerlink" title="2.2 其他html标签"></a>2.2 其他html标签</h3><p><strong><code>&lt;a&gt;</code></strong></p>
-<p>锚标签,href属性是指链接的地址，target=”_blank”是在新窗口打开链接</p>
-<pre><code>&lt;a href=&quot;index.html&quot; target=&quot;_blank&quot;&gt;&lt;/a&gt;</code></pre><p>锚标签除了可以链接到文件网址，还可以链接到同一网页的标签上，通过id来实现</p>
-<pre><code>&lt;a href=&quot;#header&quot; &gt;&lt;/a&gt;  //链接到id是header的元素上</code></pre><p><strong><code>&lt;img&gt;</code></strong><br>这是一个单标签，src里图片地址，通常使用相对路径，alt是指图片因为某些情况未能加载，用文字来介绍这个照片的内容。</p>
-<pre><code>&lt;img src=&quot;example.jpg&quot; alt=&quot;证件照 &quot; width=&quot;80&quot; height=&quot;100&quot;&gt;</code></pre><p><strong><code>&lt;input&gt;</code></strong><br>input是一个单标签，根据不同的 type 属性值，输入字段可以是文本字段、复选框、掩码后的文本控件（password）、单选按钮、按钮等等，根据type属性来确定。<br><strong>1.</strong> 文本和提交类型</p>
-<p>   placeholder属性： 灰色提示字 输入时 自动消失。</p>
+<h3 id="2-2-其他html标签"><a href="#2-2-其他html标签" class="headerlink" title="2.2 其他html标签"></a>2.2 其他html标签</h3><h4 id="1-图片标签-img"><a href="#1-图片标签-img" class="headerlink" title="1 图片标签 img"></a>1 图片标签 img</h4><p>图像标签属性注意点:</p>
+<p>①图像标签可以拥有多个属性,必须写在标签名的后面。</p>
+<p>②属性之间不分先后顺序,标签名与属性、属性与属性之间均以空格分开。</p>
+<p>③属性采取键值对的格式,即key= “value” 的格式，属性=“属性值” .重点掌握点:</p>
+<p>其中alt属性是图片加载不出来，显示的描述，title是当鼠标放在图片出，提示的文字信息。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/big.jpg"</span> <span class="attr">alt</span>=<span class="string">"大图"</span> <span class="attr">title</span>=<span class="string">"logo"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2-超链接标签-a"><a href="#2-超链接标签-a" class="headerlink" title="2 超链接标签 a"></a>2 超链接标签 a</h4><p><code>&lt;a&gt;</code> 标签定义超链接，用于从一张页面链接到另一张页面.</p>
+<p><strong>重要属性</strong>：</p>
+<table>
+<thead>
+<tr>
+<th><strong>属性</strong></th>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>href</td>
+<td>URL</td>
+<td>规定链接指向的页面的 URL，最重要的属性</td>
+</tr>
+<tr>
+<td>target</td>
+<td>_blank  / _self</td>
+<td>用于指定连接页面的打开方式，—self是默认_值，—blank在新窗口中打开方式</td>
+</tr>
+</tbody></table>
+<p><strong>链接分类</strong></p>
+<p>1.外部链接:</p>
+<p>例如 1. <code>&lt; a href=&quot;http: //www.baidu.百度&lt;/a&gt;</code><br>2.内部链接:</p>
+<p>网站内部页面之间的相互链接直接链接内部页面名称即可,例如<code>&lt;a href=&quot;indexhtml&quot;&gt;首页&lt;a&gt;</code><br>3.空链接:</p>
+<p>如果当时没有确定链接目标时,<code>&lt; href=&quot;#&quot;&gt;首页&lt;a&gt;</code></p>
+<p>4.下载链接:</p>
+<p>如果href里面地址是一个文件或者压缩包,会下载这个文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;text.rar&quot;&gt;&lt;&#x2F;a&gt;</span><br></pre></td></tr></table></figure>
+
+<p>5.网页元素链接:</p>
+<p>在网页中的各种网页元素,如文本、图像、表格、音频、视频等都可以添加超链接.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href&#x3D;&quot;#&quot;&gt;&lt;img src&#x3D;&quot;&#x2F;img.png&quot; &gt;&lt;&#x2F;a&gt;</span><br></pre></td></tr></table></figure>
+
+<p>6.锚点链接:点我们点击链接可以快速定位到页面中的某个位置.</p>
+<ul>
+<li><p>在链接文本的href属性中,设置属性值为名字的形式,如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt; href&#x3D;&quot;#two&quot;&gt;第2集&lt;&#x2F;a&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>找到目标位置标签,里面添加一个id属性=刚才的名字,如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;h3 id&#x3D;&quot;two&quot;&gt;第2集介绍&lt;&#x2F;h3&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h4 id="4-表格标签"><a href="#4-表格标签" class="headerlink" title="4 表格标签"></a>4 表格标签</h4><p>表格主要用于<strong>显示、展示数据</strong>,因为它可以让数据显示的非常的规整,可读性非常好。特别是后台展示数据的时候,能够熟练运用表格就显得很重要。一个清爽简约的表格能够把繁杂的数据表现得很有条理。</p>
+<p>表格不是用来布局页面的，而是用来展示数据的。</p>
+<p><strong>表格的基本语法：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;table&gt;</span><br><span class="line"></span><br><span class="line">    &lt;tr&gt;</span><br><span class="line"></span><br><span class="line">   		 &lt;td&gt;単元格内的文字&lt;&#x2F;td&gt;</span><br><span class="line"></span><br><span class="line">    &lt;&#x2F;tr&gt;</span><br><span class="line"></span><br><span class="line">    ···</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;table&gt;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><code>&lt;table&gt; &lt;/table&gt;</code>是用于定乂表格的标签。</li>
+<li><code>&lt;tr&gt; &lt;/tr&gt;</code>标签用于定义表格中的行,必須嵌套在<code>&lt;table&gt; &lt;/table&gt;</code>标签中.</li>
+<li><code>&lt;td&gt; &lt;/td&gt;</code>用于定义表格中的単元格,必須嵌套在<code>&lt;tr&gt; &lt;/tr&gt;</code>标签中.</li>
+<li>字母td指表格数据( table data ) , 即数据単元格的内容。</li>
+</ol>
+<p><strong>表头单元格</strong></p>
+<p>一般表头单元格位于表格的第一 行或第一 列,表头单元格里面的文本内容加粗居中显示.</p>
+<p><code>&lt;th&gt;</code>标签表示HTML表格的表头部分(table head的缩写)</p>
+<p><strong>表格结构标签</strong></p>
+<ol>
+<li><code>&lt;thead&gt; &lt;/thead&gt;</code>:用于定义表格的头部。<code>&lt;thead&gt;</code>内部必须拥有<code>&lt;tr&gt;</code>标签。一般是位于第一 行。</li>
+<li><code>&lt;tbody&gt; &lt;/tbody&gt;</code> : 用于定义表格的主体,主要用于放数据本体。</li>
+</ol>
+<p><strong>表格属性</strong></p>
+<p>表格标签这部分属性我们实际开发我们不常用,后面通过CSS来设置.目的有2个:</p>
+<ul>
+<li><p>记住这些英语单词,后面CSS会使用</p>
+</li>
+<li><p>直观感受表格的外观形态</p>
+</li>
+<li><p>表格的每个单元格都是默认都是对齐的</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>属性名</th>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>align</td>
+<td>left、center 、right</td>
+<td>规定表格相对周围元素的对齐方式</td>
+</tr>
+<tr>
+<td>border</td>
+<td>1或””</td>
+<td>规定表格单元是否拥有边框，默认为””，表示没有边框</td>
+</tr>
+<tr>
+<td>cellpadding</td>
+<td>像素值</td>
+<td>规定单元边沿与其内容之间的空白，默认1像素。</td>
+</tr>
+<tr>
+<td>cellspacing</td>
+<td>像素值</td>
+<td>规定单元格之间的空白，默认2像素。</td>
+</tr>
+<tr>
+<td>width</td>
+<td>像素值或百分比</td>
+<td>规定表格的宽度。</td>
+</tr>
+</tbody></table>
+<p>cellpadding 和 cellspacing具体见下图</p>
+<img src="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/image-20200428094543835.png" alt="image-20200428094543835" style="zoom:67%;">
+
+<p>例子</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;table align&#x3D;&quot; center&quot; border&#x3D; &quot;1&quot; cellpadding&#x3D;&quot;0&quot; cellspacing&#x3D;&quot;0&quot; width&#x3D;&quot;500&quot; height&#x3D;&quot;249&quot;&gt;;</span><br><span class="line"></span><br><span class="line">    &lt;tr&gt;&lt;th&gt;姓名&lt;&#x2F;th&gt; &lt;th&gt;性別&lt;&#x2F;th&gt; &lt;th&gt; 年齡&lt;&#x2F;th&gt;&lt;&#x2F;tr&gt;</span><br><span class="line"></span><br><span class="line">    &lt;tr&gt;&lt;td&gt;刈徳隼&lt;&#x2F;td&gt; &lt;td&gt;男&lt;&#x2F;td&gt; &lt;td&gt; 56 &lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;</span><br><span class="line"></span><br><span class="line">    &lt;tr&gt;&lt;td&gt;张学友&lt;&#x2F;td&gt; &lt;td&gt;男&lt;&#x2F;td&gt; &lt;td&gt; 58 &lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;</span><br><span class="line"></span><br><span class="line">    &lt;tr&gt;&lt;td&gt;郭富城&lt;&#x2F;td&gt; &lt;td&gt;男&lt;&#x2F;td&gt; &lt;td&gt; 51 &lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;</span><br><span class="line"></span><br><span class="line">    &lt;tr&gt;&lt;td&gt;黎明&lt;&#x2F;td&gt; &lt;td&gt;男&lt;&#x2F;td&gt; &lt;td&gt; 57 &lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;table&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>合并单元格</strong></p>
+<p>合并单元格的方式：</p>
+<p>跨行合并：rowspan=”合并单元格的个数”，以最上侧的单元格为目标单元格，在这个td标签内写合并代码，删除被合并的td</p>
+<p>跨列合并：colspan=”合并单元格的个数”，以最左侧的单元格为目标单元格，在这个td标签内写合并代码，删除被合并的td</p>
+<img src="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/image-20200428095222121.png" alt="image-20200428095222121" style="zoom:80%;">
+
+<h4 id="5-无序列表"><a href="#5-无序列表" class="headerlink" title="5 无序列表"></a>5 无序列表</h4><p>列表用来<strong>布局</strong>，非常整齐有序，比如网站侧边栏。</p>
+<img src="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/image-20200428100132539.png" alt="image-20200428100132539" style="zoom:50%;">
+
+<p><strong>无序列表</strong></p>
+<p>无序列表是一个项目的列表，此列项目使用粗体圆点（典型的小黑圆圈）进行标记。</p>
+<p>无序列表始于 <code>&lt;ul&gt;</code> 标签。每个列表项始于<code>&lt;li&gt;</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">	&lt;li&gt;Coffee&lt;&#x2F;li&gt;</span><br><span class="line">	&lt;li&gt;Milk&lt;&#x2F;li&gt;</span><br><span class="line">	...</span><br><span class="line">&lt;&#x2F;ul&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>ul标签内只能是li标签，不能放其他标签和文字。</p>
+</li>
+<li><p>li标签内可以使用段落、换行符、图片、链接以及其他列表等等</p>
+</li>
+</ul>
+<p><strong>有序列表</strong></p>
+<p>有序列表也是一列项目，列表项目使用数字进行标记。</p>
+<p>有序列表始于<code>&lt;ol&gt;</code> 标签。每个列表项始于<code>&lt;li&gt;</code> 标签。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Coffee<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>Milk<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>ol标签内只能是li标签，不能放其他标签和文字。</p>
+</li>
+<li><p>li标签内可以使用段落、换行符、图片、链接以及其他列表等等</p>
+</li>
+</ul>
+<p><strong>自定义列表</strong></p>
+<p>自定义列表常用于对术语或名词进行解释和描述，如下图所示</p>
+<img src="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/image-20200428112103793.png" alt="image-20200428112103793" style="zoom:67%;">
+
+<p>在HTML标签中, <code>&lt;dl&gt;</code>标签用于定义描述列表(或定义列表) , 该标签会与<code>&lt;dt&gt;</code>( 定义项目/名字)和<code>&lt;dd&gt;</code>( 描述每一个项目/名字) 一起使用。</p>
+<p>其基本语法如下:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;dl &gt;</span><br><span class="line"></span><br><span class="line">    &lt;dt&gt;名词1&lt;&#x2F;dt&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dd&gt;名词1解释1&lt;&#x2F;dd&gt;</span><br><span class="line"></span><br><span class="line">    &lt;dd&gt;名词1解释2&lt;&#x2F;dd&gt;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;d1&gt;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li><p><code>&lt;dl&gt; &lt;/dl&gt;</code>里面只能包含<code>&lt;dt&gt;</code>和<code>&lt;dd&gt;</code>.</p>
+</li>
+<li><p><code>&lt;dt&gt;</code> 和<code>&lt;dd&gt;</code>个数没有限制,经常是一个<code>&lt;dt&gt;</code> 对应多个<code>&lt;dd&gt;.</code></p>
+</li>
+</ol>
+<h4 id="6-表单标签"><a href="#6-表单标签" class="headerlink" title="6 表单标签"></a>6 表单标签</h4><p>表单是为了收集用户信息。</p>
+<p>在HTML中，一个完整的表单通常由表单域、表单控件、提示信息。</p>
+<img src="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/image-20200428144455278.png" alt="image-20200428144455278" style="zoom:67%;">
+
+
+
+<p><strong>1）表单域</strong></p>
+<p>表单域是一个包含表单元素的区域</p>
+<p>在HTML标签中，<code>&lt;form&gt;</code>标签作用于定义表单域，以实现用户信息的收集和传递。</p>
+<p><code>&lt;form&gt;</code>会把它范围的表单元素信息提交给服务器。</p>
+<p><strong>2）表单控件</strong></p>
+<p>在表单域中可以定义各种表单元素,这些表单元素就是允许用户在表单中输入或者选择的内容控件：</p>
+<ol>
+<li>input输入表单元素</li>
+<li>select 下拉表单元素</li>
+<li>textarea 文本域元素</li>
+</ol>
+<p><strong>input是一个单标签</strong>，根据不同的 <strong>type 属性</strong>值，输入字段可以是文本字段、复选框、掩码后的文本控件（password）、单选按钮、按钮等等，根据type属性来确定:</p>
+<img src="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/image-20200428152445023.png" alt="image-20200428152445023" style="zoom:67%;">
+
+<p>submit被点击之后，就会把数据自动提交到后台服务器</p>
+<p>普通的button按钮本身不会提交数据， 需要结合js结合使用。</p>
+<p>a) 文本类型和提交</p>
 <pre><code>First name:&lt;br&gt;
 &lt;input type=&quot;text&quot; name=&quot;firstname&quot; value=&quot;Mickey&quot;    placeholder=&quot;你的名字&quot;&gt;  //type是文本类型，value是框内数值。
 
-&lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;    //submit是提交的意思</code></pre><p><strong>2.</strong> radio是单选框，通过name属性来绑定一组单选框。</p>
+&lt;input type=&quot;submit&quot; value=&quot;Submit&quot;&gt;    //submit是提交的意思</code></pre><p>b)  radio是<strong>单选框</strong>，通过name属性来绑定一组单选框。</p>
 <pre><code>&lt;input type=&quot;radio&quot; name=&quot;sex&quot;&gt; 男
-&lt;input type=&quot;radio&quot; name=&quot;sex&quot;&gt; 女 </code></pre><p><strong>3.</strong> checkbox是多选框，通过name属性来绑定一组多选框，当多选框设置checked = “checked”时，表示选中状态。</p>
+&lt;input type=&quot;radio&quot; name=&quot;sex&quot;&gt; 女 </code></pre><p>c) checkbox是<strong>多选框</strong>，通过name属性来绑定一组多选框</p>
 <pre><code>&lt;input type=&quot;checkbox&quot; name=&quot;fruits&quot;&gt; 苹果
-&lt;input type=&quot;checkbox&quot; name=&quot;fruits&quot;&gt; 梨</code></pre><p><strong>4.</strong> inupt + label </p>
-<p>   为了更好地用户体验，通常label和input便签结合使用。如下，通过设置label，只要点击label内的部分，就可以选上单选框。</p>
-<p>   通过label的for属性绑定input的id值</p>
-<pre><code>&lt;input type=&quot;radio&quot; name=&quot;sex&quot; id=&quot;man&quot;&gt; &lt;label for=&quot;nan&quot;&gt;&lt;img&gt;男&lt;/label&gt;</code></pre><p><strong>5.下拉选择按钮</strong></p>
-<pre><code>通过&lt;select&gt; 和 &lt;option&gt; 实现 ，与input无关</code></pre><p><strong><code>&lt;table&gt;</code></strong></p>
-<p>表格通常结合input标签使用，table便签内每个子标签都有一定的含义，例如head是表头部分，th是表头部分的单元格</p>
-<pre><code>&lt;table&gt;
-    &lt;thead&gt;
-        &lt;tr&gt;
-            &lt;th colspan=&quot;2&quot;&gt;The table header&lt;/th&gt;
-        &lt;/tr&gt;
-    &lt;/thead&gt;
-    &lt;tbody&gt;
-        &lt;tr&gt;
-            &lt;td&gt;The table body&lt;/td&gt;
-            &lt;td&gt;with two columns&lt;/td&gt;
-        &lt;/tr&gt;
-    &lt;/tbody&gt;
-&lt;/table&gt;</code></pre><p>table的每列td都是自动对齐的</p>
-<p>colspan用来指定单元格横向跨越的列数：colspan就是合并列的，colspan=2的话就是合并两列。</p>
-<p>rowspan用来指定单元格纵向跨越的行数:rowspan就是用来合并行的，比如rowspan=2就是合并两行，</p>
-<p><strong><code>&lt;aside&gt;</code></strong> </p>
+&lt;input type=&quot;checkbox&quot; name=&quot;fruits&quot;&gt; 梨</code></pre><p>d）file属性是文件域，上传文件的时候使用</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">上传头像：&lt;input type&#x3D;&quot;file&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>input表单属性</strong></p>
+<img src="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/image-20200428151722701.png" alt="image-20200428151722701" style="zoom:80%;">
+
+<p> placeholder属性： 灰色提示字 输入时 自动消失。</p>
+<p><strong>label标签</strong></p>
+<p> label 标签为 input 元素定义标注（标签）。</p>
+<p>label&gt;标签用于绑定一个表单元素 当点击<label>标签内的文本时,浏览器就会自动将焦点(光标转到或者选择对应的表单元素上,用来增加用户体验.</label></p>
+<p>语法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;label for&#x3D;&quot;sex&quot;&gt;男&lt;&#x2F;label&gt;</span><br><span class="line"></span><br><span class="line">&lt;input type&#x3D;&quot; radio&quot; name &#x3D;&quot;sex&quot;id&#x3D;&quot;sex&quot; &#x2F;&gt;</span><br></pre></td></tr></table></figure>
+
+<p>核心:     <code>&lt;label&gt;</code> 标签的for属性应当与相关元素的id属性相同。</p>
+<p><strong><code>&lt;select&gt;</code> 表单元素</strong></p>
+<p>在页面中,如果有多个选项让用户选择,并且想要节约页面空间时,我们可以使用<select>标签控件定义下拉列表.语法:</select></p>
+<pre><code>&lt;select&gt;
+
+    &lt;option&gt;选项1&lt;/option&gt;
+
+    &lt;option&gt;选项2&lt;/opt. ion&gt;
+
+    &lt;opt ion&gt;选项3&lt;/opt ion&gt;
+
+&lt;/select&gt;</code></pre><p>1.<code>&lt;select&gt;</code>中至少包含一对<code>&lt;option&gt;</code></p>
+<p>2.在<code>&lt;option&gt;</code>中定义selected= “ selected “时，当前项即为默认选中项</p>
+<p><strong><code>&lt;textarea&gt;</code>表单元素</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;textarea rows&#x3D;&quot;3&quot; cols&#x3D;&quot;20&quot;&gt;</span><br><span class="line">文本内容</span><br><span class="line">&lt;&#x2F;textarea&gt;</span><br></pre></td></tr></table></figure>
+
+<p>1.通过<code>&lt;textarea&gt;</code>标签可以轻松地创建多行文本输入框。</p>
+<p>2.cols= “每行中的字符数”, rows=“”显示的行数” , 我们在实际开发中不会使用,都是用CSS来改变大小。</p>
+<h4 id="7-注释"><a href="#7-注释" class="headerlink" title="7 注释"></a>7 注释</h4><p>如果需要在HTML文档中添加一些便于阅读和理解但又不需要显示在页面中的注释文字,就需要使用注释标签。</p>
+<p>HTML中的注释用法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--注释语句--&gt;</span><br></pre></td></tr></table></figure>
+
+<p>注释标签里面的内容是给程序猿看的这个代码是不执行不显示到页面中的。<br>添加注释是为了更好地解释代码的功能,便于相关开发人员理解和阅读代码,程序是不会执行注释内容的。</p>
+<h4 id="8-特殊字符"><a href="#8-特殊字符" class="headerlink" title="8 特殊字符"></a><strong>8 特殊字符</strong></h4><p>在HTML页面中，一些特殊的符号很难或者不方便直接使用，此时我们就可以使用下面的字符替代。</p>
+<img src="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/image-20200427164620373.png" alt="image-20200427164620373" style="zoom:80%;">
+
+<p>空格 、 大于号 、 小于号这三个经常使用。</p>
+<h4 id="9"><a href="#9" class="headerlink" title="9"></a>9</h4><p><strong><code>&lt;aside&gt;</code></strong> </p>
 <p> 元素表示一个和其余页面内容几乎无关的部分，被认为是独立于该内容的一部分并且可以被单独的拆分出来而不会使整体受影响。其通常表现为侧边栏或者标注框（call-out boxes）。<br><strong><code>&lt;section&gt;</code></strong>   </p>
 <p>表示一个包含在HTML文档中的独立部分，它没有更具体的语义元素来表示，一般来说会有包含一个标题。 </p>
 <p>例如，导航菜单应该包含在<code>&lt;nav&gt;</code>元素中，但搜索结果列表和地图显示及其控件没有特定元素，可以放在<code>&lt;section&gt;</code>里  </p>
 <p><strong><code>&lt;article&gt;</code></strong></p>
 <p>如果元素的内容作为一个独立的有意义的集合，<code>&lt;article&gt;</code>元素可能是更好的选择。    </p>
 <p>如果元素内容可以分为几个部分的话，应该使用 <code>&lt;article&gt;</code>而不是 <code>&lt;section&gt;</code>。</p>
+<h2 id="三-、-网页开发工具"><a href="#三-、-网页开发工具" class="headerlink" title="三 、 网页开发工具"></a>三 、 网页开发工具</h2><h3 id="3-1-文档类型声明标签"><a href="#3-1-文档类型声明标签" class="headerlink" title="3.1 文档类型声明标签"></a>3.1 文档类型声明标签</h3><p>​    <code>&lt;!DOCTYPE html&gt;</code>    文档类型声明，作用就是告诉浏览器使用HTML版本来显示网页。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE <span class="meta-keyword">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这句代码的意思是：当前页面采取的是HTML5版本来显示网页。</p>
+<ol>
+<li><code>&lt;!DOCTYPE&gt;</code>声明位于文档中的最前面的位置,处于<code>&lt;html&gt;</code>标签之前。</li>
+<li><code>&lt;!DOCTYPE&gt;</code>不是一个HTML标签,它就是文档类型声明标签。</li>
+</ol>
+<h3 id="3-2-lang-语言种类"><a href="#3-2-lang-语言种类" class="headerlink" title="3.2 lang 语言种类"></a>3.2 lang 语言种类</h3><p>用来定义当前文档显示的语言。</p>
+<ol>
+<li>en定义语言为英语</li>
+<li>zh - CN定义语言为中文</li>
+</ol>
+<p>简单来说定义为en就是英文网页，定义为zh-CN就是中文网页</p>
+<p>其实对于文档显示来说,定义成en的文档也可以显示中文，定义成zh-CN的文档也可以显示英文.</p>
+<p>这个属性对浏览器和搜索引掌(百度.谷歌等)还是有作用的。</p>
+<h3 id="3-3-字符集"><a href="#3-3-字符集" class="headerlink" title="3.3 字符集"></a>3.3 字符集</h3><p>字符集(Character set)是多个字符的集合。以便计算机能够识别和存储各种文字。</p>
+<p>在<code>&lt;head&gt;</code>标签内,可以通过<code>&lt;meta&gt;</code>标签的charset属性来规定HTML文档应该使用哪种字符编码。</p>
+<meta charset="UTF-8">                   
+
+
+<p>charset常用的值有: GB2312. BIGB. GBK 和 UTF-8 ,其中UTF-8也被称为万国码,基本包含了全世界所有国家需要用到的字符。</p>
+<p>注意:上面语法是必须要写的代码,否则可能引起乱码的情况。-般情况下 ,统一使用”UTF-8” 编码,尽量统一写成标准的”UTF-8” ,不要写成”utf8” 或‘’UTF8”。</p>
 
       
 
@@ -541,6 +810,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Bootstrap</a>
               </li>
              
@@ -557,19 +830,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -577,11 +838,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
+                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
+                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -593,15 +854,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">web项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -613,7 +870,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
+                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -629,11 +890,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -642,6 +903,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -654,6 +919,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
             
             <div class="clearfix"></div>

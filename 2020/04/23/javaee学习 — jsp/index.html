@@ -8,31 +8,31 @@
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
   <title>javaee学习 — JSP | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在学习JSP语法之前，我们需要知道JSP最终以servlet方式在容器中运行。下面是JSP转换为servlet的整个过程。  容器将JSP文件翻译成servlet类的源文件(.java)，然后 将其编译成servlet class。  以和手工编写servlet同样的方式运行servle。">
+  <meta name="description" content="在学习JSP语法之前，我们需要知道JSP最终以servlet方式在容器中运行。下面是JSP转换为servlet的整个过程。 ​    容器将JSP文件翻译成servlet类的源文件(.java)，然后 将其编译成servlet class。 ​    以和手工编写servlet同样的方式运行servle。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javaee学习 — JSP">
 <meta property="og:url" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="在学习JSP语法之前，我们需要知道JSP最终以servlet方式在容器中运行。下面是JSP转换为servlet的整个过程。  容器将JSP文件翻译成servlet类的源文件(.java)，然后 将其编译成servlet class。  以和手工编写servlet同样的方式运行servle。">
+<meta property="og:description" content="在学习JSP语法之前，我们需要知道JSP最终以servlet方式在容器中运行。下面是JSP转换为servlet的整个过程。 ​    容器将JSP文件翻译成servlet类的源文件(.java)，然后 将其编译成servlet class。 ​    以和手工编写servlet同样的方式运行servle。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/study/program/blog/source/_posts/jsp/image-20200423105508460.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/study/program/blog/source/_posts/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423111535669.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/study/program/blog/source/_posts/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423112252707.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/study/program/blog/source/_posts/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423113729827.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/study/program/blog/source/_posts/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423113831361.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/study/program/blog/source/_posts/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423154206306.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/study/program/blog/source/_posts/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423154005325.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/study/program/blog/source/_posts/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423154646340.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/study/program/blog/source/_posts/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423154946505.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/study/program/blog/source/_posts/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423160447169.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/study/program/blog/source/_posts/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423160809625.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423105508460.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423111535669.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423112252707.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423113729827.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423113831361.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423154206306.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423154005325.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423154646340.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423154946505.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423160447169.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423160809625.png">
 <meta property="article:published_time" content="2020-04-23T02:39:36.000Z">
-<meta property="article:modified_time" content="2020-04-25T12:08:44.691Z">
+<meta property="article:modified_time" content="2020-04-25T13:45:02.047Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="javaee">
 <meta property="article:tag" content="jsp">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/study/program/blog/source/_posts/jsp/image-20200423105508460.png">
+<meta name="twitter:image" content="https://futuwxq.github.io/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423105508460.png">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
   
@@ -189,15 +189,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>在学习JSP语法之前，我们需要知道<strong>JSP最终以servlet方式在容器中运行</strong>。下面是JSP转换为servlet的整个过程。</p>
-<ul>
-<li><p>容器将JSP文件翻译成servlet类的源文件(.java)，然后 将其编译成servlet class。</p>
-</li>
-<li><p>以和手工编写servlet同样的方式运行servle。</p>
+<p>​    容器将JSP文件翻译成servlet类的源文件(.java)，然后 将其编译成servlet class。</p>
+<p>​    以和手工编写servlet同样的方式运行servle。</p>
 <a id="more"></a>
 
-</li>
-</ul>
-<img src="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/study\program\blog\source\_posts\jsp\image-20200423105508460.png" alt="image-20200423105508460" style="zoom:80%;">
+<img src="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423105508460.png" alt="image-20200423105508460" style="zoom:80%;">
 
 <h2 id="一-、-JSP基本语法"><a href="#一-、-JSP基本语法" class="headerlink" title="一 、 JSP基本语法"></a>一 、 JSP基本语法</h2><p>jsp基本语法由指令 、 表达式 、 声明三部分组成。</p>
 <h3 id="1-指令（directive-）"><a href="#1-指令（directive-）" class="headerlink" title="1 指令（directive ）"></a>1 指令（directive ）</h3><p>一个JSP元素，用来给JSP容器一个说明，在翻译的时候 被解释。有三种JSP指令：page, include, taglib</p>
@@ -214,7 +210,7 @@
 </ul>
 <p>……..</p>
 <p>利用使用<strong>import属性导入外部的包</strong>，通过&lt;%@ …..  %&gt;语法来表示。</p>
-<img src="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/study\program\blog\source\_posts\javaee学习 — jsp\image-20200423111535669.png" alt="image-20200423111535669" style="zoom:80%;">
+<img src="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423111535669.png" alt="image-20200423111535669" style="zoom:80%;">
 
 <h5 id="2）include指令"><a href="#2）include指令" class="headerlink" title="2）include指令"></a>2）include指令</h5><p>定义一段文字或代码，它可以在当前页面被解析时加 入其中，增强了代码的复用性</p>
 <figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ include file=<span class="string">"header.html"</span> %&gt; <span class="comment">//在当前位置插入header.html</span></span><br></pre></td></tr></table></figure>
@@ -224,26 +220,26 @@
 
 <h3 id="2-表达式（expression）"><a href="#2-表达式（expression）" class="headerlink" title="2. 表达式（expression）"></a>2. 表达式（expression）</h3><p>表达式的基本语法是：&lt;%= …. %&gt;。</p>
 <p>表达式在运行时转化成out.print()的参数，不能将返回值为void的方法作为表达式。</p>
-<img src="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/study\program\blog\source\_posts\javaee学习 — jsp\image-20200423112252707.png" alt="image-20200423112252707" style="zoom:80%;">
+<img src="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423112252707.png" alt="image-20200423112252707" style="zoom:80%;">
 
 <h3 id="3-声明（declaration）"><a href="#3-声明（declaration）" class="headerlink" title="3. 声明（declaration）"></a>3. 声明（declaration）</h3><p>声明的语法是 &lt;%  … %&gt;,在声明中可以编写java代码。</p>
 <p>在java代码片断(scriptlet)中定义的变量。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;% int count &#x3D; 0; %&gt; &#x2F;&#x2F;定义了一个本地变量count</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;% <span class="keyword">int</span> count = <span class="number">0</span>; %&gt; <span class="comment">//定义了一个本地变量count</span></span><br></pre></td></tr></table></figure>
 
 <p>所有的java代码片断和表达式代码都在一个service方法 中，所以在java代码片断中声明的变量总是本地变量。</p>
 <p>既然jsp声明的变量都是本地变量，也就是用户每次访问servlet这个变量都会被初始化。如果我们有这样一个需求，统计访问页面的人数count。这个count变量每次用户访问都会初始化为0，就无法统计访问次数了。此时我们需要在<strong>静态变量</strong>。</p>
-<p>如何在jsp中定义静态变量呢？</p>
-<h5 id="jsp声明"><a href="#jsp声明" class="headerlink" title="jsp声明"></a>jsp声明</h5><p>jsp声明语法是这样的  &lt;%! …. %&gt;。</p>
+<p><strong>如何在jsp中定义静态变量呢？——使用 jsp声明</strong></p>
+<p>jsp声明语法是这样的  &lt;%! …. %&gt;。</p>
 <p>用于声明生成的servlet类的成员，即变量和方法，&lt;%!和%&gt;间的部分将被添加到service方法之外，可以定义静态变量和方法。</p>
 <ul>
 <li>定义变量</li>
 </ul>
-<img src="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/study\program\blog\source\_posts\javaee学习 — jsp\image-20200423113729827.png" alt="image-20200423113729827" style="zoom:80%;">
+<img src="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423113729827.png" alt="image-20200423113729827" style="zoom:80%;">
 
 <ul>
 <li>定义方法</li>
 </ul>
-<img src="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/study\program\blog\source\_posts\javaee学习 — jsp\image-20200423113831361.png" alt="image-20200423113831361" style="zoom:80%;">
+<img src="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423113831361.png" alt="image-20200423113831361" style="zoom:80%;">
 
 <h2 id="二-、-jsp的优化"><a href="#二-、-jsp的优化" class="headerlink" title="二 、 jsp的优化"></a>二 、 jsp的优化</h2><p>jsp页面上不仅可以写java的后台代码，也可以写一些html便签，虽然看似融合了逻辑处理和页面展示两大作用，但是这样不仅使得页面混乱，而且在jsp中的Java代码使其难于更改和维护。</p>
 <p>此时出现了Action（JavaBean标准动作） 和   EL表达式 用来解决这一问题。接下来介绍一下 EL表达式 ，action不详述。</p>
@@ -256,12 +252,10 @@
 <li><p>jsp:setProperty   设置JavaBean的某个属性</p>
 </li>
 </ul>
-<h3 id="2-2-EL"><a href="#2-2-EL" class="headerlink" title="2.2  EL"></a>2.2  EL</h3><p>EL提供了一种调用Java代码的简单方法 ；可以部分地取代JSP中的Java<strong>代码片断和表达式</strong> 。</p>
+<h3 id="2-2-EL-表达式"><a href="#2-2-EL-表达式" class="headerlink" title="2.2  EL 表达式"></a>2.2  EL 表达式</h3><p>EL提供了一种调用Java代码的简单方法 ；可以部分地取代JSP中的Java<strong>代码片断和表达式</strong> 。</p>
 <p>EL的语法是： ${ firstThing.secondThing }.</p>
-<ul>
-<li>通常写在大括号中，前面加$符号</li>
-<li>第一个变量是<strong>隐含对象</strong>或<strong>属性</strong></li>
-</ul>
+<p>​        通常写在大括号中，前面加$符号</p>
+<p>​        第一个变量是<strong>隐含对象</strong>或<strong>属性</strong></p>
 <h4 id="1-EL-隐含对象是什么"><a href="#1-EL-隐含对象是什么" class="headerlink" title="1. EL 隐含对象是什么"></a><strong>1. EL 隐含对象是什么</strong></h4><p>隐含对象是 implicit object，为了能够获得web应用程序中的相关数据，EL表达式中定义了一些隐含的对象。这些对象共有11个。前10个都是Map对象，最后是一个javaBean对象。</p>
 <table>
 <thead>
@@ -333,53 +327,53 @@
 <li>左边是Map 或 Bean</li>
 <li>右边必须是一个Map的key或一个bean的property名，右边必须遵循Java命名规则。</li>
 </ul>
-<img src="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/study\program\blog\source\_posts\javaee学习 — jsp\image-20200423154206306.png" alt="image-20200423154206306" style="zoom:80%;">
+<img src="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423154206306.png" alt="image-20200423154206306" style="zoom:80%;">
 
 <h5 id="2）-操作符"><a href="#2）-操作符" class="headerlink" title="2）[ ]操作符"></a>2）[ ]操作符</h5><p>“[ ]”操作符的语法:</p>
 <ul>
 <li>左边是Map 或 Bean 或 List 或 数组</li>
 <li>右边除了和 “.”操作符一样，还可以是数字、能转换成数字的其他类型。</li>
 </ul>
-<img src="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/study\program\blog\source\_posts\javaee学习 — jsp\image-20200423154005325.png" alt="image-20200423154005325" style="zoom:80%;">
+<img src="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423154005325.png" alt="image-20200423154005325" style="zoom:80%;">
 
 <h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>对于Bean和Map，“.”和“[ ]”操作符可以互换。如果[ ]中不是字符串，表达式将被看作求值。</p>
 <p>例如下面这个例子，Music is ${musicMap[Genre]}里的Genre不是字符串，就被看作是map对象的求值，转化为箭头右边的形式。</p>
-<img src="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/study\program\blog\source\_posts\javaee学习 — jsp\image-20200423154646340.png" alt="image-20200423154646340" style="zoom:80%;">
+<img src="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423154646340.png" alt="image-20200423154646340" style="zoom:80%;">
 
 <p><strong>3）在括号中使用嵌套表达式</strong></p>
-<img src="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/study\program\blog\source\_posts\javaee学习 — jsp\image-20200423154946505.png" alt="image-20200423154946505" style="zoom:80%;">
+<img src="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423154946505.png" alt="image-20200423154946505" style="zoom:80%;">
 
 <h4 id="3-EL隐含对象的应用"><a href="#3-EL隐含对象的应用" class="headerlink" title="3. EL隐含对象的应用"></a>3. EL隐含对象的应用</h4><h5 id="1）PageContext对象的应用"><a href="#1）PageContext对象的应用" class="headerlink" title="1）PageContext对象的应用"></a>1）PageContext对象的应用</h5><p> PageContext隐含对象用于访问JSP内置对象，如request、response、out、session、config和servletContext等，例如要访问当前session中的变量username可以使用如下的表达式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;PageContext.session.username&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;PageContext.session.username&#125;</span><br></pre></td></tr></table></figure>
 
 <h5 id="2）param和paramValues对象的应用"><a href="#2）param和paramValues对象的应用" class="headerlink" title="2）param和paramValues对象的应用"></a>2）param和paramValues对象的应用</h5><p>param对象用于获取请求参数的值。而如果一个参数名对应多个值时，则需要使用paramValues对象获取请求参数的值，在应用param对象时，返回的结果是字符串。应用paramValues对象时，返回的结果是数组。</p>
 <p>例如：在JSP页面中有一个名为user的文本框，关键代码如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type &#x3D; &quot;text&quot; name &#x3D; &quot;user&quot; id &#x3D; &quot;user&quot;&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type = <span class="string">"text"</span> name = <span class="string">"user"</span> id = <span class="string">"user"</span>&gt;</span><br></pre></td></tr></table></figure>
 
 <p>当表单提交之后，要获取user文本框的值，通过</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;param.user&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$&#123;param.user&#125;</span><br></pre></td></tr></table></figure>
 
 <p>例如：当JSP页面有名为color的复选框</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type &#x3D; &quot;checkbox&quot; name &#x3D; &quot;color&quot; value &#x3D; &quot;1&quot; id &#x3D; &quot;hobby&quot;&gt;red</span><br><span class="line">&lt;input type &#x3D; &quot;checkbox&quot; name &#x3D; &quot;color&quot; value &#x3D; &quot;2&quot; id &#x3D; &quot;hobby&quot;&gt;pink</span><br><span class="line">&lt;input type &#x3D; &quot;checkbox&quot; name &#x3D; &quot;color&quot; value &#x3D; &quot;3&quot; id &#x3D; &quot;hobby&quot;&gt;white</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type = <span class="string">"checkbox"</span> name = <span class="string">"color"</span> value = <span class="string">"1"</span> id = <span class="string">"hobby"</span>&gt;red</span><br><span class="line">&lt;input type = <span class="string">"checkbox"</span> name = <span class="string">"color"</span> value = <span class="string">"2"</span> id = <span class="string">"hobby"</span>&gt;pink</span><br><span class="line">&lt;input type = <span class="string">"checkbox"</span> name = <span class="string">"color"</span> value = <span class="string">"3"</span> id = <span class="string">"hobby"</span>&gt;white</span><br></pre></td></tr></table></figure>
 
 <p>当表单提交之后，要获取color的值，通过</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$&#123;paramValues.color[0]&#125;&#x2F;&#x2F;red</span><br><span class="line">$&#123;paramValues.color[1]&#125;&#x2F;&#x2F;pink</span><br><span class="line">$&#123;paramValues.color[2]&#125;&#x2F;&#x2F;pink</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$&#123;paramValues.color[<span class="number">0</span>]&#125;<span class="comment">//red</span></span><br><span class="line">$&#123;paramValues.color[<span class="number">1</span>]&#125;<span class="comment">//pink</span></span><br><span class="line">$&#123;paramValues.color[<span class="number">2</span>]&#125;<span class="comment">//pink</span></span><br></pre></td></tr></table></figure>
 
 <p>下面是一个简易的例子，用户在客户端输入数据，在jsp页面通过el表达式获取数据。</p>
-<img src="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/study\program\blog\source\_posts\javaee学习 — jsp\image-20200423160447169.png" alt="image-20200423160447169" style="zoom:80%;">
+<img src="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423160447169.png" alt="image-20200423160447169" style="zoom:80%;">
 
 <h5 id="3）cookie对象的应用"><a href="#3）cookie对象的应用" class="headerlink" title="3）cookie对象的应用"></a>3）cookie对象的应用</h5><p> cookie对象用于访问由请求设置的cookie名称，如果在cookie中已经设定了一个名为username的值，那么可以使用${cookie.username}来获取cookie对象;但是如果要获取cookie中的值，则需要使用cookie对象的value属性。</p>
 <p>例如：使用response对象设置一个请求有效的cookie对象，然后使用EL表达式获取该cookie对象的值</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;% Cookie cookie &#x3D; new Cookie(&quot;user&quot;,&quot;zhang&quot;)</span><br><span class="line"></span><br><span class="line">        response.addCookie(cookie); %&gt;</span><br><span class="line"></span><br><span class="line"> $&#123;cookie.user.value&#125;&#x2F;&#x2F;输出得到zhang</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;% Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"user"</span>,<span class="string">"zhang"</span>)</span><br><span class="line"></span><br><span class="line">        response.addCookie(cookie); %&gt;</span><br><span class="line"></span><br><span class="line"> $&#123;cookie.user.value&#125;<span class="comment">//输出得到zhang</span></span><br></pre></td></tr></table></figure>
 
 <h5 id="4）获取上下文初试参数"><a href="#4）获取上下文初试参数" class="headerlink" title="4）获取上下文初试参数"></a>4）获取上下文初试参数</h5><p>在DD中配置上下文初始参数，可以通过initParam获取参数值</p>
-<img src="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/study\program\blog\source\_posts\javaee学习 — jsp\image-20200423160809625.png" alt="image-20200423160809625" style="zoom:80%;">
+<img src="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20jsp/image-20200423160809625.png" alt="image-20200423160809625" style="zoom:80%;">
 
 <h3 id="2-3-include标准动作"><a href="#2-3-include标准动作" class="headerlink" title="2.3 include标准动作"></a>2.3 include标准动作</h3><p>都我们需要重复一段代码（比如页面头部）的时候，我们想到之前学的Include指令</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ include file&#x3D; &quot;header.jsp&quot;%&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;%@ include file= <span class="string">"header.jsp"</span>%&gt;</span><br></pre></td></tr></table></figure>
 
 <p>现在介绍一种新的方法——<strong>Include标准动作</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:include page&#x3D;&quot;header.jsp&quot;&#x2F;&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;jsp:include page=<span class="string">"header.jsp"</span>/&gt;</span><br></pre></td></tr></table></figure>
 
 <p>两种方法效果完全相同，但是底层实现却完全不同。</p>
 <ul>
@@ -390,10 +384,10 @@
 <p><code>&lt;jsp:include&gt;</code>标签可以有内容,通过使用<code>&lt;jsp:param&gt;</code>可以定制嵌入的页面的内容。</p>
 <p>例如下面这个例子</p>
 <p><strong>主页面</strong>：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;&lt;body&gt;</span><br><span class="line">&lt;jsp:include page&#x3D;&quot;header.jsp&quot;&gt;</span><br><span class="line">	&lt;jsp:param name&#x3D;&quot;subTitle&quot; value&#x3D;&quot;We take the string out if SOAP. &quot;&#x2F;&gt;</span><br><span class="line">&lt;&#x2F;jsp:include&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;em&gt; ....&lt;&#x2F;em&gt;</span><br><span class="line">&lt;&#x2F;body&gt;&lt;&#x2F;html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;&lt;body&gt;</span><br><span class="line">&lt;jsp:include page=<span class="string">"header.jsp"</span>&gt;</span><br><span class="line">	&lt;jsp:param name=<span class="string">"subTitle"</span> value=<span class="string">"We take the string out if SOAP. "</span>/&gt;</span><br><span class="line">&lt;/jsp:include&gt;</span><br><span class="line">&lt;br&gt;</span><br><span class="line">&lt;em&gt; ....&lt;/em&gt;</span><br><span class="line">&lt;/body&gt;&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
 <p><strong>嵌入的文件</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src&#x3D;&quot;&#x2F;logo.png&quot;&gt;&lt;br&gt;</span><br><span class="line">&lt;strong&gt;$&#123;param.subTitle&#125;&lt;strong&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;img src=<span class="string">"/logo.png"</span>&gt;&lt;br&gt;</span><br><span class="line">&lt;strong&gt;$&#123;param.subTitle&#125;&lt;strong&gt;</span><br></pre></td></tr></table></figure>
 
 <h5 id="2-forward标准动作"><a href="#2-forward标准动作" class="headerlink" title="2) forward标准动作"></a>2) forward标准动作</h5><p>forward标准动是把请求转到一个新的页面。</p>
 <p>&lt;jsp:forward page=“target.jsp” /&gt;的作用就相当于RequestDispatcher。</p>
@@ -642,6 +636,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Bootstrap</a>
               </li>
              
@@ -658,19 +656,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -678,11 +664,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
+                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
+                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -694,15 +680,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">web项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -714,7 +696,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
+                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -730,11 +716,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -743,6 +729,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -755,6 +745,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
             
             <div class="clearfix"></div>

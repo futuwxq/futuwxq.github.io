@@ -8,25 +8,25 @@
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
   <title>javaee学习 — session 和 cookie | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Request对象解决了一次请求内的不同 Servlet 的数据共享问题，那么一个用户的不同请求的处理需要使用相同的数据怎么办呢?使用session技术。 第一部分 Session用户使用浏览器第一次向服务器发送请求，服务器在接受到请求后，调用对应的Servlet进行处理。在处理过程中会给用户创建一个session对象，用来存储用户请求处理相关的公共数据。">
+  <meta name="description" content="Request对象解决了一次请求内的不同 Servlet 的数据共享问题，那么一个用户的不同请求的处理需要使用相同的数据怎么办呢?使用session技术。 一 、Session用户使用浏览器第一次向服务器发送请求，服务器在接受到请求后，调用对应的Servlet进行处理。在处理过程中会给用户创建一个session对象，用来存储用户请求处理相关的公共数据。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javaee学习 — session 和 cookie">
 <meta property="og:url" content="https://futuwxq.github.io/2020/04/22/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20session%20%E5%92%8C%20cookie/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="Request对象解决了一次请求内的不同 Servlet 的数据共享问题，那么一个用户的不同请求的处理需要使用相同的数据怎么办呢?使用session技术。 第一部分 Session用户使用浏览器第一次向服务器发送请求，服务器在接受到请求后，调用对应的Servlet进行处理。在处理过程中会给用户创建一个session对象，用来存储用户请求处理相关的公共数据。">
+<meta property="og:description" content="Request对象解决了一次请求内的不同 Servlet 的数据共享问题，那么一个用户的不同请求的处理需要使用相同的数据怎么办呢?使用session技术。 一 、Session用户使用浏览器第一次向服务器发送请求，服务器在接受到请求后，调用对应的Servlet进行处理。在处理过程中会给用户创建一个session对象，用来存储用户请求处理相关的公共数据。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/22/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20session%20%E5%92%8C%20cookie/study/program/blog/source/_posts/session%20%E5%92%8C%20cookie/image-20200422164837964.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/22/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20session%20%E5%92%8C%20cookie/study/program/blog/source/_posts/session%20%E5%92%8C%20cookie/image-20200422170042669.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/22/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20session%20%E5%92%8C%20cookie/study/program/blog/source/_posts/session%20%E5%92%8C%20cookie/image-20200422192907596.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/22/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20session%20%E5%92%8C%20cookie/study/program/blog/source/_posts/session%20%E5%92%8C%20cookie/image-20200422204054166.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/22/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20session%20%E5%92%8C%20cookie/image-20200422164837964.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/22/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20session%20%E5%92%8C%20cookie/image-20200422170042669.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/22/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20session%20%E5%92%8C%20cookie/image-20200422192907596.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/22/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20session%20%E5%92%8C%20cookie/image-20200422204054166.png">
 <meta property="article:published_time" content="2020-04-22T00:48:19.000Z">
-<meta property="article:modified_time" content="2020-04-23T03:02:20.934Z">
+<meta property="article:modified_time" content="2020-04-25T13:49:02.728Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="javaee">
 <meta property="article:tag" content="session">
 <meta property="article:tag" content="cookie">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://futuwxq.github.io/2020/04/22/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20session%20%E5%92%8C%20cookie/study/program/blog/source/_posts/session%20%E5%92%8C%20cookie/image-20200422164837964.png">
+<meta name="twitter:image" content="https://futuwxq.github.io/2020/04/22/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20session%20%E5%92%8C%20cookie/image-20200422164837964.png">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
   
@@ -183,7 +183,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Request对象解决了一次请求内的不同 Servlet 的数据共享问题，那么一个用户的不同请求的处理需要使用相同的数据怎么办呢?使用session技术。</p>
-<h2 id="第一部分-Session"><a href="#第一部分-Session" class="headerlink" title="第一部分 Session"></a>第一部分 Session</h2><p>用户使用浏览器第一次向服务器发送请求，服务器在接受到请求后，调用对应的Servlet进行处理。在处理过程中会给用户创建一个session对象，用来存储用户请求处理相关的公共数据。</p>
+<h2 id="一-、Session"><a href="#一-、Session" class="headerlink" title="一 、Session"></a>一 、Session</h2><p>用户使用浏览器第一次向服务器发送请求，服务器在接受到请求后，调用对应的Servlet进行处理。在处理过程中会给用户创建一个session对象，用来存储用户请求处理相关的公共数据。</p>
 <a id="more"></a>
 
 <p><strong>Session特点</strong></p>
@@ -196,7 +196,7 @@
 </li>
 </ul>
 <h3 id="1-session的工作原理"><a href="#1-session的工作原理" class="headerlink" title="1 session的工作原理"></a><strong>1 session的工作原理</strong></h3><p>用户在浏览器发起请求到servletA，容器自动分配一个线程，该线程会查找与用户相关的session，并把请求的数据存储到session的属性中。我们可以通过请求去创建Session，获取Session。</p>
-<img src="/2020/04/22/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20session%20%E5%92%8C%20cookie/study\program\blog\source\_posts\session 和 cookie\image-20200422164837964.png" alt="image-20200422164837964" style="zoom:70%;">
+<img src="/2020/04/22/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20session%20%E5%92%8C%20cookie/image-20200422164837964.png" alt="image-20200422164837964" style="zoom:70%;">
 
 <p><strong>相同的客户；相同的servlet；不同的请求；不同的线程；相同的session</strong></p>
 <p>只要不关闭浏览器，并且session不失效的情况下，同一个用户的任意请求在项目的任意Servlet中获取到的都是同一个session对象。</p>
@@ -252,19 +252,17 @@
 <h2 id="第二部分-cookie"><a href="#第二部分-cookie" class="headerlink" title="第二部分 cookie"></a>第二部分 cookie</h2><h3 id="2-1-Cookie是什么？"><a href="#2-1-Cookie是什么？" class="headerlink" title="2.1 Cookie是什么？"></a><strong>2.1 Cookie是什么？</strong></h3><p> Cookie 是一小段文本信息，伴随着用户请求和页面在 Web 服务器和浏览器之间传递。Cookie 包含每次用户访问站点时 Web 应用程序都可以读取的信息。</p>
 <p>如下图在用户第一次获得响应的时候，HTTP响应会添加Set-Cookie属性，其值是用户的sessionID。当用户在seesion周期内再次发起请求，HTTP请求中会添加一个cookie属性，其值就是用户的sessionID。</p>
 <p>session在响应上面创建，session在请求上创建。</p>
-<img src="/2020/04/22/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20session%20%E5%92%8C%20cookie/study\program\blog\source\_posts\session 和 cookie\image-20200422170042669.png" alt="image-20200422170042669" style="zoom:70%;">
-
-<!-- more -->
+<img src="/2020/04/22/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20session%20%E5%92%8C%20cookie/image-20200422170042669.png" alt="image-20200422170042669" style="zoom:70%;">
 
 <p><strong>Cookie能做什么？</strong></p>
 <p> Cookie只是一段文本，所以它只能保存字符串。而且浏览器对它有大小限制以及 它会随着每次请求被发送到服务器，所以应该保证它不要太大。 Cookie的内容也是明文保存的，有些浏览器提供界面修改，所以， 不适合保存重要的或者涉及隐私的内容。</p>
 <h3 id="2-2-使用cookie"><a href="#2-2-使用cookie" class="headerlink" title="2.2 使用cookie"></a>2.2 使用cookie</h3><p>Cookie相关的操作都封装在Servlet API的HttpServletRequest类、HttpServletResponse和Cookie里面。</p>
-<img src="/2020/04/22/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20session%20%E5%92%8C%20cookie/study\program\blog\source\_posts\session 和 cookie\image-20200422192907596.png" alt="image-20200422192907596" style="zoom:80%;">
+<img src="/2020/04/22/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20session%20%E5%92%8C%20cookie/image-20200422192907596.png" alt="image-20200422192907596" style="zoom:80%;">
 
-<h3 id><a href="#" class="headerlink" title></a></h3><p><strong>1）初始化cookie</strong></p>
+<p><strong>1）初始化cookie</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cookie cookie = <span class="keyword">new</span> Cookie(<span class="string">"account"</span>, userId + <span class="string">"="</span> + password );</span><br></pre></td></tr></table></figure>
 <p>Session cookie的寿命期与 session一致，用户浏览器关闭后，就不存在了,但用户可以让cookie在浏览器关闭后保存在客户机上。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;设置Maximum Age</span><br><span class="line">cookie.setMaxAge(60 * 60 * 24);</span><br><span class="line">&#x2F;&#x2F;设置cookie路径为当前项目路径</span><br><span class="line">cookie.setPath(request.getContextPath());</span><br><span class="line">&#x2F;&#x2F;添加cookie</span><br><span class="line">response.addCookie(cookie);</span><br></pre></td></tr></table></figure>
+<figure class="highlight jsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//设置Maximum Age</span></span><br><span class="line">cookie.setMaxAge(<span class="number">60</span> * <span class="number">60</span> * <span class="number">24</span>);</span><br><span class="line"><span class="comment">//设置cookie路径为当前项目路径</span></span><br><span class="line">cookie.setPath(request.getContextPath());</span><br><span class="line"><span class="comment">//添加cookie</span></span><br><span class="line">response.addCookie(cookie);</span><br></pre></td></tr></table></figure>
 
 <p><strong>2）读取cookie</strong></p>
 <p>服务器端通过HttpServletRequest对象.getCookies()可获取cookies数组。</p>
@@ -279,7 +277,8 @@
 <p>html代码部分如下</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">method</span>=<span class="string">"post"</span> <span class="attr">action</span>=<span class="string">"ShoppingCart.do"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">table</span> &gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span> &gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"item"</span> <span class="attr">value</span>=<span class="string">"Thinking in Java"</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>Item1: Thinking in Java<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span> &gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"item"</span> <span class="attr">value</span>=<span class="string">"Head first servlets and JSP"</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span> &gt;</span>Item2: Head first servlets and JSP<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">tr</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span></span><br><span class="line">					<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">name</span>=<span class="string">"item"</span> <span class="attr">value</span>=<span class="string">"Enterprise JavaBeans 3.0"</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">				<span class="tag">&lt;<span class="name">td</span>&gt;</span>Item3: Enterprise JavaBeans 3.0<span class="tag">&lt;/<span class="name">td</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;/<span class="name">tr</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">table</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">			<span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">name</span>=<span class="string">"btn_submit"</span> <span class="attr">value</span>=<span class="string">"Buy Now"</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<img src="/2020/04/22/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20session%20%E5%92%8C%20cookie/study\program\blog\source\_posts\session 和 cookie\image-20200422204054166.png" alt="image-20200422204054166" style="zoom:80%;">
+<p><strong>输出结果如下图：</strong></p>
+<img src="/2020/04/22/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20session%20%E5%92%8C%20cookie/image-20200422204054166.png" alt="image-20200422204054166" style="zoom:80%;">
 
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>cookie 和session 的区别：</strong></p>
 <p>1、cookie数据存放在客户的浏览器上，session数据放在服务器上。<br>2、cookie不是很安全，别人可以分析存放在本地的COOKIE并进行COOKIE欺骗，考虑到安全应当使用session。<br>3、session会在一定时间内保存在服务器上。当访问增多，会比较占用你服务器的性能，考虑到减轻服务器性能方面，应当使用COOKIE。<br>4、单个cookie保存的数据不能超过4K，很多浏览器都限制一个站点最多保存20个cookie。</p>
@@ -532,6 +531,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Bootstrap</a>
               </li>
              
@@ -548,19 +551,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -568,11 +559,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
+                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
+                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -584,15 +575,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">web项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -604,7 +591,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
+                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -620,11 +611,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -633,6 +624,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -645,6 +640,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
             
             <div class="clearfix"></div>

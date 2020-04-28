@@ -8,21 +8,21 @@
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
   <title>javaee学习 — 容器 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="什么是javaEE？ Java Platform, Enterprise Edition(Java EE) 为设 计、开发、装配和部署企业应用程序提供了一个 基于组件的方法。 通过Java EE平台，可以   更快地构建创新的商业解决方案  基于Java EE组件的平台独立性，使开发的应用不依赖于 特定厂商的产品和API  软件厂商和客户都能自由地选择符合其需求的产品和组件">
+  <meta name="description" content="什么是javaEE？ Java Platform, Enterprise Edition(Java EE) 为设 计、开发、装配和部署企业应用程序提供了一个基于组件的方法。 通过Java EE平台，可以">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javaee学习 — 容器">
 <meta property="og:url" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20%E5%AE%B9%E5%99%A8/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="什么是javaEE？ Java Platform, Enterprise Edition(Java EE) 为设 计、开发、装配和部署企业应用程序提供了一个 基于组件的方法。 通过Java EE平台，可以   更快地构建创新的商业解决方案  基于Java EE组件的平台独立性，使开发的应用不依赖于 特定厂商的产品和API  软件厂商和客户都能自由地选择符合其需求的产品和组件">
+<meta property="og:description" content="什么是javaEE？ Java Platform, Enterprise Edition(Java EE) 为设 计、开发、装配和部署企业应用程序提供了一个基于组件的方法。 通过Java EE平台，可以">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20%E5%AE%B9%E5%99%A8/F:%5Cstudy%5Cprogram%5Cblog%5Csource_posts%5Cjava%E5%AE%B9%E5%99%A8%5Cimage-20200421102918169.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20%E5%AE%B9%E5%99%A8/study/program/blog/source/_posts/java%E5%AE%B9%E5%99%A8/image-20200421103759135.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20%E5%AE%B9%E5%99%A8/image-20200421102918169.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20%E5%AE%B9%E5%99%A8/image-20200421103759135.png">
 <meta property="article:published_time" content="2020-04-21T01:24:51.000Z">
-<meta property="article:modified_time" content="2020-04-23T03:03:54.436Z">
+<meta property="article:modified_time" content="2020-04-25T14:02:23.107Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="javaEE">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20%E5%AE%B9%E5%99%A8/F:%5Cstudy%5Cprogram%5Cblog%5Csource_posts%5Cjava%E5%AE%B9%E5%99%A8%5Cimage-20200421102918169.png">
+<meta name="twitter:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20%E5%AE%B9%E5%99%A8/image-20200421102918169.png">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
   
@@ -178,16 +178,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>什么是javaEE？</p>
-<p><strong>Java Platform, Enterprise Edition(Java EE)</strong> 为设 计、开发、装配和部署企业应用程序提供了一个 基于组件的方法。</p>
+        <p><strong>什么是javaEE？</strong></p>
+<p>Java Platform, Enterprise Edition(Java EE) 为设 计、开发、装配和部署企业应用程序提供了一个基于组件的方法。</p>
 <p>通过Java EE平台，可以 </p>
+<a id="more"></a>
+
 <ul>
 <li>更快地构建创新的商业解决方案 </li>
 <li>基于Java EE组件的平台独立性，使开发的应用不依赖于 特定厂商的产品和API </li>
 <li>软件厂商和客户都能自由地选择符合其需求的产品和组件</li>
 </ul>
-<a id="more"></a>
-
 <h3 id="1-javaEE组件"><a href="#1-javaEE组件" class="headerlink" title="1 javaEE组件"></a>1 javaEE组件</h3><h4 id="1-1-什么是组件"><a href="#1-1-什么是组件" class="headerlink" title="1.1 什么是组件"></a>1.1 什么是组件</h4><blockquote>
 <p>A Java EE component is a self-contained functional software unit that is assembled into a Java EE application with its related classes and files and that communicates with other components.</p>
 </blockquote>
@@ -216,7 +216,8 @@
 </li>
 </ul>
 <h4 id="1-3-JavaEE架构各层组件间的交互"><a href="#1-3-JavaEE架构各层组件间的交互" class="headerlink" title="1.3 JavaEE架构各层组件间的交互"></a>1.3 JavaEE架构各层组件间的交互</h4><p>如下图是一个3层架构，第一层是用户层用来展示用户界面，第二层是服务层，细分为web层和业务层，第三层是数据服务层，管理数据库和数据的持久化服务。</p>
-<p><img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20%E5%AE%B9%E5%99%A8/F:%5Cstudy%5Cprogram%5Cblog%5Csource_posts%5Cjava%E5%AE%B9%E5%99%A8%5Cimage-20200421102918169.png" alt="image-20200421102918169"></p>
+<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20%E5%AE%B9%E5%99%A8/image-20200421102918169.png" alt="image-20200421102918169" style="zoom: 67%;">
+
 <h3 id="2-容器"><a href="#2-容器" class="headerlink" title="2 容器"></a>2 容器</h3><h4 id="2-1-为什么需要容器？"><a href="#2-1-为什么需要容器？" class="headerlink" title="2.1 为什么需要容器？"></a>2.1 为什么需要容器？</h4><p><strong>1.</strong> 瘦客户端多层应用程序开发面临的难题：</p>
 <ul>
 <li><p>事务管理</p>
@@ -228,14 +229,14 @@
 <li><p>资源池</p>
 </li>
 <li><p>其它复杂的底层细节</p>
-<p><strong>2.</strong>  Java EE服务器对所有类型的组件，以容器的形式提供了一组底层服务。开发者不需重复开发，而只需关注业务问题。</p>
 </li>
 </ul>
+<p><strong>2.</strong>  Java EE服务器对所有类型的组件，以容器的形式提供了一组底层服务。开发者不需重复开发，而只需关注业务问题。</p>
 <h4 id="2-2-什么是容器？"><a href="#2-2-什么是容器？" class="headerlink" title="2.2 什么是容器？"></a>2.2 什么是容器？</h4><p>容器是一个组件和支持组件的底层平台特定功能之间的界面。</p>
 <p>Web组件、企业Bean、应用客户端组件必须组 装成Java EE模块并部署于容器中才能执行。</p>
 <p>也就是说容器提供底层环境，把组件部署到容器中就可以运行。</p>
 <p>下图是java EE 服务器和容器之间的交互过程。</p>
-<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20%E5%AE%B9%E5%99%A8/study\program\blog\source\_posts\java容器\image-20200421103759135.png" alt="image-20200421103759135" style="zoom: 67%;">
+<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20%E5%AE%B9%E5%99%A8/image-20200421103759135.png" alt="image-20200421103759135" style="zoom: 67%;">
 
 <h4 id="2-3-容器技术的优点："><a href="#2-3-容器技术的优点：" class="headerlink" title="2.3 容器技术的优点："></a>2.3 容器技术的优点：</h4><ul>
 <li><p>极其轻量：只打包了必要的Bin/Lib；</p>
@@ -488,6 +489,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Bootstrap</a>
               </li>
              
@@ -504,19 +509,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -524,11 +517,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
+                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
+                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -540,15 +533,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">web项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -560,7 +549,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
+                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -576,11 +569,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -589,6 +582,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -601,6 +598,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
             
             <div class="clearfix"></div>

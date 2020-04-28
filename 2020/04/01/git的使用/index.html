@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
   <title>git的使用 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="git是一款版本控制工具，所谓版本控制，也即是任何允许系统性地保存内容版本的系统。  第一部分 使用Git基础操作1.1  查看基础命令和版本">
+  <meta name="description" content="git是一款版本控制工具，所谓版本控制，也即是任何允许系统性地保存内容版本的系统。  第一部分 使用Git基础操作1）  查看基础命令和版本">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git的使用">
 <meta property="og:url" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="git是一款版本控制工具，所谓版本控制，也即是任何允许系统性地保存内容版本的系统。  第一部分 使用Git基础操作1.1  查看基础命令和版本">
+<meta property="og:description" content="git是一款版本控制工具，所谓版本控制，也即是任何允许系统性地保存内容版本的系统。  第一部分 使用Git基础操作1）  查看基础命令和版本">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/example1.PNG">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/commit.png">
@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/ssh.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/summory.png">
 <meta property="article:published_time" content="2020-04-01T06:57:31.000Z">
-<meta property="article:modified_time" content="2020-04-05T12:51:01.214Z">
+<meta property="article:modified_time" content="2020-04-26T08:48:35.167Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="工具类">
 <meta property="article:tag" content="git">
@@ -185,23 +185,22 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>git是一款版本控制工具，所谓版本控制，也即是任何允许系统性地保存内容版本的系统。 </p>
-<h2 id="第一部分-使用Git基础操作"><a href="#第一部分-使用Git基础操作" class="headerlink" title="第一部分 使用Git基础操作"></a>第一部分 使用Git基础操作</h2><p>1.1  查看基础命令和版本 </p>
+<h2 id="第一部分-使用Git基础操作"><a href="#第一部分-使用Git基础操作" class="headerlink" title="第一部分 使用Git基础操作"></a>第一部分 使用Git基础操作</h2><p><strong>1）  查看基础命令和版本</strong> </p>
 <a id="more"></a>
 
 <p>   git -v 和 git –version</p>
-<p>1.2  用户配置 </p>
+<p><strong>2）  用户配置</strong> </p>
 <p>   git config </p>
 <pre><code>配置 用户名 git config --global user.name &quot;Wxx&quot;
 
-配置 邮箱 git config --global user.email &quot;xxxxxxx@163.com&quot;</code></pre><p>1.3 查看配置(也就是查看配置了些什么)</p>
+配置 邮箱 git config --global user.email &quot;xxxxxxx@163.com&quot;</code></pre><p><strong>3）查看配置(也就是查看配置了些什么)</strong></p>
 <p> <code>git config -l</code> 或者 <code>git config --list</code></p>
-<p>1.4 配置工作空间</p>
+<p><strong>4 ）配置工作空间</strong></p>
 <p>下图是将vscode配置为工作空间</p>
 <!-- 以后要设置大小就用img标签就行了，src也直接写图片名字 不设置就用上面的md语法 -->
 <img src="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/example1.PNG" width="50%" height="50%" style="display:block;margin:5px auto">
 
-
-<p>1.5 git Bush上的快捷操作</p>
+<p><strong>5） git Bush上的快捷操作</strong></p>
 <p>以下是我初次使用git Bush 记录的一些命令操作。</p>
 <p>复制  Ctrl+ins</p>
 <p>粘贴 Shift+ins </p>
@@ -243,6 +242,8 @@
 <p>git reset 文件名  ：此命令会从暂存区中删除该文件，但它仍在你的工作目录中。</p>
 <p>git diff –stadge :查看暂存区文件修改情况。</p>
 <p>git add之后文件呈现为staged状态。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .&#x2F;&#x2F;把编写的所有文件添加早暂存区</span><br></pre></td></tr></table></figure>
+
 <p><strong>2）查看状态</strong></p>
 <p><strong>git status</strong> 可以看到最后提交后更改的文件。git diff查看具体哪里修改了。</p>
 <p>untracked files   未跟踪的文件</p>
@@ -251,7 +252,11 @@
 <p>一次性提交版本 ： git commit -m “描述” （commit语法是祈使句）。</p>
 <p>单次提交一个文件：git commit 文件名。</p>
 <p>git commit之后文件呈现committe状态。</p>
-<p><strong>将所有文件添加到暂存区并且提交：</strong> git add . &amp;&amp; git commit -m””;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m&quot;modify the README.md of Tmall&quot;</span><br></pre></td></tr></table></figure>
+
+<p><strong>将所有文件添加到暂存区并且提交：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add . &amp;&amp; git commit -m&quot;&quot;;</span><br></pre></td></tr></table></figure>
+
 <p>在上传过程中文件表现为3种阶段  modified staged  committed，这三个阶段对应的状态分别为本地仓库、暂存区和远程仓库。详细见下图。 </p>
 <img src="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/commit.png" width="50%" height="50%" alt="3种状态" style="display:block; margin:5px auto">
 
@@ -271,7 +276,13 @@ hint: Waiting for your editor to close the file...
 [master e3978a9] Add today
 1 file changed, 0 insertions(+), 0 deletions(-)
 create mode 100644 today.txt</code></pre><p><strong>4）上传代码</strong></p>
-<p>git push -u 远程名 分支名  ： 上传代码  <em>记得查看远程名称 在GitHub上clone的代码默认远程名是origin</em></p>
+<p>git push -u 远程名 分支名  ： 上传代码  </p>
+<p>记得查看远程名称 在GitHub上clone的代码默认远程名是origin</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+
+
+
+
 <h3 id="2-3-其他命令"><a href="#2-3-其他命令" class="headerlink" title="2.3 其他命令"></a>2.3 其他命令</h3><p>git还提供许多命令辅助我们解决问题。</p>
 <p><strong>1）查看版本记录</strong></p>
 <p>git log -p ： 查看记录同时还可以查看相邻两个版本的增删情况。 </p>
@@ -588,6 +599,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Bootstrap</a>
               </li>
              
@@ -604,19 +619,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -624,11 +627,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
+                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
+                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -640,15 +643,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">web项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -660,7 +659,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
+                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -676,11 +679,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -689,6 +692,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -701,6 +708,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
             
             <div class="clearfix"></div>

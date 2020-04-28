@@ -8,28 +8,28 @@
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
   <title>javaee学习 — Servlet | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.Servlet 生命周期Servlet 生命周期：Servlet加载—&gt;实例化—&gt;服务—&gt;销毁。  init（）：在Servlet的生命周期中，仅执行一次init()方法。它是在服务器装入Servlet时执行的，负责初始化Servlet对象。 当容器初始化一个servlet时，为其创建唯一的ServletConfig对象， 容器从DD中读取servlet初始化参数，并传给Se">
+  <meta name="description" content="1.Servlet 生命周期Servlet 生命周期：Servlet加载—&gt;实例化—&gt;服务—&gt;销毁。 1）init（）：在Servlet的生命周期中，仅执行一次init()方法。它是在服务器装入Servlet时执行的，负责初始化Servlet对象。 当容器初始化一个servlet时，为其创建唯一的ServletConfig对象， 容器从DD中读取servlet初始化参数，并传给S">
 <meta property="og:type" content="article">
 <meta property="og:title" content="javaee学习 — Servlet">
 <meta property="og:url" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="1.Servlet 生命周期Servlet 生命周期：Servlet加载—&gt;实例化—&gt;服务—&gt;销毁。  init（）：在Servlet的生命周期中，仅执行一次init()方法。它是在服务器装入Servlet时执行的，负责初始化Servlet对象。 当容器初始化一个servlet时，为其创建唯一的ServletConfig对象， 容器从DD中读取servlet初始化参数，并传给Se">
+<meta property="og:description" content="1.Servlet 生命周期Servlet 生命周期：Servlet加载—&gt;实例化—&gt;服务—&gt;销毁。 1）init（）：在Servlet的生命周期中，仅执行一次init()方法。它是在服务器装入Servlet时执行的，负责初始化Servlet对象。 当容器初始化一个servlet时，为其创建唯一的ServletConfig对象， 容器从DD中读取servlet初始化参数，并传给S">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study/program/blog/source/_posts/Servlet-%E5%92%8C-JSP-%E5%AD%A6%E4%B9%A0/image-20200422105843034.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study/program/blog/source/_posts/Servlet-%E5%92%8C-JSP-%E5%AD%A6%E4%B9%A0/image-20200421204903719.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study/program/blog/source/_posts/Servlet-%E5%92%8C-JSP-%E5%AD%A6%E4%B9%A0/image-20200421163859582.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study/program/blog/source/_posts/Servlet-%E5%92%8C-JSP-%E5%AD%A6%E4%B9%A0/image-20200421164017290.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study/program/blog/source/_posts/Servlet-%E5%92%8C-JSP-%E5%AD%A6%E4%B9%A0/image-20200421171709678.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study/program/blog/source/_posts/Servlet-%E5%92%8C-JSP-%E5%AD%A6%E4%B9%A0/image-20200421174438838.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study/program/blog/source/_posts/Servlet-%E5%92%8C-JSP-%E5%AD%A6%E4%B9%A0/image-20200421174530118.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study/program/blog/source/_posts/Servlet-%E5%92%8C-JSP-%E5%AD%A6%E4%B9%A0/image-20200421174825210.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/image-20200422105843034.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/image-20200421204903719.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/image-20200421163859582.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/image-20200421164017290.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/image-20200421171709678.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/image-20200421174438838.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/image-20200421174530118.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/image-20200421174825210.png">
 <meta property="article:published_time" content="2020-04-21T08:23:15.000Z">
-<meta property="article:modified_time" content="2020-04-25T12:20:43.193Z">
+<meta property="article:modified_time" content="2020-04-25T13:57:07.020Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="javaee">
 <meta property="article:tag" content="servlet">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study/program/blog/source/_posts/Servlet-%E5%92%8C-JSP-%E5%AD%A6%E4%B9%A0/image-20200422105843034.png">
+<meta name="twitter:image" content="https://futuwxq.github.io/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/image-20200422105843034.png">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
   
@@ -186,25 +186,21 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="1-Servlet-生命周期"><a href="#1-Servlet-生命周期" class="headerlink" title="1.Servlet 生命周期"></a>1.Servlet 生命周期</h2><p>Servlet 生命周期：Servlet加载—&gt;实例化—&gt;服务—&gt;销毁。</p>
-<ol>
-<li><p>init（）：在Servlet的生命周期中，仅执行一次init()方法。它是在服务器装入Servlet时执行的，负责初始化Servlet对象。</p>
+<p>1）<strong>init（）</strong>：在Servlet的生命周期中，仅执行一次init()方法。它是在服务器装入Servlet时执行的，负责初始化Servlet对象。</p>
 <p>当容器初始化一个servlet时，为其创建唯一的ServletConfig对象， 容器从DD中读取servlet初始化参数，并传给ServletConfig，然后 再将ServletConfig传给servlet的init()方法。</p>
 <a id="more"></a>
-</li>
-<li><p>service（）：它是Servlet的核心，负责响应客户的请求。</p>
-<p>每当一个客户请求一个HttpServlet对象，该对象的Service()方法就要调用，而且传递给这个方法一个“请求”（ServletRequest）对象和一个“响应”（ServletResponse）对象作为参数。在HttpServlet中已存在Service()方法。默认的服务功能是调用与HTTP请求的方法相应的do功能。</p>
-</li>
-<li><p>destroy（）： 仅执行一次，在服务器端停止且卸载Servlet时执行该方法。当Servlet对象退出生命周期时，负责释放占用的资源。</p>
-<p>一个Servlet在运行service()方法时可能会产生其他的线程，因此需要确认在调用destroy()方法时，这些线程已经终止或完成。</p>
-<p>如下图是servlet生命周期的简图。</p>
-</li>
-</ol>
-<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study\program\blog\source\_posts\Servlet-和-JSP-学习\image-20200422105843034.png" alt="image-20200422105843034" style="zoom:80%;">
 
-<h2 id="2-Servlet线程和初始化"><a href="#2-Servlet线程和初始化" class="headerlink" title="2. Servlet线程和初始化"></a>2. Servlet线程和初始化</h2><p>当Servlet容器中接受到多个请求时，容器是否为每个请求都会创建一个Servlet？</p>
+<p>2）<strong>service（）</strong>：它是Servlet的核心，负责响应客户的请求。</p>
+<p>每当一个客户请求一个HttpServlet对象，该对象的Service()方法就要调用，而且传递给这个方法一个“请求”（ServletRequest）对象和一个“响应”（ServletResponse）对象作为参数。在HttpServlet中已存在Service()方法。默认的服务功能是调用与HTTP请求的方法相应的do功能。</p>
+<p>3）<strong>destroy（）</strong>： 仅执行一次，在服务器端停止且卸载Servlet时执行该方法。当Servlet对象退出生命周期时，负责释放占用的资源。</p>
+<p>一个Servlet在运行service()方法时可能会产生其他的线程，因此需要确认在调用destroy()方法时，这些线程已经终止或完成。</p>
+<p>下图是servlet生命周期的简图。</p>
+<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/image-20200422105843034.png" alt="image-20200422105843034" style="zoom:80%;">
+
+<h2 id="2-Servlet线程和初始化"><a href="#2-Servlet线程和初始化" class="headerlink" title="2. Servlet线程和初始化"></a>2. Servlet线程和初始化</h2><p><strong>当Servlet容器中接受到多个请求时，容器是否为每个请求都会创建一个Servlet？</strong></p>
 <p>这样显然效率低，因此容器为单个servlet运行多个线程来处理多个请求。</p>
 <p>如下图，就是两个客户都访问了同一个Servlet，容器并不是为每个用户创建一个servlet，而是为每个用户分配一个线程，并把请求和响应对象传给这个线程。</p>
-<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study\program\blog\source\_posts\Servlet-和-JSP-学习\image-20200421204903719.png" alt="image-20200421204903719" style="zoom:80%;">
+<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/image-20200421204903719.png" alt="image-20200421204903719" style="zoom:80%;">
 
 <p><strong>ServletConfig对象</strong></p>
 <ul>
@@ -228,10 +224,10 @@
 </ul>
 <h2 id="3-Servlet工作原理"><a href="#3-Servlet工作原理" class="headerlink" title="3. Servlet工作原理"></a>3. Servlet工作原理</h2><p>servlet没有main()方法，被容器控制。</p>
 <p>容器将HTTP请求和响应传给servlet，并调用servlet上的方法，如 doPost()或doGet()</p>
-<p>servlet工作原理</p>
-<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study\program\blog\source\_posts\Servlet-和-JSP-学习\image-20200421163859582.png" alt="image-20200421163859582" style="zoom:80%;">
+<p><strong>servlet工作原理</strong></p>
+<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/image-20200421163859582.png" alt="image-20200421163859582" style="zoom:80%;">
 
-<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study\program\blog\source\_posts\Servlet-和-JSP-学习\image-20200421164017290.png" alt="image-20200421164017290" style="zoom:80%;">
+<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/image-20200421164017290.png" alt="image-20200421164017290" style="zoom:80%;">
 
 <p>在第3步中，容器根据URL找到对应servlet，是怎么通过URL找到的呢？通过哪个URL呢？</p>
 <p>一般一个servlet会有3个名字。</p>
@@ -259,10 +255,10 @@
 <p>现在来了解Servlet的这两个对象：HttpServletResponse对象和HttpServletRequest对象。</p>
 <h3 id="4-1-HttpServletRequest对象"><a href="#4-1-HttpServletRequest对象" class="headerlink" title="4.1 HttpServletRequest对象"></a>4.1 HttpServletRequest对象</h3><p>HttpServletRequest对象代表客户端的请求，当客户端通过HTTP协议访问服务器时，HTTP请求头中的所有信息都封装在这个对象中，开发人员通过这个对象中的方法，可以获得客户的这些信息。</p>
 <p><strong>获取客户机环境信息常用的方法如下</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">getRequestURL();   &#x2F;&#x2F;返回客户端发出请求时的完整URL  </span><br><span class="line">getRequestURI();   &#x2F;&#x2F;返回请求行中的资源名部分  </span><br><span class="line">getQueryString();  &#x2F;&#x2F;返回请求行中的参数部分  </span><br><span class="line">getRemoteAddr();   &#x2F;&#x2F;返回发出请求的客户机的IP地址  </span><br><span class="line">getRemoteHost();   &#x2F;&#x2F;返回发出请求的客户机完整主机名  </span><br><span class="line">getRemotePort();   &#x2F;&#x2F;返回客户机所使用的网络端口号  </span><br><span class="line">getLocalAddr();    &#x2F;&#x2F;返回WEB服务器的IP地址  </span><br><span class="line">getLocalName();    &#x2F;&#x2F;返回WEB服务器的主机名  </span><br><span class="line">getMethod();       &#x2F;&#x2F;得到客户机请求方式</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">getRequestURL();   <span class="comment">//返回客户端发出请求时的完整URL  </span></span><br><span class="line">getRequestURI();   <span class="comment">//返回请求行中的资源名部分  </span></span><br><span class="line">getQueryString();  <span class="comment">//返回请求行中的参数部分  </span></span><br><span class="line">getRemoteAddr();   <span class="comment">//返回发出请求的客户机的IP地址  </span></span><br><span class="line">getRemoteHost();   <span class="comment">//返回发出请求的客户机完整主机名  </span></span><br><span class="line">getRemotePort();   <span class="comment">//返回客户机所使用的网络端口号  </span></span><br><span class="line">getLocalAddr();    <span class="comment">//返回WEB服务器的IP地址  </span></span><br><span class="line">getLocalName();    <span class="comment">//返回WEB服务器的主机名  </span></span><br><span class="line">getMethod();       <span class="comment">//得到客户机请求方式</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>获取请求信息常用的方法</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;获得客户机请求头  </span><br><span class="line">getHeader(String name);  </span><br><span class="line">getHeaders(String name);  &#x2F;&#x2F;获取指定名称的头的所有值  </span><br><span class="line">getHeaderNames(); &#x2F;&#x2F;获取所有头的名称  </span><br><span class="line">  </span><br><span class="line">&#x2F;&#x2F;获得客户机请求参数(客户端提交的数据)  </span><br><span class="line">getParameter(name);  </span><br><span class="line">getParameterValues(String name);  &#x2F;&#x2F;获取指定参数名的所有值  </span><br><span class="line">getParameterNames();  &#x2F;&#x2F;获取所有参数名</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/获得客户机请求头  </span><br><span class="line">getHeader(String name);  </span><br><span class="line">getHeaders(String name);  <span class="comment">//获取指定名称的头的所有值  </span></span><br><span class="line">getHeaderNames(); <span class="comment">//获取所有头的名称  </span></span><br><span class="line">  </span><br><span class="line"><span class="comment">//获得客户机请求参数(客户端提交的数据)  </span></span><br><span class="line">getParameter(name);  </span><br><span class="line">getParameterValues(String name);  <span class="comment">//获取指定参数名的所有值  </span></span><br><span class="line">getParameterNames();  <span class="comment">//获取所有参数名</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>Request对象还解决了一次请求内的不同Servlet的数据共享问题</strong></p>
 <p>可以通过<code>setAttribute()</code>，将值放入到request对象，然后在前端页面使用<code>getAttribute()</code>获取对应的值，这样就达到一次请求可以在多个页面共享一些对象信息</p>
@@ -270,7 +266,7 @@
 
 <h3 id="4-2-HttpServletResponse对象"><a href="#4-2-HttpServletResponse对象" class="headerlink" title="4.2 HttpServletResponse对象"></a>4.2 HttpServletResponse对象</h3><p>HttpServletResponse对象是指服务器的响应，这个对象中封装了向客户端发送数据，发送响应头，发送响应状态码的方法。</p>
 <p>下面是HttpServletResponse 以及 ServletResponse的类图，通过类图可以看出HttpServletResponse所提供的的方法，红色方框部分是获取一个输出流的方法，通过这个方法可以完成向客户端输出数据。</p>
-<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study\program\blog\source\_posts\Servlet-和-JSP-学习\image-20200421171709678.png" alt="image-20200421171709678" style="zoom:80%;">
+<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/image-20200421171709678.png" alt="image-20200421171709678" style="zoom:80%;">
 
 <p>对于response对象的使用，首先需要setContentType()方法在响应的 HTTP头中设置MIME类型，告诉浏览器返回的是什么，浏览器就知道该怎么处理了。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.setContentType(<span class="string">"text/html"</span>);<span class="comment">//这里告诉浏览器返回的是text或者html</span></span><br></pre></td></tr></table></figure>
@@ -278,7 +274,7 @@
 <p>使用响应对象获取一个输出流，使用输出 流向客户端写HTML</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PrintWriter out = response.getWriter();</span><br><span class="line">out.println(<span class="string">"Text"</span>);</span><br></pre></td></tr></table></figure>
 
-<p>下面是 两个输出的例子。</p>
+<p>下面是两个输出的例子。</p>
 <p><strong>1）向客户端输出中文数据</strong></p>
 <p>PrintWriter or ServletOutputStream</p>
 <ul>
@@ -292,18 +288,18 @@
 
 </li>
 </ul>
-<p> <strong>2）文件下载</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">public void doGet(HttpServletRequest request, HttpServletResponse response) </span><br><span class="line">	throws IOException, ServletException &#123;</span><br><span class="line">        &#x2F;&#x2F;让浏览器知道这是一个JAR文件</span><br><span class="line">		response.setContentType(&quot;application&#x2F;jar&quot;);</span><br><span class="line">		ServletContext ctx &#x3D; getServletContext();</span><br><span class="line">       &#x2F;&#x2F;为资源建立一个输入流</span><br><span class="line">		InputStream is &#x3D; ctx.getResourceAsStream(&quot;&#x2F;resources&#x2F;bookCode.jar&quot;);</span><br><span class="line">		int read &#x3D; -1;</span><br><span class="line">		byte[] bytes &#x3D; new byte[1024];</span><br><span class="line">		OutputStream os &#x3D; response.getOutputStream();</span><br><span class="line">		while ((read &#x3D; is.read(bytes))!&#x3D;-1) &#123;</span><br><span class="line">			os.write(bytes,0,read);</span><br><span class="line">		&#125;</span><br><span class="line">		os.flush();</span><br><span class="line">		os.close();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+<p> <strong>2）输出文件下载</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doGet</span><span class="params">(HttpServletRequest request, HttpServletResponse response)</span> </span></span><br><span class="line"><span class="function">	<span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">        <span class="comment">//让浏览器知道这是一个JAR文件</span></span><br><span class="line">		response.setContentType(<span class="string">"application/jar"</span>);</span><br><span class="line">		ServletContext ctx = getServletContext();</span><br><span class="line">       <span class="comment">//为资源建立一个输入流</span></span><br><span class="line">		InputStream is = ctx.getResourceAsStream(<span class="string">"/resources/bookCode.jar"</span>);</span><br><span class="line">		<span class="keyword">int</span> read = -<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">byte</span>[] bytes = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">		OutputStream os = response.getOutputStream();</span><br><span class="line">		<span class="keyword">while</span> ((read = is.read(bytes))!=-<span class="number">1</span>) &#123;</span><br><span class="line">			os.write(bytes,<span class="number">0</span>,read);</span><br><span class="line">		&#125;</span><br><span class="line">		os.flush();</span><br><span class="line">		os.close();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
 
 <h2 id="5-Redirect-vs-Request-Dispatch"><a href="#5-Redirect-vs-Request-Dispatch" class="headerlink" title="5. Redirect vs. Request Dispatch"></a>5. Redirect vs. Request Dispatch</h2><p><strong>1）Redirect 原理</strong></p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">response.sendRedirect(<span class="string">"BrownBeer"</span>);	<span class="comment">//sendRedirect(aString)方法的参数是String类型，而不是URL类型</span></span><br></pre></td></tr></table></figure>
 
 <p>当使用Redirect跳转页面时，servlet调用sendRedirect(aString), HTTP响应的状态码为301，Location 的头属性值是跳转的URL。</p>
-<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study\program\blog\source\_posts\Servlet-和-JSP-学习\image-20200421174438838.png" alt="image-20200421174438838" style="zoom:80%;">
+<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/image-20200421174438838.png" alt="image-20200421174438838" style="zoom:80%;">
 
 <p>浏览器得到响应之后再次发起新的请求，之后按照正常的请求和响应方式显示页面。</p>
-<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study\program\blog\source\_posts\Servlet-和-JSP-学习\image-20200421174530118.png" alt="image-20200421174530118" style="zoom:80%;">
+<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/image-20200421174530118.png" alt="image-20200421174530118" style="zoom:80%;">
 
 
 
@@ -312,7 +308,7 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">request.getRequestDispatcher(<span class="string">"DarkBeer"</span>).forward(request, response);</span><br></pre></td></tr></table></figure>
 
 <p>当使用Request Dispatch跳转页面时，通过forward(request, response)让跳转的jsp接管响应，最后返回给浏览器。这样浏览器的地址栏没有发生变化。</p>
-<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/study\program\blog\source\_posts\Servlet-和-JSP-学习\image-20200421174825210.png" alt="image-20200421174825210" style="zoom:80%;">
+<img src="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/image-20200421174825210.png" alt="image-20200421174825210" style="zoom:80%;">
 
 <ol>
 <li>Redirect使客户端执行转发，这样会使网页跳转频繁，影响用户体验。</li>
@@ -430,7 +426,7 @@
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          如何初始化Web容器上下文参数
+          javaee学习 — 如何初始化Web容器上下文参数
         
       </div>
     </a>
@@ -563,6 +559,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Bootstrap</a>
               </li>
              
@@ -579,19 +579,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -599,11 +587,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
+                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
+                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -615,15 +603,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">web项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -635,7 +619,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
+                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -651,11 +639,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -664,6 +652,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -676,6 +668,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
             
             <div class="clearfix"></div>

@@ -6,21 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
-  <title>如何高效编写css代码 | 晓秋的博客</title>
+  <title>CSS学习-CSS基础 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、分层组织css一个项目可能有多个css文件，如何合理组织呢？ 常用的一种组织CSS的方法： base.css + common.css + page.css">
+  <meta name="description" content="层叠样式表 (Cascading Style Sheets，缩写为 CSS），是一种 样式表 语言，用来描述 HTML 或 XML（包括如 SVG、MathML、XHTML 之类的 XML 分支语言）文档的呈现。CSS 描述了在屏幕、纸质、音频等其它媒体上的元素应该如何被渲染的问题。 HTML 主要做结构显示元素内容，CSS美化HTML ,布局网页. CSS 最大价值 : 由HTML专注去做结构呈">
 <meta property="og:type" content="article">
-<meta property="og:title" content="如何高效编写css代码">
-<meta property="og:url" content="https://futuwxq.github.io/2020/04/12/css%E7%BC%96%E5%86%99/index.html">
+<meta property="og:title" content="CSS学习-CSS基础">
+<meta property="og:url" content="https://futuwxq.github.io/2020/04/28/CSS%E5%AD%A6%E4%B9%A0-CSS%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="一、分层组织css一个项目可能有多个css文件，如何合理组织呢？ 常用的一种组织CSS的方法： base.css + common.css + page.css">
+<meta property="og:description" content="层叠样式表 (Cascading Style Sheets，缩写为 CSS），是一种 样式表 语言，用来描述 HTML 或 XML（包括如 SVG、MathML、XHTML 之类的 XML 分支语言）文档的呈现。CSS 描述了在屏幕、纸质、音频等其它媒体上的元素应该如何被渲染的问题。 HTML 主要做结构显示元素内容，CSS美化HTML ,布局网页. CSS 最大价值 : 由HTML专注去做结构呈">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-12T11:07:35.000Z">
-<meta property="article:modified_time" content="2020-04-21T14:08:45.738Z">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/28/CSS%E5%AD%A6%E4%B9%A0-CSS%E5%9F%BA%E7%A1%80/image-20200428213927661.png">
+<meta property="article:published_time" content="2020-04-28T09:47:52.000Z">
+<meta property="article:modified_time" content="2020-04-28T14:35:44.216Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="css">
-<meta property="article:tag" content="工具类">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://futuwxq.github.io/2020/04/28/CSS%E5%AD%A6%E4%B9%A0-CSS%E5%9F%BA%E7%A1%80/image-20200428213927661.png">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
   
@@ -156,57 +157,42 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="p-css编写" class="article article-type-p " itemscope itemprop="blogPost">
+            <article id="post-CSS学习-CSS基础" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      如何高效编写css代码
+      CSS学习-CSS基础
     </h1>
   
 
         
-        <a href="/2020/04/12/css%E7%BC%96%E5%86%99/" class="archive-article-date">
-  	<time datetime="2020-04-12T11:07:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
+        <a href="/2020/04/28/CSS%E5%AD%A6%E4%B9%A0-CSS%E5%9F%BA%E7%A1%80/" class="archive-article-date">
+  	<time datetime="2020-04-28T09:47:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一、分层组织css"><a href="#一、分层组织css" class="headerlink" title="一、分层组织css"></a>一、分层组织css</h3><p>一个项目可能有多个css文件，如何合理组织呢？</p>
-<p>常用的一种组织CSS的方法：</p>
-<p><code>base.css + common.css + page.css</code></p>
+        <p>层叠样式表 (Cascading Style Sheets，缩写为 CSS），是一种 样式表 语言，用来描述 HTML 或 XML（包括如 SVG、MathML、XHTML 之类的 XML 分支语言）文档的呈现。CSS 描述了在屏幕、纸质、音频等其它媒体上的元素应该如何被渲染的问题。</p>
+<p>HTML 主要做结构显示元素内容，CSS美化HTML ,布局网页.</p>
+<p>CSS 最大价值 : 由HTML专注去做结构呈现,样式交给CSS ,即<strong>结构(HTML)与样式( CSS )相分离</strong>。</p>
 <a id="more"></a>
 
-<ul>
-<li><p>base层：css reset功能+通用类</p>
-<p>css reset就是对html标签的默认样式进行修改，</p>
-<p>例如 </p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span> &#123;<span class="attribute">color</span>:<span class="number">#000</span>;<span class="attribute">background</span>:<span class="number">#fff</span>;&#125;</span><br><span class="line"><span class="selector-tag">body</span> &#123;<span class="attribute">margin</span>:<span class="number">0</span>;<span class="attribute">padding</span>:<span class="number">0</span>;&#125;</span><br><span class="line"><span class="selector-tag">table</span> &#123;<span class="attribute">border-collapse</span>:collapse;<span class="attribute">border-spacing</span>:<span class="number">0</span>;&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>common层：组件级别的CSS类，提高代码的重用性</p>
-<p>我们将页面内的元素拆分成样式和功能相对独立的模块，将大量重复的模块视为一个组件。可以按功能划分为common_form.css，common_menu.css的多个文件。不同的网站有不同的common层，同一个网站只有一个common层。</p>
-</li>
-<li><p>page层：</p>
-<p>页面级别CSS样式，也就是非高度重用的，建议网站内所有的page层统一放在一个page.css文件中，通过页面注释，分块书写，便于维护，如下所示：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/*首页*/</span><br><span class="line">.test&#123;&#125;</span><br><span class="line">.test1&#123;&#125;</span><br><span class="line"></span><br><span class="line">/*登录页*/</span><br><span class="line">.test2&#123;&#125;</span><br><span class="line">.test3&#123;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="CSS样式规则"><a href="#CSS样式规则" class="headerlink" title="CSS样式规则"></a><strong>CSS样式规则</strong></h3><img src="/2020/04/28/CSS%E5%AD%A6%E4%B9%A0-CSS%E5%9F%BA%E7%A1%80/image-20200428213927661.png" alt="image-20200428213927661" style="zoom:80%;">
 
-</li>
-</ul>
-<h3 id="二-、-css命名"><a href="#二-、-css命名" class="headerlink" title="二 、 css命名"></a>二 、 css命名</h3><p>这里推荐一种在class前加入前缀的方式构建类似于命名空间的概念. 举个例子：</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box-hd"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box-bd"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box-ft"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="css代码风格："><a href="#css代码风格：" class="headerlink" title="css代码风格："></a>css代码风格：</h3><p><strong>样式格式书写</strong></p>
+<p>样式要用展开格式，看起来更加直观。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">      <span class="attribute">background-color</span>: <span class="number">#F3F5F8</span>;</span><br><span class="line">      <span class="attribute">font-family</span>: <span class="string">"Source Sans Pro"</span>, sans-serif;</span><br><span class="line">      <span class="attribute">font-size</span>: <span class="number">15px</span>;</span><br><span class="line">      <span class="attribute">color</span>: <span class="number">#676a6d</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="1）多用组合，少用继承"><a href="#1）多用组合，少用继承" class="headerlink" title="1）多用组合，少用继承"></a>1）多用组合，少用继承</h4><p>也就是一个class里面尽量包含多个选择器而不是，建立多个子class选择器</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"number-list1 f14 red"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>1111<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">2222</span>/<span class="attr">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>3333<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h4 id="2）css权重"><a href="#2）css权重" class="headerlink" title="2）css权重"></a>2）css权重</h4><p>CSS的选择符是有权重的：id选择器的权重是100、class选择器的权重是10、标签选择器的权重是1</p>
-<ul>
-<li>当不同选择符的样式设置有冲突时，会采用权重高的选择符设置的样式。</li>
-<li>如果CSS选择符权重相同，那么样式会遵循就近原则，哪个选择符最后定义，就采用哪个。（就近原则指的是定义样式的先后，不是挂class名的先后）</li>
-</ul>
+<p><strong>样式大小写</strong></p>
+<p>推荐样式选择器，属性名，属性值关键字全部使用小写字母，除特殊情况。</p>
+<p><strong>空格规范</strong></p>
+<p>属性值前面，冒号后面，保留一个空格。</p>
+<p>选择器（标签）和大括号中间保留空格。</p>
 
       
 
@@ -242,10 +228,6 @@
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">工具类</a>
         		</li>
       		
 		</ul>
@@ -301,7 +283,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/04/12/css%E7%BC%96%E5%86%99/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/04/28/CSS%E5%AD%A6%E4%B9%A0-CSS%E5%9F%BA%E7%A1%80/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -315,18 +297,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/04/12/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/04/28/CSS%E5%AD%A6%E4%B9%A0-CSS%E9%80%89%E6%8B%A9%E5%99%A8/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          盒子模型学习
+          CSS学习-CSS选择器 “&#39; 
         
       </div>
     </a>
   
   
-    <a href="/2020/04/12/js%E7%9A%84alert-confirm-prompt%E7%94%A8%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">js的alert,confirm,prompt用法</div>
+    <a href="/2020/04/25/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">javaee学习—过滤器</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -452,6 +434,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Bootstrap</a>
               </li>
              
@@ -468,19 +454,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -488,11 +462,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
+                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
+                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -504,15 +478,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">web项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -524,7 +494,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
+                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -540,11 +514,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -553,6 +527,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -565,6 +543,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
             
             <div class="clearfix"></div>

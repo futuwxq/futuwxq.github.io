@@ -6,17 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
-  <title>java数字与字符串学习习 | 晓秋的博客</title>
+  <title>如何高效编写css代码 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="java数字与字符串学习习">
-<meta property="og:url" content="https://futuwxq.github.io/2020/04/13/java%E6%95%B0%E5%AD%97%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%A6%E4%B9%A0/index.html">
+  <meta name="description" content="一、分层组织css一个项目可能有多个css文件，如何合理组织呢？ 常用的一种组织CSS的方法： base.css + common.css + page.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何高效编写css代码">
+<meta property="og:url" content="https://futuwxq.github.io/2020/04/12/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E7%BC%96%E5%86%99css%E4%BB%A3%E7%A0%81/index.html">
 <meta property="og:site_name" content="晓秋的博客">
+<meta property="og:description" content="一、分层组织css一个项目可能有多个css文件，如何合理组织呢？ 常用的一种组织CSS的方法： base.css + common.css + page.css">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-04-13T08:19:49.000Z">
-<meta property="article:modified_time" content="2020-04-14T01:21:40.749Z">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/12/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E7%BC%96%E5%86%99css%E4%BB%A3%E7%A0%81/markdown/HTML_%E7%BB%93%E6%9E%84/css/css%E7%9A%84%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/11-14.2.jpg">
+<meta property="article:published_time" content="2020-04-12T11:07:35.000Z">
+<meta property="article:modified_time" content="2020-04-28T14:21:32.507Z">
 <meta property="article:author" content="不知火舞">
+<meta property="article:tag" content="css">
+<meta property="article:tag" content="工具类">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://futuwxq.github.io/2020/04/12/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E7%BC%96%E5%86%99css%E4%BB%A3%E7%A0%81/markdown/HTML_%E7%BB%93%E6%9E%84/css/css%E7%9A%84%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/11-14.2.jpg">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
   
@@ -152,27 +158,105 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="p-java数字与字符串学习" class="article article-type-p " itemscope itemprop="blogPost">
+            <article id="post-如何高效编写css代码" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      java数字与字符串学习习
+      如何高效编写css代码
     </h1>
   
 
         
-        <a href="/2020/04/13/java%E6%95%B0%E5%AD%97%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2020-04-13T08:19:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
+        <a href="/2020/04/12/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E7%BC%96%E5%86%99css%E4%BB%A3%E7%A0%81/" class="archive-article-date">
+  	<time datetime="2020-04-12T11:07:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
+        <h3 id="一、分层组织css"><a href="#一、分层组织css" class="headerlink" title="一、分层组织css"></a>一、分层组织css</h3><p>一个项目可能有多个css文件，如何合理组织呢？</p>
+<p>常用的一种组织CSS的方法：</p>
+<p><code>base.css + common.css + page.css</code></p>
+<a id="more"></a>
+
+<ul>
+<li><p>base层：css reset功能+通用类</p>
+<p>css reset就是对html标签的默认样式进行修改，</p>
+<p>例如 </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span> &#123;<span class="attribute">color</span>:<span class="number">#000</span>;<span class="attribute">background</span>:<span class="number">#fff</span>;&#125;</span><br><span class="line"><span class="selector-tag">body</span> &#123;<span class="attribute">margin</span>:<span class="number">0</span>;<span class="attribute">padding</span>:<span class="number">0</span>;&#125;</span><br><span class="line"><span class="selector-tag">table</span> &#123;<span class="attribute">border-collapse</span>:collapse;<span class="attribute">border-spacing</span>:<span class="number">0</span>;&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>common层：组件级别的CSS类，提高代码的重用性</p>
+<p>我们将页面内的元素拆分成样式和功能相对独立的模块，将大量重复的模块视为一个组件。可以按功能划分为common_form.css，common_menu.css的多个文件。不同的网站有不同的common层，同一个网站只有一个common层。</p>
+</li>
+<li><p>page层：</p>
+<p>页面级别CSS样式，也就是非高度重用的，建议网站内所有的page层统一放在一个page.css文件中，通过页面注释，分块书写，便于维护，如下所示：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">/*首页*/</span><br><span class="line">.test&#123;&#125;</span><br><span class="line">.test1&#123;&#125;</span><br><span class="line"></span><br><span class="line">/*登录页*/</span><br><span class="line">.test2&#123;&#125;</span><br><span class="line">.test3&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="二-、-css命名"><a href="#二-、-css命名" class="headerlink" title="二 、 css命名"></a>二 、 css命名</h3><p>这里推荐一种在class前加入前缀的方式构建类似于命名空间的概念. 举个例子：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box-hd"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box-bd"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box-ft"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="1）多用组合，少用继承"><a href="#1）多用组合，少用继承" class="headerlink" title="1）多用组合，少用继承"></a>1）多用组合，少用继承</h4><p>也就是一个class里面尽量包含多个选择器而不是，建立多个子class选择器</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"number-list1 f14 red"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>1111<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">2222</span>/<span class="attr">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>3333<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="2）css权重"><a href="#2）css权重" class="headerlink" title="2）css权重"></a>2）css权重</h4><p>CSS的选择符是有权重的：id选择器的权重是100、class选择器的权重是10、标签选择器的权重是1</p>
+<ul>
+<li>当不同选择符的样式设置有冲突时，会采用权重高的选择符设置的样式。</li>
+<li>如果CSS选择符权重相同，那么样式会遵循就近原则，哪个选择符最后定义，就采用哪个。（就近原则指的是定义样式的先后，不是挂class名的先后）</li>
+</ul>
+<p>三 、编写css的准备工作</p>
+<p>当我们需要一些库文件，可以在<a href="https://www.bootcdn.cn/" target="_blank" rel="noopener">BootCDN</a>里面去下载或者引用一些库文件。</p>
+<p> <strong>重置浏览器样式</strong>  ：根据项目选择的框架具体而定，一般框架里面都会重置一些浏览器的样式</p>
+<p><strong>全局设置一些样式：</strong></p>
+<p>指定一个带透明度的背景色rgba（0，0，0，.1) ，这样每个元素之间就会有颜色透明度的差异，可以清晰的看出自己的布局是否符合期望。在网页布局完成之后，要注释掉这条代码。</p>
+<p>全局选择器 使用box-sizing可以使width包含content、padding、border，布局会更加方便</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> * &#123;</span><br><span class="line">&#x2F;*background: rgba(0, 0, 0, .1);*&#x2F;</span><br><span class="line">-webkit-box-sizing:border-box;</span><br><span class="line">-moz-box-sizing: border-box;</span><br><span class="line">box-sizing: border-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>可重用的代码</strong></p>
+<ol>
+<li><p>浮动以及去除浮动</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.clearf::before,</span><br><span class="line">.clear::after</span><br><span class="line">&#123;</span><br><span class="line">content: &quot;&quot;;</span><br><span class="line">clearf: both;</span><br><span class="line">display: block; &#x2F;&#x2F;&#x2F;这个还不能少</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ol>
+<p>  只需要给每个float的父元素添加一个clearf的类名 </p>
+<ol start="2">
+<li><p>并列布局，<font color="#00ff00"> div指定长宽+float</font> 每个页面布局的div下面应该有一个container把内容包起来，对于指定padding和margin在container内指定，因为float为无缝连接，最好用padding</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">.col-1,</span><br><span class="line">.col-2,</span><br><span class="line">.col-3,</span><br><span class="line">.col-4,</span><br><span class="line">.col-5,</span><br><span class="line">.col-6,</span><br><span class="line">.col-7,</span><br><span class="line">.col-8,</span><br><span class="line">.col-9,</span><br><span class="line">.col-10 &#123;</span><br><span class="line">position: relative;</span><br><span class="line">min-height: 1px; &#x2F;&#x2F;一个最小高度</span><br><span class="line">float: left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-1 &#123;</span><br><span class="line">width: 10%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-2 &#123;</span><br><span class="line">width: 20%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-3 &#123;</span><br><span class="line">width: 30%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-4 &#123;</span><br><span class="line">width: 40%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-5 &#123;</span><br><span class="line">width: 50%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-6 &#123;</span><br><span class="line">width: 60%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-7 &#123;</span><br><span class="line">width: 70%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-8 &#123;</span><br><span class="line">width: 80%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>重置样式</strong></p>
+<p>某些元素自身带有一些属性，但是我们为了追求更加好看的样式，往往需要重置这些属性的样式</p>
+</li>
+</ol>
+<p>button标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;消除button的默认样式</span><br><span class="line">padding: 0;</span><br><span class="line">border: 1px solid transparent;  &#x2F;&#x2F;自定义边框</span><br><span class="line">outline: none;    &#x2F;&#x2F;消除默认点击蓝色边框效果</span><br></pre></td></tr></table></figure>
+
+<p>input标签</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> &#x2F;&#x2F;消除input标签</span><br><span class="line">input &#123;  </span><br><span class="line">    background:none; </span><br><span class="line">    outline:none;  &#x2F;&#x2F;蓝色外框</span><br><span class="line">    border:0px;</span><br><span class="line">    padding:0&#x2F;&#x2F;原padding：1px 0;text-align：start；</span><br><span class="line"> &#125;</span><br><span class="line"> input:focus &#123; outline: none; &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="html消除内联元素-a-img-span-之间的空隙"><a href="#html消除内联元素-a-img-span-之间的空隙" class="headerlink" title="html消除内联元素(a img span )之间的空隙"></a>html消除内联元素(a img span )之间的空隙</h2><ol>
+<li>在标签之间不添加任何的换行和空格</li>
+<li>给父元素的字体大小设置为0px;然后再单独给子元素设置字体大小。</li>
+</ol>
+<h2 id="去除内联元素（button-input）等元素之间的间距"><a href="#去除内联元素（button-input）等元素之间的间距" class="headerlink" title="去除内联元素（button input）等元素之间的间距"></a>去除内联元素（button input）等元素之间的间距</h2><p>如图</p>
+<p><img src="/2020/04/12/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E7%BC%96%E5%86%99css%E4%BB%A3%E7%A0%81/markdown/HTML_%E7%BB%93%E6%9E%84/css/css%E7%9A%84%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/11-14.2.jpg" alt="#"></p>
+<p>input是内联块状元素(inline-block);内联元素是当做字体来处理的，字体之间是有间隔的，所以内联元素之间也是有间隔的。</p>
+<ol>
+<li><p>父元素font-size为0，重新设置字体大小</p>
+</li>
+<li><p>去除html代码之间的空格换行</p>
+</li>
+<li><p>浮动元素 包裹性</p>
+</li>
+</ol>
+
       
 
       
@@ -201,6 +285,21 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">工具类</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -251,7 +350,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/04/13/java%E6%95%B0%E5%AD%97%E4%B8%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%A6%E4%B9%A0/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/04/12/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E7%BC%96%E5%86%99css%E4%BB%A3%E7%A0%81/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -265,18 +364,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/04/13/sql%E8%AF%AD%E5%8F%A5%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/04/12/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          sql语句学习
+          盒子模型学习
         
       </div>
     </a>
   
   
-    <a href="/2020/04/13/servlet%E4%B8%ADdoGet%20%E5%92%8CdoPost%20%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">servlet中doGet()和doPost()方法</div>
+    <a href="/2020/04/12/js%E7%9A%84alert-confirm-prompt%E7%94%A8%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">js的alert,confirm,prompt用法</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -402,6 +501,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Bootstrap</a>
               </li>
              
@@ -418,19 +521,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -438,11 +529,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
+                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
+                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -454,15 +545,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">web项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -474,7 +561,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
+                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -490,11 +581,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -503,6 +594,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -515,6 +610,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
             
             <div class="clearfix"></div>

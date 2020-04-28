@@ -15,17 +15,17 @@
 <meta property="og:site_name" content="晓秋的博客">
 <meta property="og:description" content="一 、了解过滤器什么是过滤器？ 一种Java组件 ； 可被用来截获并处理发送到servlet之前的请求 ； 可被用来处理servlet运行完而发送回客户端之前 的响应 ； 在DD中配置容器何时调用过滤器。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/25/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/study/program/blog/source/_posts/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/image-20200424212052826.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/25/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/study/program/blog/source/_posts/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/image-20200425110450229.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/25/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/study/program/blog/source/_posts/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/image-20200425194325975.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/04/25/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/study/program/blog/source/_posts/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/image-20200425193700337.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/25/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/image-20200424212052826.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/25/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/image-20200425110450229.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/25/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/image-20200425193700337.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/25/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/image-20200426112403709.png">
 <meta property="article:published_time" content="2020-04-25T02:59:03.000Z">
-<meta property="article:modified_time" content="2020-04-25T12:13:51.197Z">
+<meta property="article:modified_time" content="2020-04-26T03:32:07.172Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="javaee">
 <meta property="article:tag" content="过滤器">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://futuwxq.github.io/2020/04/25/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/study/program/blog/source/_posts/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/image-20200424212052826.png">
+<meta name="twitter:image" content="https://futuwxq.github.io/2020/04/25/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/image-20200424212052826.png">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
   
@@ -255,27 +255,21 @@
 <li><code>&lt;filter-class&gt;</code> 是标记了处理过滤器的java代码所在的位置，也是必须的</li>
 <li><code>&lt;init-param&gt;</code>是初始化参数，这个是可选的，比如下面这个例子初始化了用户登录的文件User.txt。在处理器里面可以获取这个文件，并进行处理。</li>
 </ul>
-<img src="/2020/04/25/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/study\program\blog\source\_posts\javaee学习—过滤器\image-20200424212052826.png" alt="image-20200424212052826" style="zoom:80%;">
+<img src="/2020/04/25/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/image-20200424212052826.png" alt="image-20200424212052826" style="zoom:80%;">
 
 <h4 id="2-将过滤器与打算过滤的web资源映射起来"><a href="#2-将过滤器与打算过滤的web资源映射起来" class="headerlink" title="2. 将过滤器与打算过滤的web资源映射起来"></a><strong>2. 将过滤器与打算过滤的web资源映射起来</strong></h4><p><strong>1）定义web资源通</strong></p>
-<ul>
-<li>用URL样式定义web资源 </li>
-</ul>
+<p>用URL样式定义web资源 </p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>BeerRequest<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span>  //必须的</span><br><span class="line">	<span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>*.do<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<ul>
-<li>用servlet名字定义web资源</li>
-</ul>
+<p>用servlet名字定义web资源</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>BeerRequest<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span>  //必须的</span><br><span class="line">	<span class="tag">&lt;<span class="name">servlet-name</span>&gt;</span>AdviceServlet<span class="tag">&lt;/<span class="name">servlet-name</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>2）请求转发的web资源</strong></p>
 <p>请求转发的web资源，可以有0到4个<code>&lt;dispatcher&gt;</code>元素。</p>
-<ul>
-<li>REQUEST表示过滤器是对客户端请求的，是缺省值；</li>
-<li>INCLUDE表示过滤器是对从include()调用的请求转发的；比如对<code>&lt;jsp:include&gt;</code>引入的页面进行处理。</li>
-<li>FORWARD表示过滤器 是对从forward()调用的请求转发的；</li>
-<li>ERROR表示过滤器是对错误处理 器调用的资源的</li>
-</ul>
+<p>REQUEST表示过滤器是对客户端请求的，是缺省值；</p>
+<p>INCLUDE表示过滤器是对从include()调用的请求转发的；比如对<code>&lt;jsp:include&gt;</code>引入的页面进行处理。</p>
+<p>FORWARD表示过滤器 是对从forward()调用的请求转发的；</p>
+<p>ERROR表示过滤器是对错误处理 器调用的资源的</p>
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>MonitorFilter<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>*.do<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dispatcher</span>&gt;</span>REQUEST<span class="tag">&lt;/<span class="name">dispatcher</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dispatcher</span>&gt;</span>INCLUDE<span class="tag">&lt;/<span class="name">dispatcher</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dispatcher</span>&gt;</span>FORWARD<span class="tag">&lt;/<span class="name">dispatcher</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">dispatcher</span>&gt;</span>ERROR<span class="tag">&lt;/<span class="name">dispatcher</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>3) 组织这些映射关系来创建过滤器调用序列</strong></p>
@@ -293,15 +287,13 @@
 <p>那如何实现这一想法呢？</p>
 <p>直接使用容器传来的Response对象是否可行？</p>
 <p>如下图直接使用容器传来的Response对象，servlet处理完之后并不知道需要输出过滤，把响应传给客户端输出，过滤器的并没有进行过滤处理。</p>
-<img src="/2020/04/25/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/study\program\blog\source\_posts\javaee学习—过滤器\image-20200425110450229.png" alt="image-20200425110450229" style="zoom:80%;">
+<img src="/2020/04/25/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/image-20200425110450229.png" alt="image-20200425110450229" style="zoom:80%;">
 
 <h3 id="4-1-包装响应对象"><a href="#4-1-包装响应对象" class="headerlink" title="4.1 包装响应对象"></a>4.1 包装响应对象</h3><p>我们可以在过滤器中将原响应对象进行处理，使得自定义的响应对象有一个能被我们控制的输出流, 而后通过chain.doFilter()方法把它传给servlet。</p>
 <p>也就是我们把原响应对象进行包装，使得包装之后的response对象有一个重载getOutputStream方法。</p>
-<img src="/2020/04/25/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/study\program\blog\source\_posts\javaee学习—过滤器\image-20200425194325975.png" alt="image-20200425194325975" style="zoom:80%;">
-
 <p><strong>怎么使得包装之后的response对象有一个重载getOutputStream方法？</strong></p>
 <p>通过实现HttpServletResponse接口，重载getOutputStream方法，返回一个包装了的 ServletOutputStream。</p>
-<img src="/2020/04/25/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/study\program\blog\source\_posts\javaee学习—过滤器\image-20200425193700337.png" alt="image-20200425193700337" style="zoom:80%;">
+<img src="/2020/04/25/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/image-20200425193700337.png" alt="image-20200425193700337" style="zoom:80%;">
 
 <p>下面通过一个响应过滤器的例子来理解上面的概念。</p>
 <h3 id="4-2-请求过滤器实例"><a href="#4-2-请求过滤器实例" class="headerlink" title="4.2 请求过滤器实例"></a>4.2 请求过滤器实例</h3><p>需求： 实现对页面上输出文本的大写转化，也即是网页所展示的字母都转化为大写。</p>
@@ -309,10 +301,17 @@
 <figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">filter</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>UpperCase<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">filter-class</span>&gt;</span>lesson.j2ee.ex4.UpperCaseFilter<span class="tag">&lt;/<span class="name">filter-class</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">filter-mapping</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">filter-name</span>&gt;</span>UpperCase<span class="tag">&lt;/<span class="name">filter-name</span>&gt;</span></span><br><span class="line">	<span class="tag">&lt;<span class="name">url-pattern</span>&gt;</span>/*<span class="tag">&lt;/<span class="name">url-pattern</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">filter-mapping</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>2.编写响应的包装器类</strong></p>
+<p>创建一个“假的response”–继承HttpServletResponseWrapper类，重载getOutputStream方法。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CharResponseWrapper</span> <span class="keyword">extends</span> <span class="title">HttpServletResponseWrapper</span> </span>&#123;</span><br><span class="line">	<span class="keyword">protected</span> CharArrayWriter charWriter; <span class="comment">// 将响应缓存在这个写入器中</span></span><br><span class="line">	<span class="keyword">protected</span> PrintWriter writer;</span><br><span class="line">	<span class="keyword">protected</span> <span class="keyword">boolean</span> getOutputStreamCalled;</span><br><span class="line">	<span class="keyword">protected</span> <span class="keyword">boolean</span> getWriterCalled;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">CharResponseWrapper</span><span class="params">(HttpServletResponse response)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">super</span>(response);</span><br><span class="line">		<span class="comment">// 创建writer</span></span><br><span class="line">		charWriter = <span class="keyword">new</span> CharArrayWriter();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 重载getOutputStream()方法</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> ServletOutputStream <span class="title">getOutputStream</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">		<span class="comment">// 如果getWriter()方法被调用了，就不能调用getOutputStream()方法</span></span><br><span class="line">		<span class="keyword">if</span> (getWriterCalled) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"getWriter already called"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		getOutputStreamCalled = <span class="keyword">true</span>;</span><br><span class="line">		<span class="keyword">return</span> <span class="keyword">super</span>.getOutputStream();</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 重载getWriter()方法</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> PrintWriter <span class="title">getWriter</span><span class="params">()</span> <span class="keyword">throws</span> IOException </span>&#123;</span><br><span class="line">		<span class="keyword">if</span> (writer != <span class="keyword">null</span>) &#123;</span><br><span class="line">			<span class="keyword">return</span> writer;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="comment">// 如果getOutputStream()方法被调用了，就不能调用方法getWriter()</span></span><br><span class="line">		<span class="keyword">if</span> (getOutputStreamCalled) &#123;</span><br><span class="line">			<span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(<span class="string">"getOutputStream already called"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		getWriterCalled  =<span class="keyword">true</span>;</span><br><span class="line">		writer = <span class="keyword">new</span> PrintWriter(charWriter);</span><br><span class="line">		<span class="keyword">return</span> writer;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="comment">/**</span></span><br><span class="line"><span class="comment">	 * 将响应数据用字符串返回</span></span><br><span class="line"><span class="comment">	 */</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> String <span class="title">toString</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		String s = <span class="keyword">null</span>;</span><br><span class="line">		<span class="keyword">if</span>(writer != <span class="keyword">null</span>)&#123;</span><br><span class="line">			s = charWriter.toString();</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">return</span> s;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>3.编写响应过滤器</p>
+<p><strong>3.编写响应过滤器</strong></p>
+<p>在过滤器里面把ServletResponse的相应响应换成之前包装的响应对象。</p>
+<p>在filter进行替换内容和实际输出。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UpperCaseFilter</span> <span class="keyword">implements</span> <span class="title">Filter</span> </span>&#123;</span><br><span class="line">	<span class="keyword">protected</span> FilterConfig config;</span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">destroy</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.config = <span class="keyword">null</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doFilter</span><span class="params">(ServletRequest req, ServletResponse resp, FilterChain chain)</span></span></span><br><span class="line"><span class="function">			<span class="keyword">throws</span> IOException, ServletException </span>&#123;</span><br><span class="line">	ServletResponse newResponse = resp;</span><br><span class="line">	<span class="keyword">if</span>(req <span class="keyword">instanceof</span> HttpServletRequest) &#123;</span><br><span class="line">        <span class="comment">//引用包装后的response对象</span></span><br><span class="line">		newResponse = <span class="keyword">new</span> CharResponseWrapper((HttpServletResponse)resp);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">// 执行doFilter方法，注意此处响应对象已经变化</span></span><br><span class="line">	chain.doFilter(req, newResponse);</span><br><span class="line">	<span class="comment">// 以下执行响应过滤</span></span><br><span class="line">	<span class="keyword">if</span>(newResponse <span class="keyword">instanceof</span> CharResponseWrapper)&#123;</span><br><span class="line">		String text = newResponse.toString();</span><br><span class="line">		<span class="keyword">if</span>(text != <span class="keyword">null</span>)&#123;</span><br><span class="line">			text = text.toUpperCase();</span><br><span class="line">     <span class="comment">//将输出的内容传给真正的输出流返回客户端</span></span><br><span class="line">			resp.getWriter().write(text);</span><br><span class="line">			&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">init</span><span class="params">(FilterConfig config)</span> <span class="keyword">throws</span> ServletException </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.config = config;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>总结</strong></p>
+<p>响应过滤器就是在Servlet或者jsp接收到response之前，将response使用一个“假的response”替换，让servlet或者jsp的内容输出到这个“假的response”中，然后再对输出内容进行处理，最后再将整个通过真的response输出给客户端。</p>
+<img src="/2020/04/25/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/image-20200426112403709.png" alt="image-20200426112403709" style="zoom:80%;">
 
 
       
@@ -421,6 +420,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/04/28/CSS%E5%AD%A6%E4%B9%A0-CSS%E5%9F%BA%E7%A1%80/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          CSS学习-CSS基础
+        
+      </div>
+    </a>
   
   
     <a href="/2020/04/23/javaee%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%87%AA%E5%AE%9A%E4%B9%89tag/" id="article-nav-older" class="article-nav-link-wrap">
@@ -550,6 +558,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">Bootstrap</a>
               </li>
              
@@ -566,19 +578,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -586,11 +586,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
+                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
+                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -602,15 +602,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">web项目</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -622,7 +618,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
+                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -638,11 +638,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -651,6 +651,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">cookie</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -663,6 +667,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
               </li>
             
             <div class="clearfix"></div>

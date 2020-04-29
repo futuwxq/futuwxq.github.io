@@ -16,9 +16,10 @@
 <meta property="og:description" content="css选择器的作用">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/28/CSS%E5%AD%A6%E4%B9%A0-CSS%E9%80%89%E6%8B%A9%E5%99%A8/image-20200428222637444.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/28/CSS%E5%AD%A6%E4%B9%A0-CSS%E9%80%89%E6%8B%A9%E5%99%A8/image-20200429113940922.png">
 <meta property="og:image" content="https://futuwxq.github.io/%E9%80%89%E6%8B%A9%E5%99%A8%E6%9D%83%E9%87%8D.jpeg">
 <meta property="article:published_time" content="2020-04-28T14:22:29.000Z">
-<meta property="article:modified_time" content="2020-04-28T14:35:52.476Z">
+<meta property="article:modified_time" content="2020-04-29T09:25:10.387Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="css">
 <meta name="twitter:card" content="summary">
@@ -178,31 +179,101 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="css选择器的作用"><a href="#css选择器的作用" class="headerlink" title="css选择器的作用"></a>css选择器的作用</h2><a id="more"></a>
+        <p><strong>css选择器的作用</strong></p>
+<a id="more"></a>
 
 <img src="/2020/04/28/CSS%E5%AD%A6%E4%B9%A0-CSS%E9%80%89%E6%8B%A9%E5%99%A8/image-20200428222637444.png" alt="image-20200428222637444" style="zoom:80%;">
 
 
 
-<h2 id="选择器的分类"><a href="#选择器的分类" class="headerlink" title="选择器的分类"></a>选择器的分类</h2><p>选择器分为基础选择器和复合选择器两大类</p>
-<p>基础选择器是由单个选择器组成；</p>
-<p>基础选择器又包括标签选择器、类选择器、id选择器和通配符选择器</p>
-<p><strong>标签选择器</strong>是指用HTML 标签名称作为选择器。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">span &#123;</span><br><span class="line">	....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>选择器分为基础选择器和复合选择器两大类</p>
+<h2 id="一-基础选择器"><a href="#一-基础选择器" class="headerlink" title="一 基础选择器"></a>一 基础选择器</h2><p>基础选择器是由单个选择器组成；</p>
+<p><strong>基础选择器</strong>又包括标签选择器、类选择器、id选择器和通配符选择器</p>
+<h3 id="1-标签选择器"><a href="#1-标签选择器" class="headerlink" title="1 标签选择器"></a><strong>1 标签选择器</strong></h3><p>是指用HTML 标签名称作为选择器。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* 标签选择器 : 写上标签名 *&#x2F;</span><br><span class="line">p &#123;</span><br><span class="line">    color: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a>类选择器</h3><p>如果想要差异化选择不同标签，单独选中一个或几个标签，可以使用类选择器</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.red &#123;</span><br><span class="line">....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="2-类选择器"><a href="#2-类选择器" class="headerlink" title="2 类选择器"></a>2 类选择器</h3><p>如果想要差异化选择不同标签，单独选中一个或几个标签，可以使用类选择器</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* 类选择器口诀: 样式点定义  结构类(class)调用  一个或多个 开发最常用*&#x2F;</span><br><span class="line">  .red &#123;</span><br><span class="line">        color: red;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
+<p>类选择器在HTML中以class属性表示，在CSS中,类选择器以一个点”.” 号显示。注意</p>
+<p>①类选择器使用”.” ( 英文点号)进行标识,后面紧跟类名(自定义,我们自己命名的)</p>
+<p>②可以理解为给这个标签起了一个名字,来表示。</p>
+<p>③长名称或词组可以使用中横线(-)来为选择器命名。</p>
+<p>④不要使用纯数字、中文等命名,尽量使用英文字母来表示。</p>
+<p>⑤命名要有意义,尽量使别人一眼就知道这个类名的目的。</p>
+<p>⑥命名规范:这里列举一些命名：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">头部: header </span><br><span class="line"></span><br><span class="line">内容: content&#x2F;container</span><br><span class="line"></span><br><span class="line">尾: footers</span><br><span class="line"></span><br><span class="line">导航:nav</span><br><span class="line"></span><br><span class="line">侧栏 : sidebar,</span><br><span class="line"></span><br><span class="line">栏目 : column</span><br><span class="line"></span><br><span class="line">页面外围控制整体布局宽度: wrappers</span><br><span class="line"></span><br><span class="line">左中右 : left right center</span><br><span class="line"></span><br><span class="line">登录条: loginbar,</span><br><span class="line"></span><br><span class="line">标志 : logo</span><br><span class="line"></span><br><span class="line">广告 : banner</span><br><span class="line"></span><br><span class="line">页面主体: main</span><br><span class="line"></span><br><span class="line">热点: hot,</span><br><span class="line"></span><br><span class="line">新闻 : news,</span><br><span class="line"></span><br><span class="line">下载 : download</span><br><span class="line"></span><br><span class="line">子导航栏：subnav</span><br><span class="line"></span><br><span class="line">菜单：menu</span><br><span class="line"></span><br><span class="line">子菜单 submenu</span><br></pre></td></tr></table></figure>
 
+<h3 id="3-ID选择器"><a href="#3-ID选择器" class="headerlink" title="3 ID选择器"></a>3 ID选择器</h3><p>id选择器可以为标有特定id的HTML元素指定特定的样式。</p>
+<p>HTML元素以id属性来设置id选择器, CSS中id选择器以”#” 来定义。</p>
+<p>例如,将id为nav元素中的内容设置为红色。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#id名 &#123;</span><br><span class="line"></span><br><span class="line">	属性1:属性值1;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#nav &#123;</span><br><span class="line"></span><br><span class="line">	color:red;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><pre><code>input
-&lt;button title=&quot;点击登录此处&quot;&gt;denglu&lt;/button&gt;
+<p>id属性只能在每个HTML文档中出现一次。口诀:<strong>样式#定义，结构id调用,只能调用一次，别人切勿使用</strong>.</p>
+<h3 id="4-通配符选择器"><a href="#4-通配符选择器" class="headerlink" title="4 通配符选择器"></a>4 通配符选择器</h3><p>在CSS中,通配符选择器使用地 ”*“ 定义,它表示选取页面中所有元素(标签)。</p>
+<p>语法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">	属性1:属性值1;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>●通配符选择器不需要调用，自动就给所有的元索使用样式</p>
+<p>●特殊情况才使用,</p>
+<p>例如清除所有的元素标签的内外边距</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">	margin: 0;</span><br><span class="line">	padding: 0;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>基础选择器总结</strong></p>
+<img src="/2020/04/28/CSS%E5%AD%A6%E4%B9%A0-CSS%E9%80%89%E6%8B%A9%E5%99%A8/image-20200429113940922.png" alt="image-20200429113940922" style="zoom:80%;">
+
+<h2 id="二、复合选择器"><a href="#二、复合选择器" class="headerlink" title="二、复合选择器"></a>二、复合选择器</h2><p><strong>什么是复合选择器</strong></p>
+<p>在CSS中,可以根据选择器的类型把选择器分为基础选择器和复合选择器,复合选择器是建立在基础选择器之上, 对基本选择器进行组合形成的。</p>
+<p>●复合选择器可以更准确、 更高效的选择目标元素(标签)</p>
+<p>●复合选择器是由两个或多个基础选择器,通过不同的方式组合而成的</p>
+<p>●常用的复合选择器包括:后代选择器、子选择器、并集选择器、伪类选择器等等</p>
+<h3 id="1-后代选择器-重要"><a href="#1-后代选择器-重要" class="headerlink" title="1 后代选择器(重要)"></a>1 后代选择器(重要)</h3><p>后代选择器又称为包含选择器,可以选择父元索里面子元素。其写法就是把外层标签写在前面，内层标签写在后面，中间用空格分隔。当标签发生嵌套时,内层标签就成为外层标签的后代。</p>
+<p>语法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素1 元素2 &#123;样式声明&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述语法表示选择<strong>元素1里面的所有元索2</strong>（后代元索)。</p>
+<p>例如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ul 1i &#123;样式声明&#125;    &#x2F;*选择ul里面所有的1i标签元素*&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>●元素1和元素2中间用空格隔开</p>
+<p>●元素1 是父级，元素2是子级,最终选择的是元索2</p>
+<p>●元素2 可以是儿子,也可以是孙子等,只要是元索1的后代即可</p>
+<p>●元素1和元素2可以是任意基础选择器</p>
+<h3 id="2-子选择器迭擇器-重要"><a href="#2-子选择器迭擇器-重要" class="headerlink" title="2 子选择器迭擇器(重要)"></a>2 子选择器迭擇器(重要)</h3><p>子元素选择器(子选择器)只能选择作为元素的最近一级子元素。简单単理解就是选亲儿子元素.</p>
+<p>语法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素1 &gt; 元素2 &#123;祥式声明&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述语法表示选择元索1里面的所有直接后代(子元索)元索2.</p>
+<p>例如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div &gt; p&#123;祥式声明&#125; &#x2F;*迭擇div里面所有最近一級p标签元素*&#x2F;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>元素1 和元素2中间用大于号隔幵</p>
+</li>
+<li><p>元素1是父級,元素2是子級,最終迭擇的是元素2</p>
+</li>
+<li><p>元索2 必須是亲儿子,其子、重孙之类都不归他管</p>
+</li>
+</ul>
+<h3 id="3-并集选择器-重要"><a href="#3-并集选择器-重要" class="headerlink" title="3 并集选择器(重要)"></a>3 并集选择器(重要)</h3><p>并集选择器可以选择多组标签同时为他们定义相同的样式。通常用于集体声明。</p>
+<p>并集选择器是各选择器通过英文逗号( , )连接而成,任何形式的选择器都可以作为并集选择器的一部分。语法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素1,元素2 &#123;样式声明&#125;</span><br></pre></td></tr></table></figure>
+
+<p>上述语法表示选择元素1和元素2。</p>
+<p>例如:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ul,div &#123;样式声明&#125; &#x2F;*选择ul和div标签元素 *&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p>●元素1和元素2中间用逗号隔开</p>
+<p>●逗号可以理解为和的意思</p>
+<p>●并集选择器通常用于集体声明</p>
+<h3 id="属性选择器"><a href="#属性选择器" class="headerlink" title="属性选择器"></a>属性选择器</h3><pre><code>&lt;button title=&quot;点击登录此处&quot;&gt;denglu&lt;/button&gt;
 [title] {} ；
 [title=&quot;点击登录此处&quot;] 完全匹配 ；
 [title*=&quot;点击&quot;] 部分匹配 ；
 [title^=&quot;点击&quot;] 从最开始匹配 ；
 [title&amp;=&quot;点击&quot;] 从最结束匹配 ；
-button[title] {}</code></pre><h3 id="伪类选择器"><a href="#伪类选择器" class="headerlink" title="伪类选择器"></a>伪类选择器</h3><table>
+button[title] {}</code></pre><h3 id="4-伪类选择器"><a href="#4-伪类选择器" class="headerlink" title="4 伪类选择器"></a>4 伪类选择器</h3><p>伪类选择器用于向某些选择器添加特殊的效果,比如给链接添加特殊效果,或选择第1个,第n个元素。伪类选择器书写最大的特点是用冒号<strong>(:)</strong>标,比如:hover、fist-child.</p>
+<table>
 <thead>
 <tr>
 <th align="left">伪类</th>
@@ -210,8 +281,8 @@ button[title] {}</code></pre><h3 id="伪类选择器"><a href="#伪类选择器"
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">button:active {}</td>
-<td align="left">按钮点击激活时样式</td>
+<td align="left">a / button:active {}</td>
+<td align="left">点击激活时样式</td>
 </tr>
 <tr>
 <td align="left">a:hover {}</td>
@@ -238,10 +309,13 @@ button[title] {}</code></pre><h3 id="伪类选择器"><a href="#伪类选择器"
 <td align="left">将特殊的样式添加到元素的第n个子元素</td>
 </tr>
 </tbody></table>
-<p>|</p>
-<h3 id="伪元素选择器"><a href="#伪元素选择器" class="headerlink" title="伪元素选择器"></a>伪元素选择器</h3><ol>
+<p>链接伪类选择器注意事项</p>
+<p>1.为了确保生效,请按照LVHA的循顺序声明link - :visited - :hover - :active.</p>
+<p>2.记忆法:lovehate或者lv包包hao。</p>
+<p>3.因为a链接在浏览器中具有默认样式,所以我们实际工作中都需要给链接单独指定样式。</p>
+<h3 id="5-伪元素选择器"><a href="#5-伪元素选择器" class="headerlink" title="5 伪元素选择器"></a>5 伪元素选择器</h3><ol>
 <li>p:first-letter</li>
-<li>.a:before a元素内部之前和之后添加内容，伪元素:before和:after添加的内容默认是inline元素；before和:after时必须设置其content属性</li>
+<li>a:before a元素内部之前和之后添加内容，伪元素:before和:after添加的内容默认是inline元素；before和:after时必须设置其content属性</li>
 </ol>
 <ul>
 <li>选择器权重：权重：style 属性（内联） &gt; ID 选择器 &gt; 类选择器（class） / 属性选择器 / 伪类选择器 &gt; 元素选择器 （div）/ 伪元素选择器 <img src="/2020/04/28/CSS%E5%AD%A6%E4%B9%A0-CSS%E9%80%89%E6%8B%A9%E5%99%A8/../../../../%E9%80%89%E6%8B%A9%E5%99%A8%E6%9D%83%E9%87%8D.jpeg" alt="选择器权重"><br>!important总是优先于其他规则<br>特殊性:<br>内联样式1000;<br>ID属性100;<br>类属性/属性选择/伪类010;<br>元素/伪元素001  </li>
@@ -349,6 +423,15 @@ button[title] {}</code></pre><h3 id="伪类选择器"><a href="#伪类选择器"
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/04/29/CSS%E5%AD%A6%E4%B9%A0-CSS%E5%AD%97%E4%BD%93%E5%92%8C%E6%96%87%E6%9C%AC/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          CSS学习-CSS字体和文本
+        
+      </div>
+    </a>
   
   
     <a href="/2020/04/28/CSS%E5%AD%A6%E4%B9%A0-CSS%E5%9F%BA%E7%A1%80/" id="article-nav-older" class="article-nav-link-wrap">
@@ -495,10 +578,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">类图</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
               </li>
              
               <li class="article-tag-list-item">

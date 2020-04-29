@@ -16,8 +16,9 @@
 <meta property="og:description" content="层叠样式表 (Cascading Style Sheets，缩写为 CSS），是一种 样式表 语言，用来描述 HTML 或 XML（包括如 SVG、MathML、XHTML 之类的 XML 分支语言）文档的呈现。CSS 描述了在屏幕、纸质、音频等其它媒体上的元素应该如何被渲染的问题。 HTML 主要做结构显示元素内容，CSS美化HTML ,布局网页. CSS 最大价值 : 由HTML专注去做结构呈">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/28/CSS%E5%AD%A6%E4%B9%A0-CSS%E5%9F%BA%E7%A1%80/image-20200428213927661.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/28/CSS%E5%AD%A6%E4%B9%A0-CSS%E5%9F%BA%E7%A1%80/image-20200429154609970.png">
 <meta property="article:published_time" content="2020-04-28T09:47:52.000Z">
-<meta property="article:modified_time" content="2020-04-28T14:35:44.216Z">
+<meta property="article:modified_time" content="2020-04-29T07:54:15.693Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="css">
 <meta name="twitter:card" content="summary">
@@ -182,9 +183,9 @@
 <p>CSS 最大价值 : 由HTML专注去做结构呈现,样式交给CSS ,即<strong>结构(HTML)与样式( CSS )相分离</strong>。</p>
 <a id="more"></a>
 
-<h3 id="CSS样式规则"><a href="#CSS样式规则" class="headerlink" title="CSS样式规则"></a><strong>CSS样式规则</strong></h3><img src="/2020/04/28/CSS%E5%AD%A6%E4%B9%A0-CSS%E5%9F%BA%E7%A1%80/image-20200428213927661.png" alt="image-20200428213927661" style="zoom:80%;">
+<h3 id="一-、CSS样式规则"><a href="#一-、CSS样式规则" class="headerlink" title="一 、CSS样式规则"></a><strong>一 、CSS样式规则</strong></h3><img src="/2020/04/28/CSS%E5%AD%A6%E4%B9%A0-CSS%E5%9F%BA%E7%A1%80/image-20200428213927661.png" alt="image-20200428213927661" style="zoom:80%;">
 
-<h3 id="css代码风格："><a href="#css代码风格：" class="headerlink" title="css代码风格："></a>css代码风格：</h3><p><strong>样式格式书写</strong></p>
+<h3 id="二-、css代码风格："><a href="#二-、css代码风格：" class="headerlink" title="二 、css代码风格："></a>二 、css代码风格：</h3><p><strong>样式格式书写</strong></p>
 <p>样式要用展开格式，看起来更加直观。</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">      <span class="attribute">background-color</span>: <span class="number">#F3F5F8</span>;</span><br><span class="line">      <span class="attribute">font-family</span>: <span class="string">"Source Sans Pro"</span>, sans-serif;</span><br><span class="line">      <span class="attribute">font-size</span>: <span class="number">15px</span>;</span><br><span class="line">      <span class="attribute">color</span>: <span class="number">#676a6d</span>;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
@@ -193,6 +194,61 @@
 <p><strong>空格规范</strong></p>
 <p>属性值前面，冒号后面，保留一个空格。</p>
 <p>选择器（标签）和大括号中间保留空格。</p>
+<h3 id="三-、CSS引入方式"><a href="#三-、CSS引入方式" class="headerlink" title="三 、CSS引入方式"></a>三 、CSS引入方式</h3><p>CSS的三种样式表</p>
+<p>按照CSS样式书写的位置(或者引入的方式) , CSS样式表可以分为三大类:</p>
+<p>1.行内样式表(行内式)</p>
+<p>2.内部样式表(嵌入式)</p>
+<p>3.外部样式表(链接式)</p>
+<h4 id="3-1-内部样式表"><a href="#3-1-内部样式表" class="headerlink" title="3.1 内部样式表"></a>3.1 内部样式表</h4><p>内部样式表(内嵌样式表)是写到html页面内部.是将所有的CSS代码抽取出来. 单独放到-一个<code>&lt;style&gt;</code>标签中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line"></span><br><span class="line">    div &#123;</span><br><span class="line"></span><br><span class="line">        color: red;</span><br><span class="line"></span><br><span class="line">        font- size: 12px;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&lt;&#x2F;sty1e&gt;</span><br></pre></td></tr></table></figure>
+
+<p>●<code>&lt;style&gt;</code> 标签理论上可以放在HTML文档的任何地方,但一般会放在文档的<code>&lt;head&gt;</code>标签中</p>
+<p>●通过此种方式,可以方便控制当前整个页面中的元素样式设置</p>
+<p>●代码结构清晰,但是并没有实现结构与样式完全分离</p>
+<p>●使用内部样式表设定CSS ,通常也被称为<strong>嵌入式引入</strong>,这种方式是我们练习时常用的方式.</p>
+<h4 id="3-2-行内样式表"><a href="#3-2-行内样式表" class="headerlink" title="3.2 行内样式表"></a>3.2 行内样式表</h4><p>行内样式表(内联样式表)是在元素标签内部的style属性中设定CSS样式。适合于修改简单样式.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style&#x3D;&quot;color: red; font-size: 12px;&quot;&gt;青春不常在，抓紧谈恋爱&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>●style 其实就是标签的<strong>属性</strong></p>
+<p>●在双引号中间,写法要符合CSS规范</p>
+<p>●可以控制当前的标签设置样式</p>
+<p>●书写繁琐,且没有体现出结构与样式相分离的思想,所以不推荐大量使用,只有对当前元素添加简单样式的时候,可以考虑使用</p>
+<p>●使用行内样式表设定CSS ,通常也被称为<strong>行内式引入</strong></p>
+<h4 id="3-3-外部样式表"><a href="#3-3-外部样式表" class="headerlink" title="3.3 外部样式表"></a>3.3 外部样式表</h4><p>实际开发都是外部样式表，适合于样式比较多的情况。</p>
+<p>核心是:样式单独写到CSS文件中,之后把CSS文件引入到HTML页面中使用。</p>
+<p>引入外部样式表分为两步:</p>
+<p>1.新建一个后缀名为.CSS的样式文件,把所有CSS代码都放入此文件中。</p>
+<p>2.在HTML页面中,使用    <code>&lt;link&gt;</code>标签引入这个文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel&#x3D;&quot;stylesheet&quot; href&#x3D;&quot;css文件路径&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>rel</td>
+<td>定义当前文档与被链接文档之间的关系，在这里需要指定为”stylesheet”, 表示被链接的文档是一个样式表文件。</td>
+</tr>
+<tr>
+<td>href</td>
+<td>定义所链接外部样式表文件的URL，可以是相对路径，也可以是绝对路径。</td>
+</tr>
+</tbody></table>
+<p>使用外部样式表设定CSS ,通常也被称为<strong>外链式或链接式引入</strong>,这种方式是开发中常用的方式</p>
+<p><strong>总结</strong></p>
+<img src="/2020/04/28/CSS%E5%AD%A6%E4%B9%A0-CSS%E5%9F%BA%E7%A1%80/image-20200429154609970.png" alt="image-20200429154609970" style="zoom:80%;">
+
+<h3 id="四-、css调试-Chrome调试工具"><a href="#四-、css调试-Chrome调试工具" class="headerlink" title="四 、css调试- Chrome调试工具"></a>四 、css调试- Chrome调试工具</h3><p>Chrome浏览器提供了一一个非常好用的调试工具，可以用来调试我们的HTML结构和CSS样式。</p>
+<p><strong>使用调试工具</strong></p>
+<p>①Ctrl+滚轮 可以放大开发者工具代码大小。</p>
+<p>②左边是 HTML元素结构,右边是CSS样式。</p>
+<p>③右边CSS样式可以改动数值(左右箭头或者直接输入)和查看颜色。</p>
+<p>④Ctrl+ 0复原浏览器大小。</p>
+<p>⑤如果点击元索 ,发现右侧没有样式引入。极有可能是类名或者样式引入错误。</p>
+<p>⑥如果有样式， 但是样式前面有黄色叹号提示,则是样式属性书写错误。</p>
 
       
 
@@ -451,10 +507,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">类图</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
               </li>
              
               <li class="article-tag-list-item">

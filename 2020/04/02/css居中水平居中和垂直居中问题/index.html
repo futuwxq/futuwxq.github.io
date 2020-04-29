@@ -6,21 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
-  <title>css水平居中和垂直居中问 | 晓秋的博客</title>
+  <title>css学习-水平居中和垂直居中总结 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="第一部分 水平居中1.1 内联元素的水平居中 何为内联元素，内联元素又名行内元素(inline element),通常会涉及到的属性是display:inline;内联元素的显示,都在同一行按从左至右的顺序显示，不单独占一行。">
+  <meta name="description" content="第一部分 水平居中1.1 行内元素的水平居中 何为内联元素，内联元素又名行内元素(inline element),通常会涉及到的属性是display:inline;内联元素的显示,都在同一行按从左至右的顺序显示，不单独占一行。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css水平居中和垂直居中问">
+<meta property="og:title" content="css学习-水平居中和垂直居中总结">
 <meta property="og:url" content="https://futuwxq.github.io/2020/04/02/css%E5%B1%85%E4%B8%AD%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E5%92%8C%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E9%97%AE%E9%A2%98/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="第一部分 水平居中1.1 内联元素的水平居中 何为内联元素，内联元素又名行内元素(inline element),通常会涉及到的属性是display:inline;内联元素的显示,都在同一行按从左至右的顺序显示，不单独占一行。">
+<meta property="og:description" content="第一部分 水平居中1.1 行内元素的水平居中 何为内联元素，内联元素又名行内元素(inline element),通常会涉及到的属性是display:inline;内联元素的显示,都在同一行按从左至右的顺序显示，不单独占一行。">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/02/css%E5%B1%85%E4%B8%AD%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E5%92%8C%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E9%97%AE%E9%A2%98/image-20200429192819231.png">
 <meta property="article:published_time" content="2020-04-02T02:44:31.000Z">
-<meta property="article:modified_time" content="2020-04-03T14:35:38.738Z">
+<meta property="article:modified_time" content="2020-04-29T12:42:12.305Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="css">
-<meta property="article:tag" content="水平垂直居中">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://futuwxq.github.io/2020/04/02/css%E5%B1%85%E4%B8%AD%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E5%92%8C%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E9%97%AE%E9%A2%98/image-20200429192819231.png">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
   
@@ -163,7 +164,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      css水平居中和垂直居中问
+      css学习-水平居中和垂直居中总结
     </h1>
   
 
@@ -176,7 +177,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第一部分-水平居中"><a href="#第一部分-水平居中" class="headerlink" title="第一部分 水平居中"></a>第一部分 水平居中</h2><h3 id="1-1-内联元素的水平居中"><a href="#1-1-内联元素的水平居中" class="headerlink" title="1.1 内联元素的水平居中"></a>1.1 内联元素的水平居中</h3><blockquote>
+        <h2 id="第一部分-水平居中"><a href="#第一部分-水平居中" class="headerlink" title="第一部分 水平居中"></a>第一部分 水平居中</h2><h3 id="1-1-行内元素的水平居中"><a href="#1-1-行内元素的水平居中" class="headerlink" title="1.1 行内元素的水平居中"></a>1.1 行内元素的水平居中</h3><blockquote>
 <p>何为内联元素，内联元素又名行内元素(inline element),通常会涉及到的属性是display:inline;内联元素的显示,都在同一行按从左至右的顺序显示，不单独占一行。</p>
 </blockquote>
 <a id="more"></a>
@@ -229,12 +230,16 @@ table{
     position:relative;
     left:-50%;
 }</code></pre><p>— PART 2 —</p>
-<h2 id="第二部分-垂直居中"><a href="#第二部分-垂直居中" class="headerlink" title="第二部分 垂直居中"></a>第二部分 垂直居中</h2><h3 id="2-1-内联元素的垂直居中"><a href="#2-1-内联元素的垂直居中" class="headerlink" title="2.1 内联元素的垂直居中"></a>2.1 内联元素的垂直居中</h3><p>内联元素自身属性，无法设置高度和宽度。例如下面的span元素垂直居中 </p>
+<h2 id="第二部分-垂直居中"><a href="#第二部分-垂直居中" class="headerlink" title="第二部分 垂直居中"></a>第二部分 垂直居中</h2><h3 id="2-1-行内元素的垂直居中"><a href="#2-1-行内元素的垂直居中" class="headerlink" title="2.1 行内元素的垂直居中"></a>2.1 行内元素的垂直居中</h3><p>行内元素自身属性，无法设置高度和宽度。例如下面的span元素垂直居中 </p>
 <pre><code>&lt;div class=&quot;wrap&quot;&gt;
     &lt;span&gt;&lt;/span&gt;
-&lt;/div&gt;</code></pre><p><strong>POAITON ONE</strong> ：父元素高度确定,span内含单行文本</p>
+&lt;/div&gt;</code></pre><p>1） 父元素高度确定,span内含单行文本</p>
 <p>line-height（内联元素） = height（父元素）；</p>
-<p><strong>POSITION ONE</strong> ：span内含多行文本或者图片</p>
+<p>单行文字垂直居中的原理;</p>
+<p>行高的上空隙和下空隙把文字挤到了父盒子的中间。</p>
+<img src="/2020/04/02/css%E5%B1%85%E4%B8%AD%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E5%92%8C%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E9%97%AE%E9%A2%98/image-20200429192819231.png" alt="image-20200429192819231" style="zoom:50%;">
+
+<p>2）span内含多行文本或者图片</p>
 <pre><code>span {
     width:200px ;
     height: 300px;//宽和高也是必须要设置的
@@ -361,10 +366,6 @@ img {
 			 
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">水平垂直居中</a>
         		</li>
       		
 		</ul>
@@ -588,10 +589,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">类图</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">水平垂直居中</a>
               </li>
              
               <li class="article-tag-list-item">

@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/02/css%E5%B1%85%E4%B8%AD%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E5%92%8C%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E9%97%AE%E9%A2%98/image-20200429192819231.png">
 <meta property="article:published_time" content="2020-04-02T02:44:31.000Z">
-<meta property="article:modified_time" content="2020-04-29T12:42:12.305Z">
+<meta property="article:modified_time" content="2020-04-30T14:15:45.189Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="css">
 <meta name="twitter:card" content="summary">
@@ -211,7 +211,7 @@
 
 table{
     margin:0 auto;
-}</code></pre><p><strong>3.</strong> :通过浮动和相对定位</p>
+}</code></pre><p><strong>4.</strong> :通过浮动和相对定位</p>
 <p>如下，希望child元素内的3个p元素水平居中，若想3个p元素在一行内，可以给p添加float:left属性或者设置为inline-block元素。</p>
 <pre><code>&lt;div class=&quot;container&quot;&gt;
     &lt;div class=&quot;child&quot;&gt;
@@ -305,7 +305,10 @@ p {
     height: 50px;
     width: 80px;
     margin: auto;
-    }</code></pre><h3 id="3-3-图片的水平垂直居中"><a href="#3-3-图片的水平垂直居中" class="headerlink" title="3.3 图片的水平垂直居中"></a>3.3 图片的水平垂直居中</h3><pre><code>&lt;div class=&quot;wrap&quot;&gt;
+    }</code></pre><p><strong>3）绝对定位水平垂直居中</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">       .box &#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">            &#x2F;* 1. left 走 50%  父容器宽度的一半 *&#x2F;</span><br><span class="line">            left: 50%;</span><br><span class="line">            &#x2F;* 2. margin 负值 往左边走 自己盒子宽度的一半 *&#x2F;</span><br><span class="line">            margin-left: -100px;</span><br><span class="line">            top: 50%;</span><br><span class="line">            margin-top: -100px;</span><br><span class="line">            width: 200px;</span><br><span class="line">            height: 200px;</span><br><span class="line">            background-color: pink;</span><br><span class="line">            &#x2F;* margin: auto; *&#x2F;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;box&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-图片的水平垂直居中"><a href="#3-3-图片的水平垂直居中" class="headerlink" title="3.3 图片的水平垂直居中"></a>3.3 图片的水平垂直居中</h3><pre><code>&lt;div class=&quot;wrap&quot;&gt;
     &lt;img&gt;
 &lt;/div&gt;</code></pre><p><strong>1)利用table-cell</strong></p>
 <pre><code>.wrap {

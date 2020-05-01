@@ -159,7 +159,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/30/CSS%E5%AD%A6%E4%B9%A0-CSS%E7%B2%BE%E7%81%B5%E5%9B%BE/">CSS学习-CSS精灵图</a>
+      <a class="article-title" href="/2020/04/30/CSS%E5%AD%A6%E4%B9%A0-CSS%E7%B2%BE%E7%81%B5%E5%9B%BE/">CSS学习-CSS精灵图和字体图标</a>
     </h1>
   
 
@@ -174,9 +174,9 @@
       
         <p>个网页中往往会应用很多小的背景图像作为修饰，当网页中的图像过多时,服务器就会频繁地接收和发送请求图片,造成服务器请求压力过大.这将大大降低页面的加载速度。</p>
 <p>一个网页中往往会应用很多小的背景图像作为修饰，当网页中的图像过多时,服务器就会频繁地接收和发送请求图片,造成服务器请求压力过大.这将大大降低页面的加载速度。</p>
-<p>因此,<strong>为了有效地减少服务器接收和发送请求的次数,提高页面的加载速度</strong>。出现了CSS精灵技术(也称CSS Sprites. CSS雪碧)。</p>
-<p><strong>核心原理</strong>:将网页中的一些小背景图像整合到一张大图中,这样服务器只需要一次请求就可以了。</p>
-
+        
+          <a class="article-more-a" href="/2020/04/30/CSS%E5%AD%A6%E4%B9%A0-CSS%E7%B2%BE%E7%81%B5%E5%9B%BE/#more">more >></a>
+        
       
 
       
@@ -251,153 +251,9 @@
       
         <p><strong>为什么需要定位</strong></p>
 <p>浮动可以让多个块级盒子一行没有缝隙排列显示 ,但是如果我们需要盒子自由的在某个盒子内移动位置或者固定屏幕中某个位置 , 并且可以压住其他盒子，就需要使用定位。</p>
-<h3 id="1-定位组成"><a href="#1-定位组成" class="headerlink" title="1 定位组成"></a>1 定位组成</h3><p><strong>定位</strong> : 将盒子定在某一个位置,所以定位也是在摆放盒子，按照定位的方式移动盒子。</p>
-<p>定位=定位模式+边偏移。</p>
-<p>定位模式用于指定一个元索在文档中的定位方式。 <strong>边偏移</strong>则决定了该元索的最终位置。</p>
-<p><strong>1.定位模式</strong></p>
-<p>定位模式决定元素的定位方式, 它通过CSS的position属性来设置,其值可以分为四个:</p>
-<table>
-<thead>
-<tr>
-<th>值</th>
-<th>语义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>static</td>
-<td>静态定位</td>
-</tr>
-<tr>
-<td>relative</td>
-<td>相对定位</td>
-</tr>
-<tr>
-<td>absolute</td>
-<td>绝对定位</td>
-</tr>
-<tr>
-<td>fixed</td>
-<td>固定定位</td>
-</tr>
-</tbody></table>
-<p><strong>2 边位移</strong></p>
-<p>边偏移就是定位的盒子移动到最终位置。有top. bottom. left 和right 4个属性。</p>
-<h3 id="2-静态定位static"><a href="#2-静态定位static" class="headerlink" title="2 静态定位static"></a>2 静态定位static</h3><p>静态定位是元素的默认定位方式,无定位的意思。语法:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123; position: static; &#125;</span><br></pre></td></tr></table></figure>
-
-<p>●静态定位按照标准流特性摆放位置 ,它没有边偏移</p>
-<p>●静态定位在布局时很少用到</p>
-<h3 id="3-相对定位relative"><a href="#3-相对定位relative" class="headerlink" title="3 相对定位relative"></a>3 相对定位relative</h3><p>相对定位是元素在移动位置的时候,是相对于它<strong>原来的位置</strong>来说的(自恋型)。</p>
-<p>语法:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器&#123; position: relative; &#125;</span><br></pre></td></tr></table></figure>
-
-<p>相对定位的特点:</p>
-<p>1.它是相对于自己原来的位百来移动的(移动位置的时候参照点是自2原来的位置)。</p>
-<p>2.原来在标准流的位置继续占有,后面的盒子仍然以标准流的方式对待它。( <strong>不脱标</strong>,继续保留原来位置)</p>
-<h3 id="4-绝对定位absolute"><a href="#4-绝对定位absolute" class="headerlink" title="4 绝对定位absolute"></a>4 绝对定位absolute</h3><p>绝对定位是元素在移动位置的时候,是相对于它祖先元素来说的(拼爹型)。</p>
-<p>语法:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123; position: absolute; &#125;</span><br></pre></td></tr></table></figure>
-
-<p>绝对定位的特点: ( 务必记住)</p>
-<p>1.如果没有<strong>祖先元素</strong>或者<strong>祖先元素</strong>没有定位,则以浏览器为准定位( Document文档)。</p>
-<p>2.如果祖先元素有定位(<strong>相对、绝对、固定定位</strong>) , 则以最近一级的有定位祖先元素为参考点移动位置。</p>
-<p>3.绝对定位不再占有原先的位置。( <strong>脱标</strong>)</p>
-<h3 id="5-子绝父相"><a href="#5-子绝父相" class="headerlink" title="5 子绝父相"></a>5 子绝父相</h3><p>子绝父相是定位中最常用的一种方式这句话的意思是:<strong>子级是绝对定位的话,父级要用相对定位</strong>。</p>
-<p>①子级绝对定位,不会占有位置,可以放到父盒子里面的任何一个地方,不会影响其他的兄弟盒子。</p>
-<p>②父盒子需要加定位限制<strong>子盒子在父盒子内显示</strong>。</p>
-<p>③父盒子布局时,需要占有位置,因此父亲只能是相对定位。</p>
-<p>这就是子绝父相的由来,所以相对定位经常用来作为绝对定位的父级。</p>
-<p>因为父级需要占有位置，因此是相对定位，子盒子不需要占有位置,则是绝对定位</p>
-<h3 id="6-固定定位fixed"><a href="#6-固定定位fixed" class="headerlink" title="6 固定定位fixed"></a>6 固定定位fixed</h3><p>固定定位是元素固定于浏览器可视区的位置。主要使用场景:可以在浏览器页面滚动时元素的位置不会改变。</p>
-<p>语法:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123; position: fixed; &#125;</span><br></pre></td></tr></table></figure>
-
-<p>固定定位的特点: ( 务必记住)</p>
-<p>1.以浏览器的可视窗口为参照点移动元索。</p>
-<p>●跟父元索没有任何关系</p>
-<p>●不随滚动条滚动。</p>
-<p>2.固定定位<strong>不在占有原先的位置</strong>。</p>
-<p>固定定位也是<strong>脱标</strong>的，其实固定定位也可以看做是一种特殊的绝对定位。</p>
-<h3 id="7-粘性定位sticky-了解"><a href="#7-粘性定位sticky-了解" class="headerlink" title="7 粘性定位sticky(了解)"></a>7 粘性定位sticky(了解)</h3><p>粘性定位可以被认为是相对定位和固定定位的混合。Sticky 粘性的语法:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123; position: sticky; top: 10px; &#125;</span><br></pre></td></tr></table></figure>
-
-<p>粘性定位的特点:</p>
-<p>1.以<strong>浏览器的可视窗口</strong>为参照点移动元素(固定定位特点)</p>
-<p>2.粘性定位<strong>占有原先的位置</strong>(相对定位特点)</p>
-<p>3.必须添加top. left. right. bottom其中一个才有效</p>
-<p>跟页面滚动搭配使用。兼容性较差, IE不支持。</p>
-<p><strong>总结</strong></p>
-<img src="/2020/04/30/CSS%E5%AD%A6%E4%B9%A0-CSS%E5%AE%9A%E4%BD%8D/image-20200430220216923.png" alt="image-20200430220216923" style="zoom:80%;">
-
-
-
-<h3 id="9-定位叠放次序z-index"><a href="#9-定位叠放次序z-index" class="headerlink" title="9 定位叠放次序z-index"></a>9 定位叠放次序z-index</h3><p>在使用定位布局时,可能会出现盒子重叠的情况。此时,可以使用z-index来控制盒子的前后次序(z轴)语法:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器&#123; z-index: 1; &#125;</span><br></pre></td></tr></table></figure>
-
-<p>●数值可以是正整数、负整数或0,默认是auto ,数值越大，盒子越靠上</p>
-<p>●如果属性值相同,则按照书写顺序,后来居上</p>
-<p>●数字后面不能加单位</p>
-<p>●只有<strong>定位</strong>的盒子才有z-index属性</p>
-<h3 id="10-定位的拓展"><a href="#10-定位的拓展" class="headerlink" title="10 定位的拓展"></a>10 定位的拓展</h3><p><strong>1.绝对定位水平垂直居中</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> &lt;style&gt;</span><br><span class="line">        .box &#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">            &#x2F;* 1. left 走 50%  父容器宽度的一半 *&#x2F;</span><br><span class="line">            left: 50%;</span><br><span class="line">            &#x2F;* 2. margin 负值 往左边走 自己盒子宽度的一半 *&#x2F;</span><br><span class="line">            margin-left: -100px;</span><br><span class="line">            top: 50%;</span><br><span class="line">            margin-top: -100px;</span><br><span class="line">            width: 200px;</span><br><span class="line">            height: 200px;</span><br><span class="line">            background-color: pink;</span><br><span class="line">            &#x2F;* margin: auto; *&#x2F;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;box&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>2.定位特殊特性</strong></p>
-<p>绝对定位和固定定位也和浮动类似。</p>
-<p>1.<strong>行内元索</strong>添加绝对或者固定定位,可以直接设置高度和宽度。</p>
-<p>2.<strong>块级元索</strong>添加绝对或者固定定位,如果不给宽度或者高度,默认大小是内容的大小。</p>
-<p><strong>3.脱标的盒子不会触发外边距塌陷</strong></p>
-<p>浮动元素、绝对定位(固定位)元素的都不会触发<strong>外边距合井</strong>的问题。</p>
-<p><strong>4.绝对定位(固定定位)会完全压住盒子</strong></p>
-<p>浮动元素不同,只会压住它下面标准流的盒子，但是不会压住下面标准流盒子里面的<strong>文字(图片)</strong>但是绝对定位(固定定位)会压住下面标准流所有的内容。</p>
-<p>浮动之所以不会压住文字,因为浮动产生的目的最初是为了做<strong>文字环绕效果</strong>的。文字会围绕浮动元素。</p>
-<p>通过盒子模型,清楚知道大部分htm|标签是-一个盒子。通过CSS浮动、定位可以让每个盒子排列成为网页。</p>
-<h2 id="网页布局总结"><a href="#网页布局总结" class="headerlink" title="网页布局总结"></a>网页布局总结</h2><p>一个完整的网页,是标准流、浮动、定位一起完成布局的,每个都有自己的专门用法。</p>
-<p>1.标准流</p>
-<p>可以让盒子上下排列或者左右排列,<strong>垂直的块级盒子显示就用标准流布局</strong>。</p>
-<p>2.浮动</p>
-<p>可以让多个块级元素一行显示或者左右对齐盒子 。<strong>多个块级盒子水平显示就用浮动布局。</strong></p>
-<p>3.定位</p>
-<p>定位最大的特点是有层要的概念,就是可以让多个盒子前后雪压来显示。如果<strong>元素白由在某个盒子内移动就用定位布局</strong>。</p>
-<h2 id="元素的显示与隐藏"><a href="#元素的显示与隐藏" class="headerlink" title="元素的显示与隐藏"></a>元素的显示与隐藏</h2><p>类似网站广告，当我们点击关闭就不见了,但是我们重新刷新页面,会重新出现!本质:让一个元素在页面中隐藏或者显示出来。</p>
-<h3 id="1-display-属性"><a href="#1-display-属性" class="headerlink" title="1 display 属性"></a>1 display 属性</h3><p><strong>display属性</strong>用于设置一个元素应<strong>如何显示</strong>。</p>
-<p>●display.none ;隐藏对象</p>
-<p>●display : block ;除了转换为块级元素之外，同时还有显示元素的意思</p>
-<p>display隐藏元素后,<strong>不再占有原来的位置</strong>。</p>
-<p>后面应用及其广泛,搭配JS可以做很多的网页特效。</p>
-<h3 id="2-visibility-可见性"><a href="#2-visibility-可见性" class="headerlink" title="2 visibility 可见性"></a>2 visibility 可见性</h3><p>visibility属性用于指定一个元素<strong>可见还是隐藏</strong>。</p>
-<p>●visibility : visible;元索可视</p>
-<p>●visibility : hidden; 元素隐藏</p>
-<p>vibility隐藏元素后,<strong>继续占有原来的位置</strong>。</p>
-<p>如果隐藏元素想要原来位置,就用visibility : hidden</p>
-<p>如果隐藏元素不想要原来位置，就用display : none (用处更多重点)</p>
-<h3 id="3-overflow-溢出"><a href="#3-overflow-溢出" class="headerlink" title="3 overflow 溢出"></a>3 overflow 溢出</h3><p>overflow属性指定了如果内容溢出一个元素的框(超过其指定高度及宽度)时,会发生什么。</p>
-<table>
-<thead>
-<tr>
-<th>属性值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>visible</td>
-<td>不剪切内容也不添加滚动条</td>
-</tr>
-<tr>
-<td>hidden</td>
-<td>不显示超过对象尺寸的内容，<strong>超出的部分隐藏掉</strong></td>
-</tr>
-<tr>
-<td>scroll</td>
-<td>不管超出内容否,<strong>总是显示滚动条</strong></td>
-</tr>
-<tr>
-<td>auto</td>
-<td>超出自动显示滚动条，不超出不显示滚动条</td>
-</tr>
-</tbody></table>
-<p>一般情况下 ,我们都不想让溢出的内容显示出来,因为溢出的部分会影响布局。</p>
-<p><strong>但是如果有定位的盒子.请慎用overflow:hidden因为它会隐藏多余的部分。</strong></p>
-
+        
+          <a class="article-more-a" href="/2020/04/30/CSS%E5%AD%A6%E4%B9%A0-CSS%E5%AE%9A%E4%BD%8D/#more">more >></a>
+        
       
 
       
@@ -868,38 +724,10 @@
         <p>了解元素的显示模式可以更好的让我们布局页面.</p>
 <p><strong>什么是元素显示模式</strong></p>
 <p>作用:网页的标签非常多,在不同地方会用到不同类型的标签,了解他们的特点可以更好的布局我们的网页。</p>
-<p>元素显示模式就是元素(标签)以什么方式进行显示,比如<code>&lt;div&gt;</code>自己占一行,比如一行可以放多个<code>&lt;span&gt;</code>.</p>
-<h3 id="块元素"><a href="#块元素" class="headerlink" title="块元素"></a>块元素</h3><p>常见的块元素有<code>&lt;h1&gt;~&lt;h6&gt;、&lt;p&gt;、&lt;div&gt;、 &lt;ul&gt;、 &lt;ol&gt;、 &lt;li&gt;</code>等 ,其中<code>&lt;div&gt;</code>标签是最典型的块元素。块级元素的特点:</p>
-<p>①比较霸道,自己独占一行。</p>
-<p>②高度，宽度、外边距以及内边距都可以控制。</p>
-<p>③宽度默认是容器(父级宽度)的100%。</p>
-<p>④是一个容器及盒子,里面可以放行内或者块级元素。</p>
-<p>注意:</p>
-<p>●<strong>文字类的元素内不能使用块级元素</strong></p>
-<p>●<code>&lt;p&gt;</code>标签主要用于存放文字,因此<code>&lt;p&gt;</code>里面不能放块级元素,特别是不能放<code>&lt;div&gt;</code></p>
-<p>●同理，<code>&lt;h1&gt;~&lt;h6&gt;</code>等都是文字类块级标签,里面也不能放其他块级元素。</p>
-<h3 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h3><p>常见的行内元素有<code>&lt;a&gt;、&lt;strong&gt;、 &lt;b&gt;、 &lt;em&gt;、&lt;i&gt;、 &lt;del&gt;、 &lt;S&gt;、 &lt;ins&gt;、 &lt;U&gt;、 &lt;span&gt;</code>等 ，其中<code>&lt;span&gt;</code>标签是最典型的行内元素。有的地方也将行内元素称为内联元素。</p>
-<p>行内元素的特点:</p>
-<p>①相邻行内元素在一行上， 一行可以显示多个。</p>
-<p>②高、宽直接设置是无效的。</p>
-<p>③默认宽度就是它本身内容的宽度。</p>
-<p>④行内元素只能容纳<strong>文本或其他行内元素</strong>。</p>
-<p>注意:</p>
-<p>●链接里面不能再放链接</p>
-<p>●特殊情况链接    <code>&lt;a&gt;</code>里面可以放块级元索,但是给<code>&lt;a&gt;</code>转换一下 <strong>块级模式</strong>最安全</p>
-<h3 id="行内块元素"><a href="#行内块元素" class="headerlink" title="行内块元素"></a>行内块元素</h3><p>在行内元素中有几个特殊的标签一<code>&lt;img/&gt;、 &lt;input/&gt;、 &lt;td&gt;</code>,它们同时具有块元索和行内元素的特点。有些资料称它们为<strong>行内块元素</strong>。</p>
-<p>行内块元素的特点:</p>
-<p>①和相邻行内元素(行内块)在一行上,但是他们之间会有空白缝隙。一行可以显示多个 (行内元素特点)。</p>
-<p>②默认宽度就是它本身内容的宽度(行内元素特点).</p>
-<p>③高度，行高、外边距以及内边距都可以控制(块级元素特点)。</p>
-<p><strong>元素显示模式总结</strong></p>
-<img src="/2020/04/29/CSS%E5%AD%A6%E4%B9%A0-CSS%E6%98%BE%E7%A4%BA%E5%85%83%E7%B4%A0/image-20200429173431842.png" alt="image-20200429173431842" style="zoom:80%;">
-
-<h2 id="元素显示模式的转换"><a href="#元素显示模式的转换" class="headerlink" title="元素显示模式的转换"></a>元素显示模式的转换</h2><p>特殊情况下，我们需要元素模式的转换，通过如下方式转换。</p>
-<p>●转换为块元素; display:block;</p>
-<p>●转换为行内元素: display.nline;</p>
-<p>●转换为行内块: display: inline- block;</p>
-
+<p>元素显示模式就是元素(标签)以什么方式进行显示,比如<code>&lt;div&gt;</code>自己占一行,比如一行可以放多个<code>&lt;span&gt;</code>。</p>
+        
+          <a class="article-more-a" href="/2020/04/29/CSS%E5%AD%A6%E4%B9%A0-CSS%E6%98%BE%E7%A4%BA%E5%85%83%E7%B4%A0/#more">more >></a>
+        
       
 
       

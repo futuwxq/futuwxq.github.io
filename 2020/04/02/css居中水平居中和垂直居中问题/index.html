@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/02/css%E5%B1%85%E4%B8%AD%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E5%92%8C%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E9%97%AE%E9%A2%98/image-20200429192819231.png">
 <meta property="article:published_time" content="2020-04-02T02:44:31.000Z">
-<meta property="article:modified_time" content="2020-04-30T14:15:45.189Z">
+<meta property="article:modified_time" content="2020-05-02T12:01:05.027Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="css">
 <meta name="twitter:card" content="summary">
@@ -233,13 +233,12 @@ table{
 <h2 id="第二部分-垂直居中"><a href="#第二部分-垂直居中" class="headerlink" title="第二部分 垂直居中"></a>第二部分 垂直居中</h2><h3 id="2-1-行内元素的垂直居中"><a href="#2-1-行内元素的垂直居中" class="headerlink" title="2.1 行内元素的垂直居中"></a>2.1 行内元素的垂直居中</h3><p>行内元素自身属性，无法设置高度和宽度。例如下面的span元素垂直居中 </p>
 <pre><code>&lt;div class=&quot;wrap&quot;&gt;
     &lt;span&gt;&lt;/span&gt;
-&lt;/div&gt;</code></pre><p>1） 父元素高度确定,span内含单行文本</p>
-<p>line-height（内联元素） = height（父元素）；</p>
+&lt;/div&gt;</code></pre><h4 id="1）-父元素高度确定-span内含单行文本"><a href="#1）-父元素高度确定-span内含单行文本" class="headerlink" title="1） 父元素高度确定,span内含单行文本"></a>1） 父元素高度确定,span内含单行文本</h4><p><strong>line-height（内联元素） = height（父元素）</strong>；</p>
 <p>单行文字垂直居中的原理;</p>
 <p>行高的上空隙和下空隙把文字挤到了父盒子的中间。</p>
 <img src="/2020/04/02/css%E5%B1%85%E4%B8%AD%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E5%92%8C%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E9%97%AE%E9%A2%98/image-20200429192819231.png" alt="image-20200429192819231" style="zoom:50%;">
 
-<p>2）span内含多行文本或者图片</p>
+<h4 id="2）span内含多行文本或者图片"><a href="#2）span内含多行文本或者图片" class="headerlink" title="2）span内含多行文本或者图片"></a><strong>2）span内含多行文本或者图片</strong></h4><p>CSS的<strong>vertical align属性</strong>使用场景:经常用于设置图片或者表单(行内块元素)和文字垂直对齐。官方解释:用于设置一个元素的垂直对齐方式，但是它只针对于<strong>行内元素或者行内块元素</strong>有效。</p>
 <pre><code>span {
     width:200px ;
     height: 300px;//宽和高也是必须要设置的
@@ -684,6 +683,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
             
             <div class="clearfix"></div>

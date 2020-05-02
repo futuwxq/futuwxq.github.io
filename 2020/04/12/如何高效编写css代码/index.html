@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/12/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E7%BC%96%E5%86%99css%E4%BB%A3%E7%A0%81/markdown/HTML_%E7%BB%93%E6%9E%84/css/css%E7%9A%84%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/11-14.2.jpg">
 <meta property="article:published_time" content="2020-04-12T11:07:35.000Z">
-<meta property="article:modified_time" content="2020-04-28T14:21:32.507Z">
+<meta property="article:modified_time" content="2020-05-02T11:59:44.021Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="css">
 <meta property="article:tag" content="工具类">
@@ -231,21 +231,23 @@
 <li><p>并列布局，<font color="#00ff00"> div指定长宽+float</font> 每个页面布局的div下面应该有一个container把内容包起来，对于指定padding和margin在container内指定，因为float为无缝连接，最好用padding</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">.col-1,</span><br><span class="line">.col-2,</span><br><span class="line">.col-3,</span><br><span class="line">.col-4,</span><br><span class="line">.col-5,</span><br><span class="line">.col-6,</span><br><span class="line">.col-7,</span><br><span class="line">.col-8,</span><br><span class="line">.col-9,</span><br><span class="line">.col-10 &#123;</span><br><span class="line">position: relative;</span><br><span class="line">min-height: 1px; &#x2F;&#x2F;一个最小高度</span><br><span class="line">float: left;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-1 &#123;</span><br><span class="line">width: 10%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-2 &#123;</span><br><span class="line">width: 20%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-3 &#123;</span><br><span class="line">width: 30%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-4 &#123;</span><br><span class="line">width: 40%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-5 &#123;</span><br><span class="line">width: 50%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-6 &#123;</span><br><span class="line">width: 60%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-7 &#123;</span><br><span class="line">width: 70%;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.col-8 &#123;</span><br><span class="line">width: 80%;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p><strong>重置样式</strong></p>
-<p>某些元素自身带有一些属性，但是我们为了追求更加好看的样式，往往需要重置这些属性的样式</p>
 </li>
 </ol>
-<p>button标签</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;消除button的默认样式</span><br><span class="line">padding: 0;</span><br><span class="line">border: 1px solid transparent;  &#x2F;&#x2F;自定义边框</span><br><span class="line">outline: none;    &#x2F;&#x2F;消除默认点击蓝色边框效果</span><br></pre></td></tr></table></figure>
+<h3 id="三-、重置标签属性"><a href="#三-、重置标签属性" class="headerlink" title="三 、重置标签属性"></a><strong>三 、重置标签属性</strong></h3><p>某些元素自身带有一些属性，但是我们为了追求更加好看的样式，往往需要重置这些属性的样式</p>
+<h4 id="1-button和input标签"><a href="#1-button和input标签" class="headerlink" title="1 button和input标签"></a>1 button和input标签</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;消除button的默认样式</span><br><span class="line">padding: 0;</span><br><span class="line">border: 1px solid transparent;  &#x2F;&#x2F;自定义边框</span><br><span class="line">outline: none;    &#x2F;&#x2F;消除默认点击蓝色边框效果</span><br></pre></td></tr></table></figure>
 
 <p>input标签</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"> &#x2F;&#x2F;消除input标签</span><br><span class="line">input &#123;  </span><br><span class="line">    background:none; </span><br><span class="line">    outline:none;  &#x2F;&#x2F;蓝色外框</span><br><span class="line">    border:0px;</span><br><span class="line">    padding:0&#x2F;&#x2F;原padding：1px 0;text-align：start；</span><br><span class="line"> &#125;</span><br><span class="line"> input:focus &#123; outline: none; &#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="html消除内联元素-a-img-span-之间的空隙"><a href="#html消除内联元素-a-img-span-之间的空隙" class="headerlink" title="html消除内联元素(a img span )之间的空隙"></a>html消除内联元素(a img span )之间的空隙</h2><ol>
+<h4 id="2-消除内联元素-a-img-span-之间的空隙"><a href="#2-消除内联元素-a-img-span-之间的空隙" class="headerlink" title="2 消除内联元素(a img span )之间的空隙"></a>2 消除内联元素(a img span )之间的空隙</h4><ol>
 <li>在标签之间不添加任何的换行和空格</li>
 <li>给父元素的字体大小设置为0px;然后再单独给子元素设置字体大小。</li>
 </ol>
-<h2 id="去除内联元素（button-input）等元素之间的间距"><a href="#去除内联元素（button-input）等元素之间的间距" class="headerlink" title="去除内联元素（button input）等元素之间的间距"></a>去除内联元素（button input）等元素之间的间距</h2><p>如图</p>
+<h4 id="3-防止拖拽文本域"><a href="#3-防止拖拽文本域" class="headerlink" title="3 防止拖拽文本域"></a>3 防止拖拽文本域</h4><p>实际开发中，我们文本域右下角是不可以拖拽的。</p>
+<p>通过resize属性来实现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">textarea ｛resize ：none｝</span><br></pre></td></tr></table></figure>
+
+<h3 id="四-、异常问题总结"><a href="#四-、异常问题总结" class="headerlink" title="四 、异常问题总结"></a>四 、异常问题总结</h3><h4 id="1-去除内联元素（button-input）等元素之间的间距"><a href="#1-去除内联元素（button-input）等元素之间的间距" class="headerlink" title="1 去除内联元素（button input）等元素之间的间距"></a>1 去除内联元素（button input）等元素之间的间距</h4><p>如图</p>
 <p><img src="/2020/04/12/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E7%BC%96%E5%86%99css%E4%BB%A3%E7%A0%81/markdown/HTML_%E7%BB%93%E6%9E%84/css/css%E7%9A%84%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/11-14.2.jpg" alt="#"></p>
 <p>input是内联块状元素(inline-block);内联元素是当做字体来处理的，字体之间是有间隔的，所以内联元素之间也是有间隔的。</p>
 <ol>
@@ -256,6 +258,18 @@
 <li><p>浮动元素 包裹性</p>
 </li>
 </ol>
+<h4 id="2-解决图片底部默认空白缝隙问题"><a href="#2-解决图片底部默认空白缝隙问题" class="headerlink" title="2 解决图片底部默认空白缝隙问题"></a>2 解决图片底部默认空白缝隙问题</h4><p>图片底侧会有一个<strong>空白缝隙</strong>,原因是行内块元素会和文字的<strong>基线对齐</strong>。主要解决方法有两种:</p>
+<p>1.给图片添加vertical-align:middle| top| bottom等。 (提倡使用的)</p>
+<p>2.把图片转换为块级元素display: block;</p>
+<h4 id="3-溢出的文字省略号显示"><a href="#3-溢出的文字省略号显示" class="headerlink" title="3 溢出的文字省略号显示"></a>3 溢出的文字省略号显示</h4><p><strong>单行文本溢出显示省略号</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*1.先强制一行内显示文本*&#x2F;</span><br><span class="line">white-space: nowrap;(默认normal自动换行)</span><br><span class="line"></span><br><span class="line">&#x2F;*2.超出的部分隐藏*&#x2F;</span><br><span class="line">overf1ow: hidden;</span><br><span class="line"></span><br><span class="line">&#x2F;*3.文字用省略号替代超出的部分*&#x2F;</span><br><span class="line"></span><br><span class="line">text-overf1ow: ellipsis;</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>多行文本溢出星示省略号</strong></p>
+<p>多行文本溢出示省略号,有较大兼容性何題,适合于webkit浏览器或移动端(移幼端大部分是webkit内核)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">overflow: hidden ;</span><br><span class="line"></span><br><span class="line">text overflow: ellipsis;</span><br><span class="line"></span><br><span class="line">&#x2F;*弾性伸縮盒子模型示*&#x2F;</span><br><span class="line"></span><br><span class="line">display:-webkit-box;</span><br><span class="line"></span><br><span class="line">&#x2F;*限制在一个块元索示的文本的行数*&#x2F;</span><br><span class="line"></span><br><span class="line">-webkit-1ine-clanp: 2;</span><br><span class="line"></span><br><span class="line">&#x2F;*没置或柆索仲縮盒対象的子元素的排列方式*&#x2F;</span><br><span class="line"></span><br><span class="line">-webkit-box-orient: vertical;</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -610,6 +624,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
             
             <div class="clearfix"></div>

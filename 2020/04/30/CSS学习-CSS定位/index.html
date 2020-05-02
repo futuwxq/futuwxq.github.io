@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/30/CSS%E5%AD%A6%E4%B9%A0-CSS%E5%AE%9A%E4%BD%8D/image-20200430220216923.png">
 <meta property="article:published_time" content="2020-04-30T09:51:54.000Z">
-<meta property="article:modified_time" content="2020-04-30T14:41:04.447Z">
+<meta property="article:modified_time" content="2020-05-02T13:18:10.100Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="css">
 <meta name="twitter:card" content="summary">
@@ -268,6 +268,38 @@
 <p>●如果属性值相同,则按照书写顺序,后来居上</p>
 <p>●数字后面不能加单位</p>
 <p>●只有<strong>定位</strong>的盒子才有z-index属性</p>
+<h4 id="z-index使用"><a href="#z-index使用" class="headerlink" title="z-index使用"></a>z-index使用</h4><ol>
+<li><p>z-index可以改变元素相互覆盖的顺序，默认为0，可正可负。</p>
+</li>
+<li><p>z-index值较大的元素将叠加在z-index值较小的元素之上。对于未指定此属性的定位对象，z-index 值为正数的对象会在其之上，而 z-index 值为负数的对象在其之下。<strong>只对定位元素有效</strong></p>
+<pre><code>&lt;div style=&quot;width:200px;height:200px;z-index:30&quot;&gt;//大  理应在上面，但未定位，在下面。
+&lt;/div&gt;
+
+&lt;div style=&quot;position:relative; top:-50px; width:100px;height:100px;z-index:10;&quot;&gt;&lt;div&gt;</code></pre></li>
+</ol>
+<p>第一个div未设置position的3个属性，未定位，不起作用。</p>
+<p><strong>1）父子关系</strong></p>
+<ul>
+<li><p>如果父元素z-index有效，那么子元素无论是否设置z-index都和父元素一致，会在父元素上方</p>
+<pre><code>&lt;div style=&quot;position:relative;width:200px;height:200px;z-index:10;&quot;&gt;//大，但有儿子，儿子在上面
+        &lt;div style=&quot;position:relative;width:100px;height:100px;z-index:-5;&quot;&gt;&lt;div&gt;
+&lt;/div&gt;</code></pre></li>
+<li><p>如果父元素z-index失效（未定位或者使用默认值），那么定位子元素的z-index设置生效</p>
+</li>
+</ul>
+<pre><code>&lt;div style=&quot;position:relative;width:200px;height:200px;&quot;&gt;
+&lt;div style=&quot;position:relative;width:100px;height:100px;z-index:-5;&quot;&gt;&lt;div&gt;//小 爸爸使用默认值 在下面 
+&lt;/div&gt;</code></pre><p><strong>2）兄弟关系</strong></p>
+<ul>
+<li><p>如果两个元素都没有设置z-index，使用默认值，一个定位一个没有定位，那么定位元素覆盖未定位元素</p>
+<pre><code>&lt;div style=&quot;position:relative;top:50px;width:200px;height:200px;&quot;&gt;  //position给了relative，absolution，或者fixed 就是定位了z-index使用了默认值。
+&lt;/div&gt;
+&lt;div style=&quot; width:100px;height:100px;&quot;&gt;&lt;div&gt;</code></pre></li>
+<li><p>如果两个元素都没有定位发生位置重合现象或者两个都已定位元素且z-index相同发生位置重合现象，那么按文档流顺序，后面的覆盖前面的。</p>
+<pre><code>&lt;div style=&quot;width:200px;height:200px;&quot;&gt;//未定位，未使用z-indenx ，把其当作默认值，在上面
+&lt;/div&gt;
+&lt;div style=&quot;position:relative; top:-50px; width:100px;height:100px;z-index:-5;&quot;&gt;&lt;div&gt;</code></pre></li>
+</ul>
 <h3 id="10-定位的拓展"><a href="#10-定位的拓展" class="headerlink" title="10 定位的拓展"></a>10 定位的拓展</h3><p><strong>1.绝对定位水平垂直居中</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> &lt;style&gt;</span><br><span class="line">        .box &#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">            &#x2F;* 1. left 走 50%  父容器宽度的一半 *&#x2F;</span><br><span class="line">            left: 50%;</span><br><span class="line">            &#x2F;* 2. margin 负值 往左边走 自己盒子宽度的一半 *&#x2F;</span><br><span class="line">            margin-left: -100px;</span><br><span class="line">            top: 50%;</span><br><span class="line">            margin-top: -100px;</span><br><span class="line">            width: 200px;</span><br><span class="line">            height: 200px;</span><br><span class="line">            background-color: pink;</span><br><span class="line">            &#x2F;* margin: auto; *&#x2F;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;box&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
 
@@ -677,6 +709,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
             
             <div class="clearfix"></div>

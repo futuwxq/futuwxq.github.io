@@ -152,20 +152,20 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-盒子模型学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-java学习- java基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/12/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0/">CSS学习-盒子模型</a>
+      <a class="article-title" href="/2020/04/13/java%E5%AD%A6%E4%B9%A0-%20java%E5%9F%BA%E7%A1%80/">java学习- java基础</a>
     </h1>
   
 
         
-        <a href="/2020/04/12/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
-  	<time datetime="2020-04-12T11:10:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
+        <a href="/2020/04/13/java%E5%AD%A6%E4%B9%A0-%20java%E5%9F%BA%E7%A1%80/" class="archive-article-date">
+  	<time datetime="2020-04-13T08:19:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
 </a>
         
       </header>
@@ -173,6 +173,254 @@
     <div class="article-entry" itemprop="articleBody">
       
         <a id="more"></a>
+
+<p>java代码运行的一个过程：</p>
+<img src="/2020/04/13/java%E5%AD%A6%E4%B9%A0-%20java%E5%9F%BA%E7%A1%80/image-20200425221227859.png" alt="image-20200425221227859" style="zoom:80%;">
+
+<h3 id="一、-编写java文件"><a href="#一、-编写java文件" class="headerlink" title="一、 编写java文件"></a>一、 编写java文件</h3><p>每个Java源文件都包含一个单一的公共类或接口。若私有类和接口与一个公共类相关联，可以将它们和公共类放入同个源文件。公共类必须是这个文件中的第一个类和接口。</p>
+<p>Java源文件还遵循以下规则：</p>
+<ul>
+<li><p>开头注释</p>
+</li>
+<li><p>包和引入语句</p>
+</li>
+<li><p>类和接口声明</p>
+</li>
+</ul>
+<h4 id="1-）开头注释"><a href="#1-）开头注释" class="headerlink" title="1 ）开头注释"></a>1 ）开头注释</h4><p>所有的源文件都应该在开头有一个C语言风格的注释，其中列出类名、版本信息，日期和版权声明：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">/ *</span><br><span class="line"> * Classname</span><br><span class="line"> *</span><br><span class="line"> * Version information</span><br><span class="line"> *</span><br><span class="line"> * Date</span><br><span class="line"> *</span><br><span class="line"> * Copyright notice</span><br><span class="line"> * /</span><br></pre></td></tr></table></figure>
+
+<h4 id="2）包和引入"><a href="#2）包和引入" class="headerlink" title="2）包和引入"></a>2）<strong>包和引入</strong></h4><p>在多数Java源文件中，第一个非注释行是包语句行。在它之后可以跟引入语句。例如：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> java.awt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.awt.peer.CanvasPeer;</span><br><span class="line"><span class="keyword">import</span> …</span><br></pre></td></tr></table></figure>
+
+<h4 id="3）类和接口声明"><a href="#3）类和接口声明" class="headerlink" title="3）类和接口声明"></a>3）<strong>类和接口声明</strong></h4><table>
+<thead>
+<tr>
+<th></th>
+<th>类/接口声明的各部分</th>
+<th><strong>注解</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>1</strong></td>
+<td>类/接口文档注释               (/ <code>**…*</code> /)</td>
+<td>该注释中所包含的信息。</td>
+</tr>
+<tr>
+<td><strong>2</strong></td>
+<td>类/接口的声明</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>3</strong></td>
+<td>类/接口实现的注释  (/ <em>…</em> /)  如果有必要的话</td>
+<td>该注释应包含任何有关整个类或接口的信息，而这些信息又适合作为类/接口文档注释。</td>
+</tr>
+<tr>
+<td><strong>4</strong></td>
+<td>类的(静态)变量</td>
+<td>首先是类的public变量，随后是protected变量，再后是包一级别的变量(没有访问修饰符)，最后是private变量。</td>
+</tr>
+<tr>
+<td><strong>5</strong></td>
+<td>实例变量</td>
+<td>首先是public变量，随后是protected变量，再后是包一级别的变量(没有访问修饰符)，最后是private变量。</td>
+</tr>
+<tr>
+<td><strong>6</strong></td>
+<td>构造器</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>7</strong></td>
+<td>方法</td>
+<td>这些方法应该按功能，而非作用域或访问权限，分组。</td>
+</tr>
+</tbody></table>
+<h3 id="注释-Comments"><a href="#注释-Comments" class="headerlink" title="注释(Comments)"></a>注释(Comments)</h3><p>Java程序有两类注释：</p>
+<h4 id="1-实现注释-implementation-comments-："><a href="#1-实现注释-implementation-comments-：" class="headerlink" title="1) 实现注释(implementation comments)："></a>1) 实现注释(implementation comments)：</h4><p>使用<code>/*…*/</code>和//界定的注释。</p>
+<p><strong>块注释</strong>:通常用于提供对文件，方法，数据结构和算法的描述。块注释被置于每个文件的开始处以及每个方法之前。它们也可以被用于其他地方，比如方法的内部。在功能和方法内部的块注释应该和它们所描述的代码具有一样的缩进格式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*</span><br><span class="line"> * Here is a block comment.</span><br><span class="line"> *&#x2F;</span><br></pre></td></tr></table></figure>
+
+<p><strong>单行注释</strong>：短注释可以显示一行内，并与其后的代码具有一样的缩进层级。如果一个注释不能在一行内写完，就该块注释。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (condition) &#123;</span><br><span class="line">	&#x2F;*Handle the condition*&#x2F;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>尾端注释</strong>:极短的注释可以与它们所要描述的代码位于同一行，但是应该有足够的空白来分开代码和注释。若有多个短注释出现于大段代码中，它们应该具有相同的缩进。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> if (a&#x3D;&#x3D;2) &#123;</span><br><span class="line"> 	return true;               &#x2F;*special case*&#x2F;</span><br><span class="line"> &#125; else &#123;</span><br><span class="line">	return isPrime(a);         &#x2F;*works only for odd a*&#x2F;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-文档注释-document-comments-："><a href="#2-文档注释-document-comments-：" class="headerlink" title="2) 文档注释(document comments) ："></a>2) 文档注释(document comments) ：</h4><p>Java独有的，由<code>/**…*/</code>界定，可以通过javadoc工具转换成HTML文件</p>
+<p>文档注释描述Java的类、接口、构造器、方法，以及字段(field)。每个文档注释都会被置于注释界定符/ <em>*…</em>/之中，一个注释对应一个类、接口或成员。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;**</span><br><span class="line"> * 实现对页面上输出文本的大写转化</span><br><span class="line"> * @author fu</span><br><span class="line"> *&#x2F;</span><br><span class="line">public class UpperCaseFilter implements Filter &#123;</span><br></pre></td></tr></table></figure>
+
+<p>文档注释可以添加更多信息，通过@param来添加，具体参数含义如下：</p>
+<img src="/2020/04/13/java%E5%AD%A6%E4%B9%A0-%20java%E5%9F%BA%E7%A1%80/image-20200426153950826.png" alt="image-20200426153950826" style="zoom:80%;">
+
+<h3 id="2-命名规范"><a href="#2-命名规范" class="headerlink" title="2 命名规范"></a>2 <strong>命名规范</strong></h3><p>命名规范使程序更易读，从而更易于理解。它们也可以提供一些有关标识符功能的信息，以助于理解代码。</p>
+<h4 id="2-1-包"><a href="#2-1-包" class="headerlink" title="2.1 包"></a>2.1 包</h4><p>一个唯一包名的前缀总是全部小写的ASCⅡ字母并且是一个顶级域名，通常是com，gov，edu，mil，net，org，或1981年ISO 3166标准所指定的标识的国家的英文双字符代码。</p>
+<p>包名的后续部分根据不同机构各自内部的命名规范而不尽相同。这类命名规范可能以特定目录名的组成来区分部门(department)，项目(project)，机器(machine)，或注册名(login names)。</p>
+<p>例如：com.sun.eng  、 com.apple.quicktime.v2 、 cn.edu.nwpu.job</p>
+<h4 id="2-2-类和接口"><a href="#2-2-类和接口" class="headerlink" title="2.2 类和接口"></a>2.2 类和接口</h4><p>类和接口名是一个名词，采用大小写混合方式，每个单词的<strong>首字母大写</strong>。尽量使你的类和接口名简洁而富于描述。使用<strong>完整单词</strong>，避免缩写词(除非该缩写词被广泛的使用，如URL，HTML)。</p>
+<p>例如：class Raster 、 class ImageSprite 、 interface RasterDelegate 、 interface Storing</p>
+<h4 id="2-3-方法"><a href="#2-3-方法" class="headerlink" title="2.3 方法"></a><strong>2.3 方法</strong></h4><p>方法名是一个动词，采用大小写混合方式，第一个单词的首字母小写，其后单词的首字母大写。</p>
+<p>例如：run() 、 runFase() 、getBackground()</p>
+<h4 id="2-4-变量"><a href="#2-4-变量" class="headerlink" title="2.4 变量"></a>2.4 变量</h4><p>第一个单词的首字母小写，其后单词的首字母大写。变量名不应以下划线或美元符号开头。</p>
+<p>例如：char c 、 int i 、 float myWidth</p>
+<h4 id="2-5-常量"><a href="#2-5-常量" class="headerlink" title="2.5 常量"></a>2.5 常量</h4><p>大小写规则和变量名相似，除了前面需要一个下划线隔开。尽量避免ANSI常量，容易引起错误。</p>
+<p>例如：</p>
+<p>static final int MIN_WIDTH = 4 、 static final int MAX_WIDTH = 999 、static final int GET_THE_CPU = 1</p>
+<h3 id="3-变量与常量"><a href="#3-变量与常量" class="headerlink" title="3 变量与常量"></a>3 变量与常量</h3><p>Java的数据类型</p>
+<img src="/2020/04/13/java%E5%AD%A6%E4%B9%A0-%20java%E5%9F%BA%E7%A1%80/image-20200426170412686.png" alt="image-20200426170412686" style="zoom:80%;">
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/13/java%E5%AD%A6%E4%B9%A0-%20java%E5%9F%BA%E7%A1%80/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="p-servlet中doGet 和doPost 方法" class="article article-type-p  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/13/servlet%E4%B8%ADdoGet%20%E5%92%8CdoPost%20%E6%96%B9%E6%B3%95/">servlet中doGet()和doPost()方法</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/13/servlet%E4%B8%ADdoGet%20%E5%92%8CdoPost%20%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-04-13T07:49:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>可以把方法写在doGet()方法中,在doPost()方法中调用执行,这样,无论你提交的是post还是get方法都可以执行</p>
+        
+          <a class="article-more-a" href="/2020/04/13/servlet%E4%B8%ADdoGet%20%E5%92%8CdoPost%20%E6%96%B9%E6%B3%95/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javaee</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">servlet</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/13/servlet%E4%B8%ADdoGet%20%E5%92%8CdoPost%20%E6%96%B9%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-CSS学习-盒子模型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/12/CSS%E5%AD%A6%E4%B9%A0-%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/">CSS学习-盒子模型</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/12/CSS%E5%AD%A6%E4%B9%A0-%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/" class="archive-article-date">
+  	<time datetime="2020-04-12T11:10:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>网页布局过程:</p>
+<p>1.先准备好相关的网页元素,网页元素基本都是盒子Box .</p>
+<p>2.利用CSS设置好盒子样式,然后摆放到相应位置。</p>
+<p>3.往盒子里面装内容.</p>
+<p>网页布局的核心本质:就是利用CSS摆盒子。</p>
+        
+          <a class="article-more-a" href="/2020/04/12/CSS%E5%AD%A6%E4%B9%A0-%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/#more">more >></a>
+        
       
 
       
@@ -195,7 +443,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/12/%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/04/12/CSS%E5%AD%A6%E4%B9%A0-%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/">展开全文 >></a>
         </p>
       
 
@@ -772,161 +1020,6 @@
 
 
   
-    <article id="post-HTML基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/">HTML基础</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-  	<time datetime="2020-04-07T06:51:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一-、了解HTML"><a href="#一-、了解HTML" class="headerlink" title="一 、了解HTML"></a>一 、了解HTML</h2><h3 id="1-1-什么是网页"><a href="#1-1-什么是网页" class="headerlink" title="1.1 什么是网页"></a>1.1 什么是网页</h3><p> 网站是指在因特网上根据一定的规则，使用HTML等制作的用于展示特定内容相关的网页集合。</p>
-<p> 网页是指网站中的一页，通常是HTML格式的文件，以.html或.HTML后缀结尾的文件展现出来的都是网页。</p>
-<p> 网页是构成网站的基本元素，它通常由图片、文字、链接、声音、视频等标签元素组成，通过浏览器解析来显示给用户。</p>
-        
-          <a class="article-more-a" href="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">HTML</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-常见正则表达式总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/">常见正则表达式总结</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2020-04-06T12:42:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>正则表达式(regular expression)描述了一种字符串匹配的模式（pattern），可以用来检查一个串是否含有某种子串、将匹配的子串替换或者从某个串中取出符合某个条件的子串等。</p>
-<p>这篇文章就来介绍正则表达式的基础知识，对于正则表达式的匹配，可以用<a href="https://regexr.com" target="_blank" rel="noopener">regexr</a>这个网站进行练习和检验</p>
-        
-          <a class="article-more-a" href="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">正则表达式</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/5/">Next &amp;raquo;</a>
@@ -1052,11 +1145,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
+                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
+                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1080,15 +1173,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">web项目</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">css布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1105,6 +1198,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">绝对路径</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">移动端布局</a>
               </li>
              
               <li class="article-tag-list-item">

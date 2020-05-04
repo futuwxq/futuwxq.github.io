@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
   <title>CSS学习-CSS浮动 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="网页布局的本质 — 用CSS 来摆放盒子。把盒子摆放到相应位置CSS提供了三种传统布局方式(简单说就是盒子如何进行排列顺序) : ●普通流 (标准流) ●浮动 ●定位">
+  <meta name="description" content="网页布局的本质 — 用CSS 来摆放盒子。把盒子摆放到相应位置CSS提供了三种传统布局方式(简单说就是盒子如何进行排列顺序) : 普通流 (标准流) 浮动">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CSS学习-CSS浮动">
 <meta property="og:url" content="https://futuwxq.github.io/2020/04/30/CSS%E5%AD%A6%E4%B9%A0-CSS%E6%B5%AE%E5%8A%A8/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="网页布局的本质 — 用CSS 来摆放盒子。把盒子摆放到相应位置CSS提供了三种传统布局方式(简单说就是盒子如何进行排列顺序) : ●普通流 (标准流) ●浮动 ●定位">
+<meta property="og:description" content="网页布局的本质 — 用CSS 来摆放盒子。把盒子摆放到相应位置CSS提供了三种传统布局方式(简单说就是盒子如何进行排列顺序) : 普通流 (标准流) 浮动">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/30/CSS%E5%AD%A6%E4%B9%A0-CSS%E6%B5%AE%E5%8A%A8/image-20200430164824685.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/30/CSS%E5%AD%A6%E4%B9%A0-CSS%E6%B5%AE%E5%8A%A8/md13.png">
@@ -23,7 +23,7 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/30/CSS%E5%AD%A6%E4%B9%A0-CSS%E6%B5%AE%E5%8A%A8/md1.jpg">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/30/CSS%E5%AD%A6%E4%B9%A0-CSS%E6%B5%AE%E5%8A%A8/7.23.png">
 <meta property="article:published_time" content="2020-04-30T08:18:33.000Z">
-<meta property="article:modified_time" content="2020-05-02T12:46:45.264Z">
+<meta property="article:modified_time" content="2020-05-03T12:09:27.215Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="css">
 <meta name="twitter:card" content="summary">
@@ -184,11 +184,11 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>网页布局的本质 — 用CSS 来摆放盒子。把盒子摆放到相应位置CSS提供了三种传统布局方式(简单说就是盒子如何进行排列顺序) :</p>
-<p>●普通流 (标准流)</p>
-<p>●浮动</p>
-<p>●定位</p>
+<p>普通流 (标准流)</p>
+<p>浮动</p>
 <a id="more"></a>
 
+<p>定位</p>
 <p>这三种布局方式都是用来摆放盒子的，盒子摆放到合适位置,布局自然就完成了。</p>
 <h3 id="1-2标准流-普通流-文档流"><a href="#1-2标准流-普通流-文档流" class="headerlink" title="1.2标准流(普通流/文档流)"></a>1.2标准流(普通流/文档流)</h3><p>所谓的标准流 : 就是标签按照规定好默认方式排列。</p>
 <p>1.块级元素会独占- -行,从上向下顺序排列。</p>
@@ -297,19 +297,12 @@ overflow: auto;
 <p>   <img src="/2020/04/30/CSS%E5%AD%A6%E4%B9%A0-CSS%E6%B5%AE%E5%8A%A8/7.23.png" alt="example"></p>
 <p><strong>文字和图片间设置一个间距</strong></p>
 <ul>
-<li><p>给普通元素设置margin-left=间距+浮动元素width</p>
-</li>
-<li><p>可以给浮动元素设置margin-right和padding-right撑开间距</p>
-<pre><code>.float-left {
-        float: left;
-         margin-right: 20px; 
-}
-.bfc-content {
-        overflow: hidden;
-         background-color: #beceeb;
-}</code></pre></li>
+<li>给普通元素设置margin-left=间距+浮动元素width</li>
+<li>可以给浮动元素设置margin-right和padding-right撑开间距</li>
 </ul>
-<h1 id><a href="#" class="headerlink" title></a></h1>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.float-left &#123;</span><br><span class="line">        float: left;</span><br><span class="line">         margin-right: 20px; </span><br><span class="line">&#125;</span><br><span class="line">.bfc-content &#123;</span><br><span class="line">        overflow: hidden;</span><br><span class="line">         background-color: #beceeb;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
       
 
       
@@ -578,11 +571,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
+                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
+                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -606,15 +599,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">web项目</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">css布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -631,6 +624,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">绝对路径</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">移动端布局</a>
               </li>
              
               <li class="article-tag-list-item">

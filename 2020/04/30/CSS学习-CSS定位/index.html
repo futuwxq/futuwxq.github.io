@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/30/CSS%E5%AD%A6%E4%B9%A0-CSS%E5%AE%9A%E4%BD%8D/image-20200430220216923.png">
 <meta property="article:published_time" content="2020-04-30T09:51:54.000Z">
-<meta property="article:modified_time" content="2020-05-02T13:18:10.100Z">
+<meta property="article:modified_time" content="2020-05-03T12:06:33.804Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="css">
 <meta name="twitter:card" content="summary">
@@ -184,7 +184,7 @@
 <h3 id="1-定位组成"><a href="#1-定位组成" class="headerlink" title="1 定位组成"></a>1 定位组成</h3><p><strong>定位</strong> : 将盒子定在某一个位置,所以定位也是在摆放盒子，按照定位的方式移动盒子。</p>
 <p>定位=定位模式+边偏移。</p>
 <p>定位模式用于指定一个元索在文档中的定位方式。 <strong>边偏移</strong>则决定了该元索的最终位置。</p>
-<p><strong>1.定位模式</strong></p>
+<p><strong>定位模式</strong></p>
 <p>定位模式决定元素的定位方式, 它通过CSS的position属性来设置,其值可以分为四个:</p>
 <table>
 <thead>
@@ -210,7 +210,7 @@
 <td>固定定位</td>
 </tr>
 </tbody></table>
-<p><strong>2 边位移</strong></p>
+<p><strong>边位移</strong></p>
 <p>边偏移就是定位的盒子移动到最终位置。有top. bottom. left 和right 4个属性。</p>
 <h3 id="2-静态定位static"><a href="#2-静态定位static" class="headerlink" title="2 静态定位static"></a>2 静态定位static</h3><p>静态定位是元素的默认定位方式,无定位的意思。语法:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">选择器 &#123; position: static; &#125;</span><br></pre></td></tr></table></figure>
@@ -268,38 +268,39 @@
 <p>●如果属性值相同,则按照书写顺序,后来居上</p>
 <p>●数字后面不能加单位</p>
 <p>●只有<strong>定位</strong>的盒子才有z-index属性</p>
-<h4 id="z-index使用"><a href="#z-index使用" class="headerlink" title="z-index使用"></a>z-index使用</h4><ol>
+<p><strong>z-index使用</strong></p>
+<ul>
 <li><p>z-index可以改变元素相互覆盖的顺序，默认为0，可正可负。</p>
 </li>
 <li><p>z-index值较大的元素将叠加在z-index值较小的元素之上。对于未指定此属性的定位对象，z-index 值为正数的对象会在其之上，而 z-index 值为负数的对象在其之下。<strong>只对定位元素有效</strong></p>
-<pre><code>&lt;div style=&quot;width:200px;height:200px;z-index:30&quot;&gt;//大  理应在上面，但未定位，在下面。
-&lt;/div&gt;
-
-&lt;div style=&quot;position:relative; top:-50px; width:100px;height:100px;z-index:10;&quot;&gt;&lt;div&gt;</code></pre></li>
-</ol>
-<p>第一个div未设置position的3个属性，未定位，不起作用。</p>
-<p><strong>1）父子关系</strong></p>
-<ul>
-<li><p>如果父元素z-index有效，那么子元素无论是否设置z-index都和父元素一致，会在父元素上方</p>
-<pre><code>&lt;div style=&quot;position:relative;width:200px;height:200px;z-index:10;&quot;&gt;//大，但有儿子，儿子在上面
-        &lt;div style=&quot;position:relative;width:100px;height:100px;z-index:-5;&quot;&gt;&lt;div&gt;
-&lt;/div&gt;</code></pre></li>
-<li><p>如果父元素z-index失效（未定位或者使用默认值），那么定位子元素的z-index设置生效</p>
 </li>
 </ul>
-<pre><code>&lt;div style=&quot;position:relative;width:200px;height:200px;&quot;&gt;
-&lt;div style=&quot;position:relative;width:100px;height:100px;z-index:-5;&quot;&gt;&lt;div&gt;//小 爸爸使用默认值 在下面 
-&lt;/div&gt;</code></pre><p><strong>2）兄弟关系</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style&#x3D;&quot;width:200px;height:200px;z-index:30&quot;&gt;&#x2F;&#x2F;大  理应在上面，但未定位，在下面。</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line"></span><br><span class="line">&lt;div style&#x3D;&quot;position:relative; top:-50px; width:100px;height:100px;z-index:10;&quot;&gt;&lt;div&gt;</span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>如果两个元素都没有设置z-index，使用默认值，一个定位一个没有定位，那么定位元素覆盖未定位元素</p>
-<pre><code>&lt;div style=&quot;position:relative;top:50px;width:200px;height:200px;&quot;&gt;  //position给了relative，absolution，或者fixed 就是定位了z-index使用了默认值。
-&lt;/div&gt;
-&lt;div style=&quot; width:100px;height:100px;&quot;&gt;&lt;div&gt;</code></pre></li>
-<li><p>如果两个元素都没有定位发生位置重合现象或者两个都已定位元素且z-index相同发生位置重合现象，那么按文档流顺序，后面的覆盖前面的。</p>
-<pre><code>&lt;div style=&quot;width:200px;height:200px;&quot;&gt;//未定位，未使用z-indenx ，把其当作默认值，在上面
-&lt;/div&gt;
-&lt;div style=&quot;position:relative; top:-50px; width:100px;height:100px;z-index:-5;&quot;&gt;&lt;div&gt;</code></pre></li>
+<li>第一个div未设置position的3个属性，未定位，不起作用。</li>
 </ul>
+<p><strong>1）父子关系</strong></p>
+<ul>
+<li>如果父元素z-index有效，那么子元素无论是否设置z-index都和父元素一致，会在父元素上方</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"position:relative;width:200px;height:200px;z-index:10;"</span>&gt;</span>//大，但有儿子，儿子在上面</span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">style</span>=<span class="string">"position:relative;width:100px;height:100px;z-index:-5;"</span>&gt;</span><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果父元素z-index失效（未定位或者使用默认值），那么定位子元素的z-index设置生效</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style&#x3D;&quot;position:relative;width:200px;height:200px;&quot;&gt;</span><br><span class="line">	&lt;div style&#x3D;&quot;position:relative;width:100px;height:100px;z-index:-5;&quot;&gt;&lt;div&gt;&#x2F;&#x2F;小 爸爸使用默认值 在下面 </span><br><span class="line">&lt;&#x2F;div&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2）兄弟关系</strong></p>
+<ul>
+<li>如果两个元素都没有设置z-index，使用默认值，一个定位一个没有定位，那么定位元素覆盖未定位元素</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style&#x3D;&quot;position:relative;top:50px;width:200px;height:200px;&quot;&gt;  &#x2F;&#x2F;position给了relative，absolution，或者fixed 就是定位了z-index使用了默认值。</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;div style&#x3D;&quot; width:100px;height:100px;&quot;&gt;&lt;div&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>如果两个元素都没有定位发生位置重合现象或者两个都已定位元素且z-index相同发生位置重合现象，那么按文档流顺序，后面的覆盖前面的。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div style&#x3D;&quot;width:200px;height:200px;&quot;&gt;&#x2F;&#x2F;未定位，未使用z-indenx ，把其当作默认值，在上面</span><br><span class="line">&lt;&#x2F;div&gt;</span><br><span class="line">&lt;div style&#x3D;&quot;position:relative; top:-50px; width:100px;height:100px;z-index:-5;&quot;&gt;&lt;div&gt;</span><br></pre></td></tr></table></figure>
+
 <h3 id="10-定位的拓展"><a href="#10-定位的拓展" class="headerlink" title="10 定位的拓展"></a>10 定位的拓展</h3><p><strong>1.绝对定位水平垂直居中</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> &lt;style&gt;</span><br><span class="line">        .box &#123;</span><br><span class="line">            position: absolute;</span><br><span class="line">            &#x2F;* 1. left 走 50%  父容器宽度的一半 *&#x2F;</span><br><span class="line">            left: 50%;</span><br><span class="line">            &#x2F;* 2. margin 负值 往左边走 自己盒子宽度的一半 *&#x2F;</span><br><span class="line">            margin-left: -100px;</span><br><span class="line">            top: 50%;</span><br><span class="line">            margin-top: -100px;</span><br><span class="line">            width: 200px;</span><br><span class="line">            height: 200px;</span><br><span class="line">            background-color: pink;</span><br><span class="line">            &#x2F;* margin: auto; *&#x2F;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;&#x2F;style&gt;</span><br><span class="line">&lt;&#x2F;head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;box&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;body&gt;</span><br></pre></td></tr></table></figure>
 
@@ -312,7 +313,7 @@
 <p><strong>4.绝对定位(固定定位)会完全压住盒子</strong></p>
 <p>浮动元素不同,只会压住它下面标准流的盒子，但是不会压住下面标准流盒子里面的<strong>文字(图片)</strong>但是绝对定位(固定定位)会压住下面标准流所有的内容。</p>
 <p>浮动之所以不会压住文字,因为浮动产生的目的最初是为了做<strong>文字环绕效果</strong>的。文字会围绕浮动元素。</p>
-<p>通过盒子模型,清楚知道大部分htm|标签是-一个盒子。通过CSS浮动、定位可以让每个盒子排列成为网页。</p>
+<p>通过盒子模型,清楚知道大部分htm标签是-一个盒子。通过CSS浮动、定位可以让每个盒子排列成为网页。</p>
 <h2 id="网页布局总结"><a href="#网页布局总结" class="headerlink" title="网页布局总结"></a>网页布局总结</h2><p>一个完整的网页,是标准流、浮动、定位一起完成布局的,每个都有自己的专门用法。</p>
 <p>1.标准流</p>
 <p>可以让盒子上下排列或者左右排列,<strong>垂直的块级盒子显示就用标准流布局</strong>。</p>
@@ -320,45 +321,6 @@
 <p>可以让多个块级元素一行显示或者左右对齐盒子 。<strong>多个块级盒子水平显示就用浮动布局。</strong></p>
 <p>3.定位</p>
 <p>定位最大的特点是有层要的概念,就是可以让多个盒子前后雪压来显示。如果<strong>元素白由在某个盒子内移动就用定位布局</strong>。</p>
-<h2 id="元素的显示与隐藏"><a href="#元素的显示与隐藏" class="headerlink" title="元素的显示与隐藏"></a>元素的显示与隐藏</h2><p>类似网站广告，当我们点击关闭就不见了,但是我们重新刷新页面,会重新出现!本质:让一个元素在页面中隐藏或者显示出来。</p>
-<h3 id="1-display-属性"><a href="#1-display-属性" class="headerlink" title="1 display 属性"></a>1 display 属性</h3><p><strong>display属性</strong>用于设置一个元素应<strong>如何显示</strong>。</p>
-<p>●display.none ;隐藏对象</p>
-<p>●display : block ;除了转换为块级元素之外，同时还有显示元素的意思</p>
-<p>display隐藏元素后,<strong>不再占有原来的位置</strong>。</p>
-<p>后面应用及其广泛,搭配JS可以做很多的网页特效。</p>
-<h3 id="2-visibility-可见性"><a href="#2-visibility-可见性" class="headerlink" title="2 visibility 可见性"></a>2 visibility 可见性</h3><p>visibility属性用于指定一个元素<strong>可见还是隐藏</strong>。</p>
-<p>●visibility : visible;元索可视</p>
-<p>●visibility : hidden; 元素隐藏</p>
-<p>vibility隐藏元素后,<strong>继续占有原来的位置</strong>。</p>
-<p>如果隐藏元素想要原来位置,就用visibility : hidden</p>
-<p>如果隐藏元素不想要原来位置，就用display : none (用处更多重点)</p>
-<h3 id="3-overflow-溢出"><a href="#3-overflow-溢出" class="headerlink" title="3 overflow 溢出"></a>3 overflow 溢出</h3><p>overflow属性指定了如果内容溢出一个元素的框(超过其指定高度及宽度)时,会发生什么。</p>
-<table>
-<thead>
-<tr>
-<th>属性值</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>visible</td>
-<td>不剪切内容也不添加滚动条</td>
-</tr>
-<tr>
-<td>hidden</td>
-<td>不显示超过对象尺寸的内容，<strong>超出的部分隐藏掉</strong></td>
-</tr>
-<tr>
-<td>scroll</td>
-<td>不管超出内容否,<strong>总是显示滚动条</strong></td>
-</tr>
-<tr>
-<td>auto</td>
-<td>超出自动显示滚动条，不超出不显示滚动条</td>
-</tr>
-</tbody></table>
-<p>一般情况下 ,我们都不想让溢出的内容显示出来,因为溢出的部分会影响布局。</p>
-<p><strong>但是如果有定位的盒子.请慎用overflow:hidden因为它会隐藏多余的部分。</strong></p>
 
       
 
@@ -628,11 +590,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
+                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
+                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -656,15 +618,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">web项目</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">css布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -681,6 +643,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">绝对路径</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">移动端布局</a>
               </li>
              
               <li class="article-tag-list-item">

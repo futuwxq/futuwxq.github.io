@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/29/CSS%E5%AD%A6%E4%B9%A0-CSS%E6%98%BE%E7%A4%BA%E5%85%83%E7%B4%A0/image-20200429173431842.png">
 <meta property="article:published_time" content="2020-04-29T09:25:01.000Z">
-<meta property="article:modified_time" content="2020-04-30T14:41:22.768Z">
+<meta property="article:modified_time" content="2020-05-03T12:03:02.496Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="css">
 <meta name="twitter:card" content="summary">
@@ -183,7 +183,7 @@
 <p>元素显示模式就是元素(标签)以什么方式进行显示,比如<code>&lt;div&gt;</code>自己占一行,比如一行可以放多个<code>&lt;span&gt;</code>。</p>
 <a id="more"></a>
 
-<h3 id="块元素"><a href="#块元素" class="headerlink" title="块元素"></a>块元素</h3><p>常见的块元素有<code>&lt;h1&gt;~&lt;h6&gt;、&lt;p&gt;、&lt;div&gt;、 &lt;ul&gt;、 &lt;ol&gt;、 &lt;li&gt;</code>等 ,其中<code>&lt;div&gt;</code>标签是最典型的块元素。块级元素的特点:</p>
+<h2 id="元素的显示模式"><a href="#元素的显示模式" class="headerlink" title="元素的显示模式"></a>元素的显示模式</h2><h3 id="1-块元素"><a href="#1-块元素" class="headerlink" title="1 块元素"></a>1 块元素</h3><p>常见的块元素有<code>&lt;h1&gt;~&lt;h6&gt;、&lt;p&gt;、&lt;div&gt;、 &lt;ul&gt;、 &lt;ol&gt;、 &lt;li&gt;</code>等 ,其中<code>&lt;div&gt;</code>标签是最典型的块元素。块级元素的特点:</p>
 <p>①比较霸道,自己独占一行。</p>
 <p>②高度，宽度、外边距以及内边距都可以控制。</p>
 <p>③宽度默认是容器(父级宽度)的100%。</p>
@@ -192,7 +192,7 @@
 <p>●<strong>文字类的元素内不能使用块级元素</strong></p>
 <p>●<code>&lt;p&gt;</code>标签主要用于存放文字,因此<code>&lt;p&gt;</code>里面不能放块级元素,特别是不能放<code>&lt;div&gt;</code></p>
 <p>●同理，<code>&lt;h1&gt;~&lt;h6&gt;</code>等都是文字类块级标签,里面也不能放其他块级元素。</p>
-<h3 id="行内元素"><a href="#行内元素" class="headerlink" title="行内元素"></a>行内元素</h3><p>常见的行内元素有<code>&lt;a&gt;、&lt;strong&gt;、 &lt;b&gt;、 &lt;em&gt;、&lt;i&gt;、 &lt;del&gt;、 &lt;S&gt;、 &lt;ins&gt;、 &lt;U&gt;、 &lt;span&gt;</code>等 ，其中<code>&lt;span&gt;</code>标签是最典型的行内元素。有的地方也将行内元素称为内联元素。</p>
+<h3 id="2-行内元素"><a href="#2-行内元素" class="headerlink" title="2 行内元素"></a>2 行内元素</h3><p>常见的行内元素有<code>&lt;a&gt;、&lt;strong&gt;、 &lt;b&gt;、 &lt;em&gt;、&lt;i&gt;、 &lt;del&gt;、 &lt;S&gt;、 &lt;ins&gt;、 &lt;U&gt;、 &lt;span&gt;</code>等 ，其中<code>&lt;span&gt;</code>标签是最典型的行内元素。有的地方也将行内元素称为内联元素。</p>
 <p>行内元素的特点:</p>
 <p>①相邻行内元素在一行上， 一行可以显示多个。</p>
 <p>②高、宽直接设置是无效的。</p>
@@ -201,7 +201,7 @@
 <p>注意:</p>
 <p>●链接里面不能再放链接</p>
 <p>●特殊情况链接    <code>&lt;a&gt;</code>里面可以放块级元索,但是给<code>&lt;a&gt;</code>转换一下 <strong>块级模式</strong>最安全</p>
-<h3 id="行内块元素"><a href="#行内块元素" class="headerlink" title="行内块元素"></a>行内块元素</h3><p>在行内元素中有几个特殊的标签一<code>&lt;img/&gt;、 &lt;input/&gt;、 &lt;td&gt;</code>,它们同时具有块元索和行内元素的特点。有些资料称它们为<strong>行内块元素</strong>。</p>
+<h3 id="3-行内块元素"><a href="#3-行内块元素" class="headerlink" title="3 行内块元素"></a>3 行内块元素</h3><p>在行内元素中有几个特殊的标签一<code>&lt;img/&gt;、 &lt;input/&gt;、 &lt;td&gt;</code>,它们同时具有块元索和行内元素的特点。有些资料称它们为<strong>行内块元素</strong>。</p>
 <p>行内块元素的特点:</p>
 <p>①和相邻行内元素(行内块)在一行上,但是他们之间会有空白缝隙。一行可以显示多个 (行内元素特点)。</p>
 <p>②默认宽度就是它本身内容的宽度(行内元素特点).</p>
@@ -209,10 +209,49 @@
 <p><strong>元素显示模式总结</strong></p>
 <img src="/2020/04/29/CSS%E5%AD%A6%E4%B9%A0-CSS%E6%98%BE%E7%A4%BA%E5%85%83%E7%B4%A0/image-20200429173431842.png" alt="image-20200429173431842" style="zoom:80%;">
 
-<h2 id="元素显示模式的转换"><a href="#元素显示模式的转换" class="headerlink" title="元素显示模式的转换"></a>元素显示模式的转换</h2><p>特殊情况下，我们需要元素模式的转换，通过如下方式转换。</p>
+<h3 id="4-元素显示模式的转换"><a href="#4-元素显示模式的转换" class="headerlink" title="4 元素显示模式的转换"></a>4 元素显示模式的转换</h3><p>特殊情况下，我们需要元素模式的转换，通过如下方式转换。</p>
 <p>●转换为块元素; display:block;</p>
 <p>●转换为行内元素: display.nline;</p>
 <p>●转换为行内块: display: inline- block;</p>
+<h2 id="元素的显示与隐藏"><a href="#元素的显示与隐藏" class="headerlink" title="元素的显示与隐藏"></a>元素的显示与隐藏</h2><p>类似网站广告，当我们点击关闭就不见了,但是我们重新刷新页面,会重新出现!本质:让一个元素在页面中隐藏或者显示出来。</p>
+<h3 id="1-display-属性"><a href="#1-display-属性" class="headerlink" title="1 display 属性"></a>1 display 属性</h3><p><strong>display属性</strong>用于设置一个元素应<strong>如何显示</strong>。</p>
+<p>●display.none ;隐藏对象</p>
+<p>●display : block ;除了转换为块级元素之外，同时还有显示元素的意思</p>
+<p>display隐藏元素后,<strong>不再占有原来的位置</strong>。</p>
+<p>后面应用及其广泛,搭配JS可以做很多的网页特效。</p>
+<h3 id="2-visibility-可见性"><a href="#2-visibility-可见性" class="headerlink" title="2 visibility 可见性"></a>2 visibility 可见性</h3><p>visibility属性用于指定一个元素<strong>可见还是隐藏</strong>。</p>
+<p>●visibility : visible;元索可视</p>
+<p>●visibility : hidden; 元素隐藏</p>
+<p>vibility隐藏元素后,<strong>继续占有原来的位置</strong>。</p>
+<p>如果隐藏元素想要原来位置,就用visibility : hidden</p>
+<p>如果隐藏元素不想要原来位置，就用display : none (用处更多重点)</p>
+<h3 id="3-overflow-溢出"><a href="#3-overflow-溢出" class="headerlink" title="3 overflow 溢出"></a>3 overflow 溢出</h3><p>overflow属性指定了如果内容溢出一个元素的框(超过其指定高度及宽度)时,会发生什么。</p>
+<table>
+<thead>
+<tr>
+<th>属性值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>visible</td>
+<td>不剪切内容也不添加滚动条</td>
+</tr>
+<tr>
+<td>hidden</td>
+<td>不显示超过对象尺寸的内容，<strong>超出的部分隐藏掉</strong></td>
+</tr>
+<tr>
+<td>scroll</td>
+<td>不管超出内容否,<strong>总是显示滚动条</strong></td>
+</tr>
+<tr>
+<td>auto</td>
+<td>超出自动显示滚动条，不超出不显示滚动条</td>
+</tr>
+</tbody></table>
+<p>一般情况下 ,我们都不想让溢出的内容显示出来,因为溢出的部分会影响布局。</p>
+<p><strong>但是如果有定位的盒子.请慎用overflow:hidden因为它会隐藏多余的部分。</strong></p>
 
       
 
@@ -482,11 +521,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
+                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
+                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -510,15 +549,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">web项目</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">css布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -535,6 +574,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">绝对路径</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">移动端布局</a>
               </li>
              
               <li class="article-tag-list-item">

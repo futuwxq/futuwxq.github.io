@@ -26,9 +26,14 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-flex%E5%B8%83%E5%B1%80/flex-grow.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-flex%E5%B8%83%E5%B1%80/flex-shrink.jpg">
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-flex%E5%B8%83%E5%B1%80/image-20200505113450513.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-flex%E5%B8%83%E5%B1%80/image-20200506185323033.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-flex%E5%B8%83%E5%B1%80/image-20200505103256568.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-flex%E5%B8%83%E5%B1%80/image-20200506172226607.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-flex%E5%B8%83%E5%B1%80/image-20200506171641232.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-flex%E5%B8%83%E5%B1%80/image-20200506171823229.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-flex%E5%B8%83%E5%B1%80/image-20200506172714184.png">
 <meta property="article:published_time" content="2020-05-04T13:16:48.000Z">
-<meta property="article:modified_time" content="2020-05-05T14:37:00.538Z">
+<meta property="article:modified_time" content="2020-05-06T10:59:20.436Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="移动端布局">
 <meta name="twitter:card" content="summary">
@@ -305,26 +310,73 @@
 <p><strong>7.背景线性渐变</strong></p>
 <img src="/2020/05/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-flex%E5%B8%83%E5%B1%80/image-20200505113450513.png" alt="image-20200505113450513" style="zoom:80%;">
 
+<p>起始方向可以是:方位名词或者度数，如果省略默认就是top，渐变轴默认是从上到下，第一个属性是设置渐变轴，可以使方位词和度数，后面的属性是设置渐变颜色，每个颜色后面可以跟百分比的宽度或高度。</p>
 <p>语法1 :</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">background: -webkit-linear-gradient(left, red, blue); </span><br><span class="line">background: -webkit-linear-gradient(red, blue);</span><br><span class="line">background: -webkit-linear-gradient(top left, red, blue);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">background: -webkit-linear-gradient(left, red, blue); </span><br><span class="line">background: -webkit-linear-gradient(red, blue);</span><br><span class="line">background: -webkit-linear-gradient(top left, red, blue);</span><br><span class="line"></span><br><span class="line">&#x2F;* 从右下到左上、从蓝色渐变到红色  *&#x2F;</span><br><span class="line">linear-gradient(to left top, blue, red);</span><br><span class="line"></span><br><span class="line">&#x2F;* 从下到上，从蓝色开始渐变、到高度40%位置是绿色渐变开始、最后以红色结束 *&#x2F;</span><br><span class="line">linear-gradient(0deg, blue, green 40%, red);</span><br></pre></td></tr></table></figure>
 
 <p>背景渐变必须添加<strong>浏览器私有前缀</strong></p>
-<p>起始方向可以是:方位名词或者度数，如果省略默认就是top</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background:-webkit-gradient(linear,left top,right top,from(#ffbc49),to(#ffd252));</span><br></pre></td></tr></table></figure>
+
+<p>-webkit-gradient是background的一个属性值；</p>
+<p>第一组参数type（类型）为 linear；</p>
+<p>第二组参数是,x1 y1, x2 y2,当成颜色渐变体的两个点的坐标就是</p>
+<p>from(开始颜色值),to(结束颜色值)是两个渐变颜色值；</p>
 <h3 id="四、携程移动端案例"><a href="#四、携程移动端案例" class="headerlink" title="四、携程移动端案例"></a>四、携程移动端案例</h3><p>案例:  <a href="https://m.ctrip.com/html5/" target="_blank" rel="noopener">携程网移动端首页</a></p>
 <p>方案：采用flex布局</p>
 <p>特点：很多盒子的高度固定，随着浏览器视口的缩小，高度保持不变。</p>
-<p>常见flex布局思路</p>
+<p>常见flex布局思路:</p>
+<h4 id="案例总结心得"><a href="#案例总结心得" class="headerlink" title="案例总结心得"></a>案例总结心得</h4><h5 id="1-flex的嵌套使用"><a href="#1-flex的嵌套使用" class="headerlink" title="1.flex的嵌套使用"></a><strong>1.flex的嵌套使用</strong></h5><p><img src="/2020/05/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-flex%E5%B8%83%E5%B1%80/image-20200506185323033.png" alt="image-20200506185323033"></p>
 <p><img src="/2020/05/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-flex%E5%B8%83%E5%B1%80/image-20200505103256568.png" alt="image-20200505103256568"></p>
-<p><strong>img、input和其他的单标签是没有after和before伪元素的，因为单标签本身不能有子元素</strong>。</p>
+<p><strong>html结构</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"sub-nav"</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"sub-nav-icon-travel"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">span</span>&gt;</span>景区<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>css部分</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">ul</span><span class="selector-class">.sub-nav</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;</span><br><span class="line">    <span class="attribute">flex-wrap</span>: wrap;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">ul</span><span class="selector-class">.sub-nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">flex</span>: <span class="number">20%</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">ul</span><span class="selector-class">.sub-nav</span> <span class="selector-tag">li</span> <span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: flex;    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/*.sub-nav li a span &#123;</span></span><br><span class="line"><span class="comment">    flex: 1;</span></span><br><span class="line"><span class="comment">&#125;*/</span></span><br><span class="line">小图标不需要在设置<span class="selector-tag">flex-grow</span>。</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-二倍图处理："><a href="#2-二倍图处理：" class="headerlink" title="2.二倍图处理："></a><strong>2.二倍图处理：</strong></h5><ul>
+<li><p>先打开图片，查看尺寸，确定图片尺寸和网页存放图片盒子的尺寸，确定是几倍图的关系。</p>
+</li>
+<li><p>缩放图片的尺寸</p>
+</li>
+<li><p>测量精灵图中所需图标的位移</p>
+</li>
+<li><p>background-size是缩放后的精灵图尺寸，y可直接设置为auto。</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.nav-common a:nth-child(1) &#123;</span><br><span class="line">    flex: 0 1 31%;</span><br><span class="line">    background: url(..&#x2F;images&#x2F;grid-nav-items-hotel@v7.15.png) no-repeat bottom right;</span><br><span class="line">    background-size: 73px auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>背景图片的background-position除了位移还可以是方位词。</p>
+<h5 id="3-属性选择器巧用精灵图"><a href="#3-属性选择器巧用精灵图" class="headerlink" title="3 属性选择器巧用精灵图"></a><strong>3 属性选择器巧用精灵图</strong></h5><p>利用属性选择器节省更多的代码。</p>
+<img src="/2020/05/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-flex%E5%B8%83%E5%B1%80/image-20200506172226607.png" alt="image-20200506172226607" style="zoom:80%;">
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">.sub-nav li a span[class^&#x3D;sub-nav-icon] &#123;</span><br><span class="line">    width: 28px;</span><br><span class="line">    height: 28px;</span><br><span class="line">    background: url(..&#x2F;images&#x2F;un_ico_subnav2x@v7.152.png) no-repeat;</span><br><span class="line">    background-size: 28px auto;</span><br><span class="line">    margin: 10px 0 5px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.sub-nav li:nth-child(2) a span &#123;</span><br><span class="line">    background-position: -0 -28px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.sub-nav li:nth-child(3) a span &#123;</span><br><span class="line">    background-position: -0 -56px;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">.sub-nav li:nth-child(4) a span &#123;</span><br><span class="line">    background-position: -0 -84px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="4-transform做到三角"><a href="#4-transform做到三角" class="headerlink" title="4.transform做到三角"></a><strong>4.transform做到三角</strong></h5><img src="/2020/05/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-flex%E5%B8%83%E5%B1%80/image-20200506171641232.png" alt="image-20200506171641232" style="zoom:80%;">
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.triangle &#123;</span><br><span class="line">    display: inline-block;</span><br><span class="line">    border: 1px solid #666;</span><br><span class="line">    border-width: 0 1px 1px 0;</span><br><span class="line">    width: 5px;</span><br><span class="line">    height: 5px;</span><br><span class="line">    transform: rotate(45deg);</span><br><span class="line">    -webkit-transform: rotate(45deg);</span><br><span class="line">    vertical-align: 2px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="5-border-radius做不规则提示框"><a href="#5-border-radius做不规则提示框" class="headerlink" title="5.border-radius做不规则提示框"></a><strong>5.border-radius做不规则提示框</strong></h5><img src="/2020/05/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-flex%E5%B8%83%E5%B1%80/image-20200506171823229.png" alt="image-20200506171823229" style="zoom:80%;">
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">.nav-item-jhj-tag &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 9px;</span><br><span class="line">    right: 65px;</span><br><span class="line">    font-size: 10px;</span><br><span class="line">    background-color: #f54c45;</span><br><span class="line">    border-radius: 7px 7px 7px 0;</span><br><span class="line">    padding: 0 3px;</span><br><span class="line">    line-height: normal;</span><br><span class="line">    color: #fff;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="6-图标和遮罩层用beafter伪元素"><a href="#6-图标和遮罩层用beafter伪元素" class="headerlink" title="6. 图标和遮罩层用beafter伪元素"></a>6. 图标和遮罩层用beafter伪元素</h5><img src="/2020/05/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-flex%E5%B8%83%E5%B1%80/image-20200506172714184.png" alt="image-20200506172714184" style="zoom:80%;">
+
+<p><strong>添加搜索图标</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">.search::before &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 5px;</span><br><span class="line">    left: 5px;</span><br><span class="line">    content: &quot;&quot;;</span><br><span class="line">    width: 15px;</span><br><span class="line">    height: 15px;</span><br><span class="line">    background: url(..&#x2F;images&#x2F;home-common-sprite2x@v7.15.png) no-repeat -0px -0px;</span><br><span class="line">    background-size: 21px auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>遮罩层</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.focus:before &#123;</span><br><span class="line">    content: &quot;&quot;;</span><br><span class="line">    position: absolute;</span><br><span class="line">    z-index: 2; &#x2F;&#x2F;避免遮罩层遮住其他</span><br><span class="line">    height: 60px;</span><br><span class="line">    display: block;</span><br><span class="line">    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, .4)), to(rgba(0, 0, 0, 0)));</span><br><span class="line">    background: linear-gradient(to bottom, rgba(0, 0, 0, .4), rgba(0, 0, 0, 0));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="7-椭圆下边框"><a href="#7-椭圆下边框" class="headerlink" title="7. 椭圆下边框"></a><strong>7. 椭圆下边框</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.focus &#123;</span><br><span class="line">    border-radius: 0 0 50% 50% &#x2F; 0 0 45px 45px;</span><br><span class="line">    background: #f2f2f2;</span><br><span class="line">    overflow: hidden;&#x2F;&#x2F;隐藏溢出部分</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="8-浮动-绝对定位元素水平居中自适应"><a href="#8-浮动-绝对定位元素水平居中自适应" class="headerlink" title="8. 浮动/绝对定位元素水平居中自适应"></a><strong>8. 浮动/绝对定位元素水平居中自适应</strong></h5><p>当元素浮动/绝对之后，就会脱离文档流。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">position: absolute;</span><br><span class="line">max-width: 540px;</span><br><span class="line">min-width: 320px;</span><br><span class="line">width: 100%;</span><br><span class="line">left: 50%;</span><br><span class="line">transform: translateX(-50%);</span><br><span class="line">-webkit-transform: translateX(-50%);</span><br></pre></td></tr></table></figure>
+
+<h5 id="9-伪元素-和-z-index无效的情况"><a href="#9-伪元素-和-z-index无效的情况" class="headerlink" title="9. 伪元素 和 z-index无效的情况"></a>9. 伪元素 和 z-index无效的情况</h5><p>img、input和其他的<strong>单标签</strong>是没有after和before伪元素的，因为单标签本身不能有子元素。</p>
 <p><strong>z-index无效的情况，一共有三种：</strong></p>
 <p>1、父标签 position属性为relative；</p>
 <p>2、问题标签无position属性（不包括static）；</p>
 <p>3、问题标签含有浮动(float)属性。</p>
-<p><strong>二倍图处理：</strong></p>
-<p>先打开图片，查看尺寸，确定图片尺寸和网页存放图片盒子的尺寸，确定是几倍图的关系</p>
-<p>背景图片的background-position除了位移还可以是方位词。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.nav-common a:nth-child(1) &#123;</span><br><span class="line">    flex: 0 1 31%;</span><br><span class="line">    background: url(..&#x2F;images&#x2F;grid-nav-items-hotel@v7.15.png) no-repeat bottom right;</span><br><span class="line">    background-size: 73px auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
 
       
 

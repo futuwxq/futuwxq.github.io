@@ -8,18 +8,21 @@
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
   <title>JS学习-js函数 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.函数的概念 在JS里面,可能会定义非常多的相同代码或者功能相似的代码,这些代码可能需要大量重复使用。 虽然for循环语句也能实现-些简单的重复操作,但是比较具有局限性,此时我们就可以使用JS中的函数。 函数:就是封装了一段可被重复调用执行的代码块。通过此代码块可以实现大量代码的重复使用。 函数使用函数使用分为两步： 声明函数 和 调用函数 1)声明函数 123function 函数名()">
+  <meta name="description" content="**函数在JS里面,可能会定义非常多的相同代码或者功能相似的代码,这些代码可能需要大量重复使用。 虽然for循环语句也能实现-些简单的重复操作,但是比较具有局限性,此时我们就可以使用JS中的函数。 函数:就是封装了一段可被重复调用执行的代码块。通过此代码块可以实现大量代码的重复使用。 函数使用函数使用分为两步： 声明函数 和 调用函数 1)声明函数123function 函数名() &amp;#123">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JS学习-js函数">
 <meta property="og:url" content="https://futuwxq.github.io/2020/05/16/JS%E5%AD%A6%E4%B9%A0-js%E5%87%BD%E6%95%B0/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="1.函数的概念 在JS里面,可能会定义非常多的相同代码或者功能相似的代码,这些代码可能需要大量重复使用。 虽然for循环语句也能实现-些简单的重复操作,但是比较具有局限性,此时我们就可以使用JS中的函数。 函数:就是封装了一段可被重复调用执行的代码块。通过此代码块可以实现大量代码的重复使用。 函数使用函数使用分为两步： 声明函数 和 调用函数 1)声明函数 123function 函数名()">
+<meta property="og:description" content="**函数在JS里面,可能会定义非常多的相同代码或者功能相似的代码,这些代码可能需要大量重复使用。 虽然for循环语句也能实现-些简单的重复操作,但是比较具有局限性,此时我们就可以使用JS中的函数。 函数:就是封装了一段可被重复调用执行的代码块。通过此代码块可以实现大量代码的重复使用。 函数使用函数使用分为两步： 声明函数 和 调用函数 1)声明函数123function 函数名() &amp;#123">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/16/JS%E5%AD%A6%E4%B9%A0-js%E5%87%BD%E6%95%B0/image-20200518203140858.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/16/JS%E5%AD%A6%E4%B9%A0-js%E5%87%BD%E6%95%B0/image-20200518214139237.png">
 <meta property="article:published_time" content="2020-05-16T10:00:51.000Z">
-<meta property="article:modified_time" content="2020-05-16T11:40:07.497Z">
+<meta property="article:modified_time" content="2020-05-18T14:15:08.954Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://futuwxq.github.io/2020/05/16/JS%E5%AD%A6%E4%B9%A0-js%E5%87%BD%E6%95%B0/image-20200518203140858.png">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
   
@@ -177,30 +180,19 @@
       
         <a id="more"></a>
 
-<p>1.函数的概念</p>
-<p>在JS里面,可能会定义非常多的<strong>相同代码或者功能相似</strong>的代码,这些代码可能需要大量重复使用。</p>
+<h2 id="函数"><a href="#函数" class="headerlink" title="**函数"></a>**函数</h2><p>在JS里面,可能会定义非常多的<strong>相同代码或者功能相似</strong>的代码,这些代码可能需要大量重复使用。</p>
 <p>虽然for循环语句也能实现-些简单的重复操作,但是比较具有局限性,此时我们就可以使用JS中的函数。</p>
 <p><strong>函数</strong>:就是封装了一段<strong>可被重复调用执行的代码块</strong>。通过此代码块可以实现大量代码的重复使用。</p>
 <h3 id="函数使用"><a href="#函数使用" class="headerlink" title="函数使用"></a>函数使用</h3><p>函数使用分为两步： 声明函数 和 调用函数</p>
-<p><strong>1)声明函数</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function 函数名() &#123;</span><br><span class="line">   函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="1-声明函数"><a href="#1-声明函数" class="headerlink" title="1)声明函数"></a><strong>1)声明函数</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function 函数名() &#123;</span><br><span class="line">   函数体</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>​     (1) function 是声明函数的关键字，必须<strong>小写</strong>。<br>​     (2) 函数是做某件事情，函数名一般是<strong>动词</strong> sayHi<br>​     (3) 函数不调用自己不执行</p>
-<p><strong>2) 调用函数</strong></p>
-<p>​      调用函数的时候千万不要忘记加小括号</p>
-<hr>
-<p>函数形参实参个数匹配问题</p>
-<p>函数形参实参个数匹配问题</p>
-<p> <strong>函数形参实参个数匹配问题</strong></p>
-<p>4.1 return语句</p>
-<p>有的时候,我们会希望函数将值返回给调用者,此时通过使用return语句就可以实现。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">函数名();</span><br></pre></td></tr></table></figure>
+<h5 id="2-调用函数"><a href="#2-调用函数" class="headerlink" title="2) 调用函数"></a><strong>2) 调用函数</strong></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">函数名();</span><br></pre></td></tr></table></figure>
 
-<p><strong>3）函数的封装</strong></p>
-<p>函数的封装是把一个或者多个功能通过函数的方式封装起来,对外只提供一个简单的函数接口</p>
+<p>​      调用函数的时候千万不要忘记加小括号。</p>
+<h5 id="3）函数的封装"><a href="#3）函数的封装" class="headerlink" title="3）函数的封装"></a><strong>3）函数的封装</strong></h5><p>函数的封装是把一个或者多个功能通过函数的方式封装起来,对外只提供一个简单的函数接口</p>
 <p>简单理解:封装类似于将电脑配件整合组装到机箱中(类似快递打包)    </p>
-<p>函数的参数</p>
-<h3 id="形参和实参"><a href="#形参和实参" class="headerlink" title="形参和实参"></a>形参和实参</h3><p>在声明函数时,可以在函数名称后面的小括号中添加一些参数,这些参数被称为<strong>形参</strong>,</p>
+<h3 id="函数的参数"><a href="#函数的参数" class="headerlink" title="函数的参数"></a>函数的参数</h3><h5 id="1-形参和实参"><a href="#1-形参和实参" class="headerlink" title="1)形参和实参"></a>1)形参和实参</h5><p>在声明函数时,可以在函数名称后面的小括号中添加一些参数,这些参数被称为<strong>形参</strong>,</p>
 <p>而在调用该函数时,同样也需要传递相应的参数,这些参数被称为<strong>实参</strong>。</p>
 <table>
 <thead>
@@ -219,23 +211,196 @@
 </tr>
 </tbody></table>
 <p>参数的作用:在函数内部某些值不能固定, 我们可以通过参数在调用函数时传递不同的值进去。</p>
-<h4 id="函数形参实参个数匹配问题"><a href="#函数形参实参个数匹配问题" class="headerlink" title="函数形参实参个数匹配问题"></a><strong>函数形参实参个数匹配问题</strong></h4><p>如下函数</p>
+<h5 id="2-函数形参实参个数匹配问题"><a href="#2-函数形参实参个数匹配问题" class="headerlink" title="2) 函数形参实参个数匹配问题"></a><strong>2) 函数形参实参个数匹配问题</strong></h5><p>如下函数</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function getSum(num1, num2) &#123;</span><br><span class="line">       console.log(num1 + num2);</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
 
 <p>  1）如果实参的个数和形参的个数一致 则正常输出结果</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getSum(1, 2);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getSum(1, 2);&#x2F;&#x2F;3</span><br></pre></td></tr></table></figure>
 
 <p> 2）如果实参的个数多于形参的个数  会取到形参的个数 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getSum(1, 2, 3);</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getSum(1, 2, 3);&#x2F;&#x2F;3</span><br></pre></td></tr></table></figure>
 
-<p> 3）如果实参的个数小于形参的个数 ，多于的形参定义为undefined ， 最终的结果就是 NaN。</p>
-<p>形参可以看做是不用声明的变量  num2 是一个变量但是没有接受值  结果就是undefined  。</p>
+<p> 3）如果实参的个数小于形参的个数 ，多于的形参定义为undefined ，最终的结果就是 NaN。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">getSum(1); &#x2F;&#x2F; NaN</span><br></pre></td></tr></table></figure>
 
-<p> <strong>建议 我们尽量让实参的个数和形参相匹配</strong></p>
-<h3 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h3><p>4.1 return语句</p>
-<p>有的时候,我们会希望函数将值返回给调用者,此时通过使用return语句就可以实现。</p>
-<p>函数名();<br>(1) 我们函数只是实现某种功能，最终的结果需要返回给函数的调用者函数名() 通过return 实现的<br>(2) 只要函数遇到return 就把后面的结果 返回给函数的调用者  函数名() = return后面的结果</p>
+<p>形参可以看做是不用声明的变量,  num2 是一个变量但是没有接受值  , 结果就是undefined  。</p>
+<p> <strong>我们尽量让实参的个数和形参相匹配</strong></p>
+<h3 id="函数的返回值"><a href="#函数的返回值" class="headerlink" title="函数的返回值"></a>函数的返回值</h3><h5 id="1-return语句"><a href="#1-return语句" class="headerlink" title="1) return语句"></a>1) return语句</h5><p>有的时候,我们会希望函数将值返回给调用者,此时通过使用return语句就可以实现。</p>
+<p>(1) 我们函数只是实现某种功能, 最终的结果需要返回给函数的调用者函数名() ，通过return 实现的。</p>
+<p>(2) 只要函数遇到return 就把后面的结果， 返回给函数的调用者 ， 函数名() = return后面的结果。</p>
+<h5 id="2-函数返回值注意事项"><a href="#2-函数返回值注意事项" class="headerlink" title="2) 函数返回值注意事项"></a><strong>2) 函数返回值注意事项</strong></h5><p>1.return可以终止函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function getSum(num1, num2) &#123;</span><br><span class="line">    return num1 + num2; &#x2F;&#x2F; return 后面的代码不会被执行</span><br><span class="line">    alert(&#39;我是不会被执行的哦！&#39;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>2.return 只能返回一个值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function fn(num1, num2) &#123;</span><br><span class="line">	return num1, num2; &#x2F;&#x2F; 返回的结果是最后一个值</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3.return任意两个数的加减乘数结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function getResult(num1, num2) &#123;</span><br><span class="line">	return [num1 + num2, num1 - num2, num1 * num2, num1 &#x2F; num2];</span><br><span class="line">&#125;</span><br><span class="line">var re &#x3D; getResult(1, 2); &#x2F;&#x2F; 返回的是一个数组</span><br><span class="line">console.log(re);</span><br></pre></td></tr></table></figure>
+
+<p>4.函数return</p>
+<p>我们的函数如果有return 则返回的是 return 后面的值。</p>
+<p>如果函数没有return ，则返回undefined。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function fun1() &#123;</span><br><span class="line">	return 666;</span><br><span class="line">&#125;</span><br><span class="line">console.log(fun1()); &#x2F;&#x2F; 返回 666</span><br><span class="line"></span><br><span class="line">function fun2() &#123;</span><br><span class="line">&#125;</span><br><span class="line">console.log(fun2()); &#x2F;&#x2F; 函数返回的结果是 undefined</span><br></pre></td></tr></table></figure>
+
+<h3 id="arguments使用"><a href="#arguments使用" class="headerlink" title="arguments使用"></a>arguments使用</h3><p>当我们不确定有多少个参数传递的时候,可以用arguments来获取。</p>
+<p>在JavaScript中, arguments实际上它是当前函数的一个内置对象。所有函数都内置了一个arguments对象, arguments对象中存储了传递的所有实参。只有函数才有 arguments对象。</p>
+<pre><code>function fn() {
+    console.log(arguments); // 里面存储了所有传递过来的实参  arguments = [1,2,3]
+    console.log(arguments.length);//3
+    console.log(arguments[2]);//3
+}
+fn(1, 2, 3);</code></pre><h5 id="1）伪数组"><a href="#1）伪数组" class="headerlink" title="1）伪数组"></a><strong>1）伪数组</strong></h5><p> arguments展示形式是一个<strong>伪数组</strong> ,因此可以遍历，伪数组并不是真正意义上的数组。</p>
+<ul>
+<li><p>具有数组的 length 属性</p>
+</li>
+<li><p>按照索引的方式进行存储的</p>
+</li>
+<li><p>它没有真正数组的一些方法 pop()  push() 等等</p>
+</li>
+</ul>
+<h5 id="2）遍历arguments"><a href="#2）遍历arguments" class="headerlink" title="2）遍历arguments"></a>2）遍历arguments</h5><p>按照数组的方式遍历arguments。</p>
+<pre><code>function fn() {
+    for (var i = 0; i &lt; arguments.length; i++) {
+            console.log(arguments[i]);
+    }
+}
+fn(1, 2, 3,4);</code></pre><h3 id="函数的声明方式"><a href="#函数的声明方式" class="headerlink" title="函数的声明方式"></a>函数的声明方式</h3><h5 id="1）命名声明函数"><a href="#1）命名声明函数" class="headerlink" title="1）命名声明函数"></a>1）命名声明函数</h5><p>利用函数关键字自定义函数(命名函数)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function fn() &#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn();</span><br></pre></td></tr></table></figure>
+
+<h5 id="2-函数表达式-匿名函数-声明"><a href="#2-函数表达式-匿名函数-声明" class="headerlink" title="2.函数表达式(匿名函数) 声明"></a>2.函数表达式(匿名函数) 声明</h5><p>   var 变量名 = function() {};</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var fun &#x3D; function(aru) &#123;</span><br><span class="line">    console.log(&#39;我是函数表达式&#39;);</span><br><span class="line">    console.log(aru);</span><br><span class="line">      &#125;</span><br><span class="line">fun();</span><br><span class="line">fun(&#39;今天&#39;);</span><br></pre></td></tr></table></figure>
+
+<p>(1) fun是变量名， 不是函数名，<br> (2) 函数表达式声明方式跟声明变量差不多，只不过变量里面存的是值 ，而函数表达式里面存的是函数，<br>(3) 函数表达式也可以进行传递参数。</p>
+<h2 id="作用域"><a href="#作用域" class="headerlink" title="**作用域"></a>**作用域</h2><p>通常来说，一段程序代码中所用到的名字并不总是有效和可用的,而限定这个名字的可用性的代码范围就是这个名字的作用域。</p>
+<p>作用域的使用提高了程序逻辑的局部性,增强了程序的可靠性,减少了名字冲突。 </p>
+<h3 id="JS的作用域"><a href="#JS的作用域" class="headerlink" title="JS的作用域"></a>JS的作用域</h3><p>js的作用域（es6）之前 ： 全局作用域   和 局部作用域 </p>
+<ul>
+<li><p>全局作用域： 整个script标签 或者是一个单独的js文件</p>
+</li>
+<li><p>局部作用域（函数作用域） ：在<strong>函数内部</strong>就是局部作用域 ，这个代码的名字只在函数内部起效果和作用。</p>
+</li>
+</ul>
+<h3 id="变量的作用域"><a href="#变量的作用域" class="headerlink" title="变量的作用域"></a>变量的作用域</h3><p>变量的作用域：根据作用域的不同我们变量分为 全局变量 和 局部变量。</p>
+<p>1.全局变量： 在全局作用域下的变量 ，在全局下都可以使用，无论是在函数内部还是外部。</p>
+<p>注意 ：<strong>如果在函数内部， 没有声明直接赋值的变量也属于全局变量</strong></p>
+<p>2.局部作用域</p>
+<p>局部变量是只能在<strong>函数内部</strong>使用。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function fun(aru) &#123;</span><br><span class="line">    var num1 &#x3D; 10; &#x2F;&#x2F; num1就是局部变量 只能在函数内部使用</span><br><span class="line">    num2 &#x3D; 20;&#x2F;&#x2F;num2是局部变量</span><br><span class="line">&#125;</span><br><span class="line">console.log(num1)&#x2F;&#x2F;num1未定义</span><br></pre></td></tr></table></figure>
+
+<p>3.从执行效率来看全局变量和局部变量</p>
+<ul>
+<li>全局变量：只有浏览器关闭的时候才会销毁，比较占内存资源。</li>
+<li>局部变量：当我们程序执行完毕就会销毁， 比较节约内存资源</li>
+</ul>
+<h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><p>js的作用域包括：全局作用域  和 局部作用域 ，现阶段我们js<strong>没有块级作用域</strong>。<br>我们js 也是在 es6 的时候新增的块级作用域。</p>
+<p>什么是块级作用域？</p>
+<p> 就像{}   if {}  for {}这种，变量只会在作用域中有用，比如下面这段java代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if(xx) &#123;</span><br><span class="line">	int num &#x3D; 10;</span><br><span class="line">&#125;</span><br><span class="line">&#x2F;&#x2F;外面的是不能调用num的</span><br></pre></td></tr></table></figure>
+
+<p>   但是在JS中，不会有块级作用域</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if (3 &lt; 5) &#123;</span><br><span class="line">	var num &#x3D; 10;</span><br><span class="line">&#125;</span><br><span class="line">console.log(num);&#x2F;&#x2F;10</span><br></pre></td></tr></table></figure>
+
+<h3 id="作用域链"><a href="#作用域链" class="headerlink" title="作用域链"></a>作用域链</h3><p>只要是代码,就至少有一个作用域 。</p>
+<p>如果函数中还有函数 ,那么在这个作用域中就又可以诞生一个作用域，根据在内部函数可以访问外部函数变量的这种机制 ,用链式查找决定哪些数据能被内部函数访问,就称作<strong>作用域链</strong>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 作用域链 ：就近原则</span><br><span class="line">var num &#x3D; 10;</span><br><span class="line"></span><br><span class="line">function fn1() &#123; &#x2F;&#x2F; 外部函数</span><br><span class="line">    var num &#x3D; 20;</span><br><span class="line"></span><br><span class="line">    function fun() &#123; &#x2F;&#x2F; 内部函数</span><br><span class="line">        console.log(num);</span><br><span class="line">    &#125;</span><br><span class="line">    fun();</span><br><span class="line">&#125;</span><br><span class="line">fn1();</span><br></pre></td></tr></table></figure>
+
+<p>上面的console会输出20，从上面可以看出函数的使用需要先定义再使用，程序执行的顺序是从上到下依次执行可执行语句，就像上面首先执行 var num = 10; 接着就是  fn1();，然后进入函数的内部。</p>
+<p><strong>就近原则的案例</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function f1() &#123;</span><br><span class="line">    var num &#x3D; 123;</span><br><span class="line">    function f2() &#123;</span><br><span class="line">        console.log(num); &#x2F;&#x2F; 站在目标出发，一层一层的往外查找</span><br><span class="line">    &#125;</span><br><span class="line">    f2();</span><br><span class="line">&#125;</span><br><span class="line">var num &#x3D; 456;</span><br><span class="line">f1();</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/05/16/JS%E5%AD%A6%E4%B9%A0-js%E5%87%BD%E6%95%B0/image-20200518203140858.png" alt="image-20200518203140858" style="zoom:80%;">
+
+<h2 id="预解析"><a href="#预解析" class="headerlink" title="**预解析"></a>**预解析</h2><p>JavaScript代码是由浏览器中的JavaScript解析器来执行的。</p>
+<p>JavaScript 解析器在运行JavaScript代码的时候分为两步:</p>
+<p>1）预解析</p>
+<p> js引擎会把js 里面所有的 var 声明 和 function声明 提升到当前作用域的最前面。</p>
+<p>2）代码执行</p>
+<p>按照代码书写的顺序从上往下执行。</p>
+<p>预解析分为变量预解析（变量提升） 和 函数预解析（函数提升）。</p>
+<h3 id="变量提升"><a href="#变量提升" class="headerlink" title="变量提升"></a>变量提升</h3><p>就是把所有的变量声明（<strong>var</strong>）提升到<strong>当前的作用域</strong>最前面 ，<strong>但是不提升赋值操</strong>作。</p>
+<p>当仅有下面一行代码的时候，控制台会报错</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(num);</span><br></pre></td></tr></table></figure>
+
+<p>如下代码，控制台不会报错，会显示num 是 undefined。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(num); &#x2F;&#x2F; undefined</span><br><span class="line">var num &#x3D; 10;</span><br></pre></td></tr></table></figure>
+
+<p>上面就是变量替身的例子，上面的代码在js预解析之后相当于执行了以下代码，因此控制台输出时，变量是声明但未赋值，就是undefined。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var num;</span><br><span class="line"> console.log(num);</span><br><span class="line"> num &#x3D; 10;</span><br></pre></td></tr></table></figure>
+
+<p><strong>变量声明的函数</strong></p>
+<p>如下代码，控制台报错，fun不是一个function</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fun();</span><br><span class="line">var fun &#x3D; function() &#123;</span><br><span class="line">console.log(22);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里也用到了变量提升，相当于执行了以下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var fun;</span><br><span class="line">fun(); &#x2F;&#x2F;运行到这里，fun只是一个变量</span><br><span class="line">fun &#x3D; function() &#123;</span><br><span class="line">	console.log(22);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>因此，<strong>函数调用必须写在函数表达式的下面</strong></p>
+<h3 id="函数提升"><a href="#函数提升" class="headerlink" title="函数提升"></a>函数提升</h3><p> 就是把所有的函数声明提升到<strong>当前作用域</strong>的最前面 ，<strong>但是不调用函数</strong>。</p>
+<p>下面代码函数调用写在函数表达式的下面，但是依然会正常输出。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fn();</span><br><span class="line">function fn() &#123;</span><br><span class="line">	console.log(11);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>这里用到了函数提升的概念，相当于执行了以下代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function fn() &#123; &#x2F;&#x2F;把函数声明提到当前作用域的前面，但是不调用函数</span><br><span class="line">	console.log(11);</span><br><span class="line">&#125;   </span><br><span class="line">fn();</span><br></pre></td></tr></table></figure>
+
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><p>现实生活中:万物皆对象,对象是一个具体的事物,看得见摸得着的实物。</p>
+<p>例如,一本书、一辆汽车、一个人可以是“对象”, 一个数据库、一张网页、 一个与远程服务器的连接也可以是“对象”。</p>
+<h3 id="什么是对象"><a href="#什么是对象" class="headerlink" title="什么是对象?"></a>什么是对象?</h3><p>在JavaScript中,<strong>对象是一组无序的相关属性和方法的集合</strong>,所有的事物都是对象,例如字符串、数值、数组、函数等。</p>
+<p>对象是由属性和方法组成的。</p>
+<p><strong>属性</strong>:事物的特征，在对象中用属性来表示(常用名词)</p>
+<p><strong>方法</strong>:事物的行为,在对象中用方法来表示(常用动词)</p>
+<img src="/2020/05/16/JS%E5%AD%A6%E4%B9%A0-js%E5%87%BD%E6%95%B0/image-20200518214139237.png" alt="image-20200518214139237" style="zoom:80%;">
+
+<p><strong>为什么需要对象</strong></p>
+<p>保存一个值时,可以使用变量，当保存多个值( 一组值)时,可以使用数组。</p>
+<p>如果要保存一个人的完整信息呢 ?</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var infor &#x3D; [&#39;张三&#39;，&#39;男&#39;，124]</span><br></pre></td></tr></table></figure>
+
+<p>显然使用数组语义化不清晰，我们可以凭借经验知道数组的前两个数据是姓名和性别，但是缺不清楚第三个数据是什么。</p>
+<p>js中的对象介意解决这一问题，对象通过属性可以清楚的知道，每个数据的含义。</p>
+<p><strong>变量和属性</strong></p>
+<p>相同点： 他们都是用来存储数据的</p>
+<p>不同点：</p>
+<p>变量是单独声明并赋值 ，使用的时候直接写变量名 ，他是单独存在。</p>
+<p>属性是在对象里面的不需要声明的 ，使用的时候必须是 对象.属性。</p>
+<p><strong>函数和方法</strong></p>
+<p>相同点：都是实现某种功能  做某件事</p>
+<p>不同点：</p>
+<p>函数是单独声明，调用的时候通过函数名() ，它是单独存在的</p>
+<p>方法是在对象里面 ，不需要声明，调用的时候通过 对象.方法()</p>
+<h3 id="创建对象的三种方式"><a href="#创建对象的三种方式" class="headerlink" title="创建对象的三种方式"></a>创建对象的三种方式</h3><h4 id="1-利用字面量创建对象"><a href="#1-利用字面量创建对象" class="headerlink" title="1- 利用字面量创建对象"></a>1- 利用字面量创建对象</h4><p><strong>对象字面量</strong>:就是花括号{}里面包含了表达这个具体事物(对象)的属性和方法。</p>
+<p>{} 里面的属性或者方法我们采取键值对的形式 ：键（属性名 ）：值（属性值）。多个属性或者方法中间用<strong>逗号</strong>隔开的，方法冒号后面跟的是一个匿名函数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; var obj &#x3D; &#123;&#125;;  &#x2F;&#x2F; 创建了一个空的对象 </span><br><span class="line">var obj &#x3D; &#123;</span><br><span class="line">        uname: &#39;张三疯&#39;,</span><br><span class="line">        age: 18,</span><br><span class="line">        sex: &#39;男&#39;,</span><br><span class="line">        sayHi: function() &#123;</span><br><span class="line">            console.log(&#39;hi~&#39;);</span><br><span class="line"></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>调用属性</strong></p>
+<p>1)调用对象的属性，采取<strong>对象名.属性名</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(obj.uname);</span><br></pre></td></tr></table></figure>
+
+<p>2)调用属性还有一种方法 对象名[‘属性名’]</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(obj[&#39;age&#39;]);</span><br></pre></td></tr></table></figure>
+
+<p><strong>调用方法</strong></p>
+<p>3)调用对象的方法 ,通过对象名.方法名() </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">obj.sayHi();&#x2F;&#x2F;千万别忘记添加小括号</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-利用new-obiect创建对象"><a href="#2-利用new-obiect创建对象" class="headerlink" title="2-利用new obiect创建对象"></a>2-利用new obiect创建对象</h4><p>我们是利用 等号 = 赋值的方法去添加对象的属性和方法，每个属性和方法之间用分号(<strong>;</strong>)结束。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 利用 new Object 创建对象</span><br><span class="line">var obj &#x3D; new Object(); &#x2F;&#x2F; 创建了一个空的对象</span><br><span class="line">obj.uname &#x3D; &#39;张三疯&#39;;</span><br><span class="line">obj.age &#x3D; 18;</span><br><span class="line">obj.sex &#x3D; &#39;男&#39;;</span><br><span class="line">obj.sayHi &#x3D; function() &#123;</span><br><span class="line">        console.log(&#39;hi~&#39;);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">console.log(obj.uname);</span><br><span class="line">console.log(obj[&#39;sex&#39;]);</span><br><span class="line">obj.sayHi();</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-利用构造函数创建对象"><a href="#3-利用构造函数创建对象" class="headerlink" title="3-利用构造函数创建对象"></a>3-利用构造函数创建对象</h4><p>为什么需要使用构造函数</p>
+<p>就是因我们前面两种创建对象的方式一次只能创建一个对象,里面很多的属性和方法是大量相同的 我们只能复制 。</p>
+<p>因此我们可以利用函数的方法 重复这些相同的代码 我们就把这个函数称为 <strong>构造函数</strong>。</p>
+<p>构造函数 就是把我们对象里面一些相同的属性和方法抽象出来封装到函数里面</p>
+<p>利用构造函数创建对象</p>
+<p>我们需要创建四大天王的对象  相同的属性： 名字 年龄 性别  相同的方法： 唱歌。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> 构造函数的语法格式</span><br><span class="line"> function 构造函数名() &#123;</span><br><span class="line">     this.属性 &#x3D; 值;</span><br><span class="line">     this.方法 &#x3D; function() &#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> new 构造函数名();</span><br><span class="line">function Star(uname, age, sex) &#123;</span><br><span class="line">    this.name &#x3D; uname;</span><br><span class="line">    this.age &#x3D; age;</span><br><span class="line">    this.sex &#x3D; sex;</span><br><span class="line">    this.sing &#x3D; function(sang) &#123;</span><br><span class="line">    console.log(sang);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>当我们需要使用的时候</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var ldh &#x3D; new Star(&#39;刘德华&#39;, 18, &#39;男&#39;); &#x2F;&#x2F; 调用函数返回的是一个对象</span><br><span class="line">var zxy &#x3D; new Star(&#39;张学友&#39;, 19, &#39;男&#39;);</span><br></pre></td></tr></table></figure>
+
 
       
 

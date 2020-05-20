@@ -175,82 +175,9 @@
         <p>Web APIs和JS基础关联性</p>
 <p>什么是Web APIs，Web APIs又和 JS基础有什么关联性？</p>
 <p>先来看看JS的组成，大致了解Web APIs也是js的一部分。</p>
-<img src="/2020/05/19/WebAPIs-Dom%E5%AD%A6%E4%B9%A0/image-20200519213356768.png" alt="image-20200519213356768" style="zoom:60%;">
-
-<p>在JS基础阶段</p>
-<ul>
-<li><p>我们学习的是ECMAScript标准规定的基本语法</p>
-</li>
-<li><p>要求掌握JS基础语法</p>
-</li>
-<li><p>只学习基本语法,做不了常用的网页交互效果</p>
-</li>
-<li><p>目的是为了JS后面的课程打基础、做铺垫。</p>
-</li>
-</ul>
-<p>在Web APIs阶段</p>
-<ul>
-<li><p>web APIs是W3C组织的标准</p>
-</li>
-<li><p>Web API我们主要学习DOM和BOM</p>
-</li>
-<li><p>Web APIs是我们JS所独有的部分</p>
-</li>
-<li><p>主要学习页面交互功能</p>
-</li>
-<li><p>需要使用JS基础的课程内容做基础</p>
-</li>
-</ul>
-<p><strong>JS基础学习ECMAScript 基础语法为后面作铺垫，web APIs是JS的应用,大量使用JS基础语法做交互效果。</strong></p>
-<p><strong>API</strong> ( Application Programming Interface,应用程序编程接口)是一些预先定义的函数,目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力,而又无需访问源码,或理解内部工作机制的细节。</p>
-<p>简单理解: API是给程序员提供的一种工具,以便能更轻松的实现想要完成的功能。</p>
-<p><strong>Web API</strong>是浏览器提供的一套<strong>操作浏览器</strong>功能和页面元素的API( BOM和DOM)。现阶段我们主要针对于浏览器讲解常用的API,主要针对浏览器做交互效果。</p>
-<p>比如我们想要浏览器弹出一个警示框,直接使用alert(‘弹出’ )</p>
-<p>MDN详细API:<a href="https://developer.mozilla.org/zh-CN/docs/Web/API" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API</a></p>
-<p>因为Web API很多，所以这个阶段成为Web APIs。</p>
-<p><strong>API和Web API总结</strong></p>
-<p>1.API是为我们程序员提供的一个接口,帮助我们实现某种功能,我们会使用就可以了,不必纠结内部如何实现</p>
-<p>2.Web API主要是针对于浏览器提供的接口, 主要针对于浏览器做交互效果。</p>
-<p>3.Web API 一般都有输入和输出(函数的传参和返回值) , Web API很多都是方法(函数)</p>
-<p>4.学习Web API可以结合前面学习内置对象方法的思路学习</p>
-<h2 id="DOM简介"><a href="#DOM简介" class="headerlink" title="DOM简介"></a>DOM简介</h2><p><strong>文档对象模型( Document Object Model ,简称DOM)</strong>,是 W3C组织推荐的处理可扩展标记语言( HTML或者XML )的标准编程接口。W3C已经定义了一系列的DOM接口,通过这些DOM接口可以改变网页的内容、结构和样式。</p>
-<p>DOM树</p>
-<img src="/2020/05/19/WebAPIs-Dom%E5%AD%A6%E4%B9%A0/image-20200519220108612.png" alt="image-20200519220108612" style="zoom:80%;">
-
-<p>文档:一个页面就是一 个文档 , DOM中使用document表示</p>
-<p>元素: 页面中的<strong>所有标签</strong>都是元素, DOM中使用element表示</p>
-<p>节点: 网页中的<strong>所有内容</strong>都是节点(标签、属性、文本、注释等) , DOM中使用node表示。</p>
-<p><strong>DOM把以上内容都看做是对象</strong></p>
-<h2 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h2><p>2.1如何获取页面元素</p>
-<p>DOM在我们实际开发中主要用来操作元素。我们如何来获取页面中的元素呢?获取页面中的元素可以使用以下几种方式:</p>
-<ul>
-<li><p>根据ID获取</p>
-</li>
-<li><p>根据标签名获取</p>
-</li>
-<li><p>通过HTML5新增的方法获取</p>
-</li>
-<li><p>特殊元素获取</p>
-</li>
-</ul>
-<p><strong>根据ID获取</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;time&quot;&gt;2019-9-9&lt;&#x2F;div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    &#x2F;&#x2F; 1. 因为我们文档页面从上往下加载，所以先得有标签 所以我们script写到标签的下面</span><br><span class="line">    &#x2F;&#x2F; 2. get获得element元素by id，通过驼峰命名法 </span><br><span class="line">    &#x2F;&#x2F; 3. 参数id是大小写敏感的字符串</span><br><span class="line">    &#x2F;&#x2F; 4. 返回的是一个元素对象</span><br><span class="line">    var timer &#x3D; document.getElementById(&#39;time&#39;);</span><br><span class="line">    console.log(timer);</span><br><span class="line">    console.log(typeof timer);&#x2F;&#x2F;object</span><br><span class="line">    &#x2F;&#x2F; 5. console.dir 打印我们返回的元素对象 更好的查看里面的属性和方法</span><br><span class="line">    console.dir(timer);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>根据标签名获取</strong></p>
-<p>使用getElementsByTagName0方法可以返回带有指定标签名的对象的集合。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var lis &#x3D; document.getElementsByTagName(&#39;li&#39;);</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>返回的是 获取过来元素对象的集合 以伪数组的形式存储的</li>
-<li>如果页面中只有一个li ，返回的还是伪数组的形式 </li>
-<li>如果页面中没有这个元素， 返回的是空的伪数组的形式</li>
-<li>element.getElementsByTagName(‘标签名’); <strong>父元素必须是指定的单个元素</strong></li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var ol &#x3D; document.getElementsByTagName(&#39;ol&#39;);</span><br><span class="line"> console.log(ol.getElementsByTagName(&#39;li&#39;));&#x2F;&#x2F;报错，ol是个伪数组，不是指定的的那个元素</span><br><span class="line"> console.log(ol[0].getElementsByTagName(&#39;li&#39;));</span><br><span class="line"> </span><br><span class="line">&#x2F;&#x2F;通常我们可以给父元素指定一个id，这样获取父元素的子标签</span><br><span class="line">var ol &#x3D; document.getElementById(&#39;ol&#39;);</span><br><span class="line">console.log(ol.getElementsByTagName(&#39;li&#39;));</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="事件基础"><a href="#事件基础" class="headerlink" title="事件基础"></a>事件基础</h2><h2 id="操作元素"><a href="#操作元素" class="headerlink" title="操作元素"></a>操作元素</h2><h2 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h2>
+        
+          <a class="article-more-a" href="/2020/05/19/WebAPIs-Dom%E5%AD%A6%E4%B9%A0/#more">more >></a>
+        
       
 
       

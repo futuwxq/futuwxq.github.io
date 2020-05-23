@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
   <title>WebAPIs-Dom学习 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Web APIs和JS基础关联性 什么是Web APIs，Web APIs又和 JS基础有什么关联性？ 先来看看JS的组成，大致了解Web APIs也是js的一部分。">
+  <meta name="description" content="Web APIs 和 JS基础有什么关联性？先来看看JS的组成，大致了解Web APIs也是js的一部分。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WebAPIs-Dom学习">
 <meta property="og:url" content="https://futuwxq.github.io/2020/05/19/WebAPIs-Dom%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="Web APIs和JS基础关联性 什么是Web APIs，Web APIs又和 JS基础有什么关联性？ 先来看看JS的组成，大致了解Web APIs也是js的一部分。">
+<meta property="og:description" content="Web APIs 和 JS基础有什么关联性？先来看看JS的组成，大致了解Web APIs也是js的一部分。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/19/WebAPIs-Dom%E5%AD%A6%E4%B9%A0/image-20200519213356768.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/19/WebAPIs-Dom%E5%AD%A6%E4%B9%A0/image-20200519220108612.png">
@@ -24,10 +24,12 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/19/WebAPIs-Dom%E5%AD%A6%E4%B9%A0/image-20200520155332300.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/19/WebAPIs-Dom%E5%AD%A6%E4%B9%A0/image-20200520163008432.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/19/WebAPIs-Dom%E5%AD%A6%E4%B9%A0/image-20200520200444941.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/19/WebAPIs-Dom%E5%AD%A6%E4%B9%A0/image-20200521110338964.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/19/WebAPIs-Dom%E5%AD%A6%E4%B9%A0/image-20200522094921731.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/19/WebAPIs-Dom%E5%AD%A6%E4%B9%A0/image-20200522173931715.png">
 <meta property="article:published_time" content="2020-05-19T13:31:58.000Z">
-<meta property="article:modified_time" content="2020-05-20T14:12:53.419Z">
+<meta property="article:modified_time" content="2020-05-23T02:38:49.425Z">
 <meta property="article:author" content="不知火舞">
-<meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://futuwxq.github.io/2020/05/19/WebAPIs-Dom%E5%AD%A6%E4%B9%A0/image-20200519213356768.png">
   
@@ -185,25 +187,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Web APIs和JS基础关联性</p>
-<p>什么是Web APIs，Web APIs又和 JS基础有什么关联性？</p>
-<p>先来看看JS的组成，大致了解Web APIs也是js的一部分。</p>
+        <h3 id="Web-APIs-和-JS基础有什么关联性？"><a href="#Web-APIs-和-JS基础有什么关联性？" class="headerlink" title="Web APIs 和 JS基础有什么关联性？"></a>Web APIs 和 JS基础有什么关联性？</h3><p>先来看看JS的组成，大致了解Web APIs也是js的一部分。</p>
 <a id="more"></a>
 
 <img src="/2020/05/19/WebAPIs-Dom%E5%AD%A6%E4%B9%A0/image-20200519213356768.png" alt="image-20200519213356768" style="zoom:60%;">
 
-<p>在JS基础阶段</p>
+<p><strong>在JS基础阶段</strong></p>
 <ul>
 <li><p>我们学习的是ECMAScript标准规定的基本语法</p>
 </li>
-<li><p>要求掌握JS基础语法</p>
+<li><p>掌握JS基础语法</p>
 </li>
 <li><p>只学习基本语法,做不了常用的网页交互效果</p>
 </li>
 <li><p>目的是为了JS后面的课程打基础、做铺垫。</p>
 </li>
 </ul>
-<p>在Web APIs阶段</p>
+<p><strong>在Web APIs阶段</strong></p>
 <ul>
 <li><p>web APIs是W3C组织的标准</p>
 </li>
@@ -217,25 +217,28 @@
 </li>
 </ul>
 <p><strong>JS基础学习ECMAScript 基础语法为后面作铺垫，web APIs是JS的应用,大量使用JS基础语法做交互效果。</strong></p>
-<p><strong>API</strong> ( Application Programming Interface,应用程序编程接口)是一些预先定义的函数,目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力,而又无需访问源码,或理解内部工作机制的细节。</p>
-<p>简单理解: API是给程序员提供的一种工具,以便能更轻松的实现想要完成的功能。</p>
-<p><strong>Web API</strong>是浏览器提供的一套<strong>操作浏览器</strong>功能和页面元素的API( BOM和DOM)。现阶段我们主要针对于浏览器讲解常用的API,主要针对浏览器做交互效果。</p>
-<p>比如我们想要浏览器弹出一个警示框,直接使用alert(‘弹出’ )</p>
+<h3 id="什么是Web-APIs"><a href="#什么是Web-APIs" class="headerlink" title="什么是Web APIs"></a>什么是Web APIs</h3><p><strong>API</strong> ( Application Programming Interface,应用程序编程接口)是一些预先定义的函数,目的是提供应用程序与开发人员基于某软件或硬件得以访问一组例程的能力,而又无需访问源码,或理解内部工作机制的细节。<strong>简单理解</strong>: API是给程序员提供的一种工具,以便能更轻松的实现想要完成的功能。</p>
+<p><strong>Web API</strong>是浏览器提供的一套<strong>操作浏览器</strong>功能和页面元素的API( BOM和DOM)。现阶段我们主要针对于浏览器讲解常用的API,主要针对浏览器做交互效果。 比如我们想要浏览器弹出一个警示框,直接使用alert(‘弹出’ )。因为Web API很多，所以这个阶段成为Web APIs。</p>
 <p>MDN详细API:<a href="https://developer.mozilla.org/zh-CN/docs/Web/API" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/API</a></p>
-<p>因为Web API很多，所以这个阶段成为Web APIs。</p>
 <p><strong>API和Web API总结</strong></p>
 <p>1.API是为我们程序员提供的一个接口,帮助我们实现某种功能,我们会使用就可以了,不必纠结内部如何实现</p>
 <p>2.Web API主要是针对于浏览器提供的接口, 主要针对于浏览器做交互效果。</p>
 <p>3.Web API 一般都有输入和输出(函数的传参和返回值) , Web API很多都是方法(函数)</p>
 <p>4.学习Web API可以结合前面学习内置对象方法的思路学习</p>
 <h2 id="DOM简介"><a href="#DOM简介" class="headerlink" title="DOM简介"></a>DOM简介</h2><p><strong>文档对象模型( Document Object Model ,简称DOM)</strong>,是 W3C组织推荐的处理可扩展标记语言( HTML或者XML )的标准编程接口。W3C已经定义了一系列的DOM接口,通过这些DOM接口可以改变网页的内容、结构和样式。</p>
-<p>DOM树</p>
+<p><strong>DOM树</strong></p>
 <img src="/2020/05/19/WebAPIs-Dom%E5%AD%A6%E4%B9%A0/image-20200519220108612.png" alt="image-20200519220108612" style="zoom:80%;">
 
-<p>文档:一个页面就是一 个文档 , DOM中使用document表示</p>
-<p>元素: 页面中的<strong>所有标签</strong>都是元素, DOM中使用element表示</p>
-<p>节点: 网页中的<strong>所有内容</strong>都是节点(标签、属性、文本、注释等) , DOM中使用node表示。</p>
-<p><strong>DOM把以上内容都看做是对象</strong></p>
+<p>DOM树中一些概念</p>
+<ul>
+<li><p>文档:一个页面就是一 个文档 , DOM中使用<strong>document</strong>表示</p>
+</li>
+<li><p>元素: 页面中的<strong>所有标签</strong>都是元素, DOM中使用<strong>element</strong>表示</p>
+</li>
+<li><p>节点: 网页中的<strong>所有内容</strong>都是节点(标签、属性、文本、注释等) , DOM中使用<strong>node</strong>表示。</p>
+</li>
+</ul>
+<p><strong>DOM把以上内容都看做是对象</strong>，我们获取的dom元素是一个对象（object），所以称为文档对象模型。</p>
 <h2 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h2><p>DOM在我们实际开发中主要用来操作元素。我们如何来获取页面中的元素呢?获取页面中的元素可以使用以下几种方式:</p>
 <ul>
 <li><p>根据ID获取</p>
@@ -244,10 +247,10 @@
 </li>
 <li><p>通过HTML5新增的方法获取</p>
 </li>
-<li><p>特殊元素获取</p>
+<li><p>特殊元素获取 （body html）</p>
 </li>
 </ul>
-<h3 id="根据ID获取"><a href="#根据ID获取" class="headerlink" title="根据ID获取"></a><strong>根据ID获取</strong></h3><p><code>document.getElementById(&#39;id名&#39;)</code>;用过id获得一个元素对象。</p>
+<h3 id="根据ID获取"><a href="#根据ID获取" class="headerlink" title="根据ID获取"></a><strong>根据ID获取</strong></h3><p><code>document.getElementById(&#39;id名&#39;)</code>;用id获得一个元素对象。</p>
 <p> <code>console.dir</code> 打印我们返回的<strong>元素对象,</strong> 更好的查看里面的<strong>属性和方法</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id&#x3D;&quot;time&quot;&gt;2019-9-9&lt;&#x2F;div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    &#x2F;&#x2F; 1. 因为我们文档页面从上往下加载，所以先得有标签 所以我们script写到标签的下面</span><br><span class="line">    &#x2F;&#x2F; 2. get获得element元素by id，通过驼峰命名法 </span><br><span class="line">    &#x2F;&#x2F; 3. 参数id是大小写敏感的字符串</span><br><span class="line">    &#x2F;&#x2F; 4. 返回的是一个元素对象</span><br><span class="line">    var timer &#x3D; document.getElementById(&#39;time&#39;);</span><br><span class="line">    console.log(timer);</span><br><span class="line">    console.log(typeof timer);&#x2F;&#x2F;object</span><br><span class="line">    &#x2F;&#x2F; 5. console.dir 打印我们返回的元素对象 更好的查看里面的属性和方法</span><br><span class="line">    console.dir(timer);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
 
@@ -269,34 +272,35 @@
 <p><code>document.querySelectorA11(&#39;选择器&#39;);</code>返回指定选择器的所有元素对象集合。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 1. getElementsByClassName 类名</span><br><span class="line">var boxs &#x3D; document.getElementsByClassName(&#39;box&#39;);</span><br><span class="line">console.log(boxs);</span><br><span class="line">&#x2F;&#x2F; 2. querySelector 指定选择器的第一个元素对象,切记,里面的选择器需要加符号 .box  #nav</span><br><span class="line">var firstBox &#x3D; document.querySelector(&#39;.box&#39;);</span><br><span class="line">console.log(firstBox);</span><br><span class="line">var nav &#x3D; document.querySelector(&#39;#nav&#39;);</span><br><span class="line">console.log(nav);</span><br><span class="line">var li &#x3D; document.querySelector(&#39;li&#39;);</span><br><span class="line">console.log(li);</span><br><span class="line">&#x2F;&#x2F; 3. querySelectorAll()返回指定选择器的所有元素对象集合</span><br><span class="line">var allBox &#x3D; document.querySelectorAll(&#39;.box&#39;);</span><br><span class="line">console.log(allBox);</span><br><span class="line">var lis &#x3D; document.querySelectorAll(&#39;li&#39;);</span><br><span class="line">console.log(lis);</span><br></pre></td></tr></table></figure>
 
-<h3 id="获取-body-和-html-元素"><a href="#获取-body-和-html-元素" class="headerlink" title="获取 body 和 html 元素"></a>获取 body 和 html 元素</h3><p>获取body 元素</p>
+<h3 id="获取-body-和-html-元素"><a href="#获取-body-和-html-元素" class="headerlink" title="获取 body 和 html 元素"></a>获取 body 和 html 元素</h3><p>1) 获取body 元素</p>
 <p>  <code>var bodyEle = document.body;</code></p>
-<p>获取html 元素</p>
+<p>2) 获取html 元素</p>
 <p><code>var htmlEle = document.documentElement;</code></p>
-<h2 id="事件基础"><a href="#事件基础" class="headerlink" title="事件基础"></a>事件基础</h2><p>javaScript使我们有能力创建动态页面,而事件是可以被JavaScript侦测到的行为。简单理解:<strong>触发—响应机制</strong>。</p>
-<p>网页中的每个元素都可以产生某些可以触发JavaScript的事件,例如,我们可以在用户点击某按钮时产生一个事件,然后去执行某些操作。 </p>
-<p>事件是有三部分组成：事件源 、事件类型 、事件处理程序 ，我们也称为<strong>事件三要素</strong>。</p>
-<p><strong>获取事件源的时候尽量使用id而不是标签名</strong>，使用标签名获取元素得到的是一个伪数组，伪数组不能直接使用 .事件去处理程序。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;(1) 事件源 事件被触发的对象   谁 按钮</span><br><span class="line">var btn &#x3D; document.getElementById(&#39;btn&#39;);</span><br><span class="line">&#x2F;&#x2F;(2) 事件类型  如何触发 什么事件 比如鼠标点击(onclick) 还是鼠标经过 还是键盘按下</span><br><span class="line">&#x2F;&#x2F;(3) 事件处理程序  通过一个函数赋值的方式 完成</span><br><span class="line">btn.onclick &#x3D; function() &#123;</span><br><span class="line">    alert(&#39;点秋香&#39;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="事件基础"><a href="#事件基础" class="headerlink" title="事件基础"></a>事件基础</h2><p>javaScript使我们有能力创建动态页面,而事件是可以被JavaScript侦测到的行为。简单理解:<strong>触发—响应机制</strong>。网页中的每个元素都可以产生某些可以触发JavaScript的事件,例如,我们可以在用户点击某按钮时产生一个事件,然后去执行某些操作。 </p>
+<h3 id="执行事件的步骤"><a href="#执行事件的步骤" class="headerlink" title="执行事件的步骤"></a>执行事件的步骤</h3><p>事件是有三部分组成：事件源 、事件类型 、事件处理程序 ，我们也称为<strong>事件三要素</strong>。</p>
+<p><strong>获取事件源的时候尽量使用id而不是标签名</strong>，使用标签名获取元素得到的是一个伪数组，伪数组不能直接使用 .事件去处理程序，数组中的某个元素可以。比如[i].onclick。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//(1) 事件源 事件被触发的对象   谁 按钮</span></span><br><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">'btn'</span>);</span><br><span class="line"><span class="comment">//(2) 事件类型  如何触发 什么事件 比如鼠标点击(onclick) 还是鼠标经过 还是键盘按下</span></span><br><span class="line"><span class="comment">//(3) 事件处理程序  通过一个函数赋值的方式 完成</span></span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    alert(<span class="string">'点秋香'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="执行事件的步骤"><a href="#执行事件的步骤" class="headerlink" title="执行事件的步骤"></a>执行事件的步骤</h3><p><strong>案例-</strong> 点击div 控制台输出 我被选中了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 1. 获取事件源</span><br><span class="line">var div &#x3D; document.querySelector(&#39;div&#39;);</span><br><span class="line">&#x2F;&#x2F; 2.绑定事件 注册事件</span><br><span class="line">&#x2F;&#x2F; div.onclick </span><br><span class="line">&#x2F;&#x2F; 3.添加事件处理程序 </span><br><span class="line">div.onclick &#x3D; function() &#123;</span><br><span class="line">    console.log(&#39;我被选中了&#39;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>执行事件的步骤有以下3步：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 获取事件源</span></span><br><span class="line"><span class="keyword">var</span> div = <span class="built_in">document</span>.querySelector(<span class="string">'div'</span>);</span><br><span class="line"><span class="comment">// 2.绑定事件 注册事件</span></span><br><span class="line"><span class="comment">// div.onclick </span></span><br><span class="line"><span class="comment">// 3.添加事件处理程序 </span></span><br><span class="line">div.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'我被选中了'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="常见鼠标事件"><a href="#常见鼠标事件" class="headerlink" title="常见鼠标事件"></a>常见鼠标事件</h3><img src="/2020/05/19/WebAPIs-Dom%E5%AD%A6%E4%B9%A0/image-20200520154741289.png" alt="image-20200520154741289" style="zoom:60%;">
-
-<p>获得焦点事件 onfocus </p>
+<h3 id="常见鼠标事件"><a href="#常见鼠标事件" class="headerlink" title="常见鼠标事件"></a>常见鼠标事件</h3><p>获得焦点事件 onfocus </p>
 <p>失去焦点事件 onblur</p>
+<img src="/2020/05/19/WebAPIs-Dom%E5%AD%A6%E4%B9%A0/image-20200520154741289.png" alt="image-20200520154741289" style="zoom:60%;">
+
+
+
 <h2 id="操作元素"><a href="#操作元素" class="headerlink" title="操作元素"></a>操作元素</h2><p>JavaScript的DOM操作可以改变<strong>网页内容、结构和样式</strong>,我们可以利用DOM操作元素来改变元素里面的内容、属性等。注意以下都是属性</p>
 <h3 id="改变元素内容"><a href="#改变元素内容" class="headerlink" title="改变元素内容"></a>改变元素内容</h3><p><code>element.innerText</code>：获取从起始位置到终止位置的内容,但它<strong>去除html标签，同时空格和换行也会去掉</strong>。innerText不识别html标签。</p>
 <p><code>element.innerHTML</code>：获取起始位置到终止位置的全部内容,包括html标签,同时保留空格和换行。innerHTML识别html标签，并显示出样式。</p>
 <p><strong>demo-</strong> 当我们点击了按钮,div里面的文字会发生变化</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;button&gt;显示当前系统时间&lt;&#x2F;button&gt;</span><br><span class="line">&lt;div&gt;某个时间&lt;&#x2F;div&gt;</span><br><span class="line">&lt;p&gt;1123&lt;&#x2F;p&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    &#x2F;&#x2F; 1. 获取元素 </span><br><span class="line">    var btn &#x3D; document.querySelector(&#39;button&#39;);</span><br><span class="line">    var div &#x3D; document.querySelector(&#39;div&#39;);</span><br><span class="line">    &#x2F;&#x2F; 2.注册事件</span><br><span class="line">    btn.onclick &#x3D; function() &#123;</span><br><span class="line">  		 div.innerText &#x3D; &#39;2019-6-6&#39;;</span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    &#x2F;&#x2F; 我们元素可以不用添加事件</span><br><span class="line">    var p &#x3D; document.querySelector(&#39;p&#39;);</span><br><span class="line">    p.innerHTML &#x3D; &#39;2019-6-6&#39;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;button&gt;显示当前系统时间&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">&lt;div&gt;某个时间&lt;/</span>div&gt;</span><br><span class="line">&lt;p&gt;<span class="number">1123</span>&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ 1. 获取元素 </span></span><br><span class="line"><span class="regexp">    var btn = document.querySelector('button');</span></span><br><span class="line"><span class="regexp">    var div = document.querySelector('div');</span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ 2.注册事件</span></span><br><span class="line"><span class="regexp">    btn.onclick = function() &#123;</span></span><br><span class="line"><span class="regexp">  		 div.innerText = '2019-6-6';</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">  </span></span><br><span class="line"><span class="regexp">    /</span><span class="regexp">/ 我们元素可以不用添加事件</span></span><br><span class="line"><span class="regexp">    var p = document.querySelector('p');</span></span><br><span class="line"><span class="regexp">    p.innerHTML = '2019-6-6';</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="常见元素的属性操作"><a href="#常见元素的属性操作" class="headerlink" title="常见元素的属性操作"></a>常见元素的属性操作</h3><p>元素可以通过 <strong>.</strong> 操作符获取属性并赋值。</p>
 <img src="/2020/05/19/WebAPIs-Dom%E5%AD%A6%E4%B9%A0/image-20200520110836410.png" alt="image-20200520110836410" style="zoom:60%;">
 
 <p><strong>demo -</strong> 点击按钮切换图片，img的src变化</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id&#x3D;&quot;ldh&quot;&gt;刘德华&lt;&#x2F;button&gt;</span><br><span class="line">&lt;button id&#x3D;&quot;zxy&quot;&gt;张学友&lt;&#x2F;button&gt; &lt;br&gt;</span><br><span class="line">&lt;img src&#x3D;&quot;images&#x2F;ldh.jpg&quot; alt&#x3D;&quot;&quot; title&#x3D;&quot;刘德华&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    &#x2F;&#x2F; 1. 获取元素</span><br><span class="line">    var ldh &#x3D; document.getElementById(&#39;ldh&#39;);</span><br><span class="line">    var zxy &#x3D; document.getElementById(&#39;zxy&#39;);</span><br><span class="line">    var img &#x3D; document.querySelector(&#39;img&#39;);</span><br><span class="line">    &#x2F;&#x2F; 2. 注册事件  处理程序</span><br><span class="line">    zxy.onclick &#x3D; function() &#123;</span><br><span class="line">        img.src &#x3D; &#39;images&#x2F;zxy.jpg&#39;;</span><br><span class="line">        img.title &#x3D; &#39;张学友思密达&#39;;</span><br><span class="line">    &#125;</span><br><span class="line">    ldh.onclick &#x3D; function() &#123;</span><br><span class="line">        img.src &#x3D; &#39;images&#x2F;ldh.jpg&#39;;</span><br><span class="line">        img.title &#x3D; &#39;刘德华&#39;;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;button id=<span class="string">"ldh"</span>&gt;刘德华&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">&lt;button id="zxy"&gt;张学友&lt;/</span>button&gt; <span class="xml"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span></span><br><span class="line">&lt;img src="images/ldh.jpg" alt="" title="刘德华"&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    // 1. 获取元素</span><br><span class="line">    var ldh = document.getElementById('ldh');</span><br><span class="line">    var zxy = document.getElementById('zxy');</span><br><span class="line">    var img = document.querySelector('img');</span><br><span class="line">    // 2. 注册事件  处理程序</span><br><span class="line">    zxy.onclick = function() &#123;</span><br><span class="line">        img.src = 'images/zxy.jpg';</span><br><span class="line">        img.title = '张学友思密达';</span><br><span class="line">    &#125;</span><br><span class="line">    ldh.onclick = function() &#123;</span><br><span class="line">        img.src = 'images/ldh.jpg';</span><br><span class="line">        img.title = '刘德华';</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 <p> <strong>demo -分时问候并显示不同图片案例</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.根据系统不同时间来判断，所以需要用到日期内置对象，获取小时数。</span><br><span class="line">2.利用多分支语句来设置不同的图片，</span><br><span class="line">3.需要一个图片，并且根据时间修改图片，就需要用到操作元素src属性</span><br><span class="line">4.需要一个div元素，显示不同问候语，修改元素内容即可</span><br></pre></td></tr></table></figure>
@@ -308,7 +312,7 @@
 <p>①核心思路:点击眼睛按钮,把密码框类型改为文本框就可以看见里面的密码</p>
 <p>②一个按钮两个状态，点击一次,切换为文本框,继续点击次切换为密码框</p>
 <p>③算法:利用一个flag变量,来判断flag的值,如果是1就切换为文本框, flag设置为0 ,如果是0就切换为密码框, flag设置为1</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 1. 获取元素</span><br><span class="line">var eye &#x3D; document.getElementById(&#39;eye&#39;);</span><br><span class="line">var pwd &#x3D; document.getElementById(&#39;pwd&#39;);</span><br><span class="line">&#x2F;&#x2F; 2. 注册事件 处理程序</span><br><span class="line">var flag &#x3D; 0;</span><br><span class="line">eye.onclick &#x3D; function() &#123;</span><br><span class="line">    &#x2F;&#x2F; 点击一次之后， flag 一定要变化</span><br><span class="line">    if (flag &#x3D;&#x3D; 0) &#123;</span><br><span class="line">        pwd.type &#x3D; &#39;text&#39;;</span><br><span class="line">        eye.src &#x3D; &#39;images&#x2F;open.png&#39;;</span><br><span class="line">        flag &#x3D; 1; &#x2F;&#x2F; 赋值操作</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        pwd.type &#x3D; &#39;password&#39;;</span><br><span class="line">        eye.src &#x3D; &#39;images&#x2F;close.png&#39;;</span><br><span class="line">        flag &#x3D; 0;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 获取元素</span></span><br><span class="line"><span class="keyword">var</span> eye = <span class="built_in">document</span>.getElementById(<span class="string">'eye'</span>);</span><br><span class="line"><span class="keyword">var</span> pwd = <span class="built_in">document</span>.getElementById(<span class="string">'pwd'</span>);</span><br><span class="line"><span class="comment">// 2. 注册事件 处理程序</span></span><br><span class="line"><span class="keyword">var</span> flag = <span class="number">0</span>;</span><br><span class="line">eye.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 点击一次之后， flag 一定要变化</span></span><br><span class="line">    <span class="keyword">if</span> (flag == <span class="number">0</span>) &#123;</span><br><span class="line">        pwd.type = <span class="string">'text'</span>;</span><br><span class="line">        eye.src = <span class="string">'images/open.png'</span>;</span><br><span class="line">        flag = <span class="number">1</span>; <span class="comment">// 赋值操作</span></span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        pwd.type = <span class="string">'password'</span>;</span><br><span class="line">        eye.src = <span class="string">'images/close.png'</span>;</span><br><span class="line">        flag = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="样式属性操作"><a href="#样式属性操作" class="headerlink" title="样式属性操作"></a>样式属性操作</h3><p>我们可以通过JS修改元素的大小、颜色、位置等样式。</p>
 <ol>
@@ -316,15 +320,15 @@
 <li>element. className    类名样式操作</li>
 </ol>
 <p><strong>1）element. style     行内样式操作</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;注册事件 处理程序</span><br><span class="line">div.onclick &#x3D; function() &#123;</span><br><span class="line">    &#x2F;&#x2F; div.style里面的属性 采取驼峰命名法 </span><br><span class="line">    this.style.backgroundColor &#x3D; &#39;purple&#39;;</span><br><span class="line">    this.style.width &#x3D; &#39;250px&#39;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注册事件 处理程序</span></span><br><span class="line">div.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// div.style里面的属性 采取驼峰命名法 </span></span><br><span class="line">    <span class="keyword">this</span>.style.backgroundColor = <span class="string">'purple'</span>;</span><br><span class="line">    <span class="keyword">this</span>.style.width = <span class="string">'250px'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>注意:</strong></p>
-<ol>
+<ul>
 <li><p>JS里面的样式采取驼峰命名法比如fontsize、backgroundColor。</p>
 </li>
 <li><p>JS修改style样式操作,产生的是<strong>行内样式</strong>, css权重比较高。</p>
 </li>
-</ol>
+</ul>
 <p><strong>案例：循环精灵图</strong></p>
 <p>案例分析</p>
 <p>①首先精灵图图片排列有规律的。竖着排成一列，每个小图标的高度都是44px</p>
@@ -337,8 +341,8 @@
 <p>注意:</p>
 <p>1.如果样式修改较多,可以采取操作类名方式更改元素样式。</p>
 <p>2.class因为是个保留字,因此使用className来操作元素类名属性</p>
-<p>3.className会直接更改元素的类名,会覆盖原先的类名。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class&#x3D;&quot;first&quot;&gt;文本&lt;&#x2F;div&gt;</span><br><span class="line">test.onclick &#x3D; function() &#123;</span><br><span class="line">     &#x2F;&#x2F;我们可以通过 修改元素的className更改元素的样式 适合于样式较多或者功能复杂的情况</span><br><span class="line">     this.className &#x3D; &#39;change&#39;;</span><br><span class="line">     this.className &#x3D; &#39;first change&#39;;&#x2F;&#x2F;如果想要保留原先的类名，使用多类名选择器（新的类名写在后面）</span><br></pre></td></tr></table></figure>
+<p>3.className会直接更改元素的类名,会覆盖原先的类名，因此常使用<strong>多类名</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"first"</span>&gt;文本&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">test.onclick = function() &#123;</span></span><br><span class="line"><span class="regexp">     /</span><span class="regexp">/我们可以通过 修改元素的className更改元素的样式 适合于样式较多或者功能复杂的情况</span></span><br><span class="line"><span class="regexp">     this.className = 'change';</span></span><br><span class="line"><span class="regexp">     this.className = 'first change';/</span><span class="regexp">/如果想要保留原先的类名，使用多类名选择器（新的类名写在后面）</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>总结</strong></p>
 <img src="/2020/05/19/WebAPIs-Dom%E5%AD%A6%E4%B9%A0/image-20200520154455225.png" alt="image-20200520154455225" style="zoom:60%;">
@@ -349,7 +353,7 @@
 <p>1.所有元素全部清除样式(干掉其他人)</p>
 <p>2.给当前元素设置样式(留下我自己)</p>
 <p>3.注意顺序不能颠倒,首先干掉其他人,再设置自己</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var btns &#x3D; document.getElementsByTagName(&#39;button&#39;);</span><br><span class="line">&#x2F;&#x2F; btns得到的是伪数组  里面的每一个元素 btns[i]</span><br><span class="line">for (var i &#x3D; 0; i &lt; btns.length; i++) &#123;</span><br><span class="line">    btns[i].onclick &#x3D; function() &#123;</span><br><span class="line">        &#x2F;&#x2F; (1) 我们先把所有的按钮背景颜色去掉  干掉所有人</span><br><span class="line">        for (var i &#x3D; 0; i &lt; btns.length; i++) &#123;</span><br><span class="line">            btns[i].style.backgroundColor &#x3D; &#39;&#39;;</span><br><span class="line">        &#125;</span><br><span class="line">        &#x2F;&#x2F; (2) 然后才让当前的元素背景颜色为pink 留下我自己</span><br><span class="line">        this.style.backgroundColor &#x3D; &#39;pink&#39;;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btns = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'button'</span>);</span><br><span class="line"><span class="comment">// btns得到的是伪数组  里面的每一个元素 btns[i]</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; btns.length; i++) &#123;</span><br><span class="line">    btns[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// (1) 我们先把所有的按钮背景颜色去掉  干掉所有人</span></span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; btns.length; i++) &#123;</span><br><span class="line">            btns[i].style.backgroundColor = <span class="string">''</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// (2) 然后才让当前的元素背景颜色为pink 留下我自己</span></span><br><span class="line">        <span class="keyword">this</span>.style.backgroundColor = <span class="string">'pink'</span>;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>案例 — 百度换肤</strong></p>
 <p>点击小图片，整个body的背景切换成大图片。</p>
@@ -358,7 +362,7 @@
 <p>②给4个小图片利用循环注册点击事件</p>
 <p>③当我们点击了这个图片,让我们页面背景改为当前的图片</p>
 <p>④核心算法:把当前图片的src路径取过来,给body做为背景即可</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> &#x2F;&#x2F; 1. 获取元素 </span><br><span class="line">var imgs &#x3D; document.querySelector(&#39;.baidu&#39;).querySelectorAll(&#39;img&#39;);</span><br><span class="line"> &#x2F;&#x2F; console.log(imgs);</span><br><span class="line"> &#x2F;&#x2F; 2. 循环注册事件 </span><br><span class="line"> for (var i &#x3D; 0; i &lt; imgs.length; i++) &#123;</span><br><span class="line">     imgs[i].onclick &#x3D; function() &#123;</span><br><span class="line">         &#x2F;&#x2F; this.src 就是我们点击图片的路径images&#x2F;2.jpg</span><br><span class="line">         &#x2F;&#x2F; 把这个路径 this.src 给body 就可以了</span><br><span class="line">         document.body.style.backgroundImage &#x3D; &#39;url(&#39; + this.src + &#39;)&#39;;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">// 1. 获取元素 </span></span><br><span class="line"><span class="keyword">var</span> imgs = <span class="built_in">document</span>.querySelector(<span class="string">'.baidu'</span>).querySelectorAll(<span class="string">'img'</span>);</span><br><span class="line"> <span class="comment">// console.log(imgs);</span></span><br><span class="line"> <span class="comment">// 2. 循环注册事件 </span></span><br><span class="line"> <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; imgs.length; i++) &#123;</span><br><span class="line">     imgs[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">         <span class="comment">// this.src 就是我们点击图片的路径images/2.jpg</span></span><br><span class="line">         <span class="comment">// 把这个路径 this.src 给body 就可以了</span></span><br><span class="line">         <span class="built_in">document</span>.body.style.backgroundImage = <span class="string">'url('</span> + <span class="keyword">this</span>.src + <span class="string">')'</span>;</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>案例 — 表格全选和反选</strong></p>
 <img src="/2020/05/19/WebAPIs-Dom%E5%AD%A6%E4%B9%A0/image-20200520200444941.png" alt="image-20200520200444941" style="zoom:80%;">
@@ -366,21 +370,188 @@
 <p>①全选和取消全选做法 : 让下面所有复选框的checked属性(选中状态)跟随全选按钮即可。</p>
 <p>②下面复选框需要全部选中，上面全选才能选中做法 : 给下面所有复选框绑定点击事件,每次点击,都要循环查看下面所有的复选框是否有没选中的,如果有一个没选中的， 面全选就不选中。</p>
 <p>③可以设置一个变量,来控制全选是否选中。</p>
-<h3 id="自定义属性的操作"><a href="#自定义属性的操作" class="headerlink" title="自定义属性的操作"></a>自定义属性的操作</h3><p>获取属性值</p>
-<ul>
-<li><p>element.属性 获取属性值。</p>
+<h3 id="自定义属性的操作"><a href="#自定义属性的操作" class="headerlink" title="自定义属性的操作"></a>自定义属性的操作</h3><h4 id="1-获取属性值"><a href="#1-获取属性值" class="headerlink" title="1.获取属性值"></a>1.获取属性值</h4><ul>
+<li>element.属性 ：获取属性值，元素<strong>本身自带</strong>的属性，<code>div.id</code></li>
+<li>element .getAttribute(‘属性’); <code>div.getAttribute(&#39;index&#39;)</code></li>
+</ul>
+<h4 id="2-设置属性值"><a href="#2-设置属性值" class="headerlink" title="2.设置属性值"></a>2.设置属性值</h4><ul>
+<li><p>element.属性=‘值’ ，设置内置属性值。 <code>div.id = &#39;test&#39;</code></p>
 </li>
-<li><p>element .getAttribute(‘属性’);</p>
+<li><p>element . setAttribute(‘属性’，’值’) ;</p>
 </li>
 </ul>
+<p>class的设置属性特殊 ，这里面写的就是class ，不是className。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">div.className = <span class="string">'navs'</span>;<span class="comment">//添加一个navs类,第一种方法</span></span><br><span class="line">div.setAttribute(<span class="string">'class'</span>, <span class="string">'footer'</span>); <span class="comment">//添加一个footer类</span></span><br></pre></td></tr></table></figure>
+
 <p>区别:</p>
 <ul>
-<li><p>element<strong>.</strong>属性获取内置属性值：(元素<strong>本身自带</strong>的属性)</p>
+<li>element<strong>.</strong>属性获取内置属性值：(元素<strong>本身自带</strong>的属性)</li>
+<li>element <strong>.</strong>getAttribute( ‘属性‘  )：主要获得<strong>自定义的属性</strong> ( 标准)我们程序员自定义的属性</li>
+</ul>
+<h4 id="3-移除属性"><a href="#3-移除属性" class="headerlink" title="3 移除属性"></a>3 移除属性</h4><p>element.removeAttribute(属性) </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div.removeAttribute(<span class="string">'index'</span>);<span class="comment">//移除属性自定义属性index</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>案例-tab 栏切换</strong></p>
+<img src="/2020/05/19/WebAPIs-Dom%E5%AD%A6%E4%B9%A0/image-20200521110338964.png" alt="image-20200521110338964" style="zoom:60%;">
+
+<p>①Tab栏切换有2个大的模块</p>
+<p>②上模块选项卡：点击某一个,当前这一个底色会是红色,其余不变(排他思想)，通过修改类名的方式。</p>
+<p>③下面的模块内容,会跟随上面的选项卡变化。所以下面模块变化写到点击事件里面。</p>
+<p>④规律:下面的模块显示内容和上面的选项卡一对应 ,相匹配。</p>
+<p>⑤核心思路:给上面的tab_ list 里面的所有 按钮 添加自定义属性index，属性值从0开始编号。</p>
+<p>⑥当我们点击tab_ list 里面的某个按钮，让下面的介绍对应序号的内容显示，其余隐藏(排他思想)</p>
+<h3 id="H5自定义属性"><a href="#H5自定义属性" class="headerlink" title="H5自定义属性"></a>H5自定义属性</h3><p>自定义属性目的:是为了保存并使用数据。有些数据可以保存到页面中而不用保存到数据库中。</p>
+<p><strong>自定义属性</strong>获取是通过getAttribute( ‘’属性’’)获取。但是有些自定义属性很容易引起歧义,不容易判断是元素的内置属性还是自定义属性。H5给我们新增了自定义属性:</p>
+<p><strong>1.设置H5自定义属性</strong></p>
+<p>H5规定自定义属性data开头做为属性名并且赋值。</p>
+<p>比如<code>&lt;div data-index=“1&quot; &gt; &lt;/div&gt;</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div getTime=<span class="string">"20"</span> data-index=<span class="string">"2"</span> data-list-name=<span class="string">"andy"</span>&gt;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/h5新增的获取自定义属性的方法 它只能获取data-开头的</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/dataset 是一个集合里面存放了所有以data开头的自定义属性</span></span><br><span class="line"><span class="regexp"> div.setAttribute('data-time', 20);</span></span><br><span class="line"><span class="regexp">console.log(div.dataset);</span></span><br><span class="line"><span class="regexp">console.log(div.dataset.index);</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>2.获取H5自定义属性</strong></p>
+<p>1.兼容性获取 <code>element.getAttribute( &#39;data-index&#39; );</code></p>
+<p>2.H5新增 <code>element.dataset.index</code>或者<code>element.dataset[ index&#39; ]</code>, ie 11才开始支持。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 如果自定义属性里面有多个-链接的单词，我们获取的时候采取 驼峰命名法</span></span><br><span class="line">div.getAttribute(<span class="string">'data-list-name'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(div.dataset.listName);</span><br><span class="line"><span class="built_in">console</span>.log(div.dataset[<span class="string">'listName'</span>]);</span><br></pre></td></tr></table></figure>
+
+<h2 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h2><h3 id="为什么学节点操作"><a href="#为什么学节点操作" class="headerlink" title="为什么学节点操作"></a>为什么学节点操作</h3><p>获取元素通常使用两种方式:</p>
+<p><strong>1.利用DOM提供的方法荻取元素</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementByld();</span><br><span class="line"><span class="built_in">document</span>.getElementsByTagName();</span><br><span class="line"><span class="built_in">document</span>.querySelector ;</span><br></pre></td></tr></table></figure>
+
+<p>但是这些方法逻辑性不强、繁琐。</p>
+<p><strong>2.利用节点层级关系获取元素</strong></p>
+<p>利用父子兄节点关系获取元素 ,逻辑性强，但是兼容性稍差</p>
+<p>这两种方式都可以获取元素节点，我们后面都会使用，但是节点操作更加简单。</p>
+<h3 id="节点概述"><a href="#节点概述" class="headerlink" title="节点概述"></a>节点概述</h3><p>网页中的所有内容都是节点(标签、属性、文本、注释等) , 在DOM中,节点使用node来表示。</p>
+<p>HTML DOM树中的所有节点均可通过JavaScript进行访问,所有HTML元素(节点)均可被修改,也可以创建或删除。</p>
+<img src="/2020/05/19/WebAPIs-Dom%E5%AD%A6%E4%B9%A0/image-20200522094921731.png" alt="image-20200522094921731" style="zoom:80%;">
+
+<p>一般地 ,节点至少拥有nodeType (<strong>节点类型</strong>)、nodeName (节点名称)和nodeValue (节点值)这三个基本属性。</p>
+<ul>
+<li><p>元素节点nodeType为1</p>
 </li>
-<li><p>element <strong>.</strong>getAttribute( ‘属性‘  )：主要获得<strong>自定义的属性</strong> ( 标准)我们程序员自定义的属性</p>
+<li><p>属性节点nodeType为2</p>
+</li>
+<li><p>文本节点nodeType为3 (文本节点包含文字、空格、换行等)</p>
+</li>
+<li><p>我们在实际开发中,节点操作主要操作的是<strong>元素节点</strong></p>
 </li>
 </ul>
-<h2 id="节点操作"><a href="#节点操作" class="headerlink" title="节点操作"></a>节点操作</h2>
+<h3 id="节点层级"><a href="#节点层级" class="headerlink" title="节点层级"></a>节点层级</h3><p>利用DOM树可以把节点划分为不同的层级关系，常见的是父子<strong>兄弟层级关系</strong>。</p>
+<h4 id="1-父级节点"><a href="#1-父级节点" class="headerlink" title="1.父级节点"></a>1.父级节点</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">node.parentNode</span><br><span class="line"></span><br><span class="line">&lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"box"</span>&gt;</span><br><span class="line">	&lt;span <span class="class"><span class="keyword">class</span></span>=<span class="string">"erweima"</span>&gt;×&lt;<span class="regexp">/span&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">        </span><br><span class="line"><span class="keyword">var</span> erweima = <span class="built_in">document</span>.querySelector(<span class="string">'.erweima'</span>);</span><br><span class="line"><span class="comment">// var box = document.querySelector('.box');</span></span><br><span class="line"><span class="comment">// 得到的是离元素最近的父级节点(亲爸爸) null</span></span><br><span class="line"><span class="built_in">console</span>.log(erweima.parentNode);<span class="comment">//子节点获取父节点</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>parentNode属性可返回某节点的父节点,注意是最近的一个父节点</p>
+</li>
+<li><p>如果指定的节点没有父节点则返回null</p>
+</li>
+</ul>
+<h4 id="2-子节点"><a href="#2-子节点" class="headerlink" title="2.子节点"></a><strong>2.子节点</strong></h4><p><strong>1) parentNode. childNodes (标准 )</strong></p>
+<p><strong>parentNode. childNodes</strong>返回包含指定节点的子节点的集合,该集合为即时更新的集合。注意:返回值里面包含了所有的子节点,包括<strong>元素节点,文本节点等。</strong></p>
+<p>如果只想要获得里面的元素节点,则需要专门处理。所以我们一 般<strong>不提倡使用childNodes</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var ul &#x3D; document.querySelector(&#39;ul&#39;);</span><br><span class="line">for(var i &#x3D; 0; i &lt; ul.childNodes.length;i++) &#123;</span><br><span class="line">    if (ul. childNodes [i] . nodeType &#x3D;&#x3D; 1) &#123;</span><br><span class="line">        &#x2F;&#x2F; ul. childNodes[i]是元素节点，元素节点的nodeType是1</span><br><span class="line">        console. log (ul. childNodes[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2) parentNode. children (非标准)</strong></p>
+<p><strong>parentNode. children</strong>是一个只读属性,返回所有的子元素节点。它只返回子元素节点,其余节点不返回(这个是我们重点掌握的)。</p>
+<p>虽然children是一个非标准 ,但是得到了各个浏览器的支持,因此我们可以放心使用</p>
+<p><strong>3) parentNode . firstChild</strong></p>
+<p>firstChild返回第一个子节点,找不到则返回null。同样,也是包含<strong>所有的节点</strong>（文本节点换行）。</p>
+<p><strong>4) parentNode . lastChild</strong></p>
+<p>lastChild返回最后一个子节点,找不到则返回null.同样,也是包含所有的节点。</p>
+<p><strong>5) parentNode . firstElementChild</strong>  </p>
+<p>firstElementChild 返回第一个子元素节点 <strong>ie9</strong>才支持</p>
+<p><strong>6.parentNode.lastElementChild</strong></p>
+<p>返回最后一个子元素节点 <strong>ie9</strong>才支持</p>
+<p><strong>7)实际开发的写法  既没有兼容性问题又返回第一个子元素</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(ol.children[0]);&#x2F;&#x2F;返回第一个元素</span><br><span class="line">console.log(ol.children[ol.children.length - 1]);&#x2F;&#x2F;返回最后一个元素</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-兄弟节点"><a href="#3-兄弟节点" class="headerlink" title="3.兄弟节点"></a>3.兄弟节点</h4><p><strong>1) node . nextSibling</strong></p>
+<p>nextsibling返回当前元素的下一个兄弟节点,找不到则返回null。同样,也是包含所有的节点（文本）。</p>
+<p><strong>2)  node .previousSibling</strong></p>
+<p>previoussibling返回当前元素上一个兄弟节点,找不到则返回null。同样,也是包含所有的节点。</p>
+<p><strong>3) node . nextElementSibling</strong></p>
+<p>nextElementsibling返回当前元素下一个兄弟元素节点 ,找不到则返回null.</p>
+<p><strong>4) node . previousElementSibling</strong></p>
+<p>previousElementsibling 返回当前元素上一个兄弟元素节点 ,找不到则返回null.</p>
+<p>这两个方法有<strong>兼容性问题</strong>，<strong>IE9</strong>以上才支持。</p>
+<p><strong>如何解决兼容性问题?</strong></p>
+<p>​                           <strong>自己封装一个兼容性的函数</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">funct ion getNextElementSibling (element) &#123;</span><br><span class="line">	<span class="keyword">var</span> el = element;</span><br><span class="line">    <span class="keyword">while</span> (el = el.nextSibling) &#123;</span><br><span class="line">        <span class="keyword">if</span> (el.nodeType === <span class="number">1</span>) &#123;</span><br><span class="line">        	<span class="keyword">return</span> el;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="添加节点（创建节点）"><a href="#添加节点（创建节点）" class="headerlink" title="添加节点（创建节点）"></a>添加节点（创建节点）</h3><h4 id="1）创建元素节点"><a href="#1）创建元素节点" class="headerlink" title="1）创建元素节点"></a>1）创建元素节点</h4><p><code>document.createElement(&#39;tagName&#39;)</code></p>
+<p>document . createElement()方法创建由<strong>tagName</strong> 指定的HTML元素。因为这些元素原先不存在,是根据我们的需求动态生成的,所以我们也称为<strong>动态创建元素节点</strong>。</p>
+<h4 id="2）添加节点"><a href="#2）添加节点" class="headerlink" title="2）添加节点"></a>2）添加节点</h4><p><strong>1) node.appendChild (child)</strong> 后面追加</p>
+<p>node . appendchild()方法將一个节点添加到指定父节点的<strong>子节点列表末尾</strong>。类似于css里面的after仂元素。</p>
+<p><strong>2) node.insertBefore(child, 指定元素)</strong> 前面添加</p>
+<p>node.insertBefore(）方法将一个节点添加到父节点的指定子节点前面。类似before伪元素。</p>
+<p><strong>我们想要页面添加一个新的元素 ： 1. 创建元素 2. 添加元素</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 创建节点元素节点</span></span><br><span class="line"><span class="keyword">var</span> li = <span class="built_in">document</span>.createElement(<span class="string">'li'</span>);</span><br><span class="line"><span class="comment">// 2. 添加节点 node.appendChild(child)  node 父级  child 是子级 后面追加元素  类似于数组中的push</span></span><br><span class="line"><span class="keyword">var</span> ul = <span class="built_in">document</span>.querySelector(<span class="string">'ul'</span>);</span><br><span class="line">ul.appendChild(li);</span><br><span class="line"><span class="comment">// 3. 添加节点 node.insertBefore(child, 指定元素);</span></span><br><span class="line"><span class="keyword">var</span> lili = <span class="built_in">document</span>.createElement(<span class="string">'li'</span>);</span><br><span class="line">ul.insertBefore(lili, ul.children[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure>
+
+<p><strong>案例 - 留言发布</strong></p>
+<p>①核心思路:点击按钮之后,就动态创建一个li ,添加到ul里面。</p>
+<p>②创建li的同时,把文本域里面的值通过li.innerHTML赋值给li</p>
+<p>③如果想要新的留言后面显示就用appendChild ，如果想要前面显示就用insertBefore</p>
+<h3 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h3><p><code>node.removeChild(child)</code></p>
+<p>node.removeChild()方法从DOM中删除一个子节点，并返回删除的节点。其中node和child可以没有关系。node只得是被删除元素的父元素，child指的是被删除元素。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    &lt;ul&gt;</span><br><span class="line">        &lt;li&gt;熊大&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">        &lt;li&gt;熊二&lt;/</span>li&gt;</span><br><span class="line">        &lt;li&gt;光头强&lt;<span class="regexp">/li&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/u</span>l&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> ul = <span class="built_in">document</span>.querySelector(<span class="string">'ul'</span>);</span><br><span class="line"><span class="comment">// 删除ul下的li</span></span><br><span class="line">ul.removeChild(ul.children[<span class="number">0</span>]);</span><br></pre></td></tr></table></figure>
+
+<p><strong>案例 - 删除留言</strong></p>
+<p>①当我们把文本域里面的值赋值给li的时候,多添加一个删除的链接。</p>
+<p>②需要把所有的链接获取过来,当我们点击当前的链接的时候,删除当前链接所在的li</p>
+<p>③阻止链接跳转需要添加<code>javascriptvoid(0);</code>或者<code>javascript:;</code></p>
+<h3 id="复制节点-克隆节点"><a href="#复制节点-克隆节点" class="headerlink" title="复制节点(克隆节点)"></a>复制节点(克隆节点)</h3><p><code>node.cloneNode()</code></p>
+<p>node. cloneNode ()方法返回调用该方法的节点的一个副本。也称为克隆节点/拷贝节点。复制之后，需要添加节点。</p>
+<ol>
+<li>node.cloneNode(); 括号为空或者里面是false 是浅拷贝， 只复制标签不复制里面的内容<ol start="2">
+<li>node.cloneNode(true); 括号为true 是 深拷贝， 复制标签复制里面的内容。</li>
+</ol>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> lili = ul.children[<span class="number">0</span>].cloneNode(<span class="literal">true</span>);</span><br><span class="line">ul.appendChild(lili);</span><br></pre></td></tr></table></figure>
+
+<h3 id="三种动态创建元素区别"><a href="#三种动态创建元素区别" class="headerlink" title="***三种动态创建元素区别"></a>***三种动态创建元素区别</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.write();</span><br><span class="line">element.innerHTML;</span><br><span class="line"><span class="built_in">document</span>.createElement();</span><br></pre></td></tr></table></figure>
+
+<p>1.document .write是直接将内容写入页面的内容流,<strong>但是文档流执行完毕,则它会导致页面全部重绘。</strong></p>
+<p>2.innerHTML 是将内容写入某个DOM节点,不会导致页面全部重绘</p>
+<p>3.innerHTML 创建多个元素效率更高(<strong>不要拼接字符串</strong>,采取数组形式拼接) , 结构稍微复杂。字符串拼接考虑到字符串的不可变性，效率会越来越低。采用数组形式拼接如下：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> array = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line"><span class="comment">//每次push一个元素</span></span><br><span class="line">    array.push(<span class="string">'&lt;div style="width:100px; height:2px; border:1px solid blue;"&gt;&lt;/div&gt;'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//利用join转化为字符串形式</span></span><br><span class="line"><span class="built_in">document</span>.body.innerHTML = array.join(<span class="string">''</span>);</span><br></pre></td></tr></table></figure>
+
+<p>4.createElement() 创建多个元素效率稍低一点点 ,但是<strong>结构更清晰</strong></p>
+<p><strong>总结:不同浏览器下, innerHTML效率要比creatElement 高</strong></p>
+<h2 id="DOM总结"><a href="#DOM总结" class="headerlink" title="DOM总结"></a>DOM总结</h2><p>关于dom操作,我们主要针对于元素的操作。主要有创建、增、删、改、查、属性操作、事件操作</p>
+<h4 id="1-创建"><a href="#1-创建" class="headerlink" title="1 创建"></a>1 创建</h4><p>1.document.write</p>
+<p>2.innerHTML</p>
+<p>3.createElement</p>
+<h4 id="2-増"><a href="#2-増" class="headerlink" title="2 増"></a>2 増</h4><ol>
+<li>appendChild 追加</li>
+<li>insertBefore 插入</li>
+</ol>
+<h4 id="3-删"><a href="#3-删" class="headerlink" title="3 删"></a>3 删</h4><ol>
+<li>removeChild</li>
+</ol>
+<h4 id="4-改"><a href="#4-改" class="headerlink" title="4 改"></a>4 改</h4><p>主要修改dom的元素属性, dom元素的内容、属性,表单的值等</p>
+<p>1.修改元素属性: src、 href 、 title等</p>
+<p>2.修改普通元素内容: innerHTML、innerText</p>
+<p>3.修改表单元素: value、 type、 disabled等</p>
+<p>4.修改元素样式: style、 className</p>
+<p>className会直接更改元素的类名,会覆盖原先的类名， ，如果想要保留原先的类名，使用多类名选择器（新的类名写在后面）</p>
+<h4 id="5-查"><a href="#5-查" class="headerlink" title="5 查"></a>5 查</h4><p>主要获取查询dom的元素</p>
+<p>1） DOM提供的API方法: getElementByld、 getElementsByTagName 古老用法不太推荐</p>
+<p>2） H5提供的新方法:document.getElementsByClassName(‘类名’), querySelector, querySelectorAll <strong>提倡</strong></p>
+<p>3）利用节点操作获取元素:父(parentNode)，子(children)， 兄(previousElementSibling、nextElementSibling)（IE 9 ）  <strong>提倡</strong></p>
+<p>parentNode . firstElementChild parentNode.lastElementChild（IE 9）</p>
+<p>4） ie 11才开始支持 H5规定自定义属性data开头做为属性名并且赋值。<code>&lt;div data-index=“1&quot; &gt; &lt;/div&gt;</code>  <code>element.dataset.index ; element.dataset[ index&#39; ]</code>。</p>
+<h4 id="6-属性操作"><a href="#6-属性操作" class="headerlink" title="6 属性操作"></a>6 属性操作</h4><p>主要针对于自定义属性。</p>
+<ol>
+<li>setAttribute :设置dom的属性值</li>
+<li>getAttribute :得到dom的属性值</li>
+<li>removeAttribute移除属性</li>
+</ol>
+<h4 id="7-事件操作"><a href="#7-事件操作" class="headerlink" title="7 事件操作"></a>7 事件操作</h4><p>给元素注册事件，采取 事件源<strong>.</strong>事件类型 = 事件处理程序。</p>
+<img src="/2020/05/19/WebAPIs-Dom%E5%AD%A6%E4%B9%A0/image-20200522173931715.png" alt="image-20200522173931715" style="zoom:80%;">
+
+<h4 id="8-其他"><a href="#8-其他" class="headerlink" title="8 其他"></a>8 其他</h4><p>因为我们文档页面从上往下加载，所以先得有标签 所以我们script写到标签的下面。</p>
+<p>阻止链接跳转需要添加<code>javascriptvoid(0);</code>或者<code>javascript:;</code></p>
+<p>很多方法的命名都是根据驼峰命名法  getElementById</p>
+
       
 
       
@@ -409,17 +580,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
       
 
       
@@ -483,6 +643,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/05/22/%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB%E7%AF%87/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          经验汇总篇
+        
+      </div>
+    </a>
   
   
     <a href="/2020/05/19/JS%E5%AD%A6%E4%B9%A0-js%E8%AF%AD%E6%B3%952/" id="article-nav-older" class="article-nav-link-wrap">
@@ -741,6 +910,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">js</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">summary</a>
               </li>
             
             <div class="clearfix"></div>

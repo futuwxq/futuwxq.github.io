@@ -6,20 +6,27 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
-  <title>WebAPIs-BOM学习（上） | 晓秋的博客</title>
+  <title>WebAPIs-BOM学习 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="◆BOM概述1.1什么是BOMBOM ( Browser Object Model )即浏览器对象模型,它提供了独立于内容而与浏览器窗口进行交互的对象,其核心对象是window。BOM由一系列相关的对象构成,并且每个对象都提供了很多方法与属性。BOM缺乏标准, JavaScript 语法的标准化组织是ECMA , DOM的标准化组织是W3C , BOM最初是Netscape浏览器标准的一部分">
+  <meta name="description" content="◆BOM概述1.1什么是BOMBOM ( Browser Object Model )即浏览器对象模型,它提供了独立于内容而与浏览器窗口进行交互的对象,其核心对象是window。BOM由一系列相关">
 <meta property="og:type" content="article">
-<meta property="og:title" content="WebAPIs-BOM学习（上）">
+<meta property="og:title" content="WebAPIs-BOM学习">
 <meta property="og:url" content="https://futuwxq.github.io/2020/05/23/WebAPIs-BOM%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%8A%EF%BC%89/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="◆BOM概述1.1什么是BOMBOM ( Browser Object Model )即浏览器对象模型,它提供了独立于内容而与浏览器窗口进行交互的对象,其核心对象是window。BOM由一系列相关的对象构成,并且每个对象都提供了很多方法与属性。BOM缺乏标准, JavaScript 语法的标准化组织是ECMA , DOM的标准化组织是W3C , BOM最初是Netscape浏览器标准的一部分">
+<meta property="og:description" content="◆BOM概述1.1什么是BOMBOM ( Browser Object Model )即浏览器对象模型,它提供了独立于内容而与浏览器窗口进行交互的对象,其核心对象是window。BOM由一系列相关">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/23/WebAPIs-BOM%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%8A%EF%BC%89/image-20200523180300901.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/23/WebAPIs-BOM%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%8A%EF%BC%89/image-20200523211500416.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/23/WebAPIs-BOM%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%8A%EF%BC%89/image-20200523215100693.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/23/WebAPIs-BOM%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%8A%EF%BC%89/image-20200524103750649.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/23/WebAPIs-BOM%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%8A%EF%BC%89/image-20200524110252926.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/23/WebAPIs-BOM%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%8A%EF%BC%89/image-20200524110411354.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/23/WebAPIs-BOM%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%8A%EF%BC%89/image-20200524111715199.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/23/WebAPIs-BOM%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%8A%EF%BC%89/image-20200524112648235.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/23/WebAPIs-BOM%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%8A%EF%BC%89/image-20200524151050096.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/23/WebAPIs-BOM%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%8A%EF%BC%89/image-20200524153437229.png">
 <meta property="article:published_time" content="2020-05-23T09:45:09.000Z">
-<meta property="article:modified_time" content="2020-05-23T14:07:01.173Z">
+<meta property="article:modified_time" content="2020-05-24T07:36:03.460Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
@@ -166,7 +173,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      WebAPIs-BOM学习（上）
+      WebAPIs-BOM学习
     </h1>
   
 
@@ -179,9 +186,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a> 
+        <h2 id="◆BOM概述"><a href="#◆BOM概述" class="headerlink" title="◆BOM概述"></a>◆BOM概述</h2><h3 id="1-1什么是BOM"><a href="#1-1什么是BOM" class="headerlink" title="1.1什么是BOM"></a>1.1什么是BOM</h3><p>BOM ( Browser Object Model )即浏览器对象模型,它提供了<strong>独立于内容</strong>而与<strong>浏览器窗口</strong>进行交互的对象,其<strong>核心对象是window</strong>。BOM由一系列相关</p>
+<a id="more"></a> 的对象构成,并且每个对象都提供了很多方法与属性。**BOM缺乏标准**, JavaScript 语法的标准化组织是ECMA , DOM的标准化组织是W3C , **BOM最初是Netscape浏览器标准的一部分。**
 
-<h2 id="◆BOM概述"><a href="#◆BOM概述" class="headerlink" title="◆BOM概述"></a>◆BOM概述</h2><h3 id="1-1什么是BOM"><a href="#1-1什么是BOM" class="headerlink" title="1.1什么是BOM"></a>1.1什么是BOM</h3><p>BOM ( Browser Object Model )即浏览器对象模型,它提供了<strong>独立于内容</strong>而与<strong>浏览器窗口</strong>进行交互的对象,其<strong>核心对象是window</strong>。BOM由一系列相关的对象构成,并且每个对象都提供了很多方法与属性。<strong>BOM缺乏标准</strong>, JavaScript 语法的标准化组织是ECMA , DOM的标准化组织是W3C , <strong>BOM最初是Netscape浏览器标准的一部分。</strong></p>
 <p><strong>BOM 浏览器对象模型</strong></p>
 <p>DOM是相对于当前浏览器显示的那个网页文档来说的，BOM是相对这个浏览器来说的，可以跳转到不同的网页进行一些交互。</p>
 <table>
@@ -282,7 +289,99 @@
 <p>③里面秒数是有变化的,因此需要用到定时器</p>
 <p>④定义一个变量,在定时器里面,不断递减</p>
 <p>⑤如果变量为0说明到了时间,我们需要停止定时器,并且复原按钮初始状态。</p>
-<h2 id="◆JS执行机制"><a href="#◆JS执行机制" class="headerlink" title="◆JS执行机制"></a>◆JS执行机制</h2><h2 id="◆location-对象"><a href="#◆location-对象" class="headerlink" title="◆location 对象"></a>◆location 对象</h2><h2 id="◆navigator-对象"><a href="#◆navigator-对象" class="headerlink" title="◆navigator 对象"></a>◆navigator 对象</h2><h2 id="◆history-对象"><a href="#◆history-对象" class="headerlink" title="◆history 对象"></a>◆history 对象</h2>
+<h3 id="3-6-this指向问题"><a href="#3-6-this指向问题" class="headerlink" title="3.6 this指向问题"></a>3.6 this指向问题</h3><p>一般情况下this的最终指向的是那个调用它的对象。</p>
+<p>1.<strong>全局作用域或者普通函数中this</strong>指向全局对象window（ 注意定时器里面的this指向window），因为他们一般都省略了前面的window.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.fn();</span><br><span class="line">window.setTimeout(function() &#123;</span><br><span class="line">&#125;, 1000);</span><br></pre></td></tr></table></figure>
+
+<p>2<strong>.方法调用</strong>中谁调用this指向谁</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var o &#x3D; &#123;</span><br><span class="line">    sayHi: function() &#123;</span><br><span class="line">        console.log(this); &#x2F;&#x2F; this指向的是 o 这个对象</span><br><span class="line">    	&#125;</span><br><span class="line"> &#125;</span><br><span class="line">o.sayHi();</span><br></pre></td></tr></table></figure>
+
+<p>在注册事件里，this指向注册事件的元素。</p>
+<p><strong>3.构造函数中</strong>this指向构造函数的实例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function Fun() &#123;</span><br><span class="line">    console.log(this); &#x2F;&#x2F; this 指向的是fun 实例对象</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">var fun &#x3D; new Fun();</span><br></pre></td></tr></table></figure>
+
+<p>注意：当以上this情况出现嵌套，依然保持独立的指向（不受影响）。比如在注册事件中出现定时器或者函数，定时器和函数里面的this指向windows 而不是注册事件对象。其他情况也是如此。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">btn.onclick &#x3D; function() &#123;</span><br><span class="line">        console.log(this);</span><br><span class="line">        window.setTimeout(function() &#123;</span><br><span class="line">            console.log(this);</span><br><span class="line"></span><br><span class="line">        &#125;, 1000);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="◆JS执行机制"><a href="#◆JS执行机制" class="headerlink" title="◆JS执行机制"></a>◆JS执行机制</h2><h3 id="4-1-JS是单线程"><a href="#4-1-JS是单线程" class="headerlink" title="4.1 JS是单线程"></a>4.1 JS是单线程</h3><p>JavaScript语言的一大特点就是<strong>单线程</strong>,也就是说,<strong>同一个时间只能做一件事</strong>。这是因为Javascript这门脚本语言诞生的使命所致——JavaScript 是为处理页面中用户的交互,以及操作DOM而诞生的。比如我们对某个DOM元素进行添加和删除操作,不能同时进行。应该先进行添加,之后再删除。</p>
+<p>单线程就意味着,所有任务需要排队，前一个任务结束,才会执行后一个任务。这样所导致的问题是:如果JS执行的时间过长,这样就会造成页面的渲染不连贯,导致页面渲染加载阻塞的感觉。比如遇到了定时器。</p>
+<h3 id="4-2同步和异步"><a href="#4-2同步和异步" class="headerlink" title="4.2同步和异步"></a>4.2同步和异步</h3><p>为了解决这个问题,利用多核CPU的计算能力, HTML 5提出Web Worker标准,<strong>允许JavaScript脚本创建多个线程</strong>。于是, JS中出现了同步和异步。</p>
+<p><strong>同步：**</strong>前一个任务结束后再执行后一个任务**,程序的执行顺序与任务的排列顺序是一致的、 同步的。比如做饭的同步做法:我们要烧水煮饭,等水开了( 10分钟之后) ,再去切菜,炒菜。</p>
+<p><strong>异步 ：</strong>你在做一件事情时,因为这件事情会花费很长时间,<strong>在做这件事的同时,你还可以去处理其他事</strong>情。比如做饭的异步做法,我们在烧水的同时,利用这10分钟,去切菜,炒菜。</p>
+<p><strong>他们本质的区别：这条流水线上各个流程的执行顺序不同。</strong></p>
+<h3 id="4-3-同步任务和异步任务"><a href="#4-3-同步任务和异步任务" class="headerlink" title="4.3 同步任务和异步任务"></a>4.3 同步任务和异步任务</h3><p><strong>1 同步任务</strong>：同步任务都在主线程上执行,形成一个<strong>执行栈</strong>。</p>
+<p>同步任务都在主线程上执行,形成一个执行栈。</p>
+<p><strong>2 异步任务</strong>：JS的异步是通过回调函数实现的。</p>
+<p>一般而言,异步任务有以下三种类型:</p>
+<p>1、普通事件,如click、 resize等</p>
+<p>2、资源加载,如load. error等</p>
+<p>3、定时器,包括setInterval、setTimeout 等</p>
+<p>异步任务相关回调函数添加到<strong>任务队列</strong>中(任务队列也称为消息队列)。</p>
+<p><strong>以下面一个例子为例说明js的同步和异步</strong></p>
+<p>执行顺序是1 2 3，因为 founction是回调函数，会被放在任务对列中。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">console.log(1);</span><br><span class="line"></span><br><span class="line">setTimeout(function() &#123;</span><br><span class="line">	console.log(3)</span><br><span class="line">&#125;, 0</span><br><span class="line"></span><br><span class="line">console.log(2);</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/05/23/WebAPIs-BOM%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%8A%EF%BC%89/image-20200524103750649.png" alt="image-20200524103750649" style="zoom:80%;">
+
+<h3 id="4-4-JS执行机制"><a href="#4-4-JS执行机制" class="headerlink" title="4.4 JS执行机制"></a>4.4 JS执行机制</h3><p>1.先执行<strong>执行栈</strong>中的同步任务。</p>
+<p>2.异步任务(回调函数)放入<strong>任务队列</strong>中。</p>
+<p>3.一旦执行栈中的所有<strong>同步任务执行完毕</strong>,系统就会按次序读取任务队列中的<strong>异步任务</strong>,于是被读取的异步任务<strong>结束等待状态,进入执行栈</strong>,开始执行。</p>
+<p>当出现两个及以上的回调函数，js会怎么处理？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">console.log(1);</span><br><span class="line">document.onclick &#x3D; function() &#123;</span><br><span class="line">    console.log(&#39;click&#39;);</span><br><span class="line">&#125;</span><br><span class="line">console.log(2);</span><br><span class="line">setTimeout(function() &#123;</span><br><span class="line">    console.log(3)</span><br><span class="line">&#125;, 3000)</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/05/23/WebAPIs-BOM%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%8A%EF%BC%89/image-20200524110252926.png" alt="image-20200524110252926" style="zoom:80%;">
+
+<p>由于<strong>主线程</strong>不断的重复获得任务、执行任务、再获取任务、再执行,所以这种机制被称为<strong>事件循环</strong>( event loop )。<img src="/2020/05/23/WebAPIs-BOM%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%8A%EF%BC%89/image-20200524110411354.png" alt="image-20200524110411354" style="zoom: 50%;"></p>
+<h2 id="◆location-对象"><a href="#◆location-对象" class="headerlink" title="◆location 对象"></a>◆location 对象</h2><h3 id="5-1什么是location对象"><a href="#5-1什么是location对象" class="headerlink" title="5.1什么是location对象"></a>5.1什么是location对象</h3><p>window对象给我们提供了一个<strong>location属性</strong>用于<strong>获取或设置窗体的URL</strong> ,并且可以用于<strong>解析URL</strong>。因为这个属性返回的是一个对象,所以我们将这个属性也称为<strong>location对象</strong>。</p>
+<h3 id="5-2-URL"><a href="#5-2-URL" class="headerlink" title="5.2 URL"></a>5.2 URL</h3><p>统一资源定位符(Uniform Resource Locator, URL)是互联网上标准资源的地址。互联网上的每个文件都有一个唯一的URL ,它包含的信息指出文件的位置以及浏览器应该怎么处理它。</p>
+<p>URL的一般语法格式为:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">protocol:&#x2F;&#x2F;host [:port]&#x2F;path&#x2F;[?query]#fragment</span><br><span class="line">http:&#x2F;&#x2F;www.itcast.cn&#x2F;index.html?name &#x3D;andy&amp;age &#x3D;18#link</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/05/23/WebAPIs-BOM%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%8A%EF%BC%89/image-20200524111715199.png" alt="image-20200524111715199" style="zoom:80%;">
+
+<h3 id="5-3-location-对象的属性"><a href="#5-3-location-对象的属性" class="headerlink" title="5.3 location 对象的属性"></a>5.3 location 对象的属性</h3><p>重要记住的是href 和 search属性。</p>
+<img src="/2020/05/23/WebAPIs-BOM%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%8A%EF%BC%89/image-20200524112648235.png" alt="image-20200524112648235" style="zoom:80%;">
+
+<p><strong>案例 - 登录页信息在首页显示</strong></p>
+<p>①第一个登录页面,里面有提交表单，action提交到index.html页面</p>
+<p>②第二个页面,可以使用第一个页面的参数,这样实现了一个数据不同页面之间的传递效果</p>
+<p>③第二个页面之所以可以使用第一个页面的数据,是利用了URL里面的location.search参数</p>
+<p>④在第二个页面中,需要把这个参数提取。</p>
+<p>⑤第一步去掉?利用substr</p>
+<p>⑥第二步利用 = 号分割键和值split( ‘=’ )</p>
+<h3 id="5-4-location-对象的方法"><a href="#5-4-location-对象的方法" class="headerlink" title="5.4  location 对象的方法"></a>5.4  location 对象的方法</h3><img src="/2020/05/23/WebAPIs-BOM%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%8A%EF%BC%89/image-20200524151050096.png" alt="image-20200524151050096" style="zoom:80%;">
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 记录浏览历史，所以可以实现后退功能</span><br><span class="line">location.assign(&#39;http:&#x2F;&#x2F;www.itcast.cn&#39;);</span><br><span class="line">&#x2F;&#x2F; 不记录浏览历史，所以不可以实现后退功能</span><br><span class="line">location.replace(&#39;http:&#x2F;&#x2F;www.itcast.cn&#39;);</span><br><span class="line">&#x2F;&#x2F; 强制刷新</span><br><span class="line">location.reload(true);</span><br></pre></td></tr></table></figure>
+
+<h2 id="◆navigator-对象"><a href="#◆navigator-对象" class="headerlink" title="◆navigator 对象"></a>◆navigator 对象</h2><p>navigator对象包含有关浏览器的信息,它有很多属性,我们最常用的是<strong>userAgent</strong> ,该属性可以返回由客户机发送服务器的user-agent头部的值。</p>
+<p>下面前端代码可以判断用户那个终端打开页面,实现跳转。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">   if((navigator.userAgent.match(&#x2F;(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)&#x2F;i))) &#123;</span><br><span class="line">            window.location.href &#x3D; &quot;..&#x2F;H5&#x2F;index.html&quot;; &#x2F;&#x2F;手机</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">         window.location.href &#x3D; &quot;&quot;; &#x2F;&#x2F;电脑</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="◆history-对象"><a href="#◆history-对象" class="headerlink" title="◆history 对象"></a>◆history 对象</h2><p>window对象给我们提供了一个<strong>history对象</strong>,与浏览器历史记录进行交互。该对象包含用户(<strong>在浏览器窗口中)访问过的URL</strong>。</p>
+<table>
+<thead>
+<tr>
+<th>history对象方法</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>back()</td>
+<td>可以后退功能</td>
+</tr>
+<tr>
+<td>forward()</td>
+<td>前进功能</td>
+</tr>
+<tr>
+<td>go(参数)</td>
+<td>前进后退功能参数如果是1前进1个页面，如果是-1后退1个页面</td>
+</tr>
+</tbody></table>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var btn &#x3D; document.querySelector(&#39;button&#39;);</span><br><span class="line">btn.addEventListener(&#39;click&#39;, function() &#123;</span><br><span class="line">    &#x2F;&#x2F; history.forward();</span><br><span class="line">    history.go(1);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>history对象一般在实际开发中比较少用，但是在一些OA（Office Automation）办公系统中见到。</p>
+<img src="/2020/05/23/WebAPIs-BOM%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%8A%EF%BC%89/image-20200524153437229.png" alt="image-20200524153437229" style="zoom:80%;">
       
 
       
@@ -385,6 +484,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          WebAPIs-PC端网页特效
+        
+      </div>
+    </a>
   
   
     <a href="/2020/05/23/WebAPIs-Dom%E5%AD%A6%E4%B9%A0-%E4%BA%8B%E4%BB%B6%E9%AB%98%E7%BA%A7/" id="article-nav-older" class="article-nav-link-wrap">

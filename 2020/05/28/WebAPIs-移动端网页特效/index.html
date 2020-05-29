@@ -6,30 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
-  <title>CSS学习-CSS3新特性 | 晓秋的博客</title>
+  <title>WebAPIs-移动端网页特效 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="CSS3的现状：  新增的CSS3特性有兼容性问题, ie9+才支持  移动端支持优于 PC端">
+  <meta name="description" content="◆触屏事件1.1 触屏事件概述移动端浏览器兼容性较好,我们不需要考虑以前JS的兼容性问题,可以放心的使用原生JS书写效果,但是移动端也有自己独特的地方。比如触屏事件touch (也称触摸事件) , Android和IOS都有。 touch对象代表一个触摸点。 触摸点可能是一根手指,也可能是一根触摸笔。 触屏事件可响应用户手指(或触控笔)对屏幕或者触控板操作。 常见的触屏事件如下:    触屏tou">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS学习-CSS3新特性">
-<meta property="og:url" content="https://futuwxq.github.io/2020/05/03/CSS%E5%AD%A6%E4%B9%A0-CSS3%E6%96%B0%E7%89%B9%E6%80%A7/index.html">
+<meta property="og:title" content="WebAPIs-移动端网页特效">
+<meta property="og:url" content="https://futuwxq.github.io/2020/05/28/WebAPIs-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="CSS3的现状：  新增的CSS3特性有兼容性问题, ie9+才支持  移动端支持优于 PC端">
+<meta property="og:description" content="◆触屏事件1.1 触屏事件概述移动端浏览器兼容性较好,我们不需要考虑以前JS的兼容性问题,可以放心的使用原生JS书写效果,但是移动端也有自己独特的地方。比如触屏事件touch (也称触摸事件) , Android和IOS都有。 touch对象代表一个触摸点。 触摸点可能是一根手指,也可能是一根触摸笔。 触屏事件可响应用户手指(或触控笔)对屏幕或者触控板操作。 常见的触屏事件如下:    触屏tou">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://futuwxq.github.io/2020/05/03/CSS%E5%AD%A6%E4%B9%A0-CSS3%E6%96%B0%E7%89%B9%E6%80%A7/image-20200503114859104.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/05/03/CSS%E5%AD%A6%E4%B9%A0-CSS3%E6%96%B0%E7%89%B9%E6%80%A7/image-20200503120433864.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/05/03/CSS%E5%AD%A6%E4%B9%A0-CSS3%E6%96%B0%E7%89%B9%E6%80%A7/image-20200503121718017.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/05/03/CSS%E5%AD%A6%E4%B9%A0-CSS3%E6%96%B0%E7%89%B9%E6%80%A7/image-20200503133915736.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/05/03/CSS%E5%AD%A6%E4%B9%A0-CSS3%E6%96%B0%E7%89%B9%E6%80%A7/image-20200503140046906.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/05/03/CSS%E5%AD%A6%E4%B9%A0-CSS3%E6%96%B0%E7%89%B9%E6%80%A7/image-20200503151833694.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/05/03/CSS%E5%AD%A6%E4%B9%A0-CSS3%E6%96%B0%E7%89%B9%E6%80%A7/image-20200503181512012.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/05/03/CSS%E5%AD%A6%E4%B9%A0-CSS3%E6%96%B0%E7%89%B9%E6%80%A7/image-20200503180312075.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/05/03/CSS%E5%AD%A6%E4%B9%A0-CSS3%E6%96%B0%E7%89%B9%E6%80%A7/image-20200503181123105.png">
-<meta property="article:published_time" content="2020-05-03T03:41:07.000Z">
-<meta property="article:modified_time" content="2020-05-03T10:38:10.673Z">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/28/WebAPIs-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200529084643523.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/28/WebAPIs-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200529220318014.png">
+<meta property="article:published_time" content="2020-05-28T12:08:39.000Z">
+<meta property="article:modified_time" content="2020-05-29T14:26:49.980Z">
 <meta property="article:author" content="不知火舞">
-<meta property="article:tag" content="css">
+<meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://futuwxq.github.io/2020/05/03/CSS%E5%AD%A6%E4%B9%A0-CSS3%E6%96%B0%E7%89%B9%E6%80%A7/image-20200503114859104.png">
+<meta name="twitter:image" content="https://futuwxq.github.io/2020/05/28/WebAPIs-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200529084643523.png">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
   
@@ -165,246 +158,274 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CSS学习-CSS3新特性" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-WebAPIs-移动端网页特效" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      CSS学习-CSS3新特性
+      WebAPIs-移动端网页特效
     </h1>
   
 
         
-        <a href="/2020/05/03/CSS%E5%AD%A6%E4%B9%A0-CSS3%E6%96%B0%E7%89%B9%E6%80%A7/" class="archive-article-date">
-  	<time datetime="2020-05-03T03:41:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-03</time>
+        <a href="/2020/05/28/WebAPIs-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/" class="archive-article-date">
+  	<time datetime="2020-05-28T12:08:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>CSS3的现状：</p>
-<ul>
-<li><p>新增的CSS3特性有兼容性问题, ie9+才支持</p>
-</li>
-<li><p>移动端支持优于 PC端</p>
-<a id="more"></a>
-</li>
-<li><p>不断改进中</p>
-</li>
-<li><p>应用相对广泛</p>
-<p>css3主要内容是：新增<strong>选择器和盒子模型以及其他特性</strong></p>
-</li>
-</ul>
-<h3 id="1-CSS3新增选择器"><a href="#1-CSS3新增选择器" class="headerlink" title="1 CSS3新增选择器"></a>1 CSS3新增选择器</h3><p>CS3给我们新增了选择器，可以更加便捷地、更加自由地选择目标元素。</p>
-<p>1.属性选择器</p>
-<p>2.结构伪类选择器</p>
-<p>3.伪元索选择器</p>
-<h4 id="1-1-属性选择器"><a href="#1-1-属性选择器" class="headerlink" title="1.1 属性选择器"></a>1.1 属性选择器</h4><p><img src="/2020/05/03/CSS%E5%AD%A6%E4%B9%A0-CSS3%E6%96%B0%E7%89%B9%E6%80%A7/image-20200503114859104.png" alt="image-20200503114859104"></p>
-<p>att是指表单的属性 ，类选择器、属性选择器、伪类选择器权重都是 10 。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"> &#x2F;* 必须是input 但是同时具有 value这个属性 选择这个元素  [] *&#x2F;</span><br><span class="line"> input[value] &#123;</span><br><span class="line">            color:pink;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">&#x2F;* 只选择 type &#x3D;text 文本框的input 选取出来 *&#x2F;</span><br><span class="line"> input[type&#x3D;text] &#123;</span><br><span class="line">        color: pink;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">&#x2F;* 选择首先是div 然后 具有class属性 并且属性值 必须是 icon开头的这些元素 *&#x2F;</span><br><span class="line"> div[class^&#x3D;icon] &#123;</span><br><span class="line">            color: red;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">&#x2F;*class属性值必须是以data结尾*&#x2F;</span><br><span class="line">section[class$&#x3D;data] &#123;</span><br><span class="line">            color: blue;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="1-2-结构伪类选择器"><a href="#1-2-结构伪类选择器" class="headerlink" title="1.2 结构伪类选择器"></a>1.2 结构伪类选择器</h4><img src="/2020/05/03/CSS%E5%AD%A6%E4%B9%A0-CSS3%E6%96%B0%E7%89%B9%E6%80%A7/image-20200503120433864.png" alt="image-20200503120433864" style="zoom:80%;">
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* 1. 选择ul里面的第一个孩子 小li *&#x2F;</span><br><span class="line">ul li:first-child &#123;</span><br><span class="line">	background-color: pink;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;* 2. 选择ul里面的最后一个孩子 小li *&#x2F;</span><br><span class="line">ul li:last-child &#123;</span><br><span class="line">	background-color: pink;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;* 3. 选择ul里面的第2个孩子 小li *&#x2F;</span><br><span class="line">ul li:nth-child(2) &#123;</span><br><span class="line">	background-color: skyblue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p><strong>1）nth-child(n)</strong></p>
-<p>选择某个父元素的一个或多个特定的子元素</p>
-<ul>
-<li><p>n可以是数字 ,关键字和公式</p>
-</li>
-<li><p>n如果是数字,就是选择第n个子元素，里面数字从1开始…</p>
-</li>
-<li><p>n可以是关键字:even偶数,odd奇数</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* 1.把所有的偶数 even的孩子选出来 *&#x2F;</span><br><span class="line"> ul li:nth-child(even) &#123;</span><br><span class="line">        background-color: #ccc;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>n可以是公式:常见的公式如下(如果n是公式,则从0开始计算,但是第0个元素或者超出了元素的个数会被忽略)</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* nth-child(n) 从0开始 每次加1 往后面计算  这里面必须是n 不能是其他的字母 选择了所有的孩子*&#x2F;</span><br><span class="line">ol li:nth-child(n) &#123;</span><br><span class="line">	background-color: pink;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">&#x2F;* nth-child(2n)母选择了所有的偶数孩子 等价于 even*&#x2F;</span><br><span class="line">ol li:nth-child(2n) &#123;</span><br><span class="line">	background-color: pink;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<img src="/2020/05/03/CSS%E5%AD%A6%E4%B9%A0-CSS3%E6%96%B0%E7%89%B9%E6%80%A7/image-20200503121718017.png" alt="image-20200503121718017" style="zoom:80%;">
-
-<p><strong>2）nth-of-type</strong></p>
-<p>nth-of-type 和 nth-child 都可以选中元素的孩子，但是nth-of-type使用起来更加灵活。</p>
-<p>如下面的html结构，想要选择section下的第二个子标签</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;section&gt;</span><br><span class="line">    &lt;p&gt;光头强&lt;&#x2F;p&gt;</span><br><span class="line">    &lt;div&gt;熊大&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div&gt;熊二&lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;section&gt;</span><br></pre></td></tr></table></figure>
-
-<p><strong>使用 nth-child</strong>，无法选择第二个子元素，因为nth-child会提前给所有的孩子进行编号。</p>
-<pre><code>/* nth-child 会把所有的盒子都排列序号 */
-/* 执行的时候首先看  :nth-child(1) 之后回去看 前面 div */
-
-section div:nth-child(1) {
-    background-color: red;
-}</code></pre><p> <strong>使用nth-of-type</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"> &#x2F;* nth-of-type 会把指定元素的盒子排列序号 *&#x2F;</span><br><span class="line">&#x2F;* 执行的时候首先看  div指定的元素  之后回去看 :nth-of-type(1) 第几个孩子 *&#x2F;</span><br><span class="line">section div:nth-of-type(1) &#123;</span><br><span class="line">    background-color: blue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="1-3-伪元素选择器-重点"><a href="#1-3-伪元素选择器-重点" class="headerlink" title="1.3 伪元素选择器(重点)"></a>1.3 伪元素选择器(重点)</h4><p>伪元素选择器可以帮助我们利用CSS创建新标签元素,而不需要HTML标签,从而简化HTML结构。</p>
+        <h2 id="◆触屏事件"><a href="#◆触屏事件" class="headerlink" title="◆触屏事件"></a>◆触屏事件</h2><h3 id="1-1-触屏事件概述"><a href="#1-1-触屏事件概述" class="headerlink" title="1.1 触屏事件概述"></a>1.1 触屏事件概述</h3><p>移动端浏览器兼容性较好,我们不需要考虑以前JS的兼容性问题,可以放心的使用原生JS书写效果,但是移动端也有自己独特的地方。比如触屏事件touch (也称触摸事件) , Android和IOS都有。</p>
+<p>touch对象代表一个触摸点。 触摸点可能是一根手指,也可能是一根触摸笔。 触屏事件可响应用户手指(或触控笔)对屏幕或者触控板操作。</p>
+<p>常见的触屏事件如下:</p>
 <table>
 <thead>
 <tr>
-<th>选择符</th>
-<th>简介</th>
+<th>触屏touch事件</th>
+<th>说明</th>
 </tr>
 </thead>
 <tbody><tr>
-<td>::before</td>
-<td>在元素内部的前面插入内容</td>
+<td>touchstart</td>
+<td>手指触摸到一个DOM元素时触发</td>
 </tr>
 <tr>
-<td>::after</td>
-<td>在元素内部的后面插入内容</td>
+<td>touchmove</td>
+<td>手指在一个DOM元素上滑动时触发</td>
+</tr>
+<tr>
+<td>touchend</td>
+<td>手指从一个DOM元素上移开时触发</td>
 </tr>
 </tbody></table>
-<p>注意:</p>
-<p>● before 和 after 创建一个元素 ,但是属于<strong>行内元素</strong></p>
-<p>● 创建的这个元素在<strong>文档树</strong>中是找不到的,所以我们称为伪元素</p>
-<p>● 语法: element::before {}</p>
-<p>● before和after必须有<strong>content属性</strong></p>
-<p>●before在父元素内容的前面创建元素, after 在父元素内容的后面插入元素</p>
-<p>●伪元素选择器和标签选择器一样,<strong>权重为1</strong></p>
-<p>伪元素使用场景：添加字体图标、遮罩层这些样式相关</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*添加字体图标*&#x2F;</span><br><span class="line">div::after &#123;</span><br><span class="line">         position: absolute;</span><br><span class="line">         top: 10px;</span><br><span class="line">         right: 10px;</span><br><span class="line">         font-family: &#39;icomoon&#39;;</span><br><span class="line">         content: &#39;&#39;; </span><br><span class="line">         color: red;</span><br><span class="line">         font-size: 18px;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-2-触摸事件对象-TouchEvent"><a href="#1-2-触摸事件对象-TouchEvent" class="headerlink" title="1.2 触摸事件对象( TouchEvent )"></a>1.2 触摸事件对象( TouchEvent )</h3><p>TouchEvent是一类描述手指在触摸平面(触摸屏、触摸板等)的状态变化的事件。这类事件用于描述<strong>一个或多个触点,</strong>使开发者可以检测触点的移动,触点的增加和减少,等等</p>
+<p><code>touchstart. touchmove、 touchend</code>三个事件都会各自有事件对象。触摸事件对象重点我们看三个常见对象列表:</p>
+<table>
+<thead>
+<tr>
+<th>触摸列表</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>touches</td>
+<td>正在触摸屏幕的所有手指的<strong>一个列表</strong></td>
+</tr>
+<tr>
+<td>targetTouches</td>
+<td>正在触摸当前DOM元素上的手指的一个列表</td>
+</tr>
+<tr>
+<td>changedTouches</td>
+<td>手指状态发生了改变的列表，<strong>从无到有， 从有到无变化</strong></td>
+</tr>
+</tbody></table>
+<p>当我们手指离开屏幕的时候，就没有了 touches 和 targetTouches 列表但是会有 changedTouches 。<strong>因为我们一般都是触摸元素 所以最经常使用的是 targetTouches</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(e.targetTouches[0]);&#x2F;&#x2F;就可以得到正在触摸dom元素的第一个手指的相关信息比如 手指的坐标等等</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;*设置遮罩层*&#x2F;</span><br><span class="line">.tudou::before &#123;</span><br><span class="line">     content: &#39;&#39;;</span><br><span class="line">     &#x2F;* 隐藏遮罩层 *&#x2F;</span><br><span class="line">     display: none;</span><br><span class="line">     position: absolute;</span><br><span class="line">     top: 0;</span><br><span class="line">     left: 0;</span><br><span class="line">     width: 100%;</span><br><span class="line">     height: 100%;</span><br><span class="line">     background: rgba(0, 0, 0, .4) url(images&#x2F;arr.png) no-repeat center;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line"> &#x2F;* 当我们鼠标经过了 土豆这个盒子，就让里面before遮罩层显示出来 *&#x2F;</span><br><span class="line"> .tudou:hover::before &#123;</span><br><span class="line">     &#x2F;* 而是显示元素 *&#x2F;</span><br><span class="line">     display: block;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="1-移动端拖动元素"><a href="#1-移动端拖动元素" class="headerlink" title="1.移动端拖动元素"></a>1.移动端拖动元素</h3><p><code>touchstart、touchmove、 touchend</code>可以实现拖动元素，但是拖动元素需要当前手指的坐标值我们可以使用targetTouches[0] 里面的pageX和pageY。</p>
+<p><strong>移动端拖动的原理</strong>:手指移动中 ,计算出手指移动的距离。然后用盒子原来的位置+手指移动的距离。<strong>手指移动的距离</strong>:手指滑动中的位置 减去手指刚开始触摸的位置</p>
+<p><strong>拖动元素三步曲:</strong></p>
+<p>(1 )触摸元素touchstart :获取手指初始坐标,同时获得盒子原来的位置</p>
+<p>(2)移动手指touchmove :计算手指的滑动距离,并且移动盒子</p>
+<p>(3 )离开手指touchend:</p>
+<p><strong>注意:手指移动也会触发滚动屏幕所以这里要阻止默认的屏幕滚动e.preventDefault0;</strong></p>
+<h2 id="◆移动端常见特效"><a href="#◆移动端常见特效" class="headerlink" title="◆移动端常见特效"></a>◆移动端常见特效</h2><h3 id="移动端轮播图"><a href="#移动端轮播图" class="headerlink" title="移动端轮播图"></a>移动端轮播图</h3><img src="/2020/05/28/WebAPIs-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200529084643523.png" alt="image-20200529084643523" style="zoom:80%;">
 
-<h3 id="2-css3盒子模型"><a href="#2-css3盒子模型" class="headerlink" title="2  css3盒子模型"></a>2  css3盒子模型</h3><p>CSS3中可以通过box-sizing来指定盒模型, 有2个值:即可指定为content- box. border-box ,这样我们计算盒子大小的方式就发生了改变。</p>
-<p>可以分成两种情况:</p>
-<p><strong>1.</strong>box sizing: content-box盒子大小为<strong>width + padding + border</strong> ( 以前默认的)</p>
-<p><strong>2.</strong>box sizing: border-box盒子大小为<strong>width</strong></p>
-<p>如果盒子模型我们改为了box sizing: border-box，那padding和border就不会撑大盒子 了(前提padding和border不会超过width宽度)</p>
-<h3 id="3-CSS3其他特性-了解"><a href="#3-CSS3其他特性-了解" class="headerlink" title="3 CSS3其他特性(了解)"></a>3 CSS3其他特性(了解)</h3><h4 id="3-1-CSS3滤镜filter"><a href="#3-1-CSS3滤镜filter" class="headerlink" title="3.1 CSS3滤镜filter"></a>3.1 CSS3滤镜filter</h4><p>CSS3滤镜filter: <strong>filter CSS属性</strong>将模糊或颜色偏移等图形效果应用于元素。</p>
-<p>filter:函数();  例如:  filter: blur(5px);   blur模糊处理 数值越大越模糊。</p>
-<img src="/2020/05/03/CSS%E5%AD%A6%E4%B9%A0-CSS3%E6%96%B0%E7%89%B9%E6%80%A7/image-20200503133915736.png" alt="image-20200503133915736" style="zoom:80%;">
+<h5 id="轮播图的DOM-结构"><a href="#轮播图的DOM-结构" class="headerlink" title="轮播图的DOM 结构"></a>轮播图的DOM 结构</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"focus"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/focus3.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/focus1.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/focus2.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/focus3.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/focus1.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"current"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h4 id="3-2-CSS3-calc函数"><a href="#3-2-CSS3-calc函数" class="headerlink" title="3.2 CSS3 calc函数"></a>3.2 CSS3 calc函数</h4><p>calc()此CSS函数让你在声明CSS属性值时执行一些计算。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">width: calc(100%-80px);</span><br></pre></td></tr></table></figure>
-
-<p>括号里面可以使用+ - * /来进行计算。</p>
-<h4 id="3-3-CSS3过渡-重点"><a href="#3-3-CSS3过渡-重点" class="headerlink" title="3.3 CSS3过渡(重点)"></a>3.3 CSS3过渡(重点)</h4><p>transition语法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transition:要过渡的属性  花费时间  运动曲线  何时开始;</span><br></pre></td></tr></table></figure>
-
-<p>1.属性:想要变化的Css属性，宽度、高度、背景颜色、内外边距等都可以。如果想要所有的属性都变化过渡，写一个<strong>all</strong> 就可以。</p>
-<p>2.花费时间:单位是秒(必须写单位)比如0.5s</p>
-<p>3.运动曲线:默认是ease(可以省略)</p>
-<p>4.何时开始: 单位是秒(必须写单位)可以设置延迟触发时间默认是Os ( 可以省略)</p>
-<p><strong>过渡的使用口诀:谁做过渡给谁加</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 100px;</span><br><span class="line">    background-color: pink;</span><br><span class="line">     transition: height .5s ease 1s;  </span><br><span class="line">     </span><br><span class="line">    &#x2F;* 如果想要写多个属性，利用逗号进行分割 *&#x2F;</span><br><span class="line">     transition: width .5s, height .5s; </span><br><span class="line">    </span><br><span class="line">    &#x2F;* 如果想要多个属性都变化，属性写all就可以了 *&#x2F;</span><br><span class="line">    transition: all 0.5s;</span><br><span class="line">&#125;</span><br><span class="line">div:hover &#123;</span><br><span class="line">    width: 400px;</span><br><span class="line">    height: 200px;</span><br><span class="line">    background-color: skyblue;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-4-2D转换"><a href="#3-4-2D转换" class="headerlink" title="3.4 2D转换"></a>3.4 2D转换</h4><p><strong>转换( transform</strong> )是CSS3中具有颠覆性的特征之一, 可以实现元素的位移、旋转、缩放等效果转换( transform )你可以简单理解为变形：</p>
-<ul>
-<li><p>translate .</p>
+<p>考虑到移动端，在第一张轮播图向左滑动，可以滑到最后一张，所以预先在第一张前面加上最后一张照片；同样在最后一张照片后面加上第一张。使用<code>margin-left = -100%</code>和 <code>overflow ：hidden;</code>使得用户点击去，轮播图的首页在第一张。</p>
+<h5 id="css样式相关"><a href="#css样式相关" class="headerlink" title="css样式相关"></a>css样式相关</h5><ul>
+<li>focus不给宽度，自动占满整个屏幕</li>
+<li>ul里面有5张照片，因此宽度设为500%；使得所有照片排列在一行<ul>
+<li>每个li都需要浮动，父元素清楚浮动，宽度设置为占父元素的20%；否则图片会占父元素100%，从而放大5倍。</li>
+</ul>
 </li>
-<li><p>rotate</p>
-</li>
-<li><p>scale</p>
+<li>ol 里面是轮播图下面的轮播按钮<ul>
+<li>当前页面的小圆圈宽度会更长，所有小圆圈 inline-block;</li>
+</ul>
 </li>
 </ul>
-<p><strong>1） 二维坐标系</strong></p>
-<img src="/2020/05/03/CSS%E5%AD%A6%E4%B9%A0-CSS3%E6%96%B0%E7%89%B9%E6%80%A7/image-20200503140046906.png" alt="image-20200503140046906" style="zoom:80%;">
-
-<h5 id="2）-2D特換之移动translate"><a href="#2）-2D特換之移动translate" class="headerlink" title="2） 2D特換之移动translate"></a><strong>2） 2D特換之移动translate</strong></h5><p>2D移动是2D转换里面的一种功能,可以改变元素在页面中的位置,类似定位。</p>
-<p>语法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">transform: translate(x,y); </span><br><span class="line">transform: translateX(n) ;</span><br><span class="line">transform: translateY(n) ;</span><br></pre></td></tr></table></figure>
-
+<h5 id="js部分"><a href="#js部分" class="headerlink" title="js部分"></a>js部分</h5><p><strong>1）自动播放功能</strong></p>
 <ul>
-<li><p>定义2D转换中的移动,沿着X和Y轴移动元索</p>
+<li><p>开启定时器</p>
 </li>
-<li><p>translate最大的优点 :<strong>不会影响到其他元素的位置</strong></p>
+<li><p>移动端移动, 可以使用translate移动 </p>
 </li>
-<li><p>translate中的百分比单位是相对于<strong>自身元素</strong>的 translate:(50%, 50%);</p>
-</li>
-<li><p>对行内标签没有效果</p>
+<li><p>想要图片优雅的移动,请添加transition过度</p>
 </li>
 </ul>
-<h5 id="3）盒子实现水平居中和垂直居中"><a href="#3）盒子实现水平居中和垂直居中" class="headerlink" title="3）盒子实现水平居中和垂直居中"></a><strong>3）盒子实现水平居中和垂直居中</strong></h5><p>通过transform: taslate(-50%, -50%);，不需要知道居中盒子的宽度和高度就可以使盒子实现垂直居中。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">position: absolute;</span><br><span class="line"></span><br><span class="line">top: 50%;</span><br><span class="line"></span><br><span class="line">left: 50%;</span><br><span class="line"></span><br><span class="line">width: 200px;</span><br><span class="line"></span><br><span class="line">height: 200px;</span><br><span class="line"></span><br><span class="line">background-color:purple;</span><br><span class="line"></span><br><span class="line">&#x2F;* margin-top: -189px;</span><br><span class="line"></span><br><span class="line">margin-left: 190px; *&#x2F;</span><br><span class="line"></span><br><span class="line">transform: taslate(-50%, -50%);</span><br></pre></td></tr></table></figure>
+<p><strong>2）自动播放功能无缝滚动</strong></p>
+<ul>
+<li><p>我们判断条件是要等到图片滚动完毕再去判断,就是过渡完成后判断</p>
+</li>
+<li><p>此时需要添加检测过渡完成事件<strong>transitionend</strong></p>
+</li>
+<li><p>判断条件:如果索引号等于3说明走到最后一张图片 ,此时索引号要复原为0，此时图片,去掉过渡效果,然后移动</p>
+</li>
+</ul>
+<p><strong>3）小圆点跟随变化效果</strong></p>
+<ul>
+<li><p>把 ol 里面 li 带有current类名的选出来去掉类名remove</p>
+</li>
+<li><p>让当前索引号的小i加上current add</p>
+</li>
+<li><p>但是,是等着过渡结束之后变化,所以这个写到transitionend事件里面</p>
+</li>
+</ul>
+<p><strong>4）手指滑动轮播图</strong></p>
+<p>本质就是ul跟随手指移动,简单说就是移动端拖动元素</p>
+<ul>
+<li><p>触摸元素touchstart :获取手指初始坐标</p>
+</li>
+<li><p>手动播放暂停自动播放</p>
+</li>
+<li><p>移动手指touchmove :计算手指的滑动距离，并且移动盒子</p>
+</li>
+</ul>
+<p><strong>5）离开手指touchend:根据滑动的距离分不同的情况</strong>（节流阀）</p>
+<ul>
+<li>如果移动距离小于某个像素就回弹原来位置</li>
+<li>如果移动距离大于某个像素就上一张下一张滑动。</li>
+<li>手指离开后开启自动播放</li>
+</ul>
+<p><strong>6）优化</strong></p>
+<ul>
+<li>当用户触屏之后 ，并没有移动，touchend里面对自动播放到上一张或下一张就不需要运行，设置一个flag变量控制。</li>
+<li>用户touchmove事件，里面禁用翻页功能</li>
+</ul>
+<h3 id="2-1-classList属性"><a href="#2-1-classList属性" class="headerlink" title="**2. 1 classList属性"></a>**2. 1 classList属性</h3><p>classList属性是HTML 5新增的一个属性,返回元素的类名。但是<strong>ie10以上版本支持</strong>。该属性用于在元素中添加,移除及切换CSS类。有以下方法：</p>
+<p>添加类:  是在后面追加类名不会覆盖以前的类名， 注意前面不需要加<code>.</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">element.classList.add(&#39;类名’) ;</span><br><span class="line">focus.classList.add(&#39;current&#39;) ;</span><br></pre></td></tr></table></figure>
 
-<h5 id="4）2D旋转"><a href="#4）2D旋转" class="headerlink" title="4）2D旋转"></a>4）2D旋转</h5><p>2D旋转指的是让元素在2维平面内顺时针旋转或者逆时针旋转。</p>
-<p>语法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transform: rotate (度数)</span><br></pre></td></tr></table></figure>
+<p>移除类:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.classList.remove(&#39;类名’);</span><br></pre></td></tr></table></figure>
 
-<p>●rotate里面跟度数，单位是deg比如rotate(45deg)</p>
-<p>●角度为正时 ,顺时针,负时，为逆时针</p>
-<p>●默认旋转的中心点是<strong>元索的中心点</strong></p>
-<p><strong>2D转换中心点</strong></p>
-<p><strong>transform-origin</strong>我们可以设置元索转换的中心点</p>
-<p>语法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transform-origin: x y:</span><br></pre></td></tr></table></figure>
+<p>切换类: 检查某dom对象是否有该类名，有就删除，没有添加。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.classList.toggle(&#39;类名’);</span><br></pre></td></tr></table></figure>
 
-<p>●注意后面的参数 x 和y 用空格隔开</p>
-<p>●xy默认转换的中心点是元素的中心点(50% 50%)</p>
-<p>●还可以给xy设置像素或者方位名词( top bottom left right center )</p>
-<h5 id="5）-2D转换之缩放scale"><a href="#5）-2D转换之缩放scale" class="headerlink" title="5） 2D转换之缩放scale"></a>5） 2D转换之缩放scale</h5><p>缩放,顾名思义,可以放大和缩小。只要给元素添加上了这个属性就能控制它放大还是缩小。</p>
-<p>语法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">transform:scale(x,y);</span><br></pre></td></tr></table></figure>
+<h3 id="2-2-click延时解决方案"><a href="#2-2-click延时解决方案" class="headerlink" title="2.2 click延时解决方案"></a>2.2 click延时解决方案</h3><p>移动端click事件会有<strong>300ms</strong>的延时,原因是移动端屏幕双击会缩放(double tap to zoom)页面。解决方案:</p>
+<p><strong>1.禁用缩放</strong>。浏览器禁用默认的双击缩放行为并且去掉300ms的点击延迟。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"user-scalable=no"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p>●注意其中的x和y用逗号分隔</p>
-<p>●transform:scale(1,1) : 宽和高都放大一倍.相对于没有放大</p>
-<p>●transform:scale(2,2) : 宽和高都放大了2倍</p>
-<p>●transform:scale(2) : 只写一个参数，第二个参数则和第一个参数一样, 相当于scale(2,2)</p>
-<p>●transforrm:scale(0.5,0.5) :缩小</p>
-<p>●sacle缩放最大的优势:可以设置<strong>转换中心点缩放</strong>,默认以中心点缩放的,而且<strong>不影响其他盒子</strong>的布局</p>
-<h5 id="2D转换综合写法"><a href="#2D转换综合写法" class="headerlink" title="2D转换综合写法"></a>2D转换综合写法</h5><p>注意:</p>
-<p>1.同时使用多个转换,其格式为: transform: translate() rotate() scale()..等,</p>
-<p>2.其顺序会影转换的效果。( <strong>先旋转会改变坐标轴方向</strong>)</p>
-<p>3.当我们同时有位移和其他属性的时候,记得要将<strong>位移放到最前</strong></p>
-<h4 id="3-5-CSS3动画"><a href="#3-5-CSS3动画" class="headerlink" title="3.5 CSS3动画"></a>3.5 CSS3动画</h4><p>动画( animation )是CSS3中具有颠覆性的特征之一, 可通过设置多个节点来精确控制一个或一组动画，常用来实现复杂的动画效果。</p>
-<p>相比较过渡,动画可以实现更多变化,更多控制,连续自动播放等效果。</p>
-<p><strong>动画的基本使用</strong>制作动画分为两步:</p>
-<p>1.先定义动画</p>
-<p>2.再使用(调用)动画</p>
-<p><strong>1.用keyframes定义动画(类似定义类选择器)</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">@keyframes动画名称 &#123; </span><br><span class="line">    0%&#123;</span><br><span class="line">        width: 100px;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    100%&#123;</span><br><span class="line">        width: 200px;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>2.利用touch事件</strong>自己封装这个事件解决300ms延迟。</p>
+<p>原理就是:</p>
+<p>1.当我们手指触摸屏幕,记录当前触摸时间</p>
+<p>2.当我们手指离开屏幕,用离开的时间减去触摸的时间</p>
+<p>3.如果时间小于150ms ,并且没有滑动过屏幕，那么我们就定义为点击</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//封装tap，解决click 300ms延时</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tap</span> (<span class="params">obj, calback</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> isMove = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">var</span> startTime = <span class="number">0</span>; <span class="comment">//记录触摸时候的时间变量</span></span><br><span class="line">    obj.addEventListener (<span class="string">'touchstart'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">   		 startTime = <span class="built_in">Date</span>.now(); <span class="comment">//记录触摸时间</span></span><br><span class="line">    &#125;);</span><br><span class="line">    obj.addEventListener (<span class="string">' touchmove'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    	isMove = <span class="literal">true</span>;<span class="comment">//看看是否有滑动，有滑动算拖拽，不算点击</span></span><br><span class="line">    &#125;) ;</span><br><span class="line">    obj.addEventListener(<span class="string">'touchend'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!isMove &amp;&amp; (<span class="built_in">Date</span>.now() - startTime) &lt; <span class="number">150</span>) &#123;</span><br><span class="line">        <span class="comment">// 如果手指触摸和离开时间小于150ms算点击</span></span><br><span class="line">        callback &amp;&amp; callback(); <span class="comment">//执行回调函数</span></span><br><span class="line">        &#125;</span><br><span class="line">        isMove = <span class="literal">false</span>; <span class="comment">// 取反重置</span></span><br><span class="line">        startTime = <span class="number">0</span>;</span><br><span class="line"> &#125;);</span><br><span class="line">    <span class="comment">//调用</span></span><br><span class="line">    tap(div, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">// 执行代码&#125;);</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>动画序列</strong></p>
-<p>0%是动画的开始，100%是动画的完成。这样的规则就是动画序列。</p>
-<p>●在 @keyframes中规定某项CSS样式,就能创建由当前样式逐渐改为新样式的动画效果。</p>
-<p>●动画是使元素从一种祥式逐渐变化为另一种样式的效果。您可以改变任意的样式任意多的次数。</p>
-<p>●请用百分比来规定变化发生的时间,或用关键词”from”和”to” ,等同于0%和100%。</p>
-<p><strong>2.元素使用动画</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">div &#123;</span><br><span class="line">    width: 200px;</span><br><span class="line">    height: 200px;</span><br><span class="line">    background-color: aqua;</span><br><span class="line">    margin: 100px auto;</span><br><span class="line">    &#x2F;*调用动画*&#x2F;</span><br><span class="line">    animation-name :动画名称;</span><br><span class="line">    &#x2F;*持续时间*&#x2F;</span><br><span class="line">    animation-duration:持续时间;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>3.使用插件</strong>。fastclick 插件解决300ms延迟。<strong>最常用</strong>，用法见下节</p>
+<h2 id="◆移动端常用开发插件"><a href="#◆移动端常用开发插件" class="headerlink" title="◆移动端常用开发插件"></a>◆移动端常用开发插件</h2><h3 id="3-1-什么是插件"><a href="#3-1-什么是插件" class="headerlink" title="3.1 什么是插件"></a>3.1 什么是插件</h3><p>移动端要求的是快速开发,所以我们经常会借助于些插件来帮我完成操作,那么什么是插件呢?</p>
+<p><strong>JS插件是js文件</strong>，<strong>它遵循一定规范编写,方便程序展示效果,拥有特定功能且方便调用</strong>。如轮播图和瀑布流插件。特点:它一般是为了解决某个问题而专门存在,期能单一, 并且比较小。我们以前写的animate.js也算一个最简单的插件。</p>
+<p>GitHub官网地址:<a href="https://github.com/ftlabs/fastclick" target="_blank" rel="noopener">https://github.com/ftlabs/fastclick</a></p>
+<p>用法：</p>
+<ol>
+<li>在项目的js里面新建一个fastclick.js,把github上面的源码复制过来</li>
+<li>在github的文档查看Usage <ul>
+<li>首先要在html问津中引用fastclick.js</li>
+<li>在首页的script里面添加如下代码</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="string">'addEventListener'</span> <span class="keyword">in</span> <span class="built_in">document</span>) &#123;</span><br><span class="line">	<span class="built_in">document</span>.addEventListener(<span class="string">'DOMContentLoaded'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		FastClick.attach(<span class="built_in">document</span>.body);</span><br><span class="line">	&#125;, <span class="literal">false</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h4 id="3-6-3D转换"><a href="#3-6-3D转换" class="headerlink" title="3.6 3D转换"></a>3.6 3D转换</h4><p>三维坐标系</p>
-<img src="/2020/05/03/CSS%E5%AD%A6%E4%B9%A0-CSS3%E6%96%B0%E7%89%B9%E6%80%A7/image-20200503151833694.png" alt="image-20200503151833694" style="zoom:80%;">
+<h3 id="3-3-Swiper插件的使用"><a href="#3-3-Swiper插件的使用" class="headerlink" title="3.3 Swiper插件的使用"></a>3.3 Swiper插件的使用</h3><p>中文官网地址: <a href="https://ww.swiper.com.cn/" target="_blank" rel="noopener">https://ww.swiper.com.cn/</a></p>
+<p>1.引入插件相关文件。</p>
+<p>2.按照规定语法使用</p>
+<p>主要查看官方的文档,在在线演示中找到想要的轮播图效果，记住编号（比如我想用的自动播放是 280），在下载的Swiper包中的<em>demos</em>中查找对应的html文件（比如我要找的是&lt;280-autoplay.html&gt;）,之后可以直接复制里面的css代码 和  Dom结构</p>
+<ul>
+<li><strong>首先加载插件</strong>，需要用到的文件有swiper.min.js和swiper.min.css文件。</li>
+<li>在demo里面复制DOM 和 css代码 以及script（在 <em>package</em>）里面的<strong>代码</strong></li>
+<li><strong>修改代码参数</strong><ul>
+<li>js代码可以参考官网的API文档，修改参数</li>
+<li>想要修改css代码，可以在浏览器审查之后，给元素重新设置样式覆盖之前的样式</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.swiper-pagination-bullet &#123;</span><br><span class="line">    background-color: #fff!important;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h5 id="1）3D移动translate3d"><a href="#1）3D移动translate3d" class="headerlink" title="1）3D移动translate3d"></a>1）3D移动translate3d</h5><p>3D移动在2D移动的基础上多加了一个可以移动的方向 ,就是z轴方向。</p>
-<p>●translform:translateX(100px) : 仅仅是在x轴上移动。</p>
-<p>●translform:translateY(100px) : 仅仅是在Y轴上移动。</p>
-<p>●translform:translateZ(100px) :仅仅是在Z轴上移动(<strong>translateZ一般用px单位</strong>)，Z值越大，盒子越大，z值越小盒子越小。z是0，盒子保持正常大小。</p>
-<p>●transform:translate<strong>3d</strong>(x,y,z) :其中x、y、z分别指要移动的轴的方向的距离。</p>
-<h5 id="2）透视perspective"><a href="#2）透视perspective" class="headerlink" title="2）透视perspective"></a>2）透视perspective</h5><p>透视我们也称为视距:视距就是人的眼睛到屏幕的距离，距离视觉点越近的在电脑平面成像越大,越远成像越小。</p>
-<p>透视的单位是<strong>像素</strong></p>
-<p>透视写在<strong>被观察元素的父盒子</strong>上面的</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">perspective: 500px; &#x2F;&#x2F;数值越小，盒子越大</span><br></pre></td></tr></table></figure>
+<h3 id="3-4-其他移动端常见插件"><a href="#3-4-其他移动端常见插件" class="headerlink" title="3.4 其他移动端常见插件"></a>3.4 其他移动端常见插件</h3><ul>
+<li><p>superslide :<a href="http://www.superslide2.com/" target="_blank" rel="noopener">http://www.superslide2.com/</a> </p>
+</li>
+<li><p>iscroll:<a href="https://github.com/cubiq/iscroll" target="_blank" rel="noopener">https://github.com/cubiq/iscroll</a></p>
+</li>
+</ul>
+<h3 id="3-5-插件的使用总结"><a href="#3-5-插件的使用总结" class="headerlink" title="3.5 插件的使用总结"></a>3.5 插件的使用总结</h3><p>1.确认插件实现的功能</p>
+<p>2.去官网查看使用说明</p>
+<p>3.下载插件</p>
+<p>4.打开demo实例文件,查看需要引入的相关文件,并且引入</p>
+<p>5.复制demo实例文件中的结构html ,样式css以及js代码</p>
+<h3 id="3-6-练习-移动端视频插件zy-media-js"><a href="#3-6-练习-移动端视频插件zy-media-js" class="headerlink" title="3.6 练习-移动端视频插件zy.media.js"></a>3.6 练习-移动端视频插件zy.media.js</h3><p>H5给我们提供了video标签,但是浏览器的支持情况不同。不同的视频格式文件,我们可以通过<strong>source解决。</strong>但是外观样式，还有暂停,播放,全屏等功能我们只能自己写代码解决。这个时候我们可以使用插件方式来制作。</p>
+<p>zy.media的使用方法和上面的插件使用一样，先引入插件的js 和css文件，然后模仿DOM结构，css样式和script代码，修改参数….</p>
+<h2 id="◆移动端常用开发框架"><a href="#◆移动端常用开发框架" class="headerlink" title="◆移动端常用开发框架"></a>◆移动端常用开发框架</h2><h3 id="4-1-框架概述"><a href="#4-1-框架概述" class="headerlink" title="4.1 框架概述"></a>4.1 框架概述</h3><p>框架，顾名思义就是一套架构,它会基于自身的特点向用户提供一套较为完整的解决方案。 框架的控制权在框架本身,使用者要按照框架所规定的某种规范进行开发。</p>
+<p>插件：一般是为了解决某个问题而专门]存在,其功能单一, 并且比较小。</p>
+<p>前端常用的框架有Bootstrap. Vue、Angular. React 等。既能开发PC端,也能开发移动端前端常用的移动端插件有swiper. superslide、 iscroll等。</p>
+<ul>
+<li><p>框架:大而全, -整套解决方案</p>
+</li>
+<li><p>插件:小而专一, 某个功能的解决方案</p>
+</li>
+</ul>
+<h3 id="4-2-Bootstrap"><a href="#4-2-Bootstrap" class="headerlink" title="4.2 Bootstrap"></a>4.2 Bootstrap</h3><p>Bootstrap是一个简洁、 直观、强悍的前端开发框架,它让web开发更迅速、简单。它能开发PC端,也能开发移动端;</p>
+<p><strong>Bootstrap JS插件使用步骤（参考移动端项目阿里百秀的轮播图）:</strong></p>
+<p>1.引入相关js文件</p>
+<p>2.复制HTML结构</p>
+<p>3.修改对应样式</p>
+<p>需要得到轮播图的父元素的高度，并把这个高度给.carousel 和里面的图片，宽度设置为100%；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.carousel,</span><br><span class="line">.carousel img &#123;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 266px!important;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h5 id="3）3D旋转-rotate3d"><a href="#3）3D旋转-rotate3d" class="headerlink" title="3）3D旋转 rotate3d"></a>3）3D旋转 rotate3d</h5><p>3D旋转指可以让元素在三维平面内沿着x轴, y轴, z轴或者自定义轴进行旋转。</p>
-<p>语法</p>
-<p>●transform:rotateX(45deg) :沿着x轴正方向旋转45度</p>
-<p>●transform:rotateY(45deg) : 沿着y轴正方向旋转45deg</p>
-<p>●transform:rotateZ(45deg) : 沿着Z轴正方向旋转45deg</p>
-<p>●transform:rotate3d(x,y,z,deg) :沿着自定义轴旋转deg为角度(了解即可)</p>
-<img src="/2020/05/03/CSS%E5%AD%A6%E4%B9%A0-CSS3%E6%96%B0%E7%89%B9%E6%80%A7/image-20200503181512012.png" alt="image-20200503181512012" style="zoom:80%;">
+<p>4.修改相应JS参数</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.carousel'</span>).carousel(&#123;</span><br><span class="line">  interval: <span class="number">2000</span></span><br><span class="line">&#125;) <span class="comment">//自动播放</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>x轴旋转的正方向</strong></p>
-<p>transform:rotateX(-45deg) 是沿着左手准则相反的方向。</p>
-<img src="/2020/05/03/CSS%E5%AD%A6%E4%B9%A0-CSS3%E6%96%B0%E7%89%B9%E6%80%A7/image-20200503180312075.png" alt="image-20200503180312075" style="zoom:80%;">
+<h2 id="本地存储"><a href="#本地存储" class="headerlink" title="本地存储"></a>本地存储</h2><h3 id="1-本地存储"><a href="#1-本地存储" class="headerlink" title="1.本地存储"></a>1.本地存储</h3><p>随着互联网的快速发展,基于网页的应用越来越普遍,同时也变的越来越复杂,为了满足各种各样的需求,会经常性在<strong>本地存储大量的数据</strong>, HTML 5规范提出了相关解决方案。</p>
+<p><strong>本地存储特性</strong></p>
+<p>1、数据存储在用户浏览器中</p>
+<p>2、设置、读取方便、甚至颈面刷新不失数据</p>
+<p>3、容量较大, sessionStorage约5M、localStorage约20M</p>
+<p>4、只能存储字符串,可以将<strong>对象</strong>JSON.stringify（）编码后存储</p>
+<h3 id="2-window-sessionStorage"><a href="#2-window-sessionStorage" class="headerlink" title="2.window.sessionStorage"></a>2.window.sessionStorage</h3><p>1、生命周期为关闭浏览器窗口</p>
+<p>2、在同一个窗口(页面)下数据可以共享</p>
+<p>3.以<strong>键值对</strong>的形式存储使用</p>
+<p><strong>1）存储数据:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sessionStorage.setltem(key, value)</span><br></pre></td></tr></table></figure>
 
-<p><strong>y轴旋转的正方向</strong><br><img src="/2020/05/03/CSS%E5%AD%A6%E4%B9%A0-CSS3%E6%96%B0%E7%89%B9%E6%80%A7/image-20200503181123105.png" alt="image-20200503181123105" style="zoom:80%;"></p>
-<h3 id="4-浏览器私有前缀"><a href="#4-浏览器私有前缀" class="headerlink" title="4 浏览器私有前缀"></a>4 浏览器私有前缀</h3><p>浏览器私有前缀是为了兼容老版本的写法,比较新版本的浏览器无须添加。</p>
-<p>1.私有前缀</p>
-<p>●-moz- :代表firefox浏览器私有属性</p>
-<p>●-ms- :代表ie浏览器私有属性</p>
-<p>●-webkit- :代表safari, chrome 私有属性</p>
-<p>●-o- :代表Opera私有属性</p>
-<p>2.提倡的写法</p>
-<p>比如我们要写一个border-radius属性，考虑兼容性可以这样写：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-moz-border-radius: 10px;</span><br><span class="line"></span><br><span class="line">-webkit-border-radius: 10px;</span><br><span class="line"></span><br><span class="line">-o-border-radius: 10px;</span><br><span class="line"></span><br><span class="line">border-radius: 10px;</span><br></pre></td></tr></table></figure>
+<p><strong>2）获取数据:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sessionStorage.getltem(key)</span><br></pre></td></tr></table></figure>
 
+<p><strong>3）删除数据:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sessionStorage.removeltem(key)</span><br></pre></td></tr></table></figure>
+
+<p><strong>4）删除所有数据:（慎用）</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sessionStorage.clear()</span><br></pre></td></tr></table></figure>
+
+<p>如下图，查看浏览器里面的Storage可以查看sessionStorage。<img src="/2020/05/28/WebAPIs-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200529220318014.png" alt="image-20200529220318014" style="zoom:80%;"></p>
+<h3 id="3-window-localStorage"><a href="#3-window-localStorage" class="headerlink" title="3.window.localStorage"></a>3.window.localStorage</h3><p>1.生命周期永久生效,除非手动删除否则关闭页面也会存在</p>
+<p>2可以多窗口(页面)共享(同一浏览器可以共享)</p>
+<p>3.以键值对的形式存储使用</p>
+<p>1）存储数据:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localStorage.setltem(key, value)</span><br></pre></td></tr></table></figure>
+
+<p>2）获取数据:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localStorage.getltem(key)</span><br></pre></td></tr></table></figure>
+
+<p>删除数据:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localStorage.removeltem(key)</span><br></pre></td></tr></table></figure>
+
+<p>删除所有数据:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localStorage.clear()</span><br></pre></td></tr></table></figure>
+
+<p><strong>案例:记住用户名</strong></p>
+<p>如果勾选记住用户名，下次用户打开浏览器，就在文本框里面自动显示上次登录的用户名。</p>
+<p><strong>案例分析</strong></p>
+<p>①把数据存起来,用到本地存储</p>
+<p>②关闭页面,也可以显示用户名,所以用到localStorage</p>
+<p>③打开页面,先判断是否有这个用户名,如果有,就在表单里面显示用户名, 并且勾选复选框</p>
+<p>④当复选框发生改变的时候<strong>change事件</strong></p>
+<p>⑤如果勾选,就存储,否则就移除</p>
 
       
 
@@ -439,7 +460,7 @@ section div:nth-child(1) {
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
@@ -495,7 +516,7 @@ section div:nth-child(1) {
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/05/03/CSS%E5%AD%A6%E4%B9%A0-CSS3%E6%96%B0%E7%89%B9%E6%80%A7/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/05/28/WebAPIs-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -509,18 +530,9 @@ section div:nth-child(1) {
   
 <nav id="article-nav">
   
-    <a href="/2020/05/03/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-%E7%99%BE%E5%88%86%E6%AF%94%E5%B8%83%E5%B1%80/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          移动端布局-百分比布局
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/05/02/HTML5%E6%96%B0%E7%89%B9%E6%80%A7/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">HTML5新特性</div>
+    <a href="/2020/05/25/%E7%89%A9%E8%81%94%E7%BD%91%E6%B5%8B%E8%AF%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">物联网测试</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -779,6 +791,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">summary</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">软件测试</a>
               </li>
             
             <div class="clearfix"></div>

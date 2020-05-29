@@ -8,25 +8,25 @@
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
   <title>WebAPIs-PC端网页特效 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Selenium是最广泛使用的开源Web UI（用户界面）自动化测试套件之一。Selenium支持跨不同浏览器，平台和编程语言的自动化。 Selenium简介Selenium不仅仅是一个工具，而是一套软件，每个软件都有不同的方法来支持自动化测试。 它由四个主要组成部分组成，包括:  Selenium集成开发环境(IDE)  Selenium远程控制器(现已弃用)  webdriver  Sele">
+  <meta name="description" content="◆元素偏移量 offset系列1.1 offset概述offset翻译过来就是偏移量,我们使用offset系列相关属性可以动态的得到该元素的位置(偏移)、大小等。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="WebAPIs-PC端网页特效">
 <meta property="og:url" content="https://futuwxq.github.io/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="Selenium是最广泛使用的开源Web UI（用户界面）自动化测试套件之一。Selenium支持跨不同浏览器，平台和编程语言的自动化。 Selenium简介Selenium不仅仅是一个工具，而是一套软件，每个软件都有不同的方法来支持自动化测试。 它由四个主要组成部分组成，包括:  Selenium集成开发环境(IDE)  Selenium远程控制器(现已弃用)  webdriver  Sele">
+<meta property="og:description" content="◆元素偏移量 offset系列1.1 offset概述offset翻译过来就是偏移量,我们使用offset系列相关属性可以动态的得到该元素的位置(偏移)、大小等。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://futuwxq.github.io/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200524165742036.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200524170039629.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200524191955002.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200524192248505.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200524195046978.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200524200308736.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200526093704674.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200526094114906.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200526162222506.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200526191627344.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200527210211094.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200528174116341.png">
 <meta property="article:published_time" content="2020-05-24T07:38:08.000Z">
-<meta property="article:modified_time" content="2020-05-24T12:17:27.873Z">
+<meta property="article:modified_time" content="2020-05-28T12:07:09.070Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://futuwxq.github.io/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200524165742036.png">
+<meta name="twitter:image" content="https://futuwxq.github.io/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200526093704674.png">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
   
@@ -182,78 +182,391 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p> Selenium是最广泛使用的开源Web UI（用户界面）自动化测试套件之一。Selenium支持跨不同浏览器，平台和编程语言的自动化。</p>
-<h2 id="Selenium简介"><a href="#Selenium简介" class="headerlink" title="Selenium简介"></a>Selenium简介</h2><p>Selenium不仅仅是一个工具，而是一套软件，每个软件都有不同的方法来支持自动化测试。 它由四个主要组成部分组成，包括:</p>
-<ul>
-<li><p>Selenium集成开发环境(IDE)</p>
-</li>
-<li><p>Selenium远程控制器(现已弃用)</p>
-</li>
-<li><p>webdriver</p>
-</li>
-<li><p>Selenium Grid</p>
-</li>
-</ul>
-<h5 id="1-Selenium集成开发环境-IDE"><a href="#1-Selenium集成开发环境-IDE" class="headerlink" title="1. Selenium集成开发环境(IDE)"></a>1. Selenium集成开发环境(IDE)</h5><p>Selenium IDE实现为Firefox扩展，在测试脚本上<strong>提供记录和回放功能</strong>。 它允许测试人员以HTML，Java，Ruby，RSpec，Python， C# ，JUnit和TestNG等多种语言导出录制的脚本。 可以在Selenium RC或Webdriver中使用这些导出的脚本。</p>
-<p>Selenium IDE的范围有限，生成的测试脚本不是非常健壮和可移植。</p>
-<h5 id="2-Selenium远程控制器"><a href="#2-Selenium远程控制器" class="headerlink" title="2. Selenium远程控制器"></a>2. Selenium远程控制器</h5><p>Selenium RC(由selenium正式弃用)允许测试人员使用任何支持的编程语言编写自动化Web应用程序UI测试。 它还涉及一个HTTP代理服务器，它使浏览器能够相信<strong>正在测试的Web应用程序来自代理服务器提供的域</strong>。</p>
-<p>Selenium RC有两个组件。</p>
-<ul>
-<li>Selenium RC Server(充当Web请求的HTTP代理)。</li>
-<li>Selenium RC Client(包含编程语言代码的库)。</li>
-</ul>
-<h5 id="3-Selenium-WebDriver"><a href="#3-Selenium-WebDriver" class="headerlink" title="3. Selenium WebDriver"></a>3. Selenium WebDriver</h5><p>Selenium WebDriver(Selenium 2)是Selenium RC的继承者，也是Selenium Suite最重要的组件。 SeleniumWebDriver提供了一个<strong>编程接口</strong>来创建和执行测试用例。 编写测试脚本是为了识别网页上的Web元素，然后对这些元素执行所需的操作。</p>
-<p>与Selenium RC相比，Selenium WebDriver执行速度更快，因为它可以直接调用Web浏览器。 另一方面，RC需要RC服务器与Web浏览器进行交互。</p>
-<p>因为，WebDriver直接调用不同浏览器的方法，因此每个浏览器都有单独的驱动程序。 一些最广泛使用的Web驱动程序包括：</p>
-<ul>
-<li>Mozilla Firefox驱动程序(Gecko驱动程序)</li>
-<li>谷歌Chrome驱动程序</li>
-<li>Internet Explorer驱动程序</li>
-<li>Opera驱动程序</li>
-<li>Safari驱动程序</li>
-<li>HTML单元驱动程序(一个特殊的无头驱动程序)</li>
-</ul>
-<blockquote>
-<p>注意：Selenium版本2将Selenium RC和Selenium WebDriver的最佳功能合并到Selenium WebDriver中，最新发布的Selenium 3具有新增功能和功能。</p>
-</blockquote>
-<h5 id="4-Selenium-Grid"><a href="#4-Selenium-Grid" class="headerlink" title="4. Selenium Grid"></a>4. Selenium Grid</h5><p>Selenium Grid也是Selenium Suite的一个重要组件，它允许在<strong>不同的机器上并行运行不同浏览器的测试</strong>。 简单来说，可以在运行不同浏览器和操作系统的不同机器上<strong>同时</strong>运行测试。</p>
-<p>Selenium Grid遵循Hub-Node架构来实现测试脚本的并行执行。Hub被视为网络的主设备，另一个将是节点。 Hub控制在网络的各个节点上执行测试脚本。</p>
-<h2 id="Selenium-IDE"><a href="#Selenium-IDE" class="headerlink" title="Selenium IDE"></a>Selenium IDE</h2><p>Selenium IDE(集成开发环境)是Selenium Suite下的开源Web自动化测试工具。 只需记录与浏览器的交互以创建测试用例。 之后，可以使用播放选项重新运行测试用例。记录的测试脚本也可以导出到C#，Java，Ruby或Python等编程语言。</p>
-<h5 id="Selenium-IDE下载并安装"><a href="#Selenium-IDE下载并安装" class="headerlink" title="Selenium IDE下载并安装"></a>Selenium IDE下载并安装</h5><p><strong>下载火狐浏览器 —  菜单（右上角）— 附件组件</strong>，在搜索中 ‘selenium ide’,见到如下图标，点开 ‘Add to Firefox’。</p>
-<p><img src="/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200524165742036.png" alt="image-20200524165742036"></p>
-<p>最后可以在附件组件中的拓展出处查看是否安装成功。</p>
-<p><strong>设置快捷图标</strong></p>
-<p>当我们在安装的时候，会弹出对话框询问是否要求将Selenium IDE添加为Firefox浏览器的扩展名。确定之后就可以设置Selenium IDE快捷图标。</p>
-<p>转到Firefox浏览器的右上角，查找Selenium IDE图标，单击该图标以启动Selenium IDE。</p>
-<p><img src="/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200524170039629.png" alt="image-20200524170039629"></p>
-<h3 id="编写测试用例"><a href="#编写测试用例" class="headerlink" title="编写测试用例"></a>编写测试用例</h3><p>Selenium IDE中的整个测试脚本创建过程可分为三个步骤:</p>
-<ul>
-<li>录制(记录用户与浏览器的交互)</li>
-<li>播放(执行录制的脚本)</li>
-<li>保存测试套件</li>
-</ul>
-<p>接下来通过一个在京东首页搜索手机为例。</p>
-<h4 id="1-录制测试用例"><a href="#1-录制测试用例" class="headerlink" title="1. 录制测试用例"></a><strong>1. 录制测试用例</strong></h4><ul>
-<li>启动Firefox浏览器。</li>
-<li>单击浏览器右上角的Selenium图标。启动Selenium IDE的默认界面，如下图。</li>
-</ul>
-<img src="/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200524191955002.png" alt="image-20200524191955002" style="zoom: 50%;">
+        <h2 id="◆元素偏移量-offset系列"><a href="#◆元素偏移量-offset系列" class="headerlink" title="◆元素偏移量 offset系列"></a>◆元素偏移量 offset系列</h2><h3 id="1-1-offset概述"><a href="#1-1-offset概述" class="headerlink" title="1.1 offset概述"></a>1.1 offset概述</h3><p>offset翻译过来就是偏移量,我们使用offset系列相关属性可以动态的得到该<strong>元素的位置(偏移)、大小</strong>等。</p>
+<a id="more"></a>
 
 <ul>
-<li>记录一个新的测试项目(选择第一项)，将测试项目命名为:test1 ，然后再输入网址 <a href="https://www.jd.com。" target="_blank" rel="noopener">https://www.jd.com。</a></li>
+<li><p>获得元素距离带有定位父元素的位置</p>
+</li>
+<li><p>获得元素自身的大小 (宽度高度)</p>
+</li>
+<li><p>注意:返回的数值都不带单位</p>
+</li>
 </ul>
-<img src="/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200524192248505.png" alt="image-20200524192248505" style="zoom:50%;">
+<p><strong>offset系列常用属性:</strong></p>
+<table>
+<thead>
+<tr>
+<th>offset系列属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>element.offsetParent</td>
+<td>返回作为该元素带<strong>有定位</strong>的<strong>父级元素</strong>,如果父级都没有定位则返回<strong>body</strong></td>
+</tr>
+<tr>
+<td>element.offsetTop</td>
+<td>返回元素相对带有<strong>定位父元素</strong>上方的偏移,</td>
+</tr>
+<tr>
+<td>element.offsetLeft</td>
+<td>返回元素相对带有定位父元素左边框的偏移</td>
+</tr>
+<tr>
+<td>element.offsetWidth</td>
+<td>返回自身包括<strong>padding、边框、内容区的宽度</strong>，返回数值不带单位</td>
+</tr>
+<tr>
+<td>element.offsetHeight</td>
+<td>返回自身包括padding、边框、内容区的高度，返回数值不带单位</td>
+</tr>
+</tbody></table>
+<p>element.offsetTop 和 element.offsetLeft 它以带有定位的父亲为准 ，如果么有父亲或者父亲没有定位 则以 body 为准。</p>
+<p>element.offsetWidth 返回元素宽度，不包括margin值。</p>
+<h3 id="1-2-offset与style区别"><a href="#1-2-offset与style区别" class="headerlink" title="1.2 offset与style区别"></a>1.2 offset与style区别</h3><p>offset</p>
+<ul>
+<li>offset可以得到任意样式表中的样式值</li>
+<li>offset 系列获得的<strong>数值</strong>是没有单位的 （Number）</li>
+<li>offsetWidth包含padding+border +with</li>
+<li>offsetWidth等属性是只读属性，只能获取不能赋值</li>
+<li>所以,我们想要<strong>获取元素大小位置</strong>，用offset更合适</li>
+</ul>
+<p>style</p>
+<ul>
+<li><p>style 只能得到<strong>行内样式表中的样式值</strong>（获取）</p>
+</li>
+<li><p>style.width 获得的是带有单位的字符串（String）</p>
+</li>
+<li><p>style.width 获得不包含padding和border的值</p>
+</li>
+<li><p>style.width 是可读写属性,可以获取也可以赋值</p>
+</li>
+<li><p>所以,我们想要<strong>给元素更改值,</strong>则需要用style改变</p>
+</li>
+</ul>
+<p><strong>案例 - 获取鼠标在盒子内的坐标</strong> 移动鼠标就可以获得鼠标在盒子内的位置。</p>
+<p>①我们在盒子内点击,想要得到鼠标距离盒子左右的距离。</p>
+<p>②首先得到鼠标在页面中的坐标( e.pageX, e.pageY )</p>
+<p>③其次得到盒子在页面中的距离(box.offsetLeft, box.offsetTop)</p>
+<p>④用鼠标距离页面的坐标减去盒子在页面中的距离,得到鼠标在盒子内的坐标</p>
+<p>⑤如果想要移动-下鼠标,就要获取最新的坐标,使用鼠标移动事件mousemove。<img src="/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200526093704674.png" alt="image-20200526093704674" style="zoom: 50%;"></p>
+<p><strong>案例 - 拖动模态框</strong></p>
+<p>模态框（Modal）是覆盖在父窗体上的子窗体。通常，目的是显示来自一个单独的源的内容，可以在不离开父窗体的情况下有一些互动。子窗体可提供信息、交互等。</p>
+<p>①我们在盒子内点击,想要得到鼠标距离盒子左右的距离。</p>
+<p>②首先得到鼠标在页面中的坐标( e.pageX, e.pageY )</p>
+<p>③其次得到盒子在页面中的距离(box.offsetLeft, box.offsetTop)</p>
+<p>④用鼠标距离页面的坐标减去盒子在页面中的距离,得到鼠标在盒子内的坐标。</p>
+<p>⑤如果想要移动一下鼠标,就要获取最新的坐标,使用鼠标移动事件mousemove</p>
+<p>⑥鼠标按下触发的事件源是最上面一行，就是id为title</p>
+<p>⑦鼠标的坐标减去鼠标在盒子内的坐标，才是模态框真正的位置。</p>
+<p>⑧鼠标按下，我们要得到鼠标在盒子的坐标。</p>
+<p>⑨鼠标移动，就让模态框的坐标设置为:鼠标坐标减去盒子坐标即可，注意移动事件写到按下事件里面。D鼠标松开，就停止拖拽，就是可以让鼠标移动事件解除</p>
+<img src="/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200526094114906.png" alt="image-20200526094114906" style="zoom:67%;">
+
+<p><strong>案例 - 商品图片放大</strong></p>
+<p><strong>黄色的遮挡层跟随鼠标功能。</strong></p>
+<ul>
+<li><p>把鼠标坐标给遮挡层不合适。因为遮挡层坐标以父盒子为准。</p>
+</li>
+<li><p>首先是获得鼠标在盒子的坐标。</p>
+</li>
+<li><p>之后把数值给遮挡层做为left和top值。</p>
+</li>
+<li><p>此时用到鼠标移动事件,但是还是在小图片盒子内移动。</p>
+</li>
+<li><p>发现，遮挡层位置不对,需要再减去盒子自身高度和宽度的-半。⑦遮挡层不能超出小图片盒子范围。</p>
+</li>
+<li><p>如果小于零,就把坐标设置为0</p>
+</li>
+<li><p>如果大于遮挡层最大的移动距离,就把坐标设置为最大的移动距离</p>
+</li>
+<li><p>遮挡层的最大移动距离:小图片盒子宽度减去遮挡层盒子宽度。</p>
+</li>
+</ul>
+<p><strong>移动黄色遮挡层,大图片跟随移动功能。</strong></p>
+<ul>
+<li>求大图片的移动距离公式</li>
+</ul>
+<img src="/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200526162222506.png" alt="image-20200526162222506" style="zoom:50%;">
+
+<h2 id="◆元素可视区client系列"><a href="#◆元素可视区client系列" class="headerlink" title="◆元素可视区client系列"></a>◆元素可视区client系列</h2><p>client翻译过来就是客户端,我们使用client系列的相关属性来获取<strong>元素可视区的相关信息</strong>。通过client系列的相关属性可以动态的得到<strong>该元素的边框大小、元素大小等</strong>。</p>
+<table>
+<thead>
+<tr>
+<th>client系列属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>element.clientTop</td>
+<td>返回元素上边框的大小</td>
+</tr>
+<tr>
+<td>element.clientLeft</td>
+<td>返回元素左边框的大小</td>
+</tr>
+<tr>
+<td>element.clientWidth</td>
+<td>返回自身包括padding、内容区的宽度，<strong>不含边框</strong>,返回数值不带单位</td>
+</tr>
+<tr>
+<td>element.clientHeight</td>
+<td>返回自身包括padding、内容区的高度，<strong>不含边框</strong>，返凹数值不带单位</td>
+</tr>
+</tbody></table>
+<h3 id="2-1-立即执行函数"><a href="#2-1-立即执行函数" class="headerlink" title="2.1 立即执行函数"></a>2.1 立即执行函数</h3><p>立即执行函数的主要作用:创建一个独立的作用域，避免了命名冲突问题。</p>
+<ul>
+<li>不需要调用，立马能够自己执行的函数</li>
+<li>写法 ：(function() {})()   (function(){}());</li>
+<li>也可以传递参数进来</li>
+<li>每个立即执行函数之间用 ; 隔开，代表一个独立的立即执行函数。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(function(a, b) &#123;</span><br><span class="line">     console.log(a + b);&#x2F;&#x2F;3</span><br><span class="line">     var num &#x3D; 10;&#x2F;&#x2F;num只在这个立即执行函数的作用域里面。</span><br><span class="line"> &#125;)(1, 2); &#x2F;&#x2F; 第二个小括号可以看做是调用函数</span><br><span class="line"> (function sum(a, b) &#123;</span><br><span class="line">     console.log(a + b);</span><br><span class="line">     var num &#x3D; 10; &#x2F;&#x2F; 局部变量</span><br><span class="line"> &#125;(2, 3));</span><br></pre></td></tr></table></figure>
 
 <ul>
-<li>点击确定后，Selenium IDE会自动跳转到所输入的网址开始录制。我们可以通过Selenium IDE界面的右上角按钮暂停录制。但是当再次开启暂停按钮时，需要重新输入网址。</li>
+<li>立即执行函数最大的作用就是 独立创建了一个作用域, 里面所有的变量都是局部变量 ，不会有命名冲突的情况。比如flexible.js的源码，所有的代码都写在一个立即执行函数中。这样和其他js里面的命名即使相同，也不会冲突。</li>
 </ul>
-<img src="/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200524195046978.png" alt="image-20200524195046978" style="zoom:80%;">
+<h3 id="2-2-load-和-pageshow事件"><a href="#2-2-load-和-pageshow事件" class="headerlink" title="2.2 load 和 pageshow事件"></a>2.2 load 和 pageshow事件</h3><p>下面三种情况都会刷新页面都会触发load事件。</p>
+<ol>
+<li><p>a标签的超链接</p>
+</li>
+<li><p>F5或者刷新按钮(强制刷新)</p>
+</li>
+<li><p>前进后退按钮</p>
+</li>
+</ol>
+<p>但是火狐中,有个特点,有个“往返缓存”, 这个缓存中不仅保存着页面数据,还保存了DOM和JavaScript的状态;实际上是将整个页面都保存在了内存里。<strong>所以此时后退按钮不能刷新页面</strong>。</p>
+<p>此时可以使用pageshow事件来触发。这个事件在页面显示时触发 ,无论页面是否来自缓存。在重新加载页面中, <strong>pageshow会在load事件触发后触发</strong>;根据事件对象中的persisted来判断是否是缓存中的页面触发的pageshow事件,<strong>注意这个事件给window添加</strong>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">        window.addEventListener(&#39;pageshow&#39;, function(e) &#123;</span><br><span class="line">&#x2F;&#x2F; e.persisted 返回的是true 就是说如果这个页面是从缓存取过来的页面，也需要从新计算一下rem 的大小</span><br><span class="line">            if (e.persisted) &#123;</span><br><span class="line">                setRemUnit() &#x2F;&#x2F;封装的函数，重新计算rem</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
 
-<h4 id="2-手动创建测试用例"><a href="#2-手动创建测试用例" class="headerlink" title="2 手动创建测试用例"></a>2 手动创建测试用例</h4><p>我们可以通过测试用例编辑器，编辑command 和 target 以及value值可以编辑每步运行过程。</p>
-<p>我们可以通过target行的第一个按钮在网页中去选中元素。</p>
-<img src="/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200524200308736.png" alt="image-20200524200308736" style="zoom:80%;">
 
-<h2 id="Selenium-WebDriver"><a href="#Selenium-WebDriver" class="headerlink" title="Selenium WebDriver"></a>Selenium WebDriver</h2><p>Selenium WebDriver是Selenium Tool套件中最重要的组件。</p>
+
+<h2 id="◆元素滚动-scroll系列"><a href="#◆元素滚动-scroll系列" class="headerlink" title="◆元素滚动 scroll系列"></a>◆元素滚动 scroll系列</h2><h3 id="3-1元素scroll系列属性"><a href="#3-1元素scroll系列属性" class="headerlink" title="3.1元素scroll系列属性"></a>3.1元素scroll系列属性</h3><p>scroll翻译过来就是滚动的,我们使用scroll系列的相关属性可以动态的得到<strong>该元素的大小、滚动距离</strong>等。</p>
+<img src="/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200526191627344.png" alt="image-20200526191627344" style="zoom:80%;">
+
+<table>
+<thead>
+<tr>
+<th>scroll系列属性</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>element.scrollTop</td>
+<td>返回被卷去的上侧距离,返回数值不带单位</td>
+</tr>
+<tr>
+<td>element.scrollLleft</td>
+<td>返回被卷去的左侧距离，返回数值不带单位</td>
+</tr>
+<tr>
+<td>element.scrollWidth</td>
+<td>返回自身实际的宽度,不含边框,返回数值不带单位</td>
+</tr>
+<tr>
+<td>element.scrollHeigh</td>
+<td>返回自身实际的高度，不含边框，返回数值不带单位</td>
+</tr>
+</tbody></table>
+<p><strong>scrollWidth 和 clientWidth 的区别就是</strong> ：如果盒子里面的内容超过了盒子的尺寸，scrollWidth会包括超出盒子的部分，clientWidth不会包括这部分。</p>
+<h3 id="3-2页面被卷去的头部兼容性解决方案"><a href="#3-2页面被卷去的头部兼容性解决方案" class="headerlink" title="3.2页面被卷去的头部兼容性解决方案"></a>3.2页面被卷去的头部兼容性解决方案</h3><p>需要注意的是,页面被卷去的头部,有兼容性问题,因此被卷去的头部通常有如下几种写法:</p>
+<p>1.声明了DTD ,使用<code>document.documentElement.scrollTop</code></p>
+<p>2.未声明DTD ,使用<code>document.body.scrollTop</code></p>
+<p>3.新方法<code>window.pageYoffset</code>和<code>window.pageXoffset</code> , IE9开始支持</p>
+<p><strong>案例 - 仿淘宝固定侧边栏</strong></p>
+<p>①需要用到页面滚动事件scroll因为是页面滚动,所以事件源是document</p>
+<p>②滚动到某个位置,就是判断页面被卷去的上部值。</p>
+<p>③页面被卷去的头部:可以通过window.pageYOffset 获得如果是 ，被卷去的左侧<strong>window.pageXOffset</strong></p>
+<p>④注意，元素被卷去的头部是element.scrollTop ,如果是页面被卷去的头部则是<strong>window.pageYOffset</strong></p>
+<h3 id="3-3-三大系列总结"><a href="#3-3-三大系列总结" class="headerlink" title="3.3 三大系列总结"></a>3.3 三大系列总结</h3><ol>
+<li><p>offset系列 经常用于<strong>获得元素位置</strong>offsetLeft offsetTop（即使页面滚动父元素被淹没，仍然是距离定位父元素的距离，通常是距离body元素的距离）</p>
+</li>
+<li><p>client 经常用于<strong>获取元素大小</strong>clientWidth clientHeight</p>
+</li>
+<li><p>scroll经常用于获取<strong>滚动距离</strong>scrollTop scrolleft</p>
+</li>
+<li><p>注意页面滚动的距离通过<strong>window. pageXOffset</strong>获得</p>
+</li>
+</ol>
+<h3 id="3-4-mouseenter-和mouseover的区别"><a href="#3-4-mouseenter-和mouseover的区别" class="headerlink" title="3.4  mouseenter 和mouseover的区别"></a>3.4  mouseenter 和mouseover的区别</h3><p>当鼠标移动到元素上时就会触发mouseenter事件类似mouseover ,它们两者之间的差别是</p>
+<p><code>mouseover</code>鼠标经过自身盒子会触发,经过子盒子还会触发<code>mouseenter</code> 只会经过自身盒子触发。之所以这样,就是因为<strong>mouseenter不会冒泡</strong></p>
+<p>跟mouseenter搭配鼠标离开<strong>mouseleave同样不会冒泡</strong></p>
+<h2 id="◆动画函数封装"><a href="#◆动画函数封装" class="headerlink" title="◆动画函数封装"></a>◆动画函数封装</h2><h3 id="4-1动画实现原理"><a href="#4-1动画实现原理" class="headerlink" title="4.1动画实现原理"></a>4.1动画实现原理</h3><p>核心原理:通过定时器setInterval（）不断移动盒子位置。实现步骤:</p>
+<p>1.获得盒子当前位置</p>
+<p>2.让盒子在当前位置加上1个移动距离</p>
+<p>3.利用定时器不断重复这个操作</p>
+<p>4.加一个结束定时器的条件</p>
+<p>5.注意此元素需要<strong>添加定位,</strong>才能使用element.style.left</p>
+<h3 id="4-2-动画函数简单封装"><a href="#4-2-动画函数简单封装" class="headerlink" title="4.2 动画函数简单封装"></a>4.2 动画函数简单封装</h3><p>函数需要传递2个参数,<strong>动画对象和移动到的距离</strong>。</p>
+<p>   <code>function animate(obj, target){}</code></p>
+<h3 id="4-3-动画函数给不同元素记录不同定时器"><a href="#4-3-动画函数给不同元素记录不同定时器" class="headerlink" title="4.3 动画函数给不同元素记录不同定时器"></a>4.3 动画函数给不同元素记录不同定时器</h3><p>如果多个元素都使用这个动画函数,每次都要var声明定时器。我们可以给不同的元素使用不同的定时器(自己专门用自己的定时器)。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;把定时器当做对象的一个属性</span><br><span class="line">function anomate(obj, target)&#123;</span><br><span class="line"> 	obj.timer &#x3D; setInterval(function()&#123;&#125;) </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>核心原理:利用JS是一门动态语言,可以很方便的给当前对象添加属性。</p>
+<p><strong>解决bug - 多计时器问题</strong> </p>
+<p>比如我们通过一个按钮启动动画，但是每次点击按钮，就会触发一个计时器，<strong>这样动画就停不下来而且还会加速</strong>，形成bug，解决就是在每个动画函数的开头先清除所有的计时器。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clearInterval(obj.timer);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-4-缓动效果原理"><a href="#4-4-缓动效果原理" class="headerlink" title="4.4 缓动效果原理"></a>4.4 缓动效果原理</h3><p>缓动动画就是让元素运动速度有所变化,最常见的是<strong>让速度慢慢停下来</strong>思路:</p>
+<p>1.让盒子每次移动的距离慢慢变小,速度就会慢慢落下来。</p>
+<p>2.核心算法:<code>(目标值-现在的位置) / 10</code>做为每次移动的距离步长</p>
+<p>3.停止的条件是:让当前盒子位置等于目标位置就停止定时器</p>
+<p>4.步长值需要进行取整。由于刚才的步长公式结果可能是小数，就造成了不精确问题。</p>
+<h3 id="4-5-动画函数多个目标值之间移动"><a href="#4-5-动画函数多个目标值之间移动" class="headerlink" title="4.5 动画函数多个目标值之间移动"></a>4.5 动画函数多个目标值之间移动</h3><p><strong>可以让动画函数从800移动到500。</strong></p>
+<p>当我们点击按钮时候,判断步长是正值还是负值</p>
+<p>1.如果是正值,则步长往大了取整</p>
+<p>2.如果是负值,则步长向小了取整</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var step &#x3D; (target - obj.offsetLeft) &#x2F; 10;</span><br><span class="line">step &#x3D; step &gt; 0 ? Math.ceil(step) : Math.floor(step);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-6-缓动动画添加回调函数"><a href="#4-6-缓动动画添加回调函数" class="headerlink" title="4.6 缓动动画添加回调函数"></a>4.6 <strong>缓动动画添加回调函数</strong></h3><p><strong>回调函数原理</strong>:函数可以作为一个参数。将这个函数作为参数传到另一个函数里面 ,当那个函数执行完之后,再执行传进去的这个函数,这个过程就叫做回调。</p>
+<p>回调函数写的位置:定时器结束的位置。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">anomate</span>(<span class="params">obj, target, callback</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//callback = function() &#123;&#125; ，就是调用anomate里面的实参</span></span><br><span class="line">    <span class="keyword">if</span> (obj.offsetLeft == target) &#123;</span><br><span class="line">        clearInterval(obj.timer); <span class="comment">//计时器结束了</span></span><br><span class="line">        <span class="comment">// 回调函数写到定时器结束里面</span></span><br><span class="line">       <span class="comment">// if (callback) &#123;</span></span><br><span class="line">        <span class="comment">//	callback();</span></span><br><span class="line">       <span class="comment">// &#125;</span></span><br><span class="line">         callback &amp;&amp; callback();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//调用函数</span></span><br><span class="line">anomate(box, <span class="number">800</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">	box.style.backgroundColor = <span class="string">'red'</span>;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-7-动画函数封装到单独JS文件里面"><a href="#4-7-动画函数封装到单独JS文件里面" class="headerlink" title="4.7 动画函数封装到单独JS文件里面"></a>4.7 动画函数封装到单独JS文件里面</h3><p>因为以后经常使用这个动画函数,可以单独封装到一个Js文件里面,使用的时候引用这个js文件即可。</p>
+<ol>
+<li>单独新建一个Js文件。</li>
+</ol>
+<p>2.在html页面中需要引入这个动画js，引入的位置可以是任意位置。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src&#x3D;&quot;js&#x2F;animate.js&quot;&gt;&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="◆常见网页特效案例"><a href="#◆常见网页特效案例" class="headerlink" title="◆常见网页特效案例"></a>◆常见网页特效案例</h2><h3 id="网页轮播图"><a href="#网页轮播图" class="headerlink" title="网页轮播图"></a>网页轮播图</h3><p>轮播图也称为焦点图,是网页中比较常见的网页特效。</p>
+<p>功能需求:</p>
+<p>1.鼠标经过轮播图模块 ,左右按钮显示，离开隐藏左右按钮。</p>
+<p>2.点击右侧按钮一次,图片往左播放一张,以此类推,左侧按钮同理。</p>
+<p>3.图片播放的同时，下面小圆圈模块跟随一起变化。</p>
+<p>4.点击小圆圈,可以播放相应图片。</p>
+<p>5.鼠标不经过轮播图 ，轮播图也会自动播放图片。</p>
+<p>6.鼠标经过 ,轮播图模块， 自动播放停止。</p>
+<p><strong>1）动态生成小圆圈</strong></p>
+<p>核心思路:小圆圈的个数要跟图片张数一致</p>
+<ul>
+<li><p>所以首先先得到ul里面图片的张数 (图片放入li里面，所以就是Ii的个数)</p>
+</li>
+<li><p>利用循环动态生成小圆圈(这个小圆圈要放入ol里面)</p>
+</li>
+<li><p>创建节点createElement(1i’)</p>
+</li>
+<li><p>插入节点ol. appendChild(li)</p>
+</li>
+<li><p>第一个小圆圈需要添加current类</p>
+</li>
+</ul>
+<p><strong>2）小圆圈的排他思想</strong></p>
+<ul>
+<li><p>点击当前小圆圈，就添加current类</p>
+</li>
+<li><p>其余的小圆圈就移除这个current类</p>
+</li>
+<li><p>注意:我们在刚才生成小圆圈的同时，就可以直接绑定这个点击事件了。</p>
+</li>
+</ul>
+<p><strong>3）点击小圆圈滚动图片</strong></p>
+<ul>
+<li><p>此时用到animate动画函数，将js文件引入(注意,因为index.js 依赖animate.js所以，animate.js 要写到index.js上面)</p>
+</li>
+<li><p>使用动画函数的前提，该元素必须有定位</p>
+</li>
+<li><p>注意是ul移动而不是小li</p>
+</li>
+<li><p>滚动图片的核心算法:点击某个小圆圈，就让图片滚动小圆圈的  索引号 * 图片的宽度  做为ul移动距离</p>
+</li>
+<li><p>此时需要知道小圆圈的索引号，我们可以在生成小圆圈的时候，给它设置-个自定义属性，点击的时候获取这个自定义属性即可。</p>
+</li>
+</ul>
+<p><strong>思考 - 动画</strong></p>
+<img src="/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200527210211094.png" alt="image-20200527210211094" style="zoom:80%;">
+
+
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">animate(ul, -index * focusWidth);</span><br></pre></td></tr></table></figure>
+
+<p> 开始我在想从左到右点击轮播图，第二个参数就会让ul元素左移，但是如果从右往左呢，怎么到回来呢？</p>
+<p>后来发现animate俩面的target参数（第二个参数）， 是<strong>ul这个元素距离他的定位父元素的距离</strong>，他的父元素是固定的，因此target参数是正负不断变化的，ul可以朝左可以朝右。</p>
+<p><strong>4）点击右侧按钮一次，就让图片滚动一张。</strong></p>
+<ul>
+<li><p>声明一个变量num，点击一次， 自增1，让这个变量乘以图片宽度， 就是ul的滚动距离。</p>
+<p><strong>图片无缝滚动原理</strong></p>
+</li>
+<li><p>把ul第一个li复制一份，放到ul的最后面</p>
+</li>
+<li><p>当图片滚动到克隆的最后一张图片时，让ul快速的、 不做动画的跳到最左侧: left 为0；</p>
+</li>
+<li><p>number为0 ，重新开始滚动</p>
+</li>
+</ul>
+<p>复制一份li毕竟不够灵活，而且影响左下角小圆圈的生成，所以我么需要<strong>克隆第一张图片</strong></p>
+<ul>
+<li>克隆ul第一个li cloneNode()加true 深克隆，复制里面的子节点，false 浅克隆。</li>
+<li>添加到ul最后面appendChild。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var first &#x3D; ul.children[0].cloneNode(true);</span><br><span class="line">ul.appendChild(first);</span><br></pre></td></tr></table></figure>
+
+<p><strong>5）点击右侧按钮，小圆圈跟随变化</strong></p>
+<p>②最简单的做法是再声明一个变量circle，每次点击自增1,注意,左侧按钮也需要这个变量，因此要 声明全局变量。</p>
+<p><strong>bug</strong>：比如轮播图处于第一页，小圆圈index是0，num也是0（小圆圈正确）；然后点击第二个小圆圈，轮播图处于第二页，小圆圈的index是1，num是0（小圆圈正确）；然后我们点击右侧按钮，num = 1 ，轮播图本应该是处于第三页，但是因为num是1，所以动画只移动了第一张图片。</p>
+<p>首先需要明确的是：num 和 circle是同步的，也就是点击按钮，一定会触发小圆圈的变化。因此问题可以归结为num（circle） 和 index不同步。</p>
+<p>因此我们小圆圈的点击事件中，index的改变需要告诉num值，我已经移动到第二张图片啦，下次点击左按钮，应该是第三张图片啦。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">num &#x3D; circle &#x3D; index;</span><br></pre></td></tr></table></figure>
+
+<p>理解一下num和circle，以及index值</p>
+<ul>
+<li>index是随着小圆圈自身变化（圆圈的点击事件）的，范围是0-3</li>
+<li>num是用来控制轮播图ul相对focus父盒子相对移动的个数，范围也是0 — 4（克隆了一张图片）<ul>
+<li>临界值 0 意味着轮播图此时是第一张图片，此时点击左侧按钮需要跳转到第4张图片：<ul>
+<li>先迅速切换到第5张图片（num = 4）</li>
+<li>缓慢移动到第4张图片（num=3）</li>
+<li>circle要切换成3</li>
+</ul>
+</li>
+<li>临界值 3 意味着轮播图此时是第4张图片，此时点击右侧按钮需要跳转到第1张图片：<ul>
+<li>先移动到第5张图片（num = 4）</li>
+<li>迅速移动到第一张图片（num=0）</li>
+<li>circle切换为0</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>circle是用来控制左右按钮点击时同步小圆圈的变化，范围是0-3，这个变量可以和num合并为一个值。它和num同增同减。  </li>
+</ul>
+<p><strong>6）自动播放功能</strong></p>
+<ul>
+<li><p>添加一个定时器</p>
+</li>
+<li><p>自动播放轮播图，实际就类似于点击了右侧按钮</p>
+</li>
+<li><p>此时我们使用手动调用右侧按钮点击事件<code>arrow_r.click()</code>,就会调用arrow_r元素的click事件。</p>
+</li>
+<li><p>鼠标经过focus就停止定时器 </p>
+</li>
+<li><p>鼠标离开focus 就开启定时器</p>
+</li>
+</ul>
+<h4 id="节流阀"><a href="#节流阀" class="headerlink" title="节流阀"></a>节流阀</h4><p>防止轮播图按钮连续点击造成播放过快。</p>
+<p><strong>节流阀目的</strong>:当上一个函数动画内容执行完毕,再去执行下一个函数动画,让事件无法连续触发。<strong>核心实现思路</strong>:利用回调函数,添加一个变量来控制,锁住函数和解锁函数。</p>
+<p>开始设置一个变量<code>var flag= true;</code></p>
+<p><code>if(flag) {flag= false; do something}</code>关闭水龙头</p>
+<p>利用回调函数动画执行完毕, flag=true打开水龙头</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var flag&#x3D; true;&#x2F;&#x2F;打开状态</span><br><span class="line">if (flag) &#123;</span><br><span class="line">      flag &#x3D; false; &#x2F;&#x2F;先关闭节流阀</span><br><span class="line">      animate(ul, -num * focusWidth, function() &#123;</span><br><span class="line">        flag &#x3D; true; &#x2F;&#x2F;动画结束利用回调函数打开节流阀</span><br><span class="line">      &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><h4 id="1-缓动返回顶部"><a href="#1-缓动返回顶部" class="headerlink" title="1- 缓动返回顶部"></a>1- 缓动返回顶部</h4><p>滚动窗口至文档中的特定位置。<code>window.scroll(x, y)</code></p>
+<p><strong>注意</strong>里面的x和y不跟单位,直接写数字</p>
+<p><strong>带有动画的返回顶部</strong></p>
+<ul>
+<li><p>此时可以继续使用我们封装的动画函数 ，只需要把所有的<strong>left相关的值</strong>改为跟页面垂直滚动距离相关就可以了  </p>
+</li>
+<li><p>页面滚动了多少,可以通过<strong>window.pageYOffset</strong>得到  ，最后是页面滚动,使用window.scroll(x,y)</p>
+</li>
+</ul>
+<p>内容见&lt;&lt;仿淘宝固定侧边栏.html&gt;&gt;</p>
+<h4 id="2-筋头云案例"><a href="#2-筋头云案例" class="headerlink" title="2- 筋头云案例"></a>2- 筋头云案例</h4><p><img src="/2020/05/24/WebAPIs-PC%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200528174116341.png" alt="image-20200528174116341"></p>
+<p>需求：</p>
+<p>1）鼠标经过某个小li，筋斗云跟这到当前小i位置</p>
+<p>2）鼠标离开这个小li ,筋斗云复原为原来的位置</p>
+<p>3）鼠标点击了某个小li，筋斗云就会留在点击这个小li的位置</p>
+<p>案例分析</p>
+<p>利用动画函数做动画效果 ，原先筋斗云的起始位置是0 ，鼠标经过某个小li ,把当前小li的offsetLeft位置做为目标值即可 ，鼠标离开某个小li ,就把目标值设为0。</p>
+<p>如果点击了某个小li ,就把li当前的位置存储起来,做为筋斗云的起始位置，需要一个变量current存储筋斗云需要返回的位置。</p>
 
       
 
@@ -357,6 +670,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/05/25/Selenium%E5%AD%A6%E4%B9%A0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Web自动化测试 Selenium学习
+        
+      </div>
+    </a>
   
   
     <a href="/2020/05/23/WebAPIs-BOM%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%8A%EF%BC%89/" id="article-nav-older" class="article-nav-link-wrap">
@@ -619,6 +941,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">summary</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">软件测试</a>
               </li>
             
             <div class="clearfix"></div>

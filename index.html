@@ -152,6 +152,71 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-jQuery-上" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/30/jQuery-%E4%B8%8A/">jQuery 上</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/30/jQuery-%E4%B8%8A/" class="archive-article-date">
+  	<time datetime="2020-05-30T02:37:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="jQuery概述"><a href="#jQuery概述" class="headerlink" title="jQuery概述"></a>jQuery概述</h2>
+        
+          <a class="article-more-a" href="/2020/05/30/jQuery-%E4%B8%8A/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/30/jQuery-%E4%B8%8A/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-WebAPIs-移动端网页特效" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -173,254 +238,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="◆触屏事件"><a href="#◆触屏事件" class="headerlink" title="◆触屏事件"></a>◆触屏事件</h2><h3 id="1-1-触屏事件概述"><a href="#1-1-触屏事件概述" class="headerlink" title="1.1 触屏事件概述"></a>1.1 触屏事件概述</h3><p>移动端浏览器兼容性较好,我们不需要考虑以前JS的兼容性问题,可以放心的使用原生JS书写效果,但是移动端也有自己独特的地方。比如触屏事件touch (也称触摸事件) , Android和IOS都有。</p>
-<p>touch对象代表一个触摸点。 触摸点可能是一根手指,也可能是一根触摸笔。 触屏事件可响应用户手指(或触控笔)对屏幕或者触控板操作。</p>
-<p>常见的触屏事件如下:</p>
-<table>
-<thead>
-<tr>
-<th>触屏touch事件</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>touchstart</td>
-<td>手指触摸到一个DOM元素时触发</td>
-</tr>
-<tr>
-<td>touchmove</td>
-<td>手指在一个DOM元素上滑动时触发</td>
-</tr>
-<tr>
-<td>touchend</td>
-<td>手指从一个DOM元素上移开时触发</td>
-</tr>
-</tbody></table>
-<h3 id="1-2-触摸事件对象-TouchEvent"><a href="#1-2-触摸事件对象-TouchEvent" class="headerlink" title="1.2 触摸事件对象( TouchEvent )"></a>1.2 触摸事件对象( TouchEvent )</h3><p>TouchEvent是一类描述手指在触摸平面(触摸屏、触摸板等)的状态变化的事件。这类事件用于描述<strong>一个或多个触点,</strong>使开发者可以检测触点的移动,触点的增加和减少,等等</p>
-<p><code>touchstart. touchmove、 touchend</code>三个事件都会各自有事件对象。触摸事件对象重点我们看三个常见对象列表:</p>
-<table>
-<thead>
-<tr>
-<th>触摸列表</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>touches</td>
-<td>正在触摸屏幕的所有手指的<strong>一个列表</strong></td>
-</tr>
-<tr>
-<td>targetTouches</td>
-<td>正在触摸当前DOM元素上的手指的一个列表</td>
-</tr>
-<tr>
-<td>changedTouches</td>
-<td>手指状态发生了改变的列表，<strong>从无到有， 从有到无变化</strong></td>
-</tr>
-</tbody></table>
-<p>当我们手指离开屏幕的时候，就没有了 touches 和 targetTouches 列表但是会有 changedTouches 。<strong>因为我们一般都是触摸元素 所以最经常使用的是 targetTouches</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(e.targetTouches[0]);&#x2F;&#x2F;就可以得到正在触摸dom元素的第一个手指的相关信息比如 手指的坐标等等</span><br></pre></td></tr></table></figure>
-
-<h3 id="1-移动端拖动元素"><a href="#1-移动端拖动元素" class="headerlink" title="1.移动端拖动元素"></a>1.移动端拖动元素</h3><p><code>touchstart、touchmove、 touchend</code>可以实现拖动元素，但是拖动元素需要当前手指的坐标值我们可以使用targetTouches[0] 里面的pageX和pageY。</p>
-<p><strong>移动端拖动的原理</strong>:手指移动中 ,计算出手指移动的距离。然后用盒子原来的位置+手指移动的距离。<strong>手指移动的距离</strong>:手指滑动中的位置 减去手指刚开始触摸的位置</p>
-<p><strong>拖动元素三步曲:</strong></p>
-<p>(1 )触摸元素touchstart :获取手指初始坐标,同时获得盒子原来的位置</p>
-<p>(2)移动手指touchmove :计算手指的滑动距离,并且移动盒子</p>
-<p>(3 )离开手指touchend:</p>
-<p><strong>注意:手指移动也会触发滚动屏幕所以这里要阻止默认的屏幕滚动e.preventDefault0;</strong></p>
-<h2 id="◆移动端常见特效"><a href="#◆移动端常见特效" class="headerlink" title="◆移动端常见特效"></a>◆移动端常见特效</h2><h3 id="移动端轮播图"><a href="#移动端轮播图" class="headerlink" title="移动端轮播图"></a>移动端轮播图</h3><img src="/2020/05/28/WebAPIs-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200529084643523.png" alt="image-20200529084643523" style="zoom:80%;">
-
-<h5 id="轮播图的DOM-结构"><a href="#轮播图的DOM-结构" class="headerlink" title="轮播图的DOM 结构"></a>轮播图的DOM 结构</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"focus"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/focus3.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/focus1.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/focus2.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/focus3.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"img/focus1.jpg"</span> <span class="attr">alt</span>=<span class="string">""</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span> <span class="attr">class</span>=<span class="string">"current"</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>考虑到移动端，在第一张轮播图向左滑动，可以滑到最后一张，所以预先在第一张前面加上最后一张照片；同样在最后一张照片后面加上第一张。使用<code>margin-left = -100%</code>和 <code>overflow ：hidden;</code>使得用户点击去，轮播图的首页在第一张。</p>
-<h5 id="css样式相关"><a href="#css样式相关" class="headerlink" title="css样式相关"></a>css样式相关</h5><ul>
-<li>focus不给宽度，自动占满整个屏幕</li>
-<li>ul里面有5张照片，因此宽度设为500%；使得所有照片排列在一行<ul>
-<li>每个li都需要浮动，父元素清楚浮动，宽度设置为占父元素的20%；否则图片会占父元素100%，从而放大5倍。</li>
-</ul>
-</li>
-<li>ol 里面是轮播图下面的轮播按钮<ul>
-<li>当前页面的小圆圈宽度会更长，所有小圆圈 inline-block;</li>
-</ul>
-</li>
-</ul>
-<h5 id="js部分"><a href="#js部分" class="headerlink" title="js部分"></a>js部分</h5><p><strong>1）自动播放功能</strong></p>
-<ul>
-<li><p>开启定时器</p>
-</li>
-<li><p>移动端移动, 可以使用translate移动 </p>
-</li>
-<li><p>想要图片优雅的移动,请添加transition过度</p>
-</li>
-</ul>
-<p><strong>2）自动播放功能无缝滚动</strong></p>
-<ul>
-<li><p>我们判断条件是要等到图片滚动完毕再去判断,就是过渡完成后判断</p>
-</li>
-<li><p>此时需要添加检测过渡完成事件<strong>transitionend</strong></p>
-</li>
-<li><p>判断条件:如果索引号等于3说明走到最后一张图片 ,此时索引号要复原为0，此时图片,去掉过渡效果,然后移动</p>
-</li>
-</ul>
-<p><strong>3）小圆点跟随变化效果</strong></p>
-<ul>
-<li><p>把 ol 里面 li 带有current类名的选出来去掉类名remove</p>
-</li>
-<li><p>让当前索引号的小i加上current add</p>
-</li>
-<li><p>但是,是等着过渡结束之后变化,所以这个写到transitionend事件里面</p>
-</li>
-</ul>
-<p><strong>4）手指滑动轮播图</strong></p>
-<p>本质就是ul跟随手指移动,简单说就是移动端拖动元素</p>
-<ul>
-<li><p>触摸元素touchstart :获取手指初始坐标</p>
-</li>
-<li><p>手动播放暂停自动播放</p>
-</li>
-<li><p>移动手指touchmove :计算手指的滑动距离，并且移动盒子</p>
-</li>
-</ul>
-<p><strong>5）离开手指touchend:根据滑动的距离分不同的情况</strong>（节流阀）</p>
-<ul>
-<li>如果移动距离小于某个像素就回弹原来位置</li>
-<li>如果移动距离大于某个像素就上一张下一张滑动。</li>
-<li>手指离开后开启自动播放</li>
-</ul>
-<p><strong>6）优化</strong></p>
-<ul>
-<li>当用户触屏之后 ，并没有移动，touchend里面对自动播放到上一张或下一张就不需要运行，设置一个flag变量控制。</li>
-<li>用户touchmove事件，里面禁用翻页功能</li>
-</ul>
-<h3 id="2-1-classList属性"><a href="#2-1-classList属性" class="headerlink" title="**2. 1 classList属性"></a>**2. 1 classList属性</h3><p>classList属性是HTML 5新增的一个属性,返回元素的类名。但是<strong>ie10以上版本支持</strong>。该属性用于在元素中添加,移除及切换CSS类。有以下方法：</p>
-<p>添加类:  是在后面追加类名不会覆盖以前的类名， 注意前面不需要加<code>.</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">element.classList.add(&#39;类名’) ;</span><br><span class="line">focus.classList.add(&#39;current&#39;) ;</span><br></pre></td></tr></table></figure>
-
-<p>移除类:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.classList.remove(&#39;类名’);</span><br></pre></td></tr></table></figure>
-
-<p>切换类: 检查某dom对象是否有该类名，有就删除，没有添加。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">element.classList.toggle(&#39;类名’);</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-2-click延时解决方案"><a href="#2-2-click延时解决方案" class="headerlink" title="2.2 click延时解决方案"></a>2.2 click延时解决方案</h3><p>移动端click事件会有<strong>300ms</strong>的延时,原因是移动端屏幕双击会缩放(double tap to zoom)页面。解决方案:</p>
-<p><strong>1.禁用缩放</strong>。浏览器禁用默认的双击缩放行为并且去掉300ms的点击延迟。</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"user-scalable=no"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>2.利用touch事件</strong>自己封装这个事件解决300ms延迟。</p>
-<p>原理就是:</p>
-<p>1.当我们手指触摸屏幕,记录当前触摸时间</p>
-<p>2.当我们手指离开屏幕,用离开的时间减去触摸的时间</p>
-<p>3.如果时间小于150ms ,并且没有滑动过屏幕，那么我们就定义为点击</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//封装tap，解决click 300ms延时</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">tap</span> (<span class="params">obj, calback</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> isMove = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">var</span> startTime = <span class="number">0</span>; <span class="comment">//记录触摸时候的时间变量</span></span><br><span class="line">    obj.addEventListener (<span class="string">'touchstart'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">   		 startTime = <span class="built_in">Date</span>.now(); <span class="comment">//记录触摸时间</span></span><br><span class="line">    &#125;);</span><br><span class="line">    obj.addEventListener (<span class="string">' touchmove'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    	isMove = <span class="literal">true</span>;<span class="comment">//看看是否有滑动，有滑动算拖拽，不算点击</span></span><br><span class="line">    &#125;) ;</span><br><span class="line">    obj.addEventListener(<span class="string">'touchend'</span>,<span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(!isMove &amp;&amp; (<span class="built_in">Date</span>.now() - startTime) &lt; <span class="number">150</span>) &#123;</span><br><span class="line">        <span class="comment">// 如果手指触摸和离开时间小于150ms算点击</span></span><br><span class="line">        callback &amp;&amp; callback(); <span class="comment">//执行回调函数</span></span><br><span class="line">        &#125;</span><br><span class="line">        isMove = <span class="literal">false</span>; <span class="comment">// 取反重置</span></span><br><span class="line">        startTime = <span class="number">0</span>;</span><br><span class="line"> &#125;);</span><br><span class="line">    <span class="comment">//调用</span></span><br><span class="line">    tap(div, <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123; <span class="comment">// 执行代码&#125;);</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>3.使用插件</strong>。fastclick 插件解决300ms延迟。<strong>最常用</strong>，用法见下节</p>
-<h2 id="◆移动端常用开发插件"><a href="#◆移动端常用开发插件" class="headerlink" title="◆移动端常用开发插件"></a>◆移动端常用开发插件</h2><h3 id="3-1-什么是插件"><a href="#3-1-什么是插件" class="headerlink" title="3.1 什么是插件"></a>3.1 什么是插件</h3><p>移动端要求的是快速开发,所以我们经常会借助于些插件来帮我完成操作,那么什么是插件呢?</p>
-<p><strong>JS插件是js文件</strong>，<strong>它遵循一定规范编写,方便程序展示效果,拥有特定功能且方便调用</strong>。如轮播图和瀑布流插件。特点:它一般是为了解决某个问题而专门存在,期能单一, 并且比较小。我们以前写的animate.js也算一个最简单的插件。</p>
-<p>GitHub官网地址:<a href="https://github.com/ftlabs/fastclick" target="_blank" rel="noopener">https://github.com/ftlabs/fastclick</a></p>
-<p>用法：</p>
-<ol>
-<li>在项目的js里面新建一个fastclick.js,把github上面的源码复制过来</li>
-<li>在github的文档查看Usage <ul>
-<li>首先要在html问津中引用fastclick.js</li>
-<li>在首页的script里面添加如下代码</li>
-</ul>
-</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (<span class="string">'addEventListener'</span> <span class="keyword">in</span> <span class="built_in">document</span>) &#123;</span><br><span class="line">	<span class="built_in">document</span>.addEventListener(<span class="string">'DOMContentLoaded'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">		FastClick.attach(<span class="built_in">document</span>.body);</span><br><span class="line">	&#125;, <span class="literal">false</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-3-Swiper插件的使用"><a href="#3-3-Swiper插件的使用" class="headerlink" title="3.3 Swiper插件的使用"></a>3.3 Swiper插件的使用</h3><p>中文官网地址: <a href="https://ww.swiper.com.cn/" target="_blank" rel="noopener">https://ww.swiper.com.cn/</a></p>
-<p>1.引入插件相关文件。</p>
-<p>2.按照规定语法使用</p>
-<p>主要查看官方的文档,在在线演示中找到想要的轮播图效果，记住编号（比如我想用的自动播放是 280），在下载的Swiper包中的<em>demos</em>中查找对应的html文件（比如我要找的是&lt;280-autoplay.html&gt;）,之后可以直接复制里面的css代码 和  Dom结构</p>
-<ul>
-<li><strong>首先加载插件</strong>，需要用到的文件有swiper.min.js和swiper.min.css文件。</li>
-<li>在demo里面复制DOM 和 css代码 以及script（在 <em>package</em>）里面的<strong>代码</strong></li>
-<li><strong>修改代码参数</strong><ul>
-<li>js代码可以参考官网的API文档，修改参数</li>
-<li>想要修改css代码，可以在浏览器审查之后，给元素重新设置样式覆盖之前的样式</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">.swiper-pagination-bullet &#123;</span><br><span class="line">    background-color: #fff!important;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-4-其他移动端常见插件"><a href="#3-4-其他移动端常见插件" class="headerlink" title="3.4 其他移动端常见插件"></a>3.4 其他移动端常见插件</h3><ul>
-<li><p>superslide :<a href="http://www.superslide2.com/" target="_blank" rel="noopener">http://www.superslide2.com/</a> </p>
-</li>
-<li><p>iscroll:<a href="https://github.com/cubiq/iscroll" target="_blank" rel="noopener">https://github.com/cubiq/iscroll</a></p>
-</li>
-</ul>
-<h3 id="3-5-插件的使用总结"><a href="#3-5-插件的使用总结" class="headerlink" title="3.5 插件的使用总结"></a>3.5 插件的使用总结</h3><p>1.确认插件实现的功能</p>
-<p>2.去官网查看使用说明</p>
-<p>3.下载插件</p>
-<p>4.打开demo实例文件,查看需要引入的相关文件,并且引入</p>
-<p>5.复制demo实例文件中的结构html ,样式css以及js代码</p>
-<h3 id="3-6-练习-移动端视频插件zy-media-js"><a href="#3-6-练习-移动端视频插件zy-media-js" class="headerlink" title="3.6 练习-移动端视频插件zy.media.js"></a>3.6 练习-移动端视频插件zy.media.js</h3><p>H5给我们提供了video标签,但是浏览器的支持情况不同。不同的视频格式文件,我们可以通过<strong>source解决。</strong>但是外观样式，还有暂停,播放,全屏等功能我们只能自己写代码解决。这个时候我们可以使用插件方式来制作。</p>
-<p>zy.media的使用方法和上面的插件使用一样，先引入插件的js 和css文件，然后模仿DOM结构，css样式和script代码，修改参数….</p>
-<h2 id="◆移动端常用开发框架"><a href="#◆移动端常用开发框架" class="headerlink" title="◆移动端常用开发框架"></a>◆移动端常用开发框架</h2><h3 id="4-1-框架概述"><a href="#4-1-框架概述" class="headerlink" title="4.1 框架概述"></a>4.1 框架概述</h3><p>框架，顾名思义就是一套架构,它会基于自身的特点向用户提供一套较为完整的解决方案。 框架的控制权在框架本身,使用者要按照框架所规定的某种规范进行开发。</p>
-<p>插件：一般是为了解决某个问题而专门]存在,其功能单一, 并且比较小。</p>
-<p>前端常用的框架有Bootstrap. Vue、Angular. React 等。既能开发PC端,也能开发移动端前端常用的移动端插件有swiper. superslide、 iscroll等。</p>
-<ul>
-<li><p>框架:大而全, -整套解决方案</p>
-</li>
-<li><p>插件:小而专一, 某个功能的解决方案</p>
-</li>
-</ul>
-<h3 id="4-2-Bootstrap"><a href="#4-2-Bootstrap" class="headerlink" title="4.2 Bootstrap"></a>4.2 Bootstrap</h3><p>Bootstrap是一个简洁、 直观、强悍的前端开发框架,它让web开发更迅速、简单。它能开发PC端,也能开发移动端;</p>
-<p><strong>Bootstrap JS插件使用步骤（参考移动端项目阿里百秀的轮播图）:</strong></p>
-<p>1.引入相关js文件</p>
-<p>2.复制HTML结构</p>
-<p>3.修改对应样式</p>
-<p>需要得到轮播图的父元素的高度，并把这个高度给.carousel 和里面的图片，宽度设置为100%；</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.carousel,</span><br><span class="line">.carousel img &#123;</span><br><span class="line">    width: 100%;</span><br><span class="line">    height: 266px!important;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>4.修改相应JS参数</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">'.carousel'</span>).carousel(&#123;</span><br><span class="line">  interval: <span class="number">2000</span></span><br><span class="line">&#125;) <span class="comment">//自动播放</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="本地存储"><a href="#本地存储" class="headerlink" title="本地存储"></a>本地存储</h2><h3 id="1-本地存储"><a href="#1-本地存储" class="headerlink" title="1.本地存储"></a>1.本地存储</h3><p>随着互联网的快速发展,基于网页的应用越来越普遍,同时也变的越来越复杂,为了满足各种各样的需求,会经常性在<strong>本地存储大量的数据</strong>, HTML 5规范提出了相关解决方案。</p>
-<p><strong>本地存储特性</strong></p>
-<p>1、数据存储在用户浏览器中</p>
-<p>2、设置、读取方便、甚至颈面刷新不失数据</p>
-<p>3、容量较大, sessionStorage约5M、localStorage约20M</p>
-<p>4、只能存储字符串,可以将<strong>对象</strong>JSON.stringify（）编码后存储</p>
-<h3 id="2-window-sessionStorage"><a href="#2-window-sessionStorage" class="headerlink" title="2.window.sessionStorage"></a>2.window.sessionStorage</h3><p>1、生命周期为关闭浏览器窗口</p>
-<p>2、在同一个窗口(页面)下数据可以共享</p>
-<p>3.以<strong>键值对</strong>的形式存储使用</p>
-<p><strong>1）存储数据:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sessionStorage.setltem(key, value)</span><br></pre></td></tr></table></figure>
-
-<p><strong>2）获取数据:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sessionStorage.getltem(key)</span><br></pre></td></tr></table></figure>
-
-<p><strong>3）删除数据:</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sessionStorage.removeltem(key)</span><br></pre></td></tr></table></figure>
-
-<p><strong>4）删除所有数据:（慎用）</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sessionStorage.clear()</span><br></pre></td></tr></table></figure>
-
-<p>如下图，查看浏览器里面的Storage可以查看sessionStorage。<img src="/2020/05/28/WebAPIs-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/image-20200529220318014.png" alt="image-20200529220318014" style="zoom:80%;"></p>
-<h3 id="3-window-localStorage"><a href="#3-window-localStorage" class="headerlink" title="3.window.localStorage"></a>3.window.localStorage</h3><p>1.生命周期永久生效,除非手动删除否则关闭页面也会存在</p>
-<p>2可以多窗口(页面)共享(同一浏览器可以共享)</p>
-<p>3.以键值对的形式存储使用</p>
-<p>1）存储数据:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localStorage.setltem(key, value)</span><br></pre></td></tr></table></figure>
-
-<p>2）获取数据:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localStorage.getltem(key)</span><br></pre></td></tr></table></figure>
-
-<p>删除数据:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localStorage.removeltem(key)</span><br></pre></td></tr></table></figure>
-
-<p>删除所有数据:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localStorage.clear()</span><br></pre></td></tr></table></figure>
-
-<p><strong>案例:记住用户名</strong></p>
-<p>如果勾选记住用户名，下次用户打开浏览器，就在文本框里面自动显示上次登录的用户名。</p>
-<p><strong>案例分析</strong></p>
-<p>①把数据存起来,用到本地存储</p>
-<p>②关闭页面,也可以显示用户名,所以用到localStorage</p>
-<p>③打开页面,先判断是否有这个用户名,如果有,就在表单里面显示用户名, 并且勾选复选框</p>
-<p>④当复选框发生改变的时候<strong>change事件</strong></p>
-<p>⑤如果勾选,就存储,否则就移除</p>
-
+        
+          <a class="article-more-a" href="/2020/05/28/WebAPIs-%E7%A7%BB%E5%8A%A8%E7%AB%AF%E7%BD%91%E9%A1%B5%E7%89%B9%E6%95%88/#more">more >></a>
+        
       
 
       
@@ -1063,83 +883,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/05/19/WebAPIs-Dom%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-JS学习-js语法2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/19/JS%E5%AD%A6%E4%B9%A0-js%E8%AF%AD%E6%B3%952/">Js学习-js语法2</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/19/JS%E5%AD%A6%E4%B9%A0-js%E8%AF%AD%E6%B3%952/" class="archive-article-date">
-  	<time datetime="2020-05-19T03:09:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="七、函数"><a href="#七、函数" class="headerlink" title="**七、函数"></a>**七、函数</h2><p>在JS里面,可能会定义非常多的<strong>相同代码或者功能相似</strong>的代码,这些代码可能需要大量重复使用。</p>
-<p>虽然for循环语句也能实现-些简单的重复操作,但是比较具有局限性,此时我们就可以使用JS中的函数。</p>
-        
-          <a class="article-more-a" href="/2020/05/19/JS%E5%AD%A6%E4%B9%A0-js%E8%AF%AD%E6%B3%952/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/19/JS%E5%AD%A6%E4%B9%A0-js%E8%AF%AD%E6%B3%952/">展开全文 >></a>
         </p>
       
 

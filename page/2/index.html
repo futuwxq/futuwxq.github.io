@@ -152,6 +152,109 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-网页小技巧" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/22/%E7%BD%91%E9%A1%B5%E5%B0%8F%E6%8A%80%E5%B7%A7/">小技巧</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/22/%E7%BD%91%E9%A1%B5%E5%B0%8F%E6%8A%80%E5%B7%A7/" class="archive-article-date">
+  	<time datetime="2020-05-22T05:00:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-制作小三角"><a href="#1-制作小三角" class="headerlink" title="1- 制作小三角"></a>1- 制作小三角</h3><p>利用没有宽度和高度只有border的元素，当border-top-color是有颜色，其他边都是透明色就有三角。</p>
+<img src="/2020/05/22/%E7%BD%91%E9%A1%B5%E5%B0%8F%E6%8A%80%E5%B7%A7/image-20200523172114585.png" alt="image-20200523172114585" style="zoom:50%;">
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class="con"&gt;123&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.con</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">    <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: <span class="number">28px</span>;</span><br><span class="line">    <span class="attribute">left</span>: <span class="number">18px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">8px</span> solid <span class="number">#000</span>;</span><br><span class="line">    <span class="attribute">border-style</span>: solid dashed dashed;</span><br><span class="line">    <span class="attribute">border-color</span>: <span class="number">#fff</span> transparent transparent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如果三角是朝右的，只需修改边框颜色为<code>border-color:  transparent #fff transparent transparent;</code></p>
+<h3 id="2-带有文字的圆形图标"><a href="#2-带有文字的圆形图标" class="headerlink" title="2- 带有文字的圆形图标"></a>2- 带有文字的圆形图标</h3><p>因为图形内有文字，可以考虑使用border-radius 和 绝对定位</p>
+<p>除了圆形图标之外，利用border-radius可以制作各种形状的小图标</p>
+<p><img src="/2020/05/22/%E7%BD%91%E9%A1%B5%E5%B0%8F%E6%8A%80%E5%B7%A7/image-20200526105632399.png" alt="image-20200526105632399"></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.close</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: -<span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">right</span>: -<span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1pX</span> solid <span class="number">#ebebeb</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#ffffff</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-遮罩层"><a href="#3-遮罩层" class="headerlink" title="3 - 遮罩层"></a>3 - 遮罩层</h3><ol>
+<li><p>使用before等元素</p>
+</li>
+<li><p>使用固定定位</p>
+<p>当我们需要给某个盒子设置遮罩层的时候，可以在盒子内设置一个div 这个div是<strong>固定定位至盒子的最顶端</strong>，然后这个div是占满整个盒子，最后使用z-index把遮罩层设置到盒子的下面。</p>
+</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.bc</span> &#123;</span><br><span class="line">    position: fixed; //这里是需要一个占满整个网页的遮罩层。</span><br><span class="line">    <span class="selector-tag">z-index</span>: <span class="selector-tag">-1</span>;</span><br><span class="line">    <span class="selector-tag">top</span>: 0;</span><br><span class="line">    <span class="selector-tag">left</span>: 0;</span><br><span class="line">    <span class="selector-tag">width</span>: 100%;</span><br><span class="line">    <span class="selector-tag">height</span>: 100%;</span><br><span class="line">    <span class="selector-tag">background-color</span>: <span class="selector-tag">rgba</span>(0, 0, 0, <span class="selector-class">.3</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>js</p>
+<h3 id="1-奇数次点击打开，偶数次点击关闭"><a href="#1-奇数次点击打开，偶数次点击关闭" class="headerlink" title="1- 奇数次点击打开，偶数次点击关闭"></a>1- 奇数次点击打开，偶数次点击关闭</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> flag = <span class="number">0</span>; <span class="comment">//这个flag放在函数外部，只执行一次</span></span><br><span class="line">open.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (flag === <span class="number">0</span>) &#123;</span><br><span class="line">        bc.style.display = <span class="string">'block'</span>;</span><br><span class="line">        flag = <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        bc.style.display = <span class="string">'none'</span>;</span><br><span class="line">        flag = <span class="number">0</span>; <span class="comment">//这里需要再次设置flag</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>双击某元素（带有文字），出现一个文本框，可以通过文本框修改某元素内的文字。</p>
+<ul>
+<li>双击文字的时候，在里面生成一个文本框,</li>
+<li>当失去焦点或者按下回车然后把文本框输入的值给原先元素即可。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"ul , ol "</span>).on(<span class="string">"dblclick"</span>, <span class="string">"p"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> content = $(<span class="keyword">this</span>).text();</span><br><span class="line">    <span class="built_in">window</span>.getSelection ? <span class="built_in">window</span>.getSelection().removeAllRanges() : <span class="built_in">document</span>.selection.empty(); <span class="comment">////双击选中会选中p元素的文字，禁用</span></span><br><span class="line">    <span class="comment">// console.log(content);</span></span><br><span class="line">    <span class="comment">// 在p里面添加一个文本框</span></span><br><span class="line">    $(<span class="keyword">this</span>).html(<span class="string">"&lt;input type='text'/&gt;"</span>);</span><br><span class="line">    <span class="keyword">var</span> input = $(<span class="keyword">this</span>).children(<span class="string">"input"</span>);</span><br><span class="line">    input.val(content);</span><br><span class="line">    input.select(); <span class="comment">//选中文本框的所有文字，方便统一修改</span></span><br><span class="line">    input.on(&#123;</span><br><span class="line">        blur: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="comment">// if ($(this).val == "") return;</span></span><br><span class="line">            $(<span class="keyword">this</span>).parent().text($(<span class="keyword">this</span>).val()); <span class="comment">//text()方法向p里面新添加了内容，因此input会消失。</span></span><br><span class="line">        &#125;,</span><br><span class="line">        keyup: <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (e.keyCode === <span class="number">13</span>) &#123;</span><br><span class="line">                $(<span class="keyword">this</span>).blur(); <span class="comment">//因为blur方法的结果和这个结果一样，所以手动调用</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">summary</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/22/%E7%BD%91%E9%A1%B5%E5%B0%8F%E6%8A%80%E5%B7%A7/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-经验汇总篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -806,91 +909,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/05/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-rem%E9%80%82%E9%85%8D%E5%B8%83%E5%B1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-移动端布局-flex布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-flex%E5%B8%83%E5%B1%80/">移动端布局-flex布局</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-flex%E5%B8%83%E5%B1%80/" class="archive-article-date">
-  	<time datetime="2020-05-04T13:16:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>传统布局：兼容性好、布局繁琐、局限性,不能再移动端很好的布局。</p>
-<p>flex弹性布局</p>
-<ul>
-<li>操作方便 ，布局极为简单.移动端应用很广泛</li>
-<li>PC端浏览器支持情况较差日</li>
-</ul>
-        
-          <a class="article-more-a" href="/2020/05/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-flex%E5%B8%83%E5%B1%80/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">移动端布局</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-flex%E5%B8%83%E5%B1%80/">展开全文 >></a>
         </p>
       
 

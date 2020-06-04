@@ -8,22 +8,22 @@
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
   <title>经验汇总篇 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1- ul.nav&gt;li 和  ul.nav li的使用以前一直以为 ul.nav li 和 ul.nav&gt;li 用法一样。">
+  <meta name="description" content="HTML1- ul.nav&gt;li 和  ul.nav li的使用以前一直以为 ul.nav li 和 ul.nav&gt;li 用法一样。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="经验汇总篇">
 <meta property="og:url" content="https://futuwxq.github.io/2020/05/22/%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB%E7%AF%87/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="1- ul.nav&gt;li 和  ul.nav li的使用以前一直以为 ul.nav li 和 ul.nav&gt;li 用法一样。">
+<meta property="og:description" content="HTML1- ul.nav&gt;li 和  ul.nav li的使用以前一直以为 ul.nav li 和 ul.nav&gt;li 用法一样。">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://futuwxq.github.io/2020/05/22/%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB%E7%AF%87/image-20200601105602174.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/22/%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB%E7%AF%87/image-20200531094758868.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/22/%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB%E7%AF%87/image-20200601082906936.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/22/%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB%E7%AF%87/image-20200601105602174.png">
 <meta property="article:published_time" content="2020-05-22T05:00:16.000Z">
-<meta property="article:modified_time" content="2020-06-01T07:25:03.122Z">
+<meta property="article:modified_time" content="2020-06-04T13:31:08.927Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="summary">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://futuwxq.github.io/2020/05/22/%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB%E7%AF%87/image-20200601105602174.png">
+<meta name="twitter:image" content="https://futuwxq.github.io/2020/05/22/%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB%E7%AF%87/image-20200531094758868.png">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
   
@@ -179,7 +179,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-ul-nav-gt-li-和-ul-nav-li的使用"><a href="#1-ul-nav-gt-li-和-ul-nav-li的使用" class="headerlink" title="1- ul.nav&gt;li 和  ul.nav li的使用"></a>1- ul.nav&gt;li 和  ul.nav li的使用</h3><p>以前一直以为 ul.nav li 和 ul.nav&gt;li 用法一样。</p>
+        <h2 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h2><h3 id="1-ul-nav-gt-li-和-ul-nav-li的使用"><a href="#1-ul-nav-gt-li-和-ul-nav-li的使用" class="headerlink" title="1- ul.nav&gt;li 和  ul.nav li的使用"></a>1- ul.nav&gt;li 和  ul.nav li的使用</h3><p>以前一直以为 ul.nav li 和 ul.nav&gt;li 用法一样。</p>
 <a id="more"></a>
 
 <ul>
@@ -188,7 +188,24 @@
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"nav"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>   //ul.nav&gt;li 只会选中这个标签</span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>微博<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>   //ul.nav li 也可以选中这个标签</span><br><span class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span>私信<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">li</span>&gt;</span> </span><br><span class="line"> <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="2-对象数组的遍历"><a href="#2-对象数组的遍历" class="headerlink" title="2- 对象数组的遍历"></a>2- 对象数组的遍历</h3><p>首先对象的强化遍历如下</p>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="图片处理"><a href="#图片处理" class="headerlink" title="图片处理"></a>图片处理</h3><h5 id="1）-消除图片下方间隙方法"><a href="#1）-消除图片下方间隙方法" class="headerlink" title="1） 消除图片下方间隙方法"></a>1） 消除图片下方间隙方法</h5><p>使用 CSS编排多张图片时，在图片下方有时会产生几个像素的缝隙。即使图片浮动之后，下方仍然后很小的空白缝隙。</p>
+<img src="/2020/05/22/%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB%E7%AF%87/image-20200531094758868.png" alt="image-20200531094758868" style="zoom:50%;">
+
+<p><code>img{display:block;}</code>  </p>
+<p>或者</p>
+<p><code>img
+{
+ outline-width:0px;
+ vertical-align:top;
+}</code></p>
+<h5 id="2）-图片和文字垂直居中"><a href="#2）-图片和文字垂直居中" class="headerlink" title="2） 图片和文字垂直居中"></a>2） 图片和文字垂直居中</h5><p>图片默认和文字的基线对齐，想要垂直居中需要设置vertical-aligin属性</p>
+<img src="/2020/05/22/%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB%E7%AF%87/image-20200601082906936.png" alt="image-20200601082906936" style="zoom:80%;">
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">img &#123;</span><br><span class="line">     vertical-align: middle;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="box-sizing-border-box"><a href="#box-sizing-border-box" class="headerlink" title="box-sizing: border-box"></a>box-sizing: border-box</h5><p>这句语法的意识就是你设置了一个盒子的宽度，那么这个盒子的宽度就会包括content + padding + border。主要是用来不让padding 和 border撑大盒子。</p>
+<p>当我们发现盒子的宽度，border和预期的不一样的时候，就需要考虑 box-sizing 属性。</p>
+<h2 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h2><h5 id="1-对象数组的遍历"><a href="#1-对象数组的遍历" class="headerlink" title="1 - 对象数组的遍历"></a>1 - 对象数组的遍历</h5><p>首先对象的强化遍历如下</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> obj) &#123;</span><br><span class="line">    <span class="comment">//k 得到的是属性名</span></span><br><span class="line">    <span class="comment">//obj[k] 得到是属性值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>当数据是对象数组时。</p>
@@ -196,9 +213,35 @@
 
 <p>比我们想要获取到第一个数据的name张三</p>
 <p><code>datas[0][&#39;name&#39;]</code> = ‘张三’</p>
-<h3 id="4-Date类型毫秒数（兼容写法）"><a href="#4-Date类型毫秒数（兼容写法）" class="headerlink" title="4 - Date类型毫秒数（兼容写法）"></a>4 - Date类型毫秒数（兼容写法）</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> date1 = +<span class="keyword">new</span> <span class="built_in">Date</span>(); <span class="comment">// +new Date()  返回的就是总的毫秒数</span></span><br><span class="line"><span class="built_in">console</span>.log(date1);</span><br><span class="line"> <span class="keyword">var</span> inputTime = +<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2020-5-23 22:00:00'</span>) <span class="comment">//返回的也是毫秒数 相当于一种隐性转换</span></span><br></pre></td></tr></table></figure>
+<h5 id="2-Date类型毫秒数（兼容写法）"><a href="#2-Date类型毫秒数（兼容写法）" class="headerlink" title="2 - Date类型毫秒数（兼容写法）"></a>2 - Date类型毫秒数（兼容写法）</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> date1 = +<span class="keyword">new</span> <span class="built_in">Date</span>(); <span class="comment">// +new Date()  返回的就是总的毫秒数</span></span><br><span class="line"><span class="built_in">console</span>.log(date1);</span><br><span class="line"> <span class="keyword">var</span> inputTime = +<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2020-5-23 22:00:00'</span>) <span class="comment">//返回的也是毫秒数 相当于一种隐性转换</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="5-容易搞混淆的一些概念"><a href="#5-容易搞混淆的一些概念" class="headerlink" title="5 - 容易搞混淆的一些概念"></a>5 - 容易搞混淆的一些概念</h3><table>
+<h5 id="3-双击禁止选中文字"><a href="#3-双击禁止选中文字" class="headerlink" title="3 - 双击禁止选中文字"></a>3 - 双击禁止选中文字</h5><h3 id="ES5中有四种相等算法"><a href="#ES5中有四种相等算法" class="headerlink" title="ES5中有四种相等算法"></a>ES5中有四种相等算法</h3><ul>
+<li>严格相等 (“triple equals” 或 “identity”)，使用 === ,</li>
+<li>宽松相等 (“double equals”) ，使用 ==</li>
+<li>以及 Object.is （ECMAScript 2015/ ES6 新特性）</li>
+</ul>
+<p>在比较两件事情时，双等号将执行<strong>类型转换</strong>; 三等号将进行相同的比较，而不进行类型转换 (<strong>如果类型不同, 只是总会返回 false</strong> ); 而Object.is的行为方式与三等号相同，但是对于<strong>NaN和-0和+0进行特殊处理</strong>，所以最后两个不相同，而Object.is（NaN，NaN）将为 <code>true</code>。(<strong>通常使用双等号或三等号将NaN与NaN进行比较，结果为false)</strong></p>
+<p>在下面这个文本框里，通过jQuery获取的数值1（是String型）当我们判断的时候要用宽松等 ，它会自动完成String到Number的转换。    <code>if (n == 1)</code>  或者写 <code>if (n === &#39;1&#39;)</code>  </p>
+<p><img src="/2020/05/22/%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB%E7%AF%87/image-20200601105602174.png" alt="image-20200601105602174"></p>
+<h2 id="易忘记知识点"><a href="#易忘记知识点" class="headerlink" title="易忘记知识点"></a>易忘记知识点</h2><h5 id="1-小数相加是不精确的"><a href="#1-小数相加是不精确的" class="headerlink" title="1) 小数相加是不精确的"></a><strong>1) 小数相加是不精确的</strong></h5><p>有时候我们需要</p>
+<ul>
+<li>向上取整 Math.ceil() ,负数的向下取整是看谁大取谁，而不是看绝对值。</li>
+<li>向下取整 Math.floor()</li>
+<li>保留小数位数  .toFixed()</li>
+</ul>
+<h2 id="语法格式很重要"><a href="#语法格式很重要" class="headerlink" title="语法格式很重要"></a>语法格式很重要</h2><ol>
+<li><h5 id="多了一个空格"><a href="#多了一个空格" class="headerlink" title="多了一个空格"></a>多了一个空格</h5></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ul.style.transform = <span class="string">'translateX('</span> + moveW + <span class="string">' px)'</span>; <span class="comment">//多加了一个空格语法就不执行</span></span><br><span class="line">ul.style.transform = <span class="string">'translateX('</span> + moveW + <span class="string">' px)'</span>;</span><br></pre></td></tr></table></figure>
+
+<p>第一句px前面<strong>多了一个空格</strong>，导致这条语句就不会被解析，console台也不会报错。写css 和 html的时候利用插件会自动调整格式，但是js还不行，要注意js的语法格式。</p>
+<ol start="2">
+<li><h5 id="hover函数"><a href="#hover函数" class="headerlink" title="hover函数"></a>hover函数</h5></li>
+</ol>
+<p><strong>两个函数要写在hover里面，用逗号隔开，容易手误把第二个函数写在hover外面。</strong></p>
+<p> 正确写法： <code>$(this).hover(function() {}, function() {});</code></p>
+<p> 错误写法： <code>$(this).hover(function() {}),function() {};</code></p>
+<h2 id="易混淆概念"><a href="#易混淆概念" class="headerlink" title="易混淆概念"></a>易混淆概念</h2><table>
 <thead>
 <tr>
 <th>元素</th>
@@ -237,51 +280,20 @@
 <td></td>
 </tr>
 </tbody></table>
-<h3 id="6-容易忘记的一些知识点"><a href="#6-容易忘记的一些知识点" class="headerlink" title="6 - 容易忘记的一些知识点"></a>6 - 容易忘记的一些知识点</h3><ul>
-<li>小数相加是不精确的，有时候我们需要<ul>
-<li>向上取整 Math.ceil() ,负数的向下取整是看谁大取谁，而不是看绝对值。</li>
-<li>向下取整 Math.floor()</li>
-<li>保留小数位数  .toFixed()</li>
+<p>经常犯的一些语法错误</p>
+<ul>
+<li>html标签忘记写闭合标签</li>
 </ul>
-</li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span class&#x3D;&quot;iconfont icon-guanbi&quot;&gt;&lt;span&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>在获取元素的时候忘记些<code>.</code> 和<code>*</code></li>
 </ul>
-<h3 id="ES5中有四种相等算法"><a href="#ES5中有四种相等算法" class="headerlink" title="ES5中有四种相等算法"></a>ES5中有四种相等算法</h3><ul>
-<li>严格相等 (“triple equals” 或 “identity”)，使用 === ,</li>
-<li>宽松相等 (“double equals”) ，使用 ==</li>
-<li>以及 Object.is （ECMAScript 2015/ ES6 新特性）</li>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">querySelectorAll(&#39;.icon-guanbi&#39;)</span><br><span class="line">querySelectorAll(&#39;icon-guanbi&#39;)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>变量 函数 写错啦啦 等等</li>
 </ul>
-<p>在比较两件事情时，双等号将执行<strong>类型转换</strong>; 三等号将进行相同的比较，而不进行类型转换 (<strong>如果类型不同, 只是总会返回 false</strong> ); 而Object.is的行为方式与三等号相同，但是对于<strong>NaN和-0和+0进行特殊处理</strong>，所以最后两个不相同，而Object.is（NaN，NaN）将为 <code>true</code>。(<strong>通常使用双等号或三等号将NaN与NaN进行比较，结果为false)</strong></p>
-<p>在下面这个文本框里，通过jQuery获取的数值1（是String型）当我们判断的时候要用宽松等 ，它会自动完成String到Number的转换。    <code>if (n == 1)</code>  或者写 <code>if (n === &#39;1&#39;)</code>  </p>
-<p><img src="/2020/05/22/%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB%E7%AF%87/image-20200601105602174.png" alt="image-20200601105602174"></p>
-<h2 id="图片处理"><a href="#图片处理" class="headerlink" title="图片处理"></a>图片处理</h2><h3 id="1）-消除图片下方间隙方法"><a href="#1）-消除图片下方间隙方法" class="headerlink" title="1） 消除图片下方间隙方法"></a>1） 消除图片下方间隙方法</h3><p>使用 CSS编排多张图片时，在图片下方有时会产生几个像素的缝隙。即使图片浮动之后，下方仍然后很小的空白缝隙。</p>
-<img src="/2020/05/22/%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB%E7%AF%87/image-20200531094758868.png" alt="image-20200531094758868" style="zoom:50%;">
-
-<p><code>img{display:block;}</code>  </p>
-<p>或者</p>
-<p><code>img
-{
- outline-width:0px;
- vertical-align:top;
-}</code></p>
-<h3 id="2）-图片和文字垂直居中"><a href="#2）-图片和文字垂直居中" class="headerlink" title="2） 图片和文字垂直居中"></a>2） 图片和文字垂直居中</h3><p>图片默认和文字的基线对齐，想要垂直居中需要设置vertical-aligin属性</p>
-<img src="/2020/05/22/%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB%E7%AF%87/image-20200601082906936.png" alt="image-20200601082906936" style="zoom:80%;">
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">img &#123;</span><br><span class="line">     vertical-align: middle;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="语法格式很重要"><a href="#语法格式很重要" class="headerlink" title="语法格式很重要"></a>语法格式很重要</h2><ol>
-<li>多了一个空格</li>
-</ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ul.style.transform = <span class="string">'translateX('</span> + moveW + <span class="string">' px)'</span>; <span class="comment">//多加了一个空格语法就不执行</span></span><br><span class="line">ul.style.transform = <span class="string">'translateX('</span> + moveW + <span class="string">' px)'</span>;</span><br></pre></td></tr></table></figure>
-
-<p>第一句px前面<strong>多了一个空格</strong>，导致这条语句就不会被解析，console台也不会报错。写css 和 html的时候利用插件会自动调整格式，但是js还不行，要注意js的语法格式。</p>
-<ol start="2">
-<li>hover函数</li>
-</ol>
-<p><strong>两个函数要写在hover里面，用逗号隔开，容易手误把第二个函数写在hover外面。</strong></p>
-<p> 正确写法： <code>$(this).hover(function() {}, function() {});</code></p>
-<p> 错误写法： <code>$(this).hover(function() {}),function() {};</code></p>
 
       
 

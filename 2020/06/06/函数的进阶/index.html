@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
-  <title>Archives: 2020 | 晓秋的博客</title>
+  <title>函数的进阶 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="晓秋的博客">
-<meta property="og:url" content="https://futuwxq.github.io/archives/2020/page/4/index.html">
+  <meta name="description" content="导读◆能够说出函数的多种定义和调用方式 ◆能够说出和改变函数内部this的指向 ◆能够说出严格模式的特点">
+<meta property="og:type" content="article">
+<meta property="og:title" content="函数的进阶">
+<meta property="og:url" content="https://futuwxq.github.io/2020/06/06/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9B%E9%98%B6/index.html">
 <meta property="og:site_name" content="晓秋的博客">
+<meta property="og:description" content="导读◆能够说出函数的多种定义和调用方式 ◆能够说出和改变函数内部this的指向 ◆能够说出严格模式的特点">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://futuwxq.github.io/2020/06/06/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9B%E9%98%B6/image-20200606104730097.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/06/06/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9B%E9%98%B6/image-20200606212156906.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/06/06/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9B%E9%98%B6/image-20200606213346129.png">
+<meta property="article:published_time" content="2020-06-06T02:35:25.000Z">
+<meta property="article:modified_time" content="2020-06-06T13:56:00.943Z">
 <meta property="article:author" content="不知火舞">
+<meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://futuwxq.github.io/2020/06/06/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9B%E9%98%B6/image-20200606104730097.png">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
   
@@ -150,402 +159,340 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-函数的进阶" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      函数的进阶
+    </h1>
+  
+
+        
+        <a href="/2020/06/06/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9B%E9%98%B6/" class="archive-article-date">
+  	<time datetime="2020-06-06T02:35:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-06</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h2><p><strong>◆能够说出函数的多种定义和调用方式</strong></p>
+<p><strong>◆能够说出和改变函数内部this的指向</strong></p>
+<p><strong>◆能够说出严格模式的特点</strong><a id="more"></a></p>
+<p><strong>◆能够把函数作为参数和返回值传递</strong></p>
+<p><strong>◆能够说出闭包的作用</strong></p>
+<p><strong>◆能够说出递归的两个条件:</strong></p>
+<p><strong>◆能够说出深拷贝和浅拷贝的区别</strong></p>
+<h2 id="◆函数的定义和调用"><a href="#◆函数的定义和调用" class="headerlink" title="◆函数的定义和调用"></a><strong>◆函数的定义和调用</strong></h2><h3 id="1-1函数的定义方式"><a href="#1-1函数的定义方式" class="headerlink" title="1.1函数的定义方式"></a>1.1函数的定义方式</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 自定义函数(命名函数) </span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 函数表达式 (匿名函数)</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 3. 利用 new Function('参数1','参数2', '函数体');</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> f = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'console.log(a + b)'</span>);</span><br><span class="line">f(<span class="number">1</span>, <span class="number">2</span>);<span class="comment">//3</span></span><br><span class="line"><span class="comment">// 4. 所有函数都是 Function 的实例(对象)</span></span><br><span class="line"><span class="built_in">console</span>.dir(f);<span class="comment">//有__proto__属性</span></span><br><span class="line"><span class="comment">// 5. 函数也属于对象</span></span><br><span class="line"><span class="built_in">console</span>.log(f <span class="keyword">instanceof</span> <span class="built_in">Object</span>);</span><br></pre></td></tr></table></figure>
+
+<p>1.函数声明方式function关键字(命名函数)</p>
+<p>2.函数表达式(匿名函数)</p>
+<p>3.new Function（）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var fn &#x3D; new Function(&#39;参数1&#39;, &#39;参数2&#39;...., &#39; 函数体&#39; )</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>Function 里面参数都必须是字符串格式</p>
+</li>
+<li><p>第三种方式执行效率低,也不方便书写,因此较少使用</p>
+</li>
+<li><p>所有函数都是Function的实例(对象)</p>
+</li>
+<li><p>函数也属于对象</p>
+</li>
+</ul>
+<img src="/2020/06/06/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9B%E9%98%B6/image-20200606104730097.png" alt="image-20200606104730097" style="zoom:80%;">
+
+<h3 id="1-2-函数的调用方式"><a href="#1-2-函数的调用方式" class="headerlink" title="1.2 函数的调用方式"></a>1.2 函数的调用方式</h3><p>1.普通函数  ： fn();   fn.call()调用</p>
+<p>2.对象的方法  ：     对象<strong>.</strong>调用</p>
+<p>3.构造函数 : new实例化对象的时候就会调用</p>
+<p>4.绑定事件函数  ：事件被触发的时候，比如点击按钮  回调函数</p>
+<p>5.定时器函数 :  每个定时器时间间隔自动调用  回调函数</p>
+<p>6.立即执行函数：立即执行函数是自动调用</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 1. 普通函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'人生的巅峰'</span>);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// fn();   fn.call()调用</span></span><br><span class="line"><span class="comment">// 2. 对象的方法</span></span><br><span class="line"><span class="keyword">var</span> o = &#123;</span><br><span class="line">    sayHi: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'人生的巅峰'</span>);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">o.sayHi();</span><br><span class="line"><span class="comment">// 3. 构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Star</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"><span class="keyword">new</span> Star();</span><br><span class="line"><span class="comment">// 4. 绑定事件函数</span></span><br><span class="line"><span class="comment">// btn.onclick = function() &#123;&#125;;   // 点击了按钮就可以调用这个函数</span></span><br><span class="line"><span class="comment">// 5. 定时器函数</span></span><br><span class="line"><span class="comment">// setInterval(function() &#123;&#125;, 1000);  这个函数是定时器自动1秒钟调用一次</span></span><br><span class="line"><span class="comment">// 6. 立即执行函数</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'人生的巅峰'</span>);</span><br><span class="line">&#125;)();</span><br><span class="line"><span class="comment">// 立即执行函数是自动调用</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="◆this"><a href="#◆this" class="headerlink" title="◆this"></a>◆this</h2><h3 id="2-1-函数内this的指向"><a href="#2-1-函数内this的指向" class="headerlink" title="2.1 函数内this的指向"></a>2.1 函数内this的指向</h3><p>这些this的指向,是当我们调用函数的时候确定的。调用方式的不同决定了this的指向不同-般指向我们的调用者。</p>
+<table>
+<thead>
+<tr>
+<th>调用方式</th>
+<th>this指向</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>普通函数调用</td>
+<td>window</td>
+</tr>
+<tr>
+<td>构造函数调用</td>
+<td>指向实例对象 ，<strong>原型对象里面的方法也指向实例对象</strong></td>
+</tr>
+<tr>
+<td>对象方法调用</td>
+<td>该方法所属对象</td>
+</tr>
+<tr>
+<td>事件绑定方法</td>
+<td>绑定事件对象</td>
+</tr>
+<tr>
+<td>定时器函数</td>
+<td>window</td>
+</tr>
+<tr>
+<td>立即执行函数</td>
+<td>window</td>
+</tr>
+</tbody></table>
+<h3 id="2-2-改変凾数内部this指向"><a href="#2-2-改変凾数内部this指向" class="headerlink" title="2.2 改変凾数内部this指向"></a>2.2 改変凾数内部this指向</h3><p>JavaScript为我们提供了一些函数方法来帮我们更优雅地处理函数内部 this 的指向问题 ,常用的有 bind()、call()、apply() 三神方法。</p>
+<p><strong>1) call方法</strong></p>
+<p>call() 方法凋用一个対象。简单理解为调用函数的方式，但是它可以改变函数的this指向。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fun.call(thisArg, arg1, arg2, ...)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> o = &#123;</span><br><span class="line">    name: <span class="string">'andy'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(a + b);</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line">fn.call(o, <span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"><span class="comment">// call 1）可以调用函数 2）可以改变函数内的this 指向</span></span><br><span class="line"><span class="comment">// call 的主要作用可以实现继承</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>2）apply方法</strong></p>
+<p>apply() 方法调用一个函数。简单理解为调用函数的方式,但是它可以改变函数的this指向。但是他的参数必须是<strong>数组(伪数组)</strong> 。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fun.apply (thisArg, [argsArray] )</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>thisArg :在fun函数运行时指定的this值</li>
+<li>argsArray :传递的值,必须包含在<strong>数组</strong>里面</li>
+<li>返回值就是函数的返回值,因为它就是调用函数</li>
+</ul>
+<p><strong>apply 的主要应用</strong> ：比如说我们可以利用 apply 借助于数学内置对象求数组最大值 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">66</span>, <span class="number">3</span>, <span class="number">99</span>, <span class="number">4</span>];</span><br><span class="line"><span class="keyword">var</span> arr1 = [<span class="string">'red'</span>, <span class="string">'pink'</span>];</span><br><span class="line"><span class="comment">// var max = Math.max.apply(null, arr);</span></span><br><span class="line"><span class="keyword">var</span> max = <span class="built_in">Math</span>.max.apply(<span class="built_in">Math</span>, arr); <span class="comment">//this指向调用这个方法的Math,参数是一个数组</span></span><br><span class="line"><span class="keyword">var</span> min = <span class="built_in">Math</span>.min.apply(<span class="built_in">Math</span>, arr);</span><br><span class="line"><span class="built_in">console</span>.log(max, min);</span><br></pre></td></tr></table></figure>
+
+<p><strong>3）bind方法</strong></p>
+<p><strong>bind()方法不会调用函数</strong>(需要把改变之后的函数赋给另一个函数)。但是能改变函数内部this指向</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">fun.bind (thisArg, arg1, arg2, .. .)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>thisArg :在fun函数运行时指定的this值</p>
+</li>
+<li><p>arg1 , arg2 :传递的其他参数</p>
+</li>
+<li><p>返回由指定的this值和初始化参数改造的<strong>原函数拷贝</strong></p>
+</li>
+</ul>
+<p><strong>应用场景</strong>：如果有的函数我们<strong>不需要立即调用,但是又想改变这个函数内部的this指向</strong>，此时用bind。因此bind（）和 回调函数很般配。</p>
+<p>1）比如我们需要一个<strong>计时器控制按钮禁用3秒</strong>，因为计时器里面的this是指向windows，但是我们希望在计时器里面设置按钮的disabled属性，此时就需要改变this的指向。</p>
+<p>2）比如点击事件里面，我们<strong>不仅需要对 btn 的dom对象操作，还需要对实例化对象进行操作</strong>，函数里面的 this 指向的是 dom 对象，如果通过 <code>.bind (this)</code> 也只能指向 实例化对象，无法两全。但是，我们依然可以使用 bind 方法，<code>.bind(this.btn , this)</code>把 this（指向document）当做一个参数传给函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.btn.onclick = <span class="keyword">this</span>.addTab.bind(<span class="keyword">this</span>.btn, <span class="keyword">this</span>);</span><br><span class="line"> addTab(that) &#123;&#125;</span><br><span class="line"> <span class="comment">//在addTab函数里面，this指向的btn，that指向的是实例化对象</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-call-apply-bind-总结"><a href="#2-3-call-apply-bind-总结" class="headerlink" title="2.3 call apply bind 总结"></a>2.3 call apply bind 总结</h3><p><strong>相同点:</strong></p>
+<p>都可以改变函数内部的this指向</p>
+<p><strong>区别点:</strong></p>
+<ol>
+<li>call 和 apply 会调用函数,并且改变函数内部this指向。</li>
+<li>call 和 apply 传递的参数不样, call传递参数aru1, aru2…形式，apply必须数组形式[arg]</li>
+<li>bind 不会调用函数 , 可以改变函数内部this指向.</li>
+</ol>
+<p><strong>主要应用场景:</strong></p>
+<ol>
+<li>call 经常做继承</li>
+<li>apply 经常跟数组有关系, 比如借助于数学对象实现数组最大值最小值</li>
+<li>bind 不调用函数,但是还想改变 this 指向，比如改变定时器内部的this指向</li>
+</ol>
+<h2 id="◆严格模式"><a href="#◆严格模式" class="headerlink" title="◆严格模式"></a>◆严格模式</h2><h3 id="3-1什么是严格模式"><a href="#3-1什么是严格模式" class="headerlink" title="3.1什么是严格模式"></a>3.1什么是严格模式</h3><p>JavaScript 除了提供正常模式外,还提供了严格模式( strictmode )。ES5的严格模式是采用具有限制性 JavaScript 变体的一种方式,即在严格的条件下运行JS代码。</p>
+<p>严格模式在<strong>IE10以上版本</strong>的浏览器中才会被支持,旧版本浏览器中会被忽略。严格模式对正常的 JavaScript 语义做了一些更改 :</p>
+<p>1.消除了 Javascript 语法的一些不合理、不严谨之处,减少了-些怪异行为。</p>
+<p>2.消除代码运行的一些不安全之处,保证代码运行的安全。</p>
+<p>3.提高编译器效率,增加运行速度。</p>
+<p>4.禁用了在 ECMAScript 的未来版本中可能会定义的一些语法,为未来新版本的 Javascript 做好铺垫。比如一些保留字如: class, enum, export, extends, import, super不能做变量名</p>
+<h3 id="3-2-开启严格模式"><a href="#3-2-开启严格模式" class="headerlink" title="3.2 开启严格模式"></a>3.2 开启严格模式</h3><p>严格模式可以应用到整个脚本或个别函数中。因此在使用时,我们可以将严格模式分为为脚本开启严格模式和为函数开启严格模式两种情况。</p>
+<p>1.为脚本开启严格模式</p>
+<p>为整个脚本文件开启严格模式,需要在所有语句之前放一个特定语句 <code>&quot;usestrict&quot;;</code>( 或<code>&#39;usestrict&#39;;</code>) 。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="meta">    "use strict"</span>;</span><br><span class="line">    <span class="built_in">console</span>.log (<span class="string">"这是严格模式。"</span>);</span><br><span class="line">&lt;<span class="regexp">/ script&gt;</span></span><br><span class="line"><span class="regexp">/</span>*有的script基本是严格模式,有的script脚本是正常模式,这样不利于文件合并,所以可以将整个脚本文件放在一个立即执行的匿名函数之中。这样独立创建一个作用域而不影响其他 script脚本文件*<span class="regexp">/</span></span><br><span class="line"><span class="regexp">&lt;script&gt; </span></span><br><span class="line"><span class="regexp">    (function() &#123;</span></span><br><span class="line"><span class="regexp">    	'use strict';</span></span><br><span class="line"><span class="regexp">    &#125;)();</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>2.为函数开启严格模式</p>
+<p>要给某个函数开启严格模式,需要把 <code>&quot;usestrict&quot; ;</code>(或<code>&#39;use strict&#39;;</code>)声明放在函数体所有语句之前。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 此时只是给fn函数开启严格模式</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="meta">     'use strict'</span>;</span><br><span class="line">     <span class="comment">// 下面的代码按照严格模式执行</span></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-严格模式中的变化"><a href="#3-4-严格模式中的变化" class="headerlink" title="3.4 严格模式中的变化"></a>3.4 严格模式中的变化</h3><p>严格模式对 Javascript 的语法和行为,都做了一些改变。</p>
+<p><strong>1.变量规定</strong></p>
+<p>①在正常模式中,如果一个<strong>变量没有声明就赋值</strong> ,默认是全局变量。严格模式禁止这种用法,变量都必须先用var命令声明,然后再使用。</p>
+<p>②严禁删除已经声明变量。例如, <code>delete x;</code>语法是错误的。</p>
+<p><strong>2.严格模式下this指向问题</strong></p>
+<ul>
+<li><p>以前在全局作用域函数中的 this 指向 window 对象。严格模式下全局作用域中函数中的 this 是 <strong>undefined.</strong></p>
+</li>
+<li><p>以前构造函数时不加 new 也可以调用,当普通函数, this 指向全局对象 , 严格模式下,如果构造函数不加 new 调用，this 会报错.</p>
+</li>
+<li><p>new 实例化的构造函数指向创建的对象实例。</p>
+</li>
+<li><p>定时器this还是指向window。</p>
+</li>
+<li><p>事件、对象还是指向调用者。</p>
+</li>
+</ul>
+<p><strong>3.函数变化</strong></p>
+<ul>
+<li><p>函数不能有重名的参数。</p>
+</li>
+<li><p>函数必须声明在顶层新版本的 JavaScript 会引入“块级作用域”( ES6 中已引入)。为了与新版本接轨 , 不允许在非函数的代码块内声明函数。</p>
+</li>
+</ul>
+<p>更多严格模式要求参考: <a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Strict_mode</a></p>
+<h2 id="◆高阶函数"><a href="#◆高阶函数" class="headerlink" title="◆高阶函数"></a>◆高阶函数</h2><p>高阶函数是对其他函数进行操作的函数,它<strong>接收函数作为参数</strong>或将<strong>函数作为返回值</strong>输出。</p>
+<p><img src="/2020/06/06/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9B%E9%98%B6/image-20200606212156906.png" alt="image-20200606212156906"></p>
+<p>此时fn就是一个高阶函数</p>
+<p>函数也是一种数据类型,同样可以作为参数,传递给另外一个参数使用。最典型的就是<strong>作为回调函数</strong>。</p>
+<h2 id="◆闭包"><a href="#◆闭包" class="headerlink" title="◆闭包"></a>◆闭包</h2><h3 id="5-1-变量作用域"><a href="#5-1-变量作用域" class="headerlink" title="5.1 变量作用域"></a>5.1 变量作用域</h3><p>变量根据作用域的不同分为两种:全局变量和局部变量。</p>
+<p>1.函数内部可以使用全局变量。</p>
+<p>2.函数外部不可以使用局部变量。</p>
+<p>3.当函数执行完毕,本作用域内的局部变量会销毁。</p>
+<h3 id="5-2-什么是闭包"><a href="#5-2-什么是闭包" class="headerlink" title="5.2   什么是闭包"></a>5.2   什么是闭包</h3><blockquote>
+<p>闭包( closure )指有权访问另一个函数作用域中变量的函数。</p>
+</blockquote>
+<p>简单理解就是一个作用域可以访问另外 一个函数内部的局部变量。闭包可以说是一种现象，一个函数可以访问另一个函数里面的局部变量，那个这个局部变量所在的函数就是闭包，比如下面的 fn ，它里面的 num 这个变量被fun这个函数访问。</p>
+<p>通过chrom的Scope可以查看闭包。</p>
+<img src="/2020/06/06/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9B%E9%98%B6/image-20200606213346129.png" alt="image-20200606213346129" style="zoom:80%;">
+
+<p><strong>闭包的主要作用: 延伸了变量的作用范围</strong>，如下面的代码，num 是 fn 的局部棉量，但是当 fn 函数执行完毕之后仍然不会销毁，因为 f 函数调用了它，只有当 f 函数执行完毕才会被销毁。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//在 fn 外面的作用域可以访问 fn 内部的局部变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> num = <span class="number">10</span>; </span><br><span class="line">            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">//高阶函数</span></span><br><span class="line">                <span class="built_in">console</span>.log(num);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> f = fn();</span><br><span class="line">       <span class="comment">// 上行代码类似于</span></span><br><span class="line">        <span class="comment">// var f = function() &#123;</span></span><br><span class="line">        <span class="comment">//         console.log(num);</span></span><br><span class="line">        <span class="comment">//     &#125;</span></span><br><span class="line">        f();</span><br></pre></td></tr></table></figure>
+
+<h2 id="◆递归"><a href="#◆递归" class="headerlink" title="◆递归"></a>◆递归</h2>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/30/CSS%E5%AD%A6%E4%B9%A0-%E6%80%8E%E4%B9%88%E7%94%A8ps%E5%88%87%E5%9B%BE/" class="archive-article-date">
-  	<time datetime="2020-04-30T06:51:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-30</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/30/CSS%E5%AD%A6%E4%B9%A0-%E6%80%8E%E4%B9%88%E7%94%A8ps%E5%88%87%E5%9B%BE/">CSS学习-怎么用ps切图</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/06/06/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9B%E9%98%B6/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/29/CSS%E5%AD%A6%E4%B9%A0-CSS%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/" class="archive-article-date">
-  	<time datetime="2020-04-29T14:01:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-29</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/06/05/ES5-%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E5%92%8C%E5%8E%9F%E5%9E%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ES5 构造函数和原型</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/29/CSS%E5%AD%A6%E4%B9%A0-CSS%E4%B8%89%E5%A4%A7%E7%89%B9%E6%80%A7/">CSS学习-CSS三大特性</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/29/CSS%E5%AD%A6%E4%B9%A0-CSS%E8%83%8C%E6%99%AF/" class="archive-article-date">
-  	<time datetime="2020-04-29T12:41:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/29/CSS%E5%AD%A6%E4%B9%A0-CSS%E8%83%8C%E6%99%AF/">CSS学习-CSS背景</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/29/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7%E7%AF%87/" class="archive-article-date">
-  	<time datetime="2020-04-29T11:11:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/29/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7%E7%AF%87/">前端工具篇</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">工具类</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/29/CSS%E5%AD%A6%E4%B9%A0-CSS%E6%98%BE%E7%A4%BA%E5%85%83%E7%B4%A0/" class="archive-article-date">
-  	<time datetime="2020-04-29T09:25:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/29/CSS%E5%AD%A6%E4%B9%A0-CSS%E6%98%BE%E7%A4%BA%E5%85%83%E7%B4%A0/">CSS学习-CSS显示元素</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/29/CSS%E5%AD%A6%E4%B9%A0-emment%E8%AF%AD%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-04-29T07:53:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/29/CSS%E5%AD%A6%E4%B9%A0-emment%E8%AF%AD%E6%B3%95/">CSS学习-emment语法</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/29/CSS%E5%AD%A6%E4%B9%A0-CSS%E5%AD%97%E4%BD%93%E5%92%8C%E6%96%87%E6%9C%AC/" class="archive-article-date">
-  	<time datetime="2020-04-29T06:13:46.410Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/29/CSS%E5%AD%A6%E4%B9%A0-CSS%E5%AD%97%E4%BD%93%E5%92%8C%E6%96%87%E6%9C%AC/">CSS学习-CSS字体和文本</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/28/CSS%E5%AD%A6%E4%B9%A0-CSS%E9%80%89%E6%8B%A9%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2020-04-28T14:22:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/28/CSS%E5%AD%A6%E4%B9%A0-CSS%E9%80%89%E6%8B%A9%E5%99%A8/">CSS学习-CSS选择器</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/28/CSS%E5%AD%A6%E4%B9%A0-CSS%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-  	<time datetime="2020-04-28T09:47:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/28/CSS%E5%AD%A6%E4%B9%A0-CSS%E5%9F%BA%E7%A1%80/">CSS学习-CSS基础</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/25/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/" class="archive-article-date">
-  	<time datetime="2020-04-25T02:59:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/25/javaee%E5%AD%A6%E4%B9%A0%E2%80%94%E8%BF%87%E6%BB%A4%E5%99%A8/">javaee学习—过滤器</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javaee</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">过滤器</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2020/page/3/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2020/">1</a><a class="page-number" href="/archives/2020/page/2/">2</a><a class="page-number" href="/archives/2020/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/archives/2020/page/5/">5</a><a class="page-number" href="/archives/2020/page/6/">6</a><span class="space">&hellip;</span><a class="page-number" href="/archives/2020/page/8/">8</a><a class="extend next" rel="next" href="/archives/2020/page/5/">Next &amp;raquo;</a>
-    </nav>
   
 
 
@@ -569,8 +516,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

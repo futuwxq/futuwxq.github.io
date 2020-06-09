@@ -18,8 +18,9 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/06/06/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9B%E9%98%B6/image-20200606104730097.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/06/06/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9B%E9%98%B6/image-20200606212156906.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/06/06/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9B%E9%98%B6/image-20200606213346129.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/06/06/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9B%E9%98%B6/image-20200608094912602.png">
 <meta property="article:published_time" content="2020-06-06T02:35:25.000Z">
-<meta property="article:modified_time" content="2020-06-06T13:56:00.943Z">
+<meta property="article:modified_time" content="2020-06-09T07:20:32.878Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
@@ -354,7 +355,74 @@
 <p><strong>闭包的主要作用: 延伸了变量的作用范围</strong>，如下面的代码，num 是 fn 的局部棉量，但是当 fn 函数执行完毕之后仍然不会销毁，因为 f 函数调用了它，只有当 f 函数执行完毕才会被销毁。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//在 fn 外面的作用域可以访问 fn 内部的局部变量</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> num = <span class="number">10</span>; </span><br><span class="line">            <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="comment">//高阶函数</span></span><br><span class="line">                <span class="built_in">console</span>.log(num);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> f = fn();</span><br><span class="line">       <span class="comment">// 上行代码类似于</span></span><br><span class="line">        <span class="comment">// var f = function() &#123;</span></span><br><span class="line">        <span class="comment">//         console.log(num);</span></span><br><span class="line">        <span class="comment">//     &#125;</span></span><br><span class="line">        f();</span><br></pre></td></tr></table></figure>
 
-<h2 id="◆递归"><a href="#◆递归" class="headerlink" title="◆递归"></a>◆递归</h2>
+<h3 id="闭包的案例（面试经常会问到）"><a href="#闭包的案例（面试经常会问到）" class="headerlink" title="***闭包的案例（面试经常会问到）"></a>***闭包的案例（面试经常会问到）</h3><p><strong>案例一：点击 li 输出索引号</strong></p>
+<img src="/2020/06/06/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9B%E9%98%B6/image-20200608094912602.png" alt="image-20200608094912602" style="zoom:80%;">
+
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; lis.length; i++) &#123;</span><br><span class="line">    lis[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(i);</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.index);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>代码如上，但是报错了 。。。。因为 i++ 是同步任务，而 onclick 这个函数是异步任务，页面加载的时候首先会执行任务栈同步任务，在点击之后才会执行onlick函数（此时的 i 已经是5,超出了数组的边界）。</p>
+<p>我们以前的做法是：在点击函数之前把 i 保存起来。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">lis[i].index = i; <span class="comment">//所以我们以前是先把i值存起来</span></span><br><span class="line">lis[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.index);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>现在我们可以用闭包来解决这个问题</strong></p>
+<p>利用for循环创建了4个立即执行函数，立即执行函数形成一个小闭包，通过立即执行函数把 i  作为参数传递给函数内部，这样函数内部可以使用 i 。</p>
+<p>每次循环都会创建一个立即执行函数，占用空间内存，但是比较经典</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; lis.length; i++) &#123;</span><br><span class="line">    <span class="comment">// 立即执行函数也成为小闭包因为立即执行函数里面的任何一个函数都可以使用它的i这变量</span></span><br><span class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>) </span>&#123; <span class="comment">//这里接受参数i</span></span><br><span class="line">        items[i].onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)(i); <span class="comment">//这里把i作为参数传递给立即执行函数</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>案例二 ：3秒之后打印所有 li 元素的内容</strong></p>
+<p><code>setTimeout</code>要求第1个参数是一个函数，这样等第2个参数规定的时间到了之后，开始执行第1个参数定义的函数。对于下面的函数，当3秒到了，就会开始执行里面的函数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; lis.length; i++) &#123;</span><br><span class="line">    (<span class="function"><span class="keyword">function</span>(<span class="params">i</span>) </span>&#123;</span><br><span class="line">        <span class="comment">//3秒之后打印所有 li 元素的内容</span></span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">new</span> <span class="built_in">Date</span>(), items[i].innerHTML)</span><br><span class="line">        &#125;, <span class="number">3000</span>)</span><br><span class="line">    &#125;)(i);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>再看看下面这段代码,在这种情况下，<code>setTimeout</code><strong>第1个参数不是一个函数，而是一个表达式</strong>，也就是说会立即执行的函数，它不会等到计时器起作用才执行，而是只要一碰到就会执行，所以表现形式就是直接打出了0，1，2，3，4。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; olis.length; i++) &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params">j</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(j);</span><br><span class="line">    &#125;(i), <span class="number">1000</span> * i)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>案例三 ： 计算打车的价格</strong></p>
+<p>3公里以内，起步价是13元，3公里以后，每一公里5元。若交通拥堵的时候，需要增加10元。</p>
+<p>总结：</p>
+<ul>
+<li>如果有一个函数需要立即调用，可以用立即调用函数</li>
+<li>函数内部可以 return 函数，函数内部又可以 return 变量</li>
+</ul>
+<h3 id="闭包的判断"><a href="#闭包的判断" class="headerlink" title="闭包的判断"></a>闭包的判断</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">        <span class="keyword">var</span> name = <span class="string">"The Window"</span>;</span><br><span class="line">        <span class="keyword">var</span> object = &#123;</span><br><span class="line">            name: <span class="string">"My Object"</span>,</span><br><span class="line">            getNameFunc: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">                &#125;;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">console</span>.log(object.getNameFunc()()) <span class="comment">//The Window</span></span><br><span class="line"><span class="comment">//上面这句话的可以插接这些部分</span></span><br><span class="line">        <span class="keyword">var</span> f = object.getNameFunc();</span><br><span class="line">        <span class="comment">// 类似于</span></span><br><span class="line">        <span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.name;</span><br><span class="line">        &#125;</span><br><span class="line">        f();<span class="comment">//（）就相当于立即执行函数的，调用上面的函数</span></span><br></pre></td></tr></table></figure>
+
+<p><code>object.getNameFunc()()</code>可以理解为<code>function(){this} ();</code>，在立即执行函数里面，this是指向windows的。但是上面的函数是没有外包的，因为里面的函数调用的全局变量，而不是局部变量。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> name = <span class="string">"The Window"</span>;　　</span><br><span class="line">        <span class="keyword">var</span> object = &#123;　　　　</span><br><span class="line">           name: <span class="string">"My Object"</span>,</span><br><span class="line">         getNameFunc: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">               <span class="keyword">var</span> that = <span class="keyword">this</span>;</span><br><span class="line">               <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                <span class="keyword">return</span> that.name;</span><br><span class="line">               &#125;;</span><br><span class="line">            &#125;</span><br><span class="line">         &#125;;</span><br><span class="line"> <span class="built_in">console</span>.log(object.getNameFunc()());</span><br><span class="line"><span class="comment">//上面这句话的可以插接这些部分</span></span><br><span class="line">       <span class="keyword">var</span> f = object.getNameFunc();</span><br><span class="line">        <span class="comment">// 类似于</span></span><br><span class="line">        <span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> that.name;<span class="comment">//this指向的是调用者，因此that指向的是object。</span></span><br><span class="line">        &#125;</span><br><span class="line">        f();</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-3-闭包总结"><a href="#5-3-闭包总结" class="headerlink" title="5.3 闭包总结"></a>5.3 闭包总结</h3><p>1.闭包是什么?</p>
+<p>闭包是一个函数(一个作用域可以访问另外一个函数的局部变量)</p>
+<p>2.闭包的作用是什么?</p>
+<p>延伸变量的作用范围</p>
+<h2 id="◆递归"><a href="#◆递归" class="headerlink" title="◆递归"></a>◆递归</h2><h3 id="6-1-什么是递归"><a href="#6-1-什么是递归" class="headerlink" title="6.1 什么是递归 ?"></a>6.1 什么是递归 ?</h3><p>如果一个函数在内部可以调用其本身,那么这个函数就是递归函数。</p>
+<p>简单理解:函数内部自己调用自己，这个函数就是递归函数</p>
+<p>递归函数的作用和循环效果一样</p>
+<p>由于递归很容易发生“栈溢出” 错误( stack overflow) , 所以必须要<strong>加退出条件return</strong>。</p>
+<p>6.2 递归案例</p>
+<ol>
+<li>计算1-n的阶乘</li>
+<li>斐波那契序列</li>
+</ol>
+<p>利用递归函数求斐波那契数列(兔子序列)  1、1、2、3、5、8、13、21…</p>
+<p>递归需要从第 n 项总结出规律，比如上面的序列，我们只需要知道用户输入的 n 的前面两项 (n-1 n-2) 就可以计算出 n 对应的序列值。</p>
+<ol start="3">
+<li><p>用递归遍历复杂数据，比如这种对象里面又包含对象的数据类型。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> data = [&#123;</span><br><span class="line">    id: <span class="number">1</span>,</span><br><span class="line">    name: <span class="string">'家电'</span>,</span><br><span class="line">    goods: [&#123;</span><br><span class="line">        id: <span class="number">11</span>,</span><br><span class="line">        gname: <span class="string">'冰箱'</span>,</span><br><span class="line">        goods: [&#123;</span><br><span class="line">            id: <span class="number">111</span>,</span><br><span class="line">            gname: <span class="string">'海尔'</span></span><br><span class="line">        &#125;, &#123;</span><br><span class="line">            id: <span class="number">112</span>,</span><br><span class="line">            gname: <span class="string">'美的'</span></span><br><span class="line">        &#125;, ]</span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        id: <span class="number">12</span>,</span><br><span class="line">        gname: <span class="string">'洗衣机'</span></span><br><span class="line">    &#125;]</span><br><span class="line">&#125;, &#123;</span><br><span class="line">    id: <span class="number">2</span>,</span><br><span class="line">    name: <span class="string">'服饰'</span></span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h3 id="6-4-浅拷贝和深拷贝"><a href="#6-4-浅拷贝和深拷贝" class="headerlink" title="6.4 浅拷贝和深拷贝"></a>6.4 浅拷贝和深拷贝</h3><p>1.浅拷贝只是拷贝一层更深层次对象级别的只拷贝<strong>引用</strong>(地址)；</p>
+<p>2.深拷贝拷贝多层,每一级别的数据都会拷贝；</p>
+<p><a href="./jQuery-jQuery其他方法.md">jquery的extend方法实现深拷贝和浅拷贝</a></p>
+<h4 id="原生js怎么实现浅拷贝？"><a href="#原生js怎么实现浅拷贝？" class="headerlink" title="原生js怎么实现浅拷贝？"></a>原生js怎么实现浅拷贝？</h4><ol>
+<li><p>可以通过遍历，把对象的每一个数组传给另一个数据</p>
+</li>
+<li><p><code>Object.assign( target, ..sources)</code> es6 新增方法可以浅拷贝</p>
+<ul>
+<li>target是需要拷贝元素的对象，sources是被拷贝的对象, <code>Object.assign(o, obj);</code></li>
+</ul>
+</li>
+</ol>
+<h4 id="原生js怎么实现深拷贝？"><a href="#原生js怎么实现深拷贝？" class="headerlink" title="原生js怎么实现深拷贝？"></a>原生js怎么实现深拷贝？</h4><p>封装一个函数，当遇到对象里面有对象数据类型的时候，通过递归再次进行copy</p>
+
       
 
       
@@ -691,10 +759,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">过滤器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
               </li>
              
               <li class="article-tag-list-item">

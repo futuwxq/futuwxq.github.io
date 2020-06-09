@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
   <title>常见正则表达式总结 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="正则表达式(regular expression)描述了一种字符串匹配的模式（pattern），可以用来检查一个串是否含有某种子串、将匹配的子串替换或者从某个串中取出符合某个条件的子串等。 这篇文章就来介绍正则表达式的基础知识，对于正则表达式的匹配，可以用regexr这个网站进行练习和检验">
+  <meta name="description" content="◆正则表达式概述正则表达式(regular expression)描述了一种字符串匹配的模式（pattern），可以用来检查一个串是否含有某种子串、将匹配的子串替换或者从某个串中取出符合某个条件的子串等。 这篇文章就来介绍正则表达式的基础知识，对于正则表达式的匹配，可以用regexr这个网站进行练习和检验">
 <meta property="og:type" content="article">
 <meta property="og:title" content="常见正则表达式总结">
 <meta property="og:url" content="https://futuwxq.github.io/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="正则表达式(regular expression)描述了一种字符串匹配的模式（pattern），可以用来检查一个串是否含有某种子串、将匹配的子串替换或者从某个串中取出符合某个条件的子串等。 这篇文章就来介绍正则表达式的基础知识，对于正则表达式的匹配，可以用regexr这个网站进行练习和检验">
+<meta property="og:description" content="◆正则表达式概述正则表达式(regular expression)描述了一种字符串匹配的模式（pattern），可以用来检查一个串是否含有某种子串、将匹配的子串替换或者从某个串中取出符合某个条件的子串等。 这篇文章就来介绍正则表达式的基础知识，对于正则表达式的匹配，可以用regexr这个网站进行练习和检验">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/study/program/blog/source/_posts/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/image-20200415104050675.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/study/program/blog/source/_posts/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/image-20200415104126421.png">
@@ -22,9 +22,9 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/study/program/blog/source/_posts/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/image-20200414222634708.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/match02.png">
 <meta property="article:published_time" content="2020-04-06T12:42:00.000Z">
-<meta property="article:modified_time" content="2020-04-22T01:53:07.686Z">
+<meta property="article:modified_time" content="2020-06-09T13:57:30.296Z">
 <meta property="article:author" content="不知火舞">
-<meta property="article:tag" content="正则表达式">
+<meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://futuwxq.github.io/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/study/program/blog/source/_posts/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/image-20200415104050675.png">
   
@@ -182,18 +182,228 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>正则表达式(regular expression)描述了一种字符串匹配的模式（pattern），可以用来检查一个串是否含有某种子串、将匹配的子串替换或者从某个串中取出符合某个条件的子串等。</p>
+        <h2 id="◆正则表达式概述"><a href="#◆正则表达式概述" class="headerlink" title="◆正则表达式概述"></a>◆正则表达式概述</h2><p>正则表达式(regular expression)描述了一种字符串匹配的模式（pattern），可以用来检查一个串是否含有某种子串、将匹配的子串替换或者从某个串中取出符合某个条件的子串等。</p>
 <p>这篇文章就来介绍正则表达式的基础知识，对于正则表达式的匹配，可以用<a href="https://regexr.com" target="_blank" rel="noopener">regexr</a>这个网站进行练习和检验</p>
 <a id="more"></a>
 
-<p>首先通过一个基础例子了解正则表达式的魅力，正则表达式的  \ 类型\  默认只匹配字符串的一次，如果需要全部匹配，可以通过 /g来解决。</p>
+<h3 id="1-1-正则表达式的作用"><a href="#1-1-正则表达式的作用" class="headerlink" title="1.1 正则表达式的作用"></a>1.1 正则表达式的作用</h3><p>1.正则表通常被用来检索、替换那些符合某个模式(规则)的文本,例如验证表单:用户名表单只能输入英文字母、数字或者下划线，昵称输入框中可以输入中文(匹配)。</p>
+<p>2.正则表达式还常用于过滤掉页面内容中的一些敏感词(替换) </p>
+<p>3.从字符串中获取我们想要的特定部分的提取等。</p>
+<h2 id="◆正则表达式在JavaScript中的使用"><a href="#◆正则表达式在JavaScript中的使用" class="headerlink" title="◆正则表达式在JavaScript中的使用"></a>◆正则表达式在JavaScript中的使用</h2><p>在JavaScript中正则表达式也是一种对象。</p>
+<h3 id="2-1-创建正则表达式"><a href="#2-1-创建正则表达式" class="headerlink" title="2.1 创建正则表达式"></a>2.1 创建正则表达式</h3><p>在JavaScript中,可以通过两种方式创建一个正则表达式。</p>
+<p><strong>1.通过调用RegExp对象的构造函数创建</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var变量名&#x3D; new RegExp (&#x2F;表达式&#x2F;);</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.通过字面量创建</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var变量名&#x3D; &#x2F;表达式&#x2F; ;</span><br></pre></td></tr></table></figure>
+
+<p>//注释中间放表达式就是正则字面量</p>
+<h3 id="2-2-测试正则表达式test"><a href="#2-2-测试正则表达式test" class="headerlink" title="2.2 测试正则表达式test"></a>2.2 测试正则表达式test</h3><p>test() 正则对象方法 , 用于检测字符串是否符合该规则 , 该对象会返回true或false ,其参数是测试字符串。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">regex0bj.test (str);</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>regexObj是写的正则表达式</li>
+<li>str我们要测试的文本</li>
+<li>就是检测str文本是否符合我们写的正则表达式规范.</li>
+</ol>
+<h2 id="◆正则表达式中的特殊字符"><a href="#◆正则表达式中的特殊字符" class="headerlink" title="◆正则表达式中的特殊字符"></a>◆正则表达式中的特殊字符</h2><h3 id="3-1-正则表达式的组成"><a href="#3-1-正则表达式的组成" class="headerlink" title="3.1 正则表达式的组成"></a>3.1 正则表达式的组成</h3><p>一个正则表达式可以由简单的字符构成,比如<code>/abc/</code>,也可以是简单和特殊字符的组合,比如<code>/ab*c/</code>,其中特殊字符也被称为<strong>元字符</strong>,在正则表达式中是具有特殊意义的专用符号,如<code>^、$、+</code>等。</p>
+<p>特殊字符非常多, 可以参考:</p>
+<ul>
+<li><p>MDN : )<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions" target="_blank" rel="noopener">https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions</a></p>
+</li>
+<li><p>jQuery 手册:正则表达式部分</p>
+</li>
+<li><p>正则测试工 具: <a href="http://tool.oschina.net/regex" target="_blank" rel="noopener">http://tool.oschina.net/regex</a></p>
+</li>
+</ul>
+<h3 id="3-2-边界符"><a href="#3-2-边界符" class="headerlink" title="3.2 边界符"></a>3.2 边界符</h3><p>正则表达式中的边界符(位置符)用来提示字符所处的位置,主要有两个字符。</p>
+<table>
+<thead>
+<tr>
+<th>边界符</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>^</td>
+<td>表示匹配行首的文本(以谁开始)</td>
+</tr>
+<tr>
+<td>$</td>
+<td>表示匹配行尾的文本(以谁结束)</td>
+</tr>
+</tbody></table>
+<p>如果 ^ 和 $ 在一起,表示必须是<strong>精确匹配</strong>。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^123$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">'123'</span>)); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">'123123'</span>)); <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-字符类"><a href="#3-3-字符类" class="headerlink" title="3.3 字符类"></a>3.3 字符类</h3><p>字符类表示有一系列字符可供选择  , <strong>只要匹配其中一个就可以了</strong>。所有可供选择的字符都放在方括号内。</p>
+<p>1.字符类: <code>[]</code> 表示有一系列字符可供选择，只要匹配其中一个就可以了,<strong>多选一</strong></p>
+<p>2.<code>[-]</code>方括号内部范围符<code>-</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> rg = <span class="regexp">/[abc]/</span>; <span class="comment">// 只要包含有a 或者 包含有b 或者包含有c 都返回为true</span></span><br><span class="line"><span class="keyword">var</span> rg1 = <span class="regexp">/^[abc]$/</span>; <span class="comment">// 三选一 只有是a 或者是 b  或者是c 这三个字母才返回 true</span></span><br><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^[a-z]$/</span>; <span class="comment">// 26个英文字母任何一个字母返回 true  - 表示的是a 到z 的范围 </span></span><br><span class="line"></span><br><span class="line"> <span class="comment">// 字符组合</span></span><br><span class="line"><span class="keyword">var</span> reg1 = <span class="regexp">/^[a-zA-Z0-9_-]$/</span>; <span class="comment">// 26个英文字母(大写和小写都可以)任何一个字母返回 true</span></span><br></pre></td></tr></table></figure>
+
+<ol start="3">
+<li><code>[^]</code>方括号内部取反符<code>^</code></li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/^[^abc]$/ .test(<span class="string">'a'</span>)<span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-4-量词符"><a href="#3-4-量词符" class="headerlink" title="3.4 量词符"></a>3.4 量词符</h3><p>量词符用来设定<strong>某个模式出现的次数。</strong></p>
+<p><code>[]</code>中一次只能匹配单个字符，而使用了限定符之后，就可以指定字符重复次数。</p>
+<table>
+<thead>
+<tr>
+<th>形式</th>
+<th>含义</th>
+<th align="left">例子</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><em>X</em><code>?</code></td>
+<td>X，一次或一次也没有</td>
+<td align="left">/y1?/g , 匹配y1和y，但不会匹配y111</td>
+</tr>
+<tr>
+<td><em>X</em><code>*</code></td>
+<td>X，零次或多次</td>
+<td align="left">var reg1 = /^a*$/;</td>
+</tr>
+<tr>
+<td><em>X</em><code>+</code></td>
+<td>X，一次或多次</td>
+<td align="left">/y1+/g  ，匹配yoo，但不能匹配y</td>
+</tr>
+<tr>
+<td><em>X</em><code>{</code><em>n</em><code>,</code><em>m</em>}</td>
+<td>X，至少 <em>n</em> 次，但是不超过 <em>m</em> 次</td>
+<td align="left">/yo{2,4}/g   o出现2或3或4次 ,    yooo</td>
+</tr>
+<tr>
+<td><em>X</em><code>{</code><em>n</em><code>,}</code></td>
+<td>X，至少 <em>n</em> 次</td>
+<td align="left">/yo{2,}/g   o至少出现2次 ,    yoooo</td>
+</tr>
+<tr>
+<td><em>X</em><code>{</code><em>n</em><code>}</code></td>
+<td><em>X</em>，恰好 <em>n</em> 次</td>
+<td align="left">/yo{2}/g    o只出现两次  ，yo</td>
+</tr>
+</tbody></table>
+<p>1)  ?  相当于 1 || 0</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg1 = <span class="regexp">/^a?$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg1.test(<span class="string">''</span>)); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(reg1.test(<span class="string">'aa'</span>)); <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(reg1.test(<span class="string">'a'</span>)); <span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+
+<p>2) *  相当于 &gt;= 0 可以出现0次或者很多次 </p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg1 = <span class="regexp">/^a*$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg1.test(<span class="string">''</span>)); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(reg1.test(<span class="string">'aa'</span>)); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(reg1.test(<span class="string">'a1'</span>)); <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+<p>3) + 相当于 &gt;= 1 可以出现1次或者很多次</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg1 = <span class="regexp">/^a+$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg1.test(<span class="string">''</span>)); <span class="comment">//false</span></span><br><span class="line"><span class="built_in">console</span>.log(reg1.test(<span class="string">'aa'</span>)); <span class="comment">//true</span></span><br><span class="line"><span class="built_in">console</span>.log(reg1.test(<span class="string">'a1'</span>)); <span class="comment">//false</span></span><br></pre></td></tr></table></figure>
+
+<p>4)  {3 } 就是重复3次</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^a&#123;3&#125;$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">''</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">'a'</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">'aaaa'</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">'aaa'</span>)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<p>5)  {3, }  大于等于3</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^a&#123;3,&#125;$/</span>;</span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">''</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">'a'</span>)); <span class="comment">// false</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">'aaaa'</span>)); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(reg.test(<span class="string">'aaa'</span>)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+
+<p>6)  {3,16}  大于等于3 并且 小于等于6, 量词之间不能有空格</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^a&#123;3,6&#125;$/</span>;</span><br><span class="line"><span class="comment">//var reg1 = /^a&#123;3, 6&#125;$/; 错误的格式，不能有空格</span></span><br><span class="line">  <span class="built_in">console</span>.log(reg.test(<span class="string">''</span>)); <span class="comment">// false</span></span><br><span class="line">  <span class="built_in">console</span>.log(reg.test(<span class="string">'a'</span>)); <span class="comment">// false</span></span><br><span class="line">  <span class="built_in">console</span>.log(reg.test(<span class="string">'aaaa'</span>)); <span class="comment">// true</span></span><br><span class="line">  <span class="built_in">console</span>.log(reg.test(<span class="string">'aaa'</span>)); <span class="comment">// true</span></span><br><span class="line">  <span class="built_in">console</span>.log(reg.test(<span class="string">'aaaaaaa'</span>)); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="3-5-括号总结"><a href="#3-5-括号总结" class="headerlink" title="3.5 括号总结"></a>3.5 括号总结</h3><ol>
+<li>大括号  :量词符 , 里面表示重复次数</li>
+<li>中括号 : 字符集合 , 匹配方括号中的任意字符.</li>
+<li>小括号 : 表示优先级</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/^abc&#123;3&#125;$/</span>; <span class="comment">// 它只是让c重复三次   abccc</span></span><br><span class="line"><span class="keyword">var</span> reg1 = <span class="regexp">/^(abc)&#123;3&#125;$/</span>; <span class="comment">// 它是让abcc重复三次</span></span><br></pre></td></tr></table></figure>
+
+<p>可以在线测试:<a href="https://c.runoob.com/front-end/854" target="_blank" rel="noopener">https://c.runoob.com/front-end/854</a></p>
+<h3 id="3-6-预定义类"><a href="#3-6-预定义类" class="headerlink" title="3.6 预定义类"></a>3.6 预定义类</h3><p>预定义类指的是<strong>某些常见模式的简写方式</strong>。这些都是多选一。</p>
+<table>
+<thead>
+<tr>
+<th>字符</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\d</td>
+<td>匹配数字：[0-9]</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配非数字： <code>[^0-9]</code></td>
+</tr>
+<tr>
+<td>\s</td>
+<td>空白字符：[ \t  \n  \x0B  \f  \r]   空格、制表符（tab）、断行</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>非空白字符：<code>[^\s]</code></td>
+</tr>
+<tr>
+<td>\w</td>
+<td>单词字符：<code>[a-zA-Z_0-9]</code></td>
+</tr>
+<tr>
+<td>\W</td>
+<td>非单词字符：<code>[^\w]</code></td>
+</tr>
+<tr>
+<td>\u4e00-\u9fa5</td>
+<td>使用unicode 匹配中文字符</td>
+</tr>
+<tr>
+<td>/i</td>
+<td>查找的时候忽略大小写</td>
+</tr>
+<tr>
+<td>/g</td>
+<td>全文查找出现的所有匹配字符</td>
+</tr>
+<tr>
+<td>/m</td>
+<td>多行查找</td>
+</tr>
+<tr>
+<td>/gi</td>
+<td>全文查找、忽略大小写</td>
+</tr>
+<tr>
+<td>/ig</td>
+<td>全文查找、忽略大小写</td>
+</tr>
+</tbody></table>
+<h4 id="案例1：用户名验证"><a href="#案例1：用户名验证" class="headerlink" title="案例1：用户名验证"></a>案例1：用户名验证</h4><p><strong>功能需求:</strong></p>
+<ol>
+<li><p>如果用户名输入台法,则后面提示信息为:用户名合法，并且颜色为绿色</p>
+</li>
+<li><p>如果用户名输入不合法 则后面提示信息为:用户名不符合规范并且颜色为绿色</p>
+</li>
+</ol>
+<p><strong>分析:</strong></p>
+<ol>
+<li><p>用户名只能为英文字母,数字，下划线或者短横线组成，并且用户名长度为6~16位.</p>
+</li>
+<li><p>首先准备好这种正则表达式模式/$[a-zA-Z0-9-_]{6,16}^/</p>
+</li>
+<li><p>当表单 失去焦点就开始验证.</p>
+</li>
+<li><p>如果符合正则规范,则让后面的span标签添加right类.</p>
+</li>
+<li><p>如果不符合正则规范, 则让后面的span标签添加wrong类</p>
+</li>
+</ol>
+<h2 id="◆正则表达式中的替换"><a href="#◆正则表达式中的替换" class="headerlink" title="◆正则表达式中的替换"></a>◆正则表达式中的替换</h2><h3 id="4-1-replace替换"><a href="#4-1-replace替换" class="headerlink" title="4.1 replace替换"></a>4.1 replace替换</h3><p><code>replace()</code>方法可以实现替换字符串操作,用来替换的参数可以是一个字符串或是一个正则表达式。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stringObject.replace(regexp/substr,replacement)</span><br></pre></td></tr></table></figure>
+
+<p>第一个参数:被替换的字符串或者正则表达式</p>
+<p>2.第二个参数:替换为的字符串</p>
+<p>3.返回值是一 个替换完毕的新字符串</p>
+<p>首先通过一个基础例子了解正则表达式的魅力，正则表达式的  <code>\类型\</code>  默认只匹配字符串的一次，如果需要全部匹配，可以通过 /g来解决。</p>
 <p><strong>1）精准匹配字符串</strong></p>
 <pre><code>/王画画/  
 // 内容是&quot;王画画&quot;,则全部选中
 //内容是&quot;王画画王画画&quot;,则只匹配第一个王画画</code></pre><p><strong>2）模糊匹配 . 点代表匹配任意字符</strong></p>
 <pre><code>/王../  //只要是以‘王’开头，余下2个任意字符 组成的字符串都会被匹配</code></pre><p>通过上面的例子可以看出一个 . 代表一位任意字符。</p>
 <p>正则表达还可以匹配各种复杂组合的字符串，接着就从正则表达式中的字符去了解它。</p>
-<h2 id="一、-字符"><a href="#一、-字符" class="headerlink" title="一、 字符"></a>一、 字符</h2><h3 id="1-常见匹配字符"><a href="#1-常见匹配字符" class="headerlink" title="1 . 常见匹配字符"></a>1 . 常见匹配字符</h3><p>可以通过如下方法匹配到整个字符集，比如数字、特殊字符、</p>
+<h2 id="一、-字符"><a href="#一、-字符" class="headerlink" title="一、 字符"></a>一、 字符</h2><h3 id="1-常见匹配字符"><a href="#1-常见匹配字符" class="headerlink" title="1 . 常见匹配字符"></a>1 . 常见匹配字符</h3><p>可以通过如下方法匹配到整个字符集，比如数字、特殊字符</p>
 <table>
 <thead>
 <tr>
@@ -559,7 +769,7 @@ isName.test(form.name.value)</code></pre><h3 id="2-replace-方法"><a href="#2-r
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">正则表达式</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
@@ -871,10 +1081,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">过滤器</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">正则表达式</a>
               </li>
              
               <li class="article-tag-list-item">

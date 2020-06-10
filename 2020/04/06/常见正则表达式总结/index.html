@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/study/program/blog/source/_posts/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/image-20200414222634708.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/match02.png">
 <meta property="article:published_time" content="2020-04-06T12:42:00.000Z">
-<meta property="article:modified_time" content="2020-06-09T13:57:30.296Z">
+<meta property="article:modified_time" content="2020-06-10T09:50:46.552Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
@@ -349,26 +349,6 @@
 <td>\u4e00-\u9fa5</td>
 <td>使用unicode 匹配中文字符</td>
 </tr>
-<tr>
-<td>/i</td>
-<td>查找的时候忽略大小写</td>
-</tr>
-<tr>
-<td>/g</td>
-<td>全文查找出现的所有匹配字符</td>
-</tr>
-<tr>
-<td>/m</td>
-<td>多行查找</td>
-</tr>
-<tr>
-<td>/gi</td>
-<td>全文查找、忽略大小写</td>
-</tr>
-<tr>
-<td>/ig</td>
-<td>全文查找、忽略大小写</td>
-</tr>
 </tbody></table>
 <h4 id="案例1：用户名验证"><a href="#案例1：用户名验证" class="headerlink" title="案例1：用户名验证"></a>案例1：用户名验证</h4><p><strong>功能需求:</strong></p>
 <ol>
@@ -393,74 +373,39 @@
 <h2 id="◆正则表达式中的替换"><a href="#◆正则表达式中的替换" class="headerlink" title="◆正则表达式中的替换"></a>◆正则表达式中的替换</h2><h3 id="4-1-replace替换"><a href="#4-1-replace替换" class="headerlink" title="4.1 replace替换"></a>4.1 replace替换</h3><p><code>replace()</code>方法可以实现替换字符串操作,用来替换的参数可以是一个字符串或是一个正则表达式。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stringObject.replace(regexp/substr,replacement)</span><br></pre></td></tr></table></figure>
 
-<p>第一个参数:被替换的字符串或者正则表达式</p>
-<p>2.第二个参数:替换为的字符串</p>
-<p>3.返回值是一 个替换完毕的新字符串</p>
+<ol>
+<li><p>第一个参数:被替换的字符串或者正则表达式</p>
+</li>
+<li><p>第二个参数:替换为的字符串</p>
+</li>
+<li><p>返回值是一 个替换完毕的新字符串</p>
+</li>
+</ol>
 <p>首先通过一个基础例子了解正则表达式的魅力，正则表达式的  <code>\类型\</code>  默认只匹配字符串的一次，如果需要全部匹配，可以通过 /g来解决。</p>
-<p><strong>1）精准匹配字符串</strong></p>
+<h3 id="4-2-正则表达式参数"><a href="#4-2-正则表达式参数" class="headerlink" title="4.2 正则表达式参数"></a>4.2 正则表达式参数</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;表达式&#x2F;[switch]</span><br></pre></td></tr></table></figure>
+
+<p>switch(也称为修饰符)按照什么样的模式来匹配.有三种值:</p>
+<ul>
+<li><p>g:全局匹配</p>
+</li>
+<li><p>i:忽略大小写</p>
+</li>
+<li><p>gi:全局匹配+忽略大小写</p>
+</li>
+<li><p>正则表达式中的或者符号是 <code>|</code></p>
+</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">div.innerHTML = text.value.replace(<span class="regexp">/激情|gay/g</span>, <span class="string">'**'</span>);</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="字符"><a href="#字符" class="headerlink" title="字符"></a>字符</h2><h3 id="正则的匹配"><a href="#正则的匹配" class="headerlink" title="正则的匹配"></a>正则的匹配</h3><p><strong>1）精准匹配字符串</strong></p>
 <pre><code>/王画画/  
 // 内容是&quot;王画画&quot;,则全部选中
 //内容是&quot;王画画王画画&quot;,则只匹配第一个王画画</code></pre><p><strong>2）模糊匹配 . 点代表匹配任意字符</strong></p>
 <pre><code>/王../  //只要是以‘王’开头，余下2个任意字符 组成的字符串都会被匹配</code></pre><p>通过上面的例子可以看出一个 . 代表一位任意字符。</p>
 <p>正则表达还可以匹配各种复杂组合的字符串，接着就从正则表达式中的字符去了解它。</p>
-<h2 id="一、-字符"><a href="#一、-字符" class="headerlink" title="一、 字符"></a>一、 字符</h2><h3 id="1-常见匹配字符"><a href="#1-常见匹配字符" class="headerlink" title="1 . 常见匹配字符"></a>1 . 常见匹配字符</h3><p>可以通过如下方法匹配到整个字符集，比如数字、特殊字符</p>
-<table>
-<thead>
-<tr>
-<th>字符</th>
-<th>含义</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>\d</td>
-<td>匹配数字：[0-9]</td>
-</tr>
-<tr>
-<td>\D</td>
-<td>匹配非数字： <code>[^0-9]</code></td>
-</tr>
-<tr>
-<td>\s</td>
-<td>空白字符：[ \t  \n  \x0B  \f  \r]   空格、制表符（tab）、断行</td>
-</tr>
-<tr>
-<td>\S</td>
-<td>非空白字符：<code>[^\s]</code></td>
-</tr>
-<tr>
-<td>\w</td>
-<td>单词字符：<code>[a-zA-Z_0-9]</code></td>
-</tr>
-<tr>
-<td>\W</td>
-<td>非单词字符：<code>[^\w]</code></td>
-</tr>
-<tr>
-<td>\u4e00-\u9fa5</td>
-<td>使用unicode 匹配中文字符</td>
-</tr>
-<tr>
-<td>/i</td>
-<td>查找的时候忽略大小写</td>
-</tr>
-<tr>
-<td>/g</td>
-<td>全文查找出现的所有匹配字符</td>
-</tr>
-<tr>
-<td>/m</td>
-<td>多行查找</td>
-</tr>
-<tr>
-<td>/gi</td>
-<td>全文查找、忽略大小写</td>
-</tr>
-<tr>
-<td>/ig</td>
-<td>全文查找、忽略大小写</td>
-</tr>
-</tbody></table>
-<h3 id="2-特殊字符"><a href="#2-特殊字符" class="headerlink" title="2  . 特殊字符"></a>2  . 特殊字符</h3><p>特殊字符一般含有特殊意义，而且可以组合使用。</p>
+<h3 id="特殊字符"><a href="#特殊字符" class="headerlink" title="特殊字符"></a>特殊字符</h3><p>特殊字符一般含有特殊意义，而且可以组合使用。</p>
 <table>
 <thead>
 <tr>
@@ -562,7 +507,7 @@
 <td>a 到 d 或 m 到 p：[a-dm-p]（并集）</td>
 </tr>
 </tbody></table>
-<h3 id="4-限定符-–-指定字符重复次数"><a href="#4-限定符-–-指定字符重复次数" class="headerlink" title="4 . 限定符  – 指定字符重复次数"></a>4 . 限定符  – 指定字符重复次数</h3><p>[] 中只能匹配单个字符，而使用了限定符之后，就可以指定字符重复次数。</p>
+<h3 id="4-限定符"><a href="#4-限定符" class="headerlink" title="4 . 限定符"></a>4 . 限定符</h3><p>[] 中只能匹配单个字符，而使用了限定符之后，就可以指定字符重复次数。</p>
 <table>
 <thead>
 <tr>
@@ -609,7 +554,7 @@
 <p>当你只想选中“</p><h1>”的时候，<code>/&lt;.*&gt;/</code> 会选中上面的全部内容，这个时候可以通过非贪婪表达式去解决这一问题 。<p></p>
 <p>  <code>/&lt;.*&gt;/</code>  只会匹配“</p><h1>”。<p></p>
 <p>通过在 <strong>***、</strong>+** 或 <strong>?</strong> 限定符之后放置 <strong>?</strong>，该表达式从”贪婪”表达式转换为”非贪婪”表达式或者最小匹配。</p>
-<h2 id="二、-捕获"><a href="#二、-捕获" class="headerlink" title="二、 捕获"></a>二、 捕获</h2><p>重复单字符我们可以使用限定符，那么重复使用字符串，就需要用到分组，用小括号将字符串包裹起来，就可以限定字符串重复次数。</p>
+<h2 id="捕获"><a href="#捕获" class="headerlink" title="捕获"></a>捕获</h2><p>重复单字符我们可以使用限定符，那么重复使用字符串，就需要用到分组，用小括号将字符串包裹起来，就可以限定字符串重复次数。</p>
 <p>比如以前要匹配 lololo 是这样的</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;lololo&#x2F;</span><br></pre></td></tr></table></figure>
 
@@ -665,7 +610,7 @@
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>下面是一个非捕获和捕获组合使用的例子</p>
 <p>(?:A|B) 中 A 和 B 是内部引用</p>
 <pre><code>/1(?:37|38)\d{4}(\d{4})/g </code></pre><p>表示第一位是1，第二三两位是37或者38，第四-七是任意数字，后四位则是一个引用，与编号是1引用对映。</p>
-<img src="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/match02.png" width="20%" height="20%" style="display:block;margin:5px auto">
+<img src="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/match02.png" alt="match02" style="zoom:50%;"> 
 
 <table>
 <thead>
@@ -703,18 +648,20 @@
 <td>A或B，分组匹配值不保存</td>
 </tr>
 </tbody></table>
-<h2 id="三-、正则表达式中方法"><a href="#三-、正则表达式中方法" class="headerlink" title="三 、正则表达式中方法"></a>三 、正则表达式中方法</h2><p>RegExp：是正则表达式（regular expression0 ）</p>
+<h2 id="正则表达式中方法"><a href="#正则表达式中方法" class="headerlink" title="正则表达式中方法"></a>正则表达式中方法</h2><p>RegExp：是正则表达式（regular expression0 ）</p>
 <h3 id="1-test方法"><a href="#1-test方法" class="headerlink" title="1 .  test方法"></a>1 .  test方法</h3><p>.test() 方法的返回值是布尔值，通过该值可以匹配字符串中是否存在于正则表达式相匹配的结果，如果有匹配内容，返回ture，如果没有匹配内容返回false，该方法常用于判断用户输入数据的合法性，比如检验用户名的合法性。</p>
-<p>objReg.test(objStr)<br>  objReg 必选项 RegExp对象名称<br>  objStr 要进行匹配检测的字符串</p>
-<p>实例如下</p>
-<pre><code>var isName = /^[a-zA-Z0-9\u4e00-\u9fa5]/;
-&lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;newName&quot; value=&quot;abc&quot;&gt;&lt;/td&gt;
-isName.test(form.name.value)</code></pre><h3 id="2-replace-方法"><a href="#2-replace-方法" class="headerlink" title="2 . replace 方法"></a>2 . replace 方法</h3><p>在replace方法中，可以直接获取捕获内容，例如下面把10.24/2017转化成 2017-10-24 格式。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">objReg.test(objStr);</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>objReg 必选项 RegExp对象名称</p>
+</li>
+<li><p>objStr 要进行匹配检测的字符串</p>
+</li>
+</ul>
+<h3 id="2-replace-方法"><a href="#2-replace-方法" class="headerlink" title="2 . replace 方法"></a>2 . replace 方法</h3><p>在replace方法中，可以直接获取捕获内容，例如下面把10.24/2017转化成 2017-10-24 格式。</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = /(\d&#123;<span class="number">2</span>&#125;)\.(\d&#123;<span class="number">2</span>&#125;)\/(\d&#123;<span class="number">4</span>&#125;)/</span><br><span class="line"><span class="keyword">var</span> <span class="keyword">data</span> = <span class="string">'10.24/2017'</span></span><br><span class="line"><span class="keyword">data</span> = <span class="keyword">data</span>.replace(reg, <span class="string">'$3-$1-$2'</span>)</span><br><span class="line">console.log(<span class="keyword">data</span>)<span class="comment">//2017-10-24</span></span><br></pre></td></tr></table></figure>
 
-
-
-<p>replace 的迭代将违禁词转化为 ***。</p>
+<p><strong>replace 的迭代将违禁词转化为 *</strong>。**</p>
 <p>比如文本是<code>dot is a doubi</code>，其中<code>dot</code>和<code>doubi</code>是违禁词，转换后应为<code>*** is a *****</code></p>
 <figure class="highlight jsx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> reg = <span class="regexp">/(dot|doubi)/g</span></span><br><span class="line"><span class="keyword">var</span> str = <span class="string">'dot is a doubi'</span></span><br><span class="line">str = str.replace(reg, <span class="function"><span class="keyword">function</span> (<span class="params">word</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> word.replace(<span class="regexp">/./g</span>, <span class="string">'*'</span>)</span><br><span class="line">&#125;)</span><br><span class="line"><span class="built_in">console</span>.log(str)<span class="comment">//*** is a *****</span></span><br></pre></td></tr></table></figure>
 
@@ -735,7 +682,7 @@ isName.test(form.name.value)</code></pre><h3 id="2-replace-方法"><a href="#2-r
 <p>对字符串进行匹配,匹配到的字符串可以在任何位置. </p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Pattern p &#x3D; Pattern.compile(&quot;\\d+&quot;);&#x2F;&#x2F;创建一个正则表达式 </span><br><span class="line">Matcher m &#x3D; p.matcher(&quot;22bb23&quot;);&#x2F;&#x2F;得到一个Matcher的实例m</span><br><span class="line">boolean &#x3D; m.find;&#x2F;&#x2F;返回是true</span><br></pre></td></tr></table></figure></h1></h1>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Pattern p = Pattern.compile(<span class="string">"\\d+"</span>);<span class="comment">//创建一个正则表达式 </span></span><br><span class="line">Matcher m = p.matcher(<span class="string">"22bb23"</span>);<span class="comment">//得到一个Matcher的实例m</span></span><br><span class="line">boolean = m.find;<span class="comment">//返回是true</span></span><br></pre></td></tr></table></figure></h1></h1>
       
 
       

@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/22/%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB%E7%AF%87/image-20200605212608029.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/22/%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB%E7%AF%87/image-20200519172253019.png">
 <meta property="article:published_time" content="2020-05-22T05:00:16.000Z">
-<meta property="article:modified_time" content="2020-06-09T01:46:58.705Z">
+<meta property="article:modified_time" content="2020-06-17T08:53:08.349Z">
 <meta property="article:author" content="不知火舞">
 <meta property="article:tag" content="summary">
 <meta name="twitter:card" content="summary">
@@ -190,6 +190,12 @@
 </ul>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"nav"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>   //ul.nav&gt;li 只会选中这个标签</span><br><span class="line">        <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"#"</span>&gt;</span>微博<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>   //ul.nav li 也可以选中这个标签</span><br><span class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">""</span>&gt;</span>私信<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">       <span class="tag">&lt;/<span class="name">li</span>&gt;</span> </span><br><span class="line"> <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
+<h3 id="html中role的作用"><a href="#html中role的作用" class="headerlink" title="html中role的作用"></a>html中role的作用</h3><p>role 是增强语义性，当现有的 HTML 标签不能充分表达语义性的时候，就可以借助role来说明。 通常这种情况出现在一些自定义的组件上，这样可增强组件的可访问性、可用性和可交互性。</p>
+<p>role的作用是描述一个非标准的tag的实际作用。比如用div做button，那么设置div 的 role=“button”，辅助工具就可以认出这实际上是个button。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">role</span>=<span class="string">"button"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
 <h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><h3 id="图片处理"><a href="#图片处理" class="headerlink" title="图片处理"></a>图片处理</h3><h5 id="1）-消除图片下方间隙方法"><a href="#1）-消除图片下方间隙方法" class="headerlink" title="1） 消除图片下方间隙方法"></a>1） 消除图片下方间隙方法</h5><p>使用 CSS编排多张图片时，在图片下方有时会产生几个像素的缝隙。即使图片浮动之后，下方仍然后很小的空白缝隙。</p>
 <img src="/2020/05/22/%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB%E7%AF%87/image-20200531094758868.png" alt="image-20200531094758868" style="zoom:50%;">
 
@@ -279,13 +285,23 @@
 <td>绑定就是绑定或注册函数</td>
 </tr>
 <tr>
-<td>son.offsetParent  和  son.offsetParent</td>
+<td>son.offsetParent  和  son.parentNode</td>
 <td>son.offsetParent 返回带有<strong>定位</strong>的父亲 否则返回的是body</td>
 <td>父元素需要定位</td>
 </tr>
 <tr>
 <td></td>
 <td>son.parentNode是返回最近一级的父亲 亲爸爸 不管父亲有没有定位</td>
+<td></td>
+</tr>
+<tr>
+<td>DOM 中 Property 和 Attribute 的区别</td>
+<td>property是DOM中的属性，是JavaScript里的对象；</td>
+<td></td>
+</tr>
+<tr>
+<td>下面会有详细解释</td>
+<td>attribute是HTML标签上的特性，它的值只能够是字符串；</td>
 <td></td>
 </tr>
 </tbody></table>
@@ -307,6 +323,11 @@
 <ul>
 <li>对象之间=的赋值是指向性问题，是共享一片内存的问题。是变量 a 把在栈空间里保存的<strong>堆地址</strong> 给了 c 的问题。</li>
 </ul>
+<h5 id="3-DOM-中-Property-和-Attribute-的区别"><a href="#3-DOM-中-Property-和-Attribute-的区别" class="headerlink" title="3-  DOM 中 Property 和 Attribute 的区别"></a>3-  DOM 中 Property 和 Attribute 的区别</h5><p>DOM有其默认的基本属性，而这些属性就是所谓的<strong>“property”</strong>，无论如何，它们都会在<strong>初始化的时候</strong>再DOM对象上创建，如果在TAG对这些属性进行赋值，那么这些值就会作为初始值赋给DOM的同名property。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> in2 = <span class="built_in">document</span>.getElementById(<span class="string">'in_2'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(in2);</span><br><span class="line"><span class="comment">//打印的信息</span></span><br><span class="line">id: <span class="string">"in_2"</span></span><br><span class="line">value: <span class="literal">null</span> <span class="comment">//显然这个value就是的 property</span></span><br></pre></td></tr></table></figure>
+
+<p>HTML标签中定义的属性和值会保存该DOM对象的attributes属性里面；这些attribute属性的JavaScript中的类型是Attr，attribute是HTML标签上的特性，它的值只能够是字符串；</p>
+<p><a href="https://www.cnblogs.com/elcarim5efil/p/4698980.html" target="_blank" rel="noopener">这篇文章可以参考</a></p>
 <h2 id="经常犯的一些语法错误"><a href="#经常犯的一些语法错误" class="headerlink" title="经常犯的一些语法错误"></a>经常犯的一些语法错误</h2><ul>
 <li>html标签忘记写闭合标签</li>
 </ul>
@@ -320,6 +341,8 @@
 <ul>
 <li>变量 函数 写错啦啦 等等</li>
 </ul>
+<h2 id="未解之谜"><a href="#未解之谜" class="headerlink" title="未解之谜"></a>未解之谜</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">&lt;!-- counter 作为全局变量，就会一直++，没有结束条件，形成无线循环 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h2</span>&gt;</span> &#123;&#123;counter++&#125;&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -561,10 +584,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">Bootstrap</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
@@ -573,7 +592,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">JQuery</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -581,7 +600,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">类图</a>
+                <a href="javascript:void(0)" class="js-tag color4">c++</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -589,83 +608,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">JSTL</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">javaEE</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">java</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">java集合</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">js对话框</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">servlet</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">sql语句</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">web项目</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">css布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">css两栏布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">CSS布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">相对路径</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">绝对路径</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">移动端布局</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">session</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">cookie</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">过滤器</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -673,19 +616,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">HTML</a>
+                <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">less语法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">flexible.js</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color5">网页布局</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -694,6 +629,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">软件测试</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">jsp</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">移动端布局</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
               </li>
             
             <div class="clearfix"></div>

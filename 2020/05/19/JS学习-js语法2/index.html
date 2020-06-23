@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/19/JS%E5%AD%A6%E4%B9%A0-js%E8%AF%AD%E6%B3%952/image-20200519175420074.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/19/JS%E5%AD%A6%E4%B9%A0-js%E8%AF%AD%E6%B3%952/image-20200519180109878.png">
 <meta property="article:published_time" content="2020-05-19T03:09:14.000Z">
-<meta property="article:modified_time" content="2020-05-24T07:10:30.279Z">
+<meta property="article:modified_time" content="2020-06-23T14:13:25.402Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
@@ -539,7 +539,8 @@ console.log(arr instanceof Array);//true
 console.log(obj instanceof Array);//false</code></pre><p>(2) Array.isArray(参数);  <strong>H5新增</strong>的方法  ie9以上版本支持</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(Array.isArray(arr));&#x2F;&#x2F;true</span><br><span class="line">console.log(Array.isArray(obj));&#x2F;&#x2F;false</span><br></pre></td></tr></table></figure>
 
-<h3 id="3）添加-删除数组元素"><a href="#3）添加-删除数组元素" class="headerlink" title="3）添加 / 删除数组元素"></a>3）添加 / 删除数组元素</h3><table>
+<h3 id="3）添加-删除数组元素"><a href="#3）添加-删除数组元素" class="headerlink" title="3）添加 / 删除数组元素"></a>3）添加 / 删除数组元素</h3><p>splice方法的第二个参数设置为0，有在特定位置添加数组元素的意思，具体下文splice的介绍</p>
+<table>
 <thead>
 <tr>
 <th>方法名</th>
@@ -704,7 +705,7 @@ console.log(str.length);//5</code></pre><p>按道理基本数据类型是没有�
 <p>核心算法：先查找第一个o出现的位置。<br>然后只要indexOf 返回的结果不是 -1 ，就继续往后查找。<br>因为indexOf 只能查找到第一个，所以后面的查找，一定是当前索引加1，从而继续查找。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">var str &#x3D; &quot;oabcoefoxyozzopp&quot;;</span><br><span class="line">var index &#x3D; str.indexOf(&#39;o&#39;);</span><br><span class="line">var num &#x3D; 0;</span><br><span class="line">while (index !&#x3D;&#x3D; -1) &#123;</span><br><span class="line">    console.log(index);</span><br><span class="line">    num++;</span><br><span class="line">    index &#x3D; str.indexOf(&#39;o&#39;, index + 1);</span><br><span class="line">&#125;</span><br><span class="line">console.log(&#39;o出现的次数是: &#39; + num);</span><br></pre></td></tr></table></figure>
 
-<h3 id="3）根据位置返回字符"><a href="#3）根据位置返回字符" class="headerlink" title="**3）根据位置返回字符"></a>**3）根据位置返回字符</h3><table>
+<h3 id="3）从字符串中获取单个字符"><a href="#3）从字符串中获取单个字符" class="headerlink" title="**3）从字符串中获取单个字符"></a>**3）从字符串中获取单个字符</h3><table>
 <thead>
 <tr>
 <th>方法名</th>
@@ -728,16 +729,21 @@ console.log(str.length);//5</code></pre><p>按道理基本数据类型是没有�
 <td>HTML5，IE8+支持和charAt()等效</td>
 </tr>
 </tbody></table>
-<p>1.charAt(index) 根据位置返回字符</p>
+<ol>
+<li><p><strong>charAt(index) 根据位置返回字符</strong></p>
 <pre><code>var str = &apos;andy&apos;;
 console.log(str.charAt(3));
 // 遍历所有的字符
 for (var i = 0; i &lt; str.length; i++) {
     console.log(str.charAt(i));
-}</code></pre><p>2.charCodeAt(index)  返回相应索引号的字符<strong>ASCII值。</strong>目的： 判断用户按下了哪个键 ，每个按键都对应唯一的<strong>ASCII值</strong>。</p>
+}</code></pre></li>
+<li><p><strong>charCodeAt(index)</strong>  </p>
+</li>
+</ol>
+<p>返回相应索引号的字符<strong>ASCII值。</strong>目的： 判断用户按下了哪个键 ，每个按键都对应唯一的<strong>ASCII值</strong>。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str.charCodeAt(0)); &#x2F;&#x2F; 97</span><br></pre></td></tr></table></figure>
 
-<p>3.str[index] H5 新增的</p>
+<p><strong>3. str[index]  H5 新增的</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(str[0]); &#x2F;&#x2F; a</span><br></pre></td></tr></table></figure>
 
 <h5 id="判断对象-是否有该属性-对象-‘属性名’"><a href="#判断对象-是否有该属性-对象-‘属性名’" class="headerlink" title="判断对象  是否有该属性 对象[‘属性名’]"></a>判断对象  是否有该属性 对象[‘属性名’]</h5><pre><code>var o = {
@@ -1071,11 +1077,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">html</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1095,6 +1101,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
@@ -1111,6 +1121,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">计算机组成原理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">软件测试</a>
               </li>
              
@@ -1119,15 +1133,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">移动端布局</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
             
             <div class="clearfix"></div>

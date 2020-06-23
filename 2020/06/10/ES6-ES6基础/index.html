@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/06/10/ES6-ES6%E5%9F%BA%E7%A1%80/image-20200610104826860.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/06/10/ES6-ES6%E5%9F%BA%E7%A1%80/image-20200610110517191.png">
 <meta property="article:published_time" content="2020-06-10T01:57:25.000Z">
-<meta property="article:modified_time" content="2020-06-11T07:12:43.203Z">
+<meta property="article:modified_time" content="2020-06-22T08:44:10.096Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
@@ -216,15 +216,15 @@
 <ol>
 <li><p>const具有块级作用域：</p>
 </li>
-<li><p>使用const关键字声明的常量必须赋初始值</p>
+<li><p><strong>使用const关键字声明的常量必须赋初始值</strong></p>
 </li>
 </ol>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用const关键字声明的常量具有块级作用域</span></span><br><span class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">const</span> a = <span class="number">10</span>;</span><br><span class="line">    <span class="keyword">if</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> a = <span class="number">20</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(a);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">//a is not defined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 使用const关键字声明的常量必须赋初始值</span></span><br><span class="line"><span class="keyword">const</span> PI<span class="comment">//Missing initializer in const declaration</span></span><br><span class="line"><span class="keyword">const</span> PI = <span class="number">3.14</span>;</span><br></pre></td></tr></table></figure>
 
 <ol start="3">
-<li>常量声明后值不可更改</li>
+<li>常量声明后值不可更改，但是可以更改对象内部的属性，不可以更改对象的指向（也就是对象内存地址保持不变）。</li>
 </ol>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 基本数据类型的值不可以更改		</span></span><br><span class="line"><span class="keyword">const</span> PI = <span class="number">3.14</span>;</span><br><span class="line"> PI = <span class="number">100</span>;<span class="comment">//报错</span></span><br><span class="line"><span class="comment">//2.复杂数据类型（数组，对象）数据结构内部的值可以更改，数据值本身不可更改</span></span><br><span class="line"><span class="keyword">const</span> ary = [<span class="number">100</span>, <span class="number">200</span>];</span><br><span class="line">ary[<span class="number">0</span>] = <span class="number">123</span>;<span class="comment">//报错</span></span><br><span class="line">ary = [<span class="number">1</span>, <span class="number">2</span>]<span class="comment">//可以修改</span></span><br><span class="line"><span class="built_in">console</span>.log(ary);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//1. 基本数据类型的值不可以更改		</span></span><br><span class="line"><span class="keyword">const</span> PI = <span class="number">3.14</span>;</span><br><span class="line"> PI = <span class="number">100</span>;<span class="comment">//报错</span></span><br><span class="line"><span class="comment">//2.复杂数据类型（数组，对象）数据结构内部的值可以更改，数据值本身不可更改</span></span><br><span class="line"><span class="keyword">const</span> ary = [<span class="number">100</span>, <span class="number">200</span>];</span><br><span class="line">ary[<span class="number">0</span>] = <span class="number">123</span>;<span class="comment">//可以修改对象内部的属性</span></span><br><span class="line">ary = [<span class="number">1</span>, <span class="number">2</span>]<span class="comment">//报错</span></span><br><span class="line"><span class="built_in">console</span>.log(ary);</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">    name:<span class="string">'judy'</span>,</span><br><span class="line">    age:<span class="number">18</span>,</span><br><span class="line">    height:<span class="number">1.88</span></span><br><span class="line">&#125;</span><br><span class="line">obj.name = <span class="string">'ker'</span>;<span class="comment">//是可以修改的</span></span><br><span class="line">obj</span><br></pre></td></tr></table></figure>
 
 <h3 id="let、const、-var-的区别"><a href="#let、const、-var-的区别" class="headerlink" title="let、const、 var 的区别"></a>let、const、 var 的区别</h3><p>1.使用var声明的变量，其作用域为该语句所在的函数内，且存在变量提升现象。</p>
 <p>2.使用let声明的变量，其作用域为该语句所在的代码块内,不存在变量提升。</p>
@@ -254,6 +254,7 @@
 </tr>
 </tbody></table>
 <p>在编程过程中，如果存储的数据不需要变化，尽量使用 const  关键字，比如<strong>函数的定义、PI、数学公式中一些恒定不表的值</strong>（const 关键字比 let 效率高）</p>
+<p><strong>建议：在 ES6 开发中，优先使用 const ，只有需要改变某一个标识符的时候才会使用 let。</strong></p>
 <h3 id="3-解构赋值"><a href="#3-解构赋值" class="headerlink" title="3 解构赋值"></a>3 解构赋值</h3><p>ES6中允许从数组中提取值,按照对应位置,对变量赋值。对象也可以实现解构。</p>
 <h5 id="数组解构"><a href="#数组解构" class="headerlink" title="数组解构"></a>数组解构</h5><p>当 <code>[]</code>写在等号左边，就代表着解构，let 里面的 a 、b、c 都是变量</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span>[a,b,c]=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.log(a)</span><br><span class="line"><span class="built_in">console</span><span class="number">.1</span>og (b)</span><br><span class="line"><span class="built_in">console</span>.log(c)</span><br></pre></td></tr></table></figure>
@@ -290,6 +291,12 @@
 <p>剩余参数 和 解构赋值</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> ary1 = [<span class="string">'张三'</span> , <span class="string">'李四'</span>, <span class="string">'王五'</span>];</span><br><span class="line"><span class="keyword">let</span> [s1, ...s2] = ary1;</span><br><span class="line"><span class="built_in">console</span>.log(s1)</span><br><span class="line"><span class="built_in">console</span>.log(s2)</span><br></pre></td></tr></table></figure>
 
+<h3 id="6-对象内函数的写法"><a href="#6-对象内函数的写法" class="headerlink" title="6 对象内函数的写法"></a>6 对象内函数的写法</h3><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="comment">// 写法1</span></span><br><span class="line"><span class="keyword">var</span> person1 = &#123;</span><br><span class="line">    name: <span class="string">"p1"</span>,</span><br><span class="line">    sayThis() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 写法2</span></span><br><span class="line"><span class="keyword">var</span> person2 = &#123;</span><br><span class="line">    name: <span class="string">"p2"</span>,</span><br><span class="line">    sayThis:<span class="function"><span class="params">()</span>=&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line">person1.sayThis();<span class="comment">//指向person1</span></span><br><span class="line">person2.sayThis();<span class="comment">//指向windeo</span></span><br></pre></td></tr></table></figure>
+
+<p>person1的写法，类似于：在es6 中对象中的函数可以省略 function</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person1 = &#123;</span><br><span class="line">    name: <span class="string">"p1"</span>,</span><br><span class="line">    sayThis: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>person2的写法，使用了箭头函数，箭头函数的this指向当前的执行环境，这里当然是window对象，箭头函数并没有自己的this值，它的this继承自外围作用域。</p>
 <h2 id="ES6-内置对象扩展"><a href="#ES6-内置对象扩展" class="headerlink" title="ES6 内置对象扩展"></a>ES6 内置对象扩展</h2><h3 id="6-Array-扩展运算符"><a href="#6-Array-扩展运算符" class="headerlink" title="6 Array 扩展运算符**"></a>6 Array 扩展运算符**</h3><h4 id="扩展运算符-展开语法"><a href="#扩展运算符-展开语法" class="headerlink" title="扩展运算符(展开语法)"></a>扩展运算符(展开语法)</h4><p>扩展运算符可以将数组或者对象转为用逗号分隔的参数序列。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> ary = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>];</span><br><span class="line">...ary <span class="comment">// "a", "b", "c"</span></span><br><span class="line"><span class="built_in">console</span>.log(...ary) <span class="comment">// a b c ,被当做log方法的参数分割符，因此不会输出，等价于下面代码</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>)</span><br></pre></td></tr></table></figure>
 
@@ -603,11 +610,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">html</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">js</a>
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -627,6 +634,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">leetcode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">数据库</a>
               </li>
              
@@ -643,6 +654,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">计算机组成原理</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">软件测试</a>
               </li>
              
@@ -651,15 +666,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">移动端布局</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">操作系统</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
             
             <div class="clearfix"></div>

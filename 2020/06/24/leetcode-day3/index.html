@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
-  <title>Archives | 晓秋的博客</title>
+  <title>day3 02 两数相加 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="better and better">
-<meta property="og:type" content="website">
-<meta property="og:title" content="晓秋的博客">
-<meta property="og:url" content="https://futuwxq.github.io/archives/page/9/index.html">
+  <meta name="description" content="两数相加">
+<meta property="og:type" content="article">
+<meta property="og:title" content="day3 02 两数相加">
+<meta property="og:url" content="https://futuwxq.github.io/2020/06/24/leetcode-day3/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="better and better">
+<meta property="og:description" content="两数相加">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://futuwxq.github.io/2020/06/24/leetcode-day3/image-20200624222515053.png">
+<meta property="article:published_time" content="2020-06-24T10:57:45.000Z">
+<meta property="article:modified_time" content="2020-06-24T14:27:46.464Z">
 <meta property="article:author" content="Better">
+<meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://futuwxq.github.io/2020/06/24/leetcode-day3/image-20200624222515053.png">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
   
@@ -152,128 +157,214 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-leetcode-day3" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-04-01T06:57:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-01</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/">git的使用</a>
+    <h1 class="article-title" itemprop="name">
+      day3 02 两数相加
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/06/24/leetcode-day3/" class="archive-article-date">
+  	<time datetime="2020-06-24T10:57:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>两数相加</p>
+<a id="more"></a>
+
+<blockquote>
+<p>给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。</p>
+</blockquote>
+<blockquote>
+<p>如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。</p>
+</blockquote>
+<blockquote>
+<p>您可以假设除了数字 0 之外，这两个数都不会以 0 开头。</p>
+</blockquote>
+<p><strong>示例：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入：(2 -&gt; 4 -&gt; 3) + (5 -&gt; 6 -&gt; 4)</span><br><span class="line">输出：7 -&gt; 0 -&gt; 8</span><br><span class="line">原因：342 + 465 &#x3D; 807</span><br></pre></td></tr></table></figure>
+
+<p>审题之后：</p>
+<ul>
+<li>首先需要创建一个新的链表用来返回结果（res）</li>
+<li>需要一个指针指向链表的最后一个节点，每次从尾部添加新的节点（resTemp）</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ListNode resTemp = res;<span class="comment">//先把指针指向新建的链表 res，此时 resTemp 指向新链表</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>节点相加的问题<ul>
+<li>当链表节点相加，可能会存在进位，比如 6+7 = 13，新节点的值应该是 13 % 10 = 3，需要进位值是 13 / 10 = 1。因此需要一个变量来存储进位的值（nextSum）</li>
+<li>链表的第一个节点相加是不需要考虑是否添加进位值，因此设置一个flag变量，控制节点是否是第一个。</li>
+<li>对于新节点来说，节点的data值是 <code>p % 10;</code>, 上一个节点指针指向新节点</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">resTemp.next = <span class="keyword">new</span> ListNode(p % <span class="number">10</span>);<span class="comment">// 让前一个节点指向一个新的节点，这个节点的data是加和之后的结果</span></span><br><span class="line"></span><br><span class="line">resTemp = resTemp.next;<span class="comment">//让resTemp 现在指指向新的节点 这就是从链表尾部添加元素的语法</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2020/06/24/leetcode-day3/image-20200624222515053.png" alt="image-20200624222515053"></p>
+<ul>
+<li>考虑两个链表的节点个数可能不相等，可能 a 链表已经没有节点了，b 链表还有数组，此时下一个节点的值是 b 链表的值和进位值的叠加。</li>
+<li>最后当两个链表都为 null ，但是存在不为 0 的进位值，需要再添加一个节点，此时只需要让 上一个节点指向一个data 是进位值的新节点即可。</li>
+</ul>
+<p>参考他人的答案</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * public class ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) &#123; val = x; &#125;</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> ListNode <span class="title">addTwoNumbers</span><span class="params">(ListNode l1, ListNode l2)</span> </span>&#123;</span><br><span class="line">        ListNode res = <span class="keyword">new</span> ListNode();<span class="comment">//新建一个链表，返回计算之后的结果</span></span><br><span class="line">        ListNode resTemp = res; <span class="comment">//这是一个辅助指针，指向最后一个节点</span></span><br><span class="line">        <span class="keyword">int</span> nextSum = <span class="number">0</span>; <span class="comment">//进位值</span></span><br><span class="line">        <span class="keyword">int</span> flag = <span class="number">0</span> ;<span class="comment">//链表节点，0表示是链表的第一个节点</span></span><br><span class="line">        <span class="keyword">while</span>(l1 != <span class="keyword">null</span> &amp;&amp; l2 != <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> p ;</span><br><span class="line">            <span class="keyword">if</span>(flag == <span class="number">0</span>)&#123;<span class="comment">//第一个节点不需要考虑是否进位</span></span><br><span class="line">                p = l1.val + l2.val;</span><br><span class="line">                res.val = p % <span class="number">10</span>;</span><br><span class="line">                nextSum = p /<span class="number">10</span>;</span><br><span class="line">                flag ++;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                p = l1.val + l2.val + nextSum;</span><br><span class="line">                resTemp.next = <span class="keyword">new</span> ListNode(p % <span class="number">10</span>);<span class="comment">//上一个指针指向新节点</span></span><br><span class="line">                resTemp = resTemp.next;</span><br><span class="line">                nextSum = p / <span class="number">10</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            l1 = l1.next;</span><br><span class="line">            l2 = l2.next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//l1还有剩余节点</span></span><br><span class="line">        <span class="keyword">while</span> (l1 != <span class="keyword">null</span>)&#123;</span><br><span class="line">            <span class="keyword">int</span> p = l1.val + nextSum;</span><br><span class="line">            resTemp.next = <span class="keyword">new</span> ListNode(p % <span class="number">10</span>) ;</span><br><span class="line">            resTemp = resTemp.next;</span><br><span class="line">            nextSum = p / <span class="number">10</span>;</span><br><span class="line">            l1 = l1.next; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//l2还有剩余节点</span></span><br><span class="line">        <span class="keyword">while</span>(l2 != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="keyword">int</span> p = l2.val + nextSum;</span><br><span class="line">            resTemp.next = <span class="keyword">new</span> ListNode(p % <span class="number">10</span>) ;</span><br><span class="line">            resTemp = resTemp.next;</span><br><span class="line">            nextSum = p / <span class="number">10</span>;</span><br><span class="line">            l2 = l2.next; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// nextSum 不为0</span></span><br><span class="line">        <span class="keyword">if</span>(nextSum != <span class="number">0</span>)</span><br><span class="line">        resTemp.next = <span class="keyword">new</span> ListNode(nextSum);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">工具类</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/06/24/leetcode-day3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="archive-article-date">
-  	<time datetime="2020-04-01T02:59:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-01</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/06/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          数据结构
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/06/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">计算机网络</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统基础</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/03/31/hello-world/" class="archive-article-date">
-  	<time datetime="2020-03-31T02:58:36.916Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-31</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/31/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/page/8/">&amp;laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="space">&hellip;</span><a class="page-number" href="/archives/page/7/">7</a><a class="page-number" href="/archives/page/8/">8</a><span class="page-number current">9</span>
-    </nav>
   
 
 
@@ -297,8 +388,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

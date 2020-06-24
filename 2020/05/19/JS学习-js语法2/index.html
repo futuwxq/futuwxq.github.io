@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/19/JS%E5%AD%A6%E4%B9%A0-js%E8%AF%AD%E6%B3%952/image-20200519175420074.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/19/JS%E5%AD%A6%E4%B9%A0-js%E8%AF%AD%E6%B3%952/image-20200519180109878.png">
 <meta property="article:published_time" content="2020-05-19T03:09:14.000Z">
-<meta property="article:modified_time" content="2020-06-23T14:13:25.402Z">
+<meta property="article:modified_time" content="2020-06-24T02:49:03.881Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
@@ -659,14 +659,13 @@ console.log(arr.toString()); // 1,2,3</code></pre><p>2.join(分隔符) ，强大
 <td>slice()和splice(目的基本相同,建议同学们重点看下splice()</td>
 </tr>
 </tbody></table>
-<p><strong>splice()</strong></p>
-<p>只是插入数组元素，删除个数设置为0, months.splice(1, 0, ‘Feb’);</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">const months &#x3D; [&#39;Jan&#39;, &#39;March&#39;, &#39;April&#39;, &#39;June&#39;];</span><br><span class="line">months.splice(1, 0, &#39;Feb&#39;);</span><br><span class="line">console.log(months);</span><br><span class="line">&#x2F;&#x2F; expected output: Array [&quot;Jan&quot;, &quot;Feb&quot;, &quot;March&quot;, &quot;April&quot;, &quot;June&quot;]</span><br></pre></td></tr></table></figure>
-
-<p>替换数组元素</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">months.splice(4, 1, &#39;May&#39;);&#x2F;&#x2F; replaces 1 element at index 4</span><br><span class="line">console.log(months);&#x2F;&#x2F; expected output: Array [&quot;Jan&quot;, &quot;Feb&quot;, &quot;March&quot;, &quot;April&quot;, &quot;May&quot;]</span><br></pre></td></tr></table></figure>
-
-
+<h5 id="splice"><a href="#splice" class="headerlink" title="splice()"></a>splice()</h5><p><strong>splice（）方法有）三种作用：删除元素/插入元素/替换元素</strong></p>
+<ul>
+<li>删除元素: 第二个参数传入你要删除几个元素(如果没有传,就删除后面所有的元素)</li>
+<li>替换元素: 第二个参数, 表示我们要替换几个元素, 后面是用于替换前面的元素</li>
+<li>插入元素: 第二个参数, 传入0, 并且后面跟上要插入的元素 </li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> letters= [<span class="string">'a'</span>, <span class="string">'d'</span>, <span class="string">'c'</span>, <span class="string">'b'</span>];</span><br><span class="line"><span class="comment">// 5. splice()</span></span><br><span class="line"><span class="comment">// 5.1 删除元素</span></span><br><span class="line"><span class="keyword">this</span>.letters.splice(<span class="number">1</span>, <span class="number">2</span>) <span class="comment">//a,d</span></span><br><span class="line"><span class="keyword">this</span>.letters.splice(<span class="number">1</span>) <span class="comment">//a  后面的所有元素全部删除</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 5.2 替换元素</span></span><br><span class="line"><span class="keyword">this</span>.letters.splice(<span class="number">1</span>, <span class="number">3</span>, <span class="string">'m'</span>, <span class="string">'l'</span>, <span class="string">'k'</span>) <span class="comment">//a,m,l,k</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 5.3 插入元素</span></span><br><span class="line"><span class="keyword">this</span>.letters.splice(<span class="number">1</span>, <span class="number">0</span>, <span class="string">'r'</span>, <span class="string">'t'</span>) <span class="comment">//a,r,t,d,c,b</span></span><br></pre></td></tr></table></figure>
 
 <h2 id="10-4字符串对象"><a href="#10-4字符串对象" class="headerlink" title="10.4字符串对象"></a>10.4字符串对象</h2><p>为了方便操作基本数据类型, JavaScript还提供了三个特殊的引用类型: <strong>String、Number和Boolean</strong>。</p>
 <p><strong>基本包装类型</strong>就是把简单数据类型包装成为复杂数据类型,这样基本数据类型就有了属性和方法。比如代码str只是一个字符串类型，怎么会有length属性？</p>

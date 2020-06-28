@@ -154,6 +154,192 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-leetcode-day4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/28/leetcode-day4/">leetcode 03 无重复字符的最长子串</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/28/leetcode-day4/" class="archive-article-date">
+  	<time datetime="2020-06-28T13:12:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="滑动窗口（Sliding-Window）算法"><a href="#滑动窗口（Sliding-Window）算法" class="headerlink" title="滑动窗口（Sliding Window）算法"></a>滑动窗口（Sliding Window）算法</h3><h3 id="算法题"><a href="#算法题" class="headerlink" title="算法题"></a>算法题</h3><p>给定一个字符串，请你找出其中不含有重复字符的 <strong>最长子串</strong> 的长度。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入: &quot;abcabcbb&quot;</span><br><span class="line">输出: 3 </span><br><span class="line">解释: 因为无重复字符的最长子串是 &quot;abc&quot;，所以其长度为 3。</span><br></pre></td></tr></table></figure>
+
+<p>滑动窗口经常作为一个抽象的概念来处理数组/字符串问题,它可以将嵌套的循环问题，转换为单循环问题，降低时间复杂度, 窗口代表着一组数据/字符串元素，通过开头和结尾的索引来定义窗口。例如下图中滑动窗口就是长度固定为 2 的窗口。</p>
+<img src="/2020/06/28/leetcode-day4/image-20200628213440112.png" alt="image-20200628213440112" style="zoom:67%;">
+
+<p>上面这道题也是利用了滑动窗口算法，窗口由不重复的字符组成，求窗口的最大长度。</p>
+<ul>
+<li>滑动窗口首先需要一个控制窗口的左指针和右指针</li>
+</ul>
+<p><strong>如何维护滑动弄窗口呢？如何找出重复的字符？下面有两种方法</strong></p>
+<ul>
+<li>借助数组方法 <code>indexOf(string i)</code>,当一个数组内存在 i 时，就会返回这个数组的下标，否则返回-1</li>
+<li>借助哈希表的 has（string i）方法，当哈希表存在 i 为真，否则为假。</li>
+</ul>
+<p><strong>首先介绍通过数组来维护滑动窗口</strong></p>
+<ul>
+<li>新建一个用来存储不重复元素的数组 arr，存储最大长度的变量 max</li>
+<li>变量 字符串 s ，开启滑动窗口，滑动窗口的长度就是 arr 数组的长度</li>
+<li>当遇见重复字符的时候，删除 arr 数组中该字符及其之前的字符 </li>
+<li>将当前字符加入 arr 数组 ，比较当前数组的长度 和 上一次的 max 值并取最大</li>
+<li>依次滑动，直至移动 s 的最后一个字符 </li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> lengthOfLongestSubstring = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> arr = [],</span><br><span class="line">        max = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; s.length; i++) &#123;</span><br><span class="line">        <span class="keyword">let</span> index = arr.indexOf(s[i])</span><br><span class="line">        <span class="keyword">if</span> (index !== <span class="number">-1</span>) &#123;<span class="comment">//重复了</span></span><br><span class="line">          </span><br><span class="line">            <span class="comment">// 因为splice删除第二个参数是删除的个数，因此index要+1</span></span><br><span class="line">            arr.splice(<span class="number">0</span>, index + <span class="number">1</span>);<span class="comment">//删除重复元素及其之前的元素</span></span><br><span class="line">        &#125;</span><br><span class="line">        arr.push(s[i]);</span><br><span class="line">        max = <span class="built_in">Math</span>.max(arr.length, max); <span class="comment">//每次都来更新max值</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>通过哈希表维护滑动窗口</p>
+<ul>
+<li>新建一个哈希表set occ</li>
+<li>滑动窗口的区间长度是 [ i, rk] , rk 的初试值初始值为 -1，相当于我们在字符串的左边界的左侧，还没有开始移动</li>
+<li>检查是否有重复元素 <code>rk + 1 &lt; n &amp;&amp; !occ.has(s.charAt(rk + 1))</code>,把不重复元素加入哈希表</li>
+<li>当遇到重复元素的时候，第 rk + 1 个元素重复了，当前无重复子串的长度是 rk - i + 1，和 max 比较取最大。此时需要删除 i 的前一个元素 ，occ.delete(s.charAt(i - 1));`。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 哈希表</span></span><br><span class="line"><span class="keyword">var</span> lengthOfLongestSubstring = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> occ = <span class="keyword">new</span> <span class="built_in">Set</span>();</span><br><span class="line">    <span class="keyword">const</span> n = s.length;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> rk = <span class="number">-1</span>,<span class="comment">//  右指针</span></span><br><span class="line">        max = <span class="number">0</span>; <span class="comment">//最大长度</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; n; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (i != <span class="number">0</span>) &#123;<span class="comment">//遇到了重复的字符</span></span><br><span class="line">            <span class="comment">// 左指针向右移动一格，移除一个字符，删除了重复的字符</span></span><br><span class="line">            occ.delete(s.charAt(i - <span class="number">1</span>));</span><br><span class="line">     </span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">while</span> (rk + <span class="number">1</span> &lt; n &amp;&amp; !occ.has(s.charAt(rk + <span class="number">1</span>))) </span><br><span class="line">            occ.add(s.charAt(rk + <span class="number">1</span>)); <span class="comment">//不重复的元素加入哈希表</span></span><br><span class="line">   </span><br><span class="line">            ++rk;  <span class="comment">// 不断地移动右指针</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//跳出 while循环 说明 第 rk + 1个字符重复了</span></span><br><span class="line">        <span class="comment">// 第 i 到 rk 个字符是一个极长的无重复字符子串</span></span><br><span class="line">        max = <span class="built_in">Math</span>.max(max, rk - i + <span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> max;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/28/leetcode-day4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-vue-vue组件化开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/28/vue-vue%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/">vue vue组件化开发</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/28/vue-vue%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/" class="archive-article-date">
+  	<time datetime="2020-06-28T03:46:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>什么是组件化？</strong></p>
+<p>组件化的思想：</p>
+<p>如果我们将一个页面中所有的处理逻辑全部放在一起，处理起来就会变得非常复杂，而且不利于后续的管理以及扩展。但如果，我们<strong>把一个页面拆分成一个个小的功能块</strong>，<strong>每个功能块完成属于自己这部分独立的功能</strong>，</p>
+        
+          <a class="article-more-a" href="/2020/06/28/vue-vue%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/06/28/vue-vue%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-数据结构" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -174,7 +360,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2>
+        <h2 id="链表"><a href="#链表" class="headerlink" title="链表"></a>链表</h2><p>链表是一组节点组成的集合，每个节点都使用一个对象的引用来指向它的后一个节点。指向另一节点的引用讲做链。下面是一个简要的链表结构图。</p>
         
           <a class="article-more-a" href="/2020/06/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/#more">more >></a>
         
@@ -240,6 +426,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>两数相加</p>
+<blockquote>
+<p>给出两个 非空 的链表用来表示两个非负的整数。其中，它们各自的位数是按照 逆序 的方式存储的，并且它们的每个节点只能存储 一位 数字。</p>
+<p>如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。</p></blockquote>
         
           <a class="article-more-a" href="/2020/06/24/leetcode-day3/#more">more >></a>
         
@@ -315,7 +504,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2>
+        <h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><p><strong>什么是计算机网络?</strong></p>
+<p>计算机网络是通信技术与计算机技术紧密结合的产物，也就是<strong>计算机网络=通信技术+计算机技术</strong>。</p>
+<p>计算机网络就是互连的、自治的计算机集合。</p>
         
           <a class="article-more-a" href="/2020/06/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/#more">more >></a>
         
@@ -392,6 +583,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h3 id="对象增强写法"><a href="#对象增强写法" class="headerlink" title="对象增强写法"></a><strong>对象增强写法</strong></h3><p>ES6中，对对象字面量进行了很多增强。</p>
+<h4 id="属性初始化-和-方法的简写"><a href="#属性初始化-和-方法的简写" class="headerlink" title="属性初始化 和 方法的简写:"></a>属性初始化 和 方法的简写:</h4>
         
           <a class="article-more-a" href="/2020/06/22/ES6-ES6%E8%A1%A5%E5%85%85/#more">more >></a>
         
@@ -468,6 +660,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="计算机的基本概念"><a href="#计算机的基本概念" class="headerlink" title="计算机的基本概念"></a>计算机的基本概念</h2><p>电子计算机 —— 是一种可<strong>以存储程序</strong>，并且通过<strong>执行程序指令</strong>，可以自动、高速、精确地对数字信息进行各种<strong>复杂处理</strong>，然后<strong>输出运算结果</strong>的高科技智能电子设备。</p>
+<p>计算机的 5 个 逻辑模块</p>
         
           <a class="article-more-a" href="/2020/06/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/#more">more >></a>
         
@@ -622,6 +815,7 @@
       
         <p><strong>vue 是一个渐进式框架</strong></p>
 <p>渐进式意味着你可以将 Vue 作为你应用的一部分嵌入其中，带来更丰富的交互体验。可能你的项目本来是拿 jquery 或者原生 js 写的，现在可以一部分一部分换成 vue</p>
+<p><strong>vue 全家桶</strong></p>
         
           <a class="article-more-a" href="/2020/06/15/vue-vue%E5%88%9D%E8%AE%A4%E8%AF%86/#more">more >></a>
         
@@ -726,162 +920,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/06/11/vue-vue%E5%9F%BA%E7%A1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-ES6-ES6基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/10/ES6-ES6%E5%9F%BA%E7%A1%80/">ES6 ES6新增语法</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/10/ES6-ES6%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-  	<time datetime="2020-06-10T01:57:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>什么是ES6 ?</strong></p>
-<p>ES的全称是ECMAScript ,它是由ECMA国际标准化组织制定的一项脚本语言的标准化规范。</p>
-<p><strong>ES6实际是一个泛指，泛指 ES2015 及后续的版本</strong>。</p>
-        
-          <a class="article-more-a" href="/2020/06/10/ES6-ES6%E5%9F%BA%E7%A1%80/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/10/ES6-ES6%E5%9F%BA%E7%A1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-函数的进阶" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/06/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9B%E9%98%B6/">函数的进阶</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/06/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9B%E9%98%B6/" class="archive-article-date">
-  	<time datetime="2020-06-06T02:35:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="导读"><a href="#导读" class="headerlink" title="导读"></a>导读</h2><p><strong>◆能够说出函数的多种定义和调用方式</strong></p>
-<p><strong>◆能够说出和改变函数内部this的指向</strong></p>
-<p><strong>◆能够说出严格模式的特点</strong></p>
-        
-          <a class="article-more-a" href="/2020/06/06/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9B%E9%98%B6/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/06/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9B%E9%98%B6/">展开全文 >></a>
         </p>
       
 

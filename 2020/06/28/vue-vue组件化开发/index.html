@@ -6,23 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
-  <title>ES6 ES6补充 | 晓秋的博客</title>
+  <title>vue vue组件化开发 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="对象增强写法ES6中，对对象字面量进行了很多增强。 属性初始化 和 方法的简写:">
+  <meta name="description" content="什么是组件化？ 组件化的思想： 如果我们将一个页面中所有的处理逻辑全部放在一起，处理起来就会变得非常复杂，而且不利于后续的管理以及扩展。但如果，我们把一个页面拆分成一个个小的功能块，每个功能块完成属于自己这部分独立的功能，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ES6 ES6补充">
-<meta property="og:url" content="https://futuwxq.github.io/2020/06/22/ES6-ES6%E8%A1%A5%E5%85%85/index.html">
+<meta property="og:title" content="vue vue组件化开发">
+<meta property="og:url" content="https://futuwxq.github.io/2020/06/28/vue-vue%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="对象增强写法ES6中，对对象字面量进行了很多增强。 属性初始化 和 方法的简写:">
+<meta property="og:description" content="什么是组件化？ 组件化的思想： 如果我们将一个页面中所有的处理逻辑全部放在一起，处理起来就会变得非常复杂，而且不利于后续的管理以及扩展。但如果，我们把一个页面拆分成一个个小的功能块，每个功能块完成属于自己这部分独立的功能，">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://futuwxq.github.io/2020/06/22/ES6-ES6%E8%A1%A5%E5%85%85/image-20200622170847000.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/06/22/ES6-ES6%E8%A1%A5%E5%85%85/image-20200622171116342.png">
-<meta property="article:published_time" content="2020-06-22T08:58:04.000Z">
-<meta property="article:modified_time" content="2020-06-28T03:55:30.282Z">
+<meta property="og:image" content="https://futuwxq.github.io/2020/06/28/vue-vue%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/image-20200628114802006.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/06/28/vue-vue%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/image-20200628115001829.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/06/28/vue-vue%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/image-20200628115225839.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/06/28/vue-vue%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/image-20200628115422162.png">
+<meta property="article:published_time" content="2020-06-28T03:46:23.000Z">
+<meta property="article:modified_time" content="2020-06-28T03:55:23.392Z">
 <meta property="article:author" content="Better">
-<meta property="article:tag" content="js">
+<meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://futuwxq.github.io/2020/06/22/ES6-ES6%E8%A1%A5%E5%85%85/image-20200622170847000.png">
+<meta name="twitter:image" content="https://futuwxq.github.io/2020/06/28/vue-vue%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/image-20200628114802006.png">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
   
@@ -158,76 +160,44 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-ES6-ES6补充" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-vue-vue组件化开发" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      ES6 ES6补充
+      vue vue组件化开发
     </h1>
   
 
         
-        <a href="/2020/06/22/ES6-ES6%E8%A1%A5%E5%85%85/" class="archive-article-date">
-  	<time datetime="2020-06-22T08:58:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-22</time>
+        <a href="/2020/06/28/vue-vue%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/" class="archive-article-date">
+  	<time datetime="2020-06-28T03:46:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="对象增强写法"><a href="#对象增强写法" class="headerlink" title="对象增强写法"></a><strong>对象增强写法</strong></h3><p>ES6中，对对象字面量进行了很多增强。</p>
-<h4 id="属性初始化-和-方法的简写"><a href="#属性初始化-和-方法的简写" class="headerlink" title="属性初始化 和 方法的简写:"></a>属性初始化 和 方法的简写:<a id="more"></a></h4><p><img src="/2020/06/22/ES6-ES6%E8%A1%A5%E5%85%85/image-20200622170847000.png" alt="image-20200622170847000" style="zoom:80%;">              <img src="/2020/06/22/ES6-ES6%E8%A1%A5%E5%85%85/image-20200622171116342.png" alt="image-20200622171116342" style="zoom:75%;"></p>
-<h3 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h3><p>编程范式: 命令式编程/声明式编程<br>编程范式: 面向对象编程(第一公民:对象)/函数式编程(第一公民:函数)</p>
-<p><strong>filter/map/reduce</strong></p>
-<h5 id="1）-filter-函数"><a href="#1）-filter-函数" class="headerlink" title="1） filter 函数"></a>1） filter 函数</h5><p>filter中的回调函数有一个要求: 必须返回一个boolean 值</p>
-<ul>
-<li><p>true: 当返回 true 时, 函数内部会自动将这次回调的 n 加入到新的数组中。</p>
+        <p><strong>什么是组件化？</strong></p>
+<p>组件化的思想：</p>
+<p>如果我们将一个页面中所有的处理逻辑全部放在一起，处理起来就会变得非常复杂，而且不利于后续的管理以及扩展。但如果，我们<strong>把一个页面拆分成一个个小的功能块</strong>，<strong>每个功能块完成属于自己这部分独立的功能</strong>，<a id="more"></a>那么之后整个页面的管理和维护就变得非常容易了。</p>
+<p><img src="/2020/06/28/vue-vue%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/image-20200628114802006.png" alt="image-20200628114802006"></p>
+<p><strong>我们将一个完整的页面分成很多个组件。每个组件都用于实现页面的一个功能块。而每一个组件又可以进行细分。</strong></p>
+<p><strong>Vue 组件化思想</strong></p>
+<p>Vue 提供了一种抽象，让我们可以开发出一个个独立可复用的小组件来构造我们的应用。任何的应用都会被抽象成一颗组件树。</p>
+<p><img src="/2020/06/28/vue-vue%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/image-20200628115001829.png" alt="image-20200628115001829"></p>
+<h3 id="注册组件"><a href="#注册组件" class="headerlink" title="注册组件"></a>注册组件</h3><p>组件的使用分成三个步骤：</p>
+<ol>
+<li><p>创建组件构造器</p>
 </li>
-<li><p>false: 当返回 false 时, 函数内部会过滤掉这次的 n 。</p>
+<li><p>注册组件</p>
 </li>
-</ul>
-<h5 id="2）-map函数"><a href="#2）-map函数" class="headerlink" title="2） map函数"></a>2） map函数</h5><p><code>map()</code> 方法创建一个新数组，其结果是该数组中的每个元素是调用一次提供的函数后的返回值。map 函数返回的是对原数组进行处理的元素（比如*2、++操作）</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> new_array = arr.map(<span class="function"><span class="keyword">function</span> <span class="title">callback</span>(<span class="params">currentValue[, index[, array]]</span>) </span>&#123;</span><br><span class="line"> <span class="comment">// Return element for new_array </span></span><br><span class="line">&#125;[, thisArg])</span><br></pre></td></tr></table></figure>
-
-<p><strong>参数</strong></p>
-<ul>
-<li><p><code>callback</code> 回调函数</p>
-<p>生成新数组元素的函数，使用三个参数：</p>
-<ul>
-<li><code>currentValue</code> ：<code>callback</code> 数组中正在处理的当前元素。</li>
-</ul>
+<li><p>使用组件。</p>
 </li>
-<li><p><code>thisArg</code>可选</p>
-<p>执行 <code>callback</code> 函数时值被用作<code>this</code></p>
-</li>
-</ul>
-<h5 id="3）-reduce函数"><a href="#3）-reduce函数" class="headerlink" title="3） reduce函数"></a>3） reduce函数</h5><p>reduce 作用对数组中所有的内容进行汇总</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arr.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValue])</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>第一个参数是一个回调函数<ul>
-<li><strong><code>accumulator</code></strong> ：累计回调的返回值，它是上一次调用回调时返回的累积值，或<code>initialValue</code>（第一次值是<code>initialValue</code>）</li>
-<li><strong>currentValue</strong> ：数组中正在处理的元素。</li>
-</ul>
-</li>
-<li>第二个参数：<ul>
-<li><code>initialValue</code>可选：作为第一次调用 <code>callback</code>函数时的第一个参数的值。 如果没有提供初始值，则将使用数组中的第一个元素。 在没有初始值的空数组上调用 reduce 将报错。</li>
-</ul>
-</li>
-</ul>
-<p>下面是一个例子</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">     <span class="keyword">const</span> nums = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">111</span>, <span class="number">222</span>, <span class="number">444</span>, <span class="number">40</span>, <span class="number">50</span>];</span><br><span class="line"></span><br><span class="line">     <span class="comment">// 1. 返回所有 &lt;= 100 的元素 filter函数的使用 [10, 20, 40, 50]</span></span><br><span class="line">     <span class="comment">// filter中的回调函数有一个要求: 必须返回一个boolean值</span></span><br><span class="line">     <span class="comment">// true: 当返回true时, 函数内部会自动将这次回调的n加入到新的数组中</span></span><br><span class="line">     <span class="comment">// false: 当返回false时, 函数内部会过滤掉这次的n</span></span><br><span class="line">     <span class="comment">// n 就是相当每次遍历数组时的元素</span></span><br><span class="line">     <span class="keyword">let</span> newNums = nums.filter(<span class="function"><span class="keyword">function</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> n &lt;= <span class="number">100</span>;</span><br><span class="line">     &#125;)</span><br><span class="line">     <span class="built_in">console</span>.log(newNums);</span><br><span class="line"></span><br><span class="line">     <span class="comment">// 2.返回新数组元素值的 2 倍  得到的结果是：[20, 40, 80, 100]</span></span><br><span class="line">     <span class="comment">// map 函数的使用 也有一个回调函数 返回的是对原数组进行处理的元素（比如*2、++操作）</span></span><br><span class="line">     <span class="comment">// map 函数会返回一个新数组 新数组的元素就是每次返回值 </span></span><br><span class="line">     <span class="keyword">let</span> new2Nums = newNums.map(<span class="function"><span class="keyword">function</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> n * <span class="number">2</span>;</span><br><span class="line">     &#125;)</span><br><span class="line">     <span class="built_in">console</span>.log(new2Nums);</span><br><span class="line"></span><br><span class="line">     <span class="comment">// 3.返回新数组元素的累加值  240</span></span><br><span class="line">     <span class="comment">//  reduce 函数的使用  reduce 作用对数组中所有的内容进行汇总</span></span><br><span class="line">     <span class="comment">// reduce 函数的第一个参数是一个回调函数 函数的第一个参数是 return 值 第二个参数 n 和上面类似</span></span><br><span class="line">     <span class="comment">// reduce 函数的第二个参数是第一次返回的初始值 </span></span><br><span class="line">     <span class="keyword">let</span> total = new2Nums.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">preValue, n</span>) </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> preValue + n;</span><br><span class="line">     &#125;, <span class="number">0</span>);</span><br><span class="line">     <span class="built_in">console</span>.log(total);</span><br><span class="line">     <span class="comment">// 链式操作</span></span><br><span class="line">     <span class="keyword">let</span> total1 = nums.filter(<span class="function"><span class="keyword">function</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> n &lt;= <span class="number">100</span>;</span><br><span class="line">     &#125;).map(<span class="function"><span class="keyword">function</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> n * <span class="number">2</span>;</span><br><span class="line">     &#125;).reduce(<span class="function"><span class="keyword">function</span>(<span class="params">preValue, n</span>) </span>&#123;</span><br><span class="line">         <span class="keyword">return</span> preValue + n;</span><br><span class="line">     &#125;, <span class="number">0</span>)</span><br><span class="line">     <span class="built_in">console</span>.log(total1);</span><br><span class="line">     <span class="comment">// 使用箭头函数</span></span><br><span class="line">     <span class="keyword">let</span> total2 = nums.filter(<span class="function"><span class="params">n</span> =&gt;</span> n &lt;= <span class="number">100</span>).map(<span class="function"><span class="params">n</span> =&gt;</span> n * <span class="number">2</span>).reduce(<span class="function">(<span class="params">preValue, n</span>) =&gt;</span> preValue + n);</span><br><span class="line">     <span class="built_in">console</span>.log(total2);</span><br><span class="line"> &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="遍历方法"><a href="#遍历方法" class="headerlink" title="遍历方法"></a>遍历方法</h3><p>let item in/for items</p>
-<ul>
-<li>一般 item 就是索引号（数组）/ 属性名（对象），items 就是数组 / 对象。</li>
-<li>在一个数组元素是对象的数组里面，item 可以代表每个对象，通过item.操作可以调用对象里面的属性</li>
-</ul>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//item [ &#123;id: 1, price: 85.00,count: 1&#125;,&#123;...&#125;]</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> item <span class="keyword">of</span> <span class="keyword">this</span>.books) &#123;</span><br><span class="line">    totalPrice += item.price * item.count;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-
+</ol>
+<p><img src="/2020/06/28/vue-vue%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/image-20200628115225839.png" alt="image-20200628115225839" style="zoom:70%;"><img src="/2020/06/28/vue-vue%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/image-20200628115422162.png" alt="image-20200628115422162" style="zoom:80%;"></p>
 
       
 
@@ -262,7 +232,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		
 		</ul>
@@ -318,7 +288,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/06/22/ES6-ES6%E8%A1%A5%E5%85%85/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/06/28/vue-vue%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -332,18 +302,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/06/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/06/28/leetcode-day4/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          计算机网络
+          leetcode 03 无重复字符的最长子串
         
       </div>
     </a>
   
   
-    <a href="/2020/06/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">计算机组成原理</div>
+    <a href="/2020/06/24/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">数据结构</div>
       <i class="icon-circle-right"></i>
     </a>
   

@@ -23,8 +23,9 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/03/Vue-%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/image-20200703200517620.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/03/Vue-%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/image-20200703201703340.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/03/Vue-%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/image-20200703201726241.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/03/Vue-%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/image-20200704101633376.png">
 <meta property="article:published_time" content="2020-07-03T10:59:25.000Z">
-<meta property="article:modified_time" content="2020-07-03T12:18:23.063Z">
+<meta property="article:modified_time" content="2020-07-04T02:58:44.069Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
@@ -205,7 +206,30 @@
 <p><strong>CommonJS的导入</strong></p>
 <img src="/2020/07/03/Vue-%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/image-20200703201726241.png" alt="image-20200703201726241" style="zoom:80%;">
 
-<h2 id="ES6-的Modules"><a href="#ES6-的Modules" class="headerlink" title="ES6 的Modules"></a>ES6 的Modules</h2>
+<h2 id="ES6-的Modules"><a href="#ES6-的Modules" class="headerlink" title="ES6 的Modules"></a>ES6 的Modules</h2><h3 id="export基本使用"><a href="#export基本使用" class="headerlink" title="export基本使用"></a>export基本使用</h3><p>export指令可以导出变量、方法以及类。分三种方法：</p>
+<p>方法一：先定义再导出</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> sum = <span class="function"><span class="keyword">function</span>(<span class="params">a</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> flag = <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> &#123; flag, sum &#125;</span><br></pre></td></tr></table></figure>
+
+<p>方法二：同时定义并导出</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> num = <span class="number">120</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一个函数并导出</span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">multiply</span>(<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(num1 * num2);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 定义一个类并导出</span></span><br><span class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">Person</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name, age) &#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name</span><br><span class="line">        <span class="keyword">this</span>.age = age</span><br><span class="line">    &#125;</span><br><span class="line">    run() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'在奔跑'</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>方法三：导入一个可以让使用者自己命名的模块</p>
+<p>某些情况下，一个模块中包含某个的功能，我们并不希望给这个功能命名，而且让导入者可以自己来命名，这个时候就可以使用 <code>export default</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> address = <span class="string">'上海市'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> address</span><br><span class="line"></span><br><span class="line">---- 导入 不需要写花括号 ----</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> add <span class="keyword">from</span> <span class="string">"./xiaom.js"</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意：</strong> export default 在同一个模块中，不允许同时存在多个。</p>
+<h3 id="import使用"><a href="#import使用" class="headerlink" title="import使用"></a>import使用</h3><p>首先，我们需要在 HTML 代码中引入模块 js 文件，并且类型需要设置为<strong>module</strong></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"xiaom.js"</span> <span class="attr">type</span>=<span class="string">"module"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"xiaoh.js"</span> <span class="attr">type</span>=<span class="string">"module"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"xiaom2.js"</span> <span class="attr">type</span>=<span class="string">"module"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>import 指令用于导入模块中的内容</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; flag, sum, num, multiply, Person &#125; <span class="keyword">from</span> <span class="string">"./xiaom.js"</span></span><br><span class="line"></span><br><span class="line">sum(<span class="string">'小明用了sum方法'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(num);</span><br></pre></td></tr></table></figure>
+
+<p>如果我们希望某个模块中所有的信息都导入，一个个导入显然有些麻烦，通过 * 可以导入模块中所有的 export 变量，并给 * 起一个别名。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> info <span class="keyword">from</span> <span class="string">"./xiaom.js"</span></span><br><span class="line"></span><br><span class="line">info.multiply(<span class="number">1</span>, <span class="number">1000</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p = <span class="keyword">new</span> info.Person(<span class="string">'pp'</span>, <span class="number">22</span>);</span><br><span class="line">p.run()</span><br></pre></td></tr></table></figure>
+
+<p>下图是安装某某插件，es6 语法的一下快捷键。</p>
+<p><img src="/2020/07/03/Vue-%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/image-20200704101633376.png" alt="image-20200704101633376"></p>
+
       
 
       
@@ -308,6 +332,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/07/04/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          数据分析
+        
+      </div>
+    </a>
   
   
     <a href="/2020/06/28/leetcode-day4/" id="article-nav-older" class="article-nav-link-wrap">
@@ -510,6 +543,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">数据分析</a>
               </li>
             
             <div class="clearfix"></div>

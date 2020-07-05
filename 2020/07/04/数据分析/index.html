@@ -17,10 +17,13 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/04/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image-20200704114743022.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/04/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image-20200704151418395.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/04/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image-20200705154815640.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/04/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image-20200705162935921.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/04/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image-20200705163046148.png">
 <meta property="article:published_time" content="2020-07-04T03:47:13.000Z">
-<meta property="article:modified_time" content="2020-07-04T08:29:25.742Z">
+<meta property="article:modified_time" content="2020-07-05T08:32:34.538Z">
 <meta property="article:author" content="Better">
-<meta property="article:tag" content="数据分析">
+<meta property="article:tag" content="more">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://futuwxq.github.io/2020/07/04/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image-20200704114743022.png">
   
@@ -189,15 +192,89 @@
 </li>
 </ul>
 <p>第二步，<strong>收集数据</strong>:根据业务问题确定所需要的数据维度。</p>
+<p>根据业务问题确定所需要的数据维度，对于外部与内部数据进行收集与评估。</p>
+<ul>
+<li>我们需要哪些数据？</li>
+<li>这些数据可以如何获得？</li>
+<li>这些数据是否存在异常或者缺失？</li>
+</ul>
 <p>第三步，<strong>数据清洗</strong>:检查数据中存在的问题并进行处理。</p>
+<p>检查数据的中可能存在的问题，对<strong>有错误或者有问题的数据</strong>进行处理。</p>
+<ul>
+<li>如何快速查询我所需要的数据？</li>
+<li>如果数据存在缺失应该怎么做？</li>
+<li>如果数据错误应该怎么做？</li>
+</ul>
+<p>工具：SQL、Python</p>
 <p>第四步，<strong>数据可视化</strong>:通过可视化图表呈现数据的结构与关系。</p>
+<p>通过图表的形式，直观呈现数据的结构与关系，快速找到业务问题的关键要素。</p>
+<ul>
+<li>使用怎样的图表呈现数据的趋势？</li>
+<li>使用怎样的图表呈现数据的分布？</li>
+<li>使用怎样的图表呈现数据的相关性？</li>
+</ul>
+<p>工具：Tableau</p>
 <p>第五步，<strong>数据建模</strong>:建立数据分析模型，对业务的发展进行评估与预测。</p>
+<p>通过工具建立数据分析模型，从而对业务的发展进行评估与预测。</p>
+<ul>
+<li>哪一种数据模型可以预测销售额未来的趋势？</li>
+<li>哪一种数据模型可以预测消费者的购买行为？</li>
+<li>哪一种数据模型可以构建用户画像？</li>
+</ul>
+<p>工具：Python</p>
 <img src="/2020/07/04/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image-20200704114743022.png" alt="image-20200704114743022" style="zoom: 50%;">
 
 
 
-<p>er</p>
+<p>这是一个通过数据分析的例子</p>
 <img src="/2020/07/04/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image-20200704151418395.png" alt="image-20200704151418395" style="zoom:67%;">
+
+<h3 id="一-、界定业务问题"><a href="#一-、界定业务问题" class="headerlink" title="一 、界定业务问题"></a>一 、界定业务问题</h3><p>从<strong>用户和收入</strong>两大方面去分析：</p>
+<p>what：这类问题围绕公司关注的的关键指标</p>
+<ul>
+<li>用户类指标——用户发生了什么样的变化</li>
+<li>收入指标类——收入发生了怎么样的变化</li>
+</ul>
+<p>why：这类问题关注的业务现状背后的原因，也就是为什么发生了变化</p>
+<ul>
+<li>为什么这个月的新增用户下降了8%？</li>
+<li>为什么这个月的销售额达成下降了5%？</li>
+</ul>
+<p>how：扎到问题背后的原因，怎么去提升关键指标</p>
+<ul>
+<li>怎么获得更多用户</li>
+<li>怎么让用户消费更多</li>
+</ul>
+<p>下面是一个分析腾讯视频业务收入问题的例子，通过分析得出<strong>数据分析问题</strong>：<strong>如何选择特定会员，结合合适的营销渠道和优惠，促进视频会员到期的用户进行续订。</strong></p>
+<img src="/2020/07/04/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image-20200705154815640.png" alt="image-20200705154815640" style="zoom:67%;">
+
+<p>下面以<strong>找到拼多多APP的产品功能迭代方向</strong>为例展开叙述数据分析过程</p>
+<h3 id="二、收集数据"><a href="#二、收集数据" class="headerlink" title="二、收集数据"></a><strong>二、收集数据</strong></h3><p><strong>sql（struct query language ）</strong>，SQL是一种数据库查询和程序设计语言，用于存取数据以及查询、更新和管理关系数据库系统。语法如下</p>
+<ul>
+<li>每个语句以 ； 结尾</li>
+<li>大小写不敏感</li>
+</ul>
+<p><strong>1. 查询数据</strong>：使用 SELECT 语句</p>
+<p>语法：SELECT 字段名 FROM 表名  WHERE  （条件）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> user_id_info;/<span class="comment">/* 是通配符，查询所有数据</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">SELECT user_id,age,sid FROM user_id_info;</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>要求：使用SQL语言，收集每一天，不同功能的启动人数。</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> m_function,m_date,<span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> user_id)</span><br><span class="line"><span class="keyword">FROM</span> use_function_info</span><br><span class="line"><span class="keyword">WHERE</span> m_function <span class="keyword">IN</span> (<span class="string">'function_a'</span>,<span class="string">'function_b'</span>,<span class="string">'function_c'</span>)</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> m_function,m_date</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> m_function,m_date;</span><br></pre></td></tr></table></figure>
+
+<p>运行后，你会看到在12月24日、12月25日、12月26日这三天，使用功能A、功能B与功能C的用户数。</p>
+<img src="/2020/07/04/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image-20200705162935921.png" alt="image-20200705162935921" style="zoom:67%;">
+
+<p><strong>2.数据可视化</strong></p>
+<p>接下来，我们将所查询的数据制作成折线图，进一步进行探索。我们以日期为横轴，使用用户数为纵轴，制作折线图。 观察斜率变化。</p>
+<img src="/2020/07/04/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/image-20200705163046148.png" alt="image-20200705163046148" style="zoom:67%;">
+
+<p><strong>3.业务发现</strong></p>
+<p>根据绘制的折线图，核心思考以下两个问题：</p>
+<ul>
+<li>哪些功能的使用用户数在逐日递减？</li>
+<li>哪一个功能的使用用户数下滑更严重？</li>
+</ul>
+
       
 
       
@@ -231,7 +308,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据分析</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">more</a>
         		</li>
       		
 		</ul>
@@ -514,7 +591,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据分析</a>
+                <a href="javascript:void(0)" class="js-tag color5">more</a>
               </li>
             
             <div class="clearfix"></div>

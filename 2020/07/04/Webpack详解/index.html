@@ -8,17 +8,21 @@
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
   <title>Webpack详解 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="什么是Webpack？ At its core, webpack is a static module bundler for modern JavaScript applications.   从本质上来讲，webpack 是一个现代的 JavaScript 应用的静态模块打包工具。也就是说 webpack  用于 js 的模块化和打包。">
+  <meta name="description" content="1 Webpack起步1.1 什么是Webpack？ At its core, webpack is a static module bundler for modern JavaScript applications.   从本质上来讲，webpack 是一个现代的 JavaScript 应用的静态模块打包工具。也就是说 webpack  用于 js 的模块化和打包，接下来通过这两块来介绍 we">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Webpack详解">
 <meta property="og:url" content="https://futuwxq.github.io/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="什么是Webpack？ At its core, webpack is a static module bundler for modern JavaScript applications.   从本质上来讲，webpack 是一个现代的 JavaScript 应用的静态模块打包工具。也就是说 webpack  用于 js 的模块化和打包。">
+<meta property="og:description" content="1 Webpack起步1.1 什么是Webpack？ At its core, webpack is a static module bundler for modern JavaScript applications.   从本质上来讲，webpack 是一个现代的 JavaScript 应用的静态模块打包工具。也就是说 webpack  用于 js 的模块化和打包，接下来通过这两块来介绍 we">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200704163714690.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200704171837376.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200706104151096.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200706101548990.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200706113350875.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200706121443629.png">
 <meta property="article:published_time" content="2020-07-04T08:23:24.000Z">
-<meta property="article:modified_time" content="2020-07-04T09:28:15.406Z">
+<meta property="article:modified_time" content="2020-07-06T13:46:44.265Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="工具类">
 <meta property="article:tag" content="vue">
@@ -179,16 +183,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="什么是Webpack？"><a href="#什么是Webpack？" class="headerlink" title="什么是Webpack？"></a>什么是Webpack？</h2><blockquote>
+        <h2 id="1-Webpack起步"><a href="#1-Webpack起步" class="headerlink" title="1 Webpack起步"></a>1 Webpack起步</h2><h3 id="1-1-什么是Webpack？"><a href="#1-1-什么是Webpack？" class="headerlink" title="1.1 什么是Webpack？"></a>1.1 什么是Webpack？</h3><blockquote>
 <p>At its core, webpack is a static module bundler for modern JavaScript applications. </p>
 </blockquote>
-<p>从本质上来讲，webpack 是一个现代的 JavaScript 应用的<strong>静态模块打包</strong>工具。也就是说 webpack  用于 js 的模块化和打包。<a id="more"></a></p>
+<p>从本质上来讲，webpack 是一个现代的 JavaScript 应用的<strong>静态模块打包</strong>工具。也就是说 webpack  用于 js 的模块化和打包，接下来通过这两块来介绍 webpack。<a id="more"></a></p>
 <p><strong>模块化</strong></p>
 <p>webpack 其中一个核心就是<strong>让我们可能进行模块化开发，并且会帮助我们处理模块间的依赖关系</strong>。不仅仅是 JavaScript 文件，CSS、图片、json 文件等等在 webpack 中都可以被当做模块来使用，这就是 <strong>webpack 中模块化的概念</strong>。</p>
 <p><strong>打包</strong></p>
 <p>就是将 webpack 中的<strong>各种资源模块进行打包合并成一个或多个包(Bundle)</strong>，并且在打包的过程中，还可以对资源进行处理，比如压缩图片，将 scss 转成 css，将 ES6 语法转成 ES5 语法，将 TypeScript 转成JavaScript 等等操作。</p>
 <p>打包的操作也可以通过 grunt/gulp 完成，那么它和 webpack 有什么不同呢？</p>
-<h3 id="webpack-和-grunt-gulp-的对比"><a href="#webpack-和-grunt-gulp-的对比" class="headerlink" title="webpack 和 grunt/gulp 的对比"></a>webpack 和 grunt/gulp 的对比</h3><p>*<em>grunt/gulp 的核心是 Task *</em></p>
+<h5 id="webpack-和-grunt-gulp-的对比"><a href="#webpack-和-grunt-gulp-的对比" class="headerlink" title="webpack 和 grunt/gulp 的对比"></a>webpack 和 grunt/gulp 的对比</h5><p>*<em>grunt/gulp 的核心是 Task *</em></p>
 <p>我们可以配置一系列的 task ，并且定义 task 要处理的事务（例如ES6、ts转化，图片压缩，scss转成css），之后让 grunt/gulp 来依次执行这些 task，而且让整个流程自动化。所以grunt/gulp也被称为<strong>前端自动化任务管理工具</strong>。<br>这是一个 task 例子，就是将src下面的所有js文件转成ES5的语法，并且最终输出到dist文件夹中。</p>
 <img src="/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200704163714690.png" alt="image-20200704163714690" style="zoom:87%;">
 
@@ -198,7 +202,7 @@
 <p>但是如果整个项目使用了模块化管理，而且相互依赖非常强，我们就可以使用更加强大的webpack了。</p>
 <p>grunt/gulp 更加强调的是<strong>前端流程的自动化</strong>，模块化不是它的核心。</p>
 <p>webpack 更加强调<strong>模块化开发管理</strong>，而文件压缩合并、预处理等功能，是他附带的功能。</p>
-<h2 id="webpack-的安装"><a href="#webpack-的安装" class="headerlink" title="webpack 的安装"></a>webpack 的安装</h2><p>安装 webpack 首先需要安装 Node.js，Node.js自带了软件包管理工具 npm（node packages manager）。</p>
+<h3 id="1-2-webpack-的安装"><a href="#1-2-webpack-的安装" class="headerlink" title="1.2 webpack 的安装"></a>1.2 webpack 的安装</h3><p>webpack依赖node环境。node环境依赖众多包，所以需要npm，npm（node packages manager）node包管理工具。</p>
 <img src="/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200704171837376.png" alt="image-20200704171837376" style="zoom:80%;">
 
 <p>首先检查是否安装 node 版本</p>
@@ -210,8 +214,100 @@
 <p>局部安装webpack（后续才需要）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd 对应目录</span><br><span class="line">npm install webpack@3.6.0 --save-dev</span><br></pre></td></tr></table></figure>
 
-<p><strong>为什么全局安装后，还需要局部安装呢？</strong></p>
-<p>在终端直接执行 webpack 命令，使用的全局安装的 webpack ，当在 package.json 中定义了 scripts 时，其中包含了 webpack 命令，那么使用的是局部 webpack 。</p>
+<p>在终端直接执行 webpack 命令，使用的全局安装的 webpack </p>
+<p>当在 package.json 中定义了 scripts 时，其中包含了 webpack 命令，那么使用的是局部 webpack </p>
+<h3 id="1-3-webpack-初体验"><a href="#1-3-webpack-初体验" class="headerlink" title="1.3 webpack 初体验"></a>1.3 webpack 初体验</h3><p><strong>1）目录结构</strong></p>
+<p>我们来模拟一个 应用的目录，文件的目录结构应该如下：</p>
+<img src="/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200706104151096.png" alt="image-20200706104151096" style="zoom:80%;">
+
+<ul>
+<li><p>dist文件夹：用于存放之后打包的文件</p>
+</li>
+<li><p>src文件夹：用于存放我们写的源文件</p>
+<ul>
+<li>main.js：项目的入口文件。</li>
+<li>mathUtils.js：定义了一些数学工具函数，可以在其他地方引用，并且使用。</li>
+</ul>
+</li>
+<li><p>index.html：浏览器打开展示的首页html</p>
+</li>
+<li><p>package.json：通过npm init生成的，npm包管理的文件（暂时没有用上，后面才会用上）</p>
+</li>
+</ul>
+<p><strong>2）编写模块化的 js 代码</strong>（这里使用 common Js 规范，其他规范也可以），比如 mathUtils.js 中封装一些数据方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num1 + num2</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sub</span>(<span class="params">num1, num2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> num1 - num2</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 使用common js 导出模块</span></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    add,</span><br><span class="line">    sub</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>3）在入口 js（main.js ）中导入模块</strong>，使用 add 和 sub 方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用 common JS导入模块</span></span><br><span class="line"><span class="keyword">const</span> math = <span class="built_in">require</span>(<span class="string">'./mathUtil'</span>)</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'conmmon js'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(math.add(<span class="number">5</span>, <span class="number">2</span>));</span><br><span class="line"><span class="built_in">console</span>.log(math.sub(<span class="number">5</span>, <span class="number">2</span>));</span><br></pre></td></tr></table></figure>
+
+<p><strong>4）使用webpack命令打包js文件</strong></p>
+<p>浏览器不认识 main.js 和 mathUtils.js 里面的 common JS 语法，就不会处理这些方法，因此我就需要借助于 webpack 给我们解析成浏览器可以识别的语法，也就是打包。</p>
+<p>webpack 会自动识别入口里面的依赖 ，所以这里打包入口 main.js 即可，这里需要在项目的根目录下进行：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack src&#x2F;main.js dist&#x2F;bundle.js</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200706101548990.png" alt="image-20200706101548990" style="zoom:80%;">
+
+<p><strong>4）编写 index.html  导入bundle.js</strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src="./dist/bundle.js"&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p><strong>最后运行页面。</strong></p>
+<h2 id="2-webpack-配置"><a href="#2-webpack-配置" class="headerlink" title="2 webpack 配置"></a>2 webpack 配置</h2><h3 id="2-1-初始化-node-包"><a href="#2-1-初始化-node-包" class="headerlink" title="2.1 初始化 node 包"></a>2.1 初始化 node 包</h3><p>在 webpack 中我们需要配置模块的出口和入口，但是模块的出入需要一个<strong>绝对路径</strong>，因此我们需要动态获取项目的根目录。</p>
+<p> node 导包可以动态获取项目的 path 包，而 node 的包需要使用 npm 来进行管理，因此我们首先需要初始化node包。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm init</span><br></pre></td></tr></table></figure>
+
+<p>初始化之后，项目根目录自动生成一个 package.json 文件。</p>
+<img src="/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200706113350875.png" alt="image-20200706113350875" style="zoom:80%;">
+
+<p> <strong>package.json中定义启动</strong></p>
+<p>我们可以在package.json的 *<em>scripts *</em>中定义自己的执行脚本。package.json中 的 scripts 的脚本在执行时，会按照一定的顺序寻找命令对应的位置。</p>
+<p>比如下面添加了一个叫 build的脚本，npm run build  ==== webpack（这个指令启动webpack 配置）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&quot;scripts&quot;: &#123;</span><br><span class="line">    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,</span><br><span class="line">    &quot;build&quot;: &quot;webpack&quot;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-2-配置-入口-和-出口"><a href="#2-2-配置-入口-和-出口" class="headerlink" title="2.2 配置 入口 和 出口"></a>2.2 配置 入口 和 出口</h3><p>webpack.config.js 文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> path = <span class="built_in">require</span>(<span class="string">'path'</span>) <span class="comment">//导入node中的包</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    <span class="comment">//入口</span></span><br><span class="line">    entry: <span class="string">'./src/main.js'</span>,</span><br><span class="line">    output: &#123;</span><br><span class="line">        path: path.resolve(__dirname, <span class="string">'dist'</span>),<span class="comment">//动态获取根目录并拼接dist文件夹</span></span><br><span class="line">        filename: <span class="string">'bundle.js'</span></span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>配置完成之后，我们使用 webpack 指令，就可以打包文件。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-3-局部安装webpack"><a href="#2-3-局部安装webpack" class="headerlink" title="2.3 局部安装webpack"></a>2.3 局部安装webpack</h3><p>一个项目往往依赖特定的 webpack 版本，全局的版本可能很这个项目的 webpack 版本不一致，导出打包出现问题。所以通常一个项目，都有自己局部的 webpack。</p>
+<p><strong>项目中需要安装自己局部的webpack</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install webpack@3.6.0 --save-dev &#x2F;&#x2F;开发时依赖</span><br></pre></td></tr></table></figure>
+
+<img src="/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200706121443629.png" alt="image-20200706121443629" style="zoom:80%;">
+
+<p>当我们平时在终端使用 webpack 命令，绑定的 webpack 依赖就是<strong>全局的 webpack</strong>，只有我们进入当前文件夹下的 webpack 文件，使用指令绑定的才是<strong>局部的 webpack</strong>。</p>
+<p>而通过在 script 指令创建的 webpack  命令，这个指令会默然先在局部查找webpack，也就是默认使用 <strong>局部的 webpack</strong>。为了避免上面所说的 webpack 全局和局部 版本不一致，使用 script 指令是极好的。</p>
+<h2 id="3-webpack-loader"><a href="#3-webpack-loader" class="headerlink" title="3 webpack loader"></a>3 webpack loader</h2><p>在开发中我们不仅仅有基本的js代码处理，我们也需要加载css、图片，也包括一些高级的将ES6转成ES5代码，将TypeScript转成ES5代码，将scss、less转成css，将.jsx、.vue文件转成js文件等等。对于webpack本身的能力来说，对于这些转化是不支持的。</p>
+<p>通过给 webpack 扩展对应的 loader 就可以解决这一问题。大部分loader我们都可以在 <a href="https://webpack.js.org/" target="_blank" rel="noopener">webpack的官网</a> 中找到，并且学习对应的用法。</p>
+<p>loader使用过程：</p>
+<p>步骤一：通过npm安装需要使用的loader</p>
+<p>步骤二：在webpack.config.js中的modules关键字下进行配置</p>
+<h3 id="3-1-webpack-打包-css文件"><a href="#3-1-webpack-打包-css文件" class="headerlink" title="3.1 webpack  打包 css文件"></a>3.1 webpack  打包 css文件</h3><p>webpack loader 打包 css文件，是在 1.3 webpack 初体验上进行的，前提需要编写入口 js，并且在 index .html 中导入 入口js。</p>
+<p><strong>1.编写css文件，常见一个 normal.css</strong></p>
+<p><strong>2.在入口 main.js 导入依赖 normal.css</strong>，webpack 会通过入口，找到所有依赖的文件并打包处理。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">require(&quot;.&#x2F;css&#x2F;normal.css&quot;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.安装 css loader</strong></p>
+<p>按照官方说明，依次安装</p>
+<ul>
+<li><p>css-loader ：解析 CSS 文件后，使用 import 加载，并且返回 CSS 代码</p>
+</li>
+<li><p>style-loader ：将模块的导出作为样式添加到 DOM 中</p>
+</li>
+</ul>
+<p><strong>4.使用 css-loader  和 style-loader</strong> </p>
+<p>webpack使用多个loader是从右往左解析的，所以需要将 css-loader 放在 style-loader 右边，先加载后解析。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>: &#123;</span><br><span class="line">  rules: [</span><br><span class="line">    &#123;</span><br><span class="line">      test: <span class="regexp">/\.css$/</span>,<span class="comment">//正则表达式匹配css文件</span></span><br><span class="line">      <span class="comment">//css-loader只负责css文件加载，不负责解析，要解析需要使用style-loader</span></span><br><span class="line">      use: [&#123;</span><br><span class="line">        loader: <span class="string">'style-loader'</span></span><br><span class="line">      &#125;, &#123;</span><br><span class="line">        loader: <span class="string">'css-loader'</span></span><br><span class="line">      &#125;]<span class="comment">//使用loader</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>因为 webpack 配置常常涉及版本问题，下面的网站可以找到css-loader 和 style-loader的其他版本（右侧 version 版本）</p>
+<ul>
+<li>css-loader :<a href="https://www.npmjs.com/package/css-loader" target="_blank" rel="noopener">https://www.npmjs.com/package/css-loader</a></li>
+<li>style-loader:<a href="https://www.npmjs.com/package/style-loader" target="_blank" rel="noopener">https://www.npmjs.com/package/style-loader</a></li>
+</ul>
+<p><strong>5.打包 npm run build。</strong></p>
+<p>此时样式成加载解析到DOM元素上。</p>
+<p><strong>总结</strong>：</p>
+<p>webpack可以帮我们打包 js文件，所有模块化规范都适用。前提是需要指定入口文件（main.js）和输出的文件（bundle.js），输出文件的路径需要动态获取，通过 npm 导入 node 的 path 包。考虑开发中每个人使用的 webpack 版本不一致，需要在项目内安装局部 webpack。</p>
 
       
 

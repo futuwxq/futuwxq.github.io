@@ -21,11 +21,15 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200706101548990.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200706113350875.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200706121443629.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200707104938207.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200707110627375.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200707161021980.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200707173129219.png">
 <meta property="article:published_time" content="2020-07-04T08:23:24.000Z">
-<meta property="article:modified_time" content="2020-07-06T13:46:44.265Z">
+<meta property="article:modified_time" content="2020-07-07T14:22:24.232Z">
 <meta property="article:author" content="Better">
-<meta property="article:tag" content="工具类">
 <meta property="article:tag" content="vue">
+<meta property="article:tag" content="工具类">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://futuwxq.github.io/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200704163714690.png">
   
@@ -231,7 +235,7 @@
 </li>
 <li><p>index.html：浏览器打开展示的首页html</p>
 </li>
-<li><p>package.json：通过npm init生成的，npm包管理的文件（暂时没有用上，后面才会用上）</p>
+<li><p>package.json：通过 <strong>npm init</strong> 生成的，npm包管理的文件（暂时没有用上，后面才会用上）</p>
 </li>
 </ul>
 <p><strong>2）编写模块化的 js 代码</strong>（这里使用 common Js 规范，其他规范也可以），比如 mathUtils.js 中封装一些数据方法</p>
@@ -243,6 +247,9 @@
 <p><strong>4）使用webpack命令打包js文件</strong></p>
 <p>浏览器不认识 main.js 和 mathUtils.js 里面的 common JS 语法，就不会处理这些方法，因此我就需要借助于 webpack 给我们解析成浏览器可以识别的语法，也就是打包。</p>
 <p>webpack 会自动识别入口里面的依赖 ，所以这里打包入口 main.js 即可，这里需要在项目的根目录下进行：</p>
+<blockquote>
+<p>这里是手动通过命令打包，后面会通过 webpack 配置自动打包 js文件</p>
+</blockquote>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">webpack src&#x2F;main.js dist&#x2F;bundle.js</span><br></pre></td></tr></table></figure>
 
 <img src="/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200706101548990.png" alt="image-20200706101548990" style="zoom:80%;">
@@ -308,6 +315,147 @@
 <p>此时样式成加载解析到DOM元素上。</p>
 <p><strong>总结</strong>：</p>
 <p>webpack可以帮我们打包 js文件，所有模块化规范都适用。前提是需要指定入口文件（main.js）和输出的文件（bundle.js），输出文件的路径需要动态获取，通过 npm 导入 node 的 path 包。考虑开发中每个人使用的 webpack 版本不一致，需要在项目内安装局部 webpack。</p>
+<h3 id="3-2-less-文件处理"><a href="#3-2-less-文件处理" class="headerlink" title="3.2 less 文件处理"></a>3.2 less 文件处理</h3><p>在刚才的 css 文件处理的基础上进行如下操作：</p>
+<p>1）编写 less 文件</p>
+<p>2）在入口（main.js）导入less 依赖</p>
+<p>3）去 webpack 官网下载与less 相关的 loader</p>
+<p><a href="https://www.webpackjs.com/loaders/less-loader" target="_blank" rel="noopener"><code>less-loader</code></a> 加载和转译 LESS 文件</p>
+<p>4）在 config.js 里面配置 less文件的 rules</p>
+<p>5）启动webpack  <code>npm run build</code></p>
+<p>结果发现对 less 文件的处理报错了，首先想到可能是版本问题( 在package.json 中查看)，果然 less-loader 版本过高。</p>
+<p><strong>解决方法：</strong>卸载安装的高版本的less-loader，安装指定低版本的less-loade</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall less-loader</span><br><span class="line">npm install less-loader@4.1.0 --save-dev</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-3-图片打包处理"><a href="#3-3-图片打包处理" class="headerlink" title="3.3 图片打包处理"></a>3.3 图片打包处理</h3><p><strong>1）添加图片，</strong>因为一般图片都是在 css 或者 html 中引入，所以不需要在出口中注入依赖</p>
+<p><strong>2）安装 url-loader</strong></p>
+<p><a href="https://www.webpackjs.com/loaders/url-loader" target="_blank" rel="noopener"><code>url-loader</code></a> 像 file loader 一样工作，但如果文件小于限制，可以返回 data URL</p>
+<p><strong>配置 url-loader</strong></p>
+<p>注意 url-loader 的  limit 属性（可以自己设置值）将决定你的图片是否可以通过 base64 编译。</p>
+<blockquote>
+<p>拓展：jpg 的全名、正式扩展名是 jpeg</p>
+</blockquote>
+<p><strong>name 属性</strong>：设置打包之后文件的名字格式，这是为了让我们更清楚知道文件的名字</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">                test: &#x2F;\.(png|jpg|gif|jpeg)$&#x2F;,</span><br><span class="line">                use: [&#123;</span><br><span class="line">                    loader: &#39;url-loader&#39;,</span><br><span class="line">                    options: &#123;</span><br><span class="line">                        &#x2F;&#x2F; 当加载的图片, 小于limit时, 会将图片编译成base64字符串形式.</span><br><span class="line">                        &#x2F;&#x2F; 当加载的图片, 大于limit时, 需要使用file-loader模块进行加载.</span><br><span class="line">                        limit: 13000,</span><br><span class="line">                        name: &#39;img&#x2F;[name].[hash:8].[ext]&#39;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;]</span><br><span class="line">            &#125;</span><br></pre></td></tr></table></figure>
+
+<p>安装之后背景图是通过base64显示出来的</p>
+<img src="/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200707104938207.png" alt="image-20200707104938207" style="zoom:80%;">
+
+<blockquote>
+<p>Base64图片编码具有不可读性，在没有上传文件的条件下可以将图片插入其它的网页、编辑器中。在web网上一般用于小图片上，不仅可以减少图片的请求数量（集合到js、css代码中），还可以防止因为一些相对路径等问题导致图片404错误。</p>
+</blockquote>
+<p><strong>3) 安装并配置 file-loader</strong></p>
+<p>如果图片大小超过 limit ，就需要安装 file-loader</p>
+<ul>
+<li><a href="https://www.webpackjs.com/loaders/file-loader" target="_blank" rel="noopener"><code>file-loader</code></a> 将文件发送到输出文件夹，并返回（相对）URL</li>
+</ul>
+<p>运行 webpack 虽然没有报错，但是背景图片不显示，调试之后发现背景图片的 url 不正确，因为打包之后的图片是存储在 dist 文件夹内的，正确的 url 是<code>dist/be1b6845eaa61fc95d8b429a51799db1.jpg)</code></p>
+<img src="/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200707110627375.png" alt="image-20200707110627375" style="zoom:80%;">
+
+<p>这里就需要我们配置一下打包之后 url 文件名格式了，相关配置在模块的出口 <code>output</code> ，规定 <code>publicPath</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">publicPath: &#39;dist&#x2F;&#39;</span><br></pre></td></tr></table></figure>
+
+<p><strong>4）运行webpack 打开页面</strong></p>
+<p> 5选2  论文格式 每篇不少于2500  查重不超过30%</p>
+<h3 id="3-4-ES6-转-ES5"><a href="#3-4-ES6-转-ES5" class="headerlink" title="3.4 ES6 转 ES5"></a>3.4 ES6 转 ES5</h3><p>将 ES6 的语法转成 ES5，需要使用 babel</p>
+<p><a href="https://www.webpackjs.com/loaders/babel-loader" target="_blank" rel="noopener"><code>babel-loader</code></a> 加载 ES2015+ 代码，然后使用 Babel 转译为 ES5</p>
+<p>1）在webpack中，我们直接使用 babel 对应的 loader 就可以</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save-dev babel-loader@7 babel-core babel-preset-es2015</span><br></pre></td></tr></table></figure>
+
+<p>2）配置webpack.config.js文件</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    test: <span class="regexp">/\.js$/</span>,</span><br><span class="line">    exclude: <span class="regexp">/(node_modules|bower_components)/</span>,<span class="comment">//排除</span></span><br><span class="line">    use: &#123;</span><br><span class="line">        loader: <span class="string">'babel-loader'</span>,</span><br><span class="line">        options: &#123;</span><br><span class="line">            presets: [<span class="string">'es2015'</span>]<span class="comment">//这里目前只需指定es2015</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3）运行 webpack，之后在 bundle.js 中搜索 const，发现全部转化为 var 关键字。</p>
+<img src="/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200707161021980.png" alt="image-20200707161021980" style="zoom:67%;">
+
+<h2 id="4-vue"><a href="#4-vue" class="headerlink" title="4 vue"></a>4 vue</h2><h3 id="4-1-webpack-配置-vue"><a href="#4-1-webpack-配置-vue" class="headerlink" title="4.1 webpack 配置 vue"></a>4.1 webpack 配置 vue</h3><p>我们的 webpack 环境中集成 Vuejs</p>
+<p><strong>1  安装 vue</strong> ，vue 是运行时依赖 不是开发时依赖（dev）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue --save</span><br></pre></td></tr></table></figure>
+
+<p><strong>2 导入vue 模块，编写 vue 代码</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">'vue'</span><span class="comment">//这里使用的 export default，重命名是 Vue</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;<span class="comment">//上面的重命名和这里保持一致</span></span><br><span class="line">    el: <span class="string">'#app'</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        message: <span class="string">"hello vue!"</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="comment">//还需要在 html 上编写挂载实例</span></span><br></pre></td></tr></table></figure>
+
+<p>运行却发现报错，报错内容如下</p>
+<blockquote>
+<p>bundle.js:1320 [Vue warn]: You are using the runtime-only build of Vue where the template compiler is not available. Either pre-compile the templates into render functions, or use the compiler-included build.</p>
+</blockquote>
+<p>首先介绍两个概念，上面的报错指出我们的代码中有 template，却使用的是 runtime-only 版本的 Vue ，因此我们需要修改配置使得运行时指向 runtime-compiler 版本的 Vue。</p>
+<ul>
+<li>runtime-only：代码中不可以有 任何的 template</li>
+<li>runtime-compiler ：代码中,可以有 template , 因为有 compiler 可以用于编译 template</li>
+</ul>
+<p><strong>3 修改webpack的配置</strong></p>
+<p>我们需要在 config.js 中进行如下配置。webpack 打包的时候，会去局部环境中区找 vue.esm.js，这个 js 版本包含着上面所说的 runtime-compiler。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">resolve: &#123;</span><br><span class="line">    alias: &#123;</span><br><span class="line">        <span class="string">'vue$'</span>: <span class="string">'vue/dist/vue.esm.js'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-2-el-和-template-区别"><a href="#4-2-el-和-template-区别" class="headerlink" title="4.2 el 和 template 区别"></a>4.2 el 和 template 区别</h3><p>首先了解 SPA(simple page web application) ，vue 应用就是这种单页面应用，所以 index.html 就是唯一的，如果里面使用组件就需要频繁修改 index 页面，这是不友好的操作。如何解决？</p>
+<p>我们尝试着在 vue实例的 template 属性中编写 index 页面的内容。</p>
+<p>在Vue实例中，我们定义了 el 属性，用于和 index.html 中的 #app 进行绑定，让 Vue 实例之后可以管理它其中的内容。这里，我们可以将div元素中的  内容删掉，只保留一个基本的 id 为div的元素。将原来的内容放到 Vue实例中的 template 中</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">'#app'</span>,</span><br><span class="line">    template: <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;div &gt;</span></span><br><span class="line"><span class="string">        &lt;h2&gt;&#123;&#123;message&#125;&#125;&lt;/h2&gt;</span></span><br><span class="line"><span class="string">        &lt;button @click="btnClick"&gt;按钮&lt;/button&gt;   </span></span><br><span class="line"><span class="string">	&lt;/div&gt;`</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        message: <span class="string">"hello vue!"</span></span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        btnClick() &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'btnClick'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">---- index.html ----</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=<span class="string">"app"</span>&gt;</span><br><span class="line">    &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;script src="./</span>dist/bundle.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;/body&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>结果页面正常运行，通过调试可以发现 #app 完全被 template 内容替代。</p>
+<img src="/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/image-20200707173129219.png" alt="image-20200707173129219" style="zoom:80%;">
+
+<p><strong>el 和 template 模板的关系是什么呢？</strong></p>
+<p>el 用于指定 Vue 要管理的 DOM，可以帮助解析其中的指令、事件监听等等。而如果Vue实例中同时指定了template，那么 template 模板的内容会替换掉挂载的对应 el 的模板。</p>
+<p><strong>这样做有什么好处呢？</strong></p>
+<p>这样做之后我们就不需要在以后的开发中再次操作 index.html，只需要在 template 中写入对应的标签即可<br>但是，书写template 模块非常麻烦怎么办呢？</p>
+<p>没有关系，稍后我们会将template模板中的内容进行抽离。<br>会分成三部分书写：template、script、style，结构变得非常清晰。</p>
+<h3 id="4-3-Vue组件化开发引入"><a href="#4-3-Vue组件化开发引入" class="headerlink" title="4.3 Vue组件化开发引入"></a>4.3 Vue组件化开发引入</h3><p><strong>1.新建一个 app.js，</strong>用来编写  App 组件，并导出</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  下面这个对象相当于一个模板，导出模板</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    template: <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;div &gt;</span></span><br><span class="line"><span class="string">  &lt;h2&gt;&#123;&#123;message&#125;&#125;&lt;/h2&gt;</span></span><br><span class="line"><span class="string">  &lt;button @click="btnClick"&gt;按钮&lt;/button&gt; </span></span><br><span class="line"><span class="string">  &lt;h2&gt;&#123;&#123;name&#125;&#125;&lt;/h2&gt;  </span></span><br><span class="line"><span class="string">&lt;/div&gt;</span></span><br><span class="line"><span class="string">  `</span>,</span><br><span class="line">    data() &#123;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            message: <span class="string">"hello vue!"</span>,</span><br><span class="line">            name: <span class="string">'future'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        btnClick() &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">'btnClick'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.入口（main.js）导入 App 组件</strong></p>
+<p>组件标签我们以前是写在 index.html 的 #app div里面，现在写在 template ，因为template 会替代 #app div里的内容。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 导入 app.js</span></span><br><span class="line"><span class="keyword">import</span> App <span class="keyword">from</span> <span class="string">'./vue/app'</span></span><br><span class="line"><span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">'#app'</span>,</span><br><span class="line">    template: <span class="string">`&lt;App/&gt;`</span>,</span><br><span class="line">    components: &#123; <span class="comment">//注册App组件</span></span><br><span class="line">        App</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.app.js 替换为 vue component 文件</strong></p>
+<p>在 app.js 里面模板和 js 代码混在一起，不易查看。vue component 文件可以将模板和组件分离。</p>
+<p><strong>4.安装 vue loader 并配置</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-loader vue-template-compiler --save-dev<span class="comment">// vue-template-compiler是编译模板</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    test: &#x2F;\.vue$&#x2F;,</span><br><span class="line">    use: [&#39;vue-loader&#39;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>5.运行 webpack</strong></p>
+<p>如果报错无法识别 vue 文件，可能是 vue-loader 版本问题，推荐一种简单做法。</p>
+<ul>
+<li>修改 package.json 文件中 devDependencies 里的 vue-loader为 13.0.0</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;vue-loader&quot;: &quot;^13.0.0&quot;,&#x2F;&#x2F;安装13.0.0 - 14 版本之间某一版本</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>运行 npm install 安装刚才修改的 loader，就可以了</li>
+</ul>
+<p>再次运行发现，项目完整地展示出来了。</p>
+<h1 id="5-webpack-plugin"><a href="#5-webpack-plugin" class="headerlink" title="5 webpack plugin"></a>5 webpack <strong>plugin</strong></h1><p>plugin 是插件的意思，通常是用于对某个现有的架构进行扩展。webpack 中的插件，就是对webpack现有功能的各种扩展，比如打包优化，文件压缩等等。</p>
+<p><strong>plugin 的使用过程：</strong></p>
+<ul>
+<li><p>步骤一：通过 npm 安装需要使用的 plugins (某些 webpack 已经内置的插件不需要安装)</p>
+</li>
+<li><p>步骤二：在 webpack.config.js 中的 plugins 中配置插件。</p>
+</li>
+</ul>
+<h3 id="5-1-添加版权的Plugin"><a href="#5-1-添加版权的Plugin" class="headerlink" title="5.1 添加版权的Plugin"></a>5.1 添加版权的Plugin</h3><p>BannerPlugin，属于webpack自带的插件，可以为打包的文件添加版权声明。所以我们就不需要安装 plugin，只要配置 webpack.config.js 的文件即可。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>)</span><br><span class="line"></span><br><span class="line">---- ...-----</span><br><span class="line">    </span><br><span class="line">plugins: [</span><br><span class="line">        <span class="keyword">new</span> webpack.BannerPlugin(<span class="string">'最终版权归futur所有'</span>)</span><br><span class="line">    ]</span><br></pre></td></tr></table></figure>
+
+<p>重新打包程序：查看bundle.js文件的头部，就可看见我们添加的版权</p>
+<h3 id="5-2-打包html的plugin"><a href="#5-2-打包html的plugin" class="headerlink" title="5.2 打包html的plugin"></a>5.2 打包html的plugin</h3><p>在真实发布项目时，发布的是dist文件夹中的内容，但是目前 index.html 还没有打包到 dist 文件夹中去。所以，我们需要将 index.html 文件打包到 dist 文件夹中，这个时候就可以使用 <strong>HtmlWebpackPlugin</strong> 插件 。</p>
+<p><strong>HtmlWebpackPlugin 插件可以：</strong></p>
+<ul>
+<li><p>自动生成一个index.html文件(可以指定模板来生成)</p>
+</li>
+<li><p><strong>将打包的js文件，自动通过script标签插入到body中</strong></p>
+</li>
+</ul>
+<p>使用 HtmlWebpackPlugin 插件，</p>
+<p><strong>1）安装 HtmlWebpackPlugin 插件</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install html-webpack-plugin --save-dev</span><br></pre></td></tr></table></figure>
+
+<p><strong>2）修改 webpack.config.js 文件中 plugins 配置</strong></p>
+<p>这里的 template 表示根据什么模板来生成index.html 。index.html 中可以删除引入bundle.js 插件会自动引入，另外，我们需要删除之前在output中添加的 publicPath属性，否则插入的script标签中的src可能会有问题</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>)</span><br><span class="line"></span><br><span class="line">---- ...-----</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> HtmlWebpackPlugin(&#123;</span><br><span class="line">            template: <span class="string">'index.html'</span><span class="comment">//指定以 index.html 来生成文件</span></span><br><span class="line">        &#125;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>3）运行 webpack</strong> 报错 可能是 html-webpack-plugin 的问题，根据上面介绍的简单方法修改版本，在运行，就会看到 dist 文件夹自动生成一个 index.html.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;html-webpack-plugin&quot;: &quot;^3.2.0&quot;,</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -342,11 +490,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">工具类</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">工具类</a>
         		</li>
       		
 		</ul>
@@ -561,11 +709,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">html</a>
+                <a href="javascript:void(0)" class="js-tag color4">uml</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">uml</a>
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -597,6 +749,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">more</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">summary</a>
               </li>
              
@@ -622,14 +778,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">more</a>
               </li>
             
             <div class="clearfix"></div>

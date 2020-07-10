@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/06/06/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9B%E9%98%B6/image-20200606213346129.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/06/06/%E5%87%BD%E6%95%B0%E7%9A%84%E8%BF%9B%E9%98%B6/image-20200608094912602.png">
 <meta property="article:published_time" content="2020-06-06T02:35:25.000Z">
-<meta property="article:modified_time" content="2020-06-22T08:14:30.087Z">
+<meta property="article:modified_time" content="2020-07-09T03:12:23.414Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
@@ -264,7 +264,7 @@
 <li>返回值就是函数的返回值,因为它就是调用函数</li>
 </ul>
 <p><strong>apply 的主要应用</strong> ：比如说我们可以利用 apply 借助于数学内置对象求数组最大值 </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">66</span>, <span class="number">3</span>, <span class="number">99</span>, <span class="number">4</span>];</span><br><span class="line"><span class="keyword">var</span> arr1 = [<span class="string">'red'</span>, <span class="string">'pink'</span>];</span><br><span class="line"><span class="comment">// var max = Math.max.apply(null, arr);</span></span><br><span class="line"><span class="keyword">var</span> max = <span class="built_in">Math</span>.max.apply(<span class="built_in">Math</span>, arr); <span class="comment">//this指向调用这个方法的Math,参数是一个数组</span></span><br><span class="line"><span class="keyword">var</span> min = <span class="built_in">Math</span>.min.apply(<span class="built_in">Math</span>, arr);</span><br><span class="line"><span class="built_in">console</span>.log(max, min);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">66</span>, <span class="number">3</span>, <span class="number">99</span>, <span class="number">4</span>];</span><br><span class="line"><span class="keyword">var</span> arr1 = [<span class="string">'red'</span>, <span class="string">'pink'</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> max = <span class="built_in">Math</span>.max.apply(<span class="built_in">Math</span>, arr); <span class="comment">//this指向调用这个方法的Math,参数是一个数组</span></span><br><span class="line"><span class="keyword">var</span> min = <span class="built_in">Math</span>.min.apply(<span class="built_in">Math</span>, arr);</span><br><span class="line"><span class="built_in">console</span>.log(max, min);</span><br></pre></td></tr></table></figure>
 
 <p><strong>3）bind方法</strong></p>
 <p><strong>bind()方法不会调用函数</strong>(需要把改变之后的函数赋给另一个函数)。但是能改变函数内部this指向</p>
@@ -744,6 +744,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
             
             <div class="clearfix"></div>

@@ -6,14 +6,14 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
-  <title>Vue CLI相关 | 晓秋的博客</title>
+  <title>Vue CLI | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="在开发大型项目,需要使用 Vue CLI ，CLI是什么意思? CLI是 Command-Line Interface, 翻译为命令行界面, 但是俗称脚手架。Vue CLI是一个官方发布 vue.js 项目脚手架使用 vue-cli 可以快速搭建 Vue 开发环境以及对应的 webpack配置。">
+  <meta name="description" content="在开发大型项目,需要使用 Vue CLI ，那什么是 CLI? CLI是 Command-Line Interface, 翻译为命令行界面, 但是俗称脚手架。Vue CLI是一个官方发布 vue.js 项目脚手架使用 vue-cli 可以快速搭建 Vue 开发环境以及对应的 webpack配置。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Vue CLI相关">
+<meta property="og:title" content="Vue CLI">
 <meta property="og:url" content="https://futuwxq.github.io/2020/07/10/Vue-CLI%E7%9B%B8%E5%85%B3/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="在开发大型项目,需要使用 Vue CLI ，CLI是什么意思? CLI是 Command-Line Interface, 翻译为命令行界面, 但是俗称脚手架。Vue CLI是一个官方发布 vue.js 项目脚手架使用 vue-cli 可以快速搭建 Vue 开发环境以及对应的 webpack配置。">
+<meta property="og:description" content="在开发大型项目,需要使用 Vue CLI ，那什么是 CLI? CLI是 Command-Line Interface, 翻译为命令行界面, 但是俗称脚手架。Vue CLI是一个官方发布 vue.js 项目脚手架使用 vue-cli 可以快速搭建 Vue 开发环境以及对应的 webpack配置。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/10/Vue-CLI%E7%9B%B8%E5%85%B3/image-20200710165839472.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/10/Vue-CLI%E7%9B%B8%E5%85%B3/image-20200710181254591.png">
@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/10/Vue-CLI%E7%9B%B8%E5%85%B3/image-20200711174530157.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/10/Vue-CLI%E7%9B%B8%E5%85%B3/image-20200711175211882.png">
 <meta property="article:published_time" content="2020-07-10T08:07:05.000Z">
-<meta property="article:modified_time" content="2020-07-11T09:54:47.089Z">
+<meta property="article:modified_time" content="2020-07-12T11:40:35.825Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
@@ -180,7 +180,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Vue CLI相关
+      Vue CLI
     </h1>
   
 
@@ -193,23 +193,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>在开发大型项目,需要使用 Vue CLI ，CLI是什么意思?</p>
+        <p>在开发大型项目,需要使用 Vue CLI ，那什么是 CLI?</p>
 <p>CLI是 Command-Line Interface, 翻译为命令行界面, 但是俗称脚手架。Vue CLI是一个官方发布 vue.js 项目脚手架使用 vue-cli 可以<strong>快速搭建 Vue 开发环境以及对应的 webpack配置</strong>。<a id="more"></a></p>
+<blockquote>
 <p>Vue CLI使用前提 —— Node 、Webpack、npm</p>
+</blockquote>
 <p>因此首先检查是否安装了 NodeJS 和 Webpack。然后检查 Node 和 NPM 的版本，<strong>Node环境要求8.9以上或者更高版本。</strong></p>
-<p><strong>什么是NPM呢?</strong></p>
-<p>NPM 的全称是 Node Package Manager，是一个 NodeJS 包管理和分发工具，已经成为了非官方的发布Node模块（包）的标准。我们会经常使用 NPM 来安装一些开发过程中依赖包.</p>
-<p><strong>cnpm安装</strong></p>
-<p>由于国内直接使用 npm 的官方镜像是非常慢的，这里推荐使用淘宝 NPM 镜像。你可以使用淘宝定制的 cnpm (gzip 压缩支持) 命令行工具代替默认的 npm:</p>
+<p><strong>cnpm安装 国内镜像</strong></p>
+<p>国内直接使用 npm 的官方镜像是非常慢的，推荐使用淘宝 NPM 镜像。你可以使用淘宝定制的 cnpm (gzip 压缩支持) 命令行工具代替默认的 npm:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g cnpm --registry&#x3D;https:&#x2F;&#x2F;registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
 
 <p>这样就可以使用 cnpm 命令来安装模块了：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cnpm install [name]</span><br></pre></td></tr></table></figure>
 
-<h2 id="1-Vue-CLI的使用"><a href="#1-Vue-CLI的使用" class="headerlink" title="1 Vue CLI的使用"></a>1 Vue CLI的使用</h2><h3 id="1-1-安装Vue脚手架"><a href="#1-1-安装Vue脚手架" class="headerlink" title="1.1 安装Vue脚手架"></a>1.1 安装Vue脚手架</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue&#x2F;cli</span><br></pre></td></tr></table></figure>
+<h2 id="1-Vue-CLI的使用"><a href="#1-Vue-CLI的使用" class="headerlink" title="1 Vue CLI的使用"></a>1 Vue CLI的使用</h2><h3 id="1-1-安装Vue脚手架"><a href="#1-1-安装Vue脚手架" class="headerlink" title="1.1 安装Vue脚手架"></a>1.1 安装Vue脚手架</h3><p>安装 Vue CLI3 的版本</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue&#x2F;cli</span><br></pre></td></tr></table></figure>
 
-<p><strong>上面安装的是 Vue CLI3 的版本</strong>，如果需要想按照 Vue CLI2 的方式初始化项目时不可以的。<a href="https://cli.vuejs.org/zh/guide/" target="_blank" rel="noopener">官网</a>中介绍了 <strong>拉取 2.x 模板 (旧版本)</strong></p>
-<p>Vue CLI &gt;= 3 和旧版使用了相同的 vue 命令，所以 Vue CLI 2 (vue-cli) 被覆盖了。如果你仍然需要使用旧版本的 vue init 功能，你可以全局安装一个桥接工具：</p>
+<p>如果想在 Vue CLI3 基础上用 Vue CLI2 ，<a href="https://cli.vuejs.org/zh/guide/" target="_blank" rel="noopener">官网</a>中介绍了 <strong>拉取 2.x 模板 (旧版本)</strong>，可以全局安装一个桥接工具：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">npm install -g @vue&#x2F;cli-init</span><br><span class="line"># &#96;vue init&#96; 的运行效果将会跟 &#96;vue-cli@2.x&#96; 相同</span><br><span class="line">vue init webpack my-project</span><br></pre></td></tr></table></figure>
 
 <p>Vue CLI2初始化项目</p>
@@ -218,20 +218,13 @@
 <p>Vue CLI3初始化项目</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vue create my-project</span><br></pre></td></tr></table></figure>
 
-<h2 id="2-Vue-CLI2详解"><a href="#2-Vue-CLI2详解" class="headerlink" title="2 Vue CLI2详解"></a>2 Vue CLI2详解</h2><h3 id="2-1-Vue-CLI2-初始化项目"><a href="#2-1-Vue-CLI2-初始化项目" class="headerlink" title="2.1 Vue CLI2 初始化项目"></a>2.1 Vue CLI2 初始化项目</h3><p>按照上面的操作，拉取 2.x 模板 (旧版本)，初始化项目，之后会填写一系列信息。</p>
+<h2 id="2-Vue-CLI2详解"><a href="#2-Vue-CLI2详解" class="headerlink" title="2 Vue CLI2详解"></a>2 Vue CLI2详解</h2><h3 id="2-1-Vue-CLI2-初始化项目"><a href="#2-1-Vue-CLI2-初始化项目" class="headerlink" title="2.1 Vue CLI2 初始化项目"></a>2.1 Vue CLI2 初始化项目</h3><p>在CLI 3 上拉取 2.x 模板 (旧版本)，初始化项目，之后会填写一系列信息。信息如下：</p>
 <img src="/2020/07/10/Vue-CLI%E7%9B%B8%E5%85%B3/image-20200710165839472.png" alt="image-20200710165839472" style="zoom:80%;">
 
-<p>1.根据名称创建一个文件夹，存放之后项目的内容，该名称会作为<strong>默认</strong>的项目名称，但是不能包含大写字母</p>
-<p>2.项目名称，不含大写</p>
-<p>3.作者信息，默认从 git 中读取信息</p>
-<p>4.Runtime + Compiler（目前使用这个） 还是 Runtime-only（这个更推荐）</p>
-<p>5.是否配置 vue-router</p>
-<p>6.Eslint检测代码规范</p>
-<p>7.单元测试</p>
-<p>8.e2e测试（end to end）</p>
-<p>9.选择用 yam 或者 npm 安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1.根据名称创建一个文件夹，存放之后项目的内容，该名称会作为**默认**的项目名称，但是不能包含大写字母</span><br><span class="line">2.项目名称，不含大写（项目名称和文件夹不是一个东西）</span><br><span class="line">3.作者信息，默认从 git 中读取信息</span><br><span class="line">4.Runtime + Compiler（目前使用这个） 或者 Runtime-only（这个更推荐）</span><br><span class="line">5.是否配置 vue-router</span><br><span class="line">6.Eslint检测代码规范</span><br><span class="line">7.单元测试</span><br><span class="line">8.e2e测试（end to end）</span><br><span class="line">9.选择用 yam 或者 npm 安装</span><br></pre></td></tr></table></figure>
+
 <p><strong>目录结构详解</strong></p>
-<p>以 package.json 为入口，可以先看看 script 里面的命令。build 和 conig 文件夹都是管理一些配置的，可以自己修改。比如我需要每次运行本地服务器都要打开浏览器时，修改 index.js  里面的 autoOpenBrowser 为 true。</p>
+<p>以 package.json 为入口，可以先看 script 里面的命令。build 和 conig 文件夹都是管理一些配置的，可以自己修改。比如我需要每次运行本地服务器都要打开浏览器时，修改 index.js  里面的 autoOpenBrowser 为 true。</p>
 <img src="/2020/07/10/Vue-CLI%E7%9B%B8%E5%85%B3/image-20200710181254591.png" alt="image-20200710181254591" style="zoom:67%;">
 
 <p><strong>取消Eslint检测代码规范</strong></p>

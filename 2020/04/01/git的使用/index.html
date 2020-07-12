@@ -17,13 +17,14 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/example1.PNG">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/commit.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/image-20200712163858745.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/dig.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/git-diff.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/fork.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/ssh.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/summory.png">
 <meta property="article:published_time" content="2020-04-01T06:57:31.000Z">
-<meta property="article:modified_time" content="2020-06-18T02:56:15.979Z">
+<meta property="article:modified_time" content="2020-07-12T08:42:40.275Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="工具类">
 <meta name="twitter:card" content="summary">
@@ -213,7 +214,7 @@
 <p>清屏 ；Ctrl +l</p>
 <p>新建一个文件 ：touch 文件名</p>
 <p>打开文件 subl 文件名</p>
-<h2 id="第二部分-使用git上传本地文件"><a href="#第二部分-使用git上传本地文件" class="headerlink" title="第二部分 使用git上传本地文件"></a>第二部分 使用git上传本地文件</h2><h3 id="2-1-创建远程仓库"><a href="#2-1-创建远程仓库" class="headerlink" title="2.1 创建远程仓库"></a>2.1 创建远程仓库</h3><p>进入Github 创建一个新的仓库，创建仓库时记得选择为这个仓库初始化一个README,用来介绍你的仓库。</p>
+<h2 id="第二部分-使用git-上传本地文件"><a href="#第二部分-使用git-上传本地文件" class="headerlink" title="第二部分 使用git 上传本地文件"></a>第二部分 使用git 上传本地文件</h2><h3 id="2-1-创建远程仓库"><a href="#2-1-创建远程仓库" class="headerlink" title="2.1 创建远程仓库"></a>2.1 创建远程仓库</h3><p>进入Github 创建一个新的仓库，创建仓库时记得选择为这个仓库初始化一个README,用来介绍你的仓库。</p>
 <h3 id="2-2-创建本地仓库"><a href="#2-2-创建本地仓库" class="headerlink" title="2.2 创建本地仓库"></a>2.2 创建本地仓库</h3><p>以下步骤需要在git Bash上操作，需提前下载。</p>
 <p>如果你本地项目已经存在，但是未和git关联，可以为该项目建一个本地仓库名，直接进入本地仓库 git init 初始化一个与git关联的仓库，如该仓库下出现.git的文件，则说明仓库与git关联成功。</p>
 <p>如果本地没有项目，是从0开始写项目，以下有两种方法新建一个本地仓库 </p>
@@ -238,9 +239,8 @@
 <h3 id="2-5-提交和更新代码"><a href="#2-5-提交和更新代码" class="headerlink" title="2.5 提交和更新代码"></a>2.5 提交和更新代码</h3><p><strong>1）文件存入暂存区</strong> </p>
 <p>git add . （<strong>注意中间空格</strong>）将所有修改添加至暂存区。</p>
 <p>git add 文件名 ：单次添加一份文件。</p>
-<p>git reset 文件名  ：此命令会从暂存区中删除该文件，但它仍在你的工作目录中。</p>
 <p>git diff –stadge :查看暂存区文件修改情况。</p>
-<p>git add之后文件呈现为staged状态。</p>
+<p>git add 之后文件呈现为staged状态。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .&#x2F;&#x2F;把编写的所有文件添加早暂存区</span><br></pre></td></tr></table></figure>
 
 <p><strong>2）查看状态</strong></p>
@@ -279,10 +279,29 @@ create mode 100644 today.txt</code></pre><p><strong>4）上传代码</strong></p
 <p>记得查看远程名称 在GitHub上clone的代码默认远程名是origin</p>
 <figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
 
+<h3 id="2-6-删除文件"><a href="#2-6-删除文件" class="headerlink" title="2.6 删除文件"></a>2.6 删除文件</h3><h4 id="1）删除暂存区的文件"><a href="#1）删除暂存区的文件" class="headerlink" title="1）删除暂存区的文件"></a>1）删除暂存区的文件</h4><p>git add 之后会将文件添加至暂存区，如果我们需要撤销刚刚添加的文件。</p>
+<p><strong>仅仅删除暂存区里的文件</strong></p>
+<p>下面的命令仅仅删除暂存区的文件而已，不会影响工作区的文件</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rm --cache 文件名</span><br><span class="line">git status //会发现刚才删除的文件显示未跟踪</span><br></pre></td></tr></table></figure>
 
+<p><strong>删除暂存区和工作区的文件</strong></p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git rm -f 文件名</span><br><span class="line">git status //nothing</span><br></pre></td></tr></table></figure>
 
+<h4 id="2）删除错误提交的commit"><a href="#2）删除错误提交的commit" class="headerlink" title="2）删除错误提交的commit"></a>2）删除错误提交的commit</h4><p>有时，不仅添加到了暂存区，而且commit 到了版本库，这个时候就不能使用 git rm了，需要使用 git reset 命令。</p>
+<p> git reset有三个选项，–hard、–mixed、–soft。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//仅仅只是撤销已提交的版本库，不会修改暂存区和工作区</span><br><span class="line">git reset --soft 版本库ID</span><br><span class="line"></span><br><span class="line">//仅仅只是撤销已提交的版本库和暂存区，不会修改工作区</span><br><span class="line">git reset --mixed 版本库ID</span><br><span class="line"></span><br><span class="line">//彻底将工作区、暂存区和版本库记录恢复到指定的版本库</span><br><span class="line">git reset --hard 版本库ID</span><br></pre></td></tr></table></figure>
 
-<h3 id="2-3-其他命令"><a href="#2-3-其他命令" class="headerlink" title="2.3 其他命令"></a>2.3 其他命令</h3><p>git还提供许多命令辅助我们解决问题。</p>
+<p> 如果是在提交了后，对工作区的代码做了修改，并且想保留这些修改，那么可以使用 git reset –mixed 版本库ID，注意这个版本库ID应该不是你刚刚提交的版本库ID，而是刚刚提交版本库的上一个版本库。</p>
+<p>如果不想保留这些修改，可以直接使用彻底的恢复命令，git reset –hard 版本库ID。</p>
+<h4 id="3）删除远程仓库的文件"><a href="#3）删除远程仓库的文件" class="headerlink" title="3）删除远程仓库的文件"></a>3）删除远程仓库的文件</h4><p>下面的原理也就是将 工作空间里面的文件 删除，只有上传。</p>
+<figure class="highlight cmd"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">//**删除远程仓库 但不删本地资源**</span><br><span class="line">git rm -r --cached aa</span><br><span class="line"></span><br><span class="line">//本地和远程都删除</span><br><span class="line">git rm -r aa</span><br><span class="line"></span><br><span class="line">//提交</span><br><span class="line">git commit -m “删除aa目录下的<span class="number">1</span>.txt文件”</span><br><span class="line"></span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+
+<p>如果以后都不希望某个文件上传到 github 上面，有如下两个方法</p>
+<p>1）本地也不需要这个文件了： 直接删除文件，下次提交上传之后，远程仓库就没有这个文件了</p>
+<p>2）本地仍然需要，比如一些配置文件，包之类的。这时候可以在仓库下面新建一个 .gitignore 文件。按照红框内写文件的目录就可以了。</p>
+<img src="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/image-20200712163858745.png" alt="image-20200712163858745" style="zoom: 67%;">
+
+<h3 id="2-7其他命令"><a href="#2-7其他命令" class="headerlink" title="2.7其他命令"></a>2.7其他命令</h3><p>git还提供许多命令辅助我们解决问题。</p>
 <p><strong>1）查看版本记录</strong></p>
 <p>git log -p ： 查看记录同时还可以查看相邻两个版本的增删情况。 </p>
 <p>git log –oneline ：  每个版本只显示一行 仅仅包括版本号和commit信息。</p>

@@ -24,8 +24,15 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/11/vue-router/image-20200712212526263.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/11/vue-router/image-20200712212712448.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/11/vue-router/image-20200712213025721.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/11/vue-router/image-20200713092659970.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/11/vue-router/image-20200713092833609.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/11/vue-router/image-20200713112025546.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/11/vue-router/image-20200713203244392.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/11/vue-router/image-20200713203017311.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/11/vue-router/image-20200713210332913.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/11/vue-router/image-20200713210432184.png">
 <meta property="article:published_time" content="2020-07-11T12:32:53.000Z">
-<meta property="article:modified_time" content="2020-07-12T13:32:28.183Z">
+<meta property="article:modified_time" content="2020-07-13T13:07:46.407Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
@@ -220,7 +227,7 @@
 <p>history 接口是 HTML5 新增的, 它有五种模式改变 URL 而不刷新页面</p>
 <ul>
 <li>history.pushState() ：改变 url，页面不刷新，可以点击浏览器左上角的 回退 和 前进 按钮。</li>
-<li>nhistory.replaceState() ：替换 url ，页面不刷新。没有回退和前进</li>
+<li>history.replaceState() ：替换 url ，页面不刷新。没有回退和前进</li>
 <li>history.back()：回退一个url</li>
 <li>history.forward()：前进一个url</li>
 <li>history.go()：参数是整数，history.go(-1)就是回退到上一个 url ，-2 就是回退两个，1 就是 前进到下一个 url</li>
@@ -240,8 +247,81 @@
 
 <p><strong>第三步: 使用路由: 通过<code>&lt;router-link&gt;</code>和<code>&lt;router-view&gt;</code>，</strong>在App.vue中使用路由</p>
 <p><img src="/2020/07/11/vue-router/image-20200712212712448.png" alt="image-20200712212712448" style="zoom:50%;">         <img src="/2020/07/11/vue-router/image-20200712213025721.png" alt="image-20200712213025721" style="zoom:49%;">     </p>
-<p><code>&lt;router-link&gt;</code>: 该标签是一个 vue-router 中已经内置的组件, 它会被渲染成一个<code>&lt;a&gt;</code>标签<br><code>&lt;router-view&gt;</code>: 该标签会根据当前的路径, 动态渲染出不同的组件，他将决定组件在哪里显示，网页的其他内容, 比如顶部的标题/导航, 或者底部的一些版权信息等会和<code>&lt;router-view&gt;</code>处于同一个等级。<br><strong>在路由切换时, 切换的是<code>&lt;router-view&gt;</code>挂载的组件, 其他内容不会发生改变</strong></p>
-<h2 id="2-vue-router-嵌套路由"><a href="#2-vue-router-嵌套路由" class="headerlink" title="2 vue-router 嵌套路由"></a>2 vue-router 嵌套路由</h2><h2 id="3-vue-router-参数传递"><a href="#3-vue-router-参数传递" class="headerlink" title="3 vue-router 参数传递"></a>3 vue-router 参数传递</h2><h2 id="4-vue-router-导航守卫"><a href="#4-vue-router-导航守卫" class="headerlink" title="4 vue-router 导航守卫"></a>4 vue-router 导航守卫</h2><h2 id="5-keep-alive"><a href="#5-keep-alive" class="headerlink" title="5 keep-alive"></a>5 keep-alive</h2>
+<p><code>&lt;router-link&gt;</code>: 该标签是一个 vue-router 中已经内置的组件, 它会被渲染成一个<code>&lt;a&gt;</code>标签<br><code>&lt;router-view&gt;</code>: 该标签会根据当前的路径, 动态渲染出不同的组件，他将决定组件在哪里显示。<br><strong>在路由切换时, 切换的是<code>&lt;router-view&gt;</code>挂载的组件, 其他内容不会发生改变</strong></p>
+<p>下图中，可以看出<code>&lt;router-view&gt;</code>可以放在任意位置，他和任意便签兄弟标签都是同级的。</p>
+<p><img src="/2020/07/11/vue-router/image-20200713092659970.png" alt="image-20200713092659970" style="zoom:67%;">         <img src="/2020/07/11/vue-router/image-20200713092833609.png" alt="image-20200713092833609" style="zoom:50%;"></p>
+<h3 id="1-3-路由默认路径"><a href="#1-3-路由默认路径" class="headerlink" title="1.3 路由默认路径"></a>1.3 路由默认路径</h3><p>当我们打开这个应用的时候，如何让页面默认显示首页组件呢？修改路由的默认配置，在routes中配置了一个映射</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> routes = [</span><br><span class="line">    <span class="comment">// 缺省路径，默认路径</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//path 配置的是根路径: /</span></span><br><span class="line">        <span class="comment">//redirect 重定向到 /home路径</span></span><br><span class="line">        path: <span class="string">'/'</span>,  </span><br><span class="line">        redirect: <span class="string">'/home'</span>  </span><br><span class="line">    &#125;, &#123;</span><br><span class="line">        path: <span class="string">'/home'</span>,</span><br><span class="line">        component: Home</span><br><span class="line">    &#125;</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-4-HTML5的History模式"><a href="#1-4-HTML5的History模式" class="headerlink" title="1.4 HTML5的History模式"></a>1.4 HTML5的History模式</h3><p>默认情况下, 路径的改变使用的 URL 的 location.hash，hash 会在路径前面追加一个 #，但是 history 模式下是没有这个 # 的。如何去掉 url 路径中的 # ？</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//在路由实例中，配置 mode 属性的 为 history</span></span><br><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">    routes,</span><br><span class="line">    mode: <span class="string">'history'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="1-5-router-link-补充"><a href="#1-5-router-link-补充" class="headerlink" title="1.5 router-link 补充"></a>1.5 router-link 补充</h3><p><code>&lt;router-link&gt;</code>的属性：</p>
+<p><strong>1.to ：</strong>指定跳转的路径</p>
+<p><strong>2.tag ：</strong> tag 可以指定<code>&lt;router-link&gt;</code>之后渲染成什么组件,默认是 a 标签</p>
+<p><strong>3.replace：</strong>replace不会留下history记录, 所以指定replace的情况下, 后退键返回不能返回到上一个页面中</p>
+<p><strong>4.active-class</strong>：当<code>&lt;router-link&gt;</code>对应的路由匹配成功时, 会自动给当前元素默认一个<code>router-link-active</code>的class, 设置 active-class 可以修改默认的名称</p>
+<ul>
+<li>如果觉得批量修改<code>active-class</code> 太麻烦，可以配置 router 实例里面的 <code>linkActiveClass</code>属性。</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link to=<span class="string">'/home'</span> tag=<span class="string">'button'</span> replace active-<span class="class"><span class="keyword">class</span></span>=<span class="string">'active'</span>&gt;Home&lt;<span class="regexp">/router-link&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="1-6-路由代码跳转"><a href="#1-6-路由代码跳转" class="headerlink" title="1.6 路由代码跳转"></a>1.6 路由代码跳转</h3><p>之前一直通过<code>&lt;router-link&gt;</code>的 to 属性进行 url 跳转， 但是当页面的跳转需要执行对应的 JavaScript 代码, 就需要使用路由代码跳转。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$router.push(<span class="string">'/home'</span>)</span><br><span class="line"><span class="keyword">this</span>.$router.replace(<span class="string">'/home'</span>) <span class="comment">//this 指向的 VueComponent</span></span><br></pre></td></tr></table></figure>
+<img src="/2020/07/11/vue-router/image-20200713112025546.png" alt="image-20200713112025546" style="zoom:70%;">
+
+<h3 id="1-7-动态路由"><a href="#1-7-动态路由" class="headerlink" title="1.7 动态路由"></a>1.7 动态路由</h3><p>某些情况下，一个页面的 path 路径可能是不确定的，比如我们进入用户界面时，希望是如下的路径：/user/xiaoming，除了有前面的 /user 之外，后面还跟上了<strong>用户的 ID</strong>。这种 path 和 Component 的匹配关系，我们称之为<strong>动态路由</strong>。</p>
+<p><strong>1.在routes 中配置 User 组件 和 ‘/user’的路由映射关系</strong></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	 path: <span class="string">'/user/:id'</span>,</span><br><span class="line">     component: User</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.通过 router-link 的 to 属性实现跳转</strong>，不同的事 id 属性是动态获取的数据，这里需要 v-bind 绑定to属性.</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link :to=<span class="string">"'/user/'+id"</span> tag=<span class="string">'button'</span> &gt;User&lt;<span class="regexp">/router-link&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">------------</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">data()&#123;</span></span><br><span class="line"><span class="regexp">  return &#123;</span></span><br><span class="line"><span class="regexp">    id:'zhangsan'</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;,</span></span><br></pre></td></tr></table></figure>
+
+<p><strong>3.如果想要在 User 组件中显示 id 的属性</strong>，需要使用组件的 $route 属性</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;&#123;&#123;$route.params.Id&#125;&#125;&lt;<span class="regexp">/p&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>拓展一下 <code>$router</code> 和  <code>$route</code>的区别</p>
+<blockquote>
+<p>$router是路由实例 router ，最大的那个路由对象</p>
+</blockquote>
+<blockquote>
+<p>在 routes 里面配置了一系路由关系，$route 是现在正在活跃的路由，也就是当前组件吧</p>
+</blockquote>
+<h3 id="1-8-路由的懒加载"><a href="#1-8-路由的懒加载" class="headerlink" title="1.8 路由的懒加载"></a>1.8 路由的懒加载</h3><p>Vue CLI 默认会将我们的 js 代码打包到如下 3 个 js 文件中。</p>
+<ul>
+<li><p>app.<code>***</code>.js：我们的<strong>业务</strong>代码，</p>
+</li>
+<li><p>manifest.<code>***</code>.js：主要是做<strong>底层支撑</strong>的代码,比如浏览器是不识别模块化的代码，在这个 js 里面会将一些 commonJS  代码转化为浏览器认识的代码。</p>
+</li>
+<li><p>vendor.<code>***</code>.js：主要是<strong>第三方</strong>代码，比如 vue 框架</p>
+</li>
+</ul>
+<p>路由中通常会定义很多不同的页面，如上面所说所有业务代码都会放在 app.<code>***</code>.js 中，这个 js 文件就会很大，用户在第一次加载页面的时候会很慢，可能出现短暂空白的情况。如何避免这种情况呢？</p>
+<p><strong>路由懒加载。</strong></p>
+<p>路由懒加载的主要作用就是将路由对应的组件打包成一个个的 js 代码块，<strong>只有在这个路由被访问到的时候, 才加载对应的组件。</strong></p>
+<p><strong>路由懒加载的方式</strong>：</p>
+<p>方式一: 结合Vue的异步组件和Webpack的代码分析</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const Home &#x3D; resolve &#x3D;&gt; &#123; require.ensure([&#39;..&#x2F;components&#x2F;Home.vue&#39;], () &#x3D;&gt; &#123; resolve(require(&#39;..&#x2F;components&#x2F;Home.vue&#39;)) &#125;)&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>方式二: AMD写法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">const About &#x3D; resolve &#x3D;&gt; require([&#39;..&#x2F;components&#x2F;About.vue&#39;], resolve);</span><br></pre></td></tr></table></figure>
+
+<p>方式三: 在ES6中, 我们可以有更加简单的写法来组织Vue异步组件和Webpack的代码分割</p>
+<p>推荐使用上面定义一个变量保存懒加载的对象。</p>
+<img src="/2020/07/11/vue-router/image-20200713203244392.png" alt="image-20200713203244392" style="zoom:50%;">
+
+<p><strong>路由懒加载的效果</strong></p>
+<p>打包文件之后，发现除了一起出现的 3 个最初的 js 和 3 个组件的 js 之外，每个 js 都有对应的map 文件。map文件的作用：项目打包后，代码都是经过压缩加密的，如果运行时报错，输出的错误信息无法准确得知是哪里的代码报错。有了map就可以像未加密的代码一样，准确的输出是哪一行哪一列有错。想要去除这个 map 文件修改 index.js 配置：<code>productionSourceMap:false</code>。</p>
+<img src="/2020/07/11/vue-router/image-20200713203017311.png" alt="image-20200713203017311" style="zoom:67%;">
+
+<h2 id="2-vue-router-嵌套路由"><a href="#2-vue-router-嵌套路由" class="headerlink" title="2 vue-router 嵌套路由"></a>2 vue-router 嵌套路由</h2><p>嵌套路由就是比如在 home 页面中, 我们希望通过 /home/news 和 /home/message 访问一些内容，一个路径映射一个组件, 访问这两个路径也会分别渲染两个组件。</p>
+<p><strong>实现嵌套路由有两个步骤:</strong><br><strong>1.创建对应的子组件, 并且在路由映射中配置对应的子路由。</strong>在子组件中配置 path 不需要添加 <code>/</code></p>
+<img src="/2020/07/11/vue-router/image-20200713210332913.png" alt="image-20200713210332913" style="zoom:67%;">
+
+<p><strong>2. 在组件内部使用<code>&lt;router-view&gt;</code>标签</strong>, to 属性里的路径要从父组件开始，并加上<code>/</code></p>
+<img src="/2020/07/11/vue-router/image-20200713210432184.png" alt="image-20200713210432184" style="zoom:67%;">
+
+<h2 id="3-vue-router-参数传递"><a href="#3-vue-router-参数传递" class="headerlink" title="3 vue-router 参数传递"></a>3 vue-router 参数传递</h2><h2 id="4-vue-router-导航守卫"><a href="#4-vue-router-导航守卫" class="headerlink" title="4 vue-router 导航守卫"></a>4 vue-router 导航守卫</h2><h2 id="5-keep-alive"><a href="#5-keep-alive" class="headerlink" title="5 keep-alive"></a>5 keep-alive</h2>
       
 
       

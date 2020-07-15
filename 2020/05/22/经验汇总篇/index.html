@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/22/%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB%E7%AF%87/image-20200605212608029.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/22/%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB%E7%AF%87/image-20200519172253019.png">
 <meta property="article:published_time" content="2020-05-22T05:00:16.000Z">
-<meta property="article:modified_time" content="2020-06-20T07:05:43.933Z">
+<meta property="article:modified_time" content="2020-07-15T07:12:31.137Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="summary">
 <meta name="twitter:card" content="summary">
@@ -213,6 +213,8 @@
 
 <h5 id="box-sizing-border-box"><a href="#box-sizing-border-box" class="headerlink" title="box-sizing: border-box"></a>box-sizing: border-box</h5><p>这句语法的意识就是你设置了一个盒子的宽度，那么这个盒子的宽度就会包括content + padding + border。主要是用来不让padding 和 border撑大盒子。</p>
 <p>当我们发现盒子的宽度，border和预期的不一样的时候，就需要考虑 box-sizing 属性。</p>
+<h3 id="盒子处理"><a href="#盒子处理" class="headerlink" title="盒子处理"></a>盒子处理</h3><p>box -shadow ：</p>
+<p>x轴偏移距离（右侧为正方向）| y轴偏移距离（下方为正方向）| 阴影模糊半径 | 阴影扩散半径 | 阴影颜色 </p>
 <h2 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h2><h5 id="1-对象数组的遍历"><a href="#1-对象数组的遍历" class="headerlink" title="1 - 对象数组的遍历"></a>1 - 对象数组的遍历</h5><p>首先对象的强化遍历如下</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> obj) &#123;</span><br><span class="line">    <span class="comment">//k 得到的是属性名</span></span><br><span class="line">    <span class="comment">//obj[k] 得到是属性值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -223,7 +225,20 @@
 <p><code>datas[0][&#39;name&#39;]</code> = ‘张三’</p>
 <h5 id="2-Date类型毫秒数（兼容写法）"><a href="#2-Date类型毫秒数（兼容写法）" class="headerlink" title="2 - Date类型毫秒数（兼容写法）"></a>2 - Date类型毫秒数（兼容写法）</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> date1 = +<span class="keyword">new</span> <span class="built_in">Date</span>(); <span class="comment">// +new Date()  返回的就是总的毫秒数</span></span><br><span class="line"><span class="built_in">console</span>.log(date1);</span><br><span class="line"> <span class="keyword">var</span> inputTime = +<span class="keyword">new</span> <span class="built_in">Date</span>(<span class="string">'2020-5-23 22:00:00'</span>) <span class="comment">//返回的也是毫秒数 相当于一种隐性转换</span></span><br></pre></td></tr></table></figure>
 
-<h5 id="3-双击禁止选中文字"><a href="#3-双击禁止选中文字" class="headerlink" title="3 - 双击禁止选中文字"></a>3 - 双击禁止选中文字</h5><p><strong>4 - 立即执行函数</strong></p>
+<h5 id="3-双击禁止选中文字"><a href="#3-双击禁止选中文字" class="headerlink" title="3 - 双击禁止选中文字"></a>3 - 双击禁止选中文字</h5><h5 id="4-立即执行函数"><a href="#4-立即执行函数" class="headerlink" title="4 - 立即执行函数"></a><strong>4 - 立即执行函数</strong></h5><h5 id="6-JS-中的-Boolean表达式"><a href="#6-JS-中的-Boolean表达式" class="headerlink" title="6 -  JS 中的 Boolean表达式"></a>6 -  JS 中的 Boolean表达式</h5><blockquote>
+<p>在 js 中 if 条件为 <code>null/undefined/0/NaN/&quot;&quot;</code>表达式时，统统被解释为false,此外均为 true</p>
+</blockquote>
+<p><strong>Boolean 表达式</strong><br>一个值为 true 或者 false 的表达式。非 Boolean 表达式也可以被转换为 Boolean 值，但是要遵循下列规则：</p>
+<ul>
+<li><p>所有的对象都被当作 true。</p>
+</li>
+<li><p>当且仅当字符串为空时，该字符串被当作 false。</p>
+</li>
+<li><p>null 和 undefined 被当作 false。</p>
+</li>
+<li><p>当且仅当数字为零时，该数字被当作 false。</p>
+</li>
+</ul>
 <h3 id="ES5中有四种相等算法"><a href="#ES5中有四种相等算法" class="headerlink" title="ES5中有四种相等算法"></a>ES5中有四种相等算法</h3><ul>
 <li>严格相等 (“triple equals” 或 “identity”)，使用 === ,</li>
 <li>宽松相等 (“double equals”) ，使用 ==</li>
@@ -232,7 +247,8 @@
 <p>在比较两件事情时，双等号将执行<strong>类型转换</strong>; 三等号将进行相同的比较，而不进行类型转换 (<strong>如果类型不同, 只是总会返回 false</strong> ); 而Object.is的行为方式与三等号相同，但是对于<strong>NaN和-0和+0进行特殊处理</strong>，所以最后两个不相同，而Object.is（NaN，NaN）将为 <code>true</code>。(<strong>通常使用双等号或三等号将NaN与NaN进行比较，结果为false)</strong></p>
 <p>在下面这个文本框里，通过jQuery获取的数值1（是String型）当我们判断的时候要用宽松等 ，它会自动完成String到Number的转换。    <code>if (n == 1)</code>  或者写 <code>if (n === &#39;1&#39;)</code>  </p>
 <p><img src="/2020/05/22/%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB%E7%AF%87/image-20200601105602174.png" alt="image-20200601105602174"></p>
-<h5 id><a href="#" class="headerlink" title></a></h5><h2 id="易忘记知识点"><a href="#易忘记知识点" class="headerlink" title="易忘记知识点"></a>易忘记知识点</h2><h5 id="1-小数相加是不精确的"><a href="#1-小数相加是不精确的" class="headerlink" title="1) 小数相加是不精确的"></a><strong>1) 小数相加是不精确的</strong></h5><p>有时候我们需要</p>
+<hr>
+<h2 id="易忘记知识点"><a href="#易忘记知识点" class="headerlink" title="易忘记知识点"></a>易忘记知识点</h2><h5 id="1-小数相加是不精确的"><a href="#1-小数相加是不精确的" class="headerlink" title="1) 小数相加是不精确的"></a><strong>1) 小数相加是不精确的</strong></h5><p>有时候我们需要</p>
 <ul>
 <li>向上取整 Math.ceil() ,负数的向下取整是看谁大取谁，而不是看绝对值。</li>
 <li>向下取整 Math.floor()</li>

@@ -26,7 +26,7 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/19/JS%E5%AD%A6%E4%B9%A0-js%E8%AF%AD%E6%B3%952/image-20200519175420074.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/19/JS%E5%AD%A6%E4%B9%A0-js%E8%AF%AD%E6%B3%952/image-20200519180109878.png">
 <meta property="article:published_time" content="2020-05-19T03:09:14.000Z">
-<meta property="article:modified_time" content="2020-07-14T11:41:56.040Z">
+<meta property="article:modified_time" content="2020-07-15T06:47:16.946Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
@@ -318,7 +318,7 @@ fn(1, 2, 3,4);</code></pre><h3 id="7-5-函数的声明方式"><a href="#7-5-函�
 <h2 id="九、预解析"><a href="#九、预解析" class="headerlink" title="**九、预解析"></a>**九、预解析</h2><p>JavaScript代码是由浏览器中的JavaScript解析器来执行的。</p>
 <p>JavaScript 解析器在运行JavaScript代码的时候分为两步:</p>
 <p><strong>1）预解析</strong></p>
-<p> js引擎会把js 里面所有的 var 声明 和 function声明 提升到当前作用域的最前面。</p>
+<p> js 引擎会把 js 里面所有的 <strong>var 声明</strong> 和 <strong>function声明</strong> 提升到当前作用域的最前面。</p>
 <p><strong>2）代码执行</strong></p>
 <p>按照代码书写的顺序从上往下执行。</p>
 <p>预解析分为变量预解析（变量提升） 和 函数预解析（函数提升）。</p>
@@ -329,8 +329,8 @@ fn(1, 2, 3,4);</code></pre><h3 id="7-5-函数的声明方式"><a href="#7-5-函�
 <p>如下代码，控制台不会报错，会显示num 是 undefined。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">console.log(num); &#x2F;&#x2F; undefined</span><br><span class="line">var num &#x3D; 10;</span><br></pre></td></tr></table></figure>
 
-<p>上面就是变量替身的例子，上面的代码在js预解析之后相当于执行了以下代码，因此控制台输出时，变量是声明但未赋值，就是undefined。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var num;</span><br><span class="line"> console.log(num);</span><br><span class="line"> num &#x3D; 10;</span><br></pre></td></tr></table></figure>
+<p>上面就是变量提升的例子，上面的代码在js预解析之后相当于执行了以下代码，因此控制台输出时，变量是声明但未赋值，就是undefined。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var num;</span><br><span class="line"> console.log(num);  &#x2F;&#x2F; undefined</span><br><span class="line"> num &#x3D; 10;</span><br></pre></td></tr></table></figure>
 
 <p><strong>变量声明的函数</strong></p>
 <p>如下代码，控制台报错，fun不是一个function</p>

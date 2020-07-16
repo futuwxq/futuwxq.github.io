@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/11/vue-router/image-20200713210332913.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/11/vue-router/image-20200713210432184.png">
 <meta property="article:published_time" content="2020-07-11T12:32:53.000Z">
-<meta property="article:modified_time" content="2020-07-15T12:18:10.234Z">
+<meta property="article:modified_time" content="2020-07-16T01:49:13.028Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
@@ -239,7 +239,7 @@
 </blockquote>
 <h3 id="1-1-配置-router"><a href="#1-1-配置-router" class="headerlink" title="1.1 配置 router"></a>1.1 配置 router</h3><p>第一步：导入路由对象，并且调用 Vue.use(VueRouter)<br>第二步：创建路由实例，并且传入路由映射配置  (路由配置是放在<strong>routes</strong>上面，下图写错了)<br>第三步：在Vue实例中挂载创建的路由实例（通过 <strong>router</strong> 属性挂载）</p>
 <p><img src="/2020/07/11/vue-router/image-20200712203756629.png" alt="image-20200712203756629" style="zoom: 70%;">      <img src="/2020/07/11/vue-router/image-20200712203818052.png" alt="image-20200712203818052" style="zoom:70%;"></p>
-<h3 id="1-2-使用vue-router的步骤"><a href="#1-2-使用vue-router的步骤" class="headerlink" title="1.2 使用vue-router的步骤:"></a>1.2 使用vue-router的步骤:</h3><p><strong>第一步: 创建路由组件</strong>，在 component 文件夹下创建 vue 组件，并导出</p>
+<h3 id="1-2-vue-router-使用步骤"><a href="#1-2-vue-router-使用步骤" class="headerlink" title="1.2  vue-router 使用步骤"></a>1.2  vue-router 使用步骤</h3><p><strong>第一步: 创建路由组件</strong>，在 component 文件夹下创建 vue 组件，并导出</p>
 <img src="/2020/07/11/vue-router/image-20200712212428360.png" alt="image-20200712212428360" style="zoom:67%;">
 
 <p><strong>第二步: 配置路由映射: 组件和路径映射关系</strong>，在 router 的 routes 配置 url 和 组件的对应关系</p>
@@ -280,13 +280,6 @@
 <p><strong>3.如果想要在 User 组件中显示 id 的属性</strong>，需要使用组件的 $route 属性</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;&#123;&#123;$route.params.Id&#125;&#125;&lt;<span class="regexp">/p&gt;</span></span><br></pre></td></tr></table></figure>
 
-<p><strong>拓展一下 <code>$router</code> 和  <code>$route</code>的区别</strong></p>
-<blockquote>
-<p><code>$router</code>是路由实例 router ，最大的那个路由对象，想要导航到不同URL，则使用<code>$router.push</code>方法</p>
-</blockquote>
-<blockquote>
-<p>在 routes 里面配置了一系路由关系，<code>$route</code> 是现在正在活跃的路由,对象里面可以获取name、path、query、params等 </p>
-</blockquote>
 <h3 id="1-8-路由的懒加载"><a href="#1-8-路由的懒加载" class="headerlink" title="1.8 路由的懒加载"></a>1.8 路由的懒加载</h3><p>Vue CLI 默认会将我们的 js 代码打包到如下 3 个 js 文件中。</p>
 <ul>
 <li><p>app.<code>***</code>.js：我们的<strong>业务</strong>代码，</p>
@@ -401,19 +394,37 @@
 
 <p>tabbar颜色动态控制</p>
 <p>多么沉痛的领悟啊，动态绑定 class 一直出问题，报错是 data 里面的 isActive 未定义。我把 data 写成了 date。哪里报错找哪里，书写错误最有可能。</p>
-<p><strong>4）配置路由</strong></p>
+<p><strong>4）配置路由映射关系</strong></p>
 <p>每个页面（主页、购物车等）称之为视图，在src下新建一个 <strong>views 文件夹</strong>专门存放视图组件。比如 home.vue的路径是 <code>src\views\home\Home.vue</code></p>
 <p>为每个组件配置路由，在 TabBarItem .vue 中每个 TabBarItem 上面绑定点击事件切换路由 。</p>
 <p><strong>动态获取 path</strong></p>
 <p>path 是一个变量，需要通过 props 从TabBar 中获取，在 TabBar  中需要绑定每个组件的 path </p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">  &lt;tab-bar-item path=<span class="string">"/home"</span>&gt;</span><br><span class="line">  </span><br><span class="line">-----</span><br><span class="line"></span><br><span class="line">methods:&#123;</span><br><span class="line">    itemClick()&#123;</span><br><span class="line"><span class="keyword">this</span>.$router.push(<span class="keyword">this</span>.path)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;tab-bar-item path=<span class="string">"/home"</span>&gt;</span><br><span class="line">  </span><br><span class="line">-----</span><br><span class="line"></span><br><span class="line"> <span class="comment">//监听item的点击，通过this.$router.push()替换路由路径</span></span><br><span class="line">methods:&#123;</span><br><span class="line">    itemClick()&#123;</span><br><span class="line"><span class="keyword">this</span>.$router.push(<span class="keyword">this</span>.path)</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>tabbar颜色动态控制</strong></p>
 <p>图片的颜色的控制，是通过 v-if 和 v-else 切换两张照片，文字的颜色是通过 v-bind 绑定 style，并且color的值是通过 props 父组件中传来的。但是两者面临一个判断——怎么表示这个激活状态。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">  <span class="comment">//通过当前路由的path 判断是包含 path</span></span><br><span class="line">  isActive()&#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="keyword">this</span>.$route.path.indexOf(<span class="keyword">this</span>.path) !== <span class="number">-1</span></span><br><span class="line">   &#125;,</span><br><span class="line">getStyle()&#123;</span><br><span class="line">     <span class="keyword">return</span> <span class="keyword">this</span>.isActive ? &#123;<span class="attr">color</span>:<span class="keyword">this</span>.activeColor&#125; : &#123;&#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
-<p><strong>完善：</strong>因为  App 作为最大的组件，仅关于 TabBar 的代码就占了很多，这样不利于代码管理。因此，新建一个 MainTabBar.vue 来管理关于  TabBar 的代码 ，在 App  组件中注册 MainTabBar 组件即可。</p>
-<p>总结：关于路由的配置，  <code>&lt;router-view/&gt;</code>需要在  App.vue 中占位。</p>
+<p><strong>完善：</strong>因为  App 作为最大的组件，仅关于 TabBar 的代码就占了很多，这样不利于代码管理。因此，新建一个 MainTabBar组件  (src\components\MainTabBar\MainTabBar.vue) 来管理关于  TabBar 的代码 ，在 App  组件中注册 MainTabBar 组件即可。</p>
+<p>总结：关于路由的配置，  <code>&lt;router-view/&gt;</code>需要在  App.vue 中占位。插槽的 <code>&lt;slot&gt;</code> 标签最终会被组件里面的元素替代，因此 slot 上无法绑定属性，最好在每一个 slot 外面加一层 div ，样式或者其他属性设置在 div 上面。</p>
+<p><strong>拓展<code>$router</code> 和  <code>$route</code>的区别</strong></p>
+<blockquote>
+<p><code>$router</code>是路由实例 router ，最大的那个路由对象，想要导航到不同URL，则使用<code>$router.push</code>方法</p>
+</blockquote>
+<blockquote>
+<p>在 routes 里面配置了一系路由关系，<code>$route</code> 是现在正在活跃的路由,对象里面可以获取 name、path、query、params等 </p>
+</blockquote>
+<h3 id="5-1-文件路径别名"><a href="#5-1-文件路径别名" class="headerlink" title="5.1 文件路径别名"></a>5.1 文件路径别名</h3><p>文件路径随着文件的移动会发生变化，每个路径修改比较麻烦，我们可以给某些特定文件夹其别名，这样就可以不用修改文件路径。</p>
+<p>在 CLI2 里面  <code>build/webpack.base.config.js</code> 里面可以添加文件路径别名</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">resolve: &#123;</span><br><span class="line">    extensions: [&#39;.js&#39;, &#39;.vue&#39;, &#39;.json&#39;],</span><br><span class="line">    alias: &#123;</span><br><span class="line">        &#39;@&#39;: resolve(&#39;src&#39;),</span><br><span class="line">        &#39;assets&#39;: resolve(&#39;src&#x2F;assets&#39;),</span><br><span class="line">        &#39;components&#39;: resolve(&#39;src&#x2F;components&#39;),</span><br><span class="line">        &#39;views&#39;: resolve(&#39;src&#x2F;views&#39;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+
+<p>使用别名分两种情况</p>
+<p>1）import 导入的路径：直接用别名替代路径</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@import &quot;assets&#x2F;css&#x2F;base.css&quot;;</span><br><span class="line">import MainTabBar from &quot;components&#x2F;MainTabBar&#x2F;MainTabBar&quot;</span><br></pre></td></tr></table></figure>
+
+<p>2）在 html 中 src、href等路径，需要在别名前面加一个 <code>~</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;img  src&#x3D;&quot;~assets&#x2F;img&#x2F;tabbar&#x2F;profile_active.svg&quot; alt&#x3D;&quot;&quot;&gt;</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -517,6 +528,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/07/16/Promise/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Promise
+        
+      </div>
+    </a>
   
   
     <a href="/2020/07/10/Vue-CLI%E7%9B%B8%E5%85%B3/" id="article-nav-older" class="article-nav-link-wrap">

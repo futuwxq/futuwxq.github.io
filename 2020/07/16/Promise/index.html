@@ -6,17 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
-  <title>晓秋的博客</title>
+  <title>Promise | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="better and better">
-<meta property="og:type" content="website">
-<meta property="og:title" content="晓秋的博客">
-<meta property="og:url" content="https://futuwxq.github.io/page/9/index.html">
+  <meta name="description" content="网路请求是一种异步事件，我们通常需要封装一个网络请求函数，并传入一个函数，当网络请求成功后，将数据传入回调函数。但是这种方式对于复杂的网络请求，就会出现回调地域。比如下面这个例子，每个网络请求函数的参数内部都有一个网络请求函数。这样的代码看起来复杂不易维护。Promise可以以一种非常优雅的方式来解决这个问题。   Promise 是异步编程的一种解决方案。 Promise最基本的语法 通过Pro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Promise">
+<meta property="og:url" content="https://futuwxq.github.io/2020/07/16/Promise/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="better and better">
+<meta property="og:description" content="网路请求是一种异步事件，我们通常需要封装一个网络请求函数，并传入一个函数，当网络请求成功后，将数据传入回调函数。但是这种方式对于复杂的网络请求，就会出现回调地域。比如下面这个例子，每个网络请求函数的参数内部都有一个网络请求函数。这样的代码看起来复杂不易维护。Promise可以以一种非常优雅的方式来解决这个问题。   Promise 是异步编程的一种解决方案。 Promise最基本的语法 通过Pro">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/16/Promise/image-20200716102153987.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/16/Promise/image-20200716114620241.png">
+<meta property="article:published_time" content="2020-07-16T02:13:50.000Z">
+<meta property="article:modified_time" content="2020-07-16T12:29:07.776Z">
 <meta property="article:author" content="Better">
+<meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://futuwxq.github.io/2020/07/16/Promise/image-20200716102153987.png">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
   
@@ -152,661 +158,90 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-待整理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-Promise" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/10/%E5%BE%85%E6%95%B4%E7%90%86/">待整理</a>
+    <h1 class="article-title" itemprop="name">
+      Promise
     </h1>
   
 
         
-        <a href="/2020/04/10/%E5%BE%85%E6%95%B4%E7%90%86/" class="archive-article-date">
-  	<time datetime="2020-04-10T06:53:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-10</time>
+        <a href="/2020/07/16/Promise/" class="archive-article-date">
+  	<time datetime="2020-07-16T02:13:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="JQuery-绑定select标签的onchange事件"><a href="#JQuery-绑定select标签的onchange事件" class="headerlink" title="JQuery 绑定select标签的onchange事件"></a>JQuery 绑定select标签的onchange事件</h3><p>通过onchange事件获取用户选择的值，并进行操作</p>
-        
-          <a class="article-more-a" href="/2020/04/10/%E5%BE%85%E6%95%B4%E7%90%86/#more">more >></a>
-        
-      
+        <p>网路请求是一种异步事件，我们通常需要封装一个网络请求函数，并传入一个函数，当网络请求成功后，将数据传入回调函数。但是这种方式对于复杂的网络请求，就会出现回调地域。比如下面这个例子，每个网络请求函数的参数内部都有一个网络请求函数。这样的代码看起来复杂不易维护。Promise可以以一种非常优雅的方式来解决这个问题。</p>
+<img src="/2020/07/16/Promise/image-20200716102153987.png" alt="image-20200716102153987" style="zoom:80%;">
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<p>Promise 是异步编程的一种解决方案。</p>
+<h3 id="Promise最基本的语法"><a href="#Promise最基本的语法" class="headerlink" title="Promise最基本的语法"></a><strong>Promise最基本的语法</strong></h3><p> 通过Promise 的源码，看出new Promise 的时候先是保存了一些状态信息  ，然后执行传入的函数。下面用一个setTimeout 来模仿异步请求的例子来看 Promise 最基本的语法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  创建一个Promise对象</span></span><br><span class="line"> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">         setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">             <span class="comment">// 成功的时候调用 resolve</span></span><br><span class="line">             <span class="comment">// resolve('hello vue')</span></span><br><span class="line"></span><br><span class="line">             <span class="comment">// 失败的时候调用 reject</span></span><br><span class="line">             reject(<span class="string">'error'</span>)</span><br><span class="line">         &#125;, <span class="number">1000</span>)</span><br><span class="line">     <span class="comment">//then 里面传入一个</span></span><br><span class="line">     &#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">         <span class="built_in">console</span>.log(data)</span><br><span class="line">     &#125;)</span><br><span class="line">     .catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">         <span class="built_in">console</span>.log(error)</span><br><span class="line">     &#125;)</span><br></pre></td></tr></table></figure>
 
-      
+<p>在创建Promise时，传入<strong>参数是箭头函数</strong>是固定的（一般我们都会这样写），resolve 和 reject 它们两个也是函数，通常情况下，我们会根据请求数据的成功和失败来决定调用哪一个。</p>
+<p>如果是成功的，那么通常我们会调用 resolve(messsage) ，这个时候，我们后续的 then 会被回调。<br>如果是失败的，那么通常我们会调用 reject(error) ，这个时候，我们后续的 catch 会被回调。 </p>
+<h3 id="Promise-三种状态"><a href="#Promise-三种状态" class="headerlink" title="Promise 三种状态"></a>Promise 三种状态</h3><img src="/2020/07/16/Promise/image-20200716114620241.png" alt="image-20200716114620241" style="zoom:80%;">
 
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/10/%E5%BE%85%E6%95%B4%E7%90%86/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数据库编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BC%96%E7%A8%8B/">数据库编程</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BC%96%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2020-04-09T03:12:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>说到java的数据库编程，就要先要了解一下何为JDBC</p>
-<blockquote>
-<p>JDBC(Java Data Base Connectivity)，是用于在Java语言编程中与数据库连接的API。<br>JDBC是一个规范，它提供了一整套接口，允许以一种可移植的访问底层数据库API。使用JDBC驱动程序来访问数据库，并用于存储数据到数据库中.</p>
-</blockquote>
-<p>下图表现了应用程序，JDBC API，数据库驱动及数据库之间的关系。</p>
-        
-          <a class="article-more-a" href="/2020/04/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BC%96%E7%A8%8B/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BC%96%E7%A8%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-web项目编程步骤" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/07/web%E9%A1%B9%E7%9B%AE%E7%BC%96%E7%A8%8B%E6%AD%A5%E9%AA%A4/">怎么编写一个web项目</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/07/web%E9%A1%B9%E7%9B%AE%E7%BC%96%E7%A8%8B%E6%AD%A5%E9%AA%A4/" class="archive-article-date">
-  	<time datetime="2020-04-07T09:47:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一-、-建立开发环境"><a href="#一-、-建立开发环境" class="headerlink" title="一 、 建立开发环境"></a>一 、 建立开发环境</h2><h3 id="1-1-安装jdk"><a href="#1-1-安装jdk" class="headerlink" title="1.1 安装jdk"></a>1.1 安装jdk</h3><p>找到jdk安装包，依次安装JDK 和 JRE,注意区分自己的是32位还是64位；</p>
-<p>配置环境变量</p>
-        
-          <a class="article-more-a" href="/2020/04/07/web%E9%A1%B9%E7%9B%AE%E7%BC%96%E7%A8%8B%E6%AD%A5%E9%AA%A4/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">工具类</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/07/web%E9%A1%B9%E7%9B%AE%E7%BC%96%E7%A8%8B%E6%AD%A5%E9%AA%A4/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-HTML基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/">HTML基础</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/" class="archive-article-date">
-  	<time datetime="2020-04-07T06:51:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="一-、了解HTML"><a href="#一-、了解HTML" class="headerlink" title="一 、了解HTML"></a>一 、了解HTML</h2><h3 id="1-1-什么是网页"><a href="#1-1-什么是网页" class="headerlink" title="1.1 什么是网页"></a>1.1 什么是网页</h3><p> 网站是指在因特网上根据一定的规则，使用HTML等制作的用于展示特定内容相关的网页集合。</p>
-<p> 网页是指网站中的一页，通常是HTML格式的文件，以.html或.HTML后缀结尾的文件展现出来的都是网页。</p>
-<p> 网页是构成网站的基本元素，它通常由图片、文字、链接、声音、视频等标签元素组成，通过浏览器解析来显示给用户。</p>
-        
-          <a class="article-more-a" href="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-常见正则表达式总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/">常见正则表达式总结</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2020-04-06T12:42:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-06</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="◆正则表达式概述"><a href="#◆正则表达式概述" class="headerlink" title="◆正则表达式概述"></a>◆正则表达式概述</h2><p>正则表达式(regular expression)描述了一种字符串匹配的模式（pattern），可以用来检查一个串是否含有某种子串、将匹配的子串替换或者从某个串中取出符合某个条件的子串等。</p>
-<p>这篇文章就来介绍正则表达式的基础知识，对于正则表达式的匹配，可以用<a href="https://regexr.com" target="_blank" rel="noopener">regexr</a>这个网站进行练习和检验</p>
-        
-          <a class="article-more-a" href="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-UML程序设计方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/05/UML%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95/">UML程序设计方法</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/05/UML%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-04-05T13:25:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Rational rose 工具</p>
-<h2 id="使用-Rational-rose-进行uml设计"><a href="#使用-Rational-rose-进行uml设计" class="headerlink" title="使用 Rational rose 进行uml设计"></a>使用 Rational rose 进行uml设计</h2><h3 id="1-用例图的绘制"><a href="#1-用例图的绘制" class="headerlink" title="1 用例图的绘制"></a>1 用例图的绘制</h3><h3 id="2-如何绘制类图"><a href="#2-如何绘制类图" class="headerlink" title="2 如何绘制类图"></a>2 如何绘制类图</h3>
-        
-          <a class="article-more-a" href="/2020/04/05/UML%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">uml</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/05/UML%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-如何让项目在tomacat运行起来" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/04/%E5%A6%82%E4%BD%95%E8%AE%A9%E9%A1%B9%E7%9B%AE%E5%9C%A8tomacat%E8%BF%90%E8%A1%8C%E8%B5%B7%E6%9D%A5/">如何在tomacat环境下运行项目</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/04/%E5%A6%82%E4%BD%95%E8%AE%A9%E9%A1%B9%E7%9B%AE%E5%9C%A8tomacat%E8%BF%90%E8%A1%8C%E8%B5%B7%E6%9D%A5/" class="archive-article-date">
-  	<time datetime="2020-04-04T05:45:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="如何在tomacat环境下运行项目"><a href="#如何在tomacat环境下运行项目" class="headerlink" title="如何在tomacat环境下运行项目"></a>如何在tomacat环境下运行项目</h2><p>首先要把项目下载下来。</p>
-<p><strong>1. 打开Eclipse，选择“Files”下的“Import”</strong></p>
-<p>根据情况选择，想把项目布置在eclipse的工件空间下，就选择 —Existing Projects into WorkSpace</p>
-        
-          <a class="article-more-a" href="/2020/04/04/%E5%A6%82%E4%BD%95%E8%AE%A9%E9%A1%B9%E7%9B%AE%E5%9C%A8tomacat%E8%BF%90%E8%A1%8C%E8%B5%B7%E6%9D%A5/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">工具类</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/04/%E5%A6%82%E4%BD%95%E8%AE%A9%E9%A1%B9%E7%9B%AE%E5%9C%A8tomacat%E8%BF%90%E8%A1%8C%E8%B5%B7%E6%9D%A5/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-相对路径和绝对路径总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/04/%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E6%80%BB%E7%BB%93/">相对路径和绝对路径总结</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/04/%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2020-04-04T00:09:32.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>文件路径就是文件在电脑中的位置，表示文件路径的方式有两种，相对路径和绝对路径。在网页设计中通过路径可以表示链接，插入图像、Flash、CSS文件的位置。这里总结一下相对路径和绝对路径的问题。</p>
-        
-          <a class="article-more-a" href="/2020/04/04/%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E6%80%BB%E7%BB%93/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">java</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/04/%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%92%8C%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-对圣杯布局和双飞翼布局的理解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/03/%E5%AF%B9%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%E7%9A%84%E7%90%86%E8%A7%A3/">对圣杯布局和双飞翼布局的理解</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/03/%E5%AF%B9%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%E7%9A%84%E7%90%86%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2020-04-03T07:16:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>圣杯布局和双飞翼布局都是为了实现一个两侧宽度固定，中间宽度自适应的三栏布局。</p>
-<blockquote>
-<p>圣杯布局来源于文章In Search of the Holy Grail，而双飞翼布局来源于淘宝UED。虽然两者的实现方法略有差异，不过都遵循了以下要点：</p>
+<p>当我们开发中有异步操作时, 就可以给异步操作包装一个 Promise，异步操作之后会有三种状态</p>
 <ul>
-<li>两侧宽度固定，中间宽度自适应</li>
-<li>中间部分在DOM结构上优先，以便先行渲染</li>
-<li>允许三列中的任意一列成为最高列</li>
+<li><p>pending：等待状态，比如正在进行网络请求，或者定时器没有到时间。</p>
+</li>
+<li><p>fulfill：满足状态，当我们主动回调了resolve时，就处于该状态，并且会回调.then()</p>
+</li>
+<li><p>reject：拒绝状态，当我们主动回调了reject时，就处于该状态，并且会回调.catch()</p>
+</li>
 </ul>
-</blockquote>
-        
-          <a class="article-more-a" href="/2020/04/03/%E5%AF%B9%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%E7%9A%84%E7%90%86%E8%A7%A3/#more">more >></a>
-        
+<p>根据这三种状态 then() 里面可以传入两个参数，一个是 fulfill 状态执行的 resolve，一个是 reject 状态执行的 reject，不需要在使用 catch 去回调错误。比如可以将上面的例子改写成如下代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// resolve('hello world')</span></span><br><span class="line">    reject(<span class="string">'error'</span>)</span><br><span class="line">&#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> <span class="built_in">console</span>.log(data), error =&gt; <span class="built_in">console</span>.log(error))</span><br></pre></td></tr></table></figure>
+
+<h3 id="Promise链式调用"><a href="#Promise链式调用" class="headerlink" title="Promise链式调用"></a>Promise链式调用</h3><p>无论是 then 还是 catch 都可以返回一个Promise对象。因此，Promise 的代码可以进行链式调用：<br>这里我们直接通过Promise包装了一下新的数据，将Promise对象返回了</p>
+<ul>
+<li><p>Promise.resovle()：将数据包装成Promise对象，并且在内部回调resolve()函数</p>
+</li>
+<li><p>Promise.reject()：将数据包装成Promise对象，并且在内部回调reject()函数</p>
+</li>
+</ul>
+<p>也就是 <code>return new Promise(resolve =&gt; resolve(结果))</code> 的简写为 <code>return Promise.resolve(data)</code>,简写为 <code>return data</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 可以直接省略 Promise.resolve，直接 return 数据就可以</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        resolve(<span class="string">'hello word'</span>)</span><br><span class="line">    &#125;, <span class="number">1000</span>)</span><br><span class="line">&#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data + <span class="string">'第一次数据处理'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> data, <span class="string">'1111'</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data + <span class="string">'第二次数据处理'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> data, <span class="string">'2222'</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data + <span class="string">'第三次数据处理'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> data, <span class="string">'3333'</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data, <span class="string">'第四次处理数据'</span>);</span><br><span class="line">&#125;).catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>链式调用中对错误信息的处理</strong></p>
+<p>在链式调用中，哪一层 reject 之后，会直接执行catch，之后层就不会在执行。reject 的简写：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// return Promise.reject('error message')</span></span><br><span class="line"><span class="keyword">throw</span> <span class="string">'error message'</span> <span class="comment">//手动抛出异常</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Promise-all-的使用"><a href="#Promise-all-的使用" class="headerlink" title="Promise all() 的使用"></a>Promise all() 的使用</h3><p>如果我们有这样的需求，就是当两次异步请求完成了，才能进行一些操作。我们可以通过 Promise all() 方法来封装两次请求。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// all([]) 参数是一个数组，里面可以传入两个异步请求</span></span><br><span class="line">        <span class="built_in">Promise</span>.all([</span><br><span class="line">            <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">                setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                    resolve(&#123;</span><br><span class="line">                        name: <span class="string">'lili'</span>,</span><br><span class="line">                        age: <span class="number">15</span></span><br><span class="line">                    &#125;)</span><br><span class="line">                &#125;, <span class="number">2000</span>)</span><br><span class="line">            &#125;),</span><br><span class="line">            <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">                setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                    resolve(&#123;</span><br><span class="line">                        name: <span class="string">'zhangsan'</span>,</span><br><span class="line">                        age: <span class="number">25</span></span><br><span class="line">                    &#125;)</span><br><span class="line">                &#125;, <span class="number">1000</span>)</span><br><span class="line">            &#125;)</span><br><span class="line">        ]).then(<span class="function"><span class="params">results</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(results);</span><br><span class="line">        &#125;)</span><br><span class="line"><span class="comment">//返回一个 results 数组，results[0]保存着第一个 resolve 的值，results[1]保存着第二个 resolve 的值，</span></span><br></pre></td></tr></table></figure>
+
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -817,7 +252,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网页布局</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		
 		</ul>
@@ -826,16 +261,75 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/03/%E5%AF%B9%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%E7%9A%84%E7%90%86%E8%A7%A3/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/07/16/Promise/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/07/11/vue-router/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue router</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -855,89 +349,14 @@
 
 
 
-
-  
-    <article id="post-实现左侧固定，右侧自适应两栏布局的方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/03/%E5%AE%9E%E7%8E%B0%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%8F%B3%E4%BE%A7%E8%87%AA%E9%80%82%E5%BA%94%E4%B8%A4%E6%A0%8F%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E6%B3%95/">实现左侧固定，右侧自适应两栏布局的方法</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/03/%E5%AE%9E%E7%8E%B0%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%8F%B3%E4%BE%A7%E8%87%AA%E9%80%82%E5%BA%94%E4%B8%A4%E6%A0%8F%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-04-03T03:31:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>左侧固定，右侧自适应两栏是css中常见的布局，比如本站的主页，左侧是导航栏，右侧则是主要内容。</p>
-<p>为了方便理解，整篇文章将左侧盒子记为LA，右侧盒子记为RB,模型如下图。</p>
-        
-          <a class="article-more-a" href="/2020/04/03/%E5%AE%9E%E7%8E%B0%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%8F%B3%E4%BE%A7%E8%87%AA%E9%80%82%E5%BA%94%E4%B8%A4%E6%A0%8F%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E6%B3%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网页布局</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/03/%E5%AE%9E%E7%8E%B0%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%8F%B3%E4%BE%A7%E8%87%AA%E9%80%82%E5%BA%94%E4%B8%A4%E6%A0%8F%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/8/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><a class="page-number" href="/page/8/">8</a><span class="page-number current">9</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/10/">Next &amp;raquo;</a>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -960,8 +379,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

@@ -154,6 +154,119 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Promise" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/16/Promise/">Promise</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/16/Promise/" class="archive-article-date">
+  	<time datetime="2020-07-16T02:13:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-16</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>网路请求是一种异步事件，我们通常需要封装一个网络请求函数，并传入一个函数，当网络请求成功后，将数据传入回调函数。但是这种方式对于复杂的网络请求，就会出现回调地域。比如下面这个例子，每个网络请求函数的参数内部都有一个网络请求函数。这样的代码看起来复杂不易维护。Promise可以以一种非常优雅的方式来解决这个问题。</p>
+<img src="/2020/07/16/Promise/image-20200716102153987.png" alt="image-20200716102153987" style="zoom:80%;">
+
+<p>Promise 是异步编程的一种解决方案。</p>
+<h3 id="Promise最基本的语法"><a href="#Promise最基本的语法" class="headerlink" title="Promise最基本的语法"></a><strong>Promise最基本的语法</strong></h3><p> 通过Promise 的源码，看出new Promise 的时候先是保存了一些状态信息  ，然后执行传入的函数。下面用一个setTimeout 来模仿异步请求的例子来看 Promise 最基本的语法。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  创建一个Promise对象</span></span><br><span class="line"> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">         setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">             <span class="comment">// 成功的时候调用 resolve</span></span><br><span class="line">             <span class="comment">// resolve('hello vue')</span></span><br><span class="line"></span><br><span class="line">             <span class="comment">// 失败的时候调用 reject</span></span><br><span class="line">             reject(<span class="string">'error'</span>)</span><br><span class="line">         &#125;, <span class="number">1000</span>)</span><br><span class="line">     <span class="comment">//then 里面传入一个</span></span><br><span class="line">     &#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">         <span class="built_in">console</span>.log(data)</span><br><span class="line">     &#125;)</span><br><span class="line">     .catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">         <span class="built_in">console</span>.log(error)</span><br><span class="line">     &#125;)</span><br></pre></td></tr></table></figure>
+
+<p>在创建Promise时，传入<strong>参数是箭头函数</strong>是固定的（一般我们都会这样写），resolve 和 reject 它们两个也是函数，通常情况下，我们会根据请求数据的成功和失败来决定调用哪一个。</p>
+<p>如果是成功的，那么通常我们会调用 resolve(messsage) ，这个时候，我们后续的 then 会被回调。<br>如果是失败的，那么通常我们会调用 reject(error) ，这个时候，我们后续的 catch 会被回调。 </p>
+<h3 id="Promise-三种状态"><a href="#Promise-三种状态" class="headerlink" title="Promise 三种状态"></a>Promise 三种状态</h3><img src="/2020/07/16/Promise/image-20200716114620241.png" alt="image-20200716114620241" style="zoom:80%;">
+
+<p>当我们开发中有异步操作时, 就可以给异步操作包装一个 Promise，异步操作之后会有三种状态</p>
+<ul>
+<li><p>pending：等待状态，比如正在进行网络请求，或者定时器没有到时间。</p>
+</li>
+<li><p>fulfill：满足状态，当我们主动回调了resolve时，就处于该状态，并且会回调.then()</p>
+</li>
+<li><p>reject：拒绝状态，当我们主动回调了reject时，就处于该状态，并且会回调.catch()</p>
+</li>
+</ul>
+<p>根据这三种状态 then() 里面可以传入两个参数，一个是 fulfill 状态执行的 resolve，一个是 reject 状态执行的 reject，不需要在使用 catch 去回调错误。比如可以将上面的例子改写成如下代码</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// resolve('hello world')</span></span><br><span class="line">    reject(<span class="string">'error'</span>)</span><br><span class="line">&#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> <span class="built_in">console</span>.log(data), error =&gt; <span class="built_in">console</span>.log(error))</span><br></pre></td></tr></table></figure>
+
+<h3 id="Promise链式调用"><a href="#Promise链式调用" class="headerlink" title="Promise链式调用"></a>Promise链式调用</h3><p>无论是 then 还是 catch 都可以返回一个Promise对象。因此，Promise 的代码可以进行链式调用：<br>这里我们直接通过Promise包装了一下新的数据，将Promise对象返回了</p>
+<ul>
+<li><p>Promise.resovle()：将数据包装成Promise对象，并且在内部回调resolve()函数</p>
+</li>
+<li><p>Promise.reject()：将数据包装成Promise对象，并且在内部回调reject()函数</p>
+</li>
+</ul>
+<p>也就是 <code>return new Promise(resolve =&gt; resolve(结果))</code> 的简写为 <code>return Promise.resolve(data)</code>,简写为 <code>return data</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 可以直接省略 Promise.resolve，直接 return 数据就可以</span></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        resolve(<span class="string">'hello word'</span>)</span><br><span class="line">    &#125;, <span class="number">1000</span>)</span><br><span class="line">&#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data + <span class="string">'第一次数据处理'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> data, <span class="string">'1111'</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data + <span class="string">'第二次数据处理'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> data, <span class="string">'2222'</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data + <span class="string">'第三次数据处理'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> data, <span class="string">'3333'</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(data, <span class="string">'第四次处理数据'</span>);</span><br><span class="line">&#125;).catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(error);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>链式调用中对错误信息的处理</strong></p>
+<p>在链式调用中，哪一层 reject 之后，会直接执行catch，之后层就不会在执行。reject 的简写：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// return Promise.reject('error message')</span></span><br><span class="line"><span class="keyword">throw</span> <span class="string">'error message'</span> <span class="comment">//手动抛出异常</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Promise-all-的使用"><a href="#Promise-all-的使用" class="headerlink" title="Promise all() 的使用"></a>Promise all() 的使用</h3><p>如果我们有这样的需求，就是当两次异步请求完成了，才能进行一些操作。我们可以通过 Promise all() 方法来封装两次请求。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// all([]) 参数是一个数组，里面可以传入两个异步请求</span></span><br><span class="line">        <span class="built_in">Promise</span>.all([</span><br><span class="line">            <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">                setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                    resolve(&#123;</span><br><span class="line">                        name: <span class="string">'lili'</span>,</span><br><span class="line">                        age: <span class="number">15</span></span><br><span class="line">                    &#125;)</span><br><span class="line">                &#125;, <span class="number">2000</span>)</span><br><span class="line">            &#125;),</span><br><span class="line">            <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">                setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                    resolve(&#123;</span><br><span class="line">                        name: <span class="string">'zhangsan'</span>,</span><br><span class="line">                        age: <span class="number">25</span></span><br><span class="line">                    &#125;)</span><br><span class="line">                &#125;, <span class="number">1000</span>)</span><br><span class="line">            &#125;)</span><br><span class="line">        ]).then(<span class="function"><span class="params">results</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(results);</span><br><span class="line">        &#125;)</span><br><span class="line"><span class="comment">//返回一个 results 数组，results[0]保存着第一个 resolve 的值，results[1]保存着第二个 resolve 的值，</span></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/16/Promise/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vue-router" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -838,83 +951,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/07/03/Vue-%E6%A8%A1%E5%9D%97%E5%8C%96%E5%BC%80%E5%8F%91/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-leetcode-day4" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/28/leetcode-day4/">leetcode 03 无重复字符的最长子串</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/28/leetcode-day4/" class="archive-article-date">
-  	<time datetime="2020-06-28T13:12:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="滑动窗口（Sliding-Window）算法"><a href="#滑动窗口（Sliding-Window）算法" class="headerlink" title="滑动窗口（Sliding Window）算法"></a>滑动窗口（Sliding Window）算法</h3><h3 id="算法题"><a href="#算法题" class="headerlink" title="算法题"></a>算法题</h3><p>给定一个字符串，请你找出其中不含有重复字符的 <strong>最长子串</strong> 的长度。</p>
-<p><strong>示例 1:</strong></p>
-        
-          <a class="article-more-a" href="/2020/06/28/leetcode-day4/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/28/leetcode-day4/">展开全文 >></a>
         </p>
       
 

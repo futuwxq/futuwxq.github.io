@@ -21,7 +21,7 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/22/%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB%E7%AF%87/image-20200605212608029.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/22/%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB%E7%AF%87/image-20200519172253019.png">
 <meta property="article:published_time" content="2020-05-22T05:00:16.000Z">
-<meta property="article:modified_time" content="2020-07-15T07:12:31.137Z">
+<meta property="article:modified_time" content="2020-07-17T02:01:49.611Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="summary">
 <meta name="twitter:card" content="summary">
@@ -248,6 +248,12 @@
 <p>在下面这个文本框里，通过jQuery获取的数值1（是String型）当我们判断的时候要用宽松等 ，它会自动完成String到Number的转换。    <code>if (n == 1)</code>  或者写 <code>if (n === &#39;1&#39;)</code>  </p>
 <p><img src="/2020/05/22/%E7%BB%8F%E9%AA%8C%E6%B1%87%E6%80%BB%E7%AF%87/image-20200601105602174.png" alt="image-20200601105602174"></p>
 <hr>
+<h2 id="vue"><a href="#vue" class="headerlink" title="vue"></a>vue</h2><p>路由的配置，  <code>&lt;router-view/&gt;</code>需要在  App.vue 中占位。</p>
+<p>插槽的 <code>&lt;slot&gt;</code> 标签最终会被组件里面的元素替代，因此 slot 上无法绑定属性，最好在每一个 slot 外面加一层 div ，样式或者其他属性设置在 div 上面。</p>
+<h3 id="父子通信"><a href="#父子通信" class="headerlink" title="父子通信"></a>父子通信</h3><p>父传子通过 props 传递数据，如果数据是一个变量需要 v-bind 绑定，如果是一个字符串就不需要。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//传递的数据只是字符串</span></span><br><span class="line"> &lt;tab-bar-item path=<span class="string">"/home"</span> activeColor=<span class="string">"yellow"</span> /&gt;</span><br><span class="line"> </span><br><span class="line"> -----</span><br><span class="line"> </span><br><span class="line">props:&#123;</span><br><span class="line">    path:<span class="built_in">String</span>,</span><br><span class="line">    activeColor:&#123;</span><br><span class="line">        type:<span class="built_in">String</span>,</span><br><span class="line">        <span class="keyword">default</span>:<span class="string">'red'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//传递的数据是变量</span></span><br><span class="line"> &lt;tab-bar-item :path=<span class="string">"message"</span> activeColor=<span class="string">"color"</span> /&gt;</span><br><span class="line"> </span><br><span class="line"> -----</span><br><span class="line"> props:&#123;</span><br><span class="line">    path:<span class="built_in">String</span>,</span><br><span class="line">    activeColor:&#123;</span><br><span class="line">        type:<span class="built_in">String</span>,</span><br><span class="line">        <span class="keyword">default</span>:<span class="string">'red'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="组件模板"><a href="#组件模板" class="headerlink" title="组件模板"></a>组件模板</h3><p>组件中的 data 中的变量，如果要在组件其他 option 中使用，需要加上 this. ，这个this指的是一个实例对象。如果在<code>&lt;template&gt;</code>的 html 中使用变量，不需要加上 this </p>
 <h2 id="易忘记知识点"><a href="#易忘记知识点" class="headerlink" title="易忘记知识点"></a>易忘记知识点</h2><h5 id="1-小数相加是不精确的"><a href="#1-小数相加是不精确的" class="headerlink" title="1) 小数相加是不精确的"></a><strong>1) 小数相加是不精确的</strong></h5><p>有时候我们需要</p>
 <ul>
 <li>向上取整 Math.ceil() ,负数的向下取整是看谁大取谁，而不是看绝对值。</li>

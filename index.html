@@ -154,6 +154,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-axios-框架" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/20/axios-%E6%A1%86%E6%9E%B6/">axios 框架</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/20/axios-%E6%A1%86%E6%9E%B6/" class="archive-article-date">
+  	<time datetime="2020-07-20T12:30:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>axios</p>
+<h2 id="axiox请求方式"><a href="#axiox请求方式" class="headerlink" title="axiox请求方式"></a>axiox请求方式</h2><p>支持多种请求方式:<br>axios(config)<br>axios.request(config)<br>axios.get(url[, config])<br>axios.delete(url[, config])<br>axios.head(url[, config])<br>axios.post(url[, data[, config]])<br>axios.put(url[, data[, config]])<br>axios.patch(url[, data[, config]])</p>
+<p><strong>发送get请求</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 请求没有参数</span><br><span class="line">axios.get(&#39;http:&#x2F;&#x2F;123.207.32.32:8000&#x2F;category&#39;)</span><br><span class="line">    .then(res &#x3D;&gt; &#123;</span><br><span class="line">        console.log(res);</span><br><span class="line">    &#125;).catch(err &#x3D;&gt; &#123;</span><br><span class="line">        console.log(err);</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 2. 有请求参数</span><br><span class="line">axios.get(&#39;http:&#x2F;&#x2F;123.207.32.32:8000&#x2F;home&#x2F;data&#39;, &#123;</span><br><span class="line">    params: &#123;</span><br><span class="line">        type: &#39;sell&#39;,</span><br><span class="line">        page: 1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).then(res &#x3D;&gt; &#123;</span><br><span class="line">    console.log(res);</span><br><span class="line">&#125;).catch(err &#x3D;&gt; &#123;</span><br><span class="line">    console.log(err);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>发送并发请求</strong></p>
+<p>有时候 , 我们可能需求同时发送两个请求，使用axios.all, 可以放入多个请求的数组。<br>axios.all([]) 返回的结果是一个数组，使用 axios.spread 可将数组 [res1,res2] 展开为 res1, res2</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">axios.all([axios.get(<span class="string">'http://123.207.32.32:8000/category'</span>),</span><br><span class="line">    axios.get(<span class="string">'http://123.207.32.32:8000/home/data'</span>, &#123; <span class="attr">params</span>: &#123; <span class="attr">type</span>: <span class="string">'sell'</span>, <span class="attr">page</span>: <span class="number">1</span> &#125; &#125;)</span><br><span class="line">]).then(axios.spread(<span class="function">(<span class="params">res1, res2</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res1);</span><br><span class="line">    <span class="built_in">console</span>.log(res2);</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">框架</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/20/axios-%E6%A1%86%E6%9E%B6/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-VueX" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -861,89 +943,6 @@
 
 
   
-    <article id="post-数据分析" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/04/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">数据分析</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/04/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/" class="archive-article-date">
-  	<time datetime="2020-07-04T03:47:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>数据分析的五个关键环节</p>
-<p>第一步，<strong>界定问题</strong>:将原本简单的业务需求背后的原因挖掘出来。</p>
-<ul>
-<li><p>What-什么发生了?</p>
-</li>
-<li><p>Why-为什么会发生?</p>
-</li>
-<li><p>How-我们能做什么让他变得更好?</p></li></ul>
-        
-          <a class="article-more-a" href="/2020/07/04/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">more</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/04/%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1122,6 +1121,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">框架</a>
               </li>
             
             <div class="clearfix"></div>

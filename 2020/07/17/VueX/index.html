@@ -16,11 +16,15 @@
 <meta property="og:description" content="Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。 状态管理：可以理解为将共享变量存储在一个对象里面，多个组件就可以共享这个对象中的所有变量属性。同时这个状态管理是响应式的，也就是组件 A 把某个共享变量修改所有页面的变量都会修改。这比继承看起来更加灵活。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/17/VueX/image-20200717142213119.png">
-<meta property="og:image" content="https://futuwxq.github.io/2020/07/17/VueX/image-20200717141649146.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/17/VueX/image-20200720082507776.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/17/VueX/image-20200717145117074.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/17/VueX/image-20200719103244685.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/17/VueX/image-20200720145402416.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/17/VueX/image-20200720150328553.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/17/VueX/image-20200720152453546.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/07/17/VueX/image-20200720152823554.png">
 <meta property="article:published_time" content="2020-07-17T00:22:30.000Z">
-<meta property="article:modified_time" content="2020-07-19T12:15:42.876Z">
+<meta property="article:modified_time" content="2020-07-20T07:29:05.379Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
@@ -190,7 +194,7 @@
 <p>State：就是我们的状态。（你姑且可以当做就是data中的属性）<br>View：视图层，可以针对State的变化，显示不同的信息。<br>Actions：这里的Actions主要是用户的各种操作：点击、输入等等，会导致状态的改变。</p>
 <p><strong>2）多界面状态管理</strong></p>
 <p>多页面状态下不同界面的 Actions 都想修改同一个状态，Vuex 就像一个大管家管理页面的共享状态，并且设置一些规则，页面按照规定，进行访问和修改等操作。这就是Vuex背后的基本思想。</p>
-<img src="/2020/07/17/VueX/image-20200717141649146.png" alt="image-20200717141649146" style="zoom:80%;">
+<img src="/2020/07/17/VueX/image-20200720082507776.png" alt="image-20200720082507776" style="zoom:80%;">
 
 <h2 id="Vuex-的基本使用"><a href="#Vuex-的基本使用" class="headerlink" title="Vuex 的基本使用"></a>Vuex 的基本使用</h2><p>1.前置工作</p>
 <p>安装 Vuex，在 src 下新建文件（store/store.js），关于 Vuex 的代码在这个文件中管理</p>
@@ -209,12 +213,12 @@
 <p>3.mutation：提交更新数据的方法，必须是同步的(如果需要异步使用action)。每个 mutation 都有一个字符串的 事件类型 (type) 和 一个 回调函数 (handler)。回调函数就是我们实际进行状态更改的地方，并且它会接受 state 作为第一个参数，提交载荷作为第二个参数。</p>
 <p>4.action：和mutation的功能大致相同，不同之处在于：1.）Action 提交的是 mutation，而不是直接变更状态。2）Action 可以包含任意异步操作。</p>
 <p>5.modules：模块化vuex，可以让每一个模块拥有自己的state、mutation、action、getters,使得结构非常清晰，方便管理。</p>
-<h3 id="State单一状态树"><a href="#State单一状态树" class="headerlink" title="State单一状态树"></a>State单一状态树</h3><p>单一状态树木的英文名称是 Single Source of Truth，它希望我们把所有的状态信息都保存到一个 store 对象中，通过<code>$store</code> 获取对象的所有信息。所有的数据都放在 state 里面，通过 <code>store.state</code>去获取数据。</p>
+<h3 id="01-State单一状态树"><a href="#01-State单一状态树" class="headerlink" title="01-State单一状态树"></a>01-State单一状态树</h3><p>单一状态树木的英文名称是 Single Source of Truth，它希望我们把所有的状态信息都保存到一个 store 对象中，通过<code>$store</code> 获取对象的所有信息。所有的数据都放在 state 里面，通过 <code>store.state</code>去获取数据。</p>
 <p>单一状态树能够让我们最直接的方式找到某个状态的片段，而且在之后的维护和调试过程中，也可以非常方便的管理和维护。</p>
 <p>state 属性：vuex的基本数据，用来存储变量。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">state: &#123;</span><br><span class="line">    counter: 1000</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="Getters-基本使用"><a href="#Getters-基本使用" class="headerlink" title="*Getters *基本使用"></a>*<em>Getters *</em>基本使用</h3><p>从基本数据(state)派生的数据，相当于state的计算属性</p>
+<h3 id="02-Getters-基本使用"><a href="#02-Getters-基本使用" class="headerlink" title="*02-Getters *基本使用"></a>*<em>02-Getters *</em>基本使用</h3><p>从基本数据(state)派生的数据，相当于state的计算属性</p>
 <blockquote>
 <p>filter 用法，这是数组的用法，所以需要一个数组调用它，参数是一个箭头函数，箭头函数有两个参数，一个是index 一个是value（每次迭代的数据）</p>
 </blockquote>
@@ -223,7 +227,7 @@
 <h4 id="Getters作为参数和传递参数"><a href="#Getters作为参数和传递参数" class="headerlink" title="Getters作为参数和传递参数"></a><strong>Getters作为参数和传递参数</strong></h4><p>getters 默认是不能传递参数的, 如果希望传递参数, 那么只能让getters本身返回另一个函数。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// getters 作为参数</span></span><br><span class="line">getAgeBelow20Num(state, getters) &#123;</span><br><span class="line">	<span class="keyword">return</span> getters.getAgeBelow20.length</span><br><span class="line">&#125;,</span><br><span class="line"></span><br><span class="line"><span class="comment">// getters 不能传递参数，只能通过返回一个函数，将参数传递给函数</span></span><br><span class="line"><span class="comment">// 比如返回特定 id 的学生信息</span></span><br><span class="line">getStuInforById(state) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params">id</span>) </span>&#123;</span><br><span class="line">    	<span class="keyword">return</span> state.students.find(<span class="function"><span class="params">s</span> =&gt;</span> s.id === id)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">        </span><br><span class="line">-------------</span><br><span class="line"></span><br><span class="line">&lt;h2&gt;不大于<span class="number">20</span>岁人数 ：&#123;&#123;$store.getters.getAgeBelow20Num&#125;&#125;&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">&lt;h2&gt;获取信息 &#123;&#123;$store.getters.getStuInforById(1)&#125;&#125;&lt;/</span>h2&gt;</span><br></pre></td></tr></table></figure>
 
-<h3 id="Mutation状态更新"><a href="#Mutation状态更新" class="headerlink" title="Mutation状态更新"></a>Mutation状态更新</h3><p>Vuex 的 store 状态的更新唯一方式：提交 Mutation。Mutation主要包括两部分：字符串的事件类型（type）；一个回调函数（handler）,该回调函数的第一个参数就是state。</p>
+<h3 id="03-Mutation状态更新"><a href="#03-Mutation状态更新" class="headerlink" title="03-Mutation状态更新"></a>03-Mutation状态更新</h3><p>Vuex 的 store 状态的更新唯一方式：提交 Mutation。Mutation主要包括两部分：字符串的事件类型（type）；一个回调函数（handler）,该回调函数的第一个参数就是state。</p>
 <p><strong>mutation的定义方式：</strong></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// increment 就是字符串的事件类型，后面就是回到函数 function</span></span><br><span class="line">increment(state) &#123;</span><br><span class="line">	state.counter++</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -257,7 +261,37 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> INCREMENT = <span class="string">'increment'</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">const</span> UPDATE_INFOR = <span class="string">'updateInfor'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//导入</span></span><br><span class="line"><span class="keyword">import</span> &#123;INCREMENT&#125; <span class="keyword">from</span> <span class="string">'./store/mutation-types'</span></span><br><span class="line"><span class="keyword">import</span> &#123;UPDATE_INFOR&#125; <span class="keyword">from</span> <span class="string">'./store/mutation-types'</span></span><br><span class="line"></span><br><span class="line">--- store.js ---</span><br><span class="line">mutations: &#123;</span><br><span class="line">    [INCREMENT](state) &#123;</span><br><span class="line">    state.counter++</span><br><span class="line">	&#125;</span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"> --- 组件 ---</span><br><span class="line"> addition()&#123;</span><br><span class="line">	 <span class="keyword">this</span>.$store.commit(INCREMENT)</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
 
 <h4 id="Mutation同步函数"><a href="#Mutation同步函数" class="headerlink" title="Mutation同步函数"></a>Mutation同步函数</h4><p>通常情况下, Vuex要求我们Mutation中的方法必须是同步方法，主要的原因是当我们使用devtools时, 可以devtools可以帮助我们捕捉mutation的快照，但是如果是异步操作, 那么 devtools 将不能很好的追踪这个操作什么时候会被完成。<strong>通常情况下, 不要再mutation中进行异步的操作</strong>。</p>
+<h3 id="04-Action-异步操作"><a href="#04-Action-异步操作" class="headerlink" title="04-Action 异步操作"></a><strong>04-Action</strong> 异步操作</h3><p>在 vue 中，异步操作在 actions 进行，actions 的每个方法 都有两个参数，一个是 context（类似 state），一个是 payload ，传递参数。基本使用方法如下</p>
+<p>1) 在 vue 组件中通过 dispatch 调用 actions 里面的方法</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">    updataInfor()&#123;</span><br><span class="line">      <span class="keyword">this</span>.</span><br><span class="line">      $store.dispatch(<span class="string">'aUpdateInfor'</span>,&#123;<span class="attr">name</span>:<span class="string">'zhangsan'</span>&#125;)</span><br><span class="line">      .then(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">          <span class="built_in">console</span>.log(data)</span><br><span class="line">            ...其他处理</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;,</span><br><span class="line"><span class="comment">//这里的 then 方法是考虑到在异步操作成功之后，可能还需要其他处理，在actions 方法里面返回一个 promise 对象，在组件里面 接受 promise 对象并且处理 then 里面的操作</span></span><br></pre></td></tr></table></figure>
 
+<p>2) 在 actions 里面处理异步操作，将方法 commit 到 mutations 里面的方法，返回一个 promise对象</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">actions: &#123;</span><br><span class="line">    aUpdateInfor(context, payload) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve</span>) =&gt;</span> &#123;</span><br><span class="line">            setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">                <span class="comment">//用 context 提交</span></span><br><span class="line">                context.commit(UPDATE_INFOR, payload)</span><br><span class="line">                <span class="built_in">console</span>.log(payload);</span><br><span class="line">                resolve(<span class="string">'success'</span>)</span><br><span class="line">            &#125;, <span class="number">1000</span>)</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>3）在 mutations 里面修改数据，无论是同步还是异步操作都需要在 mutations 里面操作。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mutations: &#123;</span><br><span class="line">   [UPDATE_INFOR](state, payload) &#123;</span><br><span class="line">       state.infor.name = payload.name</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在 Actions 中, 我们可以将异步操作放在一个Promise中, 并且在成功或者失败后, 调用对应的resolve或reject</p>
+<h3 id="05-Module"><a href="#05-Module" class="headerlink" title="05-Module"></a><strong>05-Module</strong></h3><p>当应用变得非常复杂时, store 对象就有可能变得相当臃肿。为了解决这个问题, Vuex 允许我们将 store 分割成模块(Module), 而每个模块拥有自己的 state、mutations、actions、getters 等 .</p>
+<p>1)module 中 state 用法</p>
+<p>module state 里面的数据通过 <code>$store.state.moudule名字.属性名</code>获取。</p>
+<p>2）module 中 getters 用法</p>
+<p>module 中 getters 名应该与 全局里面 getters 名不一样，这样调用 getters 方法直接使用 <code>$store.getters.getters名</code>，首先会在 Store 对象下的 getters 中查找属性，没有就会在 module 中查找。</p>
+<p>3）module 中 mutations用法 和全局中用法相似</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> moduleA = &#123;</span><br><span class="line">    state: &#123;</span><br><span class="line">        name: <span class="string">'lolo'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    mutations: &#123;</span><br><span class="line">        changeName(state, payload) &#123;</span><br><span class="line">            state.name = payload</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    actions: &#123;</span><br><span class="line">     asyChangeName(context, payload) &#123;</span><br><span class="line">            <span class="built_in">console</span>.log(context);</span><br><span class="line">            setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                context.commit(<span class="string">'changeName'</span>, payload)</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    getters: &#123;</span><br><span class="line">        </span><br><span class="line">       <span class="comment">// 参数 state 指的是 moduleA 下面的 state</span></span><br><span class="line">      fullName(state) &#123;</span><br><span class="line">            <span class="keyword">return</span> state.name + <span class="string">'123'</span> <span class="comment">//lolo123</span></span><br><span class="line">        &#125;,</span><br><span class="line">        </span><br><span class="line"> <span class="comment">//如果想用全局下面的属性可以传入一个 rootstate 对象,通过rootstate 访问 </span></span><br><span class="line">      fullName2(state, getters, rootstate) &#123;</span><br><span class="line">            <span class="keyword">return</span> getters.fullName + rootstate.counter</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">new</span> Vuex.Store(&#123; </span><br><span class="line">   modules: &#123;</span><br><span class="line">        a: moduleA</span><br><span class="line">    &#125;</span><br><span class="line">   &#125;)</span><br><span class="line"></span><br><span class="line">---- <span class="built_in">module</span> 里面 state 的用法---</span><br><span class="line">&lt;h2&gt;&#123;&#123;$store.state.a.name&#125;&#125;&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">&lt;h2&gt;&#123;&#123;$store.getters.fullName&#125;&#125;&lt;/</span>h2&gt;</span><br><span class="line">&lt;h2&gt;&#123;&#123;$store.getters.fullName2&#125;&#125;&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;button @click="changeName"&gt;changeName&lt;/</span>button&gt;</span><br><span class="line">&lt;button @click=<span class="string">"asyChangeName"</span>&gt;asyChangeName&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    changeName()&#123;</span></span><br><span class="line"><span class="regexp">      this.$store.commit('changeName','lisi')</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">    asyChangeName()&#123;</span></span><br><span class="line"><span class="regexp">      this.$store.dispatch('asyChangeName','wuhua')</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>4）module 中 actions 用法</p>
+<p>局部状态通过 context.state 暴露出来，根节点状态则为 context.rootState。下图是在 actions 中答应的 context ，明显比全局中多了 rootState 和 rootGetters 两个属性，通过这两个属性可以获取全局的 state 和 getters。</p>
+<img src="/2020/07/17/VueX/image-20200720145402416.png" alt="image-20200720145402416" style="zoom:80%;">
+
+<p><strong>对象的解构</strong></p>
+<p>下面的 ｛state, commit, rootState｝ ==&gt;  ｛state, commit, rootState｝= context ==&gt; <code>state = context.state, commit = context.commit ,rootState = context.rootState</code></p>
+<img src="/2020/07/17/VueX/image-20200720150328553.png" alt="image-20200720150328553" style="zoom: 80%;">
+
+<h2 id="项目结构"><a href="#项目结构" class="headerlink" title="项目结构"></a>项目结构</h2><p>当我们的 Vuex 帮助我们管理过多的内容时, 好的项目结构可以让我们的代码更加清晰。将 getters 、mutations、actons、以及模块都抽离出来。抽离出来的每个文件要重新导入依赖。</p>
+<p><img src="/2020/07/17/VueX/image-20200720152453546.png" alt="image-20200720152453546"></p>
+<p><strong>抽离之后的 index.js 文件</strong></p>
+<img src="/2020/07/17/VueX/image-20200720152823554.png" alt="image-20200720152823554" style="zoom:80%;">
       
 
       
@@ -360,6 +394,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/07/20/axios-%E6%A1%86%E6%9E%B6/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          axios 框架
+        
+      </div>
+    </a>
   
   
     <a href="/2020/07/16/Promise/" id="article-nav-older" class="article-nav-link-wrap">
@@ -570,6 +613,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">框架</a>
               </li>
             
             <div class="clearfix"></div>

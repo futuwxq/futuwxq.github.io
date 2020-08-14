@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
   <title>axios 框架 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="axios axiox请求方式支持多种请求方式:axios(config)axios.request(config)axios.get(url[, config])axios.delete(url[, config])axios.head(url[, config])axios.post(url[, data[, config]])axios.put(url[, data[, config]])a">
+  <meta name="description" content="wangluo 传统的Ajax是基于XMLHttpRequest(XHR)、jQuery-Ajax、axios  现在网路请求主要有以下几种方式 传统的Ajax是基于XMLHttpRequest(XHR)：配置和调用方式等非常混乱，操作复杂 jQuery-Ajax ：重量级框架，不适合 vue.js 开发的项目 axios：轻量，支持 Promise API ，可以在 node.js 中发送 ht">
 <meta property="og:type" content="article">
 <meta property="og:title" content="axios 框架">
 <meta property="og:url" content="https://futuwxq.github.io/2020/07/20/axios-%E6%A1%86%E6%9E%B6/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="axios axiox请求方式支持多种请求方式:axios(config)axios.request(config)axios.get(url[, config])axios.delete(url[, config])axios.head(url[, config])axios.post(url[, data[, config]])axios.put(url[, data[, config]])a">
+<meta property="og:description" content="wangluo 传统的Ajax是基于XMLHttpRequest(XHR)、jQuery-Ajax、axios  现在网路请求主要有以下几种方式 传统的Ajax是基于XMLHttpRequest(XHR)：配置和调用方式等非常混乱，操作复杂 jQuery-Ajax ：重量级框架，不适合 vue.js 开发的项目 axios：轻量，支持 Promise API ，可以在 node.js 中发送 ht">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-07-20T12:30:28.000Z">
-<meta property="article:modified_time" content="2020-07-20T13:16:15.999Z">
+<meta property="article:modified_time" content="2020-07-22T02:56:21.175Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="框架">
 <meta name="twitter:card" content="summary">
@@ -175,15 +175,40 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>axios</p>
-<h2 id="axiox请求方式"><a href="#axiox请求方式" class="headerlink" title="axiox请求方式"></a>axiox请求方式</h2><p>支持多种请求方式:<br>axios(config)<br>axios.request(config)<br>axios.get(url[, config])<br>axios.delete(url[, config])<br>axios.head(url[, config])<br>axios.post(url[, data[, config]])<br>axios.put(url[, data[, config]])<br>axios.patch(url[, data[, config]])</p>
+        <p>wangluo 传统的Ajax是基于XMLHttpRequest(XHR)、jQuery-Ajax、axios </p>
+<p>现在网路请求主要有以下几种方式</p>
+<p>传统的Ajax是基于XMLHttpRequest(XHR)：配置和调用方式等非常混乱，操作复杂</p>
+<p>jQuery-Ajax ：重量级框架，不适合 vue.js 开发的项目</p>
+<p>axios：轻量，支持 Promise API ，可以在 node.js 中发送 http请求等等<a id="more"></a></p>
+<h2 id="1-axios-请求方式"><a href="#1-axios-请求方式" class="headerlink" title="1-axios 请求方式"></a>1-axios 请求方式</h2><p>支持多种请求方式:<br>axios(config) —– 通过 method 去指定请求方式，post / get</p>
+<p>axios.request(config)<br>axios.get(url[, config])<br>axios.delete(url[, config])<br>axios.head(url[, config])<br>axios.post(url[, data[, config]])<br>axios.put(url[, data[, config]])<br>axios.patch(url[, data[, config]])</p>
 <p><strong>发送get请求</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 请求没有参数</span><br><span class="line">axios.get(&#39;http:&#x2F;&#x2F;123.207.32.32:8000&#x2F;category&#39;)</span><br><span class="line">    .then(res &#x3D;&gt; &#123;</span><br><span class="line">        console.log(res);</span><br><span class="line">    &#125;).catch(err &#x3D;&gt; &#123;</span><br><span class="line">        console.log(err);</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 2. 有请求参数</span><br><span class="line">axios.get(&#39;http:&#x2F;&#x2F;123.207.32.32:8000&#x2F;home&#x2F;data&#39;, &#123;</span><br><span class="line">    params: &#123;</span><br><span class="line">        type: &#39;sell&#39;,</span><br><span class="line">        page: 1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).then(res &#x3D;&gt; &#123;</span><br><span class="line">    console.log(res);</span><br><span class="line">&#125;).catch(err &#x3D;&gt; &#123;</span><br><span class="line">    console.log(err);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 请求没有参数</span></span><br><span class="line">axios.get(<span class="string">'http://123.207.32.32:8000/category'</span>)</span><br><span class="line">    .then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(res);</span><br><span class="line">    &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 2. 有请求参数</span></span><br><span class="line">axios.get(<span class="string">'http://123.207.32.32:8000/home/data'</span>, &#123;</span><br><span class="line">    params: &#123;</span><br><span class="line">        type: <span class="string">'sell'</span>,</span><br><span class="line">        page: <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">&#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
 <p><strong>发送并发请求</strong></p>
 <p>有时候 , 我们可能需求同时发送两个请求，使用axios.all, 可以放入多个请求的数组。<br>axios.all([]) 返回的结果是一个数组，使用 axios.spread 可将数组 [res1,res2] 展开为 res1, res2</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">axios.all([axios.get(<span class="string">'http://123.207.32.32:8000/category'</span>),</span><br><span class="line">    axios.get(<span class="string">'http://123.207.32.32:8000/home/data'</span>, &#123; <span class="attr">params</span>: &#123; <span class="attr">type</span>: <span class="string">'sell'</span>, <span class="attr">page</span>: <span class="number">1</span> &#125; &#125;)</span><br><span class="line">]).then(axios.spread(<span class="function">(<span class="params">res1, res2</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res1);</span><br><span class="line">    <span class="built_in">console</span>.log(res2);</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
 
+<h2 id="2-axios-全局配置"><a href="#2-axios-全局配置" class="headerlink" title="2-axios 全局配置"></a>2-axios 全局配置</h2><p>axios 的请求里面一些参数是固定的，比如 BaseURL ，可以将这些固定的属性抽离出来，放在 axios 的全局配置里面。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// axios 全局设置</span></span><br><span class="line">axios.defaults.baseURL = <span class="string">'http://123.207.32.32:8000'</span></span><br><span class="line">axios.defaults.timeout = <span class="number">5000</span> <span class="comment">//单位是 ms</span></span><br><span class="line"></span><br><span class="line">axios.get(<span class="string">'/category'</span>)</span><br><span class="line">    .then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(res);</span><br><span class="line">    &#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(err);</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+
+<p>请求类型为 get 时，参数放在 params 里面，拼接在 URL 后面。请求对象为 post 的时候，参数放在 request body 里面。</p>
+<h3 id="axios-实例"><a href="#axios-实例" class="headerlink" title="axios 实例"></a>axios 实例</h3><p>为什么要创建 axios 的实例呢?</p>
+<p>当我们从 axios 模块中导入对象时, 使用的实例是默认的实例，在这个实例上设置默认配置是固定的，不能修改了。但是在开发中，某些配置是需要改变的。比如 BaseUrl 会随着服务器地址的不同而改变，并不是唯一的。所以，我们需要创建新的实例, 并且传入属于该实例的配置信息。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建新的实例</span></span><br><span class="line"><span class="keyword">const</span> axiosInstance = axios.create(&#123;</span><br><span class="line">    baseURL: <span class="string">'http://123.207.32.32:8000'</span>,</span><br><span class="line">    timeout: <span class="number">5000</span>,</span><br><span class="line">    headers: &#123;</span><br><span class="line">        <span class="string">'Content-Type'</span>: <span class="string">'application/x-www-form-urlencoded'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 发送网络请求</span></span><br><span class="line">axiosInstance(&#123;</span><br><span class="line">    url: <span class="string">'/category'</span>,</span><br><span class="line">    method: <span class="string">'get'</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res);</span><br><span class="line">&#125;).catch(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="axios-封装"><a href="#axios-封装" class="headerlink" title="axios 封装"></a>axios 封装</h3><p>考虑到 axios 是一个第三方框架，我们需要将 axios 封装起来，哪里需要哪里导入就好。在 src 下新建一个 network 文件夹，用来存放与网络相关的代码。封装一个 request 函数，创建 axios 实例，设置拦截器，返回实例（内含 Promise 对象）。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 方法三 axios 里面封装的有 promise 所以可以直接返回一个 axios 实例 </span></span><br><span class="line"><span class="keyword">export</span> <span class="function"><span class="keyword">function</span> <span class="title">request</span>(<span class="params">options</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> instance = axios.create(&#123;</span><br><span class="line">        baseURL: <span class="string">'http://123.207.32.32:8000'</span>,</span><br><span class="line">        timeout: <span class="number">5000</span></span><br><span class="line">    &#125;)</span><br><span class="line">    <span class="keyword">return</span> instance(options)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">---- main.js ---</span><br><span class="line">    </span><br><span class="line"><span class="comment">// 方法三 接收返回的 promise 对象</span></span><br><span class="line">request(&#123;</span><br><span class="line">    url: <span class="string">'/category'</span></span><br><span class="line">&#125;).then(<span class="function"><span class="params">res</span> =&gt;</span> <span class="built_in">console</span>.log(res)).catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="built_in">console</span>.log(err))</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-axios-拦截器"><a href="#3-axios-拦截器" class="headerlink" title="3-axios 拦截器"></a>3-axios <strong>拦截器</strong></h2><p>拦截器分为请求拦截和响应拦截。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 请求拦截器 </span></span><br><span class="line"><span class="comment">// instance.interceptors.request.use(拦截成功函数，拦截失败函数)</span></span><br><span class="line">instance.interceptors.request.use(<span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'request 拦截成功'</span>);</span><br><span class="line">    </span><br><span class="line">        <span class="comment">// 拦截成果之后需要返回 config</span></span><br><span class="line">        <span class="keyword">return</span> config</span><br><span class="line">    &#125;, err =&gt; &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'request 拦截失败'</span>);</span><br><span class="line">        <span class="keyword">return</span> err</span><br><span class="line">    &#125;)</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 响应拦截器</span></span><br><span class="line">instance.interceptors.response.use(<span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'response success!'</span>);</span><br><span class="line">    <span class="keyword">return</span> config.data</span><br><span class="line">&#125;, err =&gt; &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'response failed'</span>);</span><br><span class="line">    <span class="keyword">return</span> err</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p><strong>请求拦截的作用</strong></p>
+<p>请求成功的拦截：1.比如 config 中的一些信息不符合服务器的要求，可以拦截。2.比如每次发送网络请求的时候，希望在界面中显示一个请求的图标。3.某些网络请求（比如登录（token）），必须携带一些特殊的信息。….</p>
+<p>请求拦截中错误拦截较少，通常都是配置相关的拦截。可能的错误比如请求超时，可以将页面跳转到一个错误页面中。</p>
+<p><strong>响应拦截的作用</strong></p>
+<p>响应的成功拦截中，主要是对数据进行过滤</p>
+<p>响应的失败拦截中，可以根据status判断报错的错误码，跳转到不同的错误提示页面。</p>
 
       
 
@@ -287,6 +312,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/07/21/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE-%E9%A1%B9%E7%9B%AE%E5%88%9D%E5%A7%8B%E5%8C%96/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Vue实战项目 项目初始化 Home
+        
+      </div>
+    </a>
   
   
     <a href="/2020/07/17/VueX/" id="article-nav-older" class="article-nav-link-wrap">
@@ -501,6 +535,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
             
             <div class="clearfix"></div>

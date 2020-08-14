@@ -154,37 +154,31 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-对圣杯布局和双飞翼布局的理解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-如何高效编写css代码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/03/%E5%AF%B9%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%E7%9A%84%E7%90%86%E8%A7%A3/">对圣杯布局和双飞翼布局的理解</a>
+      <a class="article-title" href="/2020/04/12/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E7%BC%96%E5%86%99css%E4%BB%A3%E7%A0%81/">如何高效编写css代码</a>
     </h1>
   
 
         
-        <a href="/2020/04/03/%E5%AF%B9%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%E7%9A%84%E7%90%86%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2020-04-03T07:16:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
+        <a href="/2020/04/12/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E7%BC%96%E5%86%99css%E4%BB%A3%E7%A0%81/" class="archive-article-date">
+  	<time datetime="2020-04-12T11:07:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>圣杯布局和双飞翼布局都是为了实现一个两侧宽度固定，中间宽度自适应的三栏布局。</p>
-<blockquote>
-<p>圣杯布局来源于文章In Search of the Holy Grail，而双飞翼布局来源于淘宝UED。虽然两者的实现方法略有差异，不过都遵循了以下要点：</p>
-<ul>
-<li>两侧宽度固定，中间宽度自适应</li>
-<li>中间部分在DOM结构上优先，以便先行渲染</li>
-<li>允许三列中的任意一列成为最高列</li>
-</ul>
-</blockquote>
+        <h3 id="一、分层组织css"><a href="#一、分层组织css" class="headerlink" title="一、分层组织css"></a>一、分层组织css</h3><p>一个项目可能有多个css文件，如何合理组织呢？</p>
+<p>常用的一种组织CSS的方法：</p>
+<p><code>base.css + common.css + page.css</code></p>
         
-          <a class="article-more-a" href="/2020/04/03/%E5%AF%B9%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%E7%9A%84%E7%90%86%E8%A7%A3/#more">more >></a>
+          <a class="article-more-a" href="/2020/04/12/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E7%BC%96%E5%86%99css%E4%BB%A3%E7%A0%81/#more">more >></a>
         
       
 
@@ -198,7 +192,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网页布局</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">工具类</a>
         		</li>
       		
 		</ul>
@@ -208,7 +206,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/03/%E5%AF%B9%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%E7%9A%84%E7%90%86%E8%A7%A3/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/04/12/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E7%BC%96%E5%86%99css%E4%BB%A3%E7%A0%81/">展开全文 >></a>
         </p>
       
 
@@ -238,30 +236,32 @@
 
 
   
-    <article id="post-实现左侧固定，右侧自适应两栏布局的方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-js的alert-confirm-prompt用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/03/%E5%AE%9E%E7%8E%B0%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%8F%B3%E4%BE%A7%E8%87%AA%E9%80%82%E5%BA%94%E4%B8%A4%E6%A0%8F%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E6%B3%95/">实现左侧固定，右侧自适应两栏布局的方法</a>
+      <a class="article-title" href="/2020/04/12/js%E7%9A%84alert-confirm-prompt%E7%94%A8%E6%B3%95/">js的alert,confirm,prompt用法</a>
     </h1>
   
 
         
-        <a href="/2020/04/03/%E5%AE%9E%E7%8E%B0%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%8F%B3%E4%BE%A7%E8%87%AA%E9%80%82%E5%BA%94%E4%B8%A4%E6%A0%8F%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-04-03T03:31:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
+        <a href="/2020/04/12/js%E7%9A%84alert-confirm-prompt%E7%94%A8%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-04-12T08:09:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>左侧固定，右侧自适应两栏是css中常见的布局，比如本站的主页，左侧是导航栏，右侧则是主要内容。</p>
-<p>为了方便理解，整篇文章将左侧盒子记为LA，右侧盒子记为RB,模型如下图。</p>
+        <p>html页面简单的三种对话框如下：</p>
+<ol>
+<li><p>alert()，最简单的提示框：</p>
+ <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="string">"你好！"</span>);</span><br></pre></td></tr></table></figure></li></ol>
         
-          <a class="article-more-a" href="/2020/04/03/%E5%AE%9E%E7%8E%B0%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%8F%B3%E4%BE%A7%E8%87%AA%E9%80%82%E5%BA%94%E4%B8%A4%E6%A0%8F%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E6%B3%95/#more">more >></a>
+          <a class="article-more-a" href="/2020/04/12/js%E7%9A%84alert-confirm-prompt%E7%94%A8%E6%B3%95/#more">more >></a>
         
       
 
@@ -275,7 +275,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网页布局</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
@@ -285,7 +285,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/03/%E5%AE%9E%E7%8E%B0%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%8F%B3%E4%BE%A7%E8%87%AA%E9%80%82%E5%BA%94%E4%B8%A4%E6%A0%8F%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E6%B3%95/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/04/12/js%E7%9A%84alert-confirm-prompt%E7%94%A8%E6%B3%95/">展开全文 >></a>
         </p>
       
 
@@ -315,31 +315,106 @@
 
 
   
-    <article id="post-css居中水平居中和垂直居中问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-头部固定，左侧固定导航，右侧可切换页面 布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/02/css%E5%B1%85%E4%B8%AD%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E5%92%8C%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E9%97%AE%E9%A2%98/">css学习 水平居中和垂直居中总结</a>
+      <a class="article-title" href="/2020/04/11/%E5%A4%B4%E9%83%A8%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%E5%AF%BC%E8%88%AA%EF%BC%8C%E5%8F%B3%E4%BE%A7%E5%8F%AF%E5%88%87%E6%8D%A2%E9%A1%B5%E9%9D%A2%20%E5%B8%83%E5%B1%80/">头部固定，左侧固定导航，右侧可切换页面 布局</a>
     </h1>
   
 
         
-        <a href="/2020/04/02/css%E5%B1%85%E4%B8%AD%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E5%92%8C%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-04-02T02:44:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-02</time>
+        <a href="/2020/04/11/%E5%A4%B4%E9%83%A8%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%E5%AF%BC%E8%88%AA%EF%BC%8C%E5%8F%B3%E4%BE%A7%E5%8F%AF%E5%88%87%E6%8D%A2%E9%A1%B5%E9%9D%A2%20%E5%B8%83%E5%B1%80/" class="archive-article-date">
+  	<time datetime="2020-04-11T12:23:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-11</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="第一部分-水平居中"><a href="#第一部分-水平居中" class="headerlink" title="第一部分 水平居中"></a>第一部分 水平居中</h2><h3 id="1-1-行内元素的水平居中"><a href="#1-1-行内元素的水平居中" class="headerlink" title="1.1 行内元素的水平居中"></a>1.1 行内元素的水平居中</h3><blockquote>
-<p>何为内联元素，内联元素又名行内元素(inline element),通常会涉及到的属性是display:inline;内联元素的显示,都在同一行按从左至右的顺序显示，不单独占一行。</p>
-</blockquote>
+        <p>这篇文章主要讲如何实现————头部固定，左侧固定导航，右侧主内容通过左侧的导航切换的布局。<br>实现效果如下图。</p>
         
-          <a class="article-more-a" href="/2020/04/02/css%E5%B1%85%E4%B8%AD%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E5%92%8C%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E9%97%AE%E9%A2%98/#more">more >></a>
+          <a class="article-more-a" href="/2020/04/11/%E5%A4%B4%E9%83%A8%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%E5%AF%BC%E8%88%AA%EF%BC%8C%E5%8F%B3%E4%BE%A7%E5%8F%AF%E5%88%87%E6%8D%A2%E9%A1%B5%E9%9D%A2%20%E5%B8%83%E5%B1%80/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网页布局</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/11/%E5%A4%B4%E9%83%A8%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%E5%AF%BC%E8%88%AA%EF%BC%8C%E5%8F%B3%E4%BE%A7%E5%8F%AF%E5%88%87%E6%8D%A2%E9%A1%B5%E9%9D%A2%20%E5%B8%83%E5%B1%80/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Bootstrap学习" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/11/Bootstrap%E5%AD%A6%E4%B9%A0/">Bootstrap学习</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/11/Bootstrap%E5%AD%A6%E4%B9%A0/" class="archive-article-date">
+  	<time datetime="2020-04-11T03:33:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Bootstrap-折叠（Collapse）插件"><a href="#Bootstrap-折叠（Collapse）插件" class="headerlink" title="Bootstrap 折叠（Collapse）插件"></a>Bootstrap 折叠（Collapse）插件</h3><p>需要引用 bootstrap.js 或压缩版的 bootstrap.min.js。</p>
+<p>1）创建可折叠的分组或折叠面板（accordion）</p>
+        
+          <a class="article-more-a" href="/2020/04/11/Bootstrap%E5%AD%A6%E4%B9%A0/#more">more >></a>
         
       
 
@@ -363,7 +438,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/02/css%E5%B1%85%E4%B8%AD%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E5%92%8C%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E9%97%AE%E9%A2%98/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/04/11/Bootstrap%E5%AD%A6%E4%B9%A0/">展开全文 >></a>
         </p>
       
 
@@ -393,31 +468,29 @@
 
 
   
-    <article id="post-c" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-待整理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/01/c/">c++</a>
+      <a class="article-title" href="/2020/04/10/%E5%BE%85%E6%95%B4%E7%90%86/">待整理</a>
     </h1>
   
 
         
-        <a href="/2020/04/01/c/" class="archive-article-date">
-  	<time datetime="2020-04-01T09:44:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-01</time>
+        <a href="/2020/04/10/%E5%BE%85%E6%95%B4%E7%90%86/" class="archive-article-date">
+  	<time datetime="2020-04-10T06:53:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>C++基础</p>
-<p>c++是在C语言基础上的一个延伸，</p>
-<h3 id="新增数据类型"><a href="#新增数据类型" class="headerlink" title="新增数据类型"></a>新增数据类型</h3>
+        <h3 id="JQuery-绑定select标签的onchange事件"><a href="#JQuery-绑定select标签的onchange事件" class="headerlink" title="JQuery 绑定select标签的onchange事件"></a>JQuery 绑定select标签的onchange事件</h3><p>通过onchange事件获取用户选择的值，并进行操作</p>
         
-          <a class="article-more-a" href="/2020/04/01/c/#more">more >></a>
+          <a class="article-more-a" href="/2020/04/10/%E5%BE%85%E6%95%B4%E7%90%86/#more">more >></a>
         
       
 
@@ -431,7 +504,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">c++</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
@@ -441,7 +514,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/01/c/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/04/10/%E5%BE%85%E6%95%B4%E7%90%86/">展开全文 >></a>
         </p>
       
 
@@ -471,30 +544,110 @@
 
 
   
-    <article id="post-git的使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-数据库编程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/">git的使用</a>
+      <a class="article-title" href="/2020/04/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BC%96%E7%A8%8B/">数据库编程</a>
     </h1>
   
 
         
-        <a href="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/" class="archive-article-date">
-  	<time datetime="2020-04-01T06:57:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-01</time>
+        <a href="/2020/04/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BC%96%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2020-04-09T03:12:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>git是一款版本控制工具，所谓版本控制，也即是任何允许系统性地保存内容版本的系统。 </p>
-<h2 id="第一部分-使用Git基础操作"><a href="#第一部分-使用Git基础操作" class="headerlink" title="第一部分 使用Git基础操作"></a>第一部分 使用Git基础操作</h2><p><strong>1）  查看基础命令和版本</strong> </p>
+        <p>说到java的数据库编程，就要先要了解一下何为JDBC</p>
+<blockquote>
+<p>JDBC(Java Data Base Connectivity)，是用于在Java语言编程中与数据库连接的API。<br>JDBC是一个规范，它提供了一整套接口，允许以一种可移植的访问底层数据库API。使用JDBC驱动程序来访问数据库，并用于存储数据到数据库中.</p>
+</blockquote>
+<p>下图表现了应用程序，JDBC API，数据库驱动及数据库之间的关系。</p>
         
-          <a class="article-more-a" href="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/#more">more >></a>
+          <a class="article-more-a" href="/2020/04/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BC%96%E7%A8%8B/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">数据库</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/09/%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BC%96%E7%A8%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-web项目编程步骤" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/07/web%E9%A1%B9%E7%9B%AE%E7%BC%96%E7%A8%8B%E6%AD%A5%E9%AA%A4/">怎么编写一个web项目</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/07/web%E9%A1%B9%E7%9B%AE%E7%BC%96%E7%A8%8B%E6%AD%A5%E9%AA%A4/" class="archive-article-date">
+  	<time datetime="2020-04-07T09:47:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一-、-建立开发环境"><a href="#一-、-建立开发环境" class="headerlink" title="一 、 建立开发环境"></a>一 、 建立开发环境</h2><h3 id="1-1-安装jdk"><a href="#1-1-安装jdk" class="headerlink" title="1.1 安装jdk"></a>1.1 安装jdk</h3><p>找到jdk安装包，依次安装JDK 和 JRE,注意区分自己的是32位还是64位；</p>
+<p>配置环境变量</p>
+        
+          <a class="article-more-a" href="/2020/04/07/web%E9%A1%B9%E7%9B%AE%E7%BC%96%E7%A8%8B%E6%AD%A5%E9%AA%A4/#more">more >></a>
         
       
 
@@ -518,7 +671,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/04/07/web%E9%A1%B9%E7%9B%AE%E7%BC%96%E7%A8%8B%E6%AD%A5%E9%AA%A4/">展开全文 >></a>
         </p>
       
 
@@ -548,33 +701,31 @@
 
 
   
-    <article id="post-操作系统" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-HTML基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">操作系统基础</a>
+      <a class="article-title" href="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/">HTML基础</a>
     </h1>
   
 
         
-        <a href="/2020/04/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="archive-article-date">
-  	<time datetime="2020-04-01T02:59:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-01</time>
+        <a href="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/" class="archive-article-date">
+  	<time datetime="2020-04-07T06:51:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-07</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-认识操作系统"><a href="#1-认识操作系统" class="headerlink" title="1 认识操作系统"></a>1 认识操作系统</h2><blockquote>
-<p>操作系统（Operating System，简称OS）是管理和控制计算机硬件与软件资源，直接运行在“裸机”上的最基本的系统软件，任何其他软件都必须在操作系统的支持下才能运行。操作系统是用户和计算机的接口，同时也是计算机硬件和其他软件的接口。</p>
-</blockquote>
-<blockquote>
-<p>操作系统的功能包括管理计算机系统的硬件、软件及数据资源，控制程序运行，提供人机交互界面，为其它应用软件提供支持等。</p></blockquote>
+        <h2 id="一-、了解HTML"><a href="#一-、了解HTML" class="headerlink" title="一 、了解HTML"></a>一 、了解HTML</h2><h3 id="1-1-什么是网页"><a href="#1-1-什么是网页" class="headerlink" title="1.1 什么是网页"></a>1.1 什么是网页</h3><p> 网站是指在因特网上根据一定的规则，使用HTML等制作的用于展示特定内容相关的网页集合。</p>
+<p> 网页是指网站中的一页，通常是HTML格式的文件，以.html或.HTML后缀结尾的文件展现出来的都是网页。</p>
+<p> 网页是构成网站的基本元素，它通常由图片、文字、链接、声音、视频等标签元素组成，通过浏览器解析来显示给用户。</p>
         
-          <a class="article-more-a" href="/2020/04/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/#more">more >></a>
+          <a class="article-more-a" href="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/#more">more >></a>
         
       
 
@@ -588,7 +739,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">操作系统</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
         		</li>
       		
 		</ul>
@@ -598,7 +749,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/01/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/04/07/HTML%E5%9F%BA%E7%A1%80/">展开全文 >></a>
         </p>
       
 
@@ -628,32 +779,30 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-常见正则表达式总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/03/31/hello-world/">Hello World</a>
+      <a class="article-title" href="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/">常见正则表达式总结</a>
     </h1>
   
 
         
-        <a href="/2020/03/31/hello-world/" class="archive-article-date">
-  	<time datetime="2020-03-31T02:58:36.916Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-31</time>
+        <a href="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2020-04-06T12:42:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-06</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+        <h2 id="◆正则表达式概述"><a href="#◆正则表达式概述" class="headerlink" title="◆正则表达式概述"></a>◆正则表达式概述</h2><p>正则表达式(regular expression)描述了一种字符串匹配的模式（pattern），可以用来检查一个串是否含有某种子串、将匹配的子串替换或者从某个串中取出符合某个条件的子串等。</p>
+<p>这篇文章就来介绍正则表达式的基础知识，对于正则表达式的匹配，可以用<a href="https://regexr.com" target="_blank" rel="noopener">regexr</a>这个网站进行练习和检验</p>
         
-          <a class="article-more-a" href="/2020/03/31/hello-world/#more">more >></a>
+          <a class="article-more-a" href="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/#more">more >></a>
         
       
 
@@ -662,11 +811,99 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/03/31/hello-world/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/04/06/%E5%B8%B8%E8%A7%81%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E6%80%BB%E7%BB%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-UML程序设计方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/05/UML%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95/">UML程序设计方法</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/05/UML%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-04-05T13:25:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Rational rose 工具</p>
+<h2 id="使用-Rational-rose-进行uml设计"><a href="#使用-Rational-rose-进行uml设计" class="headerlink" title="使用 Rational rose 进行uml设计"></a>使用 Rational rose 进行uml设计</h2><h3 id="1-用例图的绘制"><a href="#1-用例图的绘制" class="headerlink" title="1 用例图的绘制"></a>1 用例图的绘制</h3><h3 id="2-如何绘制类图"><a href="#2-如何绘制类图" class="headerlink" title="2 如何绘制类图"></a>2 如何绘制类图</h3>
+        
+          <a class="article-more-a" href="/2020/04/05/UML%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">uml</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/05/UML%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95/">展开全文 >></a>
         </p>
       
 
@@ -698,7 +935,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/9/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span>
+      <a class="extend prev" rel="prev" href="/page/9/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/11/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -878,6 +1115,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
             
             <div class="clearfix"></div>

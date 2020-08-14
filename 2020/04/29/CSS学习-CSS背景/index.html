@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/29/CSS%E5%AD%A6%E4%B9%A0-CSS%E8%83%8C%E6%99%AF/image-20200429215938406.png">
 <meta property="article:published_time" content="2020-04-29T12:41:56.000Z">
-<meta property="article:modified_time" content="2020-04-29T14:03:53.001Z">
+<meta property="article:modified_time" content="2020-07-24T08:07:54.441Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="css">
 <meta name="twitter:card" content="summary">
@@ -290,10 +290,16 @@
 <td>背景图像固定</td>
 </tr>
 </tbody></table>
+<h3 id="background-size"><a href="#background-size" class="headerlink" title="background-size"></a>background-size</h3><p>background-size 设置背景图片大小。图片可以保有其原有的尺寸，或者拉伸到新的尺寸，或者在保持其原有比例的同时缩放到元素的可用空间的尺寸。在二倍图中用的比较多，一般第一个值和图片的width一样，第二个值设置为 auto 或者图片的高度。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* 两个值 *&#x2F;</span><br><span class="line">&#x2F;* 第一个值指定图片的宽度，第二个值指定图片的高度 *&#x2F;</span><br><span class="line">width: 14px;</span><br><span class="line">height: 14px;</span><br><span class="line">background-size: 14px auto</span><br></pre></td></tr></table></figure>
+
 <h3 id="6-背景复合写法"><a href="#6-背景复合写法" class="headerlink" title="6 背景复合写法"></a>6 背景复合写法</h3><p>为了简化背景属性的代码,我们可以将这些属性合并简写在同一个属性background中。从而节约代码量。</p>
 <p>当使用简写属性时,没有特定的书写顺序,一般习惯约定顺序为 :</p>
-<p><strong>background:背景颜色 背景图片地址 背景平铺 背景图像 滚动背景图片位置;</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background: transparent url(image.jpg) repeat-y fixed top ;</span><br></pre></td></tr></table></figure>
+<p>background-color 、background-image 、background-repeat、 、background- attachment 、background-position</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">background: #fff url(..&#x2F;image.png) no-reapt  fixed   top center</span><br></pre></td></tr></table></figure>
+
+<p>一般 background-size 是单独写，这里也可以简写：<strong>position/bg-size</strong> </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">background: url(&quot;~assets&#x2F;img&#x2F;common&#x2F;collect.svg&quot;) 0 0&#x2F;14px 14px;</span><br><span class="line"> &#x2F;&#x2F;第一个 0指的是背景颜色是 initial，第二个0 指的是 position的 x 轴和 y 轴都是0，第一个14指的是x轴的缩放和图片的宽度一样，第二个值可以设为auto，也可以设为图片高度</span><br></pre></td></tr></table></figure>
 
 <p>这是实际开发中,我们更提倡的写法。</p>
 <h3 id="7-背景色半透明"><a href="#7-背景色半透明" class="headerlink" title="7 背景色半透明"></a>7 背景色半透明</h3><p>CSS3为我们提供了背景颜色半透明的效果。</p>
@@ -650,6 +656,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
             
             <div class="clearfix"></div>

@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/06/10/ES6-ES6%E5%9F%BA%E7%A1%80/image-20200610104826860.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/06/10/ES6-ES6%E5%9F%BA%E7%A1%80/image-20200610110517191.png">
 <meta property="article:published_time" content="2020-06-10T01:57:25.000Z">
-<meta property="article:modified_time" content="2020-07-11T12:21:50.691Z">
+<meta property="article:modified_time" content="2020-08-12T12:17:24.850Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
@@ -257,7 +257,7 @@
 <p><strong>建议：在 ES6 开发中，优先使用 const ，只有需要改变某一个标识符的时候才会使用 let。</strong></p>
 <h3 id="3-解构赋值"><a href="#3-解构赋值" class="headerlink" title="3 解构赋值"></a>3 解构赋值</h3><p>ES6中允许从数组中提取值,按照对应位置,对变量赋值。对象也可以实现解构。</p>
 <h5 id="数组解构"><a href="#数组解构" class="headerlink" title="数组解构"></a>数组解构</h5><p>当 <code>[]</code>写在等号左边，就代表着解构，let 里面的 a 、b、c 都是变量</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span>[a,b,c]=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.log(a)</span><br><span class="line"><span class="built_in">console</span><span class="number">.1</span>og (b)</span><br><span class="line"><span class="built_in">console</span>.log(c)</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span>[a,b,c]=[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="built_in">console</span>.log(a)</span><br><span class="line"><span class="built_in">console</span><span class="number">.1</span>og (b)</span><br><span class="line"><span class="built_in">console</span>.log(c)</span><br><span class="line"><span class="keyword">let</span> A = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">...A === [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br></pre></td></tr></table></figure>
 
 <p>如果解构不成功，量的值为undefined。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> [foo] = [] ;</span><br><span class="line"><span class="keyword">let</span> [bar,foo] = [<span class="number">1</span>] ;</span><br><span class="line"><span class="built_in">console</span><span class="number">.1</span>og (bar);<span class="comment">//1</span></span><br><span class="line"><span class="built_in">console</span>.log(c);<span class="comment">//undefined</span></span><br></pre></td></tr></table></figure>
@@ -304,7 +304,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person1 = &#123;</span><br><span class="line">    name: <span class="string">"p1"</span>,</span><br><span class="line">    sayThis: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
 <p>person2的写法，使用了箭头函数，箭头函数的this指向当前的执行环境，这里当然是window对象，箭头函数并没有自己的this值，它的this继承自外围作用域。</p>
-<h2 id="ES6-内置对象扩展"><a href="#ES6-内置对象扩展" class="headerlink" title="ES6 内置对象扩展"></a>ES6 内置对象扩展</h2><h3 id="6-Array-扩展运算符"><a href="#6-Array-扩展运算符" class="headerlink" title="6 Array 扩展运算符**"></a>6 Array 扩展运算符**</h3><h4 id="扩展运算符-展开语法"><a href="#扩展运算符-展开语法" class="headerlink" title="扩展运算符(展开语法)"></a>扩展运算符(展开语法)</h4><p>扩展运算符可以将数组或者对象转为用逗号分隔的参数序列。</p>
+<h2 id="ES6-内置对象扩展"><a href="#ES6-内置对象扩展" class="headerlink" title="ES6 内置对象扩展"></a>ES6 内置对象扩展</h2><h3 id="6-Array-扩展运算符-解构"><a href="#6-Array-扩展运算符-解构" class="headerlink" title="6 Array 扩展运算符 解构**"></a>6 Array 扩展运算符 解构**</h3><h4 id="扩展运算符-展开语法"><a href="#扩展运算符-展开语法" class="headerlink" title="扩展运算符(展开语法)"></a>扩展运算符(展开语法)</h4><p>扩展运算符可以将数组或者对象转为用逗号分隔的参数序列。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> ary = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>];</span><br><span class="line">...ary <span class="comment">// "a", "b", "c"</span></span><br><span class="line"><span class="built_in">console</span>.log(...ary) <span class="comment">// a b c ,被当做log方法的参数分割符，因此不会输出，等价于下面代码</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>)</span><br></pre></td></tr></table></figure>
 
 <h5 id="扩展运算符应用于数组合并"><a href="#扩展运算符应用于数组合并" class="headerlink" title="扩展运算符应用于数组合并"></a>扩展运算符应用于数组合并</h5><p>方法 一：</p>
@@ -698,6 +698,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
             
             <div class="clearfix"></div>

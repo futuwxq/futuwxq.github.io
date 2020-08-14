@@ -154,112 +154,26 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-axios-框架" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-web页面绘制过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/20/axios-%E6%A1%86%E6%9E%B6/">axios 框架</a>
+      <a class="article-title" href="/2020/08/14/web%E9%A1%B5%E9%9D%A2%E7%BB%98%E5%88%B6%E8%BF%87%E7%A8%8B/">前端页面绘制过程</a>
     </h1>
   
 
         
-        <a href="/2020/07/20/axios-%E6%A1%86%E6%9E%B6/" class="archive-article-date">
-  	<time datetime="2020-07-20T12:30:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-20</time>
+        <a href="/2020/08/14/web%E9%A1%B5%E9%9D%A2%E7%BB%98%E5%88%B6%E8%BF%87%E7%A8%8B/" class="archive-article-date">
+  	<time datetime="2020-08-14T03:32:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>axios</p>
-<h2 id="axiox请求方式"><a href="#axiox请求方式" class="headerlink" title="axiox请求方式"></a>axiox请求方式</h2><p>支持多种请求方式:<br>axios(config)<br>axios.request(config)<br>axios.get(url[, config])<br>axios.delete(url[, config])<br>axios.head(url[, config])<br>axios.post(url[, data[, config]])<br>axios.put(url[, data[, config]])<br>axios.patch(url[, data[, config]])</p>
-<p><strong>发送get请求</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F; 请求没有参数</span><br><span class="line">axios.get(&#39;http:&#x2F;&#x2F;123.207.32.32:8000&#x2F;category&#39;)</span><br><span class="line">    .then(res &#x3D;&gt; &#123;</span><br><span class="line">        console.log(res);</span><br><span class="line">    &#125;).catch(err &#x3D;&gt; &#123;</span><br><span class="line">        console.log(err);</span><br><span class="line">    &#125;)</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 2. 有请求参数</span><br><span class="line">axios.get(&#39;http:&#x2F;&#x2F;123.207.32.32:8000&#x2F;home&#x2F;data&#39;, &#123;</span><br><span class="line">    params: &#123;</span><br><span class="line">        type: &#39;sell&#39;,</span><br><span class="line">        page: 1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;).then(res &#x3D;&gt; &#123;</span><br><span class="line">    console.log(res);</span><br><span class="line">&#125;).catch(err &#x3D;&gt; &#123;</span><br><span class="line">    console.log(err);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p><strong>发送并发请求</strong></p>
-<p>有时候 , 我们可能需求同时发送两个请求，使用axios.all, 可以放入多个请求的数组。<br>axios.all([]) 返回的结果是一个数组，使用 axios.spread 可将数组 [res1,res2] 展开为 res1, res2</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">axios.all([axios.get(<span class="string">'http://123.207.32.32:8000/category'</span>),</span><br><span class="line">    axios.get(<span class="string">'http://123.207.32.32:8000/home/data'</span>, &#123; <span class="attr">params</span>: &#123; <span class="attr">type</span>: <span class="string">'sell'</span>, <span class="attr">page</span>: <span class="number">1</span> &#125; &#125;)</span><br><span class="line">]).then(axios.spread(<span class="function">(<span class="params">res1, res2</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(res1);</span><br><span class="line">    <span class="built_in">console</span>.log(res2);</span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
-
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">框架</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/20/axios-%E6%A1%86%E6%9E%B6/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-VueX" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/17/VueX/">VueX</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/17/VueX/" class="archive-article-date">
-  	<time datetime="2020-07-17T00:22:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。</p>
-<p>状态管理：可以理解为将共享变量存储在一个对象里面，多个组件就可以共享这个对象中的所有变量属性。同时这个状态管理是响应式的，也就是组件 A 把某个共享变量修改所有页面的变量都会修改。这比继承看起来更加灵活。</p>
-        
-          <a class="article-more-a" href="/2020/07/17/VueX/#more">more >></a>
         
       
 
@@ -283,7 +197,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/17/VueX/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/08/14/web%E9%A1%B5%E9%9D%A2%E7%BB%98%E5%88%B6%E8%BF%87%E7%A8%8B/">展开全文 >></a>
         </p>
       
 
@@ -313,187 +227,267 @@
 
 
   
-    <article id="post-Promise" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-项目总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/16/Promise/">Promise</a>
+      <a class="article-title" href="/2020/08/13/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/">Vue实战项目 总结</a>
     </h1>
   
 
         
-        <a href="/2020/07/16/Promise/" class="archive-article-date">
-  	<time datetime="2020-07-16T02:13:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-16</time>
+        <a href="/2020/08/13/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/" class="archive-article-date">
+  	<time datetime="2020-08-13T00:34:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-13</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>网路请求是一种异步事件。网络请求通常需要封装一个网络请求函数，这个函数需要传入 url 和 一个 回调函数，当网络请求成功后，将数据传入回调函数进行处理。但是这种方式对于复杂的网络请求，会出现回调地域。比如下面这个例子，每个网络请求函数的参数内部都有一个网络请求函数。这样的代码看起来复杂不易维护。</p>
-        
-          <a class="article-more-a" href="/2020/07/16/Promise/#more">more >></a>
-        
-      
+        <h3 id="报错"><a href="#报错" class="headerlink" title="报错"></a><strong>报错</strong></h3><p>下面的意思是 在 ./src/icons/index.js 中找不到 SvgIcon</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">This dependency was not found:</span><br><span class="line"></span><br><span class="line">* @&#x2F;components&#x2F;content&#x2F;icons&#x2F;SvgIcon in .&#x2F;src&#x2F;icons&#x2F;index.js</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/16/Promise/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue-router" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/11/vue-router/">vue router</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/11/vue-router/" class="archive-article-date">
-  	<time datetime="2020-07-11T12:32:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>路由（routing）就是通过互联的网络把信息从源地址传输到目的地址的活动</p>
-<p>路由器提供了两种机制: 路由和转送</p>
 <ul>
-<li><p>路由是决定数据包从来源到目的地的路径</p>
+<li></li></ul>
+        
+          <a class="article-more-a" href="/2020/08/13/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/13/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Vue实战项目 我的 profile" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/12/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E6%88%91%E7%9A%84%20profile/">Vue实战项目 我的 profile</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/12/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E6%88%91%E7%9A%84%20profile/" class="archive-article-date">
+  	<time datetime="2020-08-12T07:34:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="1-slot-使用"><a href="#1-slot-使用" class="headerlink" title="1 slot 使用"></a>1 slot 使用</h4><p>在 profile 页面，用户登录前和登录后，许多地方不一样。将这些会变化的部分，放在一个 slot 内部。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//默认部分 </span></span><br><span class="line">&lt;slot name=<span class="string">"user-nickname"</span>&gt;</span><br><span class="line">          &lt;div&gt;登录/注册&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>slot&gt;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2020/08/12/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E6%88%91%E7%9A%84%20profile/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/12/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E6%88%91%E7%9A%84%20profile/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Vue实战项目 分类页 category" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/11/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E5%88%86%E7%B1%BB%E9%A1%B5%20category/">Vue实战项目 分类页 category</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/11/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E5%88%86%E7%B1%BB%E9%A1%B5%20category/" class="archive-article-date">
+  	<time datetime="2020-08-11T07:34:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-获取数据"><a href="#1-获取数据" class="headerlink" title="1 获取数据"></a>1 获取数据</h3><p>分析数据结构</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;catagory  (无参数) ——》maitKey、miniWallkey 、title</span><br><span class="line">&#x2F;subcategory (maitKey)  ——》 subcategories ([])</span><br><span class="line">&#x2F;subcategory&#x2F;detail (miniWallkey，type) ——》categoryDetail (&#123;&#125;)</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2020/08/11/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E5%88%86%E7%B1%BB%E9%A1%B5%20category/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/11/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E5%88%86%E7%B1%BB%E9%A1%B5%20category/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Vue实战项目 二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/04/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E4%BA%8C/">Vue实战项目 二</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/04/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E4%BA%8C/" class="archive-article-date">
+  	<time datetime="2020-08-04T07:35:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-04</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-vue-router-路由"><a href="#1-vue-router-路由" class="headerlink" title="1 vue-router 路由"></a>1 vue-router 路由</h3><p>路由懒加载语法；默认路由的设置；<code>&lt;router-view&gt;</code>占位</p>
+<h3 id="2-TabBar-组件"><a href="#2-TabBar-组件" class="headerlink" title="2 TabBar 组件"></a>2 TabBar 组件</h3><ul>
+<li><p>MainTabBar ：和项目相关，指定每个视图的 path ，以及文字的激活状态。这个组件决定了 一个 TabBar 里面有 几个 TabBarItem。</p>
 </li>
-<li><p>转送将输入端的数据转移到合适的输出端</p></li></ul>
+<li><p>TabBar ：独立的组件，内置一个 slot ，和整个 tabBar 的高度等布局有关</p></li></ul>
         
-          <a class="article-more-a" href="/2020/07/11/vue-router/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/11/vue-router/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Vue-CLI相关" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/10/Vue-CLI%E7%9B%B8%E5%85%B3/">Vue CLI</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/10/Vue-CLI%E7%9B%B8%E5%85%B3/" class="archive-article-date">
-  	<time datetime="2020-07-10T08:07:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>在开发大型项目,需要使用 Vue CLI ，那什么是 CLI?</p>
-<p>CLI是 Command-Line Interface, 翻译为命令行界面, 但是俗称脚手架。Vue CLI是一个官方发布 vue.js 项目脚手架使用 vue-cli 可以<strong>快速搭建 Vue 开发环境以及对应的 webpack配置</strong>。</p>
-        
-          <a class="article-more-a" href="/2020/07/10/Vue-CLI%E7%9B%B8%E5%85%B3/#more">more >></a>
+          <a class="article-more-a" href="/2020/08/04/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E4%BA%8C/#more">more >></a>
         
       
 
@@ -517,7 +511,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/10/Vue-CLI%E7%9B%B8%E5%85%B3/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/08/04/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E4%BA%8C/">展开全文 >></a>
         </p>
       
 
@@ -547,266 +541,34 @@
 
 
   
-    <article id="post-算法篇" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-vue-vue响应式原理详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/09/%E7%AE%97%E6%B3%95%E7%AF%87/">算法篇</a>
+      <a class="article-title" href="/2020/08/03/vue-vue%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/">vue vue响应式原理详解</a>
     </h1>
   
 
         
-        <a href="/2020/07/09/%E7%AE%97%E6%B3%95%E7%AF%87/" class="archive-article-date">
-  	<time datetime="2020-07-09T02:04:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-09</time>
+        <a href="/2020/08/03/vue-vue%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/" class="archive-article-date">
+  	<time datetime="2020-08-03T09:31:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-03</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="JS-合并两个数组的方法"><a href="#JS-合并两个数组的方法" class="headerlink" title="JS 合并两个数组的方法"></a>JS 合并两个数组的方法</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a &#x3D; [1,2,3];</span><br><span class="line">var b &#x3D; [4,5,6];</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>concat</li>
-</ol>
-<p>js 的 Array 对象提供了一个叫 concat() 方法，连接两个或更多的数组，原来的数组保持不变，返回一个新数组。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var c &#x3D; a.concat(b);&#x2F;&#x2F;c&#x3D;[1,2,3,4,5,6]</span><br></pre></td></tr></table></figure>
-
-<p>但是数组的多次合并会造成巨大的内存浪费。</p>
-        
-          <a class="article-more-a" href="/2020/07/09/%E7%AE%97%E6%B3%95%E7%AF%87/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/09/%E7%AE%97%E6%B3%95%E7%AF%87/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-leetcode-04-寻找两个正序数组的中位数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/09/leetcode-04-%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/">leetcode 04 寻找两个正序数组的中位数</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/09/leetcode-04-%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/" class="archive-article-date">
-  	<time datetime="2020-07-09T02:01:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>给定两个大小为 m 和 n 的正序（从小到大）数组 nums1 和 nums2。请你找出这两个正序数组的中位数，并且要求算法的时间复杂度为 O(log(m + n))。你可以假设 nums1 和 nums2 不会同时为空。</p>
-</blockquote>
-<p>示例 1:</p>
-        
-          <a class="article-more-a" href="/2020/07/09/leetcode-04-%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/09/leetcode-04-%E5%AF%BB%E6%89%BE%E4%B8%A4%E4%B8%AA%E6%AD%A3%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E4%B8%AD%E4%BD%8D%E6%95%B0/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-目前这个博客系统相改的地方" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/09/%E7%9B%AE%E5%89%8D%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E7%9B%B8%E6%94%B9%E7%9A%84%E5%9C%B0%E6%96%B9/">目前这个博客系统相改的地方</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/09/%E7%9B%AE%E5%89%8D%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E7%9B%B8%E6%94%B9%E7%9A%84%E5%9C%B0%E6%96%B9/" class="archive-article-date">
-  	<time datetime="2020-07-09T01:56:27.931Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>目前这个博客系统相改的地方</p>
-<ol>
-<li>就是有序列表换行问题</li>
-<li>标题问题：</li>
-</ol>
+        <p>Vue 的响应式 ：数据发生变化，界面跟着更新。</p>
+<p>要实现 Vue 响应式 ：</p>
 <ul>
-<li>4级标大写问题</li>
-<li>字体问题，标题的字体感觉很奇怪</li>
-<li>每个标题下面有一条线 ，我觉得 每个二级标题的上面有一条线比较好。相当于划分段落位置。</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/09/%E7%9B%AE%E5%89%8D%E8%BF%99%E4%B8%AA%E5%8D%9A%E5%AE%A2%E7%B3%BB%E7%BB%9F%E7%9B%B8%E6%94%B9%E7%9A%84%E5%9C%B0%E6%96%B9/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
+<li><p>app.message 修改数据，<strong>Vue 内部是如何监听 message 数据的改变</strong></p>
+<ul>
+<li>Object.defineProperty 监听对象属性的改变</li></ul></li></ul>
         
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-认识边缘计算" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/05/%E8%AE%A4%E8%AF%86%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97/">认识边缘计算</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/05/%E8%AE%A4%E8%AF%86%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97/" class="archive-article-date">
-  	<time datetime="2020-07-05T07:00:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>什么是边缘计算呢？</strong></p>
-<blockquote>
-<p>边缘计算是指在靠近物或数据源头的一侧，采用网络、计算、存储、应用核心能力为一体的开放平台，就近提供最近端服务。其应用程序在边缘侧发起，产生更快的网络服务响应，满足行业在实时业务、应用智能、安全与隐私保护等方面的基本需求。边缘计算处于物理实体和工业连接之间，或处于物理实体的顶端。而云端计算，仍然可以访问边缘计算的历史数据。</p></blockquote>
-        
-          <a class="article-more-a" href="/2020/07/05/%E8%AE%A4%E8%AF%86%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97/#more">more >></a>
+          <a class="article-more-a" href="/2020/08/03/vue-vue%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/#more">more >></a>
         
       
 
@@ -820,7 +582,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">more</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
         		</li>
       		
 		</ul>
@@ -830,7 +592,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/05/%E8%AE%A4%E8%AF%86%E8%BE%B9%E7%BC%98%E8%AE%A1%E7%AE%97/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/08/03/vue-vue%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/">展开全文 >></a>
         </p>
       
 
@@ -860,32 +622,268 @@
 
 
   
-    <article id="post-Webpack详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Vue实战项目 细节 补充" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/">Webpack详解</a>
+      <a class="article-title" href="/2020/08/02/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E7%BB%86%E8%8A%82%20%E8%A1%A5%E5%85%85/">Vue实战项目 细节补充</a>
     </h1>
   
 
         
-        <a href="/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2020-07-04T08:23:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-04</time>
+        <a href="/2020/08/02/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E7%BB%86%E8%8A%82%20%E8%A1%A5%E5%85%85/" class="archive-article-date">
+  	<time datetime="2020-08-02T00:34:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-02</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="1-Webpack起步"><a href="#1-Webpack起步" class="headerlink" title="1 Webpack起步"></a>1 Webpack起步</h2><h3 id="1-1-什么是Webpack？"><a href="#1-1-什么是Webpack？" class="headerlink" title="1.1 什么是Webpack？"></a>1.1 什么是Webpack？</h3><blockquote>
-<p>At its core, webpack is a static module bundler for modern JavaScript applications. </p>
-</blockquote>
-<p>从本质上来讲，webpack 是一个现代的 JavaScript 应用的<strong>静态模块打包</strong>工具。也就是说 webpack  用于 js 的模块化和打包，接下来通过这两块来介绍 webpack。</p>
+        <h3 id="1-fsakclick"><a href="#1-fsakclick" class="headerlink" title="1 fsakclick"></a>1 fsakclick</h3><p>在移动端点击有 300ms 延迟，下面是使用 fsakclick 的 ES6 语法</p>
+<p>1）安装</p>
         
-          <a class="article-more-a" href="/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/#more">more >></a>
+          <a class="article-more-a" href="/2020/08/02/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E7%BB%86%E8%8A%82%20%E8%A1%A5%E5%85%85/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/02/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E7%BB%86%E8%8A%82%20%E8%A1%A5%E5%85%85/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Vue实战项目 购物车 cart" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/01/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E8%B4%AD%E7%89%A9%E8%BD%A6%20cart/">Vue实战项目 购物车 Cart</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/01/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E8%B4%AD%E7%89%A9%E8%BD%A6%20cart/" class="archive-article-date">
+  	<time datetime="2020-08-01T00:34:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-获取数据"><a href="#1-获取数据" class="headerlink" title="1 获取数据"></a>1 获取数据</h3><p>在 vuex 中存储了商品数据，mapGetters 辅助函数映射到 computed 中，就可以直接使用 getters 中的属性。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 从 vuex 中导入</span></span><br><span class="line"><span class="keyword">import</span> &#123; mapGetters &#125; <span class="keyword">from</span> <span class="string">"vuex"</span>;</span><br><span class="line">computed: &#123;</span><br><span class="line">    ...mapGetters([<span class="string">"cartList"</span>]),</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-导航栏"><a href="#2-导航栏" class="headerlink" title="2 导航栏"></a>2 导航栏</h3><p>复用 NavBar 组件</p>
+        
+          <a class="article-more-a" href="/2020/08/01/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E8%B4%AD%E7%89%A9%E8%BD%A6%20cart/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/01/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E8%B4%AD%E7%89%A9%E8%BD%A6%20cart/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-gitignore-本地仓库不上传远程仓库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/30/gitignore-%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E4%B8%8D%E4%B8%8A%E4%BC%A0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/">git忽略 本地仓库不上传远程仓库</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/30/gitignore-%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E4%B8%8D%E4%B8%8A%E4%BC%A0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/" class="archive-article-date">
+  	<time datetime="2020-07-30T13:20:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>第一次上传项目</p>
+<p>首先确认项目是否有  .gitignore 文件，没有就新建一个。把 gitignore 文件 所在的目录当做根目录去匹配想要忽略的文件</p>
+        
+          <a class="article-more-a" href="/2020/07/30/gitignore-%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E4%B8%8D%E4%B8%8A%E4%BC%A0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/07/30/gitignore-%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E4%B8%8D%E4%B8%8A%E4%BC%A0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-better-scroll-基本使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/07/27/better-scroll-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">better-scroll 基本使用</a>
+    </h1>
+  
+
+        
+        <a href="/2020/07/27/better-scroll-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2020-07-27T07:36:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="better-scroll"><a href="#better-scroll" class="headerlink" title="better-scroll"></a>better-scroll</h3><p>1.实时监听滚动位置 — on 方法</p>
+<p>2.头部和尾部弹性滚动，上拉触发事件</p>
+<p>3.原生滚动：也是需要一个 wapper 设置高度，让 overflow-y：scroll 就OK了。但是原生滚动比较卡顿，也做不到头部和尾部弹性滚动。</p>
+        
+          <a class="article-more-a" href="/2020/07/27/better-scroll-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/#more">more >></a>
         
       
 
@@ -903,7 +901,7 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">工具类</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">插件</a>
         		</li>
       		
 		</ul>
@@ -913,7 +911,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/04/Webpack%E8%AF%A6%E8%A7%A3/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/07/27/better-scroll-%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">展开全文 >></a>
         </p>
       
 
@@ -945,7 +943,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1125,6 +1123,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
             
             <div class="clearfix"></div>

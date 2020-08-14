@@ -17,8 +17,9 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/22/%E7%BD%91%E9%A1%B5%E5%B0%8F%E6%8A%80%E5%B7%A7/image-20200523172114585.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/22/%E7%BD%91%E9%A1%B5%E5%B0%8F%E6%8A%80%E5%B7%A7/image-20200526105632399.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/05/22/%E7%BD%91%E9%A1%B5%E5%B0%8F%E6%8A%80%E5%B7%A7/image-20200807115015011.png">
 <meta property="article:published_time" content="2020-05-22T05:00:16.000Z">
-<meta property="article:modified_time" content="2020-06-14T02:51:53.752Z">
+<meta property="article:modified_time" content="2020-08-07T03:51:23.064Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="summary">
 <meta name="twitter:card" content="summary">
@@ -189,7 +190,12 @@
 <p><img src="/2020/05/22/%E7%BD%91%E9%A1%B5%E5%B0%8F%E6%8A%80%E5%B7%A7/image-20200526105632399.png" alt="image-20200526105632399"></p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.close</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: absolute;</span><br><span class="line">    <span class="attribute">top</span>: -<span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">right</span>: -<span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">height</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">20px</span>;</span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1pX</span> solid <span class="number">#ebebeb</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#ffffff</span>;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">40px</span>;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">12px</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h3 id="3-遮罩层"><a href="#3-遮罩层" class="headerlink" title="3 - 遮罩层"></a>3 - 遮罩层</h3><ol>
+<h3 id="3-三角按钮"><a href="#3-三角按钮" class="headerlink" title="3 - 三角按钮"></a>3 - 三角按钮</h3><p>主要利用了 transform 的 rotate属性</p>
+<img src="/2020/05/22/%E7%BD%91%E9%A1%B5%E5%B0%8F%E6%8A%80%E5%B7%A7/image-20200807115015011.png" alt="image-20200807115015011" style="zoom:80%;">
+
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.right</span> <span class="selector-tag">span</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">  <span class="attribute">padding-right</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.right</span> <span class="selector-tag">span</span><span class="selector-pseudo">::after</span> &#123;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="attribute">right</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">top</span>: <span class="number">2px</span>;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">10px</span>;</span><br><span class="line">  <span class="attribute">border-top</span>: <span class="number">1px</span> solid <span class="number">#888</span>;</span><br><span class="line">  <span class="attribute">border-right</span>: <span class="number">1px</span> solid <span class="number">#888</span>;</span><br><span class="line">  <span class="attribute">transform</span>: <span class="built_in">rotate</span>(<span class="number">45deg</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-遮罩层"><a href="#4-遮罩层" class="headerlink" title="4 - 遮罩层"></a>4 - 遮罩层</h3><ol>
 <li><p>使用before等元素</p>
 </li>
 <li><p>使用固定定位</p>
@@ -562,6 +568,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
             
             <div class="clearfix"></div>

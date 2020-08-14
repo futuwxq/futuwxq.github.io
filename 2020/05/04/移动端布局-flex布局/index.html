@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-flex%E5%B8%83%E5%B1%80/image-20200506171823229.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/05/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-flex%E5%B8%83%E5%B1%80/image-20200506172714184.png">
 <meta property="article:published_time" content="2020-05-04T13:16:48.000Z">
-<meta property="article:modified_time" content="2020-05-09T14:34:33.494Z">
+<meta property="article:modified_time" content="2020-08-07T06:56:47.415Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="css">
 <meta property="article:tag" content="移动端布局">
@@ -307,7 +307,18 @@
 <p><img src="/2020/05/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-flex%E5%B8%83%E5%B1%80/flex-shrink.jpg" alt="flex-shrink"></p>
 <h5 id="3-5-flex-basis-——-最小尺寸"><a href="#3-5-flex-basis-——-最小尺寸" class="headerlink" title="3.5 flex-basis —— 最小尺寸"></a>3.5 flex-basis —— 最小尺寸</h5><p>定义在分配多余空间之前，项目占据的主轴空间。浏览器根据这个属性，计算主轴是否有多余空间。默认值为auto，即项目本来的大小。</p>
 <p>可以设置为跟width和height属性一样的值，即项目占据固定空间。</p>
-<h5 id="3-6-flex综合属性"><a href="#3-6-flex综合属性" class="headerlink" title="3.6 flex综合属性"></a>3.6 flex综合属性</h5><p>是flex-grow，flex-shrink和flex-basis的缩写，默认值为0，1，auto。</p>
+<h5 id="3-6-flex综合属性"><a href="#3-6-flex综合属性" class="headerlink" title="3.6 flex综合属性"></a>3.6 flex综合属性</h5><p>是flex-grow，flex-shrink 和flex-basis 的缩写，默认值为0，1，auto。</p>
+<h3 id="四-flex-布局的一些问题"><a href="#四-flex-布局的一些问题" class="headerlink" title="四 flex 布局的一些问题"></a>四 flex 布局的一些问题</h3><ul>
+<li>默认情况下每个 flex-item 的横轴高度是一样的(因为 align-item默认是 start，修改这个属性就可以)，也就是content 内容的高度也是一样的</li>
+<li>flex-grow 和  justify-content 一起使用需要注意</li>
+<li>flex 简写包括：flex-grow、flex-shrink、flex-basis。，</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;flex 是数字</span><br><span class="line">flex: 2;</span><br><span class="line">    flex-grow: 2;</span><br><span class="line">    flex-shrink: 1;</span><br><span class="line">    flex-basis: 0%;</span><br><span class="line">    </span><br><span class="line">&#x2F;&#x2F;flex 是百分数</span><br><span class="line">flex: 30%;</span><br><span class="line">    flex-grow: 1;</span><br><span class="line">    flex-shrink: 1;</span><br><span class="line">    flex-basis: 30%;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
 <p><strong>7.背景线性渐变</strong></p>
 <img src="/2020/05/04/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-flex%E5%B8%83%E5%B1%80/image-20200505113450513.png" alt="image-20200505113450513" style="zoom:80%;">
 
@@ -708,6 +719,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
             
             <div class="clearfix"></div>

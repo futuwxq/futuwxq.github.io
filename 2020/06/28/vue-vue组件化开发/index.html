@@ -28,7 +28,7 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/06/28/vue-vue%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/image-20200703155234063.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/06/28/vue-vue%E7%BB%84%E4%BB%B6%E5%8C%96%E5%BC%80%E5%8F%91/image-20200703164557274.png">
 <meta property="article:published_time" content="2020-06-28T03:46:23.000Z">
-<meta property="article:modified_time" content="2020-07-15T08:11:27.539Z">
+<meta property="article:modified_time" content="2020-07-24T13:19:11.223Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
@@ -334,9 +334,9 @@
 <blockquote>
 <p>关于 ref 注册时间的重要说明：因为 ref 本身是作为渲染结果被创建的，在初始渲染的时候你不能访问它们 - 它们还不存在！<code>$refs</code> 也不是响应式的，因此你不应该试图用它在模板中做数据绑定。</p>
 </blockquote>
-<h3 id="4-3-父子组件的访问方式：-parent-root"><a href="#4-3-父子组件的访问方式：-parent-root" class="headerlink" title="4.3 父子组件的访问方式： $parent $root"></a>4.3 父子组件的访问方式： $parent $root</h3><p>在子组件中直接访问父组件，可以通过 $parent，直接访问根组件用  $root</p>
+<h3 id="4-3-父子组件的访问方式：-parent-root"><a href="#4-3-父子组件的访问方式：-parent-root" class="headerlink" title="4.3 父子组件的访问方式： $parent`` $root"></a>4.3 父子组件的访问方式： <code>$parent`` $root</code></h3><p>在子组件中直接访问父组件，可以通过 <code>$parent</code>，直接访问根组件用  <code>$root</code></p>
 <blockquote>
-<p>尽管在 Vue 开发中，允许通过 $parent 来访问父组件，但是在真实开发中尽量不要这样做。</p>
+<p>尽管在 Vue 开发中，允许通过 <code>$parent</code>来访问父组件，但是在真实开发中尽量不要这样做。</p>
 </blockquote>
 <p>子组件应该尽量避免直接访问父组件的数据，因为这样<strong>耦合度太高了</strong>。如果我们将子组件放在另外一个组件之内，很可能该父组件没有对应的属性，往往会引起问题。另外，更不好做的是<strong>通过$parent 直接修改父组件的状态</strong>，那么父组件中的状态将变得飘忽不定，很不利于我的调试和维护。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">components: &#123;</span><br><span class="line">    <span class="string">'child-cpn'</span>: &#123;</span><br><span class="line">        template: <span class="string">'#childCpn'</span>,</span><br><span class="line">        methods: &#123;</span><br><span class="line">        showParent() &#123;</span><br><span class="line">        	<span class="built_in">console</span>.log(<span class="keyword">this</span>.$parent.message)<span class="comment">//父组件</span></span><br><span class="line">            <span class="built_in">console</span>.log(<span class="keyword">this</span>.$root.message)<span class="comment">//根组件</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -724,6 +724,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
             
             <div class="clearfix"></div>

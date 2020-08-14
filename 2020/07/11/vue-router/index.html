@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
   <title>vue router | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="路由（routing）就是通过互联的网络把信息从源地址传输到目的地址的活动 路由器提供了两种机制: 路由和转送  路由是决定数据包从来源到目的地的路径  转送将输入端的数据转移到合适的输出端">
+  <meta name="description" content="路由（routing）就是通过互联的网络把信息从源地址传输到目的地址的活动 路由器提供了两种机制: 路由和转送  路由是决定数据包从来源到目的地的路径  转送将输入端的数据转移到合适的输出端   路由中有一个非常重要的概念叫路由表,路由表本质上就是一个映射表, 决定了数据包的指向">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vue router">
 <meta property="og:url" content="https://futuwxq.github.io/2020/07/11/vue-router/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="路由（routing）就是通过互联的网络把信息从源地址传输到目的地址的活动 路由器提供了两种机制: 路由和转送  路由是决定数据包从来源到目的地的路径  转送将输入端的数据转移到合适的输出端">
+<meta property="og:description" content="路由（routing）就是通过互联的网络把信息从源地址传输到目的地址的活动 路由器提供了两种机制: 路由和转送  路由是决定数据包从来源到目的地的路径  转送将输入端的数据转移到合适的输出端   路由中有一个非常重要的概念叫路由表,路由表本质上就是一个映射表, 决定了数据包的指向">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/11/vue-router/image-20200711205024575.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/11/vue-router/image-20200711211004549.png">
@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/11/vue-router/image-20200713210332913.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/11/vue-router/image-20200713210432184.png">
 <meta property="article:published_time" content="2020-07-11T12:32:53.000Z">
-<meta property="article:modified_time" content="2020-07-16T01:49:13.028Z">
+<meta property="article:modified_time" content="2020-08-14T12:35:21.554Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
@@ -197,10 +197,10 @@
 <ul>
 <li><p>路由是决定数据包从来源到目的地的路径</p>
 </li>
-<li><p>转送将输入端的数据转移到合适的输出端<a id="more"></a></p>
+<li><p>转送将输入端的数据转移到合适的输出端</p>
 </li>
 </ul>
-<p>路由中有一个非常重要的概念叫<strong>路由表</strong>,路由表本质上就是一个映射表, 决定了数据包的指向</p>
+<p>路由中有一个非常重要的概念叫<strong>路由表</strong>,路由表本质上就是一个映射表, 决定了数据包的指向 <a id="more"></a></p>
 <h3 id="后端路由和后端路由"><a href="#后端路由和后端路由" class="headerlink" title="后端路由和后端路由"></a>后端路由和后端路由</h3><h4 id="阶段一：后端路由-后端渲染"><a href="#阶段一：后端路由-后端渲染" class="headerlink" title="阶段一：后端路由 后端渲染"></a>阶段一：后端路由 后端渲染</h4><p>如下图，当浏览器请求数据，服务器会渲染出一个 jsp 页面，使得每个 jsp 和 url 形成一个映射关系。<strong>后端渲染</strong>，也是服务器渲染，就是页面是通过服务器渲染，而不是在浏览器渲染。早期的网站开发是服务器直接生产渲染好对应的HTML页面, 返回给客户端进行展示。</p>
 <img src="/2020/07/11/vue-router/image-20200711205024575.png" alt="image-20200711205024575" style="zoom:80%;">
 
@@ -237,6 +237,9 @@
 <h2 id="1-vue-router-基本使用"><a href="#1-vue-router-基本使用" class="headerlink" title="1 vue-router 基本使用"></a>1 vue-router 基本使用</h2><blockquote>
 <p>es6 增强语法经常用 ，｛cpn：cpn｝=》 ｛cpn｝</p>
 </blockquote>
+<p>安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install vue-router --save</span><br></pre></td></tr></table></figure>
+
 <h3 id="1-1-配置-router"><a href="#1-1-配置-router" class="headerlink" title="1.1 配置 router"></a>1.1 配置 router</h3><p>第一步：导入路由对象，并且调用 Vue.use(VueRouter)<br>第二步：创建路由实例，并且传入路由映射配置  (路由配置是放在<strong>routes</strong>上面，下图写错了)<br>第三步：在Vue实例中挂载创建的路由实例（通过 <strong>router</strong> 属性挂载）</p>
 <p><img src="/2020/07/11/vue-router/image-20200712203756629.png" alt="image-20200712203756629" style="zoom: 70%;">      <img src="/2020/07/11/vue-router/image-20200712203818052.png" alt="image-20200712203818052" style="zoom:70%;"></p>
 <h3 id="1-2-vue-router-使用步骤"><a href="#1-2-vue-router-使用步骤" class="headerlink" title="1.2  vue-router 使用步骤"></a>1.2  vue-router 使用步骤</h3><p><strong>第一步: 创建路由组件</strong>，在 component 文件夹下创建 vue 组件，并导出</p>
@@ -266,7 +269,7 @@
 </ul>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link to=<span class="string">'/home'</span> tag=<span class="string">'button'</span> replace active-<span class="class"><span class="keyword">class</span></span>=<span class="string">'active'</span>&gt;Home&lt;<span class="regexp">/router-link&gt;</span></span><br></pre></td></tr></table></figure>
 
-<h3 id="1-6-路由代码跳转"><a href="#1-6-路由代码跳转" class="headerlink" title="1.6 路由代码跳转"></a>1.6 路由代码跳转</h3><p>之前一直通过<code>&lt;router-link&gt;</code>的 to 属性进行 url 跳转， 但是当页面的跳转需要执行对应的 JavaScript 代码, 就需要使用路由代码跳转。</p>
+<h3 id="1-6-路由通过代码跳转"><a href="#1-6-路由通过代码跳转" class="headerlink" title="1.6 路由通过代码跳转"></a>1.6 路由通过代码跳转</h3><p>之前一直通过<code>&lt;router-link&gt;</code>的 to 属性进行 url 跳转， 但是当页面的跳转需要执行对应的 JavaScript 代码, 就需要使用路由代码跳转。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$router.push(<span class="string">'/home'</span>)</span><br><span class="line"><span class="keyword">this</span>.$router.replace(<span class="string">'/home'</span>) <span class="comment">//this 指向的 VueComponent</span></span><br></pre></td></tr></table></figure>
 <img src="/2020/07/11/vue-router/image-20200713112025546.png" alt="image-20200713112025546" style="zoom:70%;">
 
@@ -275,7 +278,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	 path: <span class="string">'/user/:id'</span>,</span><br><span class="line">     component: User</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
 <p><strong>2.通过 router-link 的 to 属性实现跳转</strong>，不同的事 id 属性是动态获取的数据，这里需要 v-bind 绑定to属性.</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link :to=<span class="string">"'/user/'+id"</span> tag=<span class="string">'button'</span> &gt;User&lt;<span class="regexp">/router-link&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">------------</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">data()&#123;</span></span><br><span class="line"><span class="regexp">  return &#123;</span></span><br><span class="line"><span class="regexp">    id:'zhangsan'</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;,</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link :to=<span class="string">"'/user/'+id"</span> tag=<span class="string">'button'</span> &gt;User&lt;<span class="regexp">/router-link&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">------------</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">data()&#123;</span></span><br><span class="line"><span class="regexp">  return &#123;</span></span><br><span class="line"><span class="regexp">    id:'zhangsan'</span></span><br><span class="line"><span class="regexp">  &#125;</span></span><br><span class="line"><span class="regexp">&#125;,</span></span><br><span class="line"><span class="regexp">--- 通过函数跳转 ----    </span></span><br><span class="line"><span class="regexp">this.$router.push('/</span>detail<span class="string">'+this.goodsItem.iid)</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>3.如果想要在 User 组件中显示 id 的属性</strong>，需要使用组件的 $route 属性</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p&gt;&#123;&#123;$route.params.Id&#125;&#125;&lt;<span class="regexp">/p&gt;</span></span><br></pre></td></tr></table></figure>
@@ -314,7 +317,7 @@
 <p><strong>2. 在组件内部使用<code>&lt;router-view&gt;</code>标签</strong>, to 属性里的路径要从父组件开始，并加上<code>/</code></p>
 <img src="/2020/07/11/vue-router/image-20200713210432184.png" alt="image-20200713210432184" style="zoom:67%;">
 
-<h2 id="3-vue-router-参数传递"><a href="#3-vue-router-参数传递" class="headerlink" title="3 vue-router 参数传递"></a>3 vue-router 参数传递</h2><p>vue-router 传递参数主要有两种类型: params 和 query</p>
+<h2 id="3-vue-router-参数传递"><a href="#3-vue-router-参数传递" class="headerlink" title="3 vue-router 参数传递"></a>3 vue-router 参数传递</h2><h4 id="3-1-params-和-query"><a href="#3-1-params-和-query" class="headerlink" title="3.1   params 和 query"></a>3.1   params 和 query</h4><p>vue-router 传递参数主要有两种类型: params 和 query</p>
 <p><strong>params的类型:</strong></p>
 <ul>
 <li><p>配置路由格式: /router/:id</p>
@@ -751,6 +754,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">框架</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
               </li>
             
             <div class="clearfix"></div>

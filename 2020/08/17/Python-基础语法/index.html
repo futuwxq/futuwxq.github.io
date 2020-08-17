@@ -6,16 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
-  <title>Tag: 网页布局 | 晓秋的博客</title>
+  <title>Python 基础语法 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="better and better">
-<meta property="og:type" content="website">
-<meta property="og:title" content="晓秋的博客">
-<meta property="og:url" content="https://futuwxq.github.io/tags/%E7%BD%91%E9%A1%B5%E5%B8%83%E5%B1%80/index.html">
+  <meta name="description" content="返回 True 和 False值  数字：该值等于 0 或者 0.0 将会返回 False 其余的返回 True None 类型：flase 集合类型（list、tuple、dict和set）：如果集合中的元素数量为 0，那么将会返回 False, 否则返回 True。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 基础语法">
+<meta property="og:url" content="https://futuwxq.github.io/2020/08/17/Python-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="better and better">
+<meta property="og:description" content="返回 True 和 False值  数字：该值等于 0 或者 0.0 将会返回 False 其余的返回 True None 类型：flase 集合类型（list、tuple、dict和set）：如果集合中的元素数量为 0，那么将会返回 False, 否则返回 True。">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-08-17T13:35:29.000Z">
+<meta property="article:modified_time" content="2020-08-17T13:37:28.127Z">
 <meta property="article:author" content="Better">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
@@ -152,178 +155,272 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Python-基础语法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Python 基础语法
+    </h1>
+  
+
+        
+        <a href="/2020/08/17/Python-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-08-17T13:35:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-17</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>返回 <code>True</code> 和 <code>False</code>值</p>
+<ul>
+<li>数字：该值等于 <code>0</code> 或者 <code>0.0</code> 将会返回 <code>False</code> 其余的返回 <code>True</code></li>
+<li>None 类型：flase</li>
+<li>集合类型（list<code>、</code>tuple<code>、</code>dict<code>和</code>set）：如果集合中的元素数量为 0，那么将会返回 <code>False</code>, 否则返回 <code>True</code>。<a id="more"></a></li>
+</ul>
+<p>Python 是使用缩进表示<strong>程序的结构</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">example_list = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">7</span>,<span class="number">12</span>,<span class="number">543</span>,<span class="number">876</span>,<span class="number">12</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">5</span>]</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> example_list:</span><br><span class="line">    print(i)</span><br><span class="line">    print(<span class="string">'inner of for'</span>)</span><br><span class="line">print(<span class="string">'outer of for'</span>)//只有循环结束才会执行</span><br></pre></td></tr></table></figure>
+
+<h5 id="工厂函数"><a href="#工厂函数" class="headerlink" title="工厂函数"></a>工厂函数</h5><h6 id="range-函数"><a href="#range-函数" class="headerlink" title="range 函数"></a>range 函数</h6><p>：返回一个序列</p>
+<ul>
+<li>range(start, stop)</li>
+<li>range(stop)</li>
+<li>range(start, stop，step)</li>
+</ul>
+<h5 id="内置集合：可以迭代"><a href="#内置集合：可以迭代" class="headerlink" title="内置集合：可以迭代"></a>内置集合：可以迭代</h5><ul>
+<li>list</li>
+<li>tuple 类型</li>
+<li>dictionary 类型</li>
+<li>set 类型</li>
+</ul>
+<h5 id="迭代器"><a href="#迭代器" class="headerlink" title="迭代器"></a>迭代器</h5><p>  for 语句                                                                                                                                                                                                            </p>
+<h5 id="生成器"><a href="#生成器" class="headerlink" title="生成器"></a>生成器</h5><p> <code>yield</code> 关键字</p>
+<h5 id="if-else-的行内表达式"><a href="#if-else-的行内表达式" class="headerlink" title="if-else 的行内表达式"></a><strong><code>if-else</code> 的行内表达式</strong></h5><p>python 中并没有类似 <code>condition ? value1 : value2</code> 三目操作符,通过 <code>if-else</code> 的行内表达式来实现这种简单的判断返回确定的值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var &#x3D; var1 if condition else var2</span><br><span class="line">&#x2F;&#x2F;就是如果 condition 为 true，var &#x3D; var1，如果为假，var &#x3D; var2</span><br></pre></td></tr></table></figure>
+
+<h5 id="def-函数"><a href="#def-函数" class="headerlink" title="def 函数:"></a>def 函数:</h5><p>def 相当于定义了一个 函数。函数有作用域</p>
+<ul>
+<li>自调用？？？</li>
+<li>可变参数 ：*grades</li>
+<li>关键字参数：**key</li>
+</ul>
+<h5 id="模块安装"><a href="#模块安装" class="headerlink" title="模块安装"></a>模块安装</h5><ul>
+<li>外部模块：import</li>
+</ul>
+<h5 id="class-类"><a href="#class-类" class="headerlink" title="class 类"></a>class 类</h5><ul>
+<li>实例化 class ，cal=Calculator() </li>
+<li><code>__init__</code></li>
+</ul>
+<h5 id="input-输入"><a href="#input-输入" class="headerlink" title="input 输入"></a>input 输入</h5><h5 id="元组-列表"><a href="#元组-列表" class="headerlink" title="元组 列表"></a>元组 列表</h5><ul>
+<li>Tuple:一连串有顺序的数字，()或者没有()</li>
+<li>List :[]</li>
+</ul>
+<h5 id="list-列表"><a href="#list-列表" class="headerlink" title="list 列表"></a>list 列表</h5><ul>
+<li><p>List 添加 </p>
+</li>
+<li><p>List 移除 </p>
+</li>
+<li><p>List 索引</p>
+<ul>
+<li><p>显示定位值（功能非常强大）</p>
+</li>
+<li><pre><code>a = [1,2,3,4,1,1,-1]
+print(a[0])  # 显示列表a的第0位的值
+# 1
+
+print(a[-1]) # 显示列表a的最末位的值
+# -1
+
+print(a[0:3]) # 显示列表a的从第0位 到 第2位(第3位之前) 的所有项的值
+# [1, 2, 3]
+
+print(a[5:])  # 显示列表a的第5位及以后的所有项的值
+# [1, -1]
+
+print(a[-3:]) # 显示列表a的倒数第3位及以后的所有项的值
+# [1, 1, -1]
+</code></pre></li>
+<li><p>打印列表中的某个值的索引(index):   index()</p>
+</li>
+<li><p>统计列表中某值出现的次数:  count()</p>
+</li>
+</ul>
+</li>
+<li><p>List 排序</p>
+<ul>
+<li>sort() ，sort(reverse=True) </li>
+</ul>
+</li>
+</ul>
+<h5 id="多维列表"><a href="#多维列表" class="headerlink" title="多维列表"></a>多维列表</h5><ul>
+<li>二维列表</li>
+</ul>
+<h5 id="dictionary-字典"><a href="#dictionary-字典" class="headerlink" title="dictionary 字典"></a>dictionary 字典</h5><ul>
+<li>无序，｛｝，</li>
+<li>字典的形式可以使 list ，也可以是 function，访问的 vale  的时候通过 <code>.[key]</code></li>
+<li>有<code>key</code>和 <code>value</code>两种元素，每一个<code>key</code>对应一个<code>value</code>, <code>key</code>是名字, <code>value</code>是内容</li>
+</ul>
+<h5 id="import-模块"><a href="#import-模块" class="headerlink" title="import 模块"></a>import 模块</h5><ul>
+<li><p>import time：time 可以是 python 自带，也可以是自己安装的模块</p>
+</li>
+<li><p>import time as t ：t 可以当做别名</p>
+</li>
+<li><p>from time import time,localtime ,只import自己想要的功能.</p>
+</li>
+<li><p>from time import * </p>
+</li>
+<li><p>自己的模块：自己新建一个模块，import 文件名</p>
+</li>
+</ul>
+<h5 id="zip-函数"><a href="#zip-函数" class="headerlink" title="zip 函数"></a>zip 函数</h5><h5 id="lambda"><a href="#lambda" class="headerlink" title="lambda"></a>lambda</h5><h5 id="map"><a href="#map" class="headerlink" title="map"></a>map</h5><h5 id="多线程-Threading"><a href="#多线程-Threading" class="headerlink" title="多线程  Threading"></a>多线程  Threading</h5><h5 id="多进程-multiprocessing"><a href="#多进程-multiprocessing" class="headerlink" title="多进程 multiprocessing"></a>多进程 multiprocessing</h5><h5 id="tkinter-窗口"><a href="#tkinter-窗口" class="headerlink" title="tkinter 窗口"></a>tkinter 窗口</h5><h5 id="pickle-保存数据："><a href="#pickle-保存数据：" class="headerlink" title="pickle 保存数据："></a>pickle 保存数据：</h5><ul>
+<li>压缩/保存/提取 文件的模块</li>
+</ul>
+<hr>
+<p>问题？？？</p>
+<p> Python 内置了工厂函数，什么是 工厂函数？</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/05/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-rem%E9%80%82%E9%85%8D%E5%B8%83%E5%B1%80/" class="archive-article-date">
-  	<time datetime="2020-05-08T08:11:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-08</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/05/08/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B8%83%E5%B1%80-rem%E9%80%82%E9%85%8D%E5%B8%83%E5%B1%80/">移动端布局-rem适配布局</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网页布局</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/08/17/Python-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/11/%E5%A4%B4%E9%83%A8%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%E5%AF%BC%E8%88%AA%EF%BC%8C%E5%8F%B3%E4%BE%A7%E5%8F%AF%E5%88%87%E6%8D%A2%E9%A1%B5%E9%9D%A2%20%E5%B8%83%E5%B1%80/" class="archive-article-date">
-  	<time datetime="2020-04-11T12:23:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-11</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/08/14/web%E9%A1%B5%E9%9D%A2%E7%BB%98%E5%88%B6%E8%BF%87%E7%A8%8B/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">前端页面绘制过程</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/11/%E5%A4%B4%E9%83%A8%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%E5%AF%BC%E8%88%AA%EF%BC%8C%E5%8F%B3%E4%BE%A7%E5%8F%AF%E5%88%87%E6%8D%A2%E9%A1%B5%E9%9D%A2%20%E5%B8%83%E5%B1%80/">头部固定，左侧固定导航，右侧可切换页面 布局</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网页布局</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/03/%E5%AF%B9%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%E7%9A%84%E7%90%86%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2020-04-03T07:16:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/03/%E5%AF%B9%E5%9C%A3%E6%9D%AF%E5%B8%83%E5%B1%80%E5%92%8C%E5%8F%8C%E9%A3%9E%E7%BF%BC%E5%B8%83%E5%B1%80%E7%9A%84%E7%90%86%E8%A7%A3/">对圣杯布局和双飞翼布局的理解</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网页布局</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/04/03/%E5%AE%9E%E7%8E%B0%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%8F%B3%E4%BE%A7%E8%87%AA%E9%80%82%E5%BA%94%E4%B8%A4%E6%A0%8F%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-04-03T03:31:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/04/03/%E5%AE%9E%E7%8E%B0%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%8F%B3%E4%BE%A7%E8%87%AA%E9%80%82%E5%BA%94%E4%B8%A4%E6%A0%8F%E5%B8%83%E5%B1%80%E7%9A%84%E6%96%B9%E6%B3%95/">实现左侧固定，右侧自适应两栏布局的方法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网页布局</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -346,9 +443,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

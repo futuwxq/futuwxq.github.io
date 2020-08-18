@@ -154,6 +154,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Pandas 基本使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/18/Pandas%20%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">Pandas 基本</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/18/Pandas%20%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2020-08-18T12:35:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如果用 python 的<strong>列表和字典</strong>来作比较, 那么可以说 Numpy 是<strong>列表形式</strong>的，<strong>没有数值标签</strong>，而 Pandas 就是<strong>字典形式</strong>。Pandas是基于Numpy构建的，让Numpy为中心的应用变得更加简单。</p>
+<p>要使用pandas，首先需要了解他主要两个数据结构：Series 和 DataFrame。</p>
+<h3 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h3><p><code>Series</code>的字符串表现形式为：<strong>索引在左边，值在右边</strong>。没有为数据指定索引的时候，会自动创建一个0到N-1（N为长度）的<strong>整数型索引</strong>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">import numpy as np</span><br><span class="line">s &#x3D; pd.Series([1,3,6,np.nan,44,1])</span><br><span class="line"></span><br><span class="line">print(s)</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line">0     1.0</span><br><span class="line">1     3.0</span><br><span class="line">2     6.0</span><br><span class="line">3     NaN</span><br><span class="line">4    44.0</span><br><span class="line">5     1.0</span><br><span class="line">dtype: float64</span><br><span class="line">&quot;&quot;&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="DataFrame"><a href="#DataFrame" class="headerlink" title="DataFrame"></a>DataFrame</h3><p>DataFrame是一个表格型的数据结构，它包含有一组有序的列，每列可以是不同的值类型（数值，字符串，布尔值等）。DataFrame既有<strong>行索引也有列索引</strong>， 它可以被看做由Series组成的大字典。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/18/Pandas%20%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Python-基础语法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -870,90 +951,9 @@
 
 
   
-    <article id="post-gitignore-本地仓库不上传远程仓库" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/07/30/gitignore-%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E4%B8%8D%E4%B8%8A%E4%BC%A0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/">git忽略 本地仓库不上传远程仓库</a>
-    </h1>
-  
-
-        
-        <a href="/2020/07/30/gitignore-%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E4%B8%8D%E4%B8%8A%E4%BC%A0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/" class="archive-article-date">
-  	<time datetime="2020-07-30T13:20:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-07-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>第一次上传项目</p>
-<p>首先确认项目是否有  .gitignore 文件，没有就新建一个。把 gitignore 文件 所在的目录当做根目录去匹配想要忽略的文件</p>
-        
-          <a class="article-more-a" href="/2020/07/30/gitignore-%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E4%B8%8D%E4%B8%8A%E4%BC%A0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">工具</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/07/30/gitignore-%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E4%B8%8D%E4%B8%8A%E4%BC%A0%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 

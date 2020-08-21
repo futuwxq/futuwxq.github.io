@@ -154,6 +154,251 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-强化学习 Sarsa" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/">强化学习 Sarsa</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/" class="archive-article-date">
+  	<time datetime="2020-08-21T06:23:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Sarsa 的决策部分和 Q learning 一样，都是基于 Q 表的形式决策, 在 Q 表中挑选值较大的动作值施加在环境中来换取奖惩.。但是不同的地方在于 Sarsa 的更新方式是不一样的。</p>
+<p>Q learning 估算动作，但并不一定会执行这个动作，Q-learning 在这一步只是估计了一下接下来的动作值。而sarsa 估算的动作也是接下来要做的动作。因为 Sarsa 是说到做到型, 所以我们也叫他 on-policy, 在线学习, 学着自己在做的事情。</p>
+        
+          <a class="article-more-a" href="/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Reforce Learning</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Pandas plot 出图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/20/Pandas%20plot%20%E5%87%BA%E5%9B%BE/">Pandas plot 出图</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/20/Pandas%20plot%20%E5%87%BA%E5%9B%BE/" class="archive-article-date">
+  	<time datetime="2020-08-20T02:30:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>数据可视化，首先<code>import</code>我们需要用到的模块，除了 pandas，我们也需要使用 numpy 生成一些数据， matplotlib 用来 show 图片。</p>
+<h3 id="Series-线条可视化"><a href="#Series-线条可视化" class="headerlink" title="Series 线条可视化"></a>Series 线条可视化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line"></span><br><span class="line">data &#x3D; pd.Series(np.random.randn(1000),index&#x3D;np.arange(1000))</span><br><span class="line">#累加数据 数据更加明显</span><br><span class="line">data &#x3D; data.cumsum()</span><br><span class="line"># pandas 数据可以直接观看其可视化形式</span><br><span class="line">data.plot()</span><br><span class="line"># 出图</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h3 id="Dataframe-可视化"><a href="#Dataframe-可视化" class="headerlink" title="Dataframe 可视化"></a>Dataframe 可视化</h3><p>plot 中有诸多参数，线宽，颜色等等</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#折线图</span><br><span class="line">data1 &#x3D; pd.DataFrame(np.random.randn(1000,4),</span><br><span class="line">                        index&#x3D;np.arange(1000),</span><br><span class="line">                        columns&#x3D;list(&quot;ABCD&quot;))</span><br><span class="line">data1 &#x3D; data1.cumsum()</span><br><span class="line">data1.plot()</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"># 散点图</span><br><span class="line">data1.plot.scatter(x&#x3D;&#39;A&#39;,y&#x3D;&#39;B&#39;,color&#x3D;&#39;Red&#39;,label&#x3D;&#39;Class1&#39;)</span><br><span class="line">plt.show()</span><br><span class="line"># 多组数据的散点图</span><br><span class="line"># 将之下这个 data 画在上一个 ax 上面</span><br><span class="line">ax &#x3D; data1.plot.scatter(x&#x3D;&#39;A&#39;,y&#x3D;&#39;B&#39;,color&#x3D;&#39;Red&#39;,label&#x3D;&#39;Class1&#39;)</span><br><span class="line">data.plot.scatter(x&#x3D;&#39;A&#39;,y&#x3D;&#39;C&#39;,color&#x3D;&#39;LightGreen&#39;,label&#x3D;&#39;Class2&#39;,ax&#x3D;ax)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p>plot 的方法有很多种，bar、hist、box、kde、area、scatter、hexbin。下图是折线图</p>
+<img src="/2020/08/20/Pandas%20plot%20%E5%87%BA%E5%9B%BE/image-20200820142703828.png" alt="image-20200820142703828" style="zoom:80%;">
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Pandas</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/20/Pandas%20plot%20%E5%87%BA%E5%9B%BE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Numpy 基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/20/Numpy%20%E5%9F%BA%E7%A1%80/">Numpy 初了解</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/20/Numpy%20%E5%9F%BA%E7%A1%80/" class="archive-article-date">
+  	<time datetime="2020-08-20T02:30:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>科学运算当中最为重要的两个模块，一个是 numpy,一个是 pandas</p>
+<h3 id="Numpy-属性"><a href="#Numpy-属性" class="headerlink" title="Numpy 属性"></a>Numpy 属性</h3><ul>
+<li><code>ndim</code>：维度。</li>
+<li><code>shape</code>：行数和列数。reshape 是一种方法</li>
+<li><code>size</code>：元素个数。</li></ul>
+        
+          <a class="article-more-a" href="/2020/08/20/Numpy%20%E5%9F%BA%E7%A1%80/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Numpy</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/20/Numpy%20%E5%9F%BA%E7%A1%80/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Pandas 选择数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -403,7 +648,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/17/Python-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">Python 基础语法</a>
+      <a class="article-title" href="/2020/08/17/Python-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">Python-基础语法</a>
     </h1>
   
 
@@ -416,7 +661,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>返回 <code>True</code> 和 <code>False</code>值</p>
+        <h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><h4 id="1-Boolean-值"><a href="#1-Boolean-值" class="headerlink" title="1 Boolean 值"></a>1 Boolean 值</h4><p>返回 <code>True</code> 和 <code>False</code>值</p>
 <ul>
 <li>数字：该值等于 <code>0</code> 或者 <code>0.0</code> 将会返回 <code>False</code> 其余的返回 <code>True</code></li>
 <li>None 类型：flase</li>
@@ -718,244 +963,6 @@
 
 
   
-    <article id="post-Vue实战项目 分类页 category" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/11/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E5%88%86%E7%B1%BB%E9%A1%B5%20category/">Vue实战项目 分类页 category</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/11/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E5%88%86%E7%B1%BB%E9%A1%B5%20category/" class="archive-article-date">
-  	<time datetime="2020-08-11T07:34:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-获取数据"><a href="#1-获取数据" class="headerlink" title="1 获取数据"></a>1 获取数据</h3><p>分析数据结构</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;catagory  (无参数) ——》maitKey、miniWallkey 、title</span><br><span class="line">&#x2F;subcategory (maitKey)  ——》 subcategories ([])</span><br><span class="line">&#x2F;subcategory&#x2F;detail (miniWallkey，type) ——》categoryDetail (&#123;&#125;)</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/08/11/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E5%88%86%E7%B1%BB%E9%A1%B5%20category/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/11/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E5%88%86%E7%B1%BB%E9%A1%B5%20category/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Vue实战项目 二" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/04/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E4%BA%8C/">Vue实战项目 二</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/04/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E4%BA%8C/" class="archive-article-date">
-  	<time datetime="2020-08-04T07:35:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-vue-router-路由"><a href="#1-vue-router-路由" class="headerlink" title="1 vue-router 路由"></a>1 vue-router 路由</h3><p>路由懒加载语法；默认路由的设置；<code>&lt;router-view&gt;</code>占位</p>
-<h3 id="2-TabBar-组件"><a href="#2-TabBar-组件" class="headerlink" title="2 TabBar 组件"></a>2 TabBar 组件</h3><ul>
-<li><p>MainTabBar ：和项目相关，指定每个视图的 path ，以及文字的激活状态。这个组件决定了 一个 TabBar 里面有 几个 TabBarItem。</p>
-</li>
-<li><p>TabBar ：独立的组件，内置一个 slot ，和整个 tabBar 的高度等布局有关</p></li></ul>
-        
-          <a class="article-more-a" href="/2020/08/04/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E4%BA%8C/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/04/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E4%BA%8C/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-vue-vue响应式原理详解" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/03/vue-vue%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/">vue vue响应式原理详解</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/03/vue-vue%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/" class="archive-article-date">
-  	<time datetime="2020-08-03T09:31:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-03</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Vue 的响应式 ：数据发生变化，界面跟着更新。</p>
-<p>要实现 Vue 响应式 ：</p>
-<ul>
-<li><p>app.message 修改数据，<strong>Vue 内部是如何监听 message 数据的改变</strong></p>
-<ul>
-<li>Object.defineProperty 监听对象属性的改变</li></ul></li></ul>
-        
-          <a class="article-more-a" href="/2020/08/03/vue-vue%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/03/vue-vue%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
@@ -1158,6 +1165,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">Pandas</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Numpy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Reforce Learning</a>
               </li>
             
             <div class="clearfix"></div>

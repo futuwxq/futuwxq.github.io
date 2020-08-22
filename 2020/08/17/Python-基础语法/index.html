@@ -16,7 +16,7 @@
 <meta property="og:description" content="基础语法1 Boolean 值返回 True 和 False值  数字：该值等于 0 或者 0.0 将会返回 False 其余的返回 True None 类型：flase 集合类型（list、tuple、dict和set）：如果集合中的元素数量为 0，那么将会返回 False, 否则返回 True。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-17T13:35:29.000Z">
-<meta property="article:modified_time" content="2020-08-21T07:40:21.864Z">
+<meta property="article:modified_time" content="2020-08-22T14:26:09.637Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
@@ -237,43 +237,14 @@ def __init__(self, name, salary):
 </li>
 </ul>
 <h1 id="实例化类-不必传入-self"><a href="#实例化类-不必传入-self" class="headerlink" title="实例化类 不必传入 self"></a>实例化类 不必传入 self</h1><p>emp1 = Employee(“Zara”, 2000) </p>
-<pre><code>
-##### zip 函数
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">##### zip 函数</span><br><span class="line"></span><br><span class="line">##### lambda </span><br><span class="line"></span><br><span class="line">##### map</span><br><span class="line"></span><br><span class="line">##### 多线程  Threading </span><br><span class="line"></span><br><span class="line">##### 多进程 multiprocessing</span><br><span class="line"></span><br><span class="line">##### tkinter 窗口</span><br><span class="line"></span><br><span class="line">##### pickle 保存数据：</span><br><span class="line"></span><br><span class="line">+ 压缩&#x2F;保存&#x2F;提取 文件的模块</span><br><span class="line"></span><br><span class="line">------</span><br><span class="line"></span><br><span class="line">问题？？？</span><br><span class="line"></span><br><span class="line"> Python 内置了工厂函数，什么是 工厂函数？</span><br><span class="line"></span><br><span class="line">##### Python 程序入口</span><br><span class="line"></span><br><span class="line">&#96;if __name__ &#x3D;&#x3D; &#39;__main__&#39;&#96; 就相当于是 Python **模拟的程序入口**。&#96;__name__&#96; 是内置变量，用于表示当前模块的名字。**如果模块是被直接运行的，则代码块被运行，如果模块是被导入的，则代码块不被运行**。也就是导入模块的执行语句不会被执行。</span><br><span class="line"></span><br><span class="line">-----</span><br><span class="line"></span><br><span class="line">### 常用方法</span><br><span class="line"></span><br><span class="line">+ **range() 函数**：返回的是一个可迭代对象（类型是对象）：numpy 的 arange</span><br><span class="line">  + range(start, stop)</span><br><span class="line">  + range(stop): range(5): 0,1,2,3,4</span><br><span class="line">  + range(start, stop，step) : step 是步长</span><br><span class="line">+ **all() 函数**：用于判断给定的可迭代参数 iterable 中的所有元素是否都为 TRUE，如果是返回 True，否则返回 False</span><br><span class="line"></span><br><span class="line">#### python 的缩进</span><br><span class="line"></span><br><span class="line">python 中空格不要太随意，比如下面这个 for 语句的是空格，这样就会影响整个代码。因此一个作用域的第一行不能是空行，可以是注释。</span><br></pre></td></tr></table></figure>
+<pre><code>for episode in range(100):
 
-##### lambda 
+    # initial observation
+    observation = env.reset()</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### Python 关键字参数和可变参数</span><br><span class="line"></span><br><span class="line">关键字参数可以传入0个或者任意个含参数名的参数，这些参数名在函数定义中并没有出现，这些参数在函数内部自动封装成一个字典(dict).</span><br><span class="line"></span><br><span class="line">可变参数：函数的可变参数是传入的参数可以变化的，1个，2个到任意个。</span><br><span class="line"></span><br><span class="line">某些函数里面有许多参数，但是当只想对其中某些参数设置默认值，这个之后可以使用关键字参数，但是在调用该方法的时候，使用的关键字参数应该与原函数的的参数名保持一致</span><br><span class="line"></span><br><span class="line">&#96;&#96;&#96;python</span><br><span class="line">def func(a, b&#x3D;5, c&#x3D;10):</span><br><span class="line">    print(&#39;a is&#39;, a, &#39;and b is&#39;, b, &#39;and c is&#39;, c)</span><br><span class="line"></span><br><span class="line"># 关键字参数 与关键字有关 和参数的位置无关</span><br><span class="line">func(3, 7)</span><br><span class="line">func(25, c&#x3D;24)</span><br><span class="line">func(c&#x3D;50, a&#x3D;100)</span><br><span class="line"></span><br><span class="line"># 这里 SarsaLambdaTable 类的__init__ 方法里面有一个 actions 参数，在这里实例化这个类并且传入 actions 的值</span><br><span class="line">RL &#x3D; SarsaLambdaTable(actions&#x3D;list(range(env.n_actions)))</span><br></pre></td></tr></table></figure>
 
-##### map
+<p><a href="https://blog.csdn.net/luckytanggu/article/details/51714757" target="_blank" rel="noopener">https://blog.csdn.net/luckytanggu/article/details/51714757</a></p>
 
-##### 多线程  Threading 
-
-##### 多进程 multiprocessing
-
-##### tkinter 窗口
-
-##### pickle 保存数据：
-
-+ 压缩/保存/提取 文件的模块
-
-------
-
-问题？？？
-
- Python 内置了工厂函数，什么是 工厂函数？
-
-##### Python 程序入口
-
-`if __name__ == &apos;__main__&apos;` 就相当于是 Python **模拟的程序入口**。`__name__` 是内置变量，用于表示当前模块的名字。**如果模块是被直接运行的，则代码块被运行，如果模块是被导入的，则代码块不被运行**。也就是导入模块的执行语句不会被执行。
-
------
-
-### 常用方法
-
-+ **range() 函数**：返回的是一个可迭代对象（类型是对象）：numpy 的 arange
-  + range(start, stop)
-  + range(stop): range(5): 0,1,2,3,4
-  + range(start, stop，step) : step 是步长
-+ **all() 函数**：用于判断给定的可迭代参数 iterable 中的所有元素是否都为 TRUE，如果是返回 True，否则返回 False
-</code></pre>
       
 
       

@@ -8,17 +8,18 @@
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
   <title>强化学习 Sarsa | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Sarsa 的决策部分和 Q learning 一样，都是基于 Q 表的形式决策, 在 Q 表中挑选值较大的动作值施加在环境中来换取奖惩.。但是不同的地方在于 Sarsa 的更新方式是不一样的。 Q learning 估算动作，但并不一定会执行这个动作，Q-learning 在这一步只是估计了一下接下来的动作值。而sarsa 估算的动作也是接下来要做的动作。因为 Sarsa 是说到做到型, 所以我">
+  <meta name="description" content="SarsaSarsa 的决策部分和 Q learning 一样，都是基于 Q 表的形式决策, 在 Q 表中挑选值较大的动作值施加在环境中来换取奖惩.。但是不同的地方在于 Sarsa 的更新方式是不一样的。 Q learning 估算动作，但并不一定会执行这个动作，Q-learning 在这一步只是估计了一下接下来的动作值。而sarsa 估算的动作也是接下来要做的动作。因为 Sarsa 是说到做到型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="强化学习 Sarsa">
 <meta property="og:url" content="https://futuwxq.github.io/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="Sarsa 的决策部分和 Q learning 一样，都是基于 Q 表的形式决策, 在 Q 表中挑选值较大的动作值施加在环境中来换取奖惩.。但是不同的地方在于 Sarsa 的更新方式是不一样的。 Q learning 估算动作，但并不一定会执行这个动作，Q-learning 在这一步只是估计了一下接下来的动作值。而sarsa 估算的动作也是接下来要做的动作。因为 Sarsa 是说到做到型, 所以我">
+<meta property="og:description" content="SarsaSarsa 的决策部分和 Q learning 一样，都是基于 Q 表的形式决策, 在 Q 表中挑选值较大的动作值施加在环境中来换取奖惩.。但是不同的地方在于 Sarsa 的更新方式是不一样的。 Q learning 估算动作，但并不一定会执行这个动作，Q-learning 在这一步只是估计了一下接下来的动作值。而sarsa 估算的动作也是接下来要做的动作。因为 Sarsa 是说到做到型">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/image-20200821220516685.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/image-20200821220201762.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/image-20200822145619852.png">
 <meta property="article:published_time" content="2020-08-21T06:23:02.000Z">
-<meta property="article:modified_time" content="2020-08-21T14:11:50.543Z">
+<meta property="article:modified_time" content="2020-08-22T09:20:03.840Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="Reforce Learning">
 <meta name="twitter:card" content="summary">
@@ -178,16 +179,40 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Sarsa 的决策部分和 Q learning 一样，都是基于 Q 表的形式决策, 在 Q 表中挑选值较大的动作值施加在环境中来换取奖惩.。但是不同的地方在于 Sarsa 的更新方式是不一样的。</p>
+        <h2 id="Sarsa"><a href="#Sarsa" class="headerlink" title="Sarsa"></a>Sarsa</h2><p>Sarsa 的决策部分和 Q learning 一样，都是基于 Q 表的形式决策, 在 Q 表中挑选值较大的动作值施加在环境中来换取奖惩.。但是不同的地方在于 Sarsa 的更新方式是不一样的。</p>
 <p>Q learning 估算动作，但并不一定会执行这个动作，Q-learning 在这一步只是估计了一下接下来的动作值。而sarsa 估算的动作也是接下来要做的动作。因为 Sarsa 是说到做到型, 所以我们也叫他 on-policy, 在线学习, 学着自己在做的事情。<a id="more"></a>在 sarsa 算法中，行动策略和目标策略都是epsilon-greedy。相比之下q-learning只有行动策略是epsilon-greedy，而目标策略是贪婪策略。</p>
 <p>算法的区别：</p>
 <ul>
-<li>Sarsa  在当前 <code>state</code> 已经想好了 <code>state</code> 对应的 <code>action</code>, 而且想好了 下一个 <code>state_</code> 和下一个 <code>action_</code> (Qlearning 还没有想好下一个 <code>action_</code>，这里只是估计了 action_)</li>
-<li>更新 <code>Q(s,a)</code> 的时候基于的是下一个 <code>Q(s_, a_)</code> (Qlearning 是基于 <code>maxQ(s_)</code>，因为此时 q_learing 还没有确定下一步的 action_)</li>
+<li><strong>action_ 不同</strong>：Sarsa  在当前 <code>state</code> 已经想好了 <code>state</code> 对应的 <code>action</code>, 而且想好了 下一个 <code>state_</code> 和下一个 <code>action_</code> ，在下一个 state 就会执行这个<code>action_</code>，Qlearning 还没有想好下一个 <code>action_</code>，这里只是估计了 <code>action_</code>，<strong>会在下一个 state 里面重新选择 action</strong>。</li>
+<li>Sarsa 更新 <code>Q(s,a)</code> 的时候基于的是下一个 <code>Q(s_, a_)</code> ，Qlearning 是基于 <code>maxQ(s_)</code>，因为此时 q_learing 还没有确定下一步的 action_</li>
 </ul>
+<p>这样看来 Q learning 每次都是朝着 <code>maxQ(s_)</code> 去选择 actions ，他看起来更加勇敢也变得贪婪。Sarsa  是 尽量避免踩坑，在陷阱周围，agent 看起来更加犹豫，它是一种保守的算法, 他在乎每一步决策,。</p>
 <img src="/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/image-20200821220516685.png" alt="image-20200821220516685" style="zoom:80%;">
 
-<h2 id="算法"><a href="#算法" class="headerlink" title="算法"></a>算法</h2><img src="/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/image-20200821220201762.png" alt="image-20200821220201762" style="zoom:80%;">
+<h3 id="算法的代码形式"><a href="#算法的代码形式" class="headerlink" title="算法的代码形式"></a>算法的代码形式</h3><img src="/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/image-20200821220201762.png" alt="image-20200821220201762" style="zoom:80%;">
+
+<ul>
+<li>开始初始化 observation ，在当前状态下选择一个 action</li>
+<li>通过与环境交互然后获得下一个 observation_ ，reward ,</li>
+<li>估算下一个<code>action_</code>,</li>
+<li>开始学习，更新 q 表</li>
+<li>把当前状态下确定的 observation_ 和 action_ 交换为下一个状态的 observation 和 action</li>
+<li>在下一个状态直接执行这个<code>action_</code>,获得接下来的 <code>observation_</code>。</li>
+</ul>
+<p>update 的代码如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">update</span><span class="params">()</span>:</span></span><br><span class="line">    <span class="keyword">for</span> episode <span class="keyword">in</span> range(<span class="number">50</span>):</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 1. initial observation</span></span><br><span class="line">        observation = env.reset()</span><br><span class="line">        <span class="comment"># 2. RL choose action based on observation</span></span><br><span class="line">        action = RL.choose_action(str(observation))</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 3. fresh env</span></span><br><span class="line">            env.render()</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 4. RL tack action and get next obseration and reward and done</span></span><br><span class="line">            observation_, reward, done = env.step(action)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 5. RL choose action based on next observation</span></span><br><span class="line">            action_ = RL.choose_action(str(observation_))</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 6. RL learn from thie transition</span></span><br><span class="line">            RL.learn(str(observation), action, reward,</span><br><span class="line">                     str(observation_), action_)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 7. swap observation and action</span></span><br><span class="line">            observation = observation_</span><br><span class="line">            action = action_</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> done:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># end of game</span></span><br><span class="line">    print(<span class="string">'game over'</span>)</span><br><span class="line">    env.destory()</span><br></pre></td></tr></table></figure>
+
+<p>学习 learn， Q 值是根据 q(s, a) 来确定的</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">learn</span><span class="params">(self, s, a, r, s_, a_)</span>:</span></span><br><span class="line">    self.check_state_exist(s_)</span><br><span class="line">    <span class="comment"># 预测值</span></span><br><span class="line">    q_predict = self.q_table.loc[s, a]</span><br><span class="line">    <span class="keyword">if</span> s_ != <span class="string">'terminal'</span>:</span><br><span class="line">        <span class="comment"># 真实值</span></span><br><span class="line">        q_target = r + self.gamma * self.q_table.loc[s_, a_]  <span class="comment"># update</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="comment"># 真实值</span></span><br><span class="line">        q_target = r</span><br><span class="line">    <span class="comment"># 更新 Q 表</span></span><br><span class="line">    self.q_table.loc[s, a] += self.lrate * (q_target - q_predict)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Sarsa-lambda"><a href="#Sarsa-lambda" class="headerlink" title="Sarsa(lambda)"></a>Sarsa(lambda)</h2><p>Sarsa 是一种单步更新，也就是每走一步就会更新一次,并记录这些 state(<strong>但是并没有 记录这些 state 距离宝藏的是更近更快还是更慢)</strong>，在一开始因为对最优值没有头绪，会在原地打转重复，最后才会找到最优值，这些重复打转看起来就很没有必要，反而影响效率。那怎么让 Sarsa  也知道哪些步数是距离 最优解近的，哪些是远的，从而更新距离宝藏近的步数？</p>
+<h3 id="单步更新-and-回合更新"><a href="#单步更新-and-回合更新" class="headerlink" title="单步更新 and 回合更新"></a>单步更新 and 回合更新</h3><img src="/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/image-20200822145619852.png" alt="image-20200822145619852" style="zoom:80%;">
+
+<p><strong>单步更新</strong>是每一步都会进行更新 Q表，但是在没有获取宝藏的时候, 我们现在站着的这一步也没有得到任何更新（这一步是离宝藏近 还是 离宝藏远无从知道）, 直到获取宝藏时, 我们才为获取到宝藏的上一步更新为: 这一步很好, 和获取宝藏是有关联的, 而之前为了获取宝藏所走的所有步都被认为和获取宝藏没关系。</p>
+<p><strong>回合更新</strong>是等到这回合结束, 才开始对本回合所经历的所有步都添加更新, 但是这所有的步都是和宝藏有关系的, 都是为了得到宝藏需要学习的步, 所以每一个脚印在下回合被选则的几率又高了一些.，在这种角度来看, 回合更新似乎会有效率一些。</p>
+<h3 id="Sarsa-lambda-1"><a href="#Sarsa-lambda-1" class="headerlink" title="Sarsa($\lambda$)"></a>Sarsa($\lambda$)</h3><p>为了让 Sarsa 知道哪一步离宝藏近，需要引入一个参数 lambda 。其实 lambda 就是一个衰变值, 他可以让你知道离奖励越远的步可能并不是让你最快拿到奖励的步, 所以我们想象我们站在宝藏的位置, 回头看看我们走过的寻宝之路, 离宝藏越近的脚印越看得清, 远处的脚印太渺小, 我们都很难看清, 那我们就索性记下<strong>离宝藏越近的脚印越重要, 越需要被好好的更新</strong>. 和之前我们提到过的 奖励衰减值 gamma 一样, lambda 是脚步衰减值, 都是一个在 0 和 1 之间的数.</p>
+<p>当 lambda 取0, 就变成了 Sarsa 的单步更新, 当 lambda 取 1, 就变成了回合更新, 对所有步更新的力度都是一样. 当 lambda 在 0 和 1 之间, 取值越大, 离宝藏越近的步更新力度越大. 这样我们就不用受限于单步更新的每次只能更新最近的一步, 我们可以更有效率的更新所有相关步了</p>
+<h3 id="Sarsa-lambda-方法"><a href="#Sarsa-lambda-方法" class="headerlink" title="Sarsa-lambda 方法"></a>Sarsa-lambda 方法</h3>
       
 
       

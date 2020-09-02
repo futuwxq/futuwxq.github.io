@@ -154,6 +154,348 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-tensorflow 的基础" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/25/tensorflow%20%E7%9A%84%E5%9F%BA%E7%A1%80/">tensorflow 的基础语法</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/25/tensorflow%20%E7%9A%84%E5%9F%BA%E7%A1%80/" class="archive-article-date">
+  	<time datetime="2020-08-25T09:08:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以下的内容都是 tensorflow1.x 的语法</p>
+<h3 id="Session-会话控制"><a href="#Session-会话控制" class="headerlink" title="Session 会话控制"></a>Session 会话控制</h3><p><code>Session</code> 是 Tensorflow 为了控制,和输出文件的执行的语句. 运行 <code>session.run()</code> 可以获得你要得知的运算结果, 或者是你所要运算的部分。</p>
+<p> <code>product</code> 不是直接计算的步骤, 所以我们会要使用 <code>Session</code> 来激活 <code>product</code> 并得到计算结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">matrix1 &#x3D; tf.constant([[3,3]])</span><br><span class="line">matrix2 &#x3D; tf.constant([[2],</span><br><span class="line">                       [2]])</span><br><span class="line">product &#x3D; tf.matmul(matrix1,matrix2)</span><br><span class="line"></span><br><span class="line"># method 1</span><br><span class="line">sess &#x3D; tf.Session()</span><br><span class="line"># 每 run 一次，就会执行上面的 product 结构</span><br><span class="line">result &#x3D; sess.run(product)</span><br><span class="line">print(result)</span><br><span class="line">sess.close()</span><br><span class="line"># [[12]]</span><br><span class="line"></span><br><span class="line"># method 2</span><br><span class="line">with tf.Session() as sess:</span><br><span class="line">    result2 &#x3D; sess.run(product)</span><br><span class="line">    print(result2)</span><br></pre></td></tr></table></figure>
+
+<h3 id="Variable-变量"><a href="#Variable-变量" class="headerlink" title="Variable 变量"></a>Variable 变量</h3><p>在 TensorFlow 的世界里，变量的定义和初始化是分开的，所有关于图变量的赋值和计算都要通过tf.Session的run来进行。想要将所有图变量进行集体初始化时应该使用 <code>tf.global_variables_initializer</code>。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># 定义语法： state &#x3D; tf.Variable()</span><br><span class="line">state &#x3D; tf.Variable(0, name&#x3D;&#39;counter&#39;)</span><br><span class="line"></span><br><span class="line"># 如果定义 Variable, 就一定要 initialize</span><br><span class="line">init &#x3D; tf.global_variables_initializer()  # 替换成这样就好</span><br></pre></td></tr></table></figure>
+
+<h3 id="constant-常量"><a href="#constant-常量" class="headerlink" title="constant 常量"></a>constant 常量</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 常量 1 </span><br><span class="line">one &#x3D; tf.constant(1)</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorflow</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/25/tensorflow%20%E7%9A%84%E5%9F%BA%E7%A1%80/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-tensorflow" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/25/tensorflow/">tensorflow 的安装</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/25/tensorflow/" class="archive-article-date">
+  	<time datetime="2020-08-25T05:49:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>window 10 + python3.7.7 + Anaconda  ，下载 tensorflow （tensorflow ‘2.3.0’），参考教程 <a href="https://zhuanlan.zhihu.com/p/77790443" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/77790443</a></p>
+<p>Anaconda 是一个开源的Python包管理器，Anaconda 的 envs 里面可以设置多个虚拟的 python 环境。安装 Anaconda  需要配置环境变量。</p>
+<p>如果先安装 python再 Anaconda ，可以在envs 中新建一个虚拟环境来复制之前的 python 环境。也可以直接舍弃，因为安装Anaconda 会默认安装 python（base 环境）。tensorflow  的安装就是在 envs 新建了一个虚拟环境，因此安装成功后，每次使用 TensorFlow 的时候都需要激活 conda 环境。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">查看环境：conda info --envs</span><br><span class="line"></span><br><span class="line">激活环境：activate tensorflow</span><br><span class="line"></span><br><span class="line">关闭环境：deactivate</span><br><span class="line"></span><br><span class="line"># 删除 tensorflow 环境</span><br><span class="line">conda remove -n tensorflow --all</span><br></pre></td></tr></table></figure>
+
+<p><strong>从 tf1.x 版本 迁移到 tf2.x</strong></p>
+<p>在 tensorflow 2.x 版本中一些 API 发生了变化，旧版本的一些函数无法识别，如果想在tensorflow 2.x  中继续执行旧版本的 函数，加上下面这一句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import tensorflow.compat.v1 as tf</span><br><span class="line">tf.disable_v2_behavior()</span><br></pre></td></tr></table></figure>
+
+<p> tensorflow 当中如何用代码来运行我们搭建的结构</p>
+<ul>
+<li>创建数据：真实数据，输入</li>
+<li>搭建模型：模拟数据<ul>
+<li>计算误差</li>
+<li>传播误差 ：<code>optimizer</code>，误差传递方法， <code>optimizer</code> 更新参数</li>
+</ul>
+</li>
+<li>训练<ul>
+<li>初始化所有之前定义的<code>Variable</code>,</li>
+</ul>
+</li>
+<li>创建会话 <code>Session</code></li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorflow</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/25/tensorflow/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-神经网络" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/24/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">神经网络</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/24/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="archive-article-date">
+  	<time datetime="2020-08-23T17:44:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-24</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> 人工神经网络是利用计算机模仿人类的神经网络，想让计算机像人一样思考。 人工神经网络里所有神经元之间的连接都是固定不可更换的。人工神经网络典型的一种学习方式就是，预先准备学习数据, 然后将这些数据一次次放入这套人工神经网络系统中, 然后通过对比这次信号传递后的结果是不是我们想要的结果, 来修改人工神经网络当中的神经元强度，也称为误差反向传递。通过不断修改神经元强度，最终神经网络系统输出结果更加准确。</p>
+<p>神经网络是当今为止最流行的一种深度学习框架，他的原理就是梯度下降机制，这个梯度就是微积分中的梯度。利用神经网络进行求解的时候，求出 误差方程 (Cost Function)——用来计算预测出来的和我们实际中的值有多大差别——中的最小梯度，就可以找到最小误差 (梯度线躺平的地方).</p>
+<p>TensorFlow是Google开发的一款神经网络的Python外部的结构包, 也是一个采用数据流图来进行数值计算的开源软件库.TensorFlow 让我们可以先绘制计算结构图, 也可以称是一系列可人机交互的计算操作, 然后把编辑好的Python文件 转换成 更高效的C++, 并在后端进行计算.</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">RL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/24/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-强化学习方法 DQN" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/23/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%20DQN/">强化学习方法 DQN</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/23/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%20DQN/" class="archive-article-date">
+  	<time datetime="2020-08-23T08:44:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p> Deep Q Network 简称为 DQN，结合了Q learning 的优势 和 Neural networks 。</p>
+<p>传统的表格形式的强化学习用表格来存储每一个状态 state, 和在这个 state 每个行为 action 所拥有的 Q 值。但是当 state 过多，存储这么多的状态数据，在这些数据中搜索并选择 action ，不仅效率低而且占内存。</p>
+<p>神经网络可以解决这一问题。可以将状态和动作当成神经网络的输入, 然后经过神经网络分析后得到动作的 Q 值, 这样我们就没必要在表格中记录 Q 值, 而是直接使用神经网络生成 Q 值. 还有一种形式的是这样, 我们也能只输入状态值, 输出所有的动作值, 然后按照 Q learning 的原则, 直接选择拥有最大值的动作当做下一步要做的动作。</p>
+<h3 id="如何更新神经网络"><a href="#如何更新神经网络" class="headerlink" title="如何更新神经网络"></a>如何更新神经网络</h3><p>神经网络需要被训练，才能得到准确的值，如何更新生神经网络的 NN 参数</p>
+<ul>
+<li>Q 估计：输入一个状态 S2，通过 NN 预测出Q(s2, a1) 和 Q(s2,a2) 的值, 这就是 Q 估计，选取 Q 估计中最大值的动作来换取环境中的奖励 reward</li>
+<li>Q 现实： Q 现实中包含从神经网络分析出来的两个 Q 估计值, 不过这个 Q 估计是针对于下一步在 s’ 的估计. </li>
+<li>最后再通过刚刚所说的算法更新神经网络中的参数。 新的NN = 老NN +   α(Q现实 - Q估计)    </li>
+</ul>
+<img src="/2020/08/23/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%20DQN/image-20200824101013705.png" alt="image-20200824101013705" style="zoom:80%;">
+
+<h3 id="DQN-两大利器"><a href="#DQN-两大利器" class="headerlink" title="DQN 两大利器"></a>DQN 两大利器</h3><p> Experience replay 和 Fixed Q-targets 都是为了打经历之间的相关性，使神经网络可以更好地收敛。</p>
+<p> Experience replay : DQN 有一个记忆库用于学习之前的经历(off-policy),所以每次 DQN 更新的时候, 我们都可以<strong>随机抽取一些之前的经历进行学习.</strong> 随机抽取这种做法打乱了经历之间的相关性, 也使得神经网络更新更有效率.</p>
+<p>Fixed Q-targets： Fixed Q-targets 也是一种打乱相关性的机理, 如果使用 fixed Q-targets, 我们就会在 DQN 中使用到<strong>两个结构相同但参数不同的神经网络</strong>, 预测 Q 估计 的神经网络具备最新的参数, 而预测 Q 现实 的神经网络使用的参数则是很久以前的.</p>
+<h3 id="DQN-算法"><a href="#DQN-算法" class="headerlink" title="DQN 算法"></a>DQN 算法</h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">RL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/23/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%20DQN/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-强化学习 Sarsa" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -191,7 +533,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Reforce Learning</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">RL</a>
         		</li>
       		
 		</ul>
@@ -202,90 +544,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Pandas plot 出图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/20/Pandas%20plot%20%E5%87%BA%E5%9B%BE/">Pandas plot 出图</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/20/Pandas%20plot%20%E5%87%BA%E5%9B%BE/" class="archive-article-date">
-  	<time datetime="2020-08-20T02:30:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>数据可视化，首先<code>import</code>我们需要用到的模块，除了 pandas，我们也需要使用 numpy 生成一些数据， matplotlib 用来 show 图片。</p>
-<h3 id="Series-线条可视化"><a href="#Series-线条可视化" class="headerlink" title="Series 线条可视化"></a>Series 线条可视化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line"></span><br><span class="line">data &#x3D; pd.Series(np.random.randn(1000),index&#x3D;np.arange(1000))</span><br><span class="line">#累加数据 数据更加明显</span><br><span class="line">data &#x3D; data.cumsum()</span><br><span class="line"># pandas 数据可以直接观看其可视化形式</span><br><span class="line">data.plot()</span><br><span class="line"># 出图</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-<h3 id="Dataframe-可视化"><a href="#Dataframe-可视化" class="headerlink" title="Dataframe 可视化"></a>Dataframe 可视化</h3><p>plot 中有诸多参数，线宽，颜色等等</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#折线图</span><br><span class="line">data1 &#x3D; pd.DataFrame(np.random.randn(1000,4),</span><br><span class="line">                        index&#x3D;np.arange(1000),</span><br><span class="line">                        columns&#x3D;list(&quot;ABCD&quot;))</span><br><span class="line">data1 &#x3D; data1.cumsum()</span><br><span class="line">data1.plot()</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"># 散点图</span><br><span class="line">data1.plot.scatter(x&#x3D;&#39;A&#39;,y&#x3D;&#39;B&#39;,color&#x3D;&#39;Red&#39;,label&#x3D;&#39;Class1&#39;)</span><br><span class="line">plt.show()</span><br><span class="line"># 多组数据的散点图</span><br><span class="line"># 将之下这个 data 画在上一个 ax 上面</span><br><span class="line">ax &#x3D; data1.plot.scatter(x&#x3D;&#39;A&#39;,y&#x3D;&#39;B&#39;,color&#x3D;&#39;Red&#39;,label&#x3D;&#39;Class1&#39;)</span><br><span class="line">data.plot.scatter(x&#x3D;&#39;A&#39;,y&#x3D;&#39;C&#39;,color&#x3D;&#39;LightGreen&#39;,label&#x3D;&#39;Class2&#39;,ax&#x3D;ax)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
-
-<p>plot 的方法有很多种，bar、hist、box、kde、area、scatter、hexbin。下图是折线图</p>
-<img src="/2020/08/20/Pandas%20plot%20%E5%87%BA%E5%9B%BE/image-20200820142703828.png" alt="image-20200820142703828" style="zoom:80%;">
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Pandas</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/20/Pandas%20plot%20%E5%87%BA%E5%9B%BE/">展开全文 >></a>
         </p>
       
 
@@ -399,30 +657,34 @@
 
 
   
-    <article id="post-Pandas 选择数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Pandas plot 出图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/19/Pandas%20%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE/">Pandas 选择数据 设置值</a>
+      <a class="article-title" href="/2020/08/20/Pandas%20plot%20%E5%87%BA%E5%9B%BE/">Pandas plot 出图</a>
     </h1>
   
 
         
-        <a href="/2020/08/19/Pandas%20%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE/" class="archive-article-date">
-  	<time datetime="2020-08-19T02:34:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-19</time>
+        <a href="/2020/08/20/Pandas%20plot%20%E5%87%BA%E5%9B%BE/" class="archive-article-date">
+  	<time datetime="2020-08-20T02:30:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一-、Pandas-选择数据"><a href="#一-、Pandas-选择数据" class="headerlink" title="一 、Pandas 选择数据"></a>一 、Pandas 选择数据</h2><h3 id="简单的筛选"><a href="#简单的筛选" class="headerlink" title="简单的筛选"></a>简单的筛选</h3><p><strong>筛选某列</strong></p>
-        
-          <a class="article-more-a" href="/2020/08/19/Pandas%20%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE/#more">more >></a>
-        
+        <p>数据可视化，首先<code>import</code>我们需要用到的模块，除了 pandas，我们也需要使用 numpy 生成一些数据， matplotlib 用来 show 图片。</p>
+<h3 id="Series-线条可视化"><a href="#Series-线条可视化" class="headerlink" title="Series 线条可视化"></a>Series 线条可视化</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import pandas as pd</span><br><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line"></span><br><span class="line">data &#x3D; pd.Series(np.random.randn(1000),index&#x3D;np.arange(1000))</span><br><span class="line">#累加数据 数据更加明显</span><br><span class="line">data &#x3D; data.cumsum()</span><br><span class="line"># pandas 数据可以直接观看其可视化形式</span><br><span class="line">data.plot()</span><br><span class="line"># 出图</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<h3 id="Dataframe-可视化"><a href="#Dataframe-可视化" class="headerlink" title="Dataframe 可视化"></a>Dataframe 可视化</h3><p>plot 中有诸多参数，线宽，颜色等等</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">#折线图</span><br><span class="line">data1 &#x3D; pd.DataFrame(np.random.randn(1000,4),</span><br><span class="line">                        index&#x3D;np.arange(1000),</span><br><span class="line">                        columns&#x3D;list(&quot;ABCD&quot;))</span><br><span class="line">data1 &#x3D; data1.cumsum()</span><br><span class="line">data1.plot()</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"># 散点图</span><br><span class="line">data1.plot.scatter(x&#x3D;&#39;A&#39;,y&#x3D;&#39;B&#39;,color&#x3D;&#39;Red&#39;,label&#x3D;&#39;Class1&#39;)</span><br><span class="line">plt.show()</span><br><span class="line"># 多组数据的散点图</span><br><span class="line"># 将之下这个 data 画在上一个 ax 上面</span><br><span class="line">ax &#x3D; data1.plot.scatter(x&#x3D;&#39;A&#39;,y&#x3D;&#39;B&#39;,color&#x3D;&#39;Red&#39;,label&#x3D;&#39;Class1&#39;)</span><br><span class="line">data.plot.scatter(x&#x3D;&#39;A&#39;,y&#x3D;&#39;C&#39;,color&#x3D;&#39;LightGreen&#39;,label&#x3D;&#39;Class2&#39;,ax&#x3D;ax)</span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+
+<p>plot 的方法有很多种，bar、hist、box、kde、area、scatter、hexbin。下图是折线图</p>
+<img src="/2020/08/20/Pandas%20plot%20%E5%87%BA%E5%9B%BE/image-20200820142703828.png" alt="image-20200820142703828" style="zoom:80%;">
       
 
       
@@ -449,7 +711,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/19/Pandas%20%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/08/20/Pandas%20plot%20%E5%87%BA%E5%9B%BE/">展开全文 >></a>
         </p>
       
 
@@ -560,6 +822,86 @@
 
 
   
+    <article id="post-Pandas 选择数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/19/Pandas%20%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE/">Pandas 选择数据 设置值</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/19/Pandas%20%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE/" class="archive-article-date">
+  	<time datetime="2020-08-19T02:34:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一-、Pandas-选择数据"><a href="#一-、Pandas-选择数据" class="headerlink" title="一 、Pandas 选择数据"></a>一 、Pandas 选择数据</h2><h3 id="简单的筛选"><a href="#简单的筛选" class="headerlink" title="简单的筛选"></a>简单的筛选</h3><p><strong>筛选某列</strong></p>
+        
+          <a class="article-more-a" href="/2020/08/19/Pandas%20%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Pandas</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/19/Pandas%20%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Pandas 基本使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -641,331 +983,9 @@
 
 
   
-    <article id="post-Python-基础语法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/17/Python-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">Python-基础语法</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/17/Python-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-08-17T13:35:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><h4 id="1-Boolean-值"><a href="#1-Boolean-值" class="headerlink" title="1 Boolean 值"></a>1 Boolean 值</h4><p>返回 <code>True</code> 和 <code>False</code>值</p>
-<ul>
-<li>数字：该值等于 <code>0</code> 或者 <code>0.0</code> 将会返回 <code>False</code> 其余的返回 <code>True</code></li>
-<li>None 类型：flase</li>
-<li>集合类型（list<code>、</code>tuple<code>、</code>dict<code>和</code>set）：如果集合中的元素数量为 0，那么将会返回 <code>False</code>, 否则返回 <code>True</code>。</li></ul>
-        
-          <a class="article-more-a" href="/2020/08/17/Python-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/17/Python-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-web页面绘制过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/14/web%E9%A1%B5%E9%9D%A2%E7%BB%98%E5%88%B6%E8%BF%87%E7%A8%8B/">前端页面绘制过程</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/14/web%E9%A1%B5%E9%9D%A2%E7%BB%98%E5%88%B6%E8%BF%87%E7%A8%8B/" class="archive-article-date">
-  	<time datetime="2020-08-14T03:32:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>浏览器分为</p>
-<ul>
-<li><p>用户界面</p>
-</li>
-<li><p>浏览器引擎</p>
-</li>
-<li><p>渲染引擎</p>
-</li>
-</ul>
-<p>多进程浏览器结构</p>
-        
-          <a class="article-more-a" href="/2020/08/14/web%E9%A1%B5%E9%9D%A2%E7%BB%98%E5%88%B6%E8%BF%87%E7%A8%8B/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/14/web%E9%A1%B5%E9%9D%A2%E7%BB%98%E5%88%B6%E8%BF%87%E7%A8%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-项目总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/13/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/">Vue实战项目 总结</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/13/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2020-08-13T00:34:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="报错"><a href="#报错" class="headerlink" title="报错"></a><strong>报错</strong></h3><p>下面的意思是 在 ./src/icons/index.js 中找不到 SvgIcon</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">This dependency was not found:</span><br><span class="line"></span><br><span class="line">* @&#x2F;components&#x2F;content&#x2F;icons&#x2F;SvgIcon in .&#x2F;src&#x2F;icons&#x2F;index.js</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li></li></ul>
-        
-          <a class="article-more-a" href="/2020/08/13/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/13/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Vue实战项目 我的 profile" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/12/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E6%88%91%E7%9A%84%20profile/">Vue实战项目 我的 profile</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/12/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E6%88%91%E7%9A%84%20profile/" class="archive-article-date">
-  	<time datetime="2020-08-12T07:34:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1-slot-使用"><a href="#1-slot-使用" class="headerlink" title="1 slot 使用"></a>1 slot 使用</h4><p>在 profile 页面，用户登录前和登录后，许多地方不一样。将这些会变化的部分，放在一个 slot 内部。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//默认部分 </span></span><br><span class="line">&lt;slot name=<span class="string">"user-nickname"</span>&gt;</span><br><span class="line">          &lt;div&gt;登录/注册&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>slot&gt;</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/08/12/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E6%88%91%E7%9A%84%20profile/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/12/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E6%88%91%E7%9A%84%20profile/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1172,7 +1192,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Reforce Learning</a>
+                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">RL</a>
               </li>
             
             <div class="clearfix"></div>

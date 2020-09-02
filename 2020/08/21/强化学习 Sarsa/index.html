@@ -18,10 +18,11 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/image-20200821220516685.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/image-20200821220201762.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/image-20200822145619852.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/image-20200823161053070.png">
 <meta property="article:published_time" content="2020-08-21T06:23:02.000Z">
-<meta property="article:modified_time" content="2020-08-22T09:20:03.840Z">
+<meta property="article:modified_time" content="2020-08-24T02:14:33.691Z">
 <meta property="article:author" content="Better">
-<meta property="article:tag" content="Reforce Learning">
+<meta property="article:tag" content="RL">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://futuwxq.github.io/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/image-20200821220516685.png">
   
@@ -212,7 +213,23 @@
 <p><strong>回合更新</strong>是等到这回合结束, 才开始对本回合所经历的所有步都添加更新, 但是这所有的步都是和宝藏有关系的, 都是为了得到宝藏需要学习的步, 所以每一个脚印在下回合被选则的几率又高了一些.，在这种角度来看, 回合更新似乎会有效率一些。</p>
 <h3 id="Sarsa-lambda-1"><a href="#Sarsa-lambda-1" class="headerlink" title="Sarsa($\lambda$)"></a>Sarsa($\lambda$)</h3><p>为了让 Sarsa 知道哪一步离宝藏近，需要引入一个参数 lambda 。其实 lambda 就是一个衰变值, 他可以让你知道离奖励越远的步可能并不是让你最快拿到奖励的步, 所以我们想象我们站在宝藏的位置, 回头看看我们走过的寻宝之路, 离宝藏越近的脚印越看得清, 远处的脚印太渺小, 我们都很难看清, 那我们就索性记下<strong>离宝藏越近的脚印越重要, 越需要被好好的更新</strong>. 和之前我们提到过的 奖励衰减值 gamma 一样, lambda 是脚步衰减值, 都是一个在 0 和 1 之间的数.</p>
 <p>当 lambda 取0, 就变成了 Sarsa 的单步更新, 当 lambda 取 1, 就变成了回合更新, 对所有步更新的力度都是一样. 当 lambda 在 0 和 1 之间, 取值越大, 离宝藏越近的步更新力度越大. 这样我们就不用受限于单步更新的每次只能更新最近的一步, 我们可以更有效率的更新所有相关步了</p>
-<h3 id="Sarsa-lambda-方法"><a href="#Sarsa-lambda-方法" class="headerlink" title="Sarsa-lambda 方法"></a>Sarsa-lambda 方法</h3>
+<h3 id="Sarsa-lambda-算法"><a href="#Sarsa-lambda-算法" class="headerlink" title="Sarsa-lambda 算法"></a>Sarsa-lambda 算法</h3><p>算法如下：E(s,a) 是一个用来记录 lambda  的表格，它和 Q table 结构相同。$\delta$ 是误差： $q_{现实} - q_{预测}$。更新 Q table 和 E table 的公式是：<br>$$<br>Q(s, a) = Q(s, a) +  α    [R + {\gamma} Q(s_, a_) - Q(s, a)]E(s, a)\<br>\</p>
+<p>E(s, a) = \gamma\lambda E(s, a)<br>$$<br><img src="/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/image-20200823161053070.png" alt="image-20200823161053070" style="zoom:80%;"></p>
+<h4 id="学习-learn"><a href="#学习-learn" class="headerlink" title="学习 learn"></a>学习 learn</h4><p>Sarsa-lambda 的一开始创建了结构和 Q  table 相似的 eligibility_trace 表。表格的横轴是 state，纵轴是 action，value 值是 lambda 的衰减值（也就是记录了每个走过的 action 距离最优解的是否更近更快），解决了 Sarsa 单步更新只会更新到达最优解的 action。</p>
+<p>eligibility_trace </p>
+<ul>
+<li>初始化时，浅拷贝 Q table： <code>self.eligibility_trace = self.q_table.copy()</code></li>
+<li>和 q_table 一样 check_state_exist ，加入新的 state 到表中，默认值为全 0 </li>
+<li>更新 Q table 的时候: 公式按照上面的公式来。</li>
+<li>更新 eligibility_trace ：对于经历过的 state-action, 我们让他+1, 证明他是得到 reward 路途中不可或缺的一环。<ul>
+<li>每经过的 [ s,a] value 值都 +1 ，但是考虑累加值，每次都让  [s,:]所在的行 所有 值重置为 0 ，之后在 [ s,a]  +1。</li>
+<li>lambda 衰减。定义一个 衰减系数 $\lambda$,每次eligibility_trace  的值都乘以一个$\lambda$ (衰减系数)和 γ (对未来奖励衰减系数)</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">learn</span><span class="params">(self, s, a, r, s_, a_)</span>:</span></span><br><span class="line">    self.check_state_exist(s_)</span><br><span class="line">    q_predict = self.q_table.loc[s, a]</span><br><span class="line">    <span class="keyword">if</span> s_ != <span class="string">'terminal'</span>:</span><br><span class="line">        q_target = r + self.gamma * self.q_table.loc[s_, a_]</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        q_target = r</span><br><span class="line">    error = q_target - q_predict</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 这里开始不同</span></span><br><span class="line">    <span class="comment"># 对于经历过的 state-action, 我们让他+1, 证明他是得到 reward 路途中不可或缺的一环</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Method 2:</span></span><br><span class="line">    self.eligibility_trace.loc[s, :] *= <span class="number">0</span></span><br><span class="line">    self.eligibility_trace.loc[s, a] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Q table update</span></span><br><span class="line">    self.q_table += self.lrate * error * self.eligibility_trace</span><br><span class="line"></span><br><span class="line">    <span class="comment"># decay eligibility trace after update</span></span><br><span class="line">    self.eligibility_trace *= self.gamma*self.lambda_</span><br></pre></td></tr></table></figure>
+
+
       
 
       
@@ -246,7 +263,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Reforce Learning</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">RL</a>
         		</li>
       		
 		</ul>
@@ -316,9 +333,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2020/08/23/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%20DQN/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          强化学习方法 DQN
+        
+      </div>
+    </a>
   
-    <a href="/2020/08/20/Pandas%20plot%20%E5%87%BA%E5%9B%BE/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Pandas plot 出图</div>
+  
+    <a href="/2020/08/20/Numpy%20%E5%9F%BA%E7%A1%80/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Numpy 初了解</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -556,7 +582,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Reforce Learning</a>
+                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">RL</a>
               </li>
             
             <div class="clearfix"></div>

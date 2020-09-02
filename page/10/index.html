@@ -154,6 +154,392 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="p-javaee学习 — session 和 cookie" class="article article-type-p  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/22/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20session%20%E5%92%8C%20cookie/">javaee学习 — session 和 cookie</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/22/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20session%20%E5%92%8C%20cookie/" class="archive-article-date">
+  	<time datetime="2020-04-22T00:48:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Request对象解决了一次请求内的不同 Servlet 的数据共享问题，那么一个用户的不同请求的处理需要使用相同的数据怎么办呢?使用session技术。</p>
+<h2 id="一-、Session"><a href="#一-、Session" class="headerlink" title="一 、Session"></a>一 、Session</h2><p>用户使用浏览器第一次向服务器发送请求，服务器在接受到请求后，调用对应的Servlet进行处理。在处理过程中会给用户创建一个session对象，用来存储用户请求处理相关的公共数据。</p>
+        
+          <a class="article-more-a" href="/2020/04/22/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20session%20%E5%92%8C%20cookie/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javaee</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/22/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20session%20%E5%92%8C%20cookie/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-javaee学习 — 如何初始化Web容器上下文参数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20%E5%A6%82%E4%BD%95%E5%88%9D%E5%A7%8B%E5%8C%96Web%E5%AE%B9%E5%99%A8%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8F%82%E6%95%B0/">如何初始化Web容器上下文参数</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20%E5%A6%82%E4%BD%95%E5%88%9D%E5%A7%8B%E5%8C%96Web%E5%AE%B9%E5%99%A8%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8F%82%E6%95%B0/" class="archive-article-date">
+  	<time datetime="2020-04-21T13:03:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一-、-通过Servlet初始化参数"><a href="#一-、-通过Servlet初始化参数" class="headerlink" title="一 、 通过Servlet初始化参数"></a>一 、 通过Servlet初始化参数</h3><p>Servlet初始化参数只会被读取一次 ， 因为在容器初始化 servlet时，ServletConfig获得参数后，只能通过重新部署web应用再次读取初始化参数。</p>
+<p>Servlet初始化参数需要在DD文件中配置，</p>
+        
+          <a class="article-more-a" href="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20%E5%A6%82%E4%BD%95%E5%88%9D%E5%A7%8B%E5%8C%96Web%E5%AE%B9%E5%99%A8%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8F%82%E6%95%B0/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javaee</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20%E5%A6%82%E4%BD%95%E5%88%9D%E5%A7%8B%E5%8C%96Web%E5%AE%B9%E5%99%A8%E4%B8%8A%E4%B8%8B%E6%96%87%E5%8F%82%E6%95%B0/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-javaee学习 — web容器模型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20web%E5%AE%B9%E5%99%A8%E6%A8%A1%E5%9E%8B/">javaee学习 — 如何初始化Web容器上下文参数</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20web%E5%AE%B9%E5%99%A8%E6%A8%A1%E5%9E%8B/" class="archive-article-date">
+  	<time datetime="2020-04-21T13:03:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一-、-通过Servlet初始化参数"><a href="#一-、-通过Servlet初始化参数" class="headerlink" title="一 、 通过Servlet初始化参数"></a>一 、 通过Servlet初始化参数</h3><p>Servlet初始化参数只会被读取一次 ， 因为在容器初始化 servlet时，ServletConfig获得参数后，只能通过重新部署web应用再次读取初始化参数。</p>
+<p>Servlet初始化参数需要在DD文件中配置，</p>
+        
+          <a class="article-more-a" href="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20web%E5%AE%B9%E5%99%A8%E6%A8%A1%E5%9E%8B/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javaee</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20web%E5%AE%B9%E5%99%A8%E6%A8%A1%E5%9E%8B/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-javaee学习 — Servlet" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/">javaee学习 — Servlet</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/" class="archive-article-date">
+  	<time datetime="2020-04-21T08:23:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-Servlet-生命周期"><a href="#1-Servlet-生命周期" class="headerlink" title="1.Servlet 生命周期"></a>1.Servlet 生命周期</h2><p>Servlet 生命周期：Servlet加载—&gt;实例化—&gt;服务—&gt;销毁。</p>
+<p>1）<strong>init（）</strong>：在Servlet的生命周期中，仅执行一次init()方法。它是在服务器装入Servlet时执行的，负责初始化Servlet对象。</p>
+<p>当容器初始化一个servlet时，为其创建唯一的ServletConfig对象， 容器从DD中读取servlet初始化参数，并传给ServletConfig，然后 再将ServletConfig传给servlet的init()方法。</p>
+        
+          <a class="article-more-a" href="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javaee</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Servlet/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-javaee学习 — Web应用开发方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95/">javaee学习 — Web应用开发方法</a>
+    </h1>
+  
+
+        
+        <a href="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-04-21T02:50:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>首先通过B/S编程模式来了解web应用开发。</p>
+<p>下图表现了B/S编程模式中的具体过程，首先浏览器把请求发送给服务器，服务器查询结果，然后结果格式化成响应发送至浏览器，最后浏览器渲染出相应的页面。基本的功能由浏览器内核实现。</p>
+        
+          <a class="article-more-a" href="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javaee</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/04/21/javaee%E5%AD%A6%E4%B9%A0%20%E2%80%94%20Web%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="p-javaee学习 — 容器" class="article article-type-p  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -814,402 +1200,9 @@
 
 
   
-    <article id="p-servlet中doGet 和doPost 方法" class="article article-type-p  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/13/servlet%E4%B8%ADdoGet%20%E5%92%8CdoPost%20%E6%96%B9%E6%B3%95/">servlet中doGet()和doPost()方法</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/13/servlet%E4%B8%ADdoGet%20%E5%92%8CdoPost%20%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-04-13T07:49:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>可以把方法写在doGet()方法中,在doPost()方法中调用执行,这样,无论你提交的是post还是get方法都可以执行</p>
-        
-          <a class="article-more-a" href="/2020/04/13/servlet%E4%B8%ADdoGet%20%E5%92%8CdoPost%20%E6%96%B9%E6%B3%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">javaee</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/13/servlet%E4%B8%ADdoGet%20%E5%92%8CdoPost%20%E6%96%B9%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CSS学习-盒子模型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/12/CSS%E5%AD%A6%E4%B9%A0-%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/">CSS学习-盒子模型</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/12/CSS%E5%AD%A6%E4%B9%A0-%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2020-04-12T11:10:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>网页布局过程:</p>
-<p>1.先准备好相关的网页元素,网页元素基本都是盒子Box .</p>
-<p>2.利用CSS设置好盒子样式,然后摆放到相应位置。</p>
-<p>3.往盒子里面装内容.</p>
-<p>网页布局的核心本质:就是利用CSS摆盒子。</p>
-        
-          <a class="article-more-a" href="/2020/04/12/CSS%E5%AD%A6%E4%B9%A0-%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/12/CSS%E5%AD%A6%E4%B9%A0-%E7%9B%92%E5%AD%90%E6%A8%A1%E5%9E%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-如何高效编写css代码" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/12/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E7%BC%96%E5%86%99css%E4%BB%A3%E7%A0%81/">如何高效编写css代码</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/12/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E7%BC%96%E5%86%99css%E4%BB%A3%E7%A0%81/" class="archive-article-date">
-  	<time datetime="2020-04-12T11:07:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一、分层组织css"><a href="#一、分层组织css" class="headerlink" title="一、分层组织css"></a>一、分层组织css</h3><p>一个项目可能有多个css文件，如何合理组织呢？</p>
-<p>常用的一种组织CSS的方法：</p>
-<p><code>base.css + common.css + page.css</code></p>
-        
-          <a class="article-more-a" href="/2020/04/12/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E7%BC%96%E5%86%99css%E4%BB%A3%E7%A0%81/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">工具类</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/12/%E5%A6%82%E4%BD%95%E9%AB%98%E6%95%88%E7%BC%96%E5%86%99css%E4%BB%A3%E7%A0%81/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-js的alert-confirm-prompt用法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/12/js%E7%9A%84alert-confirm-prompt%E7%94%A8%E6%B3%95/">js的alert,confirm,prompt用法</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/12/js%E7%9A%84alert-confirm-prompt%E7%94%A8%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-04-12T08:09:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>html页面简单的三种对话框如下：</p>
-<ol>
-<li><p>alert()，最简单的提示框：</p>
- <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">alert(<span class="string">"你好！"</span>);</span><br></pre></td></tr></table></figure></li></ol>
-        
-          <a class="article-more-a" href="/2020/04/12/js%E7%9A%84alert-confirm-prompt%E7%94%A8%E6%B3%95/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/12/js%E7%9A%84alert-confirm-prompt%E7%94%A8%E6%B3%95/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-头部固定，左侧固定导航，右侧可切换页面 布局" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/04/11/%E5%A4%B4%E9%83%A8%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%E5%AF%BC%E8%88%AA%EF%BC%8C%E5%8F%B3%E4%BE%A7%E5%8F%AF%E5%88%87%E6%8D%A2%E9%A1%B5%E9%9D%A2%20%E5%B8%83%E5%B1%80/">头部固定，左侧固定导航，右侧可切换页面 布局</a>
-    </h1>
-  
-
-        
-        <a href="/2020/04/11/%E5%A4%B4%E9%83%A8%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%E5%AF%BC%E8%88%AA%EF%BC%8C%E5%8F%B3%E4%BE%A7%E5%8F%AF%E5%88%87%E6%8D%A2%E9%A1%B5%E9%9D%A2%20%E5%B8%83%E5%B1%80/" class="archive-article-date">
-  	<time datetime="2020-04-11T12:23:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-04-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>这篇文章主要讲如何实现————头部固定，左侧固定导航，右侧主内容通过左侧的导航切换的布局。<br>实现效果如下图。</p>
-        
-          <a class="article-more-a" href="/2020/04/11/%E5%A4%B4%E9%83%A8%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%E5%AF%BC%E8%88%AA%EF%BC%8C%E5%8F%B3%E4%BE%A7%E5%8F%AF%E5%88%87%E6%8D%A2%E9%A1%B5%E9%9D%A2%20%E5%B8%83%E5%B1%80/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">网页布局</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/04/11/%E5%A4%B4%E9%83%A8%E5%9B%BA%E5%AE%9A%EF%BC%8C%E5%B7%A6%E4%BE%A7%E5%9B%BA%E5%AE%9A%E5%AF%BC%E8%88%AA%EF%BC%8C%E5%8F%B3%E4%BE%A7%E5%8F%AF%E5%88%87%E6%8D%A2%E9%A1%B5%E9%9D%A2%20%E5%B8%83%E5%B1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/9/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/11/">Next &amp;raquo;</a>
+      <a class="extend prev" rel="prev" href="/page/9/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/8/">8</a><a class="page-number" href="/page/9/">9</a><span class="page-number current">10</span><a class="page-number" href="/page/11/">11</a><a class="page-number" href="/page/12/">12</a><a class="page-number" href="/page/13/">13</a><a class="extend next" rel="next" href="/page/11/">Next &amp;raquo;</a>
     </nav>
   
 
@@ -1416,7 +1409,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Reforce Learning</a>
+                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">RL</a>
               </li>
             
             <div class="clearfix"></div>

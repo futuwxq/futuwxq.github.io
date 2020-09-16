@@ -154,33 +154,29 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Python-基础语法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Pandas 选择数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/17/Python-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">Python-基础语法</a>
+      <a class="article-title" href="/2020/08/19/Pandas%20%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE/">Pandas 选择数据 设置值</a>
     </h1>
   
 
         
-        <a href="/2020/08/17/Python-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-08-17T13:35:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-17</time>
+        <a href="/2020/08/19/Pandas%20%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE/" class="archive-article-date">
+  	<time datetime="2020-08-19T02:34:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><h4 id="1-Boolean-值"><a href="#1-Boolean-值" class="headerlink" title="1 Boolean 值"></a>1 Boolean 值</h4><p>返回 <code>True</code> 和 <code>False</code>值</p>
-<ul>
-<li>数字：该值等于 <code>0</code> 或者 <code>0.0</code> 将会返回 <code>False</code> 其余的返回 <code>True</code></li>
-<li>None 类型：flase</li>
-<li>集合类型（list<code>、</code>tuple<code>、</code>dict<code>和</code>set）：如果集合中的元素数量为 0，那么将会返回 <code>False</code>, 否则返回 <code>True</code>。</li></ul>
+        <h2 id="一-、Pandas-选择数据"><a href="#一-、Pandas-选择数据" class="headerlink" title="一 、Pandas 选择数据"></a>一 、Pandas 选择数据</h2><h3 id="简单的筛选"><a href="#简单的筛选" class="headerlink" title="简单的筛选"></a>简单的筛选</h3><p><strong>筛选某列</strong></p>
         
-          <a class="article-more-a" href="/2020/08/17/Python-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/#more">more >></a>
+          <a class="article-more-a" href="/2020/08/19/Pandas%20%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE/#more">more >></a>
         
       
 
@@ -196,6 +192,10 @@
         		<li class="article-tag-list-item">
         			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Pandas</a>
+        		</li>
       		
 		</ul>
 	</div>
@@ -204,7 +204,88 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/17/Python-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/08/19/Pandas%20%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Pandas 基本使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/18/Pandas%20%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">Pandas 基本</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/18/Pandas%20%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" class="archive-article-date">
+  	<time datetime="2020-08-18T12:35:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>如果用 python 的<strong>列表和字典</strong>来作比较, 那么可以说 Numpy 是<strong>列表形式</strong>的，<strong>没有数值标签</strong>，而 Pandas 就是<strong>字典形式</strong>。Pandas是基于Numpy构建的，让Numpy为中心的应用变得更加简单。</p>
+<p>要使用pandas，首先需要了解他主要两个数据结构：Series 和 DataFrame。</p>
+        
+          <a class="article-more-a" href="/2020/08/18/Pandas%20%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Pandas</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/18/Pandas%20%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/">展开全文 >></a>
         </p>
       
 
@@ -256,10 +337,7 @@
       
         <h2 id="强化学习方法"><a href="#强化学习方法" class="headerlink" title="强化学习方法"></a>强化学习方法</h2><p><strong>分类一：是否理解环境：Modelfree 和 Modelbased</strong> </p>
 <ul>
-<li>Modelfree ：不尝试去理解环境, 环境给了我们什么就是什么，<ul>
-<li>Q learning, Sarsa, Policy Gradients</li>
-<li>从环境中得到反馈然后从中学习</li>
-<li>机器人只能按部就班, 一步一步等待真实世界的反馈, 再根据反馈采取下一步行动</li></ul></li></ul>
+<li>Modelfree ：不尝试去理解环境, 环境给了我们什么就是什么，</li></ul>
         
           <a class="article-more-a" href="/2020/08/17/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Q%20Learning/#more">more >></a>
         
@@ -315,6 +393,84 @@
 
 
   
+    <article id="post-Python-基础语法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/17/Python-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">Python-基础语法</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/17/Python-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-08-17T13:35:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><h4 id="1-Boolean-值"><a href="#1-Boolean-值" class="headerlink" title="1 Boolean 值"></a>1 Boolean 值</h4><p>返回 <code>True</code> 和 <code>False</code>值</p>
+<ul>
+<li>数字：该值等于 <code>0</code> 或者 <code>0.0</code> 将会返回 <code>False</code> 其余的返回 <code>True</code></li></ul>
+        
+          <a class="article-more-a" href="/2020/08/17/Python-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/17/Python-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-web页面绘制过程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -341,10 +497,7 @@
 </li>
 <li><p>浏览器引擎</p>
 </li>
-<li><p>渲染引擎</p>
-</li>
-</ul>
-<p>多进程浏览器结构</p>
+<li><p>渲染引擎</p></li></ul>
         
           <a class="article-more-a" href="/2020/08/14/web%E9%A1%B5%E9%9D%A2%E7%BB%98%E5%88%B6%E8%BF%87%E7%A8%8B/#more">more >></a>
         
@@ -737,9 +890,7 @@
         <p>Vue 的响应式 ：数据发生变化，界面跟着更新。</p>
 <p>要实现 Vue 响应式 ：</p>
 <ul>
-<li><p>app.message 修改数据，<strong>Vue 内部是如何监听 message 数据的改变</strong></p>
-<ul>
-<li>Object.defineProperty 监听对象属性的改变</li></ul></li></ul>
+<li><p>app.message 修改数据，<strong>Vue 内部是如何监听 message 数据的改变</strong></p></li></ul>
         
           <a class="article-more-a" href="/2020/08/03/vue-vue%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/#more">more >></a>
         
@@ -766,162 +917,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/08/03/vue-vue%E5%93%8D%E5%BA%94%E5%BC%8F%E5%8E%9F%E7%90%86%E8%AF%A6%E8%A7%A3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Vue实战项目 细节 补充" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/02/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E7%BB%86%E8%8A%82%20%E8%A1%A5%E5%85%85/">Vue实战项目 细节补充</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/02/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E7%BB%86%E8%8A%82%20%E8%A1%A5%E5%85%85/" class="archive-article-date">
-  	<time datetime="2020-08-02T00:34:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-fsakclick"><a href="#1-fsakclick" class="headerlink" title="1 fsakclick"></a>1 fsakclick</h3><p>在移动端点击有 300ms 延迟，下面是使用 fsakclick 的 ES6 语法</p>
-<p>1）安装</p>
-        
-          <a class="article-more-a" href="/2020/08/02/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E7%BB%86%E8%8A%82%20%E8%A1%A5%E5%85%85/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/02/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E7%BB%86%E8%8A%82%20%E8%A1%A5%E5%85%85/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Vue实战项目 购物车 cart" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/01/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E8%B4%AD%E7%89%A9%E8%BD%A6%20cart/">Vue实战项目 购物车 Cart</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/01/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E8%B4%AD%E7%89%A9%E8%BD%A6%20cart/" class="archive-article-date">
-  	<time datetime="2020-08-01T00:34:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-获取数据"><a href="#1-获取数据" class="headerlink" title="1 获取数据"></a>1 获取数据</h3><p>在 vuex 中存储了商品数据，mapGetters 辅助函数映射到 computed 中，就可以直接使用 getters 中的属性。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 从 vuex 中导入</span></span><br><span class="line"><span class="keyword">import</span> &#123; mapGetters &#125; <span class="keyword">from</span> <span class="string">"vuex"</span>;</span><br><span class="line">computed: &#123;</span><br><span class="line">    ...mapGetters([<span class="string">"cartList"</span>]),</span><br><span class="line">  &#125;,</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-导航栏"><a href="#2-导航栏" class="headerlink" title="2 导航栏"></a>2 导航栏</h3><p>复用 NavBar 组件</p>
-        
-          <a class="article-more-a" href="/2020/08/01/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E8%B4%AD%E7%89%A9%E8%BD%A6%20cart/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/01/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E8%B4%AD%E7%89%A9%E8%BD%A6%20cart/">展开全文 >></a>
         </p>
       
 
@@ -1056,7 +1051,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">uml</a>
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Numpy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Pandas</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1064,11 +1071,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">html</a>
+                <a href="javascript:void(0)" class="js-tag color4">uml</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">框架</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1088,6 +1107,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
@@ -1096,7 +1119,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">RL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">more</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1112,6 +1143,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
              
@@ -1124,47 +1159,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">框架</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Pandas</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Numpy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">RL</a>
               </li>
             
             <div class="clearfix"></div>

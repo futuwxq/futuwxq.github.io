@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
   <title>tensorflow 的基础语法 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="以下的内容都是 tensorflow1.x 的语法 Session 会话控制Session 是 Tensorflow 为了控制,和输出文件的执行的语句. 运行 session.run() 可以获得你要得知的运算结果, 或者是你所要运算的部分。  product 不是直接计算的步骤, 所以我们会要使用 Session 来激活 product 并得到计算结果 123456789101112131415">
+  <meta name="description" content="以下的内容都是 tensorflow1.x 的语法 Session 会话控制Session 是 Tensorflow 为了控制,和输出文件的执行的语句. 运行">
 <meta property="og:type" content="article">
 <meta property="og:title" content="tensorflow 的基础语法">
 <meta property="og:url" content="https://futuwxq.github.io/2020/08/25/tensorflow%20%E7%9A%84%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="以下的内容都是 tensorflow1.x 的语法 Session 会话控制Session 是 Tensorflow 为了控制,和输出文件的执行的语句. 运行 session.run() 可以获得你要得知的运算结果, 或者是你所要运算的部分。  product 不是直接计算的步骤, 所以我们会要使用 Session 来激活 product 并得到计算结果 123456789101112131415">
+<meta property="og:description" content="以下的内容都是 tensorflow1.x 的语法 Session 会话控制Session 是 Tensorflow 为了控制,和输出文件的执行的语句. 运行">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-25T09:08:02.000Z">
-<meta property="article:modified_time" content="2020-08-25T14:00:32.128Z">
+<meta property="article:modified_time" content="2020-09-16T05:38:51.456Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="tensorflow">
 <meta name="twitter:card" content="summary">
@@ -176,7 +176,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>以下的内容都是 tensorflow1.x 的语法</p>
-<h3 id="Session-会话控制"><a href="#Session-会话控制" class="headerlink" title="Session 会话控制"></a>Session 会话控制</h3><p><code>Session</code> 是 Tensorflow 为了控制,和输出文件的执行的语句. 运行 <code>session.run()</code> 可以获得你要得知的运算结果, 或者是你所要运算的部分。</p>
+<h3 id="Session-会话控制"><a href="#Session-会话控制" class="headerlink" title="Session 会话控制"></a>Session 会话控制</h3><p><code>Session</code> 是 Tensorflow 为了控制,和输出文件的执行的语句. 运行 <a id="more"></a><code>session.run()</code> 可以获得你要得知的运算结果, 或者是你所要运算的部分。</p>
 <p> <code>product</code> 不是直接计算的步骤, 所以我们会要使用 <code>Session</code> 来激活 <code>product</code> 并得到计算结果</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">matrix1 &#x3D; tf.constant([[3,3]])</span><br><span class="line">matrix2 &#x3D; tf.constant([[2],</span><br><span class="line">                       [2]])</span><br><span class="line">product &#x3D; tf.matmul(matrix1,matrix2)</span><br><span class="line"></span><br><span class="line"># method 1</span><br><span class="line">sess &#x3D; tf.Session()</span><br><span class="line"># 每 run 一次，就会执行上面的 product 结构</span><br><span class="line">result &#x3D; sess.run(product)</span><br><span class="line">print(result)</span><br><span class="line">sess.close()</span><br><span class="line"># [[12]]</span><br><span class="line"></span><br><span class="line"># method 2</span><br><span class="line">with tf.Session() as sess:</span><br><span class="line">    result2 &#x3D; sess.run(product)</span><br><span class="line">    print(result2)</span><br></pre></td></tr></table></figure>
 
@@ -288,6 +288,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/09/02/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F-%E5%9F%BA%E7%A1%80/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          微信小程序 基础
+        
+      </div>
+    </a>
   
   
     <a href="/2020/08/25/tensorflow/" id="article-nav-older" class="article-nav-link-wrap">
@@ -425,7 +434,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">uml</a>
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Numpy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Pandas</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -433,11 +454,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">html</a>
+                <a href="javascript:void(0)" class="js-tag color4">uml</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">框架</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -457,6 +490,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
@@ -465,7 +502,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">RL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">more</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -481,6 +526,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
              
@@ -493,47 +542,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">框架</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Pandas</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Numpy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">RL</a>
               </li>
             
             <div class="clearfix"></div>

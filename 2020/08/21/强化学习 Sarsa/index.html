@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
   <title>强化学习 Sarsa | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="SarsaSarsa 的决策部分和 Q learning 一样，都是基于 Q 表的形式决策, 在 Q 表中挑选值较大的动作值施加在环境中来换取奖惩.。但是不同的地方在于 Sarsa 的更新方式是不一样的。 Q learning 估算动作，但并不一定会执行这个动作，Q-learning 在这一步只是估计了一下接下来的动作值。而sarsa 估算的动作也是接下来要做的动作。因为 Sarsa 是说到做到型">
+  <meta name="description" content="SarsaSarsa 的决策部分和 Q learning 一样，都是基于 Q 表的形式决策, 在 Q 表中挑选值较大的动作值施加在环境中来换取奖惩.。但是不同的地方在于 Sarsa 的更新方式是不一样的。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="强化学习 Sarsa">
 <meta property="og:url" content="https://futuwxq.github.io/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="SarsaSarsa 的决策部分和 Q learning 一样，都是基于 Q 表的形式决策, 在 Q 表中挑选值较大的动作值施加在环境中来换取奖惩.。但是不同的地方在于 Sarsa 的更新方式是不一样的。 Q learning 估算动作，但并不一定会执行这个动作，Q-learning 在这一步只是估计了一下接下来的动作值。而sarsa 估算的动作也是接下来要做的动作。因为 Sarsa 是说到做到型">
+<meta property="og:description" content="SarsaSarsa 的决策部分和 Q learning 一样，都是基于 Q 表的形式决策, 在 Q 表中挑选值较大的动作值施加在环境中来换取奖惩.。但是不同的地方在于 Sarsa 的更新方式是不一样的。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/image-20200821220516685.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/image-20200821220201762.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/image-20200822145619852.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/image-20200823161053070.png">
 <meta property="article:published_time" content="2020-08-21T06:23:02.000Z">
-<meta property="article:modified_time" content="2020-08-24T02:14:33.691Z">
+<meta property="article:modified_time" content="2020-09-16T05:39:33.920Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="RL">
 <meta name="twitter:card" content="summary">
@@ -180,8 +180,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Sarsa"><a href="#Sarsa" class="headerlink" title="Sarsa"></a>Sarsa</h2><p>Sarsa 的决策部分和 Q learning 一样，都是基于 Q 表的形式决策, 在 Q 表中挑选值较大的动作值施加在环境中来换取奖惩.。但是不同的地方在于 Sarsa 的更新方式是不一样的。</p>
-<p>Q learning 估算动作，但并不一定会执行这个动作，Q-learning 在这一步只是估计了一下接下来的动作值。而sarsa 估算的动作也是接下来要做的动作。因为 Sarsa 是说到做到型, 所以我们也叫他 on-policy, 在线学习, 学着自己在做的事情。<a id="more"></a>在 sarsa 算法中，行动策略和目标策略都是epsilon-greedy。相比之下q-learning只有行动策略是epsilon-greedy，而目标策略是贪婪策略。</p>
+        <h2 id="Sarsa"><a href="#Sarsa" class="headerlink" title="Sarsa"></a>Sarsa</h2><p>Sarsa 的决策部分和 Q learning 一样，都是基于 Q 表的形式决策, 在 Q 表中挑选值较大的动作值施加在环境中来换取奖惩.。但是不同的地方在于 Sarsa 的更新方式是不一样的。<a id="more"></a></p>
+<p>Q learning 估算动作，但并不一定会执行这个动作，Q-learning 在这一步只是估计了一下接下来的动作值。而sarsa 估算的动作也是接下来要做的动作。因为 Sarsa 是说到做到型, 所以我们也叫他 on-policy, 在线学习, 学着自己在做的事情。在 sarsa 算法中，行动策略和目标策略都是epsilon-greedy。相比之下q-learning只有行动策略是epsilon-greedy，而目标策略是贪婪策略。</p>
 <p>算法的区别：</p>
 <ul>
 <li><strong>action_ 不同</strong>：Sarsa  在当前 <code>state</code> 已经想好了 <code>state</code> 对应的 <code>action</code>, 而且想好了 下一个 <code>state_</code> 和下一个 <code>action_</code> ，在下一个 state 就会执行这个<code>action_</code>，Qlearning 还没有想好下一个 <code>action_</code>，这里只是估计了 <code>action_</code>，<strong>会在下一个 state 里面重新选择 action</strong>。</li>
@@ -343,8 +343,8 @@
     </a>
   
   
-    <a href="/2020/08/20/Numpy%20%E5%9F%BA%E7%A1%80/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Numpy 初了解</div>
+    <a href="/2020/08/20/Pandas%20plot%20%E5%87%BA%E5%9B%BE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Pandas plot 出图</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -478,7 +478,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">uml</a>
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Numpy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Pandas</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -486,11 +498,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">html</a>
+                <a href="javascript:void(0)" class="js-tag color4">uml</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">框架</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -510,6 +534,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
@@ -518,7 +546,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">RL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">more</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -534,6 +570,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
              
@@ -546,47 +586,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">框架</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Pandas</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Numpy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">RL</a>
               </li>
             
             <div class="clearfix"></div>

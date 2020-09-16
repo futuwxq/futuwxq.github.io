@@ -8,12 +8,12 @@
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
   <title>git的使用 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="git是一款版本控制工具，所谓版本控制，也即是任何允许系统性地保存内容版本的系统。  第一部分 使用Git基础操作1）  查看基础命令和版本">
+  <meta name="description" content="git是一款版本控制工具，所谓版本控制，也即是任何允许系统性地保存内容版本的系统。  第一部分 使用Git基础操作">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git的使用">
 <meta property="og:url" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="git是一款版本控制工具，所谓版本控制，也即是任何允许系统性地保存内容版本的系统。  第一部分 使用Git基础操作1）  查看基础命令和版本">
+<meta property="og:description" content="git是一款版本控制工具，所谓版本控制，也即是任何允许系统性地保存内容版本的系统。  第一部分 使用Git基础操作">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/example1.PNG">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/commit.png">
@@ -24,7 +24,7 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/ssh.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/summory.png">
 <meta property="article:published_time" content="2020-04-01T06:57:31.000Z">
-<meta property="article:modified_time" content="2020-07-12T08:42:40.275Z">
+<meta property="article:modified_time" content="2020-09-16T05:43:44.293Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="工具类">
 <meta name="twitter:card" content="summary">
@@ -185,9 +185,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>git是一款版本控制工具，所谓版本控制，也即是任何允许系统性地保存内容版本的系统。 </p>
-<h2 id="第一部分-使用Git基础操作"><a href="#第一部分-使用Git基础操作" class="headerlink" title="第一部分 使用Git基础操作"></a>第一部分 使用Git基础操作</h2><p><strong>1）  查看基础命令和版本</strong> </p>
-<a id="more"></a>
-
+<h2 id="第一部分-使用Git基础操作"><a href="#第一部分-使用Git基础操作" class="headerlink" title="第一部分 使用Git基础操作"></a>第一部分 使用Git基础操作<a id="more"></a></h2><p><strong>1）  查看基础命令和版本</strong> </p>
 <p>   git -v 和 git –version</p>
 <p><strong>2）  用户配置</strong> </p>
 <p>   git config </p>
@@ -372,6 +370,18 @@ modified:   lesson_2_reflections.txt</code></pre><p> 通过 git diff，当我们
 <p><strong>总结</strong></p>
 <p>下图详细描述了在使用git将本地文件上传到github仓库之间，文件的状态转换 ，以及一些基本的操作命令。<br><img src="/2020/04/01/git%E7%9A%84%E4%BD%BF%E7%94%A8/summory.png" width="50%" height="50%" style="display:block; margin:5px auto"></p>
 <p>这篇文章是我在学习git上传本地文件到github仓库的一些总结，具体细节可参考<a href="https://classroom.udacity.com/courses/ud775/lessons/2980038599/concepts/29607789480923" target="_blank" rel="noopener">学习网站</a>。</p>
+<h2 id="第三部分-git-初始化上传项目-流程"><a href="#第三部分-git-初始化上传项目-流程" class="headerlink" title="第三部分  git 初始化上传项目 流程"></a>第三部分  git 初始化上传项目 流程</h2><h3 id="方法一-先在-github-上建库-（推荐）"><a href="#方法一-先在-github-上建库-（推荐）" class="headerlink" title="方法一 先在 github 上建库 （推荐）"></a>方法一 先在 github 上建库 （推荐）</h3><ul>
+<li>在github 上面新建一个仓库</li>
+<li>在本地克隆这个仓库</li>
+<li>在开发工具里面打开克隆的仓库，开始编辑</li>
+</ul>
+<h3 id="方法二-本地和-github-都建库"><a href="#方法二-本地和-github-都建库" class="headerlink" title="方法二 本地和 github 都建库"></a>方法二 本地和 github 都建库</h3><p>这种方法分两种情况</p>
+<p>1 github 库没有文件（可能会在初始化的时候添加一个 readme.md ）或者本地的库里没有文件</p>
+<p>这种情况为本地仓库添加一个 remote 地址（远程仓库地址），之后就可以直接 add remote push</p>
+<p>2 github 库 和本地库里面的内容不一致</p>
+<p>上传代码前需要先把远程的仓库 pull 到本地</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git pull origin master --allow-unrelated-histories &#x2F;&#x2F;把远程仓库和本地同步，消除差异</span><br><span class="line">git add</span><br><span class="line">git commit</span><br><span class="line">git push origin master</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -621,7 +631,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">uml</a>
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Numpy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Pandas</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -629,11 +651,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">html</a>
+                <a href="javascript:void(0)" class="js-tag color4">uml</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">框架</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -653,6 +687,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
@@ -661,7 +699,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">RL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">more</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -677,6 +723,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
              
@@ -689,47 +739,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">框架</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Pandas</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Numpy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">RL</a>
               </li>
             
             <div class="clearfix"></div>

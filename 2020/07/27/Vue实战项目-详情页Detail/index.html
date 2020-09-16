@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
   <title>Vue实战项目 详情页 Detail | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="点击 GoodListItem 跳转到详情页 创建 detail 视图，配置路由关系，点击 GoodListItem ，路由跳转到相应的 detail 界面。每个 GoodListItem  都有一个不同的 iid ，通过 iid  请求不同 GoodListItem  的数据。 1this.$router.push(&#39;&#x2F;detail&#39;+this.goodsItem.iid)  1 导航栏">
+  <meta name="description" content="点击 GoodListItem 跳转到详情页 创建 detail 视图，配置路由关系，点击 GoodListItem ，路由跳转到相应的 detail 界面。每个 GoodListItem  都有一个不同的 iid ，通过 iid  请求不同 GoodListItem  的数据。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue实战项目 详情页 Detail">
 <meta property="og:url" content="https://futuwxq.github.io/2020/07/27/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE-%E8%AF%A6%E6%83%85%E9%A1%B5Detail/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="点击 GoodListItem 跳转到详情页 创建 detail 视图，配置路由关系，点击 GoodListItem ，路由跳转到相应的 detail 界面。每个 GoodListItem  都有一个不同的 iid ，通过 iid  请求不同 GoodListItem  的数据。 1this.$router.push(&#39;&#x2F;detail&#39;+this.goodsItem.iid)  1 导航栏">
+<meta property="og:description" content="点击 GoodListItem 跳转到详情页 创建 detail 视图，配置路由关系，点击 GoodListItem ，路由跳转到相应的 detail 界面。每个 GoodListItem  都有一个不同的 iid ，通过 iid  请求不同 GoodListItem  的数据。">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/07/27/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE-%E8%AF%A6%E6%83%85%E9%A1%B5Detail/image-20200727202825522.png">
 <meta property="article:published_time" content="2020-07-27T07:34:34.000Z">
-<meta property="article:modified_time" content="2020-08-14T12:35:55.334Z">
+<meta property="article:modified_time" content="2020-09-16T05:41:27.239Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
@@ -178,10 +178,10 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p><strong>点击 GoodListItem 跳转到详情页</strong></p>
-<p>创建 detail 视图，配置路由关系，点击 GoodListItem ，路由跳转到相应的 detail 界面。每个 GoodListItem  都有一个不同的 iid ，通过 iid  请求不同 GoodListItem  的数据。</p>
+<p>创建 detail 视图，配置路由关系，点击 GoodListItem ，路由跳转到相应的 detail 界面。每个 GoodListItem  都有一个不同的 iid ，通过 iid  请求不同 GoodListItem  的数据。<a id="more"></a></p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$router.push(<span class="string">'/detail'</span>+<span class="keyword">this</span>.goodsItem.iid)</span><br></pre></td></tr></table></figure>
 
-<h3 id="1-导航栏"><a href="#1-导航栏" class="headerlink" title="1 导航栏"></a>1 导航栏<a id="more"></a></h3><p>封装一个 DetailNavBar.vue，import navbar 对象；插槽</p>
+<h3 id="1-导航栏"><a href="#1-导航栏" class="headerlink" title="1 导航栏"></a>1 导航栏</h3><p>封装一个 DetailNavBar.vue，import navbar 对象；插槽</p>
 <p>1）left 是一个返回图标，点击图标，页面返回到上一步</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">goBack() &#123;</span><br><span class="line">    this.$router.back();&#x2F;&#x2F;go(-1)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -580,7 +580,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">uml</a>
+                <a href="javascript:void(0)" class="js-tag color5">html</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Python</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">Numpy</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">Pandas</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -588,11 +600,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">html</a>
+                <a href="javascript:void(0)" class="js-tag color4">uml</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">框架</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">c++</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">工具</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -612,6 +636,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">工具类</a>
               </li>
              
@@ -620,7 +648,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">RL</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">more</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -636,6 +672,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">插件</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">jsp</a>
               </li>
              
@@ -648,47 +688,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">微信小程序</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">框架</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">工具</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">插件</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Python</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">Pandas</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Numpy</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">tensorflow</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">RL</a>
               </li>
             
             <div class="clearfix"></div>

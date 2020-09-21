@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
   <title>Numpy 初了解 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="科学运算当中最为重要的两个模块，一个是 numpy,一个是 pandas Numpy 属性 ndim：维度。">
+  <meta name="description" content="科学运算当中最为重要的两个模块，一个是 numpy,一个是 pandas Numpy 属性 ndim：维度。 shape：行数和列数。reshape 是一种方法 size：元素个数。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Numpy 初了解">
 <meta property="og:url" content="https://futuwxq.github.io/2020/08/20/Numpy%20%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="科学运算当中最为重要的两个模块，一个是 numpy,一个是 pandas Numpy 属性 ndim：维度。">
+<meta property="og:description" content="科学运算当中最为重要的两个模块，一个是 numpy,一个是 pandas Numpy 属性 ndim：维度。 shape：行数和列数。reshape 是一种方法 size：元素个数。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-20T02:30:02.000Z">
-<meta property="article:modified_time" content="2020-09-16T05:39:50.976Z">
+<meta property="article:modified_time" content="2020-09-21T12:28:37.852Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="Numpy">
@@ -178,15 +178,15 @@
       
         <p>科学运算当中最为重要的两个模块，一个是 numpy,一个是 pandas</p>
 <h3 id="Numpy-属性"><a href="#Numpy-属性" class="headerlink" title="Numpy 属性"></a>Numpy 属性</h3><ul>
-<li><code>ndim</code>：维度。<a id="more"></a></li>
+<li><code>ndim</code>：维度。</li>
 <li><code>shape</code>：行数和列数。reshape 是一种方法</li>
-<li><code>size</code>：元素个数。</li>
+<li><code>size</code>：元素个数。<a id="more"></a></li>
 </ul>
 <p>使用 Numpy </p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="comment">#为了方便使用numpy 采用np简写</span></span><br></pre></td></tr></table></figure>
 
 <p>列表转化为矩阵 ：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python array = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]]) </span><br><span class="line"><span class="comment">#列表转化为矩阵 print(array) """ array([[1, 2, 3], [2, 3, 4]]) """</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"> a1 = np.array([[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>],[<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]]) </span><br><span class="line"><span class="comment">#列表转化为矩阵 print(array) """ array([[1, 2, 3], [2, 3, 4]]) """</span></span><br><span class="line">a1 = a1*<span class="number">100</span></span><br><span class="line"><span class="comment"># 每个元素都乘上了 1000</span></span><br><span class="line">print(a1)</span><br></pre></td></tr></table></figure>
 
 <p><strong>关键字</strong>：</p>
 <ul>
@@ -280,6 +280,8 @@
 <p> <strong>其他的分割方式：</strong>np.vsplit() 与 np.hsplit()</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">np.vsplit(A, 3) #等于 np.split(A, 3, axis&#x3D;0) 上下合并</span><br><span class="line"></span><br><span class="line">np.hsplit(A, 2) #等于 np.split(A, 2, axis&#x3D;1) 左右合并</span><br></pre></td></tr></table></figure>
 
+<h3 id="Python中numpy数组切片"><a href="#Python中numpy数组切片" class="headerlink" title="Python中numpy数组切片"></a>Python中numpy数组切片</h3><p>一维数组（冒号：）</p>
+<p>二维数组（逗号，）</p>
 <h3 id="Numpy-copy-amp-deep-copy"><a href="#Numpy-copy-amp-deep-copy" class="headerlink" title="Numpy copy &amp; deep copy"></a>Numpy copy &amp; deep copy</h3><p><strong>= 的赋值方式会带有关联性</strong></p>
 <p>b = a，c = a，d = b，改变<code>a</code>的第一个值，<code>b</code>、<code>c</code>、<code>d</code>的第一个值也会同时改变，同样更改<code>d</code>的值，<code>a</code>、<code>b</code>、<code>c</code>也会改变。类似指针赋值。</p>
 <p><strong>copy() 的赋值方式没有关联</strong>性</p>
@@ -287,7 +289,7 @@
 <hr>
 <h3 id="np-nan"><a href="#np-nan" class="headerlink" title="np.nan"></a><strong>np.nan</strong></h3><p>nan(NAN,Nan):not a number表示不是一个数字，往往 <strong>np.nan</strong> 是作为缺省值出现的</p>
 <hr>
-<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><ul>
+<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><h4 id="生成数组-数字"><a href="#生成数组-数字" class="headerlink" title="生成数组/数字"></a>生成数组/数字</h4><ul>
 <li><strong>numpy.random.seed() ：</strong>重现随机数，只要 seed 里面参数相同，随机数就是一样的</li>
 <li><strong>numpy.zeros(shape，dtype=float，order = ‘C’)</strong>：创建所有元素都为 0 的list<ul>
 <li>shape：int 或 int 的元组，int 是 list 的个数，int 的元组是创建一个二维 list</li>
@@ -306,15 +308,58 @@
 <li>返回值：ndarray类型，其形状和参数size中描述一致。</li>
 </ul>
 </li>
-<li><p><strong>numpy.random.choice()</strong>函数：从给定的1维数组中随机采样的函数。</p>
+<li><p><strong>np.random.normal(size,loc,scale):</strong> 给出均值为loc，标准差为scale的高斯随机数（场）</p>
+<ul>
+<li><strong>np.random.randn(size)</strong> 所谓标准正态分布，对应于<code>np.random.normal(loc=0, scale=1, size)</code>。</li>
+</ul>
+</li>
+<li><p><strong>numpy.random.choice()</strong> 函数：从给定的1维数组中随机采样的函数。</p>
 <ul>
 <li>numpy.random.choice(a, size=None, replace=True, p=None)</li>
 </ul>
 </li>
-<li><p>argmax() /  idxmax() 方法 :用于获取 Series 的最大值的索引值，也就是最大数据的索引值。</p>
+<li><p><strong>numpy.linspace</strong>(）：在指定的间隔内返回均匀间隔的数字。<strong>numpy.linspace</strong>(start, stop, num=50, endpoint=True, retstep=False, dtype=None)</p>
 </li>
 </ul>
+<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul>
+<li><p><strong>argmax() /  idxmax()</strong> 方法 :用于获取 Series 的最大值的索引值，也就是最大数据的索引值。</p>
+</li>
+<li><p><strong>np.newaxis</strong> 为 numpy.ndarray（多维数组）增加一个轴</p>
+<ul>
+<li><p>x[np.newaxis, :] ：把 x 所有元素套在一个数组里面，变成一个元素</p>
+</li>
+<li><p>x[:, np.newaxis] ：把 x 所有元素套在一个数组里面，同时变成列向量</p>
+</li>
+<li><pre><code>x = np.random.randint(1, 8, size=5)
+ array([4, 6, 6, 6, 5])
 
+</code></pre></li>
+</ul>
+</li>
+</ul>
+<pre><code>x1 = x[np.newaxis, :]
+Out[50]:
+array([[4, 6, 6, 6, 5]])
+
+
+x2 = x[:, np.newaxis]
+x2
+Out[52]: 
+array([[4],
+       [6],
+       [6],
+       [6],
+       [5]])
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">+ 用法 ：索引多维数组的某一列时返回的是一个行向量</span><br></pre></td></tr></table></figure>
+&gt;&gt;&gt; X = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
+&gt;&gt;&gt; X[:, 1]
+array([2, 6, 10])
+# 还是一个列向量
+&gt;&gt;&gt;X[:, 1][:, np.newaxis]
+array([[2],
+      [6],
+      [10]])
+```</code></pre>
       
 
       
@@ -432,8 +477,8 @@
     </a>
   
   
-    <a href="/2020/08/19/Pandas%20%E5%AF%BC%E5%85%A5%E5%AF%BC%E5%87%BA/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Pandas 导入导出  合并 concat</div>
+    <a href="/2020/08/19/Pandas%20%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Pandas 选择数据 设置值</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -680,6 +725,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">计算机网络</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">hobby</a>
               </li>
             
             <div class="clearfix"></div>

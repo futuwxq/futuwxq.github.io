@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/08/25/tensorflow%20%E7%9A%84%E5%9F%BA%E7%A1%80/image-20200921211848385.png">
 <meta property="article:published_time" content="2020-08-25T09:08:02.000Z">
-<meta property="article:modified_time" content="2020-09-21T14:30:24.123Z">
+<meta property="article:modified_time" content="2020-09-23T09:03:38.368Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="tensorflow">
 <meta name="twitter:card" content="summary">
@@ -217,15 +217,29 @@
 
 <h3 id="建造神经网络"><a href="#建造神经网络" class="headerlink" title="建造神经网络"></a>建造神经网络</h3><p>建造一个完整的神经网络 , 包括添加神经层, 计算误差, 训练步骤, 判断是否在学习</p>
 <p><strong>导入数据</strong> ,构建所需的数据,利用占位符定义我们所需的神经网络的输入</p>
-<p><strong>定义神经层</strong></p>
-<p>通常神经层都包括输入层、隐藏层和输出层。</p>
-<p>构建的是——输入层1个、隐藏层10个、输出层1个的神经网络</p>
-<p><strong>搭建网络</strong></p>
+<p><strong>定义神经层 搭建网络</strong></p>
+<p>通常神经层都包括输入层、隐藏层和输出层。例子 ：构建的是——输入层1个、隐藏层10个、输出层1个的神经网络</p>
 <p>定义隐藏层</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">l1 &#x3D; add_layer(xs, 1, 10, activation_function&#x3D;tf.nn.relu) </span><br><span class="line"># 输入一层 隐藏10层</span><br></pre></td></tr></table></figure>
+
 <p>定义输出层</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 这里的输入10层（隐藏层） 输出一层</span><br><span class="line">prediction &#x3D; add_layer(l1, 10, 1, activation_function&#x3D;None)</span><br></pre></td></tr></table></figure>
+
+<p>计算误差</p>
 <p><strong>训练</strong></p>
+<p>优化</p>
+<h3 id="优化器-optimizer-加速神经网络训练-Speed-Up-Training"><a href="#优化器-optimizer-加速神经网络训练-Speed-Up-Training" class="headerlink" title="优化器 optimizer 加速神经网络训练 (Speed Up Training)"></a>优化器 optimizer 加速神经网络训练 (Speed Up Training)</h3><p>加速神经网络加速过程：</p>
+<ul>
+<li>Stochastic Gradient Descent (SGD)</li>
+<li>Momentum</li>
+<li>AdaGrad</li>
+<li>RMSProp</li>
+<li>Adam</li>
+</ul>
 <h3 id="TensorBoard"><a href="#TensorBoard" class="headerlink" title="TensorBoard"></a>TensorBoard</h3><p>TensorBoard是Tensorflow可视化工具，可以用来展现TensorFlow图像，绘制图像生成的定量指标图以及附加数据。</p>
-<h3 id="常用方法"><a href="#常用方法" class="headerlink" title="常用方法"></a>常用方法</h3><h4 id="矩阵降纬"><a href="#矩阵降纬" class="headerlink" title="矩阵降纬"></a>矩阵降纬</h4><p><code>reduce_sum(arg1, arg2)</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 在根目录下运行就好了</span><br><span class="line">writer &#x3D; tf.summary.FileWriter(&#39;logs&#x2F;&#39;, sess.graph)</span><br><span class="line">tensorboard --logdir&#x3D;logs</span><br></pre></td></tr></table></figure>
+
+<h3 id="Tensorflow函数"><a href="#Tensorflow函数" class="headerlink" title="Tensorflow函数"></a>Tensorflow函数</h3><h4 id="矩阵降纬"><a href="#矩阵降纬" class="headerlink" title="矩阵降纬"></a>矩阵降纬</h4><p><code>reduce_sum(arg1, arg2)</code></p>
 <ul>
 <li>参数<code>arg1</code>即为要求和的数据</li>
 <li><code>arg2</code>有两个取值分别为0和1，通常用<code>reduction_indices=[0]</code>或<code>reduction_indices=[1]</code>来传递参数。</li>
@@ -237,6 +251,14 @@
 
 <p>reduce_mean()</p>
 <p>计算张量tensor沿着指定的数轴（tensor的某一维度）上的平均值</p>
+<h4 id="训练-Training"><a href="#训练-Training" class="headerlink" title="训练 (Training)"></a>训练 (Training)</h4><p>优化 (Optimizers)</p>
+<p>tf 中各种优化类提供了为损失函数计算梯度的方法，其中包含比较经典的优化算法，比如 GradientDescent (梯度下降算法)和 Adagrad。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># 实例化一个优化函数,基于learning_rate&#x3D;0.1进行梯度优化训练</span><br><span class="line"></span><br><span class="line">train_step &#x3D; tf.train.GradientDescentOptimizer(0.1).minimize(loss)</span><br></pre></td></tr></table></figure>
+
+<p>用 <code>Session</code> 来 <code>run</code> 每一次 training 的数据，逐步提升神经网络的预测准确性。</p>
+<h4 id="计算"><a href="#计算" class="headerlink" title="计算"></a>计算</h4><p>tf.multiply（）两个矩阵中对应元素各自相乘</p>
+<p>tf.matmul（）将矩阵a乘以矩阵b，生成a * b</p>
+<p>我在各种网站上查了很久，发现重启一下就没有Shape [-1,1] has negative dimensions这个错，并且除了graph的其他部分也出现了</p>
 
       
 

@@ -6,17 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
-  <title>Tag: RL | 晓秋的博客</title>
+  <title>Numpy 初了解 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="better and better">
-<meta property="og:type" content="website">
-<meta property="og:title" content="晓秋的博客">
-<meta property="og:url" content="https://futuwxq.github.io/tags/RL/index.html">
+  <meta name="description" content="神经元数学模型 神经元输 入向量𝒙 &#x3D; [𝑥1,   𝑥2, 𝑥3, … , 𝑥𝑛 ] T，经过函数映射：𝑓𝜃: 𝒙 → 𝑦后得到输出𝑦，其中𝜃为函数𝑓自 身的参数。考虑一种简化的情况，即线性变换：𝑓(𝒙) &#x3D; 𝒘T𝒙 + 𝑏，展开为标量形式： 𝑓(𝒙) &#x3D; 𝑤1𝑥1 + 𝑤2𝑥2 + 𝑤3𝑥3 + ⋯ + 𝑤𝑛𝑥𝑛 + b 参数𝜃 &#x3D;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Numpy 初了解">
+<meta property="og:url" content="https://futuwxq.github.io/2020/08/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="better and better">
+<meta property="og:description" content="神经元数学模型 神经元输 入向量𝒙 &#x3D; [𝑥1,   𝑥2, 𝑥3, … , 𝑥𝑛 ] T，经过函数映射：𝑓𝜃: 𝒙 → 𝑦后得到输出𝑦，其中𝜃为函数𝑓自 身的参数。考虑一种简化的情况，即线性变换：𝑓(𝒙) &#x3D; 𝒘T𝒙 + 𝑏，展开为标量形式： 𝑓(𝒙) &#x3D; 𝑤1𝑥1 + 𝑤2𝑥2 + 𝑤3𝑥3 + ⋯ + 𝑤𝑛𝑥𝑛 + b 参数𝜃 &#x3D;">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://futuwxq.github.io/2020/08/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/image-20201008142611096.png">
+<meta property="og:image" content="https://futuwxq.github.io/2020/08/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/image-20201008143520494.png">
+<meta property="article:published_time" content="2020-08-20T02:30:02.000Z">
+<meta property="article:modified_time" content="2020-10-14T13:13:05.093Z">
 <meta property="article:author" content="Better">
+<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Numpy">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://futuwxq.github.io/2020/08/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/image-20201008142611096.png">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
   
@@ -152,136 +159,212 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-神经网络" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Numpy 初了解
+    </h1>
+  
+
+        
+        <a href="/2020/08/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="archive-article-date">
+  	<time datetime="2020-08-20T02:30:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-20</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>神经元数学模型</p>
+<p>神经元输 入向量𝒙 = [𝑥1,   𝑥2, 𝑥3, … , 𝑥𝑛 ] T，经过函数映射：𝑓𝜃: 𝒙 → 𝑦后得到输出𝑦，其中𝜃为函数𝑓自 身的参数。考虑一种简化的情况，即线性变换：𝑓(𝒙) = 𝒘T𝒙 + 𝑏，展开为标量形式： 𝑓(𝒙) = 𝑤1𝑥1 + 𝑤2𝑥2 + 𝑤3𝑥3 + ⋯ + 𝑤𝑛𝑥𝑛 + b</p>
+<p>参数𝜃 = {𝑤1, 𝑤2, 𝑤3, . . . , 𝑤𝑛, 𝑏}确定了神经元的状态，通过固定𝜃参数即可确定此神经元 的处理逻辑。</p>
+<p><img src="/2020/08/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/image-20201008142611096.png" alt="image-20201008142611096"></p>
+<p>简化神经网络只有一个输入，𝑦 = 𝑤𝑥 + 𝑏 。其中𝑤参数可以理解为直线的斜率(Slope)，b 参数为 直线的偏置(Bias)。此时只需要两个观测值，就可以求解出 w 和 b。当采样多个数据的时候，可能不存在一条直 线完美的穿过所有采样点。退而求其次，我们希望能找到一条比较“好”的位于采样点中 间的直线</p>
+<p><img src="/2020/08/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/image-20201008143520494.png" alt="image-20201008143520494"></p>
+<p>梯度下降算法，它通过循环计算函数的梯度∇𝑓并 更新待优化参数𝜃，从而得到函数𝑓获得极小值时参数𝜃的最优数值解。</p>
+<p>对于预测值是连续的实数范围，或者属于某一段连续的实数区间，我们把这种问题称为回归(Regression)问题。特别地，如果 使用线性模型去逼近真实模型，那么我们把这一类方法叫做线性回归(Linear Regression， 简称 LR),有离散值预测问题成为分类问题。</p>
+<p><strong>线性回归</strong></p>
+<p>首先假设 𝑛 个输入的生物神经元的数学模型为线性模 型之后，只采样𝑛 + 1个数据点就可以估计线性模型的参数𝒘和𝑏。引入观测误差后，通过 梯度下降算法，我们可以采样多组数据点循环优化得到𝒘和𝑏的数值解。</p>
+<p><strong>神经网络原理理解</strong> </p>
+<p><a href="https://www.jianshu.com/p/e112012a4b2d" target="_blank" rel="noopener">https://www.jianshu.com/p/e112012a4b2d</a></p>
+<p>神经网络有输入层、隐藏层和输出层。每层都有很多神经元。</p>
+<p>输入层就是负责接收信息，比如说一只猫的图片。输出层就是计算机对这个输入信息的认知，它是不是猫。隐藏层就是对输入信息的加工处理。</p>
+<p>训练神经网络，输入大量的数据。每个神经元都有属于它的激活函数，用这些函数给计算机一个刺激行为。第一次输入图片之后，有部分的神经元被激活，被激活的神经元所传递的信息是对输出结果最有价值的信息。如果输出的结果被判定为是狗，也就是说是错误的了，那么就会修改神经元，一些容易被激活的神经元会变得迟钝，另外一些神经元会变得敏感。这样一次次的训练下去，所有神经元的参数都在被改变，它们变得对真正重要的信息更为敏感。</p>
+<p><strong>搭建神经网络基本流程：</strong></p>
+<p>定义添加神经层的函数</p>
+<ul>
+<li>Weights</li>
+<li>biases</li>
+<li>Wx_plus_b  —》  outputs = activation_function(Wx_plus_b)</li>
+</ul>
+<p>训练数据 ：x_data ，noise ,y_data 真实数据</p>
+<p>定义节点准备接受数据 :define placeholder for inputs to network   x,y</p>
+<p>定义神经层：隐藏层和预测层, ，预测层的结果就是输出值</p>
+<p>定义loss表达式：ys 和 输出值之间的差别</p>
+<p>选择 optimer 使loss达到最小，optimer 优化 bias 和 weight ，反过来更新神经元。</p>
+<p><strong>Tensorflow</strong> </p>
+<p>在输入层输入数据，然后数据飞到隐藏层飞到输出层，用梯度下降处理，梯度下降会对几个参数进行更新和完善，更新后的参数再次跑到隐藏层去学习，这样一直循环直到结果收敛。</p>
+<p><strong>过程就是：建图-&gt;启动图-&gt;运行取值</strong></p>
+<p>问题：</p>
+<p>用梯度下降处理数据，什么时候梯度下降更新和完善参数</p>
+<p>激励函数在预测层，判断哪些值要被送到预测结果那里 ？？</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/08/23/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%20DQN/" class="archive-article-date">
-  	<time datetime="2020-08-23T08:44:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-23</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/23/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E6%96%B9%E6%B3%95%20DQN/">强化学习方法 DQN</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">RL</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/" class="archive-article-date">
-  	<time datetime="2020-08-21T06:23:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-21</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/">强化学习 Sarsa</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">RL</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Numpy</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/08/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/08/17/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Q%20Learning/" class="archive-article-date">
-  	<time datetime="2020-08-17T13:35:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-17</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          强化学习 Sarsa
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/08/20/Pandas%20plot%20%E5%87%BA%E5%9B%BE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Pandas plot 出图</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/08/17/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Q%20Learning/">强化学习 Q Learning</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">RL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -304,9 +387,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

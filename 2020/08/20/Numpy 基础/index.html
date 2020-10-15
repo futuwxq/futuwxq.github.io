@@ -16,7 +16,7 @@
 <meta property="og:description" content="科学运算当中最为重要的两个模块，一个是 numpy,一个是 pandas Numpy 属性 ndim：维度。 shape：行数和列数。reshape 是一种方法 size：元素个数。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-20T02:30:02.000Z">
-<meta property="article:modified_time" content="2020-09-21T12:28:37.852Z">
+<meta property="article:modified_time" content="2020-09-24T09:09:55.214Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="Numpy">
@@ -318,8 +318,11 @@
 <li>numpy.random.choice(a, size=None, replace=True, p=None)</li>
 </ul>
 </li>
-<li><p><strong>numpy.linspace</strong>(）：在指定的间隔内返回均匀间隔的数字。<strong>numpy.linspace</strong>(start, stop, num=50, endpoint=True, retstep=False, dtype=None)</p>
-</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 参数意思分别 是从a ( [0,5) )中以概率P，随机选择3个, p没有指定的时候相当于是一致的分布</span><br><span class="line">a1 &#x3D; np.random.choice(a&#x3D;5, size&#x3D;3, replace&#x3D;False, p&#x3D;None)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><strong>numpy.linspace</strong>(）：在指定的间隔内返回均匀间隔的数字。<strong>numpy.linspace</strong>(start, stop, num=50, endpoint=True, retstep=False, dtype=None)</li>
 </ul>
 <h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul>
 <li><p><strong>argmax() /  idxmax()</strong> 方法 :用于获取 Series 的最大值的索引值，也就是最大数据的索引值。</p>
@@ -467,18 +470,18 @@ array([[2],
   
 <nav id="article-nav">
   
-    <a href="/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/08/20/Pandas%20plot%20%E5%87%BA%E5%9B%BE/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          强化学习 Sarsa
+          Pandas plot 出图
         
       </div>
     </a>
   
   
-    <a href="/2020/08/20/Pandas%20plot%20%E5%87%BA%E5%9B%BE/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Pandas plot 出图</div>
+    <a href="/2020/08/19/Pandas%20%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Pandas 选择数据 设置值</div>
       <i class="icon-circle-right"></i>
     </a>
   

@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
-  <title>Untitled 1 | 晓秋的博客</title>
+  <title>977 Array 有序数组的平方 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="better and better">
+  <meta name="description" content="思路 定义一个数组变量 reArray ，用来存储原数组数组元素的平方， 然后对新的数组进行冒泡排序。 暴力破解法 - 直接排序">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Untitled 1">
-<meta property="og:url" content="https://futuwxq.github.io/2020/10/15/Untitled%201/index.html">
+<meta property="og:title" content="977 Array 有序数组的平方">
+<meta property="og:url" content="https://futuwxq.github.io/2020/10/17/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="better and better">
+<meta property="og:description" content="思路 定义一个数组变量 reArray ，用来存储原数组数组元素的平方， 然后对新的数组进行冒泡排序。 暴力破解法 - 直接排序">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-15T13:41:25.527Z">
-<meta property="article:modified_time" content="2020-10-15T13:41:25.527Z">
+<meta property="article:published_time" content="2020-10-17T10:32:25.000Z">
+<meta property="article:modified_time" content="2020-10-17T12:08:53.315Z">
 <meta property="article:author" content="Better">
+<meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
@@ -154,27 +155,64 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Untitled 1" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-有序数组的平方" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Untitled 1
+      977 Array 有序数组的平方
     </h1>
   
 
         
-        <a href="/2020/10/15/Untitled%201/" class="archive-article-date">
-  	<time datetime="2020-10-15T13:41:25.527Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-15</time>
+        <a href="/2020/10/17/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/" class="archive-article-date">
+  	<time datetime="2020-10-17T10:32:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-17</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>思路</p>
+<p>定义一个数组变量 reArray ，用来存储原数组数组元素的平方，</p>
+<p>然后对新的数组进行冒泡排序。</p>
+<h4 id="暴力破解法-直接排序"><a href="#暴力破解法-直接排序" class="headerlink" title="暴力破解法 - 直接排序 "></a><strong>暴力破解法 - 直接排序</strong> <a id="more"></a></h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[] sortedSquares(<span class="keyword">int</span>[] A) &#123;</span><br><span class="line">    <span class="comment">// int len = A.length;</span></span><br><span class="line">    <span class="keyword">int</span>[] reArray = <span class="keyword">new</span> <span class="keyword">int</span> [A.length];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt; A.length;i++)&#123;</span><br><span class="line">        reArray[i] = A[i]*A[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 排序</span></span><br><span class="line">    <span class="comment">// for(int i=0;i&lt;len-1;i++)&#123;</span></span><br><span class="line">    <span class="comment">//     for(int j = 0;j&lt;len-1-i;j++)&#123;</span></span><br><span class="line">    <span class="comment">//         if(reArray[j] &gt; reArray[j+1])&#123;</span></span><br><span class="line">    <span class="comment">//             int temp = reArray[j];</span></span><br><span class="line">    <span class="comment">//             reArray[j]=reArray[j+1];</span></span><br><span class="line">    <span class="comment">//             reArray[j+1]=temp;</span></span><br><span class="line">    <span class="comment">//         &#125;</span></span><br><span class="line">    <span class="comment">//     &#125;</span></span><br><span class="line">    <span class="comment">// &#125;</span></span><br><span class="line">    Arrays.sort(reArray);</span><br><span class="line">    <span class="keyword">return</span> reArray;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>复杂度分析</p>
+<p>时间复杂度：<code>O(n log n)O(nlogn)</code>，其中 n是数组 A 的长度。</p>
+<p>空间复杂度：<code>O(log n)O(logn)</code>,除了存储答案的数组以外，我们需要 <code>O(log n)O(logn)</code>的栈空间进行排序。</p>
+<h4 id="方法二-双指针法"><a href="#方法二-双指针法" class="headerlink" title="方法二 双指针法"></a>方法二 双指针法</h4><p>因为原来的数组是递增排序的，所以会出现如下情况：</p>
+<ul>
+<li><p>所有元素 &gt; 0 或者 &lt; 0 ,那么平方之后的数组依然是有序的</p>
+</li>
+<li><p>存在一个边界数字，把左右两边分成 正数和负数，平方之后一边单调递增，一边单调递减</p>
+</li>
+</ul>
+<p>算法：</p>
+<ul>
+<li>找出边界数字 edge，元素全为 + edge = -1，元素全为-，edge= len-1</li>
+<li>双指针算法：<ul>
+<li>变量 i = edge 为<strong>左边元素的边界</strong>（绝对值最小），变量 j = edge +1位<strong>右边元素的边界</strong>（绝对值最小）</li>
+<li>i&lt; 0 ， 元素全为 +，此时 edge = -1，j =  0</li>
+<li>j == len ，元素全为 -，此时 i =  len-1</li>
+<li>除此之外，比较左右元素的边界($A[i]^2 和 A[j]^2$) <ul>
+<li>设置一个变量 index = 0 ，如果左边小，左指针左移，继续比较</li>
+<li>如果右边小，右指针右移</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 找出边界</span></span><br><span class="line"><span class="keyword">int</span> edge = -<span class="number">1</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;len;i++)&#123;</span><br><span class="line">    <span class="keyword">if</span>(A[i] &lt; <span class="number">0</span>)&#123;</span><br><span class="line">        edge = i;</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 双指针</span></span><br><span class="line"><span class="keyword">int</span> i = edge,j=edge+<span class="number">1</span>;</span><br><span class="line"><span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(i&gt;=<span class="number">0</span> || j&lt;len)&#123;</span><br><span class="line">    <span class="comment">// 都为 +,此时 j 初始为 0，A[j]是最小的元素</span></span><br><span class="line">    <span class="keyword">if</span>(i&lt;<span class="number">0</span>)&#123;</span><br><span class="line">        reArray[index] = A[j]*A[j];</span><br><span class="line">        j++;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(j==len)&#123;</span><br><span class="line">        <span class="comment">// 全为-，此时 i = len-1，A[i]是最小的元素</span></span><br><span class="line">        reArray[index] = A[i]*A[i];</span><br><span class="line">        i--;</span><br><span class="line">    &#125;<span class="keyword">else</span> <span class="keyword">if</span>(A[j]*A[j] &gt; A[i]*A[i] )&#123;</span><br><span class="line">        reArray[index] = A[i]*A[i];</span><br><span class="line">        i--;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        reArray[index] = A[j]*A[j];</span><br><span class="line">        j++;</span><br><span class="line">    &#125;</span><br><span class="line">    index++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> reArray;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>时间复杂度：O(n)<em>O</em>(<em>n</em>)，其中 n<em>n</em> 是数组 A<em>A</em> 的长度。</li>
+<li>空间复杂度：O(1)<em>O</em>(1)。</li>
+</ul>
+<h4 id="方法三：双指针"><a href="#方法三：双指针" class="headerlink" title="方法三：双指针"></a>方法三：双指针</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">      <span class="comment">// 双指针 二</span></span><br><span class="line"><span class="comment">// ; 不能少</span></span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>,j=len-<span class="number">1</span>,pos = len-<span class="number">1</span>;i &lt;= j;)&#123;</span><br><span class="line">          <span class="keyword">if</span>(A[j]*A[j] &gt; A[i]*A[i])&#123;</span><br><span class="line">              reArray[pos] = A[j]*A[j];</span><br><span class="line">              j--;</span><br><span class="line">          &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">              reArray[pos] = A[i]*A[i];</span><br><span class="line">              i++; </span><br><span class="line">          &#125;</span><br><span class="line">          pos--;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
       
 
       
@@ -203,6 +241,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -253,7 +302,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/10/15/Untitled%201/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/10/17/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -520,6 +569,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">hobby</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
               </li>
             
             <div class="clearfix"></div>

@@ -154,6 +154,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-所有奇数长度子数组的和" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/18/%E6%89%80%E6%9C%89%E5%A5%87%E6%95%B0%E9%95%BF%E5%BA%A6%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E5%92%8C/">Array 1588 所有奇数长度子数组的和</a>
+    </h1>
+  
+
+        
+        <a href="/2020/10/18/%E6%89%80%E6%9C%89%E5%A5%87%E6%95%B0%E9%95%BF%E5%BA%A6%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E5%92%8C/" class="archive-article-date">
+  	<time datetime="2020-10-18T02:33:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>思路：</p>
+<p>极端情况：数组只有一个</p>
+<h4 id="方法一：暴力破解"><a href="#方法一：暴力破解" class="headerlink" title="方法一：暴力破解"></a>方法一：暴力破解</h4><p>双层循环，从第一个元素开始，计算每个元素所在的长度为奇数的数组的和。内层循环将路径上的元素都进行加和，判断是否为 奇数数组。</p>
+        
+          <a class="article-more-a" href="/2020/10/18/%E6%89%80%E6%9C%89%E5%A5%87%E6%95%B0%E9%95%BF%E5%BA%A6%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E5%92%8C/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/10/18/%E6%89%80%E6%9C%89%E5%A5%87%E6%95%B0%E9%95%BF%E5%BA%A6%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E5%92%8C/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-有序数组的平方" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -423,13 +501,21 @@
 <li>js 语言熟悉更种函数，java </li>
 </ul>
 <h3 id="暴力破解法"><a href="#暴力破解法" class="headerlink" title="暴力破解法"></a><strong>暴力破解法</strong></h3><p>一般就是通过循环这种一次去找，就比如是简化给的数据，然后自己动手找出规律，算法这种。</p>
+<ul>
+<li>1588 ：审题不清晰，认真去看每道题，可以从简单数据开始，推导规律，自己是怎么解决这个问题的（思路写成程序）</li>
+</ul>
 <h3 id="优化"><a href="#优化" class="headerlink" title="优化"></a><strong>优化</strong></h3><p>简化问题，首先考虑简单情况</p>
 <ul>
 <li>数组<ul>
 <li>数组只有一个元素，数组为空</li>
 <li>根本就不是数组</li>
-<li>数组的元素规律性：矩阵为方阵</li>
+<li>数组的元素规律性，根据所给数组的形式以及要求的数组形式判断。一般给出的是数组，返回的也是数组。<ul>
+<li>二维数组矩阵，矩阵为方阵</li>
+<li>数组是递增排列的，数组全为正数，负数等等</li>
+</ul>
+</li>
 <li>能少定义变量就少定义( int len = A.length;)，排序可以直接用数组的 <code>Arrays.sort(reArray)</code></li>
+<li>不知道长度的数组初始化很麻烦</li>
 </ul>
 </li>
 </ul>
@@ -836,83 +922,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/08/25/tensorflow%20%E7%9A%84%E5%9F%BA%E7%A1%80/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-tensorflow" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/25/tensorflow/">tensorflow 的安装</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/25/tensorflow/" class="archive-article-date">
-  	<time datetime="2020-08-25T05:49:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>window 10 + python3.7.7 + Anaconda  ，下载 tensorflow(tensorflow ‘2.3.0’），参考<a href="https://zhuanlan.zhihu.com/p/77790443" target="_blank" rel="noopener">教程</a></p>
-<p>Anaconda 是一个开源的Python包管理器，Anaconda 的 envs 里面可以设置多个虚拟的 python 环境。安装 Anaconda  需要配置环境变量。</p>
-        
-          <a class="article-more-a" href="/2020/08/25/tensorflow/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">tensorflow</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/25/tensorflow/">展开全文 >></a>
         </p>
       
 

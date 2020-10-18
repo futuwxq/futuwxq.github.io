@@ -16,7 +16,7 @@
 <meta property="og:description" content="思路 定义一个数组变量 reArray ，用来存储原数组数组元素的平方， 然后对新的数组进行冒泡排序。 暴力破解法 - 直接排序">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-10-17T10:32:25.000Z">
-<meta property="article:modified_time" content="2020-10-17T12:08:53.315Z">
+<meta property="article:modified_time" content="2020-10-18T02:32:50.745Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary">
@@ -211,7 +211,8 @@
 <li>时间复杂度：O(n)<em>O</em>(<em>n</em>)，其中 n<em>n</em> 是数组 A<em>A</em> 的长度。</li>
 <li>空间复杂度：O(1)<em>O</em>(1)。</li>
 </ul>
-<h4 id="方法三：双指针"><a href="#方法三：双指针" class="headerlink" title="方法三：双指针"></a>方法三：双指针</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">      <span class="comment">// 双指针 二</span></span><br><span class="line"><span class="comment">// ; 不能少</span></span><br><span class="line">      <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>,j=len-<span class="number">1</span>,pos = len-<span class="number">1</span>;i &lt;= j;)&#123;</span><br><span class="line">          <span class="keyword">if</span>(A[j]*A[j] &gt; A[i]*A[i])&#123;</span><br><span class="line">              reArray[pos] = A[j]*A[j];</span><br><span class="line">              j--;</span><br><span class="line">          &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">              reArray[pos] = A[i]*A[i];</span><br><span class="line">              i++; </span><br><span class="line">          &#125;</span><br><span class="line">          pos--;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="方法三：双指针"><a href="#方法三：双指针" class="headerlink" title="方法三：双指针"></a>方法三：双指针</h4><p>不找边界，假设左边是一个负数数组，右边是一个正数数组。i 指向负数数组的第一位，j 指向正数数组的最后一位。因为左右边界数字都是绝对值最大的，所以每次只能比较出数组中最大值，数组选择逆序存储。比较边界的数字，大的存入数组并移动指针，通过 i &lt;= j 来结束指针的移动。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 双指针 不找边界法 逆序存储数组	</span></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>,j=len-<span class="number">1</span>,pos = len-<span class="number">1</span>;i &lt;= j;)&#123;<span class="comment">// ; 不能少</span></span><br><span class="line">    <span class="keyword">if</span>(A[j]*A[j] &gt; A[i]*A[i])&#123;</span><br><span class="line">        reArray[pos] = A[j]*A[j];</span><br><span class="line">        j--;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        reArray[pos] = A[i]*A[i];</span><br><span class="line">        i++; </span><br><span class="line">    &#125;</span><br><span class="line">    pos--;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
 
@@ -315,6 +316,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/10/18/%E6%89%80%E6%9C%89%E5%A5%87%E6%95%B0%E9%95%BF%E5%BA%A6%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E5%92%8C/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Array 1588 所有奇数长度子数组的和
+        
+      </div>
+    </a>
   
   
     <a href="/2020/10/15/Map()%20%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">

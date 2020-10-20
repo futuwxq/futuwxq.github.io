@@ -16,7 +16,7 @@
 <meta property="og:description" content="科学运算当中最为重要的两个模块，一个是 numpy,一个是 pandas Numpy 属性 ndim：维度。 shape：行数和列数。reshape 是一种方法 size：元素个数。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-08-20T02:30:02.000Z">
-<meta property="article:modified_time" content="2020-09-24T09:09:55.214Z">
+<meta property="article:modified_time" content="2020-10-20T02:32:22.819Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="Python">
 <meta property="article:tag" content="Numpy">
@@ -324,6 +324,9 @@
 <ul>
 <li><strong>numpy.linspace</strong>(）：在指定的间隔内返回均匀间隔的数字。<strong>numpy.linspace</strong>(start, stop, num=50, endpoint=True, retstep=False, dtype=None)</li>
 </ul>
+<h4 id="数组索引"><a href="#数组索引" class="headerlink" title="数组索引"></a>数组索引</h4><p>argsort()函数是将x中的元素从小到大排列，提取其对应的index(索引号)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">One dimensional array:一维数组</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt; x &#x3D; np.array([3, 1, 2])</span><br><span class="line">&gt;&gt;&gt; np.argsort(x)</span><br><span class="line">array([1, 2, 0])</span><br></pre></td></tr></table></figure>
+
 <h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul>
 <li><p><strong>argmax() /  idxmax()</strong> 方法 :用于获取 Series 的最大值的索引值，也就是最大数据的索引值。</p>
 </li>

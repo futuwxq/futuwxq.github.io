@@ -6,19 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
-  <title>Array 605 种花问题 | 晓秋的博客</title>
+  <title>ES6 Map 和 Set | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="假设你有一个很长的花坛，一部分地块种植了花，另一部分却没有。可是，花卉不能种植在相邻的地块上，它们会争夺水源，两者都会死去。 给定一个花坛（表示为一个数组包含0和1，其中0表示没种植花，1表示种植了花），和一个数 n 。能否在不打破种植规则的情况下种入 n 朵花？能则返回True，不能则返回False。 思路： 线性查找 依次遍历，当第一次遇到 0 （数组下标为 i）:  检查后2个数是否为0，如">
+  <meta name="description" content="Js 的默认对象方式{},类似 python 中的 Dictionary 类型，java 中的 Map 类型，即一组 键值对。但是 Js 中对象的键只能是字符串类型。为了 Number 或者其他类型可以作为键，ES6 引入了新的数据类型 Map。 MapMap是一组键值对的结构，具有极快的查找速度。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Array 605 种花问题">
-<meta property="og:url" content="https://futuwxq.github.io/2020/10/21/%E7%A7%8D%E8%8A%B1%E9%97%AE%E9%A2%98/index.html">
+<meta property="og:title" content="ES6 Map 和 Set">
+<meta property="og:url" content="https://futuwxq.github.io/2020/10/26/JS%20map%20%E5%92%8C%20set/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="假设你有一个很长的花坛，一部分地块种植了花，另一部分却没有。可是，花卉不能种植在相邻的地块上，它们会争夺水源，两者都会死去。 给定一个花坛（表示为一个数组包含0和1，其中0表示没种植花，1表示种植了花），和一个数 n 。能否在不打破种植规则的情况下种入 n 朵花？能则返回True，不能则返回False。 思路： 线性查找 依次遍历，当第一次遇到 0 （数组下标为 i）:  检查后2个数是否为0，如">
+<meta property="og:description" content="Js 的默认对象方式{},类似 python 中的 Dictionary 类型，java 中的 Map 类型，即一组 键值对。但是 Js 中对象的键只能是字符串类型。为了 Number 或者其他类型可以作为键，ES6 引入了新的数据类型 Map。 MapMap是一组键值对的结构，具有极快的查找速度。">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-10-21T02:33:51.000Z">
-<meta property="article:modified_time" content="2020-10-24T08:25:56.093Z">
+<meta property="article:published_time" content="2020-10-26T05:10:51.000Z">
+<meta property="article:modified_time" content="2020-10-26T06:03:13.057Z">
 <meta property="article:author" content="Better">
-<meta property="article:tag" content="leetcode">
+<meta property="article:tag" content="js">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="晓秋的博客" type="application/atom+xml">
@@ -155,35 +155,34 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-种花问题" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-JS map 和 set" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Array 605 种花问题
+      ES6 Map 和 Set
     </h1>
   
 
         
-        <a href="/2020/10/21/%E7%A7%8D%E8%8A%B1%E9%97%AE%E9%A2%98/" class="archive-article-date">
-  	<time datetime="2020-10-21T02:33:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-21</time>
+        <a href="/2020/10/26/JS%20map%20%E5%92%8C%20set/" class="archive-article-date">
+  	<time datetime="2020-10-26T05:10:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>假设你有一个很长的花坛，一部分地块种植了花，另一部分却没有。可是，花卉不能种植在相邻的地块上，它们会争夺水源，两者都会死去。</p>
-<p>给定一个花坛（表示为一个数组包含0和1，其中0表示没种植花，1表示种植了花），和一个数 n 。能否在不打破种植规则的情况下种入 n 朵花？能则返回True，不能则返回False。</p>
-<p>思路：</p>
-<p>线性查找</p>
-<p>依次遍历，当第一次遇到 0 （数组下标为 i）:</p>
-<ul>
-<li>检查后2个数是否为0，如果是就可以种下一朵花(i+1)；</li>
-<li>如果第 1，2 元素为0，或者最后两个元素为 0，也是可以种树的。</li>
-</ul>
+        <p>Js 的默认对象方式<code>{}</code>,类似 python 中的 Dictionary 类型，java 中的 Map 类型，即一组 键值对。但是 Js 中对象的键只能是字符串类型。为了 Number 或者其他类型可以作为键，ES6 引入了新的数据类型 Map。</p>
+<h3 id="Map"><a href="#Map" class="headerlink" title="Map"></a>Map</h3><p><code>Map</code>是一组键值对的结构，具有极快的查找速度。<a id="more"></a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var m &#x3D; new Map(); &#x2F;&#x2F; 空Map</span><br><span class="line">m.set(&#39;Adam&#39;, 67); &#x2F;&#x2F; 添加新的key-value</span><br></pre></td></tr></table></figure>
+
+<p>一个key只能对应一个value，所以，多次对一个key放入value，后面的值会把前面的值冲掉</p>
+<h3 id="Set"><a href="#Set" class="headerlink" title="Set"></a>Set</h3><p><code>Set</code>和<code>Map</code>类似，也是一组key的集合，<strong>但不存储value</strong>。由于key不能重复，所以，在<code>Set</code>中，没有重复的key。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var s1 &#x3D; new Set(); &#x2F;&#x2F; 空Set</span><br><span class="line">var s2 &#x3D; new Set([1, 2, 3]); &#x2F;&#x2F; 含1, 2, 3</span><br></pre></td></tr></table></figure>
+
 
       
 
@@ -218,7 +217,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
@@ -274,7 +273,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/10/21/%E7%A7%8D%E8%8A%B1%E9%97%AE%E9%A2%98/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://futuwxq.github.io/2020/10/26/JS%20map%20%E5%92%8C%20set/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -288,18 +287,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/10/23/%E5%AD%98%E5%9C%A8%E9%87%8D%E5%A4%8D%E5%85%83%E7%B4%A0-II/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/10/26/python%20%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Array 219 存在重复元素  滑动窗口
+          Python3 基本数据类型
         
       </div>
     </a>
   
   
-    <a href="/2020/10/21/%E5%AD%98%E5%9C%A8%E8%BF%9E%E7%BB%AD3%E4%B8%AA%E5%A5%87%E6%95%B0/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Array 1550 存在连续三个奇数的数组</div>
+    <a href="/2020/10/25/List%E3%80%81Set%E3%80%81Map%E7%9A%84%E5%8C%BA%E5%88%AB/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">java List、Set、Map的区别</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -554,6 +553,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">机器学习</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">python</a>
               </li>
             
             <div class="clearfix"></div>

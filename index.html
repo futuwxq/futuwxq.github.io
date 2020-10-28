@@ -154,35 +154,49 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-python 基本数据类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-832. 翻转图像" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/26/python%20%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">Python3 基本数据类型</a>
+      <a class="article-title" href="/2020/10/28/832.%20%E7%BF%BB%E8%BD%AC%E5%9B%BE%E5%83%8F/">Array 832 翻转图像</a>
     </h1>
   
 
         
-        <a href="/2020/10/26/python%20%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="archive-article-date">
-  	<time datetime="2020-10-26T05:10:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-26</time>
+        <a href="/2020/10/28/832.%20%E7%BF%BB%E8%BD%AC%E5%9B%BE%E5%83%8F/" class="archive-article-date">
+  	<time datetime="2020-10-28T07:52:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Python 中的变量不需要声明。每个变量在使用前都必须赋值，变量赋值以后该变量才会被创建。在 Python 中，变量就是变量，它没有类型，我们所说的”类型”是变量所指的内存中对象的类型。（和 ES6 一样）</p>
-<p>Python3 中有六个标准的数据类型：</p>
+        <p>给定一个二进制矩阵 <code>A</code>，我们想先水平翻转图像，然后反转图像并返回结果。</p>
+<p>水平翻转图片就是将图片的每一行都进行翻转，即逆序。例如，水平翻转 <code>[1, 1, 0]</code> 的结果是 <code>[0, 1, 1]</code>。</p>
+<p>反转图片的意思是图片中的 <code>0</code> 全部被 <code>1</code> 替换， <code>1</code> 全部被 <code>0</code> 替换。例如，反转 <code>[0, 1, 1]</code> 的结果是 <code>[1, 0, 0]</code>。</p>
+<p>思路：</p>
 <ul>
-<li>Number（数字）</li>
-<li>String（字符串）</li>
-<li>List（列表）</li></ul>
-        
-          <a class="article-more-a" href="/2020/10/26/python%20%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/#more">more >></a>
-        
+<li>将每行的数字进行翻转</li>
+<li>0，1 替换</li>
+</ul>
+<p>特殊情况</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[][] flipAndInvertImage(<span class="keyword">int</span>[][] A) &#123;       </span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span>[] arr:A)&#123;</span><br><span class="line">           <span class="comment">// 将每行的数字进行翻转</span></span><br><span class="line">           <span class="keyword">int</span> i = <span class="number">0</span>,j = arr.length - <span class="number">1</span>;</span><br><span class="line">           <span class="keyword">while</span>(i &lt;= j)&#123;</span><br><span class="line">               <span class="keyword">int</span> temp = arr[i];</span><br><span class="line">               arr[i] = arr[j];</span><br><span class="line">               arr[j] = temp;</span><br><span class="line">               i++;</span><br><span class="line">               j--;</span><br><span class="line">           &#125;</span><br><span class="line">           </span><br><span class="line">           <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>;k &lt; arr.length ;k++)&#123;</span><br><span class="line">               arr[k] = arr[k] == <span class="number">0</span> ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">           &#125; </span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> A;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>时间复杂度：$O(n^2)$</p>
+<p>空间复杂度：只需要存储 常数的额外空间</p>
+<p>a^b : 如果a、b两个值不相同，则异或结果为1。如果a、b两个值相同，异或结果为0。</p>
+<p><strong>我们可以不使用额外的（非常数）空间来完成翻转和反转操作</strong>。对于<code>A[i][j]</code>，我们将它和 <code>A[i][c - j - 1]</code>进行交换（即翻转），其中 c 是数组 A 的列数。在交换的同时，我们可以将这两个数进行反转。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span>[] arr:A)&#123;</span><br><span class="line">    <span class="keyword">int</span> len = A[<span class="number">0</span>].length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; (len + <span class="number">1</span>)/<span class="number">2</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = arr[i]^<span class="number">1</span>;</span><br><span class="line">        arr[i] = arr[len-<span class="number">1</span>-i]^<span class="number">1</span>;</span><br><span class="line">        arr[len-<span class="number">1</span>-i] = temp; </span><br><span class="line">     &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>异或运算符，双指针可以用 <code>int i = 0;i &lt; (len + 1)/2;i++</code> 和 <code>arr[len-1-i]</code>。</li>
+</ul>
+<p>时间复杂度：O(M<code>*</code>N)，其中 M 和 N 分别为数组 <code>A</code> 的行数和列数。</p>
+<p>空间复杂度：O(1)</p>
+
       
 
       
@@ -195,7 +209,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
         		</li>
       		
 		</ul>
@@ -205,7 +219,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/26/python%20%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/10/28/832.%20%E7%BF%BB%E8%BD%AC%E5%9B%BE%E5%83%8F/">展开全文 >></a>
         </p>
       
 
@@ -283,6 +297,87 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/10/26/JS%20map%20%E5%92%8C%20set/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-python 基本数据类型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/10/26/python%20%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">Python3 基本数据类型</a>
+    </h1>
+  
+
+        
+        <a href="/2020/10/26/python%20%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/" class="archive-article-date">
+  	<time datetime="2020-10-26T05:10:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Python 中的变量不需要声明。每个变量在使用前都必须赋值，变量赋值以后该变量才会被创建。在 Python 中，变量就是变量，它没有类型，我们所说的”类型”是变量所指的内存中对象的类型。（和 ES6 一样）</p>
+<p>Python3 中有六个标准的数据类型：</p>
+<ul>
+<li>Number（数字）</li>
+<li>String（字符串）</li>
+<li>List（列表）</li></ul>
+        
+          <a class="article-more-a" href="/2020/10/26/python%20%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">python</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/10/26/python%20%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/">展开全文 >></a>
         </p>
       
 
@@ -837,85 +932,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/10/18/%E6%89%80%E6%9C%89%E5%A5%87%E6%95%B0%E9%95%BF%E5%BA%A6%E5%AD%90%E6%95%B0%E7%BB%84%E7%9A%84%E5%92%8C/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-有序数组的平方" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/17/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/">977 Array 有序数组的平方</a>
-    </h1>
-  
-
-        
-        <a href="/2020/10/17/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/" class="archive-article-date">
-  	<time datetime="2020-10-17T10:32:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-10-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>思路</p>
-<p>定义一个数组变量 reArray ，用来存储原数组数组元素的平方，</p>
-<p>然后对新的数组进行冒泡排序。</p>
-<h4 id="暴力破解法-直接排序"><a href="#暴力破解法-直接排序" class="headerlink" title="暴力破解法 - 直接排序 "></a><strong>暴力破解法 - 直接排序</strong></h4>
-        
-          <a class="article-more-a" href="/2020/10/17/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">leetcode</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/10/17/%E6%9C%89%E5%BA%8F%E6%95%B0%E7%BB%84%E7%9A%84%E5%B9%B3%E6%96%B9/">展开全文 >></a>
         </p>
       
 

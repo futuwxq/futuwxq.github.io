@@ -154,6 +154,82 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-强化学习 Sarsa" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/">强化学习 Sarsa</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/" class="archive-article-date">
+  	<time datetime="2020-08-21T06:23:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Sarsa"><a href="#Sarsa" class="headerlink" title="Sarsa"></a>Sarsa</h2><p>Sarsa 的决策部分和 Q learning 一样，都是基于 Q 表的形式决策, 在 Q 表中挑选值较大的动作值施加在环境中来换取奖惩.。但是不同的地方在于 Sarsa 的更新方式是不一样的。</p>
+        
+          <a class="article-more-a" href="/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">RL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/21/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Sarsa/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Pandas plot 出图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -206,88 +282,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/08/20/Pandas%20plot%20%E5%87%BA%E5%9B%BE/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-神经网络" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">Numpy 初了解</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="archive-article-date">
-  	<time datetime="2020-08-20T02:30:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>神经元数学模型</p>
-<p>神经元输 入向量𝒙 = [𝑥1,   𝑥2, 𝑥3, … , 𝑥𝑛 ] T，经过函数映射：𝑓𝜃: 𝒙 → 𝑦后得到输出𝑦，其中𝜃为函数𝑓自 身的参数。考虑一种简化的情况，即线性变换：𝑓(𝒙) = 𝒘T𝒙 + 𝑏，展开为标量形式： 𝑓(𝒙) = 𝑤1𝑥1 + 𝑤2𝑥2 + 𝑤3𝑥3 + ⋯ + 𝑤𝑛𝑥𝑛 + b</p>
-<p>参数𝜃 = {𝑤1, 𝑤2, 𝑤3, . . . , 𝑤𝑛, 𝑏}确定了神经元的状态，通过固定𝜃参数即可确定此神经元 的处理逻辑。</p>
-        
-          <a class="article-more-a" href="/2020/08/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Numpy</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">展开全文 >></a>
         </p>
       
 
@@ -372,6 +366,88 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/08/20/Numpy%20%E5%9F%BA%E7%A1%80/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-神经网络" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">Numpy 初了解</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="archive-article-date">
+  	<time datetime="2020-08-20T02:30:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>神经元数学模型</p>
+<p>神经元输 入向量𝒙 = [𝑥1,   𝑥2, 𝑥3, … , 𝑥𝑛 ] T，经过函数映射：𝑓𝜃: 𝒙 → 𝑦后得到输出𝑦，其中𝜃为函数𝑓自 身的参数。考虑一种简化的情况，即线性变换：𝑓(𝒙) = 𝒘T𝒙 + 𝑏，展开为标量形式： 𝑓(𝒙) = 𝑤1𝑥1 + 𝑤2𝑥2 + 𝑤3𝑥3 + ⋯ + 𝑤𝑛𝑥𝑛 + b</p>
+<p>参数𝜃 = {𝑤1, 𝑤2, 𝑤3, . . . , 𝑤𝑛, 𝑏}确定了神经元的状态，通过固定𝜃参数即可确定此神经元 的处理逻辑。</p>
+        
+          <a class="article-more-a" href="/2020/08/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Numpy</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">展开全文 >></a>
         </p>
       
 
@@ -857,86 +933,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/08/14/web%E9%A1%B5%E9%9D%A2%E7%BB%98%E5%88%B6%E8%BF%87%E7%A8%8B/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-项目总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/13/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/">Vue实战项目 总结</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/13/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/" class="archive-article-date">
-  	<time datetime="2020-08-13T00:34:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-13</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="报错"><a href="#报错" class="headerlink" title="报错"></a><strong>报错</strong></h3><p>下面的意思是 在 ./src/icons/index.js 中找不到 SvgIcon</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">This dependency was not found:</span><br><span class="line"></span><br><span class="line">* @&#x2F;components&#x2F;content&#x2F;icons&#x2F;SvgIcon in .&#x2F;src&#x2F;icons&#x2F;index.js</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li></li></ul>
-        
-          <a class="article-more-a" href="/2020/08/13/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/13/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/">展开全文 >></a>
         </p>
       
 

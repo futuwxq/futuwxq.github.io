@@ -17,7 +17,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://futuwxq.github.io/2020/08/11/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E5%88%86%E7%B1%BB%E9%A1%B5%20category/image-20200813105219962.png">
 <meta property="article:published_time" content="2020-08-11T07:34:34.000Z">
-<meta property="article:modified_time" content="2020-08-14T12:33:52.109Z">
+<meta property="article:modified_time" content="2020-10-27T12:27:19.862Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="vue">
 <meta name="twitter:card" content="summary">
@@ -180,8 +180,7 @@
         <h3 id="1-获取数据"><a href="#1-获取数据" class="headerlink" title="1 获取数据"></a>1 获取数据</h3><p>分析数据结构</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;catagory  (无参数) ——》maitKey、miniWallkey 、title</span><br><span class="line">&#x2F;subcategory (maitKey)  ——》 subcategories ([])</span><br><span class="line">&#x2F;subcategory&#x2F;detail (miniWallkey，type) ——》categoryDetail (&#123;&#125;)</span><br></pre></td></tr></table></figure>
 
-<a id="more"></a>可以看出不同的 title 有不同的数据，将给个title 对应的数据存储在 categoryData 里面，数据之间通过 index 联系。简化数据结构如下
-
+<p>可以看出不同的 title 有不同的数据，将给个title 对应的数据存储在 categoryData 里面，数据之间通过 index 联系。简化数据结构如下<a id="more"></a></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">this.categoryData[i] &#x3D; &#123;</span><br><span class="line">            subcategories: &#123;&#125;,</span><br><span class="line">            categoryDetail: &#123;</span><br><span class="line">              pop: [],</span><br><span class="line">              new: [],</span><br><span class="line">              sell: [],</span><br><span class="line">            &#125;,</span><br><span class="line">          &#125;;</span><br></pre></td></tr></table></figure>
 
 <p>在获取 title 数据之后，初始化 categoryData ，并获取第一组 subcategorie 的数据，之后获取 categoryDetail 数据</p>

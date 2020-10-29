@@ -178,25 +178,9 @@
 <p>水平翻转图片就是将图片的每一行都进行翻转，即逆序。例如，水平翻转 <code>[1, 1, 0]</code> 的结果是 <code>[0, 1, 1]</code>。</p>
 <p>反转图片的意思是图片中的 <code>0</code> 全部被 <code>1</code> 替换， <code>1</code> 全部被 <code>0</code> 替换。例如，反转 <code>[0, 1, 1]</code> 的结果是 <code>[1, 0, 0]</code>。</p>
 <p>思路：</p>
-<ul>
-<li>将每行的数字进行翻转</li>
-<li>0，1 替换</li>
-</ul>
-<p>特殊情况</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">int</span>[][] flipAndInvertImage(<span class="keyword">int</span>[][] A) &#123;       </span><br><span class="line">       <span class="keyword">for</span>(<span class="keyword">int</span>[] arr:A)&#123;</span><br><span class="line">           <span class="comment">// 将每行的数字进行翻转</span></span><br><span class="line">           <span class="keyword">int</span> i = <span class="number">0</span>,j = arr.length - <span class="number">1</span>;</span><br><span class="line">           <span class="keyword">while</span>(i &lt;= j)&#123;</span><br><span class="line">               <span class="keyword">int</span> temp = arr[i];</span><br><span class="line">               arr[i] = arr[j];</span><br><span class="line">               arr[j] = temp;</span><br><span class="line">               i++;</span><br><span class="line">               j--;</span><br><span class="line">           &#125;</span><br><span class="line">           </span><br><span class="line">           <span class="keyword">for</span>(<span class="keyword">int</span> k = <span class="number">0</span>;k &lt; arr.length ;k++)&#123;</span><br><span class="line">               arr[k] = arr[k] == <span class="number">0</span> ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">           &#125; </span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> A;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-
-<p>时间复杂度：$O(n^2)$</p>
-<p>空间复杂度：只需要存储 常数的额外空间</p>
-<p>a^b : 如果a、b两个值不相同，则异或结果为1。如果a、b两个值相同，异或结果为0。</p>
-<p><strong>我们可以不使用额外的（非常数）空间来完成翻转和反转操作</strong>。对于<code>A[i][j]</code>，我们将它和 <code>A[i][c - j - 1]</code>进行交换（即翻转），其中 c 是数组 A 的列数。在交换的同时，我们可以将这两个数进行反转。</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span>[] arr:A)&#123;</span><br><span class="line">    <span class="keyword">int</span> len = A[<span class="number">0</span>].length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i &lt; (len + <span class="number">1</span>)/<span class="number">2</span>;i++)&#123;</span><br><span class="line">        <span class="keyword">int</span> temp = arr[i]^<span class="number">1</span>;</span><br><span class="line">        arr[i] = arr[len-<span class="number">1</span>-i]^<span class="number">1</span>;</span><br><span class="line">        arr[len-<span class="number">1</span>-i] = temp; </span><br><span class="line">     &#125; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>异或运算符，双指针可以用 <code>int i = 0;i &lt; (len + 1)/2;i++</code> 和 <code>arr[len-1-i]</code>。</li>
-</ul>
-<p>时间复杂度：O(M<code>*</code>N)，其中 M 和 N 分别为数组 <code>A</code> 的行数和列数。</p>
-<p>空间复杂度：O(1)</p>
-
+        
+          <a class="article-more-a" href="/2020/10/28/832.%20%E7%BF%BB%E8%BD%AC%E5%9B%BE%E5%83%8F/#more">more >></a>
+        
       
 
       

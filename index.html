@@ -177,6 +177,13 @@
         <p>给你一个整数数组 nums 。</p>
 <p>如果一组数字 (i,j) 满足 nums[i] == nums[j] 且 i &lt; j ，就可以认为这是一组 好数对 。</p>
 <p>返回好数对的数目。</p>
+<p><strong>思路</strong></p>
+<p>依次遍历（j&lt;i）,找重复数，就可以枚举所有的好数对。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">numIdenticalPairs</span><span class="params">(<span class="keyword">int</span>[] nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>;i&lt;nums.length;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j = <span class="number">0</span>;j&lt;i;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i]==nums[j]) &#123;</span><br><span class="line">            	count ++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> count;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p> 时间复杂度：$O(n^2)$,双重for循环</p>
+<p>空间复杂度：只需要存储常数的空间。</p>
+<h3 id="方法二：组合计数"><a href="#方法二：组合计数" class="headerlink" title="方法二：组合计数"></a>方法二：组合计数</h3><p>假设 k 重复了 v 次，那么满足题目要求的数目为：$\frac{v(v-1)}{2}$，因此我们需要计算每个 元素的重复次数 k，利用 set 结构就可以</p>
 
       
 
@@ -869,7 +876,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/10/20/leetcode/">leetcode 汇总</a>
+      <a class="article-title" href="/2020/10/20/leetcode/">leetcode</a>
     </h1>
   
 

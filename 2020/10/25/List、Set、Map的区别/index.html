@@ -18,7 +18,7 @@
 <meta property="og:image" content="https://futuwxq.github.io/2020/10/25/List%E3%80%81Set%E3%80%81Map%E7%9A%84%E5%8C%BA%E5%88%AB/image-20201025192738140.png">
 <meta property="og:image" content="https://futuwxq.github.io/2020/10/25/List%E3%80%81Set%E3%80%81Map%E7%9A%84%E5%8C%BA%E5%88%AB/image-20201025192957393.png">
 <meta property="article:published_time" content="2020-10-25T05:49:02.000Z">
-<meta property="article:modified_time" content="2020-11-01T06:52:48.255Z">
+<meta property="article:modified_time" content="2020-11-05T02:35:15.077Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary">
@@ -222,6 +222,10 @@
 <p>HashTree ： n次 搜索，删除，插入 操作。每次操作将耗费对数时间，即为 log(n)</p>
 <p>HashSet ：n 次 搜索，删除，插入 操作，每次操作都耗费常数时间。</p>
 <p>Tree 和 map 和 set 都各有什么优点，link 删除添加操作简单，set 类似数组可以快速根据下标找到元素。</p>
+<h4 id="arrylist"><a href="#arrylist" class="headerlink" title="arrylist"></a>arrylist</h4><p>add() 方法</p>
+<p>没有指定下标的默认添加在最后面，指定下标按照最新的下标</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">List&lt;Integer&gt; arr &#x3D; new ArrayList&lt;Integer&gt;();</span><br><span class="line">arr.add(0,2);</span><br><span class="line">arr.add(5);</span><br><span class="line">arr.add(1,1);</span><br><span class="line">arr.add(0,7);</span><br><span class="line">arr.add(1,7);</span><br><span class="line">[7,7,2,1,5]</span><br></pre></td></tr></table></figure>
+
 
       
 

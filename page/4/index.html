@@ -238,29 +238,112 @@
 
 
   
-    <article id="post-Pandas 选择数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-神经网络" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/19/Pandas%20%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE/">Pandas 选择数据 设置值</a>
+      <a class="article-title" href="/2020/08/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">Numpy 初了解</a>
     </h1>
   
 
         
-        <a href="/2020/08/19/Pandas%20%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE/" class="archive-article-date">
-  	<time datetime="2020-08-19T02:34:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-19</time>
+        <a href="/2020/08/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/" class="archive-article-date">
+  	<time datetime="2020-08-20T02:30:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-20</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="一-、Pandas-选择数据"><a href="#一-、Pandas-选择数据" class="headerlink" title="一 、Pandas 选择数据"></a>一 、Pandas 选择数据</h2><h3 id="简单的筛选"><a href="#简单的筛选" class="headerlink" title="简单的筛选"></a>简单的筛选</h3><p><strong>筛选某列</strong></p>
+        <p>神经元数学模型</p>
+<p>神经元输 入向量𝒙 = [𝑥1,   𝑥2, 𝑥3, … , 𝑥𝑛 ] T，经过函数映射：𝑓𝜃: 𝒙 → 𝑦后得到输出𝑦，其中𝜃为函数𝑓自 身的参数。考虑一种简化的情况，即线性变换：𝑓(𝒙) = 𝒘T𝒙 + 𝑏，展开为标量形式： 𝑓(𝒙) = 𝑤1𝑥1 + 𝑤2𝑥2 + 𝑤3𝑥3 + ⋯ + 𝑤𝑛𝑥𝑛 + b</p>
+<p>参数𝜃 = {𝑤1, 𝑤2, 𝑤3, . . . , 𝑤𝑛, 𝑏}确定了神经元的状态，通过固定𝜃参数即可确定此神经元 的处理逻辑。</p>
         
-          <a class="article-more-a" href="/2020/08/19/Pandas%20%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE/#more">more >></a>
+          <a class="article-more-a" href="/2020/08/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Numpy</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/20/%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Pandas plot 出图" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/20/Pandas%20plot%20%E5%87%BA%E5%9B%BE/">Pandas plot 出图</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/20/Pandas%20plot%20%E5%87%BA%E5%9B%BE/" class="archive-article-date">
+  	<time datetime="2020-08-20T02:30:02.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>数据可视化，首先<code>import</code>我们需要用到的模块，除了 pandas，我们也需要使用 numpy 生成一些数据， matplotlib 用来 show 图片。</p>
+<h3 id="Series-线条可视化"><a href="#Series-线条可视化" class="headerlink" title="Series 线条可视化"></a>Series 线条可视化</h3>
+        
+          <a class="article-more-a" href="/2020/08/20/Pandas%20plot%20%E5%87%BA%E5%9B%BE/#more">more >></a>
         
       
 
@@ -288,7 +371,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/19/Pandas%20%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/08/20/Pandas%20plot%20%E5%87%BA%E5%9B%BE/">展开全文 >></a>
         </p>
       
 
@@ -399,6 +482,86 @@
 
 
   
+    <article id="post-Pandas 选择数据" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/19/Pandas%20%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE/">Pandas 选择数据 设置值</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/19/Pandas%20%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE/" class="archive-article-date">
+  	<time datetime="2020-08-19T02:34:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一-、Pandas-选择数据"><a href="#一-、Pandas-选择数据" class="headerlink" title="一 、Pandas 选择数据"></a>一 、Pandas 选择数据</h2><h3 id="简单的筛选"><a href="#简单的筛选" class="headerlink" title="简单的筛选"></a>简单的筛选</h3><p><strong>筛选某列</strong></p>
+        
+          <a class="article-more-a" href="/2020/08/19/Pandas%20%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Pandas</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/19/Pandas%20%E9%80%89%E6%8B%A9%E6%95%B0%E6%8D%AE/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Pandas 基本使用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -480,85 +643,6 @@
 
 
   
-    <article id="post-强化学习 Q Learning" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/17/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Q%20Learning/">强化学习 Q Learning</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/17/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Q%20Learning/" class="archive-article-date">
-  	<time datetime="2020-08-17T13:35:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="强化学习方法"><a href="#强化学习方法" class="headerlink" title="强化学习方法"></a>强化学习方法</h2><p><strong>分类一：是否理解环境：Modelfree 和 Modelbased</strong> </p>
-<ul>
-<li>Modelfree ：不尝试去理解环境, 环境给了我们什么就是什么，<ul>
-<li>Q learning, Sarsa, Policy Gradients</li></ul></li></ul>
-        
-          <a class="article-more-a" href="/2020/08/17/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Q%20Learning/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">RL</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/17/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Q%20Learning/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-Python-基础语法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -609,6 +693,85 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/08/17/Python-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-强化学习 Q Learning" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/08/17/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Q%20Learning/">强化学习 Q Learning</a>
+    </h1>
+  
+
+        
+        <a href="/2020/08/17/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Q%20Learning/" class="archive-article-date">
+  	<time datetime="2020-08-17T13:35:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-17</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="强化学习方法"><a href="#强化学习方法" class="headerlink" title="强化学习方法"></a>强化学习方法</h2><p><strong>分类一：是否理解环境：Modelfree 和 Modelbased</strong> </p>
+<ul>
+<li>Modelfree ：不尝试去理解环境, 环境给了我们什么就是什么，<ul>
+<li>Q learning, Sarsa, Policy Gradients</li></ul></li></ul>
+        
+          <a class="article-more-a" href="/2020/08/17/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Q%20Learning/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">RL</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/08/17/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%20Q%20Learning/">展开全文 >></a>
         </p>
       
 
@@ -774,162 +937,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/08/13/%E9%A1%B9%E7%9B%AE%E6%80%BB%E7%BB%93/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Vue实战项目 我的 profile" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/12/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E6%88%91%E7%9A%84%20profile/">Vue实战项目 我的 profile</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/12/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E6%88%91%E7%9A%84%20profile/" class="archive-article-date">
-  	<time datetime="2020-08-12T07:34:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="1-slot-使用"><a href="#1-slot-使用" class="headerlink" title="1 slot 使用"></a>1 slot 使用</h4><p>在 profile 页面，用户登录前和登录后，许多地方不一样。将这些会变化的部分，放在一个 slot 内部。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//默认部分 </span></span><br><span class="line">&lt;slot name=<span class="string">"user-nickname"</span>&gt;</span><br><span class="line">          &lt;div&gt;登录/注册&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>slot&gt;</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2020/08/12/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E6%88%91%E7%9A%84%20profile/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/12/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E6%88%91%E7%9A%84%20profile/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Vue实战项目 分类页 category" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/08/11/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E5%88%86%E7%B1%BB%E9%A1%B5%20category/">Vue实战项目 分类页 category</a>
-    </h1>
-  
-
-        
-        <a href="/2020/08/11/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E5%88%86%E7%B1%BB%E9%A1%B5%20category/" class="archive-article-date">
-  	<time datetime="2020-08-11T07:34:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-08-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-获取数据"><a href="#1-获取数据" class="headerlink" title="1 获取数据"></a>1 获取数据</h3><p>分析数据结构</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;catagory  (无参数) ——》maitKey、miniWallkey 、title</span><br><span class="line">&#x2F;subcategory (maitKey)  ——》 subcategories ([])</span><br><span class="line">&#x2F;subcategory&#x2F;detail (miniWallkey，type) ——》categoryDetail (&#123;&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>可以看出不同的 title 有不同的数据，将给个title 对应的数据存储在 categoryData 里面，数据之间通过 index 联系。简化数据结构如下</p>
-        
-          <a class="article-more-a" href="/2020/08/11/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E5%88%86%E7%B1%BB%E9%A1%B5%20category/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/08/11/Vue%E5%AE%9E%E6%88%98%E9%A1%B9%E7%9B%AE%20%E5%88%86%E7%B1%BB%E9%A1%B5%20category/">展开全文 >></a>
         </p>
       
 

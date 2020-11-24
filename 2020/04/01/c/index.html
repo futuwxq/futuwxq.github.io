@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://futuwxq.github.io">
-  <title>c++ | 晓秋的博客</title>
+  <title>c++语法基础 | 晓秋的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="C++基础 c++是在C语言基础上的一个延伸， 新增数据类型">
+  <meta name="description" content="c++是在C语言基础上的一个延伸. 命名空间 using namespace 使用命名空间，是为了使用一个命名空间下的函数和变量（std::cout ） 1、命名空间关键字 namespace">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c++">
+<meta property="og:title" content="c++语法基础">
 <meta property="og:url" content="https://futuwxq.github.io/2020/04/01/c/index.html">
 <meta property="og:site_name" content="晓秋的博客">
-<meta property="og:description" content="C++基础 c++是在C语言基础上的一个延伸， 新增数据类型">
+<meta property="og:description" content="c++是在C语言基础上的一个延伸. 命名空间 using namespace 使用命名空间，是为了使用一个命名空间下的函数和变量（std::cout ） 1、命名空间关键字 namespace">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-04-01T09:44:04.000Z">
-<meta property="article:modified_time" content="2020-06-19T02:30:41.333Z">
+<meta property="article:modified_time" content="2020-11-24T08:12:31.837Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="c++">
 <meta name="twitter:card" content="summary">
@@ -162,7 +162,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      c++
+      c++语法基础
     </h1>
   
 
@@ -175,10 +175,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>C++基础</p>
-<p>c++是在C语言基础上的一个延伸，</p>
-<h3 id="新增数据类型"><a href="#新增数据类型" class="headerlink" title="新增数据类型"></a>新增数据类型<a id="more"></a></h3><h3 id="命名空间"><a href="#命名空间" class="headerlink" title="命名空间"></a>命名空间</h3><p>using namespace 使用命名空间，是为了使用一个命名空间下的函数和变量，std：：cout </p>
-<p>1、命名空间关键字 <code>namespace</code></p>
+        <p>c++是在C语言基础上的一个延伸.</p>
+<p><strong>命名空间</strong></p>
+<p>using namespace 使用命名空间，是为了使用一个命名空间下的函数和变量（std::cout ）</p>
+<p>1、命名空间关键字 <code>namespace</code> <a id="more"></a></p>
 <p>2、<code>system(&quot;pause&quot;);</code>提示 </p>
 <p>3、<code>using namespace std;</code>使用命名空间 std 中包含cout endl cin等 </p>
 <p> 4、<code>B::x</code> 使用B命名空间中的x变量</p>
@@ -188,7 +188,42 @@
 <p>命名空间(namespace)是一种描述逻辑分组的机制,可以将按某些标准在逻辑上属于同一个任务中的所有类声明放在同一个命名空间中.标准C++库(不包括标准C库)中所包含的所有内容(包括常量、变量、结构、类和函数等)都被定义在命名空间std(standard标准)中了.</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">namespace</span> A</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">int</span> x=<span class="number">1</span>;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">()</span></span></span><br><span class="line"><span class="function">  </span>&#123;<span class="built_in">cout</span>&lt;&lt;<span class="string">"A"</span>&lt;&lt;<span class="built_in">endl</span>;<span class="comment">/*std::cout&lt;&lt;"A"&lt;&lt;std::endl;*/</span>&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">namespace</span> B</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">int</span> x=<span class="number">2</span>;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">fun</span><span class="params">()</span></span></span><br><span class="line"><span class="function">  </span>&#123; <span class="built_in">cout</span>&lt;&lt;<span class="string">"B"</span>&lt;&lt;<span class="built_in">endl</span>;<span class="comment">/*std::cout&lt;&lt;"B"&lt;&lt;endl;*/</span>&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<h3 id="1-c-语法基础"><a href="#1-c-语法基础" class="headerlink" title="1 c++语法基础"></a>1 c++语法基础</h3><p>最简单的c++程序</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     <span class="built_in">cout</span> &lt;&lt; <span class="string">"Hello World"</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<p><strong>变量的定义</strong></p>
+<p>变量必须先定义，才可以使用。不能重名。</p>
+<p>变量基本的内置类型有布尔型、字符型（char）、整型、浮点型、双浮点型、字符串（string (s 是小写)）。</p>
+<p><strong>输入输出</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cin &gt;&gt; a&gt;&gt; b;</span><br><span class="line">cout &lt;&lt;a + b&lt;&lt; endl;</span><br></pre></td></tr></table></figure>
+
+<p><strong>变量的类型转换</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">float x &#x3D; 1.9 ;</span><br><span class="line">int y &#x3D; (int) x; &#x2F;&#x2F; 默认向下取整 正数取小 负数取大</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-printf语句与C-中的判断结构"><a href="#2-printf语句与C-中的判断结构" class="headerlink" title="2  printf语句与C++中的判断结构"></a>2  printf语句与C++中的判断结构</h3><p><strong>2.1 printf 输出格式</strong></p>
+<blockquote>
+<p>注意：使用 printf 时最好添加头文件 <code>#include &lt;cstdio&gt;</code>。</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">printf(&quot;Hello World!&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>Int、float、double、char等类型的输出格式：<br>(1)    Int：%d<br>(2)    Float: %f, 默认保留6位小数<br>(3)    Double: %lf， 默认保留6位小数<br>(4)    Char: %c, 回车也是一个字符，用’\n’表示</p>
+<p>2.2 拓展功能</p>
+<p>(1)  Float, double等输出保留若干位小数时用：%.4f, %3lf</p>
+<p>(2)  最小数字宽度</p>
+<ul>
+<li>%8.3f, 表示这个浮点数的最小宽度为8，保留3位小数，当宽度不足时在<strong>前面补空格</strong>。 —- <code>3.123</code></li>
+<li>%-8.3f，表示最小宽度为8，保留3位小数，当宽度不足时在后面补上空格。 —— <code>3.123</code></li>
+<li>%08.3f, 表示最小宽度为8，保留3位小数，当宽度不足时在前面补上0 – <code>0003.123</code></li>
+</ul>
+<h3 id="3-if-语句-循环结构"><a href="#3-if-语句-循环结构" class="headerlink" title="3 if 语句 循环结构"></a>3 if 语句 循环结构</h3><p><strong>3.1 条件表达式</strong><br>    (1) 与 &amp;&amp;(2) 或 ||(3) 非</p>
+<p><strong>3.2 循环语句</strong></p>
+<p>do while循环不常用。do while 语句与 while 语句非常相似。唯一的区别是，do while 语句限制性循环体后检查条件。不管条件的值如何，我们都要至少执行一次循环。</p>
+<p><strong>3.3 跳转语句</strong></p>
+<p>break：用在循环语句中，强行结束循环的执行，不在判断执行的条件是否成立，直接转向循环语句下面的语句。<strong>结束break语句所在的循环，并不会终止其他的循环</strong>.</p>
+<p>continue：用在循环语句中，是终止<strong>本次循环</strong>的执行，也就是跳出本次循环，接着进行下一次循环的判断。最常见的用途就是在遍历数组时跳过某些不符合特定条件的数组元素。</p>
+<p>(3)return:用于退出函数，语句结束函数执行，返回调用函数，而且把表达式的值作为函数的结果</p>
+<hr>
+<h3 id="新增数据类型"><a href="#新增数据类型" class="headerlink" title="新增数据类型"></a>新增数据类型</h3>
       
 
       

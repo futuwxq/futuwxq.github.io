@@ -16,7 +16,7 @@
 <meta property="og:description" content="给你一个整数数组 arr ，以及 a、b 、c 三个整数。请你统计其中好三元组的数量。 如果三元组 (arr[i], arr[j], arr[k]) 满足下列全部条件，则认为它是一个 好三元组 。">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-19T06:02:34.000Z">
-<meta property="article:modified_time" content="2020-11-19T08:59:06.104Z">
+<meta property="article:modified_time" content="2020-11-22T07:33:45.999Z">
 <meta property="article:author" content="Better">
 <meta property="article:tag" content="leetcode">
 <meta name="twitter:card" content="summary">
@@ -185,7 +185,25 @@
 
 <p>时间复杂度：$o(n^3)$</p>
 <p>空间复杂度：0（1）</p>
-<h4 id="方法二：枚举优化"><a href="#方法二：枚举优化" class="headerlink" title="方法二：枚举优化"></a>方法二：枚举优化</h4>
+<h4 id="方法二：枚举优化"><a href="#方法二：枚举优化" class="headerlink" title="方法二：枚举优化"></a>方法二：枚举优化</h4><p>找出满足 <code>|arr[j]- arr[k]|≤b</code>的二元组 <code>(j,k)</code>中满足条件的 i 的个数。根据</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">0 &lt;&#x3D; i &lt; j &lt; k &lt; arr.length   (1)</span><br><span class="line">|arr[i] - arr[j]| &lt;&#x3D; a       (2)  </span><br><span class="line">|arr[i] - arr[k]| &lt;&#x3D; c       (3)</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>找出满足 (2),(3)等式的取值范围</li>
+</ol>
+<p><code>[arr[j]−a,arr[j]+a]</code>和 <code>[arr[k]−c,arr[k]+c]</code>两个区间的交集,记为 [l,r]。</p>
+<ol start="2">
+<li>满足（1）取值</li>
+</ol>
+<p>最终的取值区间为<code>[max(0, l), min(1000, r)]</code></p>
+<ol start="3">
+<li>建立一个关于 arr[i] 的频次数组的前缀和 sum。</li>
+</ol>
+<p>每次的满足的个数为 ：<code>sum[r]−sum[l−1]</code></p>
+<p>考虑怎么维护保证当前频次数组存的数的下标符合 i&lt;j  的限制，我们只要从小到大枚举 j，每次 j 移动指针加一的时候，将 arr[j]  的值更新到 sum 数组中即可，这样能保证枚举到 j 的时候 sum 数组里存的值的下标满足限制。 </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">countGoodTriplets</span><span class="params">(<span class="keyword">int</span>[] arr, <span class="keyword">int</span> a, <span class="keyword">int</span> b, <span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">       <span class="keyword">int</span> ans = <span class="number">0</span>, n = arr.length;</span><br><span class="line">       <span class="keyword">int</span>[] sum = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">1001</span>];</span><br><span class="line">       <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; n; ++j) &#123;</span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> k = j + <span class="number">1</span> ; k &lt; n; ++k) &#123;</span><br><span class="line">               <span class="keyword">if</span> (Math.abs(arr[j] - arr[k]) &lt;= b) &#123;</span><br><span class="line">                   <span class="keyword">int</span> lj = arr[j] - a, rj = arr[j] + a;</span><br><span class="line">                   <span class="keyword">int</span> lk = arr[k] - c, rk = arr[k] + c;</span><br><span class="line">                   <span class="keyword">int</span> l = Math.max(<span class="number">0</span>, Math.max(lj, lk)), r = Math.min(<span class="number">1000</span>, Math.min(rj, rk));</span><br><span class="line">                   <span class="comment">// 计算出边界 l，r</span></span><br><span class="line">                   <span class="keyword">if</span> (l &lt;= r) &#123;</span><br><span class="line">                       <span class="keyword">if</span> (l == <span class="number">0</span>) &#123;</span><br><span class="line">                           ans += sum[r];</span><br><span class="line">                       &#125;</span><br><span class="line">                       <span class="keyword">else</span> &#123;</span><br><span class="line">                           ans += sum[r] - sum[l - <span class="number">1</span>];</span><br><span class="line">                       &#125;</span><br><span class="line">                   &#125;</span><br><span class="line">               &#125;</span><br><span class="line">           &#125;</span><br><span class="line">           <span class="comment">// j向前移动一位，将 arr[j]  的值更新到 sum 数组中  </span></span><br><span class="line">           <span class="keyword">for</span> (<span class="keyword">int</span> k = arr[j]; k &lt;= <span class="number">1000</span>; ++k) &#123;</span><br><span class="line">               ++sum[k];</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
       
 
       
@@ -288,6 +306,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/11/19/%E7%BB%9F%E8%AE%A1%E4%BD%9C%E6%88%98%E5%8D%95%E4%BD%8D%E6%95%B0/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Array 1395 统计作战单位数
+        
+      </div>
+    </a>
   
   
     <a href="/2020/11/18/%E7%9F%A9%E9%98%B5%E5%AF%B9%E8%A7%92%E7%BA%BF%E5%85%83%E7%B4%A0%E7%9A%84%E5%92%8C/" id="article-nav-older" class="article-nav-link-wrap">
